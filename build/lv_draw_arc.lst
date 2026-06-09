@@ -1,0 +1,1772 @@
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\cc6lJNDS.s 			page 1
+
+
+   1              		.cpu cortex-m4
+   2              		.arch armv7e-m
+   3              		.fpu fpv4-sp-d16
+   4              		.eabi_attribute 27, 1
+   5              		.eabi_attribute 28, 1
+   6              		.eabi_attribute 20, 1
+   7              		.eabi_attribute 21, 1
+   8              		.eabi_attribute 23, 3
+   9              		.eabi_attribute 24, 1
+  10              		.eabi_attribute 25, 1
+  11              		.eabi_attribute 26, 1
+  12              		.eabi_attribute 30, 1
+  13              		.eabi_attribute 34, 1
+  14              		.eabi_attribute 18, 4
+  15              		.file	"lv_draw_arc.c"
+  16              		.text
+  17              	.Ltext0:
+  18              		.cfi_sections	.debug_frame
+  19              		.file 1 "Middlewares/LVGL/lvgl/src/draw/lv_draw_arc.c"
+  20              		.section	.text.lv_draw_arc_dsc_init,"ax",%progbits
+  21              		.align	1
+  22              		.global	lv_draw_arc_dsc_init
+  23              		.syntax unified
+  24              		.thumb
+  25              		.thumb_func
+  27              	lv_draw_arc_dsc_init:
+  28              	.LVL0:
+  29              	.LFB200:
+   1:Middlewares/LVGL/lvgl/src/draw/lv_draw_arc.c **** /**
+   2:Middlewares/LVGL/lvgl/src/draw/lv_draw_arc.c ****  * @file lv_draw_arc.c
+   3:Middlewares/LVGL/lvgl/src/draw/lv_draw_arc.c ****  *
+   4:Middlewares/LVGL/lvgl/src/draw/lv_draw_arc.c ****  */
+   5:Middlewares/LVGL/lvgl/src/draw/lv_draw_arc.c **** 
+   6:Middlewares/LVGL/lvgl/src/draw/lv_draw_arc.c **** /*********************
+   7:Middlewares/LVGL/lvgl/src/draw/lv_draw_arc.c ****  *      INCLUDES
+   8:Middlewares/LVGL/lvgl/src/draw/lv_draw_arc.c ****  *********************/
+   9:Middlewares/LVGL/lvgl/src/draw/lv_draw_arc.c **** #include "lv_draw_private.h"
+  10:Middlewares/LVGL/lvgl/src/draw/lv_draw_arc.c **** #include "../core/lv_obj.h"
+  11:Middlewares/LVGL/lvgl/src/draw/lv_draw_arc.c **** #include "lv_draw_arc.h"
+  12:Middlewares/LVGL/lvgl/src/draw/lv_draw_arc.c **** #include "../core/lv_obj_event.h"
+  13:Middlewares/LVGL/lvgl/src/draw/lv_draw_arc.c **** #include "../stdlib/lv_string.h"
+  14:Middlewares/LVGL/lvgl/src/draw/lv_draw_arc.c **** 
+  15:Middlewares/LVGL/lvgl/src/draw/lv_draw_arc.c **** /*********************
+  16:Middlewares/LVGL/lvgl/src/draw/lv_draw_arc.c ****  *      DEFINES
+  17:Middlewares/LVGL/lvgl/src/draw/lv_draw_arc.c ****  *********************/
+  18:Middlewares/LVGL/lvgl/src/draw/lv_draw_arc.c **** 
+  19:Middlewares/LVGL/lvgl/src/draw/lv_draw_arc.c **** /**********************
+  20:Middlewares/LVGL/lvgl/src/draw/lv_draw_arc.c ****  *      TYPEDEFS
+  21:Middlewares/LVGL/lvgl/src/draw/lv_draw_arc.c ****  **********************/
+  22:Middlewares/LVGL/lvgl/src/draw/lv_draw_arc.c **** 
+  23:Middlewares/LVGL/lvgl/src/draw/lv_draw_arc.c **** /**********************
+  24:Middlewares/LVGL/lvgl/src/draw/lv_draw_arc.c ****  *  STATIC PROTOTYPES
+  25:Middlewares/LVGL/lvgl/src/draw/lv_draw_arc.c ****  **********************/
+  26:Middlewares/LVGL/lvgl/src/draw/lv_draw_arc.c **** 
+  27:Middlewares/LVGL/lvgl/src/draw/lv_draw_arc.c **** /**********************
+  28:Middlewares/LVGL/lvgl/src/draw/lv_draw_arc.c ****  *  STATIC VARIABLES
+  29:Middlewares/LVGL/lvgl/src/draw/lv_draw_arc.c ****  **********************/
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\cc6lJNDS.s 			page 2
+
+
+  30:Middlewares/LVGL/lvgl/src/draw/lv_draw_arc.c **** 
+  31:Middlewares/LVGL/lvgl/src/draw/lv_draw_arc.c **** /**********************
+  32:Middlewares/LVGL/lvgl/src/draw/lv_draw_arc.c ****  *      MACROS
+  33:Middlewares/LVGL/lvgl/src/draw/lv_draw_arc.c ****  **********************/
+  34:Middlewares/LVGL/lvgl/src/draw/lv_draw_arc.c **** 
+  35:Middlewares/LVGL/lvgl/src/draw/lv_draw_arc.c **** /**********************
+  36:Middlewares/LVGL/lvgl/src/draw/lv_draw_arc.c ****  *   GLOBAL FUNCTIONS
+  37:Middlewares/LVGL/lvgl/src/draw/lv_draw_arc.c ****  **********************/
+  38:Middlewares/LVGL/lvgl/src/draw/lv_draw_arc.c **** 
+  39:Middlewares/LVGL/lvgl/src/draw/lv_draw_arc.c **** void lv_draw_arc_dsc_init(lv_draw_arc_dsc_t * dsc)
+  40:Middlewares/LVGL/lvgl/src/draw/lv_draw_arc.c **** {
+  30              		.loc 1 40 1 view -0
+  31              		.cfi_startproc
+  32              		@ args = 0, pretend = 0, frame = 0
+  33              		@ frame_needed = 0, uses_anonymous_args = 0
+  34              		.loc 1 40 1 is_stmt 0 view .LVU1
+  35 0000 10B5     		push	{r4, lr}
+  36              	.LCFI0:
+  37              		.cfi_def_cfa_offset 8
+  38              		.cfi_offset 4, -8
+  39              		.cfi_offset 14, -4
+  40 0002 0446     		mov	r4, r0
+  41:Middlewares/LVGL/lvgl/src/draw/lv_draw_arc.c ****     lv_memzero(dsc, sizeof(lv_draw_arc_dsc_t));
+  41              		.loc 1 41 5 is_stmt 1 view .LVU2
+  42              	.LVL1:
+  43              	.LBB4:
+  44              	.LBI4:
+  45              		.file 2 "Middlewares/LVGL/lvgl/src/draw/../misc/../font/../draw/../misc/../stdlib/lv_string.h"
+   1:Middlewares/LVGL/lvgl/src/draw/../misc/../font/../draw/../misc/../stdlib/lv_string.h **** /**
+   2:Middlewares/LVGL/lvgl/src/draw/../misc/../font/../draw/../misc/../stdlib/lv_string.h ****  * @file lv_string.h
+   3:Middlewares/LVGL/lvgl/src/draw/../misc/../font/../draw/../misc/../stdlib/lv_string.h ****  *
+   4:Middlewares/LVGL/lvgl/src/draw/../misc/../font/../draw/../misc/../stdlib/lv_string.h ****  */
+   5:Middlewares/LVGL/lvgl/src/draw/../misc/../font/../draw/../misc/../stdlib/lv_string.h **** 
+   6:Middlewares/LVGL/lvgl/src/draw/../misc/../font/../draw/../misc/../stdlib/lv_string.h **** #ifndef LV_STRING_H
+   7:Middlewares/LVGL/lvgl/src/draw/../misc/../font/../draw/../misc/../stdlib/lv_string.h **** #define LV_STRING_H
+   8:Middlewares/LVGL/lvgl/src/draw/../misc/../font/../draw/../misc/../stdlib/lv_string.h **** 
+   9:Middlewares/LVGL/lvgl/src/draw/../misc/../font/../draw/../misc/../stdlib/lv_string.h **** #ifdef __cplusplus
+  10:Middlewares/LVGL/lvgl/src/draw/../misc/../font/../draw/../misc/../stdlib/lv_string.h **** extern "C" {
+  11:Middlewares/LVGL/lvgl/src/draw/../misc/../font/../draw/../misc/../stdlib/lv_string.h **** #endif
+  12:Middlewares/LVGL/lvgl/src/draw/../misc/../font/../draw/../misc/../stdlib/lv_string.h **** 
+  13:Middlewares/LVGL/lvgl/src/draw/../misc/../font/../draw/../misc/../stdlib/lv_string.h **** /*********************
+  14:Middlewares/LVGL/lvgl/src/draw/../misc/../font/../draw/../misc/../stdlib/lv_string.h ****  *      INCLUDES
+  15:Middlewares/LVGL/lvgl/src/draw/../misc/../font/../draw/../misc/../stdlib/lv_string.h ****  *********************/
+  16:Middlewares/LVGL/lvgl/src/draw/../misc/../font/../draw/../misc/../stdlib/lv_string.h **** #include "../lv_conf_internal.h"
+  17:Middlewares/LVGL/lvgl/src/draw/../misc/../font/../draw/../misc/../stdlib/lv_string.h **** #include "../misc/lv_types.h"
+  18:Middlewares/LVGL/lvgl/src/draw/../misc/../font/../draw/../misc/../stdlib/lv_string.h **** 
+  19:Middlewares/LVGL/lvgl/src/draw/../misc/../font/../draw/../misc/../stdlib/lv_string.h **** /*********************
+  20:Middlewares/LVGL/lvgl/src/draw/../misc/../font/../draw/../misc/../stdlib/lv_string.h ****  *      DEFINES
+  21:Middlewares/LVGL/lvgl/src/draw/../misc/../font/../draw/../misc/../stdlib/lv_string.h ****  *********************/
+  22:Middlewares/LVGL/lvgl/src/draw/../misc/../font/../draw/../misc/../stdlib/lv_string.h **** 
+  23:Middlewares/LVGL/lvgl/src/draw/../misc/../font/../draw/../misc/../stdlib/lv_string.h **** /**********************
+  24:Middlewares/LVGL/lvgl/src/draw/../misc/../font/../draw/../misc/../stdlib/lv_string.h ****  *      TYPEDEFS
+  25:Middlewares/LVGL/lvgl/src/draw/../misc/../font/../draw/../misc/../stdlib/lv_string.h ****  **********************/
+  26:Middlewares/LVGL/lvgl/src/draw/../misc/../font/../draw/../misc/../stdlib/lv_string.h **** 
+  27:Middlewares/LVGL/lvgl/src/draw/../misc/../font/../draw/../misc/../stdlib/lv_string.h **** /**********************
+  28:Middlewares/LVGL/lvgl/src/draw/../misc/../font/../draw/../misc/../stdlib/lv_string.h ****  * GLOBAL PROTOTYPES
+  29:Middlewares/LVGL/lvgl/src/draw/../misc/../font/../draw/../misc/../stdlib/lv_string.h ****  **********************/
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\cc6lJNDS.s 			page 3
+
+
+  30:Middlewares/LVGL/lvgl/src/draw/../misc/../font/../draw/../misc/../stdlib/lv_string.h **** 
+  31:Middlewares/LVGL/lvgl/src/draw/../misc/../font/../draw/../misc/../stdlib/lv_string.h **** /**
+  32:Middlewares/LVGL/lvgl/src/draw/../misc/../font/../draw/../misc/../stdlib/lv_string.h ****  * @brief Copies a block of memory from a source address to a destination address.
+  33:Middlewares/LVGL/lvgl/src/draw/../misc/../font/../draw/../misc/../stdlib/lv_string.h ****  * @param dst Pointer to the destination array where the content is to be copied.
+  34:Middlewares/LVGL/lvgl/src/draw/../misc/../font/../draw/../misc/../stdlib/lv_string.h ****  * @param src Pointer to the source of data to be copied.
+  35:Middlewares/LVGL/lvgl/src/draw/../misc/../font/../draw/../misc/../stdlib/lv_string.h ****  * @param len Number of bytes to copy.
+  36:Middlewares/LVGL/lvgl/src/draw/../misc/../font/../draw/../misc/../stdlib/lv_string.h ****  * @return Pointer to the destination array.
+  37:Middlewares/LVGL/lvgl/src/draw/../misc/../font/../draw/../misc/../stdlib/lv_string.h ****  * @note The function does not check for any overlapping of the source and destination memory block
+  38:Middlewares/LVGL/lvgl/src/draw/../misc/../font/../draw/../misc/../stdlib/lv_string.h ****  */
+  39:Middlewares/LVGL/lvgl/src/draw/../misc/../font/../draw/../misc/../stdlib/lv_string.h **** void * lv_memcpy(void * dst, const void * src, size_t len);
+  40:Middlewares/LVGL/lvgl/src/draw/../misc/../font/../draw/../misc/../stdlib/lv_string.h **** 
+  41:Middlewares/LVGL/lvgl/src/draw/../misc/../font/../draw/../misc/../stdlib/lv_string.h **** /**
+  42:Middlewares/LVGL/lvgl/src/draw/../misc/../font/../draw/../misc/../stdlib/lv_string.h ****  * @brief Fills a block of memory with a specified value.
+  43:Middlewares/LVGL/lvgl/src/draw/../misc/../font/../draw/../misc/../stdlib/lv_string.h ****  * @param dst Pointer to the destination array to fill with the specified value.
+  44:Middlewares/LVGL/lvgl/src/draw/../misc/../font/../draw/../misc/../stdlib/lv_string.h ****  * @param v Value to be set. The value is passed as an int, but the function fills
+  45:Middlewares/LVGL/lvgl/src/draw/../misc/../font/../draw/../misc/../stdlib/lv_string.h ****  *          the block of memory using the unsigned char conversion of this value.
+  46:Middlewares/LVGL/lvgl/src/draw/../misc/../font/../draw/../misc/../stdlib/lv_string.h ****  * @param len Number of bytes to be set to the value.
+  47:Middlewares/LVGL/lvgl/src/draw/../misc/../font/../draw/../misc/../stdlib/lv_string.h ****  */
+  48:Middlewares/LVGL/lvgl/src/draw/../misc/../font/../draw/../misc/../stdlib/lv_string.h **** void lv_memset(void * dst, uint8_t v, size_t len);
+  49:Middlewares/LVGL/lvgl/src/draw/../misc/../font/../draw/../misc/../stdlib/lv_string.h **** 
+  50:Middlewares/LVGL/lvgl/src/draw/../misc/../font/../draw/../misc/../stdlib/lv_string.h **** /**
+  51:Middlewares/LVGL/lvgl/src/draw/../misc/../font/../draw/../misc/../stdlib/lv_string.h ****  * @brief Move a block of memory from source to destination
+  52:Middlewares/LVGL/lvgl/src/draw/../misc/../font/../draw/../misc/../stdlib/lv_string.h ****  * @param dst Pointer to the destination array where the content is to be copied.
+  53:Middlewares/LVGL/lvgl/src/draw/../misc/../font/../draw/../misc/../stdlib/lv_string.h ****  * @param src Pointer to the source of data to be copied.
+  54:Middlewares/LVGL/lvgl/src/draw/../misc/../font/../draw/../misc/../stdlib/lv_string.h ****  * @param len Number of bytes to copy
+  55:Middlewares/LVGL/lvgl/src/draw/../misc/../font/../draw/../misc/../stdlib/lv_string.h ****  * @return Pointer to the destination array.
+  56:Middlewares/LVGL/lvgl/src/draw/../misc/../font/../draw/../misc/../stdlib/lv_string.h ****  */
+  57:Middlewares/LVGL/lvgl/src/draw/../misc/../font/../draw/../misc/../stdlib/lv_string.h **** void * lv_memmove(void * dst, const void * src, size_t len);
+  58:Middlewares/LVGL/lvgl/src/draw/../misc/../font/../draw/../misc/../stdlib/lv_string.h **** 
+  59:Middlewares/LVGL/lvgl/src/draw/../misc/../font/../draw/../misc/../stdlib/lv_string.h **** /**
+  60:Middlewares/LVGL/lvgl/src/draw/../misc/../font/../draw/../misc/../stdlib/lv_string.h ****  * @brief This function will compare two memory blocks
+  61:Middlewares/LVGL/lvgl/src/draw/../misc/../font/../draw/../misc/../stdlib/lv_string.h ****  * @param p1 Pointer to the first memory block
+  62:Middlewares/LVGL/lvgl/src/draw/../misc/../font/../draw/../misc/../stdlib/lv_string.h ****  * @param p2 Pointer to the second memory block
+  63:Middlewares/LVGL/lvgl/src/draw/../misc/../font/../draw/../misc/../stdlib/lv_string.h ****  * @param len Number of bytes to compare
+  64:Middlewares/LVGL/lvgl/src/draw/../misc/../font/../draw/../misc/../stdlib/lv_string.h ****  * @return The difference between the value of the first unmatching byte.
+  65:Middlewares/LVGL/lvgl/src/draw/../misc/../font/../draw/../misc/../stdlib/lv_string.h ****  */
+  66:Middlewares/LVGL/lvgl/src/draw/../misc/../font/../draw/../misc/../stdlib/lv_string.h **** int lv_memcmp(const void * p1, const void * p2, size_t len);
+  67:Middlewares/LVGL/lvgl/src/draw/../misc/../font/../draw/../misc/../stdlib/lv_string.h **** 
+  68:Middlewares/LVGL/lvgl/src/draw/../misc/../font/../draw/../misc/../stdlib/lv_string.h **** /**
+  69:Middlewares/LVGL/lvgl/src/draw/../misc/../font/../draw/../misc/../stdlib/lv_string.h ****  * Same as `memset(dst, 0x00, len)`.
+  70:Middlewares/LVGL/lvgl/src/draw/../misc/../font/../draw/../misc/../stdlib/lv_string.h ****  * @param dst pointer to the destination buffer
+  71:Middlewares/LVGL/lvgl/src/draw/../misc/../font/../draw/../misc/../stdlib/lv_string.h ****  * @param len number of byte to set
+  72:Middlewares/LVGL/lvgl/src/draw/../misc/../font/../draw/../misc/../stdlib/lv_string.h ****  */
+  73:Middlewares/LVGL/lvgl/src/draw/../misc/../font/../draw/../misc/../stdlib/lv_string.h **** static inline void lv_memzero(void * dst, size_t len)
+  46              		.loc 2 73 20 view .LVU3
+  47              	.LBB5:
+  74:Middlewares/LVGL/lvgl/src/draw/../misc/../font/../draw/../misc/../stdlib/lv_string.h **** {
+  75:Middlewares/LVGL/lvgl/src/draw/../misc/../font/../draw/../misc/../stdlib/lv_string.h ****     lv_memset(dst, 0x00, len);
+  48              		.loc 2 75 5 view .LVU4
+  49 0004 4822     		movs	r2, #72
+  50 0006 0021     		movs	r1, #0
+  51 0008 FFF7FEFF 		bl	lv_memset
+  52              	.LVL2:
+  53              		.loc 2 75 5 is_stmt 0 view .LVU5
+  54              	.LBE5:
+  55              	.LBE4:
+  42:Middlewares/LVGL/lvgl/src/draw/lv_draw_arc.c ****     dsc->width = 1;
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\cc6lJNDS.s 			page 4
+
+
+  56              		.loc 1 42 5 is_stmt 1 view .LVU6
+  57              		.loc 1 42 16 is_stmt 0 view .LVU7
+  58 000c 0123     		movs	r3, #1
+  59 000e E362     		str	r3, [r4, #44]
+  43:Middlewares/LVGL/lvgl/src/draw/lv_draw_arc.c ****     dsc->opa = LV_OPA_COVER;
+  60              		.loc 1 43 5 is_stmt 1 view .LVU8
+  61              		.loc 1 43 14 is_stmt 0 view .LVU9
+  62 0010 FF23     		movs	r3, #255
+  63 0012 84F84630 		strb	r3, [r4, #70]
+  44:Middlewares/LVGL/lvgl/src/draw/lv_draw_arc.c ****     dsc->color = lv_color_black();
+  64              		.loc 1 44 5 is_stmt 1 view .LVU10
+  65              		.loc 1 44 18 is_stmt 0 view .LVU11
+  66 0016 FFF7FEFF 		bl	lv_color_black
+  67              	.LVL3:
+  68 001a 84F82800 		strb	r0, [r4, #40]
+  69 001e C0F30723 		ubfx	r3, r0, #8, #8
+  70 0022 84F82930 		strb	r3, [r4, #41]
+  71 0026 C0F30740 		ubfx	r0, r0, #16, #8
+  72 002a 84F82A00 		strb	r0, [r4, #42]
+  45:Middlewares/LVGL/lvgl/src/draw/lv_draw_arc.c ****     dsc->base.dsc_size = sizeof(lv_draw_arc_dsc_t);
+  73              		.loc 1 45 5 is_stmt 1 view .LVU12
+  74              		.loc 1 45 24 is_stmt 0 view .LVU13
+  75 002e 4823     		movs	r3, #72
+  76 0030 2362     		str	r3, [r4, #32]
+  46:Middlewares/LVGL/lvgl/src/draw/lv_draw_arc.c **** }
+  77              		.loc 1 46 1 view .LVU14
+  78 0032 10BD     		pop	{r4, pc}
+  79              		.loc 1 46 1 view .LVU15
+  80              		.cfi_endproc
+  81              	.LFE200:
+  83              		.section	.text.lv_draw_task_get_arc_dsc,"ax",%progbits
+  84              		.align	1
+  85              		.global	lv_draw_task_get_arc_dsc
+  86              		.syntax unified
+  87              		.thumb
+  88              		.thumb_func
+  90              	lv_draw_task_get_arc_dsc:
+  91              	.LVL4:
+  92              	.LFB201:
+  47:Middlewares/LVGL/lvgl/src/draw/lv_draw_arc.c **** 
+  48:Middlewares/LVGL/lvgl/src/draw/lv_draw_arc.c **** lv_draw_arc_dsc_t * lv_draw_task_get_arc_dsc(lv_draw_task_t * task)
+  49:Middlewares/LVGL/lvgl/src/draw/lv_draw_arc.c **** {
+  93              		.loc 1 49 1 is_stmt 1 view -0
+  94              		.cfi_startproc
+  95              		@ args = 0, pretend = 0, frame = 0
+  96              		@ frame_needed = 0, uses_anonymous_args = 0
+  97              		@ link register save eliminated.
+  50:Middlewares/LVGL/lvgl/src/draw/lv_draw_arc.c ****     return task->type == LV_DRAW_TASK_TYPE_ARC ? (lv_draw_arc_dsc_t *)task->draw_dsc : NULL;
+  98              		.loc 1 50 5 view .LVU17
+  99              		.loc 1 50 16 is_stmt 0 view .LVU18
+ 100 0000 0379     		ldrb	r3, [r0, #4]	@ zero_extendqisi2
+ 101              		.loc 1 50 86 view .LVU19
+ 102 0002 092B     		cmp	r3, #9
+ 103 0004 01D1     		bne	.L5
+ 104              		.loc 1 50 86 discriminator 1 view .LVU20
+ 105 0006 406D     		ldr	r0, [r0, #84]
+ 106              	.LVL5:
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\cc6lJNDS.s 			page 5
+
+
+ 107              		.loc 1 50 86 discriminator 1 view .LVU21
+ 108 0008 7047     		bx	lr
+ 109              	.LVL6:
+ 110              	.L5:
+ 111              		.loc 1 50 86 discriminator 2 view .LVU22
+ 112 000a 0020     		movs	r0, #0
+ 113              	.LVL7:
+  51:Middlewares/LVGL/lvgl/src/draw/lv_draw_arc.c **** }
+ 114              		.loc 1 51 1 view .LVU23
+ 115 000c 7047     		bx	lr
+ 116              		.cfi_endproc
+ 117              	.LFE201:
+ 119              		.section	.text.lv_draw_arc,"ax",%progbits
+ 120              		.align	1
+ 121              		.global	lv_draw_arc
+ 122              		.syntax unified
+ 123              		.thumb
+ 124              		.thumb_func
+ 126              	lv_draw_arc:
+ 127              	.LVL8:
+ 128              	.LFB202:
+  52:Middlewares/LVGL/lvgl/src/draw/lv_draw_arc.c **** 
+  53:Middlewares/LVGL/lvgl/src/draw/lv_draw_arc.c **** void lv_draw_arc(lv_layer_t * layer, const lv_draw_arc_dsc_t * dsc)
+  54:Middlewares/LVGL/lvgl/src/draw/lv_draw_arc.c **** {
+ 129              		.loc 1 54 1 is_stmt 1 view -0
+ 130              		.cfi_startproc
+ 131              		@ args = 0, pretend = 0, frame = 88
+ 132              		@ frame_needed = 0, uses_anonymous_args = 0
+  55:Middlewares/LVGL/lvgl/src/draw/lv_draw_arc.c ****     if(dsc->opa <= LV_OPA_MIN) return;
+ 133              		.loc 1 55 5 view .LVU25
+ 134              		.loc 1 55 11 is_stmt 0 view .LVU26
+ 135 0000 91F84630 		ldrb	r3, [r1, #70]	@ zero_extendqisi2
+ 136              		.loc 1 55 7 view .LVU27
+ 137 0004 022B     		cmp	r3, #2
+ 138 0006 43D9     		bls	.L13
+  54:Middlewares/LVGL/lvgl/src/draw/lv_draw_arc.c ****     if(dsc->opa <= LV_OPA_MIN) return;
+ 139              		.loc 1 54 1 view .LVU28
+ 140 0008 F0B5     		push	{r4, r5, r6, r7, lr}
+ 141              	.LCFI1:
+ 142              		.cfi_def_cfa_offset 20
+ 143              		.cfi_offset 4, -20
+ 144              		.cfi_offset 5, -16
+ 145              		.cfi_offset 6, -12
+ 146              		.cfi_offset 7, -8
+ 147              		.cfi_offset 14, -4
+ 148 000a 97B0     		sub	sp, sp, #92
+ 149              	.LCFI2:
+ 150              		.cfi_def_cfa_offset 112
+ 151 000c 0546     		mov	r5, r0
+ 152 000e 0C46     		mov	r4, r1
+  56:Middlewares/LVGL/lvgl/src/draw/lv_draw_arc.c ****     if(dsc->width == 0) return;
+ 153              		.loc 1 56 5 is_stmt 1 view .LVU29
+ 154              		.loc 1 56 11 is_stmt 0 view .LVU30
+ 155 0010 CB6A     		ldr	r3, [r1, #44]
+ 156              		.loc 1 56 7 view .LVU31
+ 157 0012 002B     		cmp	r3, #0
+ 158 0014 39D0     		beq	.L6
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\cc6lJNDS.s 			page 6
+
+
+  57:Middlewares/LVGL/lvgl/src/draw/lv_draw_arc.c ****     if(dsc->start_angle == dsc->end_angle) return;
+ 159              		.loc 1 57 5 is_stmt 1 view .LVU32
+ 160              		.loc 1 57 11 is_stmt 0 view .LVU33
+ 161 0016 0A6B     		ldr	r2, [r1, #48]
+ 162              		.loc 1 57 31 view .LVU34
+ 163 0018 4B6B     		ldr	r3, [r1, #52]
+ 164              		.loc 1 57 7 view .LVU35
+ 165 001a 9A42     		cmp	r2, r3
+ 166 001c 35D0     		beq	.L6
+  58:Middlewares/LVGL/lvgl/src/draw/lv_draw_arc.c **** 
+  59:Middlewares/LVGL/lvgl/src/draw/lv_draw_arc.c ****     LV_PROFILER_DRAW_BEGIN;
+ 167              		.loc 1 59 27 is_stmt 1 view .LVU36
+  60:Middlewares/LVGL/lvgl/src/draw/lv_draw_arc.c ****     lv_area_t a;
+ 168              		.loc 1 60 5 view .LVU37
+  61:Middlewares/LVGL/lvgl/src/draw/lv_draw_arc.c ****     a.x1 = dsc->center.x - dsc->radius;
+ 169              		.loc 1 61 5 view .LVU38
+ 170              		.loc 1 61 23 is_stmt 0 view .LVU39
+ 171 001e 8A6B     		ldr	r2, [r1, #56]
+ 172              		.loc 1 61 31 view .LVU40
+ 173 0020 B1F84430 		ldrh	r3, [r1, #68]
+ 174              		.loc 1 61 26 view .LVU41
+ 175 0024 D11A     		subs	r1, r2, r3
+ 176              	.LVL9:
+ 177              		.loc 1 61 10 view .LVU42
+ 178 0026 1291     		str	r1, [sp, #72]
+  62:Middlewares/LVGL/lvgl/src/draw/lv_draw_arc.c ****     a.y1 = dsc->center.y - dsc->radius;
+ 179              		.loc 1 62 5 is_stmt 1 view .LVU43
+ 180              		.loc 1 62 23 is_stmt 0 view .LVU44
+ 181 0028 E16B     		ldr	r1, [r4, #60]
+ 182              		.loc 1 62 26 view .LVU45
+ 183 002a C81A     		subs	r0, r1, r3
+ 184              	.LVL10:
+ 185              		.loc 1 62 10 view .LVU46
+ 186 002c 1390     		str	r0, [sp, #76]
+  63:Middlewares/LVGL/lvgl/src/draw/lv_draw_arc.c ****     a.x2 = dsc->center.x + dsc->radius - 1;
+ 187              		.loc 1 63 5 is_stmt 1 view .LVU47
+ 188              		.loc 1 63 26 is_stmt 0 view .LVU48
+ 189 002e 1A44     		add	r2, r2, r3
+ 190              		.loc 1 63 40 view .LVU49
+ 191 0030 013A     		subs	r2, r2, #1
+ 192              		.loc 1 63 10 view .LVU50
+ 193 0032 1492     		str	r2, [sp, #80]
+  64:Middlewares/LVGL/lvgl/src/draw/lv_draw_arc.c ****     a.y2 = dsc->center.y + dsc->radius - 1;
+ 194              		.loc 1 64 5 is_stmt 1 view .LVU51
+ 195              		.loc 1 64 26 is_stmt 0 view .LVU52
+ 196 0034 0B44     		add	r3, r3, r1
+ 197              		.loc 1 64 40 view .LVU53
+ 198 0036 013B     		subs	r3, r3, #1
+ 199              		.loc 1 64 10 view .LVU54
+ 200 0038 1593     		str	r3, [sp, #84]
+  65:Middlewares/LVGL/lvgl/src/draw/lv_draw_arc.c **** 
+  66:Middlewares/LVGL/lvgl/src/draw/lv_draw_arc.c ****     if(dsc->base.drop_shadow_opa) {
+ 201              		.loc 1 66 5 is_stmt 1 view .LVU55
+ 202              		.loc 1 66 17 is_stmt 0 view .LVU56
+ 203 003a E37E     		ldrb	r3, [r4, #27]	@ zero_extendqisi2
+ 204              		.loc 1 66 7 view .LVU57
+ 205 003c B3B1     		cbz	r3, .L8
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\cc6lJNDS.s 			page 7
+
+
+ 206              	.LBB6:
+  67:Middlewares/LVGL/lvgl/src/draw/lv_draw_arc.c ****         lv_layer_t * ds_layer = lv_draw_layer_create_drop_shadow(layer, &dsc->base, &a);
+ 207              		.loc 1 67 9 is_stmt 1 view .LVU58
+ 208              		.loc 1 67 33 is_stmt 0 view .LVU59
+ 209 003e 12AA     		add	r2, sp, #72
+ 210 0040 2146     		mov	r1, r4
+ 211 0042 2846     		mov	r0, r5
+ 212 0044 FFF7FEFF 		bl	lv_draw_layer_create_drop_shadow
+ 213              	.LVL11:
+  68:Middlewares/LVGL/lvgl/src/draw/lv_draw_arc.c ****         LV_ASSERT_NULL(ds_layer);
+ 214              		.loc 1 68 9 is_stmt 1 view .LVU60
+ 215              		.loc 1 68 9 view .LVU61
+ 216 0048 0646     		mov	r6, r0
+ 217 004a 00B3     		cbz	r0, .L10
+ 218              		.loc 1 68 9 view .LVU62
+ 219              		.loc 1 68 33 view .LVU63
+  69:Middlewares/LVGL/lvgl/src/draw/lv_draw_arc.c ****         lv_draw_arc_dsc_t ds_dsc = *dsc;
+ 220              		.loc 1 69 9 view .LVU64
+ 221              		.loc 1 69 27 is_stmt 0 view .LVU65
+ 222 004c 4822     		movs	r2, #72
+ 223 004e 2146     		mov	r1, r4
+ 224 0050 6846     		mov	r0, sp
+ 225              	.LVL12:
+ 226              		.loc 1 69 27 view .LVU66
+ 227 0052 FFF7FEFF 		bl	memcpy
+ 228              	.LVL13:
+  70:Middlewares/LVGL/lvgl/src/draw/lv_draw_arc.c ****         ds_dsc.base.drop_shadow_opa = 0; /*Disable drop shadow so rendering below will render plain
+ 229              		.loc 1 70 9 is_stmt 1 view .LVU67
+ 230              		.loc 1 70 37 is_stmt 0 view .LVU68
+ 231 0056 0023     		movs	r3, #0
+ 232 0058 8DF81B30 		strb	r3, [sp, #27]
+  71:Middlewares/LVGL/lvgl/src/draw/lv_draw_arc.c ****         lv_draw_arc(ds_layer, &ds_dsc);
+ 233              		.loc 1 71 9 is_stmt 1 view .LVU69
+ 234 005c 6946     		mov	r1, sp
+ 235 005e 3046     		mov	r0, r6
+ 236 0060 FFF7FEFF 		bl	lv_draw_arc
+ 237              	.LVL14:
+  72:Middlewares/LVGL/lvgl/src/draw/lv_draw_arc.c ****         lv_draw_layer_finish_drop_shadow(ds_layer, &dsc->base);
+ 238              		.loc 1 72 9 view .LVU70
+ 239 0064 2146     		mov	r1, r4
+ 240 0066 3046     		mov	r0, r6
+ 241 0068 FFF7FEFF 		bl	lv_draw_layer_finish_drop_shadow
+ 242              	.LVL15:
+ 243              	.L8:
+ 244              		.loc 1 72 9 is_stmt 0 view .LVU71
+ 245              	.LBE6:
+  73:Middlewares/LVGL/lvgl/src/draw/lv_draw_arc.c ****     }
+  74:Middlewares/LVGL/lvgl/src/draw/lv_draw_arc.c **** 
+  75:Middlewares/LVGL/lvgl/src/draw/lv_draw_arc.c ****     lv_draw_task_t * t = lv_draw_add_task(layer, &a, LV_DRAW_TASK_TYPE_ARC);
+ 246              		.loc 1 75 5 is_stmt 1 view .LVU72
+ 247              		.loc 1 75 26 is_stmt 0 view .LVU73
+ 248 006c 0922     		movs	r2, #9
+ 249 006e 12A9     		add	r1, sp, #72
+ 250 0070 2846     		mov	r0, r5
+ 251 0072 FFF7FEFF 		bl	lv_draw_add_task
+ 252              	.LVL16:
+ 253 0076 0646     		mov	r6, r0
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\cc6lJNDS.s 			page 8
+
+
+ 254              	.LVL17:
+  76:Middlewares/LVGL/lvgl/src/draw/lv_draw_arc.c **** 
+  77:Middlewares/LVGL/lvgl/src/draw/lv_draw_arc.c ****     lv_memcpy(t->draw_dsc, dsc, sizeof(*dsc));
+ 255              		.loc 1 77 5 is_stmt 1 view .LVU74
+ 256 0078 4822     		movs	r2, #72
+ 257 007a 2146     		mov	r1, r4
+ 258 007c 406D     		ldr	r0, [r0, #84]
+ 259              	.LVL18:
+ 260              		.loc 1 77 5 is_stmt 0 view .LVU75
+ 261 007e FFF7FEFF 		bl	lv_memcpy
+ 262              	.LVL19:
+  78:Middlewares/LVGL/lvgl/src/draw/lv_draw_arc.c **** 
+  79:Middlewares/LVGL/lvgl/src/draw/lv_draw_arc.c ****     lv_draw_finalize_task_creation(layer, t);
+ 263              		.loc 1 79 5 is_stmt 1 view .LVU76
+ 264 0082 3146     		mov	r1, r6
+ 265 0084 2846     		mov	r0, r5
+ 266 0086 FFF7FEFF 		bl	lv_draw_finalize_task_creation
+ 267              	.LVL20:
+  80:Middlewares/LVGL/lvgl/src/draw/lv_draw_arc.c **** 
+  81:Middlewares/LVGL/lvgl/src/draw/lv_draw_arc.c ****     LV_PROFILER_DRAW_END;
+ 268              		.loc 1 81 25 view .LVU77
+ 269              	.L6:
+  82:Middlewares/LVGL/lvgl/src/draw/lv_draw_arc.c **** }
+ 270              		.loc 1 82 1 is_stmt 0 view .LVU78
+ 271 008a 17B0     		add	sp, sp, #92
+ 272              	.LCFI3:
+ 273              		.cfi_remember_state
+ 274              		.cfi_def_cfa_offset 20
+ 275              		@ sp needed
+ 276 008c F0BD     		pop	{r4, r5, r6, r7, pc}
+ 277              	.LVL21:
+ 278              	.L10:
+ 279              	.LCFI4:
+ 280              		.cfi_restore_state
+ 281              	.LBB7:
+  68:Middlewares/LVGL/lvgl/src/draw/lv_draw_arc.c ****         lv_draw_arc_dsc_t ds_dsc = *dsc;
+ 282              		.loc 1 68 9 is_stmt 1 view .LVU79
+  68:Middlewares/LVGL/lvgl/src/draw/lv_draw_arc.c ****         lv_draw_arc_dsc_t ds_dsc = *dsc;
+ 283              		.loc 1 68 9 view .LVU80
+  68:Middlewares/LVGL/lvgl/src/draw/lv_draw_arc.c ****         lv_draw_arc_dsc_t ds_dsc = *dsc;
+ 284              		.loc 1 68 9 view .LVU81
+  68:Middlewares/LVGL/lvgl/src/draw/lv_draw_arc.c ****         lv_draw_arc_dsc_t ds_dsc = *dsc;
+ 285              		.loc 1 68 9 view .LVU82
+  68:Middlewares/LVGL/lvgl/src/draw/lv_draw_arc.c ****         lv_draw_arc_dsc_t ds_dsc = *dsc;
+ 286              		.loc 1 68 9 view .LVU83
+ 287 008e FEE7     		b	.L10
+ 288              	.LVL22:
+ 289              	.L13:
+ 290              	.LCFI5:
+ 291              		.cfi_def_cfa_offset 0
+ 292              		.cfi_restore 4
+ 293              		.cfi_restore 5
+ 294              		.cfi_restore 6
+ 295              		.cfi_restore 7
+ 296              		.cfi_restore 14
+  68:Middlewares/LVGL/lvgl/src/draw/lv_draw_arc.c ****         lv_draw_arc_dsc_t ds_dsc = *dsc;
+ 297              		.loc 1 68 9 is_stmt 0 view .LVU84
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\cc6lJNDS.s 			page 9
+
+
+ 298 0090 7047     		bx	lr
+ 299              	.LBE7:
+ 300              		.cfi_endproc
+ 301              	.LFE202:
+ 303              		.section	.text.lv_draw_arc_get_area,"ax",%progbits
+ 304              		.align	1
+ 305              		.global	lv_draw_arc_get_area
+ 306              		.syntax unified
+ 307              		.thumb
+ 308              		.thumb_func
+ 310              	lv_draw_arc_get_area:
+ 311              	.LVL23:
+ 312              	.LFB203:
+  83:Middlewares/LVGL/lvgl/src/draw/lv_draw_arc.c **** 
+  84:Middlewares/LVGL/lvgl/src/draw/lv_draw_arc.c **** void lv_draw_arc_get_area(int32_t x, int32_t y, uint16_t radius,  lv_value_precise_t start_angle,
+  85:Middlewares/LVGL/lvgl/src/draw/lv_draw_arc.c ****                           lv_value_precise_t end_angle,
+  86:Middlewares/LVGL/lvgl/src/draw/lv_draw_arc.c ****                           int32_t w, bool rounded, lv_area_t * area)
+  87:Middlewares/LVGL/lvgl/src/draw/lv_draw_arc.c **** {
+ 313              		.loc 1 87 1 is_stmt 1 view -0
+ 314              		.cfi_startproc
+ 315              		@ args = 16, pretend = 0, frame = 16
+ 316              		@ frame_needed = 0, uses_anonymous_args = 0
+ 317              		.loc 1 87 1 is_stmt 0 view .LVU86
+ 318 0000 2DE9F04F 		push	{r4, r5, r6, r7, r8, r9, r10, fp, lr}
+ 319              	.LCFI6:
+ 320              		.cfi_def_cfa_offset 36
+ 321              		.cfi_offset 4, -36
+ 322              		.cfi_offset 5, -32
+ 323              		.cfi_offset 6, -28
+ 324              		.cfi_offset 7, -24
+ 325              		.cfi_offset 8, -20
+ 326              		.cfi_offset 9, -16
+ 327              		.cfi_offset 10, -12
+ 328              		.cfi_offset 11, -8
+ 329              		.cfi_offset 14, -4
+ 330 0004 85B0     		sub	sp, sp, #20
+ 331              	.LCFI7:
+ 332              		.cfi_def_cfa_offset 56
+ 333 0006 0746     		mov	r7, r0
+ 334 0008 8946     		mov	r9, r1
+ 335 000a 1546     		mov	r5, r2
+ 336 000c 1C46     		mov	r4, r3
+ 337 000e 0E9E     		ldr	r6, [sp, #56]
+ 338 0010 0F9B     		ldr	r3, [sp, #60]
+ 339              	.LVL24:
+ 340              		.loc 1 87 1 view .LVU87
+ 341 0012 9DF84010 		ldrb	r1, [sp, #64]	@ zero_extendqisi2
+ 342              	.LVL25:
+ 343              		.loc 1 87 1 view .LVU88
+ 344 0016 DDF844A0 		ldr	r10, [sp, #68]
+  88:Middlewares/LVGL/lvgl/src/draw/lv_draw_arc.c ****     int32_t rout = radius;
+ 345              		.loc 1 88 5 is_stmt 1 view .LVU89
+ 346              	.LVL26:
+  89:Middlewares/LVGL/lvgl/src/draw/lv_draw_arc.c ****     int32_t start_angle_int = (int32_t) start_angle;
+ 347              		.loc 1 89 5 view .LVU90
+  90:Middlewares/LVGL/lvgl/src/draw/lv_draw_arc.c ****     int32_t end_angle_int = (int32_t) end_angle;
+ 348              		.loc 1 90 5 view .LVU91
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\cc6lJNDS.s 			page 10
+
+
+  91:Middlewares/LVGL/lvgl/src/draw/lv_draw_arc.c **** 
+  92:Middlewares/LVGL/lvgl/src/draw/lv_draw_arc.c ****     /*Special case: full arc invalidation */
+  93:Middlewares/LVGL/lvgl/src/draw/lv_draw_arc.c ****     if(end_angle_int == start_angle_int + 360) {
+ 349              		.loc 1 93 5 view .LVU92
+ 350              		.loc 1 93 41 is_stmt 0 view .LVU93
+ 351 001a 04F5B472 		add	r2, r4, #360
+ 352              	.LVL27:
+ 353              		.loc 1 93 7 view .LVU94
+ 354 001e B242     		cmp	r2, r6
+ 355 0020 45D0     		beq	.L47
+  94:Middlewares/LVGL/lvgl/src/draw/lv_draw_arc.c ****         area->x1 = x - rout;
+  95:Middlewares/LVGL/lvgl/src/draw/lv_draw_arc.c ****         area->y1 = y - rout;
+  96:Middlewares/LVGL/lvgl/src/draw/lv_draw_arc.c ****         area->x2 = x + rout;
+  97:Middlewares/LVGL/lvgl/src/draw/lv_draw_arc.c ****         area->y2 = y + rout;
+  98:Middlewares/LVGL/lvgl/src/draw/lv_draw_arc.c ****         return;
+  99:Middlewares/LVGL/lvgl/src/draw/lv_draw_arc.c ****     }
+ 100:Middlewares/LVGL/lvgl/src/draw/lv_draw_arc.c **** 
+ 101:Middlewares/LVGL/lvgl/src/draw/lv_draw_arc.c ****     if(start_angle_int > 360) start_angle_int -= 360;
+ 356              		.loc 1 101 5 is_stmt 1 view .LVU95
+ 357              		.loc 1 101 7 is_stmt 0 view .LVU96
+ 358 0022 B4F5B47F 		cmp	r4, #360
+ 359 0026 01DD     		ble	.L19
+ 360              		.loc 1 101 31 is_stmt 1 discriminator 1 view .LVU97
+ 361              		.loc 1 101 47 is_stmt 0 discriminator 1 view .LVU98
+ 362 0028 A4F5B474 		sub	r4, r4, #360
+ 363              	.LVL28:
+ 364              	.L19:
+ 102:Middlewares/LVGL/lvgl/src/draw/lv_draw_arc.c ****     if(end_angle_int > 360) end_angle_int -= 360;
+ 365              		.loc 1 102 5 is_stmt 1 view .LVU99
+ 366              		.loc 1 102 7 is_stmt 0 view .LVU100
+ 367 002c B6F5B47F 		cmp	r6, #360
+ 368 0030 01DD     		ble	.L20
+ 369              		.loc 1 102 29 is_stmt 1 discriminator 1 view .LVU101
+ 370              		.loc 1 102 43 is_stmt 0 discriminator 1 view .LVU102
+ 371 0032 A6F5B476 		sub	r6, r6, #360
+ 372              	.LVL29:
+ 373              	.L20:
+ 103:Middlewares/LVGL/lvgl/src/draw/lv_draw_arc.c **** 
+ 104:Middlewares/LVGL/lvgl/src/draw/lv_draw_arc.c ****     int32_t rin = radius - w;
+ 374              		.loc 1 104 5 is_stmt 1 view .LVU103
+ 375              		.loc 1 104 13 is_stmt 0 view .LVU104
+ 376 0036 A5EB030B 		sub	fp, r5, r3
+ 377              	.LVL30:
+ 105:Middlewares/LVGL/lvgl/src/draw/lv_draw_arc.c ****     int32_t extra_area = rounded ? w / 2 + 1 : 0;
+ 378              		.loc 1 105 5 is_stmt 1 view .LVU105
+ 379              		.loc 1 105 46 is_stmt 0 view .LVU106
+ 380 003a 0029     		cmp	r1, #0
+ 381 003c 45D0     		beq	.L42
+ 382              		.loc 1 105 38 discriminator 1 view .LVU107
+ 383 003e 03EBD378 		add	r8, r3, r3, lsr #31
+ 384 0042 4FEA6808 		asr	r8, r8, #1
+ 385              		.loc 1 105 46 discriminator 1 view .LVU108
+ 386 0046 08F10108 		add	r8, r8, #1
+ 387              	.L21:
+ 388              	.LVL31:
+ 106:Middlewares/LVGL/lvgl/src/draw/lv_draw_arc.c ****     uint8_t start_quarter = start_angle_int / 90;
+ 389              		.loc 1 106 5 is_stmt 1 view .LVU109
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\cc6lJNDS.s 			page 11
+
+
+ 390              		.loc 1 106 45 is_stmt 0 view .LVU110
+ 391 004a C04A     		ldr	r2, .L55
+ 392              	.LVL32:
+ 393              		.loc 1 106 45 view .LVU111
+ 394 004c 82FB0431 		smull	r3, r1, r2, r4
+ 395 0050 2144     		add	r1, r1, r4
+ 396 0052 E317     		asrs	r3, r4, #31
+ 397 0054 C3EBA113 		rsb	r3, r3, r1, asr #6
+ 398              		.loc 1 106 13 view .LVU112
+ 399 0058 DBB2     		uxtb	r3, r3
+ 400              	.LVL33:
+ 107:Middlewares/LVGL/lvgl/src/draw/lv_draw_arc.c ****     uint8_t end_quarter = end_angle_int / 90;
+ 401              		.loc 1 107 5 is_stmt 1 view .LVU113
+ 402              		.loc 1 107 41 is_stmt 0 view .LVU114
+ 403 005a 82FB0612 		smull	r1, r2, r2, r6
+ 404 005e 9119     		adds	r1, r2, r6
+ 405 0060 F217     		asrs	r2, r6, #31
+ 406 0062 C2EBA112 		rsb	r2, r2, r1, asr #6
+ 407              		.loc 1 107 13 view .LVU115
+ 408 0066 D2B2     		uxtb	r2, r2
+ 409              	.LVL34:
+ 108:Middlewares/LVGL/lvgl/src/draw/lv_draw_arc.c **** 
+ 109:Middlewares/LVGL/lvgl/src/draw/lv_draw_arc.c ****     /*360 deg still counts as quarter 3 (360 / 90 would be 4)*/
+ 110:Middlewares/LVGL/lvgl/src/draw/lv_draw_arc.c ****     if(start_quarter == 4) start_quarter = 3;
+ 410              		.loc 1 110 5 is_stmt 1 view .LVU116
+ 411              		.loc 1 110 7 is_stmt 0 view .LVU117
+ 412 0068 042B     		cmp	r3, #4
+ 413 006a 31D0     		beq	.L48
+ 414              	.LVL35:
+ 415              	.L22:
+ 111:Middlewares/LVGL/lvgl/src/draw/lv_draw_arc.c ****     if(end_quarter == 4) end_quarter = 3;
+ 416              		.loc 1 111 5 is_stmt 1 view .LVU118
+ 417              		.loc 1 111 7 is_stmt 0 view .LVU119
+ 418 006c 042A     		cmp	r2, #4
+ 419 006e 31D0     		beq	.L49
+ 420              	.LVL36:
+ 421              	.L23:
+ 112:Middlewares/LVGL/lvgl/src/draw/lv_draw_arc.c **** 
+ 113:Middlewares/LVGL/lvgl/src/draw/lv_draw_arc.c ****     if(start_quarter == end_quarter && start_angle_int <= end_angle_int) {
+ 422              		.loc 1 113 5 is_stmt 1 view .LVU120
+ 423              		.loc 1 113 7 is_stmt 0 view .LVU121
+ 424 0070 9342     		cmp	r3, r2
+ 425 0072 31D0     		beq	.L50
+ 426              	.L24:
+ 114:Middlewares/LVGL/lvgl/src/draw/lv_draw_arc.c ****         if(start_quarter == 0) {
+ 115:Middlewares/LVGL/lvgl/src/draw/lv_draw_arc.c ****             area->y1 = y + ((lv_trigo_sin(start_angle_int) * rin) >> LV_TRIGO_SHIFT) - extra_area;
+ 116:Middlewares/LVGL/lvgl/src/draw/lv_draw_arc.c ****             area->x2 = x + ((lv_trigo_sin(start_angle_int + 90) * rout) >> LV_TRIGO_SHIFT) + extra_
+ 117:Middlewares/LVGL/lvgl/src/draw/lv_draw_arc.c **** 
+ 118:Middlewares/LVGL/lvgl/src/draw/lv_draw_arc.c ****             area->y2 = y + ((lv_trigo_sin(end_angle_int) * rout) >> LV_TRIGO_SHIFT) + extra_area;
+ 119:Middlewares/LVGL/lvgl/src/draw/lv_draw_arc.c ****             area->x1 = x + ((lv_trigo_sin(end_angle_int + 90) * rin) >> LV_TRIGO_SHIFT) - extra_are
+ 120:Middlewares/LVGL/lvgl/src/draw/lv_draw_arc.c ****         }
+ 121:Middlewares/LVGL/lvgl/src/draw/lv_draw_arc.c ****         else if(start_quarter == 1) {
+ 122:Middlewares/LVGL/lvgl/src/draw/lv_draw_arc.c ****             area->y2 = y + ((lv_trigo_sin(start_angle_int) * rout) >> LV_TRIGO_SHIFT) + extra_area;
+ 123:Middlewares/LVGL/lvgl/src/draw/lv_draw_arc.c ****             area->x2 = x + ((lv_trigo_sin(start_angle_int + 90) * rin) >> LV_TRIGO_SHIFT) + extra_a
+ 124:Middlewares/LVGL/lvgl/src/draw/lv_draw_arc.c **** 
+ 125:Middlewares/LVGL/lvgl/src/draw/lv_draw_arc.c ****             area->y1 = y + ((lv_trigo_sin(end_angle_int) * rin) >> LV_TRIGO_SHIFT) - extra_area;
+ 126:Middlewares/LVGL/lvgl/src/draw/lv_draw_arc.c ****             area->x1 = x + ((lv_trigo_sin(end_angle_int + 90) * rout) >> LV_TRIGO_SHIFT) - extra_ar
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\cc6lJNDS.s 			page 12
+
+
+ 127:Middlewares/LVGL/lvgl/src/draw/lv_draw_arc.c ****         }
+ 128:Middlewares/LVGL/lvgl/src/draw/lv_draw_arc.c ****         else if(start_quarter == 2) {
+ 129:Middlewares/LVGL/lvgl/src/draw/lv_draw_arc.c ****             area->x1 = x + ((lv_trigo_sin(start_angle_int + 90) * rout) >> LV_TRIGO_SHIFT) - extra_
+ 130:Middlewares/LVGL/lvgl/src/draw/lv_draw_arc.c ****             area->y2 = y + ((lv_trigo_sin(start_angle_int) * rin) >> LV_TRIGO_SHIFT) + extra_area;
+ 131:Middlewares/LVGL/lvgl/src/draw/lv_draw_arc.c **** 
+ 132:Middlewares/LVGL/lvgl/src/draw/lv_draw_arc.c ****             area->y1 = y + ((lv_trigo_sin(end_angle_int) * rout) >> LV_TRIGO_SHIFT) - extra_area;
+ 133:Middlewares/LVGL/lvgl/src/draw/lv_draw_arc.c ****             area->x2 = x + ((lv_trigo_sin(end_angle_int + 90) * rin) >> LV_TRIGO_SHIFT) + extra_are
+ 134:Middlewares/LVGL/lvgl/src/draw/lv_draw_arc.c ****         }
+ 135:Middlewares/LVGL/lvgl/src/draw/lv_draw_arc.c ****         else if(start_quarter == 3) {
+ 136:Middlewares/LVGL/lvgl/src/draw/lv_draw_arc.c ****             area->x1 = x + ((lv_trigo_sin(start_angle_int + 90) * rin) >> LV_TRIGO_SHIFT) - extra_a
+ 137:Middlewares/LVGL/lvgl/src/draw/lv_draw_arc.c ****             area->y1 = y + ((lv_trigo_sin(start_angle_int) * rout) >> LV_TRIGO_SHIFT) - extra_area;
+ 138:Middlewares/LVGL/lvgl/src/draw/lv_draw_arc.c **** 
+ 139:Middlewares/LVGL/lvgl/src/draw/lv_draw_arc.c ****             area->x2 = x + ((lv_trigo_sin(end_angle_int + 90) * rout) >> LV_TRIGO_SHIFT) + extra_ar
+ 140:Middlewares/LVGL/lvgl/src/draw/lv_draw_arc.c ****             area->y2 = y + ((lv_trigo_sin(end_angle_int) * rin) >> LV_TRIGO_SHIFT) + extra_area;
+ 141:Middlewares/LVGL/lvgl/src/draw/lv_draw_arc.c ****         }
+ 142:Middlewares/LVGL/lvgl/src/draw/lv_draw_arc.c ****     }
+ 143:Middlewares/LVGL/lvgl/src/draw/lv_draw_arc.c ****     else if(start_quarter == 0 && end_quarter == 1) {
+ 427              		.loc 1 143 10 is_stmt 1 view .LVU122
+ 428              		.loc 1 143 12 is_stmt 0 view .LVU123
+ 429 0074 13B9     		cbnz	r3, .L30
+ 430              		.loc 1 143 32 discriminator 1 view .LVU124
+ 431 0076 012A     		cmp	r2, #1
+ 432 0078 00F0F280 		beq	.L51
+ 433              	.L30:
+ 144:Middlewares/LVGL/lvgl/src/draw/lv_draw_arc.c ****         area->x1 = x + ((lv_trigo_sin(end_angle_int + 90) * rout) >> LV_TRIGO_SHIFT) - extra_area;
+ 145:Middlewares/LVGL/lvgl/src/draw/lv_draw_arc.c ****         area->y1 = y + ((LV_MIN(lv_trigo_sin(end_angle_int),
+ 146:Middlewares/LVGL/lvgl/src/draw/lv_draw_arc.c ****                                 lv_trigo_sin(start_angle_int))  * rin) >> LV_TRIGO_SHIFT) - extra_a
+ 147:Middlewares/LVGL/lvgl/src/draw/lv_draw_arc.c ****         area->x2 = x + ((lv_trigo_sin(start_angle_int + 90) * rout) >> LV_TRIGO_SHIFT) + extra_area
+ 148:Middlewares/LVGL/lvgl/src/draw/lv_draw_arc.c ****         area->y2 = y + rout + extra_area;
+ 149:Middlewares/LVGL/lvgl/src/draw/lv_draw_arc.c ****     }
+ 150:Middlewares/LVGL/lvgl/src/draw/lv_draw_arc.c ****     else if(start_quarter == 1 && end_quarter == 2) {
+ 434              		.loc 1 150 10 is_stmt 1 view .LVU125
+ 435              		.loc 1 150 12 is_stmt 0 view .LVU126
+ 436 007c 012B     		cmp	r3, #1
+ 437 007e 00F02981 		beq	.L52
+ 438              	.L33:
+ 151:Middlewares/LVGL/lvgl/src/draw/lv_draw_arc.c ****         area->x1 = x - rout - extra_area;
+ 152:Middlewares/LVGL/lvgl/src/draw/lv_draw_arc.c ****         area->y1 = y + ((lv_trigo_sin(end_angle_int) * rout) >> LV_TRIGO_SHIFT) - extra_area;
+ 153:Middlewares/LVGL/lvgl/src/draw/lv_draw_arc.c ****         area->x2 = x + ((LV_MAX(lv_trigo_sin(start_angle_int + 90),
+ 154:Middlewares/LVGL/lvgl/src/draw/lv_draw_arc.c ****                                 lv_trigo_sin(end_angle_int + 90)) * rin) >> LV_TRIGO_SHIFT) + extra
+ 155:Middlewares/LVGL/lvgl/src/draw/lv_draw_arc.c ****         area->y2 = y + ((lv_trigo_sin(start_angle_int) * rout) >> LV_TRIGO_SHIFT) + extra_area;
+ 156:Middlewares/LVGL/lvgl/src/draw/lv_draw_arc.c ****     }
+ 157:Middlewares/LVGL/lvgl/src/draw/lv_draw_arc.c ****     else if(start_quarter == 2 && end_quarter == 3) {
+ 439              		.loc 1 157 10 is_stmt 1 view .LVU127
+ 440              		.loc 1 157 12 is_stmt 0 view .LVU128
+ 441 0082 022B     		cmp	r3, #2
+ 442 0084 00F06481 		beq	.L53
+ 443              	.L36:
+ 158:Middlewares/LVGL/lvgl/src/draw/lv_draw_arc.c ****         area->x1 = x + ((lv_trigo_sin(start_angle_int + 90) * rout) >> LV_TRIGO_SHIFT) - extra_area
+ 159:Middlewares/LVGL/lvgl/src/draw/lv_draw_arc.c ****         area->y1 = y - rout - extra_area;
+ 160:Middlewares/LVGL/lvgl/src/draw/lv_draw_arc.c ****         area->x2 = x + ((lv_trigo_sin(end_angle_int + 90) * rout) >> LV_TRIGO_SHIFT) + extra_area;
+ 161:Middlewares/LVGL/lvgl/src/draw/lv_draw_arc.c ****         area->y2 = y + (LV_MAX(lv_trigo_sin(end_angle_int) * rin,
+ 162:Middlewares/LVGL/lvgl/src/draw/lv_draw_arc.c ****                                lv_trigo_sin(start_angle_int) * rin) >> LV_TRIGO_SHIFT) + extra_area
+ 163:Middlewares/LVGL/lvgl/src/draw/lv_draw_arc.c ****     }
+ 164:Middlewares/LVGL/lvgl/src/draw/lv_draw_arc.c ****     else if(start_quarter == 3 && end_quarter == 0) {
+ 444              		.loc 1 164 10 is_stmt 1 view .LVU129
+ 445              		.loc 1 164 12 is_stmt 0 view .LVU130
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\cc6lJNDS.s 			page 13
+
+
+ 446 0088 032B     		cmp	r3, #3
+ 447 008a 00F0A381 		beq	.L54
+ 448              	.L39:
+ 165:Middlewares/LVGL/lvgl/src/draw/lv_draw_arc.c ****         area->x1 = x + ((LV_MIN(lv_trigo_sin(end_angle_int + 90),
+ 166:Middlewares/LVGL/lvgl/src/draw/lv_draw_arc.c ****                                 lv_trigo_sin(start_angle_int + 90)) * rin) >> LV_TRIGO_SHIFT) - ext
+ 167:Middlewares/LVGL/lvgl/src/draw/lv_draw_arc.c ****         area->y1 = y + ((lv_trigo_sin(start_angle_int) * rout) >> LV_TRIGO_SHIFT) - extra_area;
+ 168:Middlewares/LVGL/lvgl/src/draw/lv_draw_arc.c ****         area->x2 = x + rout + extra_area;
+ 169:Middlewares/LVGL/lvgl/src/draw/lv_draw_arc.c ****         area->y2 = y + ((lv_trigo_sin(end_angle_int) * rout) >> LV_TRIGO_SHIFT) + extra_area;
+ 170:Middlewares/LVGL/lvgl/src/draw/lv_draw_arc.c **** 
+ 171:Middlewares/LVGL/lvgl/src/draw/lv_draw_arc.c ****     }
+ 172:Middlewares/LVGL/lvgl/src/draw/lv_draw_arc.c ****     else {
+ 173:Middlewares/LVGL/lvgl/src/draw/lv_draw_arc.c ****         area->x1 = x - rout;
+ 449              		.loc 1 173 9 is_stmt 1 view .LVU131
+ 450              		.loc 1 173 22 is_stmt 0 view .LVU132
+ 451 008e 7B1B     		subs	r3, r7, r5
+ 452              	.LVL37:
+ 453              		.loc 1 173 18 view .LVU133
+ 454 0090 CAF80030 		str	r3, [r10]
+ 174:Middlewares/LVGL/lvgl/src/draw/lv_draw_arc.c ****         area->y1 = y - rout;
+ 455              		.loc 1 174 9 is_stmt 1 view .LVU134
+ 456              		.loc 1 174 22 is_stmt 0 view .LVU135
+ 457 0094 A9EB0503 		sub	r3, r9, r5
+ 458              		.loc 1 174 18 view .LVU136
+ 459 0098 CAF80430 		str	r3, [r10, #4]
+ 175:Middlewares/LVGL/lvgl/src/draw/lv_draw_arc.c ****         area->x2 = x + rout;
+ 460              		.loc 1 175 9 is_stmt 1 view .LVU137
+ 461              		.loc 1 175 22 is_stmt 0 view .LVU138
+ 462 009c 2F44     		add	r7, r7, r5
+ 463              		.loc 1 175 18 view .LVU139
+ 464 009e CAF80870 		str	r7, [r10, #8]
+ 176:Middlewares/LVGL/lvgl/src/draw/lv_draw_arc.c ****         area->y2 = y + rout;
+ 465              		.loc 1 176 9 is_stmt 1 view .LVU140
+ 466              		.loc 1 176 22 is_stmt 0 view .LVU141
+ 467 00a2 4D44     		add	r5, r5, r9
+ 468              	.LVL38:
+ 469              		.loc 1 176 18 view .LVU142
+ 470 00a4 CAF80C50 		str	r5, [r10, #12]
+ 471              	.LVL39:
+ 472              	.L16:
+ 177:Middlewares/LVGL/lvgl/src/draw/lv_draw_arc.c ****     }
+ 178:Middlewares/LVGL/lvgl/src/draw/lv_draw_arc.c **** }
+ 473              		.loc 1 178 1 view .LVU143
+ 474 00a8 05B0     		add	sp, sp, #20
+ 475              	.LCFI8:
+ 476              		.cfi_remember_state
+ 477              		.cfi_def_cfa_offset 36
+ 478              		@ sp needed
+ 479 00aa BDE8F08F 		pop	{r4, r5, r6, r7, r8, r9, r10, fp, pc}
+ 480              	.LVL40:
+ 481              	.L47:
+ 482              	.LCFI9:
+ 483              		.cfi_restore_state
+  94:Middlewares/LVGL/lvgl/src/draw/lv_draw_arc.c ****         area->y1 = y - rout;
+ 484              		.loc 1 94 9 is_stmt 1 view .LVU144
+  94:Middlewares/LVGL/lvgl/src/draw/lv_draw_arc.c ****         area->y1 = y - rout;
+ 485              		.loc 1 94 22 is_stmt 0 view .LVU145
+ 486 00ae 431B     		subs	r3, r0, r5
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\cc6lJNDS.s 			page 14
+
+
+  94:Middlewares/LVGL/lvgl/src/draw/lv_draw_arc.c ****         area->y1 = y - rout;
+ 487              		.loc 1 94 18 view .LVU146
+ 488 00b0 CAF80030 		str	r3, [r10]
+  95:Middlewares/LVGL/lvgl/src/draw/lv_draw_arc.c ****         area->x2 = x + rout;
+ 489              		.loc 1 95 9 is_stmt 1 view .LVU147
+  95:Middlewares/LVGL/lvgl/src/draw/lv_draw_arc.c ****         area->x2 = x + rout;
+ 490              		.loc 1 95 22 is_stmt 0 view .LVU148
+ 491 00b4 A9EB0503 		sub	r3, r9, r5
+  95:Middlewares/LVGL/lvgl/src/draw/lv_draw_arc.c ****         area->x2 = x + rout;
+ 492              		.loc 1 95 18 view .LVU149
+ 493 00b8 CAF80430 		str	r3, [r10, #4]
+  96:Middlewares/LVGL/lvgl/src/draw/lv_draw_arc.c ****         area->y2 = y + rout;
+ 494              		.loc 1 96 9 is_stmt 1 view .LVU150
+  96:Middlewares/LVGL/lvgl/src/draw/lv_draw_arc.c ****         area->y2 = y + rout;
+ 495              		.loc 1 96 22 is_stmt 0 view .LVU151
+ 496 00bc 2F44     		add	r7, r7, r5
+  96:Middlewares/LVGL/lvgl/src/draw/lv_draw_arc.c ****         area->y2 = y + rout;
+ 497              		.loc 1 96 18 view .LVU152
+ 498 00be CAF80870 		str	r7, [r10, #8]
+  97:Middlewares/LVGL/lvgl/src/draw/lv_draw_arc.c ****         return;
+ 499              		.loc 1 97 9 is_stmt 1 view .LVU153
+  97:Middlewares/LVGL/lvgl/src/draw/lv_draw_arc.c ****         return;
+ 500              		.loc 1 97 22 is_stmt 0 view .LVU154
+ 501 00c2 4D44     		add	r5, r5, r9
+ 502              	.LVL41:
+  97:Middlewares/LVGL/lvgl/src/draw/lv_draw_arc.c ****         return;
+ 503              		.loc 1 97 18 view .LVU155
+ 504 00c4 CAF80C50 		str	r5, [r10, #12]
+  98:Middlewares/LVGL/lvgl/src/draw/lv_draw_arc.c ****     }
+ 505              		.loc 1 98 9 is_stmt 1 view .LVU156
+ 506 00c8 EEE7     		b	.L16
+ 507              	.LVL42:
+ 508              	.L42:
+ 105:Middlewares/LVGL/lvgl/src/draw/lv_draw_arc.c ****     uint8_t start_quarter = start_angle_int / 90;
+ 509              		.loc 1 105 46 is_stmt 0 discriminator 2 view .LVU157
+ 510 00ca 4FF00008 		mov	r8, #0
+ 511 00ce BCE7     		b	.L21
+ 512              	.LVL43:
+ 513              	.L48:
+ 110:Middlewares/LVGL/lvgl/src/draw/lv_draw_arc.c ****     if(end_quarter == 4) end_quarter = 3;
+ 514              		.loc 1 110 42 discriminator 1 view .LVU158
+ 515 00d0 0323     		movs	r3, #3
+ 516              	.LVL44:
+ 110:Middlewares/LVGL/lvgl/src/draw/lv_draw_arc.c ****     if(end_quarter == 4) end_quarter = 3;
+ 517              		.loc 1 110 42 discriminator 1 view .LVU159
+ 518 00d2 CBE7     		b	.L22
+ 519              	.LVL45:
+ 520              	.L49:
+ 111:Middlewares/LVGL/lvgl/src/draw/lv_draw_arc.c **** 
+ 521              		.loc 1 111 38 discriminator 1 view .LVU160
+ 522 00d4 0322     		movs	r2, #3
+ 523              	.LVL46:
+ 111:Middlewares/LVGL/lvgl/src/draw/lv_draw_arc.c **** 
+ 524              		.loc 1 111 38 discriminator 1 view .LVU161
+ 525 00d6 CBE7     		b	.L23
+ 526              	.LVL47:
+ 527              	.L50:
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\cc6lJNDS.s 			page 15
+
+
+ 113:Middlewares/LVGL/lvgl/src/draw/lv_draw_arc.c ****         if(start_quarter == 0) {
+ 528              		.loc 1 113 37 discriminator 1 view .LVU162
+ 529 00d8 B442     		cmp	r4, r6
+ 530 00da CBDC     		bgt	.L24
+ 114:Middlewares/LVGL/lvgl/src/draw/lv_draw_arc.c ****             area->y1 = y + ((lv_trigo_sin(start_angle_int) * rin) >> LV_TRIGO_SHIFT) - extra_area;
+ 531              		.loc 1 114 9 is_stmt 1 view .LVU163
+ 532 00dc 032B     		cmp	r3, #3
+ 533 00de E3D8     		bhi	.L16
+ 534 00e0 DFE803F0 		tbb	[pc, r3]
+ 535              	.LVL48:
+ 536              	.L26:
+ 537 00e4 02       		.byte	(.L29-.L26)/2
+ 538 00e5 31       		.byte	(.L28-.L26)/2
+ 539 00e6 60       		.byte	(.L27-.L26)/2
+ 540 00e7 8F       		.byte	(.L25-.L26)/2
+ 541              		.p2align 1
+ 542              	.L29:
+ 115:Middlewares/LVGL/lvgl/src/draw/lv_draw_arc.c ****             area->x2 = x + ((lv_trigo_sin(start_angle_int + 90) * rout) >> LV_TRIGO_SHIFT) + extra_
+ 543              		.loc 1 115 13 view .LVU164
+ 115:Middlewares/LVGL/lvgl/src/draw/lv_draw_arc.c ****             area->x2 = x + ((lv_trigo_sin(start_angle_int + 90) * rout) >> LV_TRIGO_SHIFT) + extra_
+ 544              		.loc 1 115 30 is_stmt 0 view .LVU165
+ 545 00e8 20B2     		sxth	r0, r4
+ 546              	.LVL49:
+ 115:Middlewares/LVGL/lvgl/src/draw/lv_draw_arc.c ****             area->x2 = x + ((lv_trigo_sin(start_angle_int + 90) * rout) >> LV_TRIGO_SHIFT) + extra_
+ 547              		.loc 1 115 30 view .LVU166
+ 548 00ea FFF7FEFF 		bl	lv_trigo_sin
+ 549              	.LVL50:
+ 115:Middlewares/LVGL/lvgl/src/draw/lv_draw_arc.c ****             area->x2 = x + ((lv_trigo_sin(start_angle_int + 90) * rout) >> LV_TRIGO_SHIFT) + extra_
+ 550              		.loc 1 115 60 discriminator 1 view .LVU167
+ 551 00ee 0BFB00F3 		mul	r3, fp, r0
+ 115:Middlewares/LVGL/lvgl/src/draw/lv_draw_arc.c ****             area->x2 = x + ((lv_trigo_sin(start_angle_int + 90) * rout) >> LV_TRIGO_SHIFT) + extra_
+ 552              		.loc 1 115 26 discriminator 1 view .LVU168
+ 553 00f2 09EBE333 		add	r3, r9, r3, asr #15
+ 115:Middlewares/LVGL/lvgl/src/draw/lv_draw_arc.c ****             area->x2 = x + ((lv_trigo_sin(start_angle_int + 90) * rout) >> LV_TRIGO_SHIFT) + extra_
+ 554              		.loc 1 115 86 discriminator 1 view .LVU169
+ 555 00f6 A3EB0803 		sub	r3, r3, r8
+ 115:Middlewares/LVGL/lvgl/src/draw/lv_draw_arc.c ****             area->x2 = x + ((lv_trigo_sin(start_angle_int + 90) * rout) >> LV_TRIGO_SHIFT) + extra_
+ 556              		.loc 1 115 22 discriminator 1 view .LVU170
+ 557 00fa CAF80430 		str	r3, [r10, #4]
+ 116:Middlewares/LVGL/lvgl/src/draw/lv_draw_arc.c **** 
+ 558              		.loc 1 116 13 is_stmt 1 view .LVU171
+ 116:Middlewares/LVGL/lvgl/src/draw/lv_draw_arc.c **** 
+ 559              		.loc 1 116 59 is_stmt 0 view .LVU172
+ 560 00fe 04F15A00 		add	r0, r4, #90
+ 116:Middlewares/LVGL/lvgl/src/draw/lv_draw_arc.c **** 
+ 561              		.loc 1 116 30 view .LVU173
+ 562 0102 00B2     		sxth	r0, r0
+ 563 0104 FFF7FEFF 		bl	lv_trigo_sin
+ 564              	.LVL51:
+ 116:Middlewares/LVGL/lvgl/src/draw/lv_draw_arc.c **** 
+ 565              		.loc 1 116 65 discriminator 1 view .LVU174
+ 566 0108 05FB00F3 		mul	r3, r5, r0
+ 116:Middlewares/LVGL/lvgl/src/draw/lv_draw_arc.c **** 
+ 567              		.loc 1 116 26 discriminator 1 view .LVU175
+ 568 010c 07EBE333 		add	r3, r7, r3, asr #15
+ 116:Middlewares/LVGL/lvgl/src/draw/lv_draw_arc.c **** 
+ 569              		.loc 1 116 92 discriminator 1 view .LVU176
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\cc6lJNDS.s 			page 16
+
+
+ 570 0110 4344     		add	r3, r3, r8
+ 116:Middlewares/LVGL/lvgl/src/draw/lv_draw_arc.c **** 
+ 571              		.loc 1 116 22 discriminator 1 view .LVU177
+ 572 0112 CAF80830 		str	r3, [r10, #8]
+ 118:Middlewares/LVGL/lvgl/src/draw/lv_draw_arc.c ****             area->x1 = x + ((lv_trigo_sin(end_angle_int + 90) * rin) >> LV_TRIGO_SHIFT) - extra_are
+ 573              		.loc 1 118 13 is_stmt 1 view .LVU178
+ 118:Middlewares/LVGL/lvgl/src/draw/lv_draw_arc.c ****             area->x1 = x + ((lv_trigo_sin(end_angle_int + 90) * rin) >> LV_TRIGO_SHIFT) - extra_are
+ 574              		.loc 1 118 30 is_stmt 0 view .LVU179
+ 575 0116 30B2     		sxth	r0, r6
+ 576 0118 FFF7FEFF 		bl	lv_trigo_sin
+ 577              	.LVL52:
+ 118:Middlewares/LVGL/lvgl/src/draw/lv_draw_arc.c ****             area->x1 = x + ((lv_trigo_sin(end_angle_int + 90) * rin) >> LV_TRIGO_SHIFT) - extra_are
+ 578              		.loc 1 118 58 discriminator 1 view .LVU180
+ 579 011c 05FB00F3 		mul	r3, r5, r0
+ 118:Middlewares/LVGL/lvgl/src/draw/lv_draw_arc.c ****             area->x1 = x + ((lv_trigo_sin(end_angle_int + 90) * rin) >> LV_TRIGO_SHIFT) - extra_are
+ 580              		.loc 1 118 26 discriminator 1 view .LVU181
+ 581 0120 09EBE333 		add	r3, r9, r3, asr #15
+ 118:Middlewares/LVGL/lvgl/src/draw/lv_draw_arc.c ****             area->x1 = x + ((lv_trigo_sin(end_angle_int + 90) * rin) >> LV_TRIGO_SHIFT) - extra_are
+ 582              		.loc 1 118 85 discriminator 1 view .LVU182
+ 583 0124 4344     		add	r3, r3, r8
+ 118:Middlewares/LVGL/lvgl/src/draw/lv_draw_arc.c ****             area->x1 = x + ((lv_trigo_sin(end_angle_int + 90) * rin) >> LV_TRIGO_SHIFT) - extra_are
+ 584              		.loc 1 118 22 discriminator 1 view .LVU183
+ 585 0126 CAF80C30 		str	r3, [r10, #12]
+ 119:Middlewares/LVGL/lvgl/src/draw/lv_draw_arc.c ****         }
+ 586              		.loc 1 119 13 is_stmt 1 view .LVU184
+ 119:Middlewares/LVGL/lvgl/src/draw/lv_draw_arc.c ****         }
+ 587              		.loc 1 119 57 is_stmt 0 view .LVU185
+ 588 012a 06F15A00 		add	r0, r6, #90
+ 119:Middlewares/LVGL/lvgl/src/draw/lv_draw_arc.c ****         }
+ 589              		.loc 1 119 30 view .LVU186
+ 590 012e 00B2     		sxth	r0, r0
+ 591 0130 FFF7FEFF 		bl	lv_trigo_sin
+ 592              	.LVL53:
+ 119:Middlewares/LVGL/lvgl/src/draw/lv_draw_arc.c ****         }
+ 593              		.loc 1 119 63 discriminator 1 view .LVU187
+ 594 0134 0BFB00F3 		mul	r3, fp, r0
+ 119:Middlewares/LVGL/lvgl/src/draw/lv_draw_arc.c ****         }
+ 595              		.loc 1 119 26 discriminator 1 view .LVU188
+ 596 0138 07EBE333 		add	r3, r7, r3, asr #15
+ 119:Middlewares/LVGL/lvgl/src/draw/lv_draw_arc.c ****         }
+ 597              		.loc 1 119 89 discriminator 1 view .LVU189
+ 598 013c A3EB0803 		sub	r3, r3, r8
+ 119:Middlewares/LVGL/lvgl/src/draw/lv_draw_arc.c ****         }
+ 599              		.loc 1 119 22 discriminator 1 view .LVU190
+ 600 0140 CAF80030 		str	r3, [r10]
+ 601 0144 B0E7     		b	.L16
+ 602              	.LVL54:
+ 603              	.L28:
+ 122:Middlewares/LVGL/lvgl/src/draw/lv_draw_arc.c ****             area->x2 = x + ((lv_trigo_sin(start_angle_int + 90) * rin) >> LV_TRIGO_SHIFT) + extra_a
+ 604              		.loc 1 122 13 is_stmt 1 view .LVU191
+ 122:Middlewares/LVGL/lvgl/src/draw/lv_draw_arc.c ****             area->x2 = x + ((lv_trigo_sin(start_angle_int + 90) * rin) >> LV_TRIGO_SHIFT) + extra_a
+ 605              		.loc 1 122 30 is_stmt 0 view .LVU192
+ 606 0146 20B2     		sxth	r0, r4
+ 607              	.LVL55:
+ 122:Middlewares/LVGL/lvgl/src/draw/lv_draw_arc.c ****             area->x2 = x + ((lv_trigo_sin(start_angle_int + 90) * rin) >> LV_TRIGO_SHIFT) + extra_a
+ 608              		.loc 1 122 30 view .LVU193
+ 609 0148 FFF7FEFF 		bl	lv_trigo_sin
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\cc6lJNDS.s 			page 17
+
+
+ 610              	.LVL56:
+ 122:Middlewares/LVGL/lvgl/src/draw/lv_draw_arc.c ****             area->x2 = x + ((lv_trigo_sin(start_angle_int + 90) * rin) >> LV_TRIGO_SHIFT) + extra_a
+ 611              		.loc 1 122 60 discriminator 1 view .LVU194
+ 612 014c 05FB00F3 		mul	r3, r5, r0
+ 122:Middlewares/LVGL/lvgl/src/draw/lv_draw_arc.c ****             area->x2 = x + ((lv_trigo_sin(start_angle_int + 90) * rin) >> LV_TRIGO_SHIFT) + extra_a
+ 613              		.loc 1 122 26 discriminator 1 view .LVU195
+ 614 0150 09EBE333 		add	r3, r9, r3, asr #15
+ 122:Middlewares/LVGL/lvgl/src/draw/lv_draw_arc.c ****             area->x2 = x + ((lv_trigo_sin(start_angle_int + 90) * rin) >> LV_TRIGO_SHIFT) + extra_a
+ 615              		.loc 1 122 87 discriminator 1 view .LVU196
+ 616 0154 4344     		add	r3, r3, r8
+ 122:Middlewares/LVGL/lvgl/src/draw/lv_draw_arc.c ****             area->x2 = x + ((lv_trigo_sin(start_angle_int + 90) * rin) >> LV_TRIGO_SHIFT) + extra_a
+ 617              		.loc 1 122 22 discriminator 1 view .LVU197
+ 618 0156 CAF80C30 		str	r3, [r10, #12]
+ 123:Middlewares/LVGL/lvgl/src/draw/lv_draw_arc.c **** 
+ 619              		.loc 1 123 13 is_stmt 1 view .LVU198
+ 123:Middlewares/LVGL/lvgl/src/draw/lv_draw_arc.c **** 
+ 620              		.loc 1 123 59 is_stmt 0 view .LVU199
+ 621 015a 04F15A00 		add	r0, r4, #90
+ 123:Middlewares/LVGL/lvgl/src/draw/lv_draw_arc.c **** 
+ 622              		.loc 1 123 30 view .LVU200
+ 623 015e 00B2     		sxth	r0, r0
+ 624 0160 FFF7FEFF 		bl	lv_trigo_sin
+ 625              	.LVL57:
+ 123:Middlewares/LVGL/lvgl/src/draw/lv_draw_arc.c **** 
+ 626              		.loc 1 123 65 discriminator 1 view .LVU201
+ 627 0164 0BFB00F3 		mul	r3, fp, r0
+ 123:Middlewares/LVGL/lvgl/src/draw/lv_draw_arc.c **** 
+ 628              		.loc 1 123 26 discriminator 1 view .LVU202
+ 629 0168 07EBE333 		add	r3, r7, r3, asr #15
+ 123:Middlewares/LVGL/lvgl/src/draw/lv_draw_arc.c **** 
+ 630              		.loc 1 123 91 discriminator 1 view .LVU203
+ 631 016c 4344     		add	r3, r3, r8
+ 123:Middlewares/LVGL/lvgl/src/draw/lv_draw_arc.c **** 
+ 632              		.loc 1 123 22 discriminator 1 view .LVU204
+ 633 016e CAF80830 		str	r3, [r10, #8]
+ 125:Middlewares/LVGL/lvgl/src/draw/lv_draw_arc.c ****             area->x1 = x + ((lv_trigo_sin(end_angle_int + 90) * rout) >> LV_TRIGO_SHIFT) - extra_ar
+ 634              		.loc 1 125 13 is_stmt 1 view .LVU205
+ 125:Middlewares/LVGL/lvgl/src/draw/lv_draw_arc.c ****             area->x1 = x + ((lv_trigo_sin(end_angle_int + 90) * rout) >> LV_TRIGO_SHIFT) - extra_ar
+ 635              		.loc 1 125 30 is_stmt 0 view .LVU206
+ 636 0172 30B2     		sxth	r0, r6
+ 637 0174 FFF7FEFF 		bl	lv_trigo_sin
+ 638              	.LVL58:
+ 125:Middlewares/LVGL/lvgl/src/draw/lv_draw_arc.c ****             area->x1 = x + ((lv_trigo_sin(end_angle_int + 90) * rout) >> LV_TRIGO_SHIFT) - extra_ar
+ 639              		.loc 1 125 58 discriminator 1 view .LVU207
+ 640 0178 0BFB00F3 		mul	r3, fp, r0
+ 125:Middlewares/LVGL/lvgl/src/draw/lv_draw_arc.c ****             area->x1 = x + ((lv_trigo_sin(end_angle_int + 90) * rout) >> LV_TRIGO_SHIFT) - extra_ar
+ 641              		.loc 1 125 26 discriminator 1 view .LVU208
+ 642 017c 09EBE333 		add	r3, r9, r3, asr #15
+ 125:Middlewares/LVGL/lvgl/src/draw/lv_draw_arc.c ****             area->x1 = x + ((lv_trigo_sin(end_angle_int + 90) * rout) >> LV_TRIGO_SHIFT) - extra_ar
+ 643              		.loc 1 125 84 discriminator 1 view .LVU209
+ 644 0180 A3EB0803 		sub	r3, r3, r8
+ 125:Middlewares/LVGL/lvgl/src/draw/lv_draw_arc.c ****             area->x1 = x + ((lv_trigo_sin(end_angle_int + 90) * rout) >> LV_TRIGO_SHIFT) - extra_ar
+ 645              		.loc 1 125 22 discriminator 1 view .LVU210
+ 646 0184 CAF80430 		str	r3, [r10, #4]
+ 126:Middlewares/LVGL/lvgl/src/draw/lv_draw_arc.c ****         }
+ 647              		.loc 1 126 13 is_stmt 1 view .LVU211
+ 126:Middlewares/LVGL/lvgl/src/draw/lv_draw_arc.c ****         }
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\cc6lJNDS.s 			page 18
+
+
+ 648              		.loc 1 126 57 is_stmt 0 view .LVU212
+ 649 0188 06F15A00 		add	r0, r6, #90
+ 126:Middlewares/LVGL/lvgl/src/draw/lv_draw_arc.c ****         }
+ 650              		.loc 1 126 30 view .LVU213
+ 651 018c 00B2     		sxth	r0, r0
+ 652 018e FFF7FEFF 		bl	lv_trigo_sin
+ 653              	.LVL59:
+ 126:Middlewares/LVGL/lvgl/src/draw/lv_draw_arc.c ****         }
+ 654              		.loc 1 126 63 discriminator 1 view .LVU214
+ 655 0192 05FB00F3 		mul	r3, r5, r0
+ 126:Middlewares/LVGL/lvgl/src/draw/lv_draw_arc.c ****         }
+ 656              		.loc 1 126 26 discriminator 1 view .LVU215
+ 657 0196 07EBE333 		add	r3, r7, r3, asr #15
+ 126:Middlewares/LVGL/lvgl/src/draw/lv_draw_arc.c ****         }
+ 658              		.loc 1 126 90 discriminator 1 view .LVU216
+ 659 019a A3EB0803 		sub	r3, r3, r8
+ 126:Middlewares/LVGL/lvgl/src/draw/lv_draw_arc.c ****         }
+ 660              		.loc 1 126 22 discriminator 1 view .LVU217
+ 661 019e CAF80030 		str	r3, [r10]
+ 662 01a2 81E7     		b	.L16
+ 663              	.LVL60:
+ 664              	.L27:
+ 129:Middlewares/LVGL/lvgl/src/draw/lv_draw_arc.c ****             area->y2 = y + ((lv_trigo_sin(start_angle_int) * rin) >> LV_TRIGO_SHIFT) + extra_area;
+ 665              		.loc 1 129 13 is_stmt 1 view .LVU218
+ 129:Middlewares/LVGL/lvgl/src/draw/lv_draw_arc.c ****             area->y2 = y + ((lv_trigo_sin(start_angle_int) * rin) >> LV_TRIGO_SHIFT) + extra_area;
+ 666              		.loc 1 129 59 is_stmt 0 view .LVU219
+ 667 01a4 04F15A00 		add	r0, r4, #90
+ 668              	.LVL61:
+ 129:Middlewares/LVGL/lvgl/src/draw/lv_draw_arc.c ****             area->y2 = y + ((lv_trigo_sin(start_angle_int) * rin) >> LV_TRIGO_SHIFT) + extra_area;
+ 669              		.loc 1 129 30 view .LVU220
+ 670 01a8 00B2     		sxth	r0, r0
+ 671 01aa FFF7FEFF 		bl	lv_trigo_sin
+ 672              	.LVL62:
+ 129:Middlewares/LVGL/lvgl/src/draw/lv_draw_arc.c ****             area->y2 = y + ((lv_trigo_sin(start_angle_int) * rin) >> LV_TRIGO_SHIFT) + extra_area;
+ 673              		.loc 1 129 65 discriminator 1 view .LVU221
+ 674 01ae 05FB00F3 		mul	r3, r5, r0
+ 129:Middlewares/LVGL/lvgl/src/draw/lv_draw_arc.c ****             area->y2 = y + ((lv_trigo_sin(start_angle_int) * rin) >> LV_TRIGO_SHIFT) + extra_area;
+ 675              		.loc 1 129 26 discriminator 1 view .LVU222
+ 676 01b2 07EBE333 		add	r3, r7, r3, asr #15
+ 129:Middlewares/LVGL/lvgl/src/draw/lv_draw_arc.c ****             area->y2 = y + ((lv_trigo_sin(start_angle_int) * rin) >> LV_TRIGO_SHIFT) + extra_area;
+ 677              		.loc 1 129 92 discriminator 1 view .LVU223
+ 678 01b6 A3EB0803 		sub	r3, r3, r8
+ 129:Middlewares/LVGL/lvgl/src/draw/lv_draw_arc.c ****             area->y2 = y + ((lv_trigo_sin(start_angle_int) * rin) >> LV_TRIGO_SHIFT) + extra_area;
+ 679              		.loc 1 129 22 discriminator 1 view .LVU224
+ 680 01ba CAF80030 		str	r3, [r10]
+ 130:Middlewares/LVGL/lvgl/src/draw/lv_draw_arc.c **** 
+ 681              		.loc 1 130 13 is_stmt 1 view .LVU225
+ 130:Middlewares/LVGL/lvgl/src/draw/lv_draw_arc.c **** 
+ 682              		.loc 1 130 30 is_stmt 0 view .LVU226
+ 683 01be 20B2     		sxth	r0, r4
+ 684 01c0 FFF7FEFF 		bl	lv_trigo_sin
+ 685              	.LVL63:
+ 130:Middlewares/LVGL/lvgl/src/draw/lv_draw_arc.c **** 
+ 686              		.loc 1 130 60 discriminator 1 view .LVU227
+ 687 01c4 0BFB00F3 		mul	r3, fp, r0
+ 130:Middlewares/LVGL/lvgl/src/draw/lv_draw_arc.c **** 
+ 688              		.loc 1 130 26 discriminator 1 view .LVU228
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\cc6lJNDS.s 			page 19
+
+
+ 689 01c8 09EBE333 		add	r3, r9, r3, asr #15
+ 130:Middlewares/LVGL/lvgl/src/draw/lv_draw_arc.c **** 
+ 690              		.loc 1 130 86 discriminator 1 view .LVU229
+ 691 01cc 4344     		add	r3, r3, r8
+ 130:Middlewares/LVGL/lvgl/src/draw/lv_draw_arc.c **** 
+ 692              		.loc 1 130 22 discriminator 1 view .LVU230
+ 693 01ce CAF80C30 		str	r3, [r10, #12]
+ 132:Middlewares/LVGL/lvgl/src/draw/lv_draw_arc.c ****             area->x2 = x + ((lv_trigo_sin(end_angle_int + 90) * rin) >> LV_TRIGO_SHIFT) + extra_are
+ 694              		.loc 1 132 13 is_stmt 1 view .LVU231
+ 132:Middlewares/LVGL/lvgl/src/draw/lv_draw_arc.c ****             area->x2 = x + ((lv_trigo_sin(end_angle_int + 90) * rin) >> LV_TRIGO_SHIFT) + extra_are
+ 695              		.loc 1 132 30 is_stmt 0 view .LVU232
+ 696 01d2 30B2     		sxth	r0, r6
+ 697 01d4 FFF7FEFF 		bl	lv_trigo_sin
+ 698              	.LVL64:
+ 132:Middlewares/LVGL/lvgl/src/draw/lv_draw_arc.c ****             area->x2 = x + ((lv_trigo_sin(end_angle_int + 90) * rin) >> LV_TRIGO_SHIFT) + extra_are
+ 699              		.loc 1 132 58 discriminator 1 view .LVU233
+ 700 01d8 05FB00F3 		mul	r3, r5, r0
+ 132:Middlewares/LVGL/lvgl/src/draw/lv_draw_arc.c ****             area->x2 = x + ((lv_trigo_sin(end_angle_int + 90) * rin) >> LV_TRIGO_SHIFT) + extra_are
+ 701              		.loc 1 132 26 discriminator 1 view .LVU234
+ 702 01dc 09EBE333 		add	r3, r9, r3, asr #15
+ 132:Middlewares/LVGL/lvgl/src/draw/lv_draw_arc.c ****             area->x2 = x + ((lv_trigo_sin(end_angle_int + 90) * rin) >> LV_TRIGO_SHIFT) + extra_are
+ 703              		.loc 1 132 85 discriminator 1 view .LVU235
+ 704 01e0 A3EB0803 		sub	r3, r3, r8
+ 132:Middlewares/LVGL/lvgl/src/draw/lv_draw_arc.c ****             area->x2 = x + ((lv_trigo_sin(end_angle_int + 90) * rin) >> LV_TRIGO_SHIFT) + extra_are
+ 705              		.loc 1 132 22 discriminator 1 view .LVU236
+ 706 01e4 CAF80430 		str	r3, [r10, #4]
+ 133:Middlewares/LVGL/lvgl/src/draw/lv_draw_arc.c ****         }
+ 707              		.loc 1 133 13 is_stmt 1 view .LVU237
+ 133:Middlewares/LVGL/lvgl/src/draw/lv_draw_arc.c ****         }
+ 708              		.loc 1 133 57 is_stmt 0 view .LVU238
+ 709 01e8 06F15A00 		add	r0, r6, #90
+ 133:Middlewares/LVGL/lvgl/src/draw/lv_draw_arc.c ****         }
+ 710              		.loc 1 133 30 view .LVU239
+ 711 01ec 00B2     		sxth	r0, r0
+ 712 01ee FFF7FEFF 		bl	lv_trigo_sin
+ 713              	.LVL65:
+ 133:Middlewares/LVGL/lvgl/src/draw/lv_draw_arc.c ****         }
+ 714              		.loc 1 133 63 discriminator 1 view .LVU240
+ 715 01f2 0BFB00F3 		mul	r3, fp, r0
+ 133:Middlewares/LVGL/lvgl/src/draw/lv_draw_arc.c ****         }
+ 716              		.loc 1 133 26 discriminator 1 view .LVU241
+ 717 01f6 07EBE333 		add	r3, r7, r3, asr #15
+ 133:Middlewares/LVGL/lvgl/src/draw/lv_draw_arc.c ****         }
+ 718              		.loc 1 133 89 discriminator 1 view .LVU242
+ 719 01fa 4344     		add	r3, r3, r8
+ 133:Middlewares/LVGL/lvgl/src/draw/lv_draw_arc.c ****         }
+ 720              		.loc 1 133 22 discriminator 1 view .LVU243
+ 721 01fc CAF80830 		str	r3, [r10, #8]
+ 722 0200 52E7     		b	.L16
+ 723              	.LVL66:
+ 724              	.L25:
+ 136:Middlewares/LVGL/lvgl/src/draw/lv_draw_arc.c ****             area->y1 = y + ((lv_trigo_sin(start_angle_int) * rout) >> LV_TRIGO_SHIFT) - extra_area;
+ 725              		.loc 1 136 13 is_stmt 1 view .LVU244
+ 136:Middlewares/LVGL/lvgl/src/draw/lv_draw_arc.c ****             area->y1 = y + ((lv_trigo_sin(start_angle_int) * rout) >> LV_TRIGO_SHIFT) - extra_area;
+ 726              		.loc 1 136 59 is_stmt 0 view .LVU245
+ 727 0202 04F15A00 		add	r0, r4, #90
+ 728              	.LVL67:
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\cc6lJNDS.s 			page 20
+
+
+ 136:Middlewares/LVGL/lvgl/src/draw/lv_draw_arc.c ****             area->y1 = y + ((lv_trigo_sin(start_angle_int) * rout) >> LV_TRIGO_SHIFT) - extra_area;
+ 729              		.loc 1 136 30 view .LVU246
+ 730 0206 00B2     		sxth	r0, r0
+ 731 0208 FFF7FEFF 		bl	lv_trigo_sin
+ 732              	.LVL68:
+ 136:Middlewares/LVGL/lvgl/src/draw/lv_draw_arc.c ****             area->y1 = y + ((lv_trigo_sin(start_angle_int) * rout) >> LV_TRIGO_SHIFT) - extra_area;
+ 733              		.loc 1 136 65 discriminator 1 view .LVU247
+ 734 020c 0BFB00F3 		mul	r3, fp, r0
+ 136:Middlewares/LVGL/lvgl/src/draw/lv_draw_arc.c ****             area->y1 = y + ((lv_trigo_sin(start_angle_int) * rout) >> LV_TRIGO_SHIFT) - extra_area;
+ 735              		.loc 1 136 26 discriminator 1 view .LVU248
+ 736 0210 07EBE333 		add	r3, r7, r3, asr #15
+ 136:Middlewares/LVGL/lvgl/src/draw/lv_draw_arc.c ****             area->y1 = y + ((lv_trigo_sin(start_angle_int) * rout) >> LV_TRIGO_SHIFT) - extra_area;
+ 737              		.loc 1 136 91 discriminator 1 view .LVU249
+ 738 0214 A3EB0803 		sub	r3, r3, r8
+ 136:Middlewares/LVGL/lvgl/src/draw/lv_draw_arc.c ****             area->y1 = y + ((lv_trigo_sin(start_angle_int) * rout) >> LV_TRIGO_SHIFT) - extra_area;
+ 739              		.loc 1 136 22 discriminator 1 view .LVU250
+ 740 0218 CAF80030 		str	r3, [r10]
+ 137:Middlewares/LVGL/lvgl/src/draw/lv_draw_arc.c **** 
+ 741              		.loc 1 137 13 is_stmt 1 view .LVU251
+ 137:Middlewares/LVGL/lvgl/src/draw/lv_draw_arc.c **** 
+ 742              		.loc 1 137 30 is_stmt 0 view .LVU252
+ 743 021c 20B2     		sxth	r0, r4
+ 744 021e FFF7FEFF 		bl	lv_trigo_sin
+ 745              	.LVL69:
+ 137:Middlewares/LVGL/lvgl/src/draw/lv_draw_arc.c **** 
+ 746              		.loc 1 137 60 discriminator 1 view .LVU253
+ 747 0222 05FB00F3 		mul	r3, r5, r0
+ 137:Middlewares/LVGL/lvgl/src/draw/lv_draw_arc.c **** 
+ 748              		.loc 1 137 26 discriminator 1 view .LVU254
+ 749 0226 09EBE333 		add	r3, r9, r3, asr #15
+ 137:Middlewares/LVGL/lvgl/src/draw/lv_draw_arc.c **** 
+ 750              		.loc 1 137 87 discriminator 1 view .LVU255
+ 751 022a A3EB0803 		sub	r3, r3, r8
+ 137:Middlewares/LVGL/lvgl/src/draw/lv_draw_arc.c **** 
+ 752              		.loc 1 137 22 discriminator 1 view .LVU256
+ 753 022e CAF80430 		str	r3, [r10, #4]
+ 139:Middlewares/LVGL/lvgl/src/draw/lv_draw_arc.c ****             area->y2 = y + ((lv_trigo_sin(end_angle_int) * rin) >> LV_TRIGO_SHIFT) + extra_area;
+ 754              		.loc 1 139 13 is_stmt 1 view .LVU257
+ 139:Middlewares/LVGL/lvgl/src/draw/lv_draw_arc.c ****             area->y2 = y + ((lv_trigo_sin(end_angle_int) * rin) >> LV_TRIGO_SHIFT) + extra_area;
+ 755              		.loc 1 139 57 is_stmt 0 view .LVU258
+ 756 0232 06F15A00 		add	r0, r6, #90
+ 139:Middlewares/LVGL/lvgl/src/draw/lv_draw_arc.c ****             area->y2 = y + ((lv_trigo_sin(end_angle_int) * rin) >> LV_TRIGO_SHIFT) + extra_area;
+ 757              		.loc 1 139 30 view .LVU259
+ 758 0236 00B2     		sxth	r0, r0
+ 759 0238 FFF7FEFF 		bl	lv_trigo_sin
+ 760              	.LVL70:
+ 139:Middlewares/LVGL/lvgl/src/draw/lv_draw_arc.c ****             area->y2 = y + ((lv_trigo_sin(end_angle_int) * rin) >> LV_TRIGO_SHIFT) + extra_area;
+ 761              		.loc 1 139 63 discriminator 1 view .LVU260
+ 762 023c 05FB00F3 		mul	r3, r5, r0
+ 139:Middlewares/LVGL/lvgl/src/draw/lv_draw_arc.c ****             area->y2 = y + ((lv_trigo_sin(end_angle_int) * rin) >> LV_TRIGO_SHIFT) + extra_area;
+ 763              		.loc 1 139 26 discriminator 1 view .LVU261
+ 764 0240 07EBE333 		add	r3, r7, r3, asr #15
+ 139:Middlewares/LVGL/lvgl/src/draw/lv_draw_arc.c ****             area->y2 = y + ((lv_trigo_sin(end_angle_int) * rin) >> LV_TRIGO_SHIFT) + extra_area;
+ 765              		.loc 1 139 90 discriminator 1 view .LVU262
+ 766 0244 4344     		add	r3, r3, r8
+ 139:Middlewares/LVGL/lvgl/src/draw/lv_draw_arc.c ****             area->y2 = y + ((lv_trigo_sin(end_angle_int) * rin) >> LV_TRIGO_SHIFT) + extra_area;
+ 767              		.loc 1 139 22 discriminator 1 view .LVU263
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\cc6lJNDS.s 			page 21
+
+
+ 768 0246 CAF80830 		str	r3, [r10, #8]
+ 140:Middlewares/LVGL/lvgl/src/draw/lv_draw_arc.c ****         }
+ 769              		.loc 1 140 13 is_stmt 1 view .LVU264
+ 140:Middlewares/LVGL/lvgl/src/draw/lv_draw_arc.c ****         }
+ 770              		.loc 1 140 30 is_stmt 0 view .LVU265
+ 771 024a 30B2     		sxth	r0, r6
+ 772 024c FFF7FEFF 		bl	lv_trigo_sin
+ 773              	.LVL71:
+ 140:Middlewares/LVGL/lvgl/src/draw/lv_draw_arc.c ****         }
+ 774              		.loc 1 140 58 discriminator 1 view .LVU266
+ 775 0250 0BFB00F3 		mul	r3, fp, r0
+ 140:Middlewares/LVGL/lvgl/src/draw/lv_draw_arc.c ****         }
+ 776              		.loc 1 140 26 discriminator 1 view .LVU267
+ 777 0254 09EBE333 		add	r3, r9, r3, asr #15
+ 140:Middlewares/LVGL/lvgl/src/draw/lv_draw_arc.c ****         }
+ 778              		.loc 1 140 84 discriminator 1 view .LVU268
+ 779 0258 4344     		add	r3, r3, r8
+ 140:Middlewares/LVGL/lvgl/src/draw/lv_draw_arc.c ****         }
+ 780              		.loc 1 140 22 discriminator 1 view .LVU269
+ 781 025a CAF80C30 		str	r3, [r10, #12]
+ 782 025e 23E7     		b	.L16
+ 783              	.LVL72:
+ 784              	.L51:
+ 144:Middlewares/LVGL/lvgl/src/draw/lv_draw_arc.c ****         area->y1 = y + ((LV_MIN(lv_trigo_sin(end_angle_int),
+ 785              		.loc 1 144 9 is_stmt 1 view .LVU270
+ 144:Middlewares/LVGL/lvgl/src/draw/lv_draw_arc.c ****         area->y1 = y + ((LV_MIN(lv_trigo_sin(end_angle_int),
+ 786              		.loc 1 144 53 is_stmt 0 view .LVU271
+ 787 0260 06F15A00 		add	r0, r6, #90
+ 788              	.LVL73:
+ 144:Middlewares/LVGL/lvgl/src/draw/lv_draw_arc.c ****         area->y1 = y + ((LV_MIN(lv_trigo_sin(end_angle_int),
+ 789              		.loc 1 144 26 view .LVU272
+ 790 0264 00B2     		sxth	r0, r0
+ 791 0266 FFF7FEFF 		bl	lv_trigo_sin
+ 792              	.LVL74:
+ 144:Middlewares/LVGL/lvgl/src/draw/lv_draw_arc.c ****         area->y1 = y + ((LV_MIN(lv_trigo_sin(end_angle_int),
+ 793              		.loc 1 144 59 discriminator 1 view .LVU273
+ 794 026a 05FB00F3 		mul	r3, r5, r0
+ 144:Middlewares/LVGL/lvgl/src/draw/lv_draw_arc.c ****         area->y1 = y + ((LV_MIN(lv_trigo_sin(end_angle_int),
+ 795              		.loc 1 144 22 discriminator 1 view .LVU274
+ 796 026e 07EBE333 		add	r3, r7, r3, asr #15
+ 144:Middlewares/LVGL/lvgl/src/draw/lv_draw_arc.c ****         area->y1 = y + ((LV_MIN(lv_trigo_sin(end_angle_int),
+ 797              		.loc 1 144 86 discriminator 1 view .LVU275
+ 798 0272 A3EB0803 		sub	r3, r3, r8
+ 144:Middlewares/LVGL/lvgl/src/draw/lv_draw_arc.c ****         area->y1 = y + ((LV_MIN(lv_trigo_sin(end_angle_int),
+ 799              		.loc 1 144 18 discriminator 1 view .LVU276
+ 800 0276 CAF80030 		str	r3, [r10]
+ 145:Middlewares/LVGL/lvgl/src/draw/lv_draw_arc.c ****                                 lv_trigo_sin(start_angle_int))  * rin) >> LV_TRIGO_SHIFT) - extra_a
+ 801              		.loc 1 145 9 is_stmt 1 view .LVU277
+ 145:Middlewares/LVGL/lvgl/src/draw/lv_draw_arc.c ****                                 lv_trigo_sin(start_angle_int))  * rin) >> LV_TRIGO_SHIFT) - extra_a
+ 802              		.loc 1 145 26 is_stmt 0 view .LVU278
+ 803 027a 36B2     		sxth	r6, r6
+ 804              	.LVL75:
+ 145:Middlewares/LVGL/lvgl/src/draw/lv_draw_arc.c ****                                 lv_trigo_sin(start_angle_int))  * rin) >> LV_TRIGO_SHIFT) - extra_a
+ 805              		.loc 1 145 26 view .LVU279
+ 806 027c 3046     		mov	r0, r6
+ 807 027e FFF7FEFF 		bl	lv_trigo_sin
+ 808              	.LVL76:
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\cc6lJNDS.s 			page 22
+
+
+ 809 0282 0190     		str	r0, [sp, #4]
+ 145:Middlewares/LVGL/lvgl/src/draw/lv_draw_arc.c ****                                 lv_trigo_sin(start_angle_int))  * rin) >> LV_TRIGO_SHIFT) - extra_a
+ 810              		.loc 1 145 26 discriminator 1 view .LVU280
+ 811 0284 23B2     		sxth	r3, r4
+ 812 0286 0293     		str	r3, [sp, #8]
+ 813 0288 1846     		mov	r0, r3
+ 814 028a FFF7FEFF 		bl	lv_trigo_sin
+ 815              	.LVL77:
+ 145:Middlewares/LVGL/lvgl/src/draw/lv_draw_arc.c ****                                 lv_trigo_sin(start_angle_int))  * rin) >> LV_TRIGO_SHIFT) - extra_a
+ 816              		.loc 1 145 26 discriminator 2 view .LVU281
+ 817 028e 019B     		ldr	r3, [sp, #4]
+ 818 0290 8342     		cmp	r3, r0
+ 819 0292 1BDA     		bge	.L31
+ 145:Middlewares/LVGL/lvgl/src/draw/lv_draw_arc.c ****                                 lv_trigo_sin(start_angle_int))  * rin) >> LV_TRIGO_SHIFT) - extra_a
+ 820              		.loc 1 145 26 discriminator 1 view .LVU282
+ 821 0294 3046     		mov	r0, r6
+ 822 0296 FFF7FEFF 		bl	lv_trigo_sin
+ 823              	.LVL78:
+ 824              	.L32:
+ 146:Middlewares/LVGL/lvgl/src/draw/lv_draw_arc.c ****         area->x2 = x + ((lv_trigo_sin(start_angle_int + 90) * rout) >> LV_TRIGO_SHIFT) + extra_area
+ 825              		.loc 1 146 65 view .LVU283
+ 826 029a 0BFB00F3 		mul	r3, fp, r0
+ 145:Middlewares/LVGL/lvgl/src/draw/lv_draw_arc.c ****                                 lv_trigo_sin(start_angle_int))  * rin) >> LV_TRIGO_SHIFT) - extra_a
+ 827              		.loc 1 145 22 view .LVU284
+ 828 029e 09EBE333 		add	r3, r9, r3, asr #15
+ 146:Middlewares/LVGL/lvgl/src/draw/lv_draw_arc.c ****         area->x2 = x + ((lv_trigo_sin(start_angle_int + 90) * rout) >> LV_TRIGO_SHIFT) + extra_area
+ 829              		.loc 1 146 91 view .LVU285
+ 830 02a2 A3EB0803 		sub	r3, r3, r8
+ 145:Middlewares/LVGL/lvgl/src/draw/lv_draw_arc.c ****                                 lv_trigo_sin(start_angle_int))  * rin) >> LV_TRIGO_SHIFT) - extra_a
+ 831              		.loc 1 145 18 view .LVU286
+ 832 02a6 CAF80430 		str	r3, [r10, #4]
+ 147:Middlewares/LVGL/lvgl/src/draw/lv_draw_arc.c ****         area->y2 = y + rout + extra_area;
+ 833              		.loc 1 147 9 is_stmt 1 view .LVU287
+ 147:Middlewares/LVGL/lvgl/src/draw/lv_draw_arc.c ****         area->y2 = y + rout + extra_area;
+ 834              		.loc 1 147 55 is_stmt 0 view .LVU288
+ 835 02aa 04F15A00 		add	r0, r4, #90
+ 147:Middlewares/LVGL/lvgl/src/draw/lv_draw_arc.c ****         area->y2 = y + rout + extra_area;
+ 836              		.loc 1 147 26 view .LVU289
+ 837 02ae 00B2     		sxth	r0, r0
+ 838 02b0 FFF7FEFF 		bl	lv_trigo_sin
+ 839              	.LVL79:
+ 147:Middlewares/LVGL/lvgl/src/draw/lv_draw_arc.c ****         area->y2 = y + rout + extra_area;
+ 840              		.loc 1 147 61 discriminator 1 view .LVU290
+ 841 02b4 05FB00F3 		mul	r3, r5, r0
+ 147:Middlewares/LVGL/lvgl/src/draw/lv_draw_arc.c ****         area->y2 = y + rout + extra_area;
+ 842              		.loc 1 147 22 discriminator 1 view .LVU291
+ 843 02b8 07EBE333 		add	r3, r7, r3, asr #15
+ 147:Middlewares/LVGL/lvgl/src/draw/lv_draw_arc.c ****         area->y2 = y + rout + extra_area;
+ 844              		.loc 1 147 88 discriminator 1 view .LVU292
+ 845 02bc 4344     		add	r3, r3, r8
+ 147:Middlewares/LVGL/lvgl/src/draw/lv_draw_arc.c ****         area->y2 = y + rout + extra_area;
+ 846              		.loc 1 147 18 discriminator 1 view .LVU293
+ 847 02be CAF80830 		str	r3, [r10, #8]
+ 148:Middlewares/LVGL/lvgl/src/draw/lv_draw_arc.c ****     }
+ 848              		.loc 1 148 9 is_stmt 1 view .LVU294
+ 148:Middlewares/LVGL/lvgl/src/draw/lv_draw_arc.c ****     }
+ 849              		.loc 1 148 22 is_stmt 0 view .LVU295
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\cc6lJNDS.s 			page 23
+
+
+ 850 02c2 4D44     		add	r5, r5, r9
+ 851              	.LVL80:
+ 148:Middlewares/LVGL/lvgl/src/draw/lv_draw_arc.c ****     }
+ 852              		.loc 1 148 29 view .LVU296
+ 853 02c4 4544     		add	r5, r5, r8
+ 148:Middlewares/LVGL/lvgl/src/draw/lv_draw_arc.c ****     }
+ 854              		.loc 1 148 18 view .LVU297
+ 855 02c6 CAF80C50 		str	r5, [r10, #12]
+ 856 02ca EDE6     		b	.L16
+ 857              	.LVL81:
+ 858              	.L31:
+ 145:Middlewares/LVGL/lvgl/src/draw/lv_draw_arc.c ****                                 lv_trigo_sin(start_angle_int))  * rin) >> LV_TRIGO_SHIFT) - extra_a
+ 859              		.loc 1 145 26 discriminator 2 view .LVU298
+ 860 02cc 0298     		ldr	r0, [sp, #8]
+ 861 02ce FFF7FEFF 		bl	lv_trigo_sin
+ 862              	.LVL82:
+ 863 02d2 E2E7     		b	.L32
+ 864              	.LVL83:
+ 865              	.L52:
+ 150:Middlewares/LVGL/lvgl/src/draw/lv_draw_arc.c ****         area->x1 = x - rout - extra_area;
+ 866              		.loc 1 150 32 discriminator 1 view .LVU299
+ 867 02d4 022A     		cmp	r2, #2
+ 868 02d6 7FF4D4AE 		bne	.L33
+ 151:Middlewares/LVGL/lvgl/src/draw/lv_draw_arc.c ****         area->y1 = y + ((lv_trigo_sin(end_angle_int) * rout) >> LV_TRIGO_SHIFT) - extra_area;
+ 869              		.loc 1 151 9 is_stmt 1 view .LVU300
+ 151:Middlewares/LVGL/lvgl/src/draw/lv_draw_arc.c ****         area->y1 = y + ((lv_trigo_sin(end_angle_int) * rout) >> LV_TRIGO_SHIFT) - extra_area;
+ 870              		.loc 1 151 22 is_stmt 0 view .LVU301
+ 871 02da 7B1B     		subs	r3, r7, r5
+ 872              	.LVL84:
+ 151:Middlewares/LVGL/lvgl/src/draw/lv_draw_arc.c ****         area->y1 = y + ((lv_trigo_sin(end_angle_int) * rout) >> LV_TRIGO_SHIFT) - extra_area;
+ 873              		.loc 1 151 29 view .LVU302
+ 874 02dc A3EB0803 		sub	r3, r3, r8
+ 151:Middlewares/LVGL/lvgl/src/draw/lv_draw_arc.c ****         area->y1 = y + ((lv_trigo_sin(end_angle_int) * rout) >> LV_TRIGO_SHIFT) - extra_area;
+ 875              		.loc 1 151 18 view .LVU303
+ 876 02e0 CAF80030 		str	r3, [r10]
+ 152:Middlewares/LVGL/lvgl/src/draw/lv_draw_arc.c ****         area->x2 = x + ((LV_MAX(lv_trigo_sin(start_angle_int + 90),
+ 877              		.loc 1 152 9 is_stmt 1 view .LVU304
+ 152:Middlewares/LVGL/lvgl/src/draw/lv_draw_arc.c ****         area->x2 = x + ((LV_MAX(lv_trigo_sin(start_angle_int + 90),
+ 878              		.loc 1 152 26 is_stmt 0 view .LVU305
+ 879 02e4 30B2     		sxth	r0, r6
+ 880              	.LVL85:
+ 152:Middlewares/LVGL/lvgl/src/draw/lv_draw_arc.c ****         area->x2 = x + ((LV_MAX(lv_trigo_sin(start_angle_int + 90),
+ 881              		.loc 1 152 26 view .LVU306
+ 882 02e6 FFF7FEFF 		bl	lv_trigo_sin
+ 883              	.LVL86:
+ 152:Middlewares/LVGL/lvgl/src/draw/lv_draw_arc.c ****         area->x2 = x + ((LV_MAX(lv_trigo_sin(start_angle_int + 90),
+ 884              		.loc 1 152 54 discriminator 1 view .LVU307
+ 885 02ea 05FB00F3 		mul	r3, r5, r0
+ 152:Middlewares/LVGL/lvgl/src/draw/lv_draw_arc.c ****         area->x2 = x + ((LV_MAX(lv_trigo_sin(start_angle_int + 90),
+ 886              		.loc 1 152 22 discriminator 1 view .LVU308
+ 887 02ee 09EBE333 		add	r3, r9, r3, asr #15
+ 152:Middlewares/LVGL/lvgl/src/draw/lv_draw_arc.c ****         area->x2 = x + ((LV_MAX(lv_trigo_sin(start_angle_int + 90),
+ 888              		.loc 1 152 81 discriminator 1 view .LVU309
+ 889 02f2 A3EB0803 		sub	r3, r3, r8
+ 152:Middlewares/LVGL/lvgl/src/draw/lv_draw_arc.c ****         area->x2 = x + ((LV_MAX(lv_trigo_sin(start_angle_int + 90),
+ 890              		.loc 1 152 18 discriminator 1 view .LVU310
+ 891 02f6 CAF80430 		str	r3, [r10, #4]
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\cc6lJNDS.s 			page 24
+
+
+ 153:Middlewares/LVGL/lvgl/src/draw/lv_draw_arc.c ****                                 lv_trigo_sin(end_angle_int + 90)) * rin) >> LV_TRIGO_SHIFT) + extra
+ 892              		.loc 1 153 9 is_stmt 1 view .LVU311
+ 153:Middlewares/LVGL/lvgl/src/draw/lv_draw_arc.c ****                                 lv_trigo_sin(end_angle_int + 90)) * rin) >> LV_TRIGO_SHIFT) + extra
+ 893              		.loc 1 153 26 is_stmt 0 view .LVU312
+ 894 02fa 04F15A03 		add	r3, r4, #90
+ 895 02fe 1BB2     		sxth	r3, r3
+ 896 0300 0193     		str	r3, [sp, #4]
+ 897 0302 1846     		mov	r0, r3
+ 898 0304 FFF7FEFF 		bl	lv_trigo_sin
+ 899              	.LVL87:
+ 900 0308 0290     		str	r0, [sp, #8]
+ 153:Middlewares/LVGL/lvgl/src/draw/lv_draw_arc.c ****                                 lv_trigo_sin(end_angle_int + 90)) * rin) >> LV_TRIGO_SHIFT) + extra
+ 901              		.loc 1 153 26 discriminator 1 view .LVU313
+ 902 030a 5A36     		adds	r6, r6, #90
+ 903              	.LVL88:
+ 153:Middlewares/LVGL/lvgl/src/draw/lv_draw_arc.c ****                                 lv_trigo_sin(end_angle_int + 90)) * rin) >> LV_TRIGO_SHIFT) + extra
+ 904              		.loc 1 153 26 discriminator 1 view .LVU314
+ 905 030c 36B2     		sxth	r6, r6
+ 906              	.LVL89:
+ 153:Middlewares/LVGL/lvgl/src/draw/lv_draw_arc.c ****                                 lv_trigo_sin(end_angle_int + 90)) * rin) >> LV_TRIGO_SHIFT) + extra
+ 907              		.loc 1 153 26 discriminator 1 view .LVU315
+ 908 030e 3046     		mov	r0, r6
+ 909 0310 FFF7FEFF 		bl	lv_trigo_sin
+ 910              	.LVL90:
+ 153:Middlewares/LVGL/lvgl/src/draw/lv_draw_arc.c ****                                 lv_trigo_sin(end_angle_int + 90)) * rin) >> LV_TRIGO_SHIFT) + extra
+ 911              		.loc 1 153 26 discriminator 2 view .LVU316
+ 912 0314 029A     		ldr	r2, [sp, #8]
+ 913 0316 8242     		cmp	r2, r0
+ 914 0318 14DD     		ble	.L34
+ 153:Middlewares/LVGL/lvgl/src/draw/lv_draw_arc.c ****                                 lv_trigo_sin(end_angle_int + 90)) * rin) >> LV_TRIGO_SHIFT) + extra
+ 915              		.loc 1 153 26 discriminator 1 view .LVU317
+ 916 031a 0198     		ldr	r0, [sp, #4]
+ 917 031c FFF7FEFF 		bl	lv_trigo_sin
+ 918              	.LVL91:
+ 919              	.L35:
+ 154:Middlewares/LVGL/lvgl/src/draw/lv_draw_arc.c ****         area->y2 = y + ((lv_trigo_sin(start_angle_int) * rout) >> LV_TRIGO_SHIFT) + extra_area;
+ 920              		.loc 1 154 67 view .LVU318
+ 921 0320 0BFB00F3 		mul	r3, fp, r0
+ 153:Middlewares/LVGL/lvgl/src/draw/lv_draw_arc.c ****                                 lv_trigo_sin(end_angle_int + 90)) * rin) >> LV_TRIGO_SHIFT) + extra
+ 922              		.loc 1 153 22 view .LVU319
+ 923 0324 07EBE333 		add	r3, r7, r3, asr #15
+ 154:Middlewares/LVGL/lvgl/src/draw/lv_draw_arc.c ****         area->y2 = y + ((lv_trigo_sin(start_angle_int) * rout) >> LV_TRIGO_SHIFT) + extra_area;
+ 924              		.loc 1 154 93 view .LVU320
+ 925 0328 4344     		add	r3, r3, r8
+ 153:Middlewares/LVGL/lvgl/src/draw/lv_draw_arc.c ****                                 lv_trigo_sin(end_angle_int + 90)) * rin) >> LV_TRIGO_SHIFT) + extra
+ 926              		.loc 1 153 18 view .LVU321
+ 927 032a CAF80830 		str	r3, [r10, #8]
+ 155:Middlewares/LVGL/lvgl/src/draw/lv_draw_arc.c ****     }
+ 928              		.loc 1 155 9 is_stmt 1 view .LVU322
+ 155:Middlewares/LVGL/lvgl/src/draw/lv_draw_arc.c ****     }
+ 929              		.loc 1 155 26 is_stmt 0 view .LVU323
+ 930 032e 20B2     		sxth	r0, r4
+ 931 0330 FFF7FEFF 		bl	lv_trigo_sin
+ 932              	.LVL92:
+ 155:Middlewares/LVGL/lvgl/src/draw/lv_draw_arc.c ****     }
+ 933              		.loc 1 155 56 discriminator 1 view .LVU324
+ 934 0334 05FB00F3 		mul	r3, r5, r0
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\cc6lJNDS.s 			page 25
+
+
+ 155:Middlewares/LVGL/lvgl/src/draw/lv_draw_arc.c ****     }
+ 935              		.loc 1 155 22 discriminator 1 view .LVU325
+ 936 0338 09EBE333 		add	r3, r9, r3, asr #15
+ 155:Middlewares/LVGL/lvgl/src/draw/lv_draw_arc.c ****     }
+ 937              		.loc 1 155 83 discriminator 1 view .LVU326
+ 938 033c 4344     		add	r3, r3, r8
+ 155:Middlewares/LVGL/lvgl/src/draw/lv_draw_arc.c ****     }
+ 939              		.loc 1 155 18 discriminator 1 view .LVU327
+ 940 033e CAF80C30 		str	r3, [r10, #12]
+ 155:Middlewares/LVGL/lvgl/src/draw/lv_draw_arc.c ****     }
+ 941              		.loc 1 155 18 view .LVU328
+ 942 0342 B1E6     		b	.L16
+ 943              	.L34:
+ 153:Middlewares/LVGL/lvgl/src/draw/lv_draw_arc.c ****                                 lv_trigo_sin(end_angle_int + 90)) * rin) >> LV_TRIGO_SHIFT) + extra
+ 944              		.loc 1 153 26 discriminator 2 view .LVU329
+ 945 0344 3046     		mov	r0, r6
+ 946 0346 FFF7FEFF 		bl	lv_trigo_sin
+ 947              	.LVL93:
+ 948 034a E9E7     		b	.L35
+ 949              	.L56:
+ 950              		.align	2
+ 951              	.L55:
+ 952 034c B7600BB6 		.word	-1240768329
+ 953              	.LVL94:
+ 954              	.L53:
+ 157:Middlewares/LVGL/lvgl/src/draw/lv_draw_arc.c ****         area->x1 = x + ((lv_trigo_sin(start_angle_int + 90) * rout) >> LV_TRIGO_SHIFT) - extra_area
+ 955              		.loc 1 157 32 discriminator 1 view .LVU330
+ 956 0350 032A     		cmp	r2, #3
+ 957 0352 7FF499AE 		bne	.L36
+ 158:Middlewares/LVGL/lvgl/src/draw/lv_draw_arc.c ****         area->y1 = y - rout - extra_area;
+ 958              		.loc 1 158 9 is_stmt 1 view .LVU331
+ 158:Middlewares/LVGL/lvgl/src/draw/lv_draw_arc.c ****         area->y1 = y - rout - extra_area;
+ 959              		.loc 1 158 55 is_stmt 0 view .LVU332
+ 960 0356 04F15A00 		add	r0, r4, #90
+ 961              	.LVL95:
+ 158:Middlewares/LVGL/lvgl/src/draw/lv_draw_arc.c ****         area->y1 = y - rout - extra_area;
+ 962              		.loc 1 158 26 view .LVU333
+ 963 035a 00B2     		sxth	r0, r0
+ 964 035c FFF7FEFF 		bl	lv_trigo_sin
+ 965              	.LVL96:
+ 158:Middlewares/LVGL/lvgl/src/draw/lv_draw_arc.c ****         area->y1 = y - rout - extra_area;
+ 966              		.loc 1 158 61 discriminator 1 view .LVU334
+ 967 0360 05FB00F3 		mul	r3, r5, r0
+ 158:Middlewares/LVGL/lvgl/src/draw/lv_draw_arc.c ****         area->y1 = y - rout - extra_area;
+ 968              		.loc 1 158 22 discriminator 1 view .LVU335
+ 969 0364 07EBE333 		add	r3, r7, r3, asr #15
+ 158:Middlewares/LVGL/lvgl/src/draw/lv_draw_arc.c ****         area->y1 = y - rout - extra_area;
+ 970              		.loc 1 158 88 discriminator 1 view .LVU336
+ 971 0368 A3EB0803 		sub	r3, r3, r8
+ 158:Middlewares/LVGL/lvgl/src/draw/lv_draw_arc.c ****         area->y1 = y - rout - extra_area;
+ 972              		.loc 1 158 18 discriminator 1 view .LVU337
+ 973 036c CAF80030 		str	r3, [r10]
+ 159:Middlewares/LVGL/lvgl/src/draw/lv_draw_arc.c ****         area->x2 = x + ((lv_trigo_sin(end_angle_int + 90) * rout) >> LV_TRIGO_SHIFT) + extra_area;
+ 974              		.loc 1 159 9 is_stmt 1 view .LVU338
+ 159:Middlewares/LVGL/lvgl/src/draw/lv_draw_arc.c ****         area->x2 = x + ((lv_trigo_sin(end_angle_int + 90) * rout) >> LV_TRIGO_SHIFT) + extra_area;
+ 975              		.loc 1 159 22 is_stmt 0 view .LVU339
+ 976 0370 A9EB0503 		sub	r3, r9, r5
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\cc6lJNDS.s 			page 26
+
+
+ 159:Middlewares/LVGL/lvgl/src/draw/lv_draw_arc.c ****         area->x2 = x + ((lv_trigo_sin(end_angle_int + 90) * rout) >> LV_TRIGO_SHIFT) + extra_area;
+ 977              		.loc 1 159 29 view .LVU340
+ 978 0374 A3EB0803 		sub	r3, r3, r8
+ 159:Middlewares/LVGL/lvgl/src/draw/lv_draw_arc.c ****         area->x2 = x + ((lv_trigo_sin(end_angle_int + 90) * rout) >> LV_TRIGO_SHIFT) + extra_area;
+ 979              		.loc 1 159 18 view .LVU341
+ 980 0378 CAF80430 		str	r3, [r10, #4]
+ 160:Middlewares/LVGL/lvgl/src/draw/lv_draw_arc.c ****         area->y2 = y + (LV_MAX(lv_trigo_sin(end_angle_int) * rin,
+ 981              		.loc 1 160 9 is_stmt 1 view .LVU342
+ 160:Middlewares/LVGL/lvgl/src/draw/lv_draw_arc.c ****         area->y2 = y + (LV_MAX(lv_trigo_sin(end_angle_int) * rin,
+ 982              		.loc 1 160 53 is_stmt 0 view .LVU343
+ 983 037c 06F15A00 		add	r0, r6, #90
+ 160:Middlewares/LVGL/lvgl/src/draw/lv_draw_arc.c ****         area->y2 = y + (LV_MAX(lv_trigo_sin(end_angle_int) * rin,
+ 984              		.loc 1 160 26 view .LVU344
+ 985 0380 00B2     		sxth	r0, r0
+ 986 0382 FFF7FEFF 		bl	lv_trigo_sin
+ 987              	.LVL97:
+ 160:Middlewares/LVGL/lvgl/src/draw/lv_draw_arc.c ****         area->y2 = y + (LV_MAX(lv_trigo_sin(end_angle_int) * rin,
+ 988              		.loc 1 160 59 discriminator 1 view .LVU345
+ 989 0386 05FB00F3 		mul	r3, r5, r0
+ 160:Middlewares/LVGL/lvgl/src/draw/lv_draw_arc.c ****         area->y2 = y + (LV_MAX(lv_trigo_sin(end_angle_int) * rin,
+ 990              		.loc 1 160 22 discriminator 1 view .LVU346
+ 991 038a 07EBE333 		add	r3, r7, r3, asr #15
+ 160:Middlewares/LVGL/lvgl/src/draw/lv_draw_arc.c ****         area->y2 = y + (LV_MAX(lv_trigo_sin(end_angle_int) * rin,
+ 992              		.loc 1 160 86 discriminator 1 view .LVU347
+ 993 038e 4344     		add	r3, r3, r8
+ 160:Middlewares/LVGL/lvgl/src/draw/lv_draw_arc.c ****         area->y2 = y + (LV_MAX(lv_trigo_sin(end_angle_int) * rin,
+ 994              		.loc 1 160 18 discriminator 1 view .LVU348
+ 995 0390 CAF80830 		str	r3, [r10, #8]
+ 161:Middlewares/LVGL/lvgl/src/draw/lv_draw_arc.c ****                                lv_trigo_sin(start_angle_int) * rin) >> LV_TRIGO_SHIFT) + extra_area
+ 996              		.loc 1 161 9 is_stmt 1 view .LVU349
+ 161:Middlewares/LVGL/lvgl/src/draw/lv_draw_arc.c ****                                lv_trigo_sin(start_angle_int) * rin) >> LV_TRIGO_SHIFT) + extra_area
+ 997              		.loc 1 161 25 is_stmt 0 view .LVU350
+ 998 0394 36B2     		sxth	r6, r6
+ 999              	.LVL98:
+ 161:Middlewares/LVGL/lvgl/src/draw/lv_draw_arc.c ****                                lv_trigo_sin(start_angle_int) * rin) >> LV_TRIGO_SHIFT) + extra_area
+ 1000              		.loc 1 161 25 view .LVU351
+ 1001 0396 3046     		mov	r0, r6
+ 1002 0398 FFF7FEFF 		bl	lv_trigo_sin
+ 1003              	.LVL99:
+ 161:Middlewares/LVGL/lvgl/src/draw/lv_draw_arc.c ****                                lv_trigo_sin(start_angle_int) * rin) >> LV_TRIGO_SHIFT) + extra_area
+ 1004              		.loc 1 161 25 discriminator 1 view .LVU352
+ 1005 039c 0BFB00F5 		mul	r5, fp, r0
+ 1006              	.LVL100:
+ 161:Middlewares/LVGL/lvgl/src/draw/lv_draw_arc.c ****                                lv_trigo_sin(start_angle_int) * rin) >> LV_TRIGO_SHIFT) + extra_area
+ 1007              		.loc 1 161 25 discriminator 1 view .LVU353
+ 1008 03a0 24B2     		sxth	r4, r4
+ 1009              	.LVL101:
+ 161:Middlewares/LVGL/lvgl/src/draw/lv_draw_arc.c ****                                lv_trigo_sin(start_angle_int) * rin) >> LV_TRIGO_SHIFT) + extra_area
+ 1010              		.loc 1 161 25 discriminator 1 view .LVU354
+ 1011 03a2 2046     		mov	r0, r4
+ 1012 03a4 FFF7FEFF 		bl	lv_trigo_sin
+ 1013              	.LVL102:
+ 161:Middlewares/LVGL/lvgl/src/draw/lv_draw_arc.c ****                                lv_trigo_sin(start_angle_int) * rin) >> LV_TRIGO_SHIFT) + extra_area
+ 1014              		.loc 1 161 25 discriminator 2 view .LVU355
+ 1015 03a8 0BFB00F0 		mul	r0, fp, r0
+ 162:Middlewares/LVGL/lvgl/src/draw/lv_draw_arc.c ****     }
+ 1016              		.loc 1 162 69 view .LVU356
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\cc6lJNDS.s 			page 27
+
+
+ 1017 03ac 8542     		cmp	r5, r0
+ 1018 03ae 0ADD     		ble	.L37
+ 161:Middlewares/LVGL/lvgl/src/draw/lv_draw_arc.c ****                                lv_trigo_sin(start_angle_int) * rin) >> LV_TRIGO_SHIFT) + extra_area
+ 1019              		.loc 1 161 25 view .LVU357
+ 1020 03b0 3046     		mov	r0, r6
+ 1021 03b2 FFF7FEFF 		bl	lv_trigo_sin
+ 1022              	.LVL103:
+ 161:Middlewares/LVGL/lvgl/src/draw/lv_draw_arc.c ****                                lv_trigo_sin(start_angle_int) * rin) >> LV_TRIGO_SHIFT) + extra_area
+ 1023              		.loc 1 161 25 discriminator 1 view .LVU358
+ 1024 03b6 0BFB00F3 		mul	r3, fp, r0
+ 162:Middlewares/LVGL/lvgl/src/draw/lv_draw_arc.c ****     }
+ 1025              		.loc 1 162 69 discriminator 1 view .LVU359
+ 1026 03ba DB13     		asrs	r3, r3, #15
+ 1027              	.L38:
+ 161:Middlewares/LVGL/lvgl/src/draw/lv_draw_arc.c ****                                lv_trigo_sin(start_angle_int) * rin) >> LV_TRIGO_SHIFT) + extra_area
+ 1028              		.loc 1 161 22 view .LVU360
+ 1029 03bc 4B44     		add	r3, r3, r9
+ 162:Middlewares/LVGL/lvgl/src/draw/lv_draw_arc.c ****     }
+ 1030              		.loc 1 162 88 view .LVU361
+ 1031 03be 4344     		add	r3, r3, r8
+ 161:Middlewares/LVGL/lvgl/src/draw/lv_draw_arc.c ****                                lv_trigo_sin(start_angle_int) * rin) >> LV_TRIGO_SHIFT) + extra_area
+ 1032              		.loc 1 161 18 view .LVU362
+ 1033 03c0 CAF80C30 		str	r3, [r10, #12]
+ 1034 03c4 70E6     		b	.L16
+ 1035              	.L37:
+ 161:Middlewares/LVGL/lvgl/src/draw/lv_draw_arc.c ****                                lv_trigo_sin(start_angle_int) * rin) >> LV_TRIGO_SHIFT) + extra_area
+ 1036              		.loc 1 161 25 view .LVU363
+ 1037 03c6 2046     		mov	r0, r4
+ 1038 03c8 FFF7FEFF 		bl	lv_trigo_sin
+ 1039              	.LVL104:
+ 161:Middlewares/LVGL/lvgl/src/draw/lv_draw_arc.c ****                                lv_trigo_sin(start_angle_int) * rin) >> LV_TRIGO_SHIFT) + extra_area
+ 1040              		.loc 1 161 25 discriminator 1 view .LVU364
+ 1041 03cc 0BFB00F3 		mul	r3, fp, r0
+ 162:Middlewares/LVGL/lvgl/src/draw/lv_draw_arc.c ****     }
+ 1042              		.loc 1 162 69 discriminator 2 view .LVU365
+ 1043 03d0 DB13     		asrs	r3, r3, #15
+ 1044 03d2 F3E7     		b	.L38
+ 1045              	.LVL105:
+ 1046              	.L54:
+ 164:Middlewares/LVGL/lvgl/src/draw/lv_draw_arc.c ****         area->x1 = x + ((LV_MIN(lv_trigo_sin(end_angle_int + 90),
+ 1047              		.loc 1 164 32 discriminator 1 view .LVU366
+ 1048 03d4 002A     		cmp	r2, #0
+ 1049 03d6 7FF45AAE 		bne	.L39
+ 165:Middlewares/LVGL/lvgl/src/draw/lv_draw_arc.c ****                                 lv_trigo_sin(start_angle_int + 90)) * rin) >> LV_TRIGO_SHIFT) - ext
+ 1050              		.loc 1 165 9 is_stmt 1 view .LVU367
+ 165:Middlewares/LVGL/lvgl/src/draw/lv_draw_arc.c ****                                 lv_trigo_sin(start_angle_int + 90)) * rin) >> LV_TRIGO_SHIFT) - ext
+ 1051              		.loc 1 165 26 is_stmt 0 view .LVU368
+ 1052 03da 06F15A03 		add	r3, r6, #90
+ 1053              	.LVL106:
+ 165:Middlewares/LVGL/lvgl/src/draw/lv_draw_arc.c ****                                 lv_trigo_sin(start_angle_int + 90)) * rin) >> LV_TRIGO_SHIFT) - ext
+ 1054              		.loc 1 165 26 view .LVU369
+ 1055 03de 1BB2     		sxth	r3, r3
+ 1056 03e0 0193     		str	r3, [sp, #4]
+ 1057 03e2 1846     		mov	r0, r3
+ 1058              	.LVL107:
+ 165:Middlewares/LVGL/lvgl/src/draw/lv_draw_arc.c ****                                 lv_trigo_sin(start_angle_int + 90)) * rin) >> LV_TRIGO_SHIFT) - ext
+ 1059              		.loc 1 165 26 view .LVU370
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\cc6lJNDS.s 			page 28
+
+
+ 1060 03e4 FFF7FEFF 		bl	lv_trigo_sin
+ 1061              	.LVL108:
+ 165:Middlewares/LVGL/lvgl/src/draw/lv_draw_arc.c ****                                 lv_trigo_sin(start_angle_int + 90)) * rin) >> LV_TRIGO_SHIFT) - ext
+ 1062              		.loc 1 165 26 view .LVU371
+ 1063 03e8 0290     		str	r0, [sp, #8]
+ 165:Middlewares/LVGL/lvgl/src/draw/lv_draw_arc.c ****                                 lv_trigo_sin(start_angle_int + 90)) * rin) >> LV_TRIGO_SHIFT) - ext
+ 1064              		.loc 1 165 26 discriminator 1 view .LVU372
+ 1065 03ea 04F15A03 		add	r3, r4, #90
+ 1066 03ee 1BB2     		sxth	r3, r3
+ 1067 03f0 0393     		str	r3, [sp, #12]
+ 1068 03f2 1846     		mov	r0, r3
+ 1069 03f4 FFF7FEFF 		bl	lv_trigo_sin
+ 1070              	.LVL109:
+ 165:Middlewares/LVGL/lvgl/src/draw/lv_draw_arc.c ****                                 lv_trigo_sin(start_angle_int + 90)) * rin) >> LV_TRIGO_SHIFT) - ext
+ 1071              		.loc 1 165 26 discriminator 2 view .LVU373
+ 1072 03f8 029A     		ldr	r2, [sp, #8]
+ 1073 03fa 8242     		cmp	r2, r0
+ 1074 03fc 24DA     		bge	.L40
+ 165:Middlewares/LVGL/lvgl/src/draw/lv_draw_arc.c ****                                 lv_trigo_sin(start_angle_int + 90)) * rin) >> LV_TRIGO_SHIFT) - ext
+ 1075              		.loc 1 165 26 discriminator 1 view .LVU374
+ 1076 03fe 0198     		ldr	r0, [sp, #4]
+ 1077 0400 FFF7FEFF 		bl	lv_trigo_sin
+ 1078              	.LVL110:
+ 1079              	.L41:
+ 166:Middlewares/LVGL/lvgl/src/draw/lv_draw_arc.c ****         area->y1 = y + ((lv_trigo_sin(start_angle_int) * rout) >> LV_TRIGO_SHIFT) - extra_area;
+ 1080              		.loc 1 166 69 view .LVU375
+ 1081 0404 0BFB00F3 		mul	r3, fp, r0
+ 165:Middlewares/LVGL/lvgl/src/draw/lv_draw_arc.c ****                                 lv_trigo_sin(start_angle_int + 90)) * rin) >> LV_TRIGO_SHIFT) - ext
+ 1082              		.loc 1 165 22 view .LVU376
+ 1083 0408 07EBE333 		add	r3, r7, r3, asr #15
+ 166:Middlewares/LVGL/lvgl/src/draw/lv_draw_arc.c ****         area->y1 = y + ((lv_trigo_sin(start_angle_int) * rout) >> LV_TRIGO_SHIFT) - extra_area;
+ 1084              		.loc 1 166 95 view .LVU377
+ 1085 040c A3EB0803 		sub	r3, r3, r8
+ 165:Middlewares/LVGL/lvgl/src/draw/lv_draw_arc.c ****                                 lv_trigo_sin(start_angle_int + 90)) * rin) >> LV_TRIGO_SHIFT) - ext
+ 1086              		.loc 1 165 18 view .LVU378
+ 1087 0410 CAF80030 		str	r3, [r10]
+ 167:Middlewares/LVGL/lvgl/src/draw/lv_draw_arc.c ****         area->x2 = x + rout + extra_area;
+ 1088              		.loc 1 167 9 is_stmt 1 view .LVU379
+ 167:Middlewares/LVGL/lvgl/src/draw/lv_draw_arc.c ****         area->x2 = x + rout + extra_area;
+ 1089              		.loc 1 167 26 is_stmt 0 view .LVU380
+ 1090 0414 20B2     		sxth	r0, r4
+ 1091 0416 FFF7FEFF 		bl	lv_trigo_sin
+ 1092              	.LVL111:
+ 167:Middlewares/LVGL/lvgl/src/draw/lv_draw_arc.c ****         area->x2 = x + rout + extra_area;
+ 1093              		.loc 1 167 56 discriminator 1 view .LVU381
+ 1094 041a 05FB00F3 		mul	r3, r5, r0
+ 167:Middlewares/LVGL/lvgl/src/draw/lv_draw_arc.c ****         area->x2 = x + rout + extra_area;
+ 1095              		.loc 1 167 22 discriminator 1 view .LVU382
+ 1096 041e 09EBE333 		add	r3, r9, r3, asr #15
+ 167:Middlewares/LVGL/lvgl/src/draw/lv_draw_arc.c ****         area->x2 = x + rout + extra_area;
+ 1097              		.loc 1 167 83 discriminator 1 view .LVU383
+ 1098 0422 A3EB0803 		sub	r3, r3, r8
+ 167:Middlewares/LVGL/lvgl/src/draw/lv_draw_arc.c ****         area->x2 = x + rout + extra_area;
+ 1099              		.loc 1 167 18 discriminator 1 view .LVU384
+ 1100 0426 CAF80430 		str	r3, [r10, #4]
+ 168:Middlewares/LVGL/lvgl/src/draw/lv_draw_arc.c ****         area->y2 = y + ((lv_trigo_sin(end_angle_int) * rout) >> LV_TRIGO_SHIFT) + extra_area;
+ 1101              		.loc 1 168 9 is_stmt 1 view .LVU385
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\cc6lJNDS.s 			page 29
+
+
+ 168:Middlewares/LVGL/lvgl/src/draw/lv_draw_arc.c ****         area->y2 = y + ((lv_trigo_sin(end_angle_int) * rout) >> LV_TRIGO_SHIFT) + extra_area;
+ 1102              		.loc 1 168 22 is_stmt 0 view .LVU386
+ 1103 042a 2F44     		add	r7, r7, r5
+ 1104              	.LVL112:
+ 168:Middlewares/LVGL/lvgl/src/draw/lv_draw_arc.c ****         area->y2 = y + ((lv_trigo_sin(end_angle_int) * rout) >> LV_TRIGO_SHIFT) + extra_area;
+ 1105              		.loc 1 168 29 view .LVU387
+ 1106 042c 4744     		add	r7, r7, r8
+ 168:Middlewares/LVGL/lvgl/src/draw/lv_draw_arc.c ****         area->y2 = y + ((lv_trigo_sin(end_angle_int) * rout) >> LV_TRIGO_SHIFT) + extra_area;
+ 1107              		.loc 1 168 18 view .LVU388
+ 1108 042e CAF80870 		str	r7, [r10, #8]
+ 169:Middlewares/LVGL/lvgl/src/draw/lv_draw_arc.c **** 
+ 1109              		.loc 1 169 9 is_stmt 1 view .LVU389
+ 169:Middlewares/LVGL/lvgl/src/draw/lv_draw_arc.c **** 
+ 1110              		.loc 1 169 26 is_stmt 0 view .LVU390
+ 1111 0432 30B2     		sxth	r0, r6
+ 1112 0434 FFF7FEFF 		bl	lv_trigo_sin
+ 1113              	.LVL113:
+ 169:Middlewares/LVGL/lvgl/src/draw/lv_draw_arc.c **** 
+ 1114              		.loc 1 169 54 discriminator 1 view .LVU391
+ 1115 0438 05FB00F3 		mul	r3, r5, r0
+ 169:Middlewares/LVGL/lvgl/src/draw/lv_draw_arc.c **** 
+ 1116              		.loc 1 169 22 discriminator 1 view .LVU392
+ 1117 043c 09EBE333 		add	r3, r9, r3, asr #15
+ 169:Middlewares/LVGL/lvgl/src/draw/lv_draw_arc.c **** 
+ 1118              		.loc 1 169 81 discriminator 1 view .LVU393
+ 1119 0440 4344     		add	r3, r3, r8
+ 169:Middlewares/LVGL/lvgl/src/draw/lv_draw_arc.c **** 
+ 1120              		.loc 1 169 18 discriminator 1 view .LVU394
+ 1121 0442 CAF80C30 		str	r3, [r10, #12]
+ 169:Middlewares/LVGL/lvgl/src/draw/lv_draw_arc.c **** 
+ 1122              		.loc 1 169 18 view .LVU395
+ 1123 0446 2FE6     		b	.L16
+ 1124              	.LVL114:
+ 1125              	.L40:
+ 165:Middlewares/LVGL/lvgl/src/draw/lv_draw_arc.c ****                                 lv_trigo_sin(start_angle_int + 90)) * rin) >> LV_TRIGO_SHIFT) - ext
+ 1126              		.loc 1 165 26 discriminator 2 view .LVU396
+ 1127 0448 0398     		ldr	r0, [sp, #12]
+ 1128 044a FFF7FEFF 		bl	lv_trigo_sin
+ 1129              	.LVL115:
+ 1130 044e D9E7     		b	.L41
+ 1131              		.cfi_endproc
+ 1132              	.LFE203:
+ 1134              		.text
+ 1135              	.Letext0:
+ 1136              		.file 3 "D:\\STM32CubeIDE\\STM32CubeIDE_2.1.1\\STM32CubeIDE\\plugins\\com.st.stm32cube.ide.mcu.ext
+ 1137              		.file 4 "D:\\STM32CubeIDE\\STM32CubeIDE_2.1.1\\STM32CubeIDE\\plugins\\com.st.stm32cube.ide.mcu.ext
+ 1138              		.file 5 "D:\\STM32CubeIDE\\STM32CubeIDE_2.1.1\\STM32CubeIDE\\plugins\\com.st.stm32cube.ide.mcu.ext
+ 1139              		.file 6 "Middlewares/LVGL/lvgl/src/draw/../misc/lv_types.h"
+ 1140              		.file 7 "Middlewares/LVGL/lvgl/src/draw/lv_draw.h"
+ 1141              		.file 8 "Middlewares/LVGL/lvgl/src/draw/lv_draw_private.h"
+ 1142              		.file 9 "Middlewares/LVGL/lvgl/src/draw/../misc/../font/../draw/lv_draw_buf.h"
+ 1143              		.file 10 "Middlewares/LVGL/lvgl/src/draw/../misc/../font/../draw/../misc/lv_area.h"
+ 1144              		.file 11 "Middlewares/LVGL/lvgl/src/draw/../misc/../font/../draw/../misc/lv_color.h"
+ 1145              		.file 12 "Middlewares/LVGL/lvgl/src/draw/../misc/../font/../draw/lv_image_dsc.h"
+ 1146              		.file 13 "Middlewares/LVGL/lvgl/src/draw/../misc/lv_style.h"
+ 1147              		.file 14 "Middlewares/LVGL/lvgl/src/draw/../core/../draw/lv_draw_arc.h"
+ 1148              		.file 15 "Middlewares/LVGL/lvgl/src/draw/../misc/../font/../draw/../misc/lv_math.h"
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\cc6lJNDS.s 			page 30
+
+
+ 1149              		.file 16 "<built-in>"
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\cc6lJNDS.s 			page 31
+
+
+DEFINED SYMBOLS
+                            *ABS*:00000000 lv_draw_arc.c
+C:\Users\w1785\AppData\Local\Temp\cc6lJNDS.s:21     .text.lv_draw_arc_dsc_init:00000000 $t
+C:\Users\w1785\AppData\Local\Temp\cc6lJNDS.s:27     .text.lv_draw_arc_dsc_init:00000000 lv_draw_arc_dsc_init
+C:\Users\w1785\AppData\Local\Temp\cc6lJNDS.s:84     .text.lv_draw_task_get_arc_dsc:00000000 $t
+C:\Users\w1785\AppData\Local\Temp\cc6lJNDS.s:90     .text.lv_draw_task_get_arc_dsc:00000000 lv_draw_task_get_arc_dsc
+C:\Users\w1785\AppData\Local\Temp\cc6lJNDS.s:120    .text.lv_draw_arc:00000000 $t
+C:\Users\w1785\AppData\Local\Temp\cc6lJNDS.s:126    .text.lv_draw_arc:00000000 lv_draw_arc
+C:\Users\w1785\AppData\Local\Temp\cc6lJNDS.s:304    .text.lv_draw_arc_get_area:00000000 $t
+C:\Users\w1785\AppData\Local\Temp\cc6lJNDS.s:310    .text.lv_draw_arc_get_area:00000000 lv_draw_arc_get_area
+C:\Users\w1785\AppData\Local\Temp\cc6lJNDS.s:537    .text.lv_draw_arc_get_area:000000e4 $d
+C:\Users\w1785\AppData\Local\Temp\cc6lJNDS.s:541    .text.lv_draw_arc_get_area:000000e8 $t
+C:\Users\w1785\AppData\Local\Temp\cc6lJNDS.s:952    .text.lv_draw_arc_get_area:0000034c $d
+C:\Users\w1785\AppData\Local\Temp\cc6lJNDS.s:956    .text.lv_draw_arc_get_area:00000350 $t
+
+UNDEFINED SYMBOLS
+lv_memset
+lv_color_black
+lv_draw_layer_create_drop_shadow
+memcpy
+lv_draw_layer_finish_drop_shadow
+lv_draw_add_task
+lv_memcpy
+lv_draw_finalize_task_creation
+lv_trigo_sin

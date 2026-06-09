@@ -1,0 +1,1244 @@
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccJMgtwY.s 			page 1
+
+
+   1              		.cpu cortex-m4
+   2              		.arch armv7e-m
+   3              		.fpu fpv4-sp-d16
+   4              		.eabi_attribute 27, 1
+   5              		.eabi_attribute 28, 1
+   6              		.eabi_attribute 20, 1
+   7              		.eabi_attribute 21, 1
+   8              		.eabi_attribute 23, 3
+   9              		.eabi_attribute 24, 1
+  10              		.eabi_attribute 25, 1
+  11              		.eabi_attribute 26, 1
+  12              		.eabi_attribute 30, 1
+  13              		.eabi_attribute 34, 1
+  14              		.eabi_attribute 18, 4
+  15              		.file	"lcd_hw.c"
+  16              		.text
+  17              	.Ltext0:
+  18              		.cfi_sections	.debug_frame
+  19              		.file 1 "HardwareDrivers/LCD/Src/lcd_hw.c"
+  20              		.section	.text.LCD_SPI_Delay,"ax",%progbits
+  21              		.align	1
+  22              		.syntax unified
+  23              		.thumb
+  24              		.thumb_func
+  26              	LCD_SPI_Delay:
+  27              	.LFB132:
+   1:HardwareDrivers/LCD/Src/lcd_hw.c **** #include "lcd_hw.h"
+   2:HardwareDrivers/LCD/Src/lcd_hw.c **** 
+   3:HardwareDrivers/LCD/Src/lcd_hw.c **** /**
+   4:HardwareDrivers/LCD/Src/lcd_hw.c ****  * @brief 给软件 SPI 时序提供一个很短的延时。
+   5:HardwareDrivers/LCD/Src/lcd_hw.c ****  * @retval 无
+   6:HardwareDrivers/LCD/Src/lcd_hw.c ****  */
+   7:HardwareDrivers/LCD/Src/lcd_hw.c **** static void LCD_SPI_Delay(void)
+   8:HardwareDrivers/LCD/Src/lcd_hw.c **** {
+  28              		.loc 1 8 1 view -0
+  29              		.cfi_startproc
+  30              		@ args = 0, pretend = 0, frame = 8
+  31              		@ frame_needed = 0, uses_anonymous_args = 0
+  32              		@ link register save eliminated.
+  33 0000 82B0     		sub	sp, sp, #8
+  34              	.LCFI0:
+  35              		.cfi_def_cfa_offset 8
+   9:HardwareDrivers/LCD/Src/lcd_hw.c ****   /* 使用 volatile 计数变量，避免编译器把延时循环优化掉。 */
+  10:HardwareDrivers/LCD/Src/lcd_hw.c ****   volatile uint32_t delay = 8U;
+  36              		.loc 1 10 3 view .LVU1
+  37              		.loc 1 10 21 is_stmt 0 view .LVU2
+  38 0002 0823     		movs	r3, #8
+  39 0004 0193     		str	r3, [sp, #4]
+  11:HardwareDrivers/LCD/Src/lcd_hw.c **** 
+  12:HardwareDrivers/LCD/Src/lcd_hw.c ****   /* 一直循环，直到计数值减到 0。 */
+  13:HardwareDrivers/LCD/Src/lcd_hw.c ****   while (delay > 0U)
+  40              		.loc 1 13 3 is_stmt 1 view .LVU3
+  41              		.loc 1 13 9 is_stmt 0 view .LVU4
+  42 0006 03E0     		b	.L2
+  43              	.L3:
+  14:HardwareDrivers/LCD/Src/lcd_hw.c ****   {
+  15:HardwareDrivers/LCD/Src/lcd_hw.c ****     /* 执行一条 CPU 空操作指令。 */
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccJMgtwY.s 			page 2
+
+
+  16:HardwareDrivers/LCD/Src/lcd_hw.c ****     __NOP();
+  44              		.loc 1 16 5 is_stmt 1 view .LVU5
+  45              		.syntax unified
+  46              	@ 16 "HardwareDrivers/LCD/Src/lcd_hw.c" 1
+  47 0008 00BF     		nop
+  48              	@ 0 "" 2
+  17:HardwareDrivers/LCD/Src/lcd_hw.c **** 
+  18:HardwareDrivers/LCD/Src/lcd_hw.c ****     /* 延时计数值减 1。 */
+  19:HardwareDrivers/LCD/Src/lcd_hw.c ****     delay--;
+  49              		.loc 1 19 5 view .LVU6
+  50              		.loc 1 19 10 is_stmt 0 view .LVU7
+  51              		.thumb
+  52              		.syntax unified
+  53 000a 019B     		ldr	r3, [sp, #4]
+  54 000c 013B     		subs	r3, r3, #1
+  55 000e 0193     		str	r3, [sp, #4]
+  56              	.L2:
+  13:HardwareDrivers/LCD/Src/lcd_hw.c ****   {
+  57              		.loc 1 13 16 is_stmt 1 view .LVU8
+  58 0010 019B     		ldr	r3, [sp, #4]
+  59 0012 002B     		cmp	r3, #0
+  60 0014 F8D1     		bne	.L3
+  20:HardwareDrivers/LCD/Src/lcd_hw.c ****   }
+  21:HardwareDrivers/LCD/Src/lcd_hw.c **** }
+  61              		.loc 1 21 1 is_stmt 0 view .LVU9
+  62 0016 02B0     		add	sp, sp, #8
+  63              	.LCFI1:
+  64              		.cfi_def_cfa_offset 0
+  65              		@ sp needed
+  66 0018 7047     		bx	lr
+  67              		.cfi_endproc
+  68              	.LFE132:
+  70              		.section	.text.LCD_RESET_High,"ax",%progbits
+  71              		.align	1
+  72              		.global	LCD_RESET_High
+  73              		.syntax unified
+  74              		.thumb
+  75              		.thumb_func
+  77              	LCD_RESET_High:
+  78              	.LFB134:
+  22:HardwareDrivers/LCD/Src/lcd_hw.c **** 
+  23:HardwareDrivers/LCD/Src/lcd_hw.c **** /**
+  24:HardwareDrivers/LCD/Src/lcd_hw.c ****  * @brief 初始化 LCD 使用的 GPIO 引脚，并设置默认电平。
+  25:HardwareDrivers/LCD/Src/lcd_hw.c ****  * @retval 无
+  26:HardwareDrivers/LCD/Src/lcd_hw.c ****  */
+  27:HardwareDrivers/LCD/Src/lcd_hw.c **** void LCD_HW_GPIO_Init(void)
+  28:HardwareDrivers/LCD/Src/lcd_hw.c **** {
+  29:HardwareDrivers/LCD/Src/lcd_hw.c ****   /* 定义并清零 HAL GPIO 初始化结构体。 */
+  30:HardwareDrivers/LCD/Src/lcd_hw.c ****   GPIO_InitTypeDef GPIO_InitStruct = {0};
+  31:HardwareDrivers/LCD/Src/lcd_hw.c **** 
+  32:HardwareDrivers/LCD/Src/lcd_hw.c ****   /* 使用 PB10/PB11/PB12/PB13/PB15 之前，先使能 GPIOB 外设时钟。 */
+  33:HardwareDrivers/LCD/Src/lcd_hw.c ****   __HAL_RCC_GPIOB_CLK_ENABLE();
+  34:HardwareDrivers/LCD/Src/lcd_hw.c **** 
+  35:HardwareDrivers/LCD/Src/lcd_hw.c ****   /* 选择 RESET、DC、CS 这 3 个控制引脚，准备配置为中速输出。 */
+  36:HardwareDrivers/LCD/Src/lcd_hw.c ****   GPIO_InitStruct.Pin = LCD_RESET_PIN | LCD_DC_PIN | LCD_CS_PIN;
+  37:HardwareDrivers/LCD/Src/lcd_hw.c **** 
+  38:HardwareDrivers/LCD/Src/lcd_hw.c ****   /* 将选中的引脚配置为推挽输出模式。 */
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccJMgtwY.s 			page 3
+
+
+  39:HardwareDrivers/LCD/Src/lcd_hw.c ****   GPIO_InitStruct.Mode = GPIO_MODE_OUTPUT_PP;
+  40:HardwareDrivers/LCD/Src/lcd_hw.c **** 
+  41:HardwareDrivers/LCD/Src/lcd_hw.c ****   /* 不启用芯片内部上拉或下拉电阻。 */
+  42:HardwareDrivers/LCD/Src/lcd_hw.c ****   GPIO_InitStruct.Pull = GPIO_NOPULL;
+  43:HardwareDrivers/LCD/Src/lcd_hw.c **** 
+  44:HardwareDrivers/LCD/Src/lcd_hw.c ****   /* 控制引脚使用中速即可。 */
+  45:HardwareDrivers/LCD/Src/lcd_hw.c ****   GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_MEDIUM;
+  46:HardwareDrivers/LCD/Src/lcd_hw.c **** 
+  47:HardwareDrivers/LCD/Src/lcd_hw.c ****   /* 将上面的配置写入 GPIOB。 */
+  48:HardwareDrivers/LCD/Src/lcd_hw.c ****   HAL_GPIO_Init(GPIOB, &GPIO_InitStruct);
+  49:HardwareDrivers/LCD/Src/lcd_hw.c **** 
+  50:HardwareDrivers/LCD/Src/lcd_hw.c ****   /* 选择 SCK 和 MOSI 这 2 个软件 SPI 引脚，准备配置为高速输出。 */
+  51:HardwareDrivers/LCD/Src/lcd_hw.c ****   GPIO_InitStruct.Pin = LCD_SCK_PIN | LCD_MOSI_PIN;
+  52:HardwareDrivers/LCD/Src/lcd_hw.c **** 
+  53:HardwareDrivers/LCD/Src/lcd_hw.c ****   /* 继续使用推挽输出模式。 */
+  54:HardwareDrivers/LCD/Src/lcd_hw.c ****   GPIO_InitStruct.Mode = GPIO_MODE_OUTPUT_PP;
+  55:HardwareDrivers/LCD/Src/lcd_hw.c **** 
+  56:HardwareDrivers/LCD/Src/lcd_hw.c ****   /* 继续不启用芯片内部上拉或下拉电阻。 */
+  57:HardwareDrivers/LCD/Src/lcd_hw.c ****   GPIO_InitStruct.Pull = GPIO_NOPULL;
+  58:HardwareDrivers/LCD/Src/lcd_hw.c **** 
+  59:HardwareDrivers/LCD/Src/lcd_hw.c ****   /* SCK 和 MOSI 属于软件 SPI 时序引脚，建议使用高速。 */
+  60:HardwareDrivers/LCD/Src/lcd_hw.c ****   GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_HIGH;
+  61:HardwareDrivers/LCD/Src/lcd_hw.c **** 
+  62:HardwareDrivers/LCD/Src/lcd_hw.c ****   /* 将上面的配置写入 GPIOB。 */
+  63:HardwareDrivers/LCD/Src/lcd_hw.c ****   HAL_GPIO_Init(GPIOB, &GPIO_InitStruct);
+  64:HardwareDrivers/LCD/Src/lcd_hw.c **** 
+  65:HardwareDrivers/LCD/Src/lcd_hw.c ****   /* 初始化完成后，RESET 默认保持高电平。 */
+  66:HardwareDrivers/LCD/Src/lcd_hw.c ****   LCD_RESET_High();
+  67:HardwareDrivers/LCD/Src/lcd_hw.c **** 
+  68:HardwareDrivers/LCD/Src/lcd_hw.c ****   /* 初始化完成后，CS 默认保持高电平，表示不选中屏幕。 */
+  69:HardwareDrivers/LCD/Src/lcd_hw.c ****   LCD_CS_High();
+  70:HardwareDrivers/LCD/Src/lcd_hw.c **** 
+  71:HardwareDrivers/LCD/Src/lcd_hw.c ****   /* 初始化完成后，DC 默认保持低电平，表示命令模式。 */
+  72:HardwareDrivers/LCD/Src/lcd_hw.c ****   LCD_DC_Low();
+  73:HardwareDrivers/LCD/Src/lcd_hw.c **** 
+  74:HardwareDrivers/LCD/Src/lcd_hw.c ****   /* 初始化完成后，SCK 默认保持低电平，软件 SPI 空闲低。 */
+  75:HardwareDrivers/LCD/Src/lcd_hw.c ****   LCD_SCK_Low();
+  76:HardwareDrivers/LCD/Src/lcd_hw.c **** 
+  77:HardwareDrivers/LCD/Src/lcd_hw.c ****   /* 初始化完成后，MOSI 默认保持低电平。 */
+  78:HardwareDrivers/LCD/Src/lcd_hw.c ****   LCD_MOSI_Low();
+  79:HardwareDrivers/LCD/Src/lcd_hw.c **** }
+  80:HardwareDrivers/LCD/Src/lcd_hw.c **** 
+  81:HardwareDrivers/LCD/Src/lcd_hw.c **** /**
+  82:HardwareDrivers/LCD/Src/lcd_hw.c ****  * @brief 将 LCD RESET 引脚设置为高电平。
+  83:HardwareDrivers/LCD/Src/lcd_hw.c ****  * @retval 无
+  84:HardwareDrivers/LCD/Src/lcd_hw.c ****  */
+  85:HardwareDrivers/LCD/Src/lcd_hw.c **** void LCD_RESET_High(void)
+  86:HardwareDrivers/LCD/Src/lcd_hw.c **** {
+  79              		.loc 1 86 1 is_stmt 1 view -0
+  80              		.cfi_startproc
+  81              		@ args = 0, pretend = 0, frame = 0
+  82              		@ frame_needed = 0, uses_anonymous_args = 0
+  83 0000 08B5     		push	{r3, lr}
+  84              	.LCFI2:
+  85              		.cfi_def_cfa_offset 8
+  86              		.cfi_offset 3, -8
+  87              		.cfi_offset 14, -4
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccJMgtwY.s 			page 4
+
+
+  87:HardwareDrivers/LCD/Src/lcd_hw.c ****   /* 输出 RESET 高电平。 */
+  88:HardwareDrivers/LCD/Src/lcd_hw.c ****   HAL_GPIO_WritePin(LCD_RESET_PORT, LCD_RESET_PIN, GPIO_PIN_SET);
+  88              		.loc 1 88 3 view .LVU11
+  89 0002 0122     		movs	r2, #1
+  90 0004 4FF48061 		mov	r1, #1024
+  91 0008 0148     		ldr	r0, .L7
+  92 000a FFF7FEFF 		bl	HAL_GPIO_WritePin
+  93              	.LVL0:
+  89:HardwareDrivers/LCD/Src/lcd_hw.c **** }
+  94              		.loc 1 89 1 is_stmt 0 view .LVU12
+  95 000e 08BD     		pop	{r3, pc}
+  96              	.L8:
+  97              		.align	2
+  98              	.L7:
+  99 0010 00040048 		.word	1207960576
+ 100              		.cfi_endproc
+ 101              	.LFE134:
+ 103              		.section	.text.LCD_RESET_Low,"ax",%progbits
+ 104              		.align	1
+ 105              		.global	LCD_RESET_Low
+ 106              		.syntax unified
+ 107              		.thumb
+ 108              		.thumb_func
+ 110              	LCD_RESET_Low:
+ 111              	.LFB135:
+  90:HardwareDrivers/LCD/Src/lcd_hw.c **** 
+  91:HardwareDrivers/LCD/Src/lcd_hw.c **** /**
+  92:HardwareDrivers/LCD/Src/lcd_hw.c ****  * @brief 将 LCD RESET 引脚设置为低电平。
+  93:HardwareDrivers/LCD/Src/lcd_hw.c ****  * @retval 无
+  94:HardwareDrivers/LCD/Src/lcd_hw.c ****  */
+  95:HardwareDrivers/LCD/Src/lcd_hw.c **** void LCD_RESET_Low(void)
+  96:HardwareDrivers/LCD/Src/lcd_hw.c **** {
+ 112              		.loc 1 96 1 is_stmt 1 view -0
+ 113              		.cfi_startproc
+ 114              		@ args = 0, pretend = 0, frame = 0
+ 115              		@ frame_needed = 0, uses_anonymous_args = 0
+ 116 0000 08B5     		push	{r3, lr}
+ 117              	.LCFI3:
+ 118              		.cfi_def_cfa_offset 8
+ 119              		.cfi_offset 3, -8
+ 120              		.cfi_offset 14, -4
+  97:HardwareDrivers/LCD/Src/lcd_hw.c ****   /* 输出 RESET 低电平。 */
+  98:HardwareDrivers/LCD/Src/lcd_hw.c ****   HAL_GPIO_WritePin(LCD_RESET_PORT, LCD_RESET_PIN, GPIO_PIN_RESET);
+ 121              		.loc 1 98 3 view .LVU14
+ 122 0002 0022     		movs	r2, #0
+ 123 0004 4FF48061 		mov	r1, #1024
+ 124 0008 0148     		ldr	r0, .L11
+ 125 000a FFF7FEFF 		bl	HAL_GPIO_WritePin
+ 126              	.LVL1:
+  99:HardwareDrivers/LCD/Src/lcd_hw.c **** }
+ 127              		.loc 1 99 1 is_stmt 0 view .LVU15
+ 128 000e 08BD     		pop	{r3, pc}
+ 129              	.L12:
+ 130              		.align	2
+ 131              	.L11:
+ 132 0010 00040048 		.word	1207960576
+ 133              		.cfi_endproc
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccJMgtwY.s 			page 5
+
+
+ 134              	.LFE135:
+ 136              		.section	.text.LCD_DC_High,"ax",%progbits
+ 137              		.align	1
+ 138              		.global	LCD_DC_High
+ 139              		.syntax unified
+ 140              		.thumb
+ 141              		.thumb_func
+ 143              	LCD_DC_High:
+ 144              	.LFB136:
+ 100:HardwareDrivers/LCD/Src/lcd_hw.c **** 
+ 101:HardwareDrivers/LCD/Src/lcd_hw.c **** /**
+ 102:HardwareDrivers/LCD/Src/lcd_hw.c ****  * @brief 将 LCD DC 引脚设置为高电平。
+ 103:HardwareDrivers/LCD/Src/lcd_hw.c ****  * @retval 无
+ 104:HardwareDrivers/LCD/Src/lcd_hw.c ****  */
+ 105:HardwareDrivers/LCD/Src/lcd_hw.c **** void LCD_DC_High(void)
+ 106:HardwareDrivers/LCD/Src/lcd_hw.c **** {
+ 145              		.loc 1 106 1 is_stmt 1 view -0
+ 146              		.cfi_startproc
+ 147              		@ args = 0, pretend = 0, frame = 0
+ 148              		@ frame_needed = 0, uses_anonymous_args = 0
+ 149 0000 08B5     		push	{r3, lr}
+ 150              	.LCFI4:
+ 151              		.cfi_def_cfa_offset 8
+ 152              		.cfi_offset 3, -8
+ 153              		.cfi_offset 14, -4
+ 107:HardwareDrivers/LCD/Src/lcd_hw.c ****   /* 输出 DC 高电平，表示后面发送的是数据。 */
+ 108:HardwareDrivers/LCD/Src/lcd_hw.c ****   HAL_GPIO_WritePin(LCD_DC_PORT, LCD_DC_PIN, GPIO_PIN_SET);
+ 154              		.loc 1 108 3 view .LVU17
+ 155 0002 0122     		movs	r2, #1
+ 156 0004 4FF40061 		mov	r1, #2048
+ 157 0008 0148     		ldr	r0, .L15
+ 158 000a FFF7FEFF 		bl	HAL_GPIO_WritePin
+ 159              	.LVL2:
+ 109:HardwareDrivers/LCD/Src/lcd_hw.c **** }
+ 160              		.loc 1 109 1 is_stmt 0 view .LVU18
+ 161 000e 08BD     		pop	{r3, pc}
+ 162              	.L16:
+ 163              		.align	2
+ 164              	.L15:
+ 165 0010 00040048 		.word	1207960576
+ 166              		.cfi_endproc
+ 167              	.LFE136:
+ 169              		.section	.text.LCD_DC_Low,"ax",%progbits
+ 170              		.align	1
+ 171              		.global	LCD_DC_Low
+ 172              		.syntax unified
+ 173              		.thumb
+ 174              		.thumb_func
+ 176              	LCD_DC_Low:
+ 177              	.LFB137:
+ 110:HardwareDrivers/LCD/Src/lcd_hw.c **** 
+ 111:HardwareDrivers/LCD/Src/lcd_hw.c **** /**
+ 112:HardwareDrivers/LCD/Src/lcd_hw.c ****  * @brief 将 LCD DC 引脚设置为低电平。
+ 113:HardwareDrivers/LCD/Src/lcd_hw.c ****  * @retval 无
+ 114:HardwareDrivers/LCD/Src/lcd_hw.c ****  */
+ 115:HardwareDrivers/LCD/Src/lcd_hw.c **** void LCD_DC_Low(void)
+ 116:HardwareDrivers/LCD/Src/lcd_hw.c **** {
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccJMgtwY.s 			page 6
+
+
+ 178              		.loc 1 116 1 is_stmt 1 view -0
+ 179              		.cfi_startproc
+ 180              		@ args = 0, pretend = 0, frame = 0
+ 181              		@ frame_needed = 0, uses_anonymous_args = 0
+ 182 0000 08B5     		push	{r3, lr}
+ 183              	.LCFI5:
+ 184              		.cfi_def_cfa_offset 8
+ 185              		.cfi_offset 3, -8
+ 186              		.cfi_offset 14, -4
+ 117:HardwareDrivers/LCD/Src/lcd_hw.c ****   /* 输出 DC 低电平，表示后面发送的是命令。 */
+ 118:HardwareDrivers/LCD/Src/lcd_hw.c ****   HAL_GPIO_WritePin(LCD_DC_PORT, LCD_DC_PIN, GPIO_PIN_RESET);
+ 187              		.loc 1 118 3 view .LVU20
+ 188 0002 0022     		movs	r2, #0
+ 189 0004 4FF40061 		mov	r1, #2048
+ 190 0008 0148     		ldr	r0, .L19
+ 191 000a FFF7FEFF 		bl	HAL_GPIO_WritePin
+ 192              	.LVL3:
+ 119:HardwareDrivers/LCD/Src/lcd_hw.c **** }
+ 193              		.loc 1 119 1 is_stmt 0 view .LVU21
+ 194 000e 08BD     		pop	{r3, pc}
+ 195              	.L20:
+ 196              		.align	2
+ 197              	.L19:
+ 198 0010 00040048 		.word	1207960576
+ 199              		.cfi_endproc
+ 200              	.LFE137:
+ 202              		.section	.text.LCD_CS_High,"ax",%progbits
+ 203              		.align	1
+ 204              		.global	LCD_CS_High
+ 205              		.syntax unified
+ 206              		.thumb
+ 207              		.thumb_func
+ 209              	LCD_CS_High:
+ 210              	.LFB138:
+ 120:HardwareDrivers/LCD/Src/lcd_hw.c **** 
+ 121:HardwareDrivers/LCD/Src/lcd_hw.c **** /**
+ 122:HardwareDrivers/LCD/Src/lcd_hw.c ****  * @brief 将 LCD CS 引脚设置为高电平。
+ 123:HardwareDrivers/LCD/Src/lcd_hw.c ****  * @retval 无
+ 124:HardwareDrivers/LCD/Src/lcd_hw.c ****  */
+ 125:HardwareDrivers/LCD/Src/lcd_hw.c **** void LCD_CS_High(void)
+ 126:HardwareDrivers/LCD/Src/lcd_hw.c **** {
+ 211              		.loc 1 126 1 is_stmt 1 view -0
+ 212              		.cfi_startproc
+ 213              		@ args = 0, pretend = 0, frame = 0
+ 214              		@ frame_needed = 0, uses_anonymous_args = 0
+ 215 0000 08B5     		push	{r3, lr}
+ 216              	.LCFI6:
+ 217              		.cfi_def_cfa_offset 8
+ 218              		.cfi_offset 3, -8
+ 219              		.cfi_offset 14, -4
+ 127:HardwareDrivers/LCD/Src/lcd_hw.c ****   /* 输出 CS 高电平，取消选中屏幕。 */
+ 128:HardwareDrivers/LCD/Src/lcd_hw.c ****   HAL_GPIO_WritePin(LCD_CS_PORT, LCD_CS_PIN, GPIO_PIN_SET);
+ 220              		.loc 1 128 3 view .LVU23
+ 221 0002 0122     		movs	r2, #1
+ 222 0004 4FF48051 		mov	r1, #4096
+ 223 0008 0148     		ldr	r0, .L23
+ 224 000a FFF7FEFF 		bl	HAL_GPIO_WritePin
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccJMgtwY.s 			page 7
+
+
+ 225              	.LVL4:
+ 129:HardwareDrivers/LCD/Src/lcd_hw.c **** }
+ 226              		.loc 1 129 1 is_stmt 0 view .LVU24
+ 227 000e 08BD     		pop	{r3, pc}
+ 228              	.L24:
+ 229              		.align	2
+ 230              	.L23:
+ 231 0010 00040048 		.word	1207960576
+ 232              		.cfi_endproc
+ 233              	.LFE138:
+ 235              		.section	.text.LCD_CS_Low,"ax",%progbits
+ 236              		.align	1
+ 237              		.global	LCD_CS_Low
+ 238              		.syntax unified
+ 239              		.thumb
+ 240              		.thumb_func
+ 242              	LCD_CS_Low:
+ 243              	.LFB139:
+ 130:HardwareDrivers/LCD/Src/lcd_hw.c **** 
+ 131:HardwareDrivers/LCD/Src/lcd_hw.c **** /**
+ 132:HardwareDrivers/LCD/Src/lcd_hw.c ****  * @brief 将 LCD CS 引脚设置为低电平。
+ 133:HardwareDrivers/LCD/Src/lcd_hw.c ****  * @retval 无
+ 134:HardwareDrivers/LCD/Src/lcd_hw.c ****  */
+ 135:HardwareDrivers/LCD/Src/lcd_hw.c **** void LCD_CS_Low(void)
+ 136:HardwareDrivers/LCD/Src/lcd_hw.c **** {
+ 244              		.loc 1 136 1 is_stmt 1 view -0
+ 245              		.cfi_startproc
+ 246              		@ args = 0, pretend = 0, frame = 0
+ 247              		@ frame_needed = 0, uses_anonymous_args = 0
+ 248 0000 08B5     		push	{r3, lr}
+ 249              	.LCFI7:
+ 250              		.cfi_def_cfa_offset 8
+ 251              		.cfi_offset 3, -8
+ 252              		.cfi_offset 14, -4
+ 137:HardwareDrivers/LCD/Src/lcd_hw.c ****   /* 输出 CS 低电平，选中屏幕。 */
+ 138:HardwareDrivers/LCD/Src/lcd_hw.c ****   HAL_GPIO_WritePin(LCD_CS_PORT, LCD_CS_PIN, GPIO_PIN_RESET);
+ 253              		.loc 1 138 3 view .LVU26
+ 254 0002 0022     		movs	r2, #0
+ 255 0004 4FF48051 		mov	r1, #4096
+ 256 0008 0148     		ldr	r0, .L27
+ 257 000a FFF7FEFF 		bl	HAL_GPIO_WritePin
+ 258              	.LVL5:
+ 139:HardwareDrivers/LCD/Src/lcd_hw.c **** }
+ 259              		.loc 1 139 1 is_stmt 0 view .LVU27
+ 260 000e 08BD     		pop	{r3, pc}
+ 261              	.L28:
+ 262              		.align	2
+ 263              	.L27:
+ 264 0010 00040048 		.word	1207960576
+ 265              		.cfi_endproc
+ 266              	.LFE139:
+ 268              		.section	.text.LCD_SCK_High,"ax",%progbits
+ 269              		.align	1
+ 270              		.global	LCD_SCK_High
+ 271              		.syntax unified
+ 272              		.thumb
+ 273              		.thumb_func
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccJMgtwY.s 			page 8
+
+
+ 275              	LCD_SCK_High:
+ 276              	.LFB140:
+ 140:HardwareDrivers/LCD/Src/lcd_hw.c **** 
+ 141:HardwareDrivers/LCD/Src/lcd_hw.c **** /**
+ 142:HardwareDrivers/LCD/Src/lcd_hw.c ****  * @brief 将 LCD SCK 引脚设置为高电平。
+ 143:HardwareDrivers/LCD/Src/lcd_hw.c ****  * @retval 无
+ 144:HardwareDrivers/LCD/Src/lcd_hw.c ****  */
+ 145:HardwareDrivers/LCD/Src/lcd_hw.c **** void LCD_SCK_High(void)
+ 146:HardwareDrivers/LCD/Src/lcd_hw.c **** {
+ 277              		.loc 1 146 1 is_stmt 1 view -0
+ 278              		.cfi_startproc
+ 279              		@ args = 0, pretend = 0, frame = 0
+ 280              		@ frame_needed = 0, uses_anonymous_args = 0
+ 281 0000 08B5     		push	{r3, lr}
+ 282              	.LCFI8:
+ 283              		.cfi_def_cfa_offset 8
+ 284              		.cfi_offset 3, -8
+ 285              		.cfi_offset 14, -4
+ 147:HardwareDrivers/LCD/Src/lcd_hw.c ****   /* 输出软件 SPI 时钟高电平。 */
+ 148:HardwareDrivers/LCD/Src/lcd_hw.c ****   HAL_GPIO_WritePin(LCD_SCK_PORT, LCD_SCK_PIN, GPIO_PIN_SET);
+ 286              		.loc 1 148 3 view .LVU29
+ 287 0002 0122     		movs	r2, #1
+ 288 0004 4FF40051 		mov	r1, #8192
+ 289 0008 0148     		ldr	r0, .L31
+ 290 000a FFF7FEFF 		bl	HAL_GPIO_WritePin
+ 291              	.LVL6:
+ 149:HardwareDrivers/LCD/Src/lcd_hw.c **** }
+ 292              		.loc 1 149 1 is_stmt 0 view .LVU30
+ 293 000e 08BD     		pop	{r3, pc}
+ 294              	.L32:
+ 295              		.align	2
+ 296              	.L31:
+ 297 0010 00040048 		.word	1207960576
+ 298              		.cfi_endproc
+ 299              	.LFE140:
+ 301              		.section	.text.LCD_SCK_Low,"ax",%progbits
+ 302              		.align	1
+ 303              		.global	LCD_SCK_Low
+ 304              		.syntax unified
+ 305              		.thumb
+ 306              		.thumb_func
+ 308              	LCD_SCK_Low:
+ 309              	.LFB141:
+ 150:HardwareDrivers/LCD/Src/lcd_hw.c **** 
+ 151:HardwareDrivers/LCD/Src/lcd_hw.c **** /**
+ 152:HardwareDrivers/LCD/Src/lcd_hw.c ****  * @brief 将 LCD SCK 引脚设置为低电平。
+ 153:HardwareDrivers/LCD/Src/lcd_hw.c ****  * @retval 无
+ 154:HardwareDrivers/LCD/Src/lcd_hw.c ****  */
+ 155:HardwareDrivers/LCD/Src/lcd_hw.c **** void LCD_SCK_Low(void)
+ 156:HardwareDrivers/LCD/Src/lcd_hw.c **** {
+ 310              		.loc 1 156 1 is_stmt 1 view -0
+ 311              		.cfi_startproc
+ 312              		@ args = 0, pretend = 0, frame = 0
+ 313              		@ frame_needed = 0, uses_anonymous_args = 0
+ 314 0000 08B5     		push	{r3, lr}
+ 315              	.LCFI9:
+ 316              		.cfi_def_cfa_offset 8
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccJMgtwY.s 			page 9
+
+
+ 317              		.cfi_offset 3, -8
+ 318              		.cfi_offset 14, -4
+ 157:HardwareDrivers/LCD/Src/lcd_hw.c ****   /* 输出软件 SPI 时钟低电平。 */
+ 158:HardwareDrivers/LCD/Src/lcd_hw.c ****   HAL_GPIO_WritePin(LCD_SCK_PORT, LCD_SCK_PIN, GPIO_PIN_RESET);
+ 319              		.loc 1 158 3 view .LVU32
+ 320 0002 0022     		movs	r2, #0
+ 321 0004 4FF40051 		mov	r1, #8192
+ 322 0008 0148     		ldr	r0, .L35
+ 323 000a FFF7FEFF 		bl	HAL_GPIO_WritePin
+ 324              	.LVL7:
+ 159:HardwareDrivers/LCD/Src/lcd_hw.c **** }
+ 325              		.loc 1 159 1 is_stmt 0 view .LVU33
+ 326 000e 08BD     		pop	{r3, pc}
+ 327              	.L36:
+ 328              		.align	2
+ 329              	.L35:
+ 330 0010 00040048 		.word	1207960576
+ 331              		.cfi_endproc
+ 332              	.LFE141:
+ 334              		.section	.text.LCD_MOSI_High,"ax",%progbits
+ 335              		.align	1
+ 336              		.global	LCD_MOSI_High
+ 337              		.syntax unified
+ 338              		.thumb
+ 339              		.thumb_func
+ 341              	LCD_MOSI_High:
+ 342              	.LFB142:
+ 160:HardwareDrivers/LCD/Src/lcd_hw.c **** 
+ 161:HardwareDrivers/LCD/Src/lcd_hw.c **** /**
+ 162:HardwareDrivers/LCD/Src/lcd_hw.c ****  * @brief 将 LCD MOSI 引脚设置为高电平。
+ 163:HardwareDrivers/LCD/Src/lcd_hw.c ****  * @retval 无
+ 164:HardwareDrivers/LCD/Src/lcd_hw.c ****  */
+ 165:HardwareDrivers/LCD/Src/lcd_hw.c **** void LCD_MOSI_High(void)
+ 166:HardwareDrivers/LCD/Src/lcd_hw.c **** {
+ 343              		.loc 1 166 1 is_stmt 1 view -0
+ 344              		.cfi_startproc
+ 345              		@ args = 0, pretend = 0, frame = 0
+ 346              		@ frame_needed = 0, uses_anonymous_args = 0
+ 347 0000 08B5     		push	{r3, lr}
+ 348              	.LCFI10:
+ 349              		.cfi_def_cfa_offset 8
+ 350              		.cfi_offset 3, -8
+ 351              		.cfi_offset 14, -4
+ 167:HardwareDrivers/LCD/Src/lcd_hw.c ****   /* 输出软件 SPI MOSI 高电平。 */
+ 168:HardwareDrivers/LCD/Src/lcd_hw.c ****   HAL_GPIO_WritePin(LCD_MOSI_PORT, LCD_MOSI_PIN, GPIO_PIN_SET);
+ 352              		.loc 1 168 3 view .LVU35
+ 353 0002 0122     		movs	r2, #1
+ 354 0004 4FF40041 		mov	r1, #32768
+ 355 0008 0148     		ldr	r0, .L39
+ 356 000a FFF7FEFF 		bl	HAL_GPIO_WritePin
+ 357              	.LVL8:
+ 169:HardwareDrivers/LCD/Src/lcd_hw.c **** }
+ 358              		.loc 1 169 1 is_stmt 0 view .LVU36
+ 359 000e 08BD     		pop	{r3, pc}
+ 360              	.L40:
+ 361              		.align	2
+ 362              	.L39:
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccJMgtwY.s 			page 10
+
+
+ 363 0010 00040048 		.word	1207960576
+ 364              		.cfi_endproc
+ 365              	.LFE142:
+ 367              		.section	.text.LCD_MOSI_Low,"ax",%progbits
+ 368              		.align	1
+ 369              		.global	LCD_MOSI_Low
+ 370              		.syntax unified
+ 371              		.thumb
+ 372              		.thumb_func
+ 374              	LCD_MOSI_Low:
+ 375              	.LFB143:
+ 170:HardwareDrivers/LCD/Src/lcd_hw.c **** 
+ 171:HardwareDrivers/LCD/Src/lcd_hw.c **** /**
+ 172:HardwareDrivers/LCD/Src/lcd_hw.c ****  * @brief 将 LCD MOSI 引脚设置为低电平。
+ 173:HardwareDrivers/LCD/Src/lcd_hw.c ****  * @retval 无
+ 174:HardwareDrivers/LCD/Src/lcd_hw.c ****  */
+ 175:HardwareDrivers/LCD/Src/lcd_hw.c **** void LCD_MOSI_Low(void)
+ 176:HardwareDrivers/LCD/Src/lcd_hw.c **** {
+ 376              		.loc 1 176 1 is_stmt 1 view -0
+ 377              		.cfi_startproc
+ 378              		@ args = 0, pretend = 0, frame = 0
+ 379              		@ frame_needed = 0, uses_anonymous_args = 0
+ 380 0000 08B5     		push	{r3, lr}
+ 381              	.LCFI11:
+ 382              		.cfi_def_cfa_offset 8
+ 383              		.cfi_offset 3, -8
+ 384              		.cfi_offset 14, -4
+ 177:HardwareDrivers/LCD/Src/lcd_hw.c ****   /* 输出软件 SPI MOSI 低电平。 */
+ 178:HardwareDrivers/LCD/Src/lcd_hw.c ****   HAL_GPIO_WritePin(LCD_MOSI_PORT, LCD_MOSI_PIN, GPIO_PIN_RESET);
+ 385              		.loc 1 178 3 view .LVU38
+ 386 0002 0022     		movs	r2, #0
+ 387 0004 4FF40041 		mov	r1, #32768
+ 388 0008 0148     		ldr	r0, .L43
+ 389 000a FFF7FEFF 		bl	HAL_GPIO_WritePin
+ 390              	.LVL9:
+ 179:HardwareDrivers/LCD/Src/lcd_hw.c **** }
+ 391              		.loc 1 179 1 is_stmt 0 view .LVU39
+ 392 000e 08BD     		pop	{r3, pc}
+ 393              	.L44:
+ 394              		.align	2
+ 395              	.L43:
+ 396 0010 00040048 		.word	1207960576
+ 397              		.cfi_endproc
+ 398              	.LFE143:
+ 400              		.section	.text.LCD_HW_GPIO_Init,"ax",%progbits
+ 401              		.align	1
+ 402              		.global	LCD_HW_GPIO_Init
+ 403              		.syntax unified
+ 404              		.thumb
+ 405              		.thumb_func
+ 407              	LCD_HW_GPIO_Init:
+ 408              	.LFB133:
+  28:HardwareDrivers/LCD/Src/lcd_hw.c ****   /* 定义并清零 HAL GPIO 初始化结构体。 */
+ 409              		.loc 1 28 1 is_stmt 1 view -0
+ 410              		.cfi_startproc
+ 411              		@ args = 0, pretend = 0, frame = 24
+ 412              		@ frame_needed = 0, uses_anonymous_args = 0
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccJMgtwY.s 			page 11
+
+
+ 413 0000 F0B5     		push	{r4, r5, r6, r7, lr}
+ 414              	.LCFI12:
+ 415              		.cfi_def_cfa_offset 20
+ 416              		.cfi_offset 4, -20
+ 417              		.cfi_offset 5, -16
+ 418              		.cfi_offset 6, -12
+ 419              		.cfi_offset 7, -8
+ 420              		.cfi_offset 14, -4
+ 421 0002 87B0     		sub	sp, sp, #28
+ 422              	.LCFI13:
+ 423              		.cfi_def_cfa_offset 48
+  30:HardwareDrivers/LCD/Src/lcd_hw.c **** 
+ 424              		.loc 1 30 3 view .LVU41
+  30:HardwareDrivers/LCD/Src/lcd_hw.c **** 
+ 425              		.loc 1 30 20 is_stmt 0 view .LVU42
+ 426 0004 01AC     		add	r4, sp, #4
+ 427 0006 0025     		movs	r5, #0
+ 428 0008 0195     		str	r5, [sp, #4]
+ 429 000a 0295     		str	r5, [sp, #8]
+ 430 000c 0395     		str	r5, [sp, #12]
+ 431 000e 0495     		str	r5, [sp, #16]
+ 432 0010 0595     		str	r5, [sp, #20]
+  33:HardwareDrivers/LCD/Src/lcd_hw.c **** 
+ 433              		.loc 1 33 3 is_stmt 1 view .LVU43
+ 434              	.LBB2:
+  33:HardwareDrivers/LCD/Src/lcd_hw.c **** 
+ 435              		.loc 1 33 3 view .LVU44
+  33:HardwareDrivers/LCD/Src/lcd_hw.c **** 
+ 436              		.loc 1 33 3 view .LVU45
+ 437 0012 164B     		ldr	r3, .L47
+ 438 0014 DA6C     		ldr	r2, [r3, #76]
+ 439 0016 42F00202 		orr	r2, r2, #2
+ 440 001a DA64     		str	r2, [r3, #76]
+  33:HardwareDrivers/LCD/Src/lcd_hw.c **** 
+ 441              		.loc 1 33 3 view .LVU46
+ 442 001c DB6C     		ldr	r3, [r3, #76]
+ 443 001e 03F00203 		and	r3, r3, #2
+ 444 0022 0093     		str	r3, [sp]
+  33:HardwareDrivers/LCD/Src/lcd_hw.c **** 
+ 445              		.loc 1 33 3 view .LVU47
+ 446 0024 009B     		ldr	r3, [sp]
+ 447              	.LBE2:
+  33:HardwareDrivers/LCD/Src/lcd_hw.c **** 
+ 448              		.loc 1 33 3 view .LVU48
+  36:HardwareDrivers/LCD/Src/lcd_hw.c **** 
+ 449              		.loc 1 36 3 view .LVU49
+  36:HardwareDrivers/LCD/Src/lcd_hw.c **** 
+ 450              		.loc 1 36 23 is_stmt 0 view .LVU50
+ 451 0026 4FF4E053 		mov	r3, #7168
+ 452 002a 0193     		str	r3, [sp, #4]
+  39:HardwareDrivers/LCD/Src/lcd_hw.c **** 
+ 453              		.loc 1 39 3 is_stmt 1 view .LVU51
+  39:HardwareDrivers/LCD/Src/lcd_hw.c **** 
+ 454              		.loc 1 39 24 is_stmt 0 view .LVU52
+ 455 002c 0126     		movs	r6, #1
+ 456 002e 0296     		str	r6, [sp, #8]
+  42:HardwareDrivers/LCD/Src/lcd_hw.c **** 
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccJMgtwY.s 			page 12
+
+
+ 457              		.loc 1 42 3 is_stmt 1 view .LVU53
+  45:HardwareDrivers/LCD/Src/lcd_hw.c **** 
+ 458              		.loc 1 45 3 view .LVU54
+  45:HardwareDrivers/LCD/Src/lcd_hw.c **** 
+ 459              		.loc 1 45 25 is_stmt 0 view .LVU55
+ 460 0030 0496     		str	r6, [sp, #16]
+  48:HardwareDrivers/LCD/Src/lcd_hw.c **** 
+ 461              		.loc 1 48 3 is_stmt 1 view .LVU56
+ 462 0032 0F4F     		ldr	r7, .L47+4
+ 463 0034 2146     		mov	r1, r4
+ 464 0036 3846     		mov	r0, r7
+ 465 0038 FFF7FEFF 		bl	HAL_GPIO_Init
+ 466              	.LVL10:
+  51:HardwareDrivers/LCD/Src/lcd_hw.c **** 
+ 467              		.loc 1 51 3 view .LVU57
+  51:HardwareDrivers/LCD/Src/lcd_hw.c **** 
+ 468              		.loc 1 51 23 is_stmt 0 view .LVU58
+ 469 003c 4FF42043 		mov	r3, #40960
+ 470 0040 0193     		str	r3, [sp, #4]
+  54:HardwareDrivers/LCD/Src/lcd_hw.c **** 
+ 471              		.loc 1 54 3 is_stmt 1 view .LVU59
+  54:HardwareDrivers/LCD/Src/lcd_hw.c **** 
+ 472              		.loc 1 54 24 is_stmt 0 view .LVU60
+ 473 0042 0296     		str	r6, [sp, #8]
+  57:HardwareDrivers/LCD/Src/lcd_hw.c **** 
+ 474              		.loc 1 57 3 is_stmt 1 view .LVU61
+  57:HardwareDrivers/LCD/Src/lcd_hw.c **** 
+ 475              		.loc 1 57 24 is_stmt 0 view .LVU62
+ 476 0044 0395     		str	r5, [sp, #12]
+  60:HardwareDrivers/LCD/Src/lcd_hw.c **** 
+ 477              		.loc 1 60 3 is_stmt 1 view .LVU63
+  60:HardwareDrivers/LCD/Src/lcd_hw.c **** 
+ 478              		.loc 1 60 25 is_stmt 0 view .LVU64
+ 479 0046 0223     		movs	r3, #2
+ 480 0048 0493     		str	r3, [sp, #16]
+  63:HardwareDrivers/LCD/Src/lcd_hw.c **** 
+ 481              		.loc 1 63 3 is_stmt 1 view .LVU65
+ 482 004a 2146     		mov	r1, r4
+ 483 004c 3846     		mov	r0, r7
+ 484 004e FFF7FEFF 		bl	HAL_GPIO_Init
+ 485              	.LVL11:
+  66:HardwareDrivers/LCD/Src/lcd_hw.c **** 
+ 486              		.loc 1 66 3 view .LVU66
+ 487 0052 FFF7FEFF 		bl	LCD_RESET_High
+ 488              	.LVL12:
+  69:HardwareDrivers/LCD/Src/lcd_hw.c **** 
+ 489              		.loc 1 69 3 view .LVU67
+ 490 0056 FFF7FEFF 		bl	LCD_CS_High
+ 491              	.LVL13:
+  72:HardwareDrivers/LCD/Src/lcd_hw.c **** 
+ 492              		.loc 1 72 3 view .LVU68
+ 493 005a FFF7FEFF 		bl	LCD_DC_Low
+ 494              	.LVL14:
+  75:HardwareDrivers/LCD/Src/lcd_hw.c **** 
+ 495              		.loc 1 75 3 view .LVU69
+ 496 005e FFF7FEFF 		bl	LCD_SCK_Low
+ 497              	.LVL15:
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccJMgtwY.s 			page 13
+
+
+  78:HardwareDrivers/LCD/Src/lcd_hw.c **** }
+ 498              		.loc 1 78 3 view .LVU70
+ 499 0062 FFF7FEFF 		bl	LCD_MOSI_Low
+ 500              	.LVL16:
+  79:HardwareDrivers/LCD/Src/lcd_hw.c **** 
+ 501              		.loc 1 79 1 is_stmt 0 view .LVU71
+ 502 0066 07B0     		add	sp, sp, #28
+ 503              	.LCFI14:
+ 504              		.cfi_def_cfa_offset 20
+ 505              		@ sp needed
+ 506 0068 F0BD     		pop	{r4, r5, r6, r7, pc}
+ 507              	.L48:
+ 508 006a 00BF     		.align	2
+ 509              	.L47:
+ 510 006c 00100240 		.word	1073876992
+ 511 0070 00040048 		.word	1207960576
+ 512              		.cfi_endproc
+ 513              	.LFE133:
+ 515              		.section	.text.LCD_SPI_WriteBit,"ax",%progbits
+ 516              		.align	1
+ 517              		.global	LCD_SPI_WriteBit
+ 518              		.syntax unified
+ 519              		.thumb
+ 520              		.thumb_func
+ 522              	LCD_SPI_WriteBit:
+ 523              	.LVL17:
+ 524              	.LFB144:
+ 180:HardwareDrivers/LCD/Src/lcd_hw.c **** 
+ 181:HardwareDrivers/LCD/Src/lcd_hw.c **** /**
+ 182:HardwareDrivers/LCD/Src/lcd_hw.c ****  * @brief 通过软件 SPI 向 LCD 写入 1 个 bit。
+ 183:HardwareDrivers/LCD/Src/lcd_hw.c ****  * @param bit 要发送的 bit 值；0 表示发送 0，非 0 表示发送 1。
+ 184:HardwareDrivers/LCD/Src/lcd_hw.c ****  * @retval 无
+ 185:HardwareDrivers/LCD/Src/lcd_hw.c ****  */
+ 186:HardwareDrivers/LCD/Src/lcd_hw.c **** void LCD_SPI_WriteBit(uint8_t bit)
+ 187:HardwareDrivers/LCD/Src/lcd_hw.c **** {
+ 525              		.loc 1 187 1 is_stmt 1 view -0
+ 526              		.cfi_startproc
+ 527              		@ args = 0, pretend = 0, frame = 0
+ 528              		@ frame_needed = 0, uses_anonymous_args = 0
+ 529              		.loc 1 187 1 is_stmt 0 view .LVU73
+ 530 0000 08B5     		push	{r3, lr}
+ 531              	.LCFI15:
+ 532              		.cfi_def_cfa_offset 8
+ 533              		.cfi_offset 3, -8
+ 534              		.cfi_offset 14, -4
+ 188:HardwareDrivers/LCD/Src/lcd_hw.c ****   /* 判断当前要发送的 bit 是否为逻辑 1。 */
+ 189:HardwareDrivers/LCD/Src/lcd_hw.c ****   if (bit != 0U)
+ 535              		.loc 1 189 3 is_stmt 1 view .LVU74
+ 536              		.loc 1 189 6 is_stmt 0 view .LVU75
+ 537 0002 50B1     		cbz	r0, .L50
+ 190:HardwareDrivers/LCD/Src/lcd_hw.c ****   {
+ 191:HardwareDrivers/LCD/Src/lcd_hw.c ****     /* 在 SCK 上升沿到来之前，先把 MOSI 准备为高电平。 */
+ 192:HardwareDrivers/LCD/Src/lcd_hw.c ****     LCD_MOSI_High();
+ 538              		.loc 1 192 5 is_stmt 1 view .LVU76
+ 539 0004 FFF7FEFF 		bl	LCD_MOSI_High
+ 540              	.LVL18:
+ 541              	.L51:
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccJMgtwY.s 			page 14
+
+
+ 193:HardwareDrivers/LCD/Src/lcd_hw.c ****   }
+ 194:HardwareDrivers/LCD/Src/lcd_hw.c ****   else
+ 195:HardwareDrivers/LCD/Src/lcd_hw.c ****   {
+ 196:HardwareDrivers/LCD/Src/lcd_hw.c ****     /* 在 SCK 上升沿到来之前，先把 MOSI 准备为低电平。 */
+ 197:HardwareDrivers/LCD/Src/lcd_hw.c ****     LCD_MOSI_Low();
+ 198:HardwareDrivers/LCD/Src/lcd_hw.c ****   }
+ 199:HardwareDrivers/LCD/Src/lcd_hw.c **** 
+ 200:HardwareDrivers/LCD/Src/lcd_hw.c ****   /* 拉高 SCK，产生上升沿，屏幕在这个边沿采样 MOSI。 */
+ 201:HardwareDrivers/LCD/Src/lcd_hw.c ****   LCD_SCK_High();
+ 542              		.loc 1 201 3 view .LVU77
+ 543 0008 FFF7FEFF 		bl	LCD_SCK_High
+ 544              	.LVL19:
+ 202:HardwareDrivers/LCD/Src/lcd_hw.c **** 
+ 203:HardwareDrivers/LCD/Src/lcd_hw.c ****   /* 保持 SCK 高电平一小段时间。 */
+ 204:HardwareDrivers/LCD/Src/lcd_hw.c ****   LCD_SPI_Delay();
+ 545              		.loc 1 204 3 view .LVU78
+ 546 000c FFF7FEFF 		bl	LCD_SPI_Delay
+ 547              	.LVL20:
+ 205:HardwareDrivers/LCD/Src/lcd_hw.c **** 
+ 206:HardwareDrivers/LCD/Src/lcd_hw.c ****   /* 拉低 SCK，准备发送下一位数据。 */
+ 207:HardwareDrivers/LCD/Src/lcd_hw.c ****   LCD_SCK_Low();
+ 548              		.loc 1 207 3 view .LVU79
+ 549 0010 FFF7FEFF 		bl	LCD_SCK_Low
+ 550              	.LVL21:
+ 208:HardwareDrivers/LCD/Src/lcd_hw.c **** 
+ 209:HardwareDrivers/LCD/Src/lcd_hw.c ****   /* 保持 SCK 低电平一小段时间。 */
+ 210:HardwareDrivers/LCD/Src/lcd_hw.c ****   LCD_SPI_Delay();
+ 551              		.loc 1 210 3 view .LVU80
+ 552 0014 FFF7FEFF 		bl	LCD_SPI_Delay
+ 553              	.LVL22:
+ 211:HardwareDrivers/LCD/Src/lcd_hw.c **** }
+ 554              		.loc 1 211 1 is_stmt 0 view .LVU81
+ 555 0018 08BD     		pop	{r3, pc}
+ 556              	.LVL23:
+ 557              	.L50:
+ 197:HardwareDrivers/LCD/Src/lcd_hw.c ****   }
+ 558              		.loc 1 197 5 is_stmt 1 view .LVU82
+ 559 001a FFF7FEFF 		bl	LCD_MOSI_Low
+ 560              	.LVL24:
+ 197:HardwareDrivers/LCD/Src/lcd_hw.c ****   }
+ 561              		.loc 1 197 5 is_stmt 0 view .LVU83
+ 562 001e F3E7     		b	.L51
+ 563              		.cfi_endproc
+ 564              	.LFE144:
+ 566              		.section	.text.LCD_SPI_WriteByte,"ax",%progbits
+ 567              		.align	1
+ 568              		.global	LCD_SPI_WriteByte
+ 569              		.syntax unified
+ 570              		.thumb
+ 571              		.thumb_func
+ 573              	LCD_SPI_WriteByte:
+ 574              	.LVL25:
+ 575              	.LFB145:
+ 212:HardwareDrivers/LCD/Src/lcd_hw.c **** 
+ 213:HardwareDrivers/LCD/Src/lcd_hw.c **** /**
+ 214:HardwareDrivers/LCD/Src/lcd_hw.c ****  * @brief 通过软件 SPI 向 LCD 写入 1 个字节。
+ 215:HardwareDrivers/LCD/Src/lcd_hw.c ****  * @param data 要发送的字节，按高位在前的顺序发送。
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccJMgtwY.s 			page 15
+
+
+ 216:HardwareDrivers/LCD/Src/lcd_hw.c ****  * @retval 无
+ 217:HardwareDrivers/LCD/Src/lcd_hw.c ****  */
+ 218:HardwareDrivers/LCD/Src/lcd_hw.c **** void LCD_SPI_WriteByte(uint8_t data)
+ 219:HardwareDrivers/LCD/Src/lcd_hw.c **** {
+ 576              		.loc 1 219 1 is_stmt 1 view -0
+ 577              		.cfi_startproc
+ 578              		@ args = 0, pretend = 0, frame = 0
+ 579              		@ frame_needed = 0, uses_anonymous_args = 0
+ 580              		.loc 1 219 1 is_stmt 0 view .LVU85
+ 581 0000 38B5     		push	{r3, r4, r5, lr}
+ 582              	.LCFI16:
+ 583              		.cfi_def_cfa_offset 16
+ 584              		.cfi_offset 3, -16
+ 585              		.cfi_offset 4, -12
+ 586              		.cfi_offset 5, -8
+ 587              		.cfi_offset 14, -4
+ 588 0002 0446     		mov	r4, r0
+ 220:HardwareDrivers/LCD/Src/lcd_hw.c ****   /* 一共发送 8 位，从 bit7 一直发送到 bit0。 */
+ 221:HardwareDrivers/LCD/Src/lcd_hw.c ****   for (uint8_t bit_index = 0U; bit_index < 8U; bit_index++)
+ 589              		.loc 1 221 3 is_stmt 1 view .LVU86
+ 590              	.LBB3:
+ 591              		.loc 1 221 8 view .LVU87
+ 592              	.LVL26:
+ 593              		.loc 1 221 16 is_stmt 0 view .LVU88
+ 594 0004 0025     		movs	r5, #0
+ 595              		.loc 1 221 3 view .LVU89
+ 596 0006 07E0     		b	.L54
+ 597              	.LVL27:
+ 598              	.L55:
+ 222:HardwareDrivers/LCD/Src/lcd_hw.c ****   {
+ 223:HardwareDrivers/LCD/Src/lcd_hw.c ****     /* 发送当前最高位。 */
+ 224:HardwareDrivers/LCD/Src/lcd_hw.c ****     LCD_SPI_WriteBit((uint8_t)(data & 0x80U));
+ 599              		.loc 1 224 5 is_stmt 1 view .LVU90
+ 600 0008 04F08000 		and	r0, r4, #128
+ 601 000c FFF7FEFF 		bl	LCD_SPI_WriteBit
+ 602              	.LVL28:
+ 225:HardwareDrivers/LCD/Src/lcd_hw.c **** 
+ 226:HardwareDrivers/LCD/Src/lcd_hw.c ****     /* 左移 1 位，把下一位移动到最高位位置。 */
+ 227:HardwareDrivers/LCD/Src/lcd_hw.c ****     data <<= 1U;
+ 603              		.loc 1 227 5 view .LVU91
+ 604              		.loc 1 227 10 is_stmt 0 view .LVU92
+ 605 0010 6400     		lsls	r4, r4, #1
+ 606              	.LVL29:
+ 607              		.loc 1 227 10 view .LVU93
+ 608 0012 E4B2     		uxtb	r4, r4
+ 609              	.LVL30:
+ 221:HardwareDrivers/LCD/Src/lcd_hw.c ****   {
+ 610              		.loc 1 221 57 is_stmt 1 discriminator 3 view .LVU94
+ 611 0014 0135     		adds	r5, r5, #1
+ 612              	.LVL31:
+ 221:HardwareDrivers/LCD/Src/lcd_hw.c ****   {
+ 613              		.loc 1 221 57 is_stmt 0 discriminator 3 view .LVU95
+ 614 0016 EDB2     		uxtb	r5, r5
+ 615              	.LVL32:
+ 616              	.L54:
+ 221:HardwareDrivers/LCD/Src/lcd_hw.c ****   {
+ 617              		.loc 1 221 42 is_stmt 1 discriminator 1 view .LVU96
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccJMgtwY.s 			page 16
+
+
+ 618 0018 072D     		cmp	r5, #7
+ 619 001a F5D9     		bls	.L55
+ 620              	.LBE3:
+ 228:HardwareDrivers/LCD/Src/lcd_hw.c ****   }
+ 229:HardwareDrivers/LCD/Src/lcd_hw.c **** }
+ 621              		.loc 1 229 1 is_stmt 0 view .LVU97
+ 622 001c 38BD     		pop	{r3, r4, r5, pc}
+ 623              		.loc 1 229 1 view .LVU98
+ 624              		.cfi_endproc
+ 625              	.LFE145:
+ 627              		.section	.text.LCD_Reset,"ax",%progbits
+ 628              		.align	1
+ 629              		.global	LCD_Reset
+ 630              		.syntax unified
+ 631              		.thumb
+ 632              		.thumb_func
+ 634              	LCD_Reset:
+ 635              	.LFB146:
+ 230:HardwareDrivers/LCD/Src/lcd_hw.c **** 
+ 231:HardwareDrivers/LCD/Src/lcd_hw.c **** /**
+ 232:HardwareDrivers/LCD/Src/lcd_hw.c ****  * @brief 通过 RESET 引脚复位 LCD 模块。
+ 233:HardwareDrivers/LCD/Src/lcd_hw.c ****  * @retval 无
+ 234:HardwareDrivers/LCD/Src/lcd_hw.c ****  */
+ 235:HardwareDrivers/LCD/Src/lcd_hw.c **** void LCD_Reset(void)
+ 236:HardwareDrivers/LCD/Src/lcd_hw.c **** {
+ 636              		.loc 1 236 1 is_stmt 1 view -0
+ 637              		.cfi_startproc
+ 638              		@ args = 0, pretend = 0, frame = 0
+ 639              		@ frame_needed = 0, uses_anonymous_args = 0
+ 640 0000 08B5     		push	{r3, lr}
+ 641              	.LCFI17:
+ 642              		.cfi_def_cfa_offset 8
+ 643              		.cfi_offset 3, -8
+ 644              		.cfi_offset 14, -4
+ 237:HardwareDrivers/LCD/Src/lcd_hw.c ****   /* 拉低 RESET，开始硬件复位脉冲。 */
+ 238:HardwareDrivers/LCD/Src/lcd_hw.c ****   LCD_RESET_Low();
+ 645              		.loc 1 238 3 view .LVU100
+ 646 0002 FFF7FEFF 		bl	LCD_RESET_Low
+ 647              	.LVL33:
+ 239:HardwareDrivers/LCD/Src/lcd_hw.c **** 
+ 240:HardwareDrivers/LCD/Src/lcd_hw.c ****   /* RESET 低电平保持 20 ms。 */
+ 241:HardwareDrivers/LCD/Src/lcd_hw.c ****   HAL_Delay(20U);
+ 648              		.loc 1 241 3 view .LVU101
+ 649 0006 1420     		movs	r0, #20
+ 650 0008 FFF7FEFF 		bl	HAL_Delay
+ 651              	.LVL34:
+ 242:HardwareDrivers/LCD/Src/lcd_hw.c **** 
+ 243:HardwareDrivers/LCD/Src/lcd_hw.c ****   /* 拉高 RESET，让屏幕退出复位状态。 */
+ 244:HardwareDrivers/LCD/Src/lcd_hw.c ****   LCD_RESET_High();
+ 652              		.loc 1 244 3 view .LVU102
+ 653 000c FFF7FEFF 		bl	LCD_RESET_High
+ 654              	.LVL35:
+ 245:HardwareDrivers/LCD/Src/lcd_hw.c **** 
+ 246:HardwareDrivers/LCD/Src/lcd_hw.c ****   /* 等待 120 ms，让屏幕控制器内部稳定。 */
+ 247:HardwareDrivers/LCD/Src/lcd_hw.c ****   HAL_Delay(120U);
+ 655              		.loc 1 247 3 view .LVU103
+ 656 0010 7820     		movs	r0, #120
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccJMgtwY.s 			page 17
+
+
+ 657 0012 FFF7FEFF 		bl	HAL_Delay
+ 658              	.LVL36:
+ 248:HardwareDrivers/LCD/Src/lcd_hw.c **** }
+ 659              		.loc 1 248 1 is_stmt 0 view .LVU104
+ 660 0016 08BD     		pop	{r3, pc}
+ 661              		.cfi_endproc
+ 662              	.LFE146:
+ 664              		.section	.text.LCD_WriteCmd,"ax",%progbits
+ 665              		.align	1
+ 666              		.global	LCD_WriteCmd
+ 667              		.syntax unified
+ 668              		.thumb
+ 669              		.thumb_func
+ 671              	LCD_WriteCmd:
+ 672              	.LVL37:
+ 673              	.LFB147:
+ 249:HardwareDrivers/LCD/Src/lcd_hw.c **** 
+ 250:HardwareDrivers/LCD/Src/lcd_hw.c **** /**
+ 251:HardwareDrivers/LCD/Src/lcd_hw.c ****  * @brief 向 LCD 写入 1 个命令字节。
+ 252:HardwareDrivers/LCD/Src/lcd_hw.c ****  * @param cmd 要发送的命令字节。
+ 253:HardwareDrivers/LCD/Src/lcd_hw.c ****  * @retval 无
+ 254:HardwareDrivers/LCD/Src/lcd_hw.c ****  */
+ 255:HardwareDrivers/LCD/Src/lcd_hw.c **** void LCD_WriteCmd(uint8_t cmd)
+ 256:HardwareDrivers/LCD/Src/lcd_hw.c **** {
+ 674              		.loc 1 256 1 is_stmt 1 view -0
+ 675              		.cfi_startproc
+ 676              		@ args = 0, pretend = 0, frame = 0
+ 677              		@ frame_needed = 0, uses_anonymous_args = 0
+ 678              		.loc 1 256 1 is_stmt 0 view .LVU106
+ 679 0000 10B5     		push	{r4, lr}
+ 680              	.LCFI18:
+ 681              		.cfi_def_cfa_offset 8
+ 682              		.cfi_offset 4, -8
+ 683              		.cfi_offset 14, -4
+ 684 0002 0446     		mov	r4, r0
+ 257:HardwareDrivers/LCD/Src/lcd_hw.c ****   /* 拉低 DC，表示当前发送的是命令。 */
+ 258:HardwareDrivers/LCD/Src/lcd_hw.c ****   LCD_DC_Low();
+ 685              		.loc 1 258 3 is_stmt 1 view .LVU107
+ 686 0004 FFF7FEFF 		bl	LCD_DC_Low
+ 687              	.LVL38:
+ 259:HardwareDrivers/LCD/Src/lcd_hw.c **** 
+ 260:HardwareDrivers/LCD/Src/lcd_hw.c ****   /* 拉低 CS，选中屏幕。 */
+ 261:HardwareDrivers/LCD/Src/lcd_hw.c ****   LCD_CS_Low();
+ 688              		.loc 1 261 3 view .LVU108
+ 689 0008 FFF7FEFF 		bl	LCD_CS_Low
+ 690              	.LVL39:
+ 262:HardwareDrivers/LCD/Src/lcd_hw.c **** 
+ 263:HardwareDrivers/LCD/Src/lcd_hw.c ****   /* 通过软件 SPI 发送命令字节。 */
+ 264:HardwareDrivers/LCD/Src/lcd_hw.c ****   LCD_SPI_WriteByte(cmd);
+ 691              		.loc 1 264 3 view .LVU109
+ 692 000c 2046     		mov	r0, r4
+ 693 000e FFF7FEFF 		bl	LCD_SPI_WriteByte
+ 694              	.LVL40:
+ 265:HardwareDrivers/LCD/Src/lcd_hw.c **** 
+ 266:HardwareDrivers/LCD/Src/lcd_hw.c ****   /* 拉高 CS，取消选中屏幕。 */
+ 267:HardwareDrivers/LCD/Src/lcd_hw.c ****   LCD_CS_High();
+ 695              		.loc 1 267 3 view .LVU110
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccJMgtwY.s 			page 18
+
+
+ 696 0012 FFF7FEFF 		bl	LCD_CS_High
+ 697              	.LVL41:
+ 268:HardwareDrivers/LCD/Src/lcd_hw.c **** }
+ 698              		.loc 1 268 1 is_stmt 0 view .LVU111
+ 699 0016 10BD     		pop	{r4, pc}
+ 700              		.loc 1 268 1 view .LVU112
+ 701              		.cfi_endproc
+ 702              	.LFE147:
+ 704              		.section	.text.LCD_WriteData,"ax",%progbits
+ 705              		.align	1
+ 706              		.global	LCD_WriteData
+ 707              		.syntax unified
+ 708              		.thumb
+ 709              		.thumb_func
+ 711              	LCD_WriteData:
+ 712              	.LVL42:
+ 713              	.LFB148:
+ 269:HardwareDrivers/LCD/Src/lcd_hw.c **** 
+ 270:HardwareDrivers/LCD/Src/lcd_hw.c **** /**
+ 271:HardwareDrivers/LCD/Src/lcd_hw.c ****  * @brief 向 LCD 写入 1 个数据字节。
+ 272:HardwareDrivers/LCD/Src/lcd_hw.c ****  * @param data 要发送的数据字节。
+ 273:HardwareDrivers/LCD/Src/lcd_hw.c ****  * @retval 无
+ 274:HardwareDrivers/LCD/Src/lcd_hw.c ****  */
+ 275:HardwareDrivers/LCD/Src/lcd_hw.c **** void LCD_WriteData(uint8_t data)
+ 276:HardwareDrivers/LCD/Src/lcd_hw.c **** {
+ 714              		.loc 1 276 1 is_stmt 1 view -0
+ 715              		.cfi_startproc
+ 716              		@ args = 0, pretend = 0, frame = 0
+ 717              		@ frame_needed = 0, uses_anonymous_args = 0
+ 718              		.loc 1 276 1 is_stmt 0 view .LVU114
+ 719 0000 10B5     		push	{r4, lr}
+ 720              	.LCFI19:
+ 721              		.cfi_def_cfa_offset 8
+ 722              		.cfi_offset 4, -8
+ 723              		.cfi_offset 14, -4
+ 724 0002 0446     		mov	r4, r0
+ 277:HardwareDrivers/LCD/Src/lcd_hw.c ****   /* 拉高 DC，表示当前发送的是数据。 */
+ 278:HardwareDrivers/LCD/Src/lcd_hw.c ****   LCD_DC_High();
+ 725              		.loc 1 278 3 is_stmt 1 view .LVU115
+ 726 0004 FFF7FEFF 		bl	LCD_DC_High
+ 727              	.LVL43:
+ 279:HardwareDrivers/LCD/Src/lcd_hw.c **** 
+ 280:HardwareDrivers/LCD/Src/lcd_hw.c ****   /* 拉低 CS，选中屏幕。 */
+ 281:HardwareDrivers/LCD/Src/lcd_hw.c ****   LCD_CS_Low();
+ 728              		.loc 1 281 3 view .LVU116
+ 729 0008 FFF7FEFF 		bl	LCD_CS_Low
+ 730              	.LVL44:
+ 282:HardwareDrivers/LCD/Src/lcd_hw.c **** 
+ 283:HardwareDrivers/LCD/Src/lcd_hw.c ****   /* 通过软件 SPI 发送数据字节。 */
+ 284:HardwareDrivers/LCD/Src/lcd_hw.c ****   LCD_SPI_WriteByte(data);
+ 731              		.loc 1 284 3 view .LVU117
+ 732 000c 2046     		mov	r0, r4
+ 733 000e FFF7FEFF 		bl	LCD_SPI_WriteByte
+ 734              	.LVL45:
+ 285:HardwareDrivers/LCD/Src/lcd_hw.c **** 
+ 286:HardwareDrivers/LCD/Src/lcd_hw.c ****   /* 拉高 CS，取消选中屏幕。 */
+ 287:HardwareDrivers/LCD/Src/lcd_hw.c ****   LCD_CS_High();
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccJMgtwY.s 			page 19
+
+
+ 735              		.loc 1 287 3 view .LVU118
+ 736 0012 FFF7FEFF 		bl	LCD_CS_High
+ 737              	.LVL46:
+ 288:HardwareDrivers/LCD/Src/lcd_hw.c **** }
+ 738              		.loc 1 288 1 is_stmt 0 view .LVU119
+ 739 0016 10BD     		pop	{r4, pc}
+ 740              		.loc 1 288 1 view .LVU120
+ 741              		.cfi_endproc
+ 742              	.LFE148:
+ 744              		.section	.text.LCD_WriteDataBuffer,"ax",%progbits
+ 745              		.align	1
+ 746              		.global	LCD_WriteDataBuffer
+ 747              		.syntax unified
+ 748              		.thumb
+ 749              		.thumb_func
+ 751              	LCD_WriteDataBuffer:
+ 752              	.LVL47:
+ 753              	.LFB149:
+ 289:HardwareDrivers/LCD/Src/lcd_hw.c **** 
+ 290:HardwareDrivers/LCD/Src/lcd_hw.c **** /**
+ 291:HardwareDrivers/LCD/Src/lcd_hw.c ****  * @brief 向 LCD 连续写入多个数据字节。
+ 292:HardwareDrivers/LCD/Src/lcd_hw.c ****  * @param data 指向待发送数据缓冲区的指针。
+ 293:HardwareDrivers/LCD/Src/lcd_hw.c ****  * @param len 要发送的数据字节数量。
+ 294:HardwareDrivers/LCD/Src/lcd_hw.c ****  * @retval 无
+ 295:HardwareDrivers/LCD/Src/lcd_hw.c ****  */
+ 296:HardwareDrivers/LCD/Src/lcd_hw.c **** void LCD_WriteDataBuffer(uint8_t *data, uint32_t len)
+ 297:HardwareDrivers/LCD/Src/lcd_hw.c **** {
+ 754              		.loc 1 297 1 is_stmt 1 view -0
+ 755              		.cfi_startproc
+ 756              		@ args = 0, pretend = 0, frame = 0
+ 757              		@ frame_needed = 0, uses_anonymous_args = 0
+ 758              		.loc 1 297 1 is_stmt 0 view .LVU122
+ 759 0000 70B5     		push	{r4, r5, r6, lr}
+ 760              	.LCFI20:
+ 761              		.cfi_def_cfa_offset 16
+ 762              		.cfi_offset 4, -16
+ 763              		.cfi_offset 5, -12
+ 764              		.cfi_offset 6, -8
+ 765              		.cfi_offset 14, -4
+ 766 0002 0646     		mov	r6, r0
+ 767 0004 0D46     		mov	r5, r1
+ 298:HardwareDrivers/LCD/Src/lcd_hw.c ****   /* 拉高 DC，表示当前发送的是数据。 */
+ 299:HardwareDrivers/LCD/Src/lcd_hw.c ****   LCD_DC_High();
+ 768              		.loc 1 299 3 is_stmt 1 view .LVU123
+ 769 0006 FFF7FEFF 		bl	LCD_DC_High
+ 770              	.LVL48:
+ 300:HardwareDrivers/LCD/Src/lcd_hw.c **** 
+ 301:HardwareDrivers/LCD/Src/lcd_hw.c ****   /* 拉低 CS，并在整个数据缓冲区发送期间保持选中屏幕。 */
+ 302:HardwareDrivers/LCD/Src/lcd_hw.c ****   LCD_CS_Low();
+ 771              		.loc 1 302 3 view .LVU124
+ 772 000a FFF7FEFF 		bl	LCD_CS_Low
+ 773              	.LVL49:
+ 303:HardwareDrivers/LCD/Src/lcd_hw.c **** 
+ 304:HardwareDrivers/LCD/Src/lcd_hw.c ****   /* 按顺序发送缓冲区中的每一个字节。 */
+ 305:HardwareDrivers/LCD/Src/lcd_hw.c ****   for (uint32_t index = 0U; index < len; index++)
+ 774              		.loc 1 305 3 view .LVU125
+ 775              	.LBB4:
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccJMgtwY.s 			page 20
+
+
+ 776              		.loc 1 305 8 view .LVU126
+ 777              		.loc 1 305 17 is_stmt 0 view .LVU127
+ 778 000e 0024     		movs	r4, #0
+ 779              		.loc 1 305 3 view .LVU128
+ 780 0010 03E0     		b	.L64
+ 781              	.LVL50:
+ 782              	.L65:
+ 306:HardwareDrivers/LCD/Src/lcd_hw.c ****   {
+ 307:HardwareDrivers/LCD/Src/lcd_hw.c ****     /* 通过软件 SPI 发送当前数据字节。 */
+ 308:HardwareDrivers/LCD/Src/lcd_hw.c ****     LCD_SPI_WriteByte(data[index]);
+ 783              		.loc 1 308 5 is_stmt 1 view .LVU129
+ 784 0012 305D     		ldrb	r0, [r6, r4]	@ zero_extendqisi2
+ 785 0014 FFF7FEFF 		bl	LCD_SPI_WriteByte
+ 786              	.LVL51:
+ 305:HardwareDrivers/LCD/Src/lcd_hw.c ****   {
+ 787              		.loc 1 305 47 discriminator 3 view .LVU130
+ 788 0018 0134     		adds	r4, r4, #1
+ 789              	.LVL52:
+ 790              	.L64:
+ 305:HardwareDrivers/LCD/Src/lcd_hw.c ****   {
+ 791              		.loc 1 305 35 discriminator 1 view .LVU131
+ 792 001a AC42     		cmp	r4, r5
+ 793 001c F9D3     		bcc	.L65
+ 794              	.LBE4:
+ 309:HardwareDrivers/LCD/Src/lcd_hw.c ****   }
+ 310:HardwareDrivers/LCD/Src/lcd_hw.c **** 
+ 311:HardwareDrivers/LCD/Src/lcd_hw.c ****   /* 所有数据发送完成后，拉高 CS，取消选中屏幕。 */
+ 312:HardwareDrivers/LCD/Src/lcd_hw.c ****   LCD_CS_High();
+ 795              		.loc 1 312 3 view .LVU132
+ 796 001e FFF7FEFF 		bl	LCD_CS_High
+ 797              	.LVL53:
+ 313:HardwareDrivers/LCD/Src/lcd_hw.c **** }
+ 798              		.loc 1 313 1 is_stmt 0 view .LVU133
+ 799 0022 70BD     		pop	{r4, r5, r6, pc}
+ 800              		.loc 1 313 1 view .LVU134
+ 801              		.cfi_endproc
+ 802              	.LFE149:
+ 804              		.text
+ 805              	.Letext0:
+ 806              		.file 2 "D:\\STM32CubeIDE\\STM32CubeIDE_2.1.1\\STM32CubeIDE\\plugins\\com.st.stm32cube.ide.mcu.ext
+ 807              		.file 3 "D:\\STM32CubeIDE\\STM32CubeIDE_2.1.1\\STM32CubeIDE\\plugins\\com.st.stm32cube.ide.mcu.ext
+ 808              		.file 4 "Drivers/CMSIS/Device/ST/STM32G4xx/Include/stm32g474xx.h"
+ 809              		.file 5 "Drivers/STM32G4xx_HAL_Driver/Inc/stm32g4xx_hal_gpio.h"
+ 810              		.file 6 "Drivers/STM32G4xx_HAL_Driver/Inc/stm32g4xx_hal.h"
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccJMgtwY.s 			page 21
+
+
+DEFINED SYMBOLS
+                            *ABS*:00000000 lcd_hw.c
+C:\Users\w1785\AppData\Local\Temp\ccJMgtwY.s:21     .text.LCD_SPI_Delay:00000000 $t
+C:\Users\w1785\AppData\Local\Temp\ccJMgtwY.s:26     .text.LCD_SPI_Delay:00000000 LCD_SPI_Delay
+C:\Users\w1785\AppData\Local\Temp\ccJMgtwY.s:71     .text.LCD_RESET_High:00000000 $t
+C:\Users\w1785\AppData\Local\Temp\ccJMgtwY.s:77     .text.LCD_RESET_High:00000000 LCD_RESET_High
+C:\Users\w1785\AppData\Local\Temp\ccJMgtwY.s:99     .text.LCD_RESET_High:00000010 $d
+C:\Users\w1785\AppData\Local\Temp\ccJMgtwY.s:104    .text.LCD_RESET_Low:00000000 $t
+C:\Users\w1785\AppData\Local\Temp\ccJMgtwY.s:110    .text.LCD_RESET_Low:00000000 LCD_RESET_Low
+C:\Users\w1785\AppData\Local\Temp\ccJMgtwY.s:132    .text.LCD_RESET_Low:00000010 $d
+C:\Users\w1785\AppData\Local\Temp\ccJMgtwY.s:137    .text.LCD_DC_High:00000000 $t
+C:\Users\w1785\AppData\Local\Temp\ccJMgtwY.s:143    .text.LCD_DC_High:00000000 LCD_DC_High
+C:\Users\w1785\AppData\Local\Temp\ccJMgtwY.s:165    .text.LCD_DC_High:00000010 $d
+C:\Users\w1785\AppData\Local\Temp\ccJMgtwY.s:170    .text.LCD_DC_Low:00000000 $t
+C:\Users\w1785\AppData\Local\Temp\ccJMgtwY.s:176    .text.LCD_DC_Low:00000000 LCD_DC_Low
+C:\Users\w1785\AppData\Local\Temp\ccJMgtwY.s:198    .text.LCD_DC_Low:00000010 $d
+C:\Users\w1785\AppData\Local\Temp\ccJMgtwY.s:203    .text.LCD_CS_High:00000000 $t
+C:\Users\w1785\AppData\Local\Temp\ccJMgtwY.s:209    .text.LCD_CS_High:00000000 LCD_CS_High
+C:\Users\w1785\AppData\Local\Temp\ccJMgtwY.s:231    .text.LCD_CS_High:00000010 $d
+C:\Users\w1785\AppData\Local\Temp\ccJMgtwY.s:236    .text.LCD_CS_Low:00000000 $t
+C:\Users\w1785\AppData\Local\Temp\ccJMgtwY.s:242    .text.LCD_CS_Low:00000000 LCD_CS_Low
+C:\Users\w1785\AppData\Local\Temp\ccJMgtwY.s:264    .text.LCD_CS_Low:00000010 $d
+C:\Users\w1785\AppData\Local\Temp\ccJMgtwY.s:269    .text.LCD_SCK_High:00000000 $t
+C:\Users\w1785\AppData\Local\Temp\ccJMgtwY.s:275    .text.LCD_SCK_High:00000000 LCD_SCK_High
+C:\Users\w1785\AppData\Local\Temp\ccJMgtwY.s:297    .text.LCD_SCK_High:00000010 $d
+C:\Users\w1785\AppData\Local\Temp\ccJMgtwY.s:302    .text.LCD_SCK_Low:00000000 $t
+C:\Users\w1785\AppData\Local\Temp\ccJMgtwY.s:308    .text.LCD_SCK_Low:00000000 LCD_SCK_Low
+C:\Users\w1785\AppData\Local\Temp\ccJMgtwY.s:330    .text.LCD_SCK_Low:00000010 $d
+C:\Users\w1785\AppData\Local\Temp\ccJMgtwY.s:335    .text.LCD_MOSI_High:00000000 $t
+C:\Users\w1785\AppData\Local\Temp\ccJMgtwY.s:341    .text.LCD_MOSI_High:00000000 LCD_MOSI_High
+C:\Users\w1785\AppData\Local\Temp\ccJMgtwY.s:363    .text.LCD_MOSI_High:00000010 $d
+C:\Users\w1785\AppData\Local\Temp\ccJMgtwY.s:368    .text.LCD_MOSI_Low:00000000 $t
+C:\Users\w1785\AppData\Local\Temp\ccJMgtwY.s:374    .text.LCD_MOSI_Low:00000000 LCD_MOSI_Low
+C:\Users\w1785\AppData\Local\Temp\ccJMgtwY.s:396    .text.LCD_MOSI_Low:00000010 $d
+C:\Users\w1785\AppData\Local\Temp\ccJMgtwY.s:401    .text.LCD_HW_GPIO_Init:00000000 $t
+C:\Users\w1785\AppData\Local\Temp\ccJMgtwY.s:407    .text.LCD_HW_GPIO_Init:00000000 LCD_HW_GPIO_Init
+C:\Users\w1785\AppData\Local\Temp\ccJMgtwY.s:510    .text.LCD_HW_GPIO_Init:0000006c $d
+C:\Users\w1785\AppData\Local\Temp\ccJMgtwY.s:516    .text.LCD_SPI_WriteBit:00000000 $t
+C:\Users\w1785\AppData\Local\Temp\ccJMgtwY.s:522    .text.LCD_SPI_WriteBit:00000000 LCD_SPI_WriteBit
+C:\Users\w1785\AppData\Local\Temp\ccJMgtwY.s:567    .text.LCD_SPI_WriteByte:00000000 $t
+C:\Users\w1785\AppData\Local\Temp\ccJMgtwY.s:573    .text.LCD_SPI_WriteByte:00000000 LCD_SPI_WriteByte
+C:\Users\w1785\AppData\Local\Temp\ccJMgtwY.s:628    .text.LCD_Reset:00000000 $t
+C:\Users\w1785\AppData\Local\Temp\ccJMgtwY.s:634    .text.LCD_Reset:00000000 LCD_Reset
+C:\Users\w1785\AppData\Local\Temp\ccJMgtwY.s:665    .text.LCD_WriteCmd:00000000 $t
+C:\Users\w1785\AppData\Local\Temp\ccJMgtwY.s:671    .text.LCD_WriteCmd:00000000 LCD_WriteCmd
+C:\Users\w1785\AppData\Local\Temp\ccJMgtwY.s:705    .text.LCD_WriteData:00000000 $t
+C:\Users\w1785\AppData\Local\Temp\ccJMgtwY.s:711    .text.LCD_WriteData:00000000 LCD_WriteData
+C:\Users\w1785\AppData\Local\Temp\ccJMgtwY.s:745    .text.LCD_WriteDataBuffer:00000000 $t
+C:\Users\w1785\AppData\Local\Temp\ccJMgtwY.s:751    .text.LCD_WriteDataBuffer:00000000 LCD_WriteDataBuffer
+
+UNDEFINED SYMBOLS
+HAL_GPIO_WritePin
+HAL_GPIO_Init
+HAL_Delay

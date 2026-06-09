@@ -1,0 +1,2096 @@
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccF8PBmu.s 			page 1
+
+
+   1              		.cpu cortex-m4
+   2              		.arch armv7e-m
+   3              		.fpu fpv4-sp-d16
+   4              		.eabi_attribute 27, 1
+   5              		.eabi_attribute 28, 1
+   6              		.eabi_attribute 20, 1
+   7              		.eabi_attribute 21, 1
+   8              		.eabi_attribute 23, 3
+   9              		.eabi_attribute 24, 1
+  10              		.eabi_attribute 25, 1
+  11              		.eabi_attribute 26, 1
+  12              		.eabi_attribute 30, 1
+  13              		.eabi_attribute 34, 1
+  14              		.eabi_attribute 18, 4
+  15              		.file	"lv_string_builtin.c"
+  16              		.text
+  17              	.Ltext0:
+  18              		.cfi_sections	.debug_frame
+  19              		.file 1 "Middlewares/LVGL/lvgl/src/stdlib/builtin/lv_string_builtin.c"
+  20              		.section	.text.lv_memcpy,"ax",%progbits
+  21              		.align	1
+  22              		.global	lv_memcpy
+  23              		.syntax unified
+  24              		.thumb
+  25              		.thumb_func
+  27              	lv_memcpy:
+  28              	.LVL0:
+  29              	.LFB3:
+   1:Middlewares/LVGL/lvgl/src/stdlib/builtin/lv_string_builtin.c **** /**
+   2:Middlewares/LVGL/lvgl/src/stdlib/builtin/lv_string_builtin.c ****  * @file lv_string_builtin.c
+   3:Middlewares/LVGL/lvgl/src/stdlib/builtin/lv_string_builtin.c ****  */
+   4:Middlewares/LVGL/lvgl/src/stdlib/builtin/lv_string_builtin.c **** 
+   5:Middlewares/LVGL/lvgl/src/stdlib/builtin/lv_string_builtin.c **** /*********************
+   6:Middlewares/LVGL/lvgl/src/stdlib/builtin/lv_string_builtin.c ****  *      INCLUDES
+   7:Middlewares/LVGL/lvgl/src/stdlib/builtin/lv_string_builtin.c ****  *********************/
+   8:Middlewares/LVGL/lvgl/src/stdlib/builtin/lv_string_builtin.c **** #include "../../lv_conf_internal.h"
+   9:Middlewares/LVGL/lvgl/src/stdlib/builtin/lv_string_builtin.c **** #if LV_USE_STDLIB_STRING == LV_STDLIB_BUILTIN
+  10:Middlewares/LVGL/lvgl/src/stdlib/builtin/lv_string_builtin.c **** #include "../../misc/lv_assert.h"
+  11:Middlewares/LVGL/lvgl/src/stdlib/builtin/lv_string_builtin.c **** #include "../../misc/lv_log.h"
+  12:Middlewares/LVGL/lvgl/src/stdlib/builtin/lv_string_builtin.c **** #include "../../misc/lv_math.h"
+  13:Middlewares/LVGL/lvgl/src/stdlib/builtin/lv_string_builtin.c **** #include "../../stdlib/lv_string.h"
+  14:Middlewares/LVGL/lvgl/src/stdlib/builtin/lv_string_builtin.c **** #include "../../stdlib/lv_mem.h"
+  15:Middlewares/LVGL/lvgl/src/stdlib/builtin/lv_string_builtin.c **** 
+  16:Middlewares/LVGL/lvgl/src/stdlib/builtin/lv_string_builtin.c **** /*********************
+  17:Middlewares/LVGL/lvgl/src/stdlib/builtin/lv_string_builtin.c ****  *      DEFINES
+  18:Middlewares/LVGL/lvgl/src/stdlib/builtin/lv_string_builtin.c ****  *********************/
+  19:Middlewares/LVGL/lvgl/src/stdlib/builtin/lv_string_builtin.c **** #ifdef LV_ARCH_64
+  20:Middlewares/LVGL/lvgl/src/stdlib/builtin/lv_string_builtin.c ****     #define MEM_UNIT         uint64_t
+  21:Middlewares/LVGL/lvgl/src/stdlib/builtin/lv_string_builtin.c ****     #define ALIGN_MASK       0x7
+  22:Middlewares/LVGL/lvgl/src/stdlib/builtin/lv_string_builtin.c **** #else
+  23:Middlewares/LVGL/lvgl/src/stdlib/builtin/lv_string_builtin.c ****     #define MEM_UNIT         uint32_t
+  24:Middlewares/LVGL/lvgl/src/stdlib/builtin/lv_string_builtin.c ****     #define ALIGN_MASK       0x3
+  25:Middlewares/LVGL/lvgl/src/stdlib/builtin/lv_string_builtin.c **** #endif
+  26:Middlewares/LVGL/lvgl/src/stdlib/builtin/lv_string_builtin.c **** 
+  27:Middlewares/LVGL/lvgl/src/stdlib/builtin/lv_string_builtin.c **** /**********************
+  28:Middlewares/LVGL/lvgl/src/stdlib/builtin/lv_string_builtin.c ****  *      TYPEDEFS
+  29:Middlewares/LVGL/lvgl/src/stdlib/builtin/lv_string_builtin.c ****  **********************/
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccF8PBmu.s 			page 2
+
+
+  30:Middlewares/LVGL/lvgl/src/stdlib/builtin/lv_string_builtin.c **** 
+  31:Middlewares/LVGL/lvgl/src/stdlib/builtin/lv_string_builtin.c **** /**********************
+  32:Middlewares/LVGL/lvgl/src/stdlib/builtin/lv_string_builtin.c ****  *  STATIC PROTOTYPES
+  33:Middlewares/LVGL/lvgl/src/stdlib/builtin/lv_string_builtin.c ****  **********************/
+  34:Middlewares/LVGL/lvgl/src/stdlib/builtin/lv_string_builtin.c **** 
+  35:Middlewares/LVGL/lvgl/src/stdlib/builtin/lv_string_builtin.c **** /**********************
+  36:Middlewares/LVGL/lvgl/src/stdlib/builtin/lv_string_builtin.c ****  *  STATIC VARIABLES
+  37:Middlewares/LVGL/lvgl/src/stdlib/builtin/lv_string_builtin.c ****  **********************/
+  38:Middlewares/LVGL/lvgl/src/stdlib/builtin/lv_string_builtin.c **** 
+  39:Middlewares/LVGL/lvgl/src/stdlib/builtin/lv_string_builtin.c **** /**********************
+  40:Middlewares/LVGL/lvgl/src/stdlib/builtin/lv_string_builtin.c ****  *      MACROS
+  41:Middlewares/LVGL/lvgl/src/stdlib/builtin/lv_string_builtin.c ****  **********************/
+  42:Middlewares/LVGL/lvgl/src/stdlib/builtin/lv_string_builtin.c **** #if LV_USE_LOG && LV_LOG_TRACE_MEM
+  43:Middlewares/LVGL/lvgl/src/stdlib/builtin/lv_string_builtin.c ****     #define LV_TRACE_MEM(...) LV_LOG_TRACE(__VA_ARGS__)
+  44:Middlewares/LVGL/lvgl/src/stdlib/builtin/lv_string_builtin.c **** #else
+  45:Middlewares/LVGL/lvgl/src/stdlib/builtin/lv_string_builtin.c ****     #define LV_TRACE_MEM(...)
+  46:Middlewares/LVGL/lvgl/src/stdlib/builtin/lv_string_builtin.c **** #endif
+  47:Middlewares/LVGL/lvgl/src/stdlib/builtin/lv_string_builtin.c **** 
+  48:Middlewares/LVGL/lvgl/src/stdlib/builtin/lv_string_builtin.c **** #define _COPY(d, s) *d = *s; d++; s++;
+  49:Middlewares/LVGL/lvgl/src/stdlib/builtin/lv_string_builtin.c **** #define _SET(d, v) *d = v; d++;
+  50:Middlewares/LVGL/lvgl/src/stdlib/builtin/lv_string_builtin.c **** #define _REPEAT8(expr) expr expr expr expr expr expr expr expr
+  51:Middlewares/LVGL/lvgl/src/stdlib/builtin/lv_string_builtin.c **** 
+  52:Middlewares/LVGL/lvgl/src/stdlib/builtin/lv_string_builtin.c **** /**********************
+  53:Middlewares/LVGL/lvgl/src/stdlib/builtin/lv_string_builtin.c ****  *   GLOBAL FUNCTIONS
+  54:Middlewares/LVGL/lvgl/src/stdlib/builtin/lv_string_builtin.c ****  **********************/
+  55:Middlewares/LVGL/lvgl/src/stdlib/builtin/lv_string_builtin.c **** 
+  56:Middlewares/LVGL/lvgl/src/stdlib/builtin/lv_string_builtin.c **** void * LV_ATTRIBUTE_FAST_MEM lv_memcpy(void * dst, const void * src, size_t len)
+  57:Middlewares/LVGL/lvgl/src/stdlib/builtin/lv_string_builtin.c **** {
+  30              		.loc 1 57 1 view -0
+  31              		.cfi_startproc
+  32              		@ args = 0, pretend = 0, frame = 0
+  33              		@ frame_needed = 0, uses_anonymous_args = 0
+  34              		@ link register save eliminated.
+  35              		.loc 1 57 1 is_stmt 0 view .LVU1
+  36 0000 10B4     		push	{r4}
+  37              	.LCFI0:
+  38              		.cfi_def_cfa_offset 4
+  39              		.cfi_offset 4, -4
+  58:Middlewares/LVGL/lvgl/src/stdlib/builtin/lv_string_builtin.c ****     volatile uint8_t * d8 = dst;
+  40              		.loc 1 58 5 is_stmt 1 view .LVU2
+  41              	.LVL1:
+  59:Middlewares/LVGL/lvgl/src/stdlib/builtin/lv_string_builtin.c ****     const uint8_t * s8 = src;
+  42              		.loc 1 59 5 view .LVU3
+  60:Middlewares/LVGL/lvgl/src/stdlib/builtin/lv_string_builtin.c **** 
+  61:Middlewares/LVGL/lvgl/src/stdlib/builtin/lv_string_builtin.c ****     /*Simplify for small memories*/
+  62:Middlewares/LVGL/lvgl/src/stdlib/builtin/lv_string_builtin.c ****     if(len < 16) {
+  43              		.loc 1 62 5 view .LVU4
+  44              		.loc 1 62 7 is_stmt 0 view .LVU5
+  45 0002 0F2A     		cmp	r2, #15
+  46 0004 1FD9     		bls	.L24
+  63:Middlewares/LVGL/lvgl/src/stdlib/builtin/lv_string_builtin.c ****         while(len) {
+  64:Middlewares/LVGL/lvgl/src/stdlib/builtin/lv_string_builtin.c ****             *d8 = *s8;
+  65:Middlewares/LVGL/lvgl/src/stdlib/builtin/lv_string_builtin.c ****             d8++;
+  66:Middlewares/LVGL/lvgl/src/stdlib/builtin/lv_string_builtin.c ****             s8++;
+  67:Middlewares/LVGL/lvgl/src/stdlib/builtin/lv_string_builtin.c ****             len--;
+  68:Middlewares/LVGL/lvgl/src/stdlib/builtin/lv_string_builtin.c ****         }
+  69:Middlewares/LVGL/lvgl/src/stdlib/builtin/lv_string_builtin.c ****         return dst;
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccF8PBmu.s 			page 3
+
+
+  70:Middlewares/LVGL/lvgl/src/stdlib/builtin/lv_string_builtin.c ****     }
+  71:Middlewares/LVGL/lvgl/src/stdlib/builtin/lv_string_builtin.c **** 
+  72:Middlewares/LVGL/lvgl/src/stdlib/builtin/lv_string_builtin.c ****     lv_uintptr_t d_align = (lv_uintptr_t)d8 & ALIGN_MASK;
+  47              		.loc 1 72 5 is_stmt 1 view .LVU6
+  48              		.loc 1 72 18 is_stmt 0 view .LVU7
+  49 0006 00F00304 		and	r4, r0, #3
+  50              	.LVL2:
+  73:Middlewares/LVGL/lvgl/src/stdlib/builtin/lv_string_builtin.c ****     lv_uintptr_t s_align = (lv_uintptr_t)s8 & ALIGN_MASK;
+  51              		.loc 1 73 5 is_stmt 1 view .LVU8
+  52              		.loc 1 73 18 is_stmt 0 view .LVU9
+  53 000a 01F00303 		and	r3, r1, #3
+  54              	.LVL3:
+  74:Middlewares/LVGL/lvgl/src/stdlib/builtin/lv_string_builtin.c **** 
+  75:Middlewares/LVGL/lvgl/src/stdlib/builtin/lv_string_builtin.c ****     /*Byte copy for unaligned memories*/
+  76:Middlewares/LVGL/lvgl/src/stdlib/builtin/lv_string_builtin.c ****     if(s_align != d_align) {
+  55              		.loc 1 76 5 is_stmt 1 view .LVU10
+  56              		.loc 1 76 7 is_stmt 0 view .LVU11
+  57 000e 9C42     		cmp	r4, r3
+  58 0010 61D1     		bne	.L19
+  77:Middlewares/LVGL/lvgl/src/stdlib/builtin/lv_string_builtin.c ****         while(len > 32) {
+  78:Middlewares/LVGL/lvgl/src/stdlib/builtin/lv_string_builtin.c ****             _REPEAT8(_COPY(d8, s8));
+  79:Middlewares/LVGL/lvgl/src/stdlib/builtin/lv_string_builtin.c ****             _REPEAT8(_COPY(d8, s8));
+  80:Middlewares/LVGL/lvgl/src/stdlib/builtin/lv_string_builtin.c ****             _REPEAT8(_COPY(d8, s8));
+  81:Middlewares/LVGL/lvgl/src/stdlib/builtin/lv_string_builtin.c ****             _REPEAT8(_COPY(d8, s8));
+  82:Middlewares/LVGL/lvgl/src/stdlib/builtin/lv_string_builtin.c ****             len -= 32;
+  83:Middlewares/LVGL/lvgl/src/stdlib/builtin/lv_string_builtin.c ****         }
+  84:Middlewares/LVGL/lvgl/src/stdlib/builtin/lv_string_builtin.c ****         while(len) {
+  85:Middlewares/LVGL/lvgl/src/stdlib/builtin/lv_string_builtin.c ****             _COPY(d8, s8)
+  86:Middlewares/LVGL/lvgl/src/stdlib/builtin/lv_string_builtin.c ****             len--;
+  87:Middlewares/LVGL/lvgl/src/stdlib/builtin/lv_string_builtin.c ****         }
+  88:Middlewares/LVGL/lvgl/src/stdlib/builtin/lv_string_builtin.c ****         return dst;
+  89:Middlewares/LVGL/lvgl/src/stdlib/builtin/lv_string_builtin.c ****     }
+  90:Middlewares/LVGL/lvgl/src/stdlib/builtin/lv_string_builtin.c **** 
+  91:Middlewares/LVGL/lvgl/src/stdlib/builtin/lv_string_builtin.c ****     /*Make the memories aligned*/
+  92:Middlewares/LVGL/lvgl/src/stdlib/builtin/lv_string_builtin.c ****     if(d_align) {
+  59              		.loc 1 92 5 is_stmt 1 view .LVU12
+  60              		.loc 1 92 7 is_stmt 0 view .LVU13
+  61 0012 002C     		cmp	r4, #0
+  62 0014 69D0     		beq	.L20
+  93:Middlewares/LVGL/lvgl/src/stdlib/builtin/lv_string_builtin.c ****         d_align = ALIGN_MASK + 1 - d_align;
+  63              		.loc 1 93 9 is_stmt 1 view .LVU14
+  64              		.loc 1 93 17 is_stmt 0 view .LVU15
+  65 0016 C4F10404 		rsb	r4, r4, #4
+  66              	.LVL4:
+  94:Middlewares/LVGL/lvgl/src/stdlib/builtin/lv_string_builtin.c ****         while(d_align && len) {
+  67              		.loc 1 94 9 is_stmt 1 view .LVU16
+  58:Middlewares/LVGL/lvgl/src/stdlib/builtin/lv_string_builtin.c ****     const uint8_t * s8 = src;
+  68              		.loc 1 58 24 is_stmt 0 view .LVU17
+  69 001a 0346     		mov	r3, r0
+  70              	.LVL5:
+  71              	.L12:
+  72              		.loc 1 94 23 is_stmt 1 view .LVU18
+  73 001c 002C     		cmp	r4, #0
+  74 001e 65D0     		beq	.L14
+  75              		.loc 1 94 23 is_stmt 0 discriminator 1 view .LVU19
+  76 0020 002A     		cmp	r2, #0
+  77 0022 63D0     		beq	.L14
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccF8PBmu.s 			page 4
+
+
+  95:Middlewares/LVGL/lvgl/src/stdlib/builtin/lv_string_builtin.c ****             _COPY(d8, s8);
+  78              		.loc 1 95 13 is_stmt 1 view .LVU20
+  79 0024 11F801CB 		ldrb	ip, [r1], #1	@ zero_extendqisi2
+  80              	.LVL6:
+  81              		.loc 1 95 13 is_stmt 0 view .LVU21
+  82 0028 03F801CB 		strb	ip, [r3], #1
+  83              	.LVL7:
+  84              		.loc 1 95 13 is_stmt 1 view .LVU22
+  85              		.loc 1 95 13 view .LVU23
+  86              		.loc 1 95 26 view .LVU24
+  96:Middlewares/LVGL/lvgl/src/stdlib/builtin/lv_string_builtin.c ****             d_align--;
+  87              		.loc 1 96 13 view .LVU25
+  88              		.loc 1 96 20 is_stmt 0 view .LVU26
+  89 002c 013C     		subs	r4, r4, #1
+  90              	.LVL8:
+  97:Middlewares/LVGL/lvgl/src/stdlib/builtin/lv_string_builtin.c ****             len--;
+  91              		.loc 1 97 13 is_stmt 1 view .LVU27
+  92              		.loc 1 97 16 is_stmt 0 view .LVU28
+  93 002e 013A     		subs	r2, r2, #1
+  94              	.LVL9:
+  95              		.loc 1 97 16 view .LVU29
+  96 0030 F4E7     		b	.L12
+  97              	.LVL10:
+  98              	.L4:
+  64:Middlewares/LVGL/lvgl/src/stdlib/builtin/lv_string_builtin.c ****             d8++;
+  99              		.loc 1 64 13 is_stmt 1 view .LVU30
+  64:Middlewares/LVGL/lvgl/src/stdlib/builtin/lv_string_builtin.c ****             d8++;
+ 100              		.loc 1 64 19 is_stmt 0 view .LVU31
+ 101 0032 11F8014B 		ldrb	r4, [r1], #1	@ zero_extendqisi2
+ 102              	.LVL11:
+  64:Middlewares/LVGL/lvgl/src/stdlib/builtin/lv_string_builtin.c ****             d8++;
+ 103              		.loc 1 64 17 view .LVU32
+ 104 0036 03F8014B 		strb	r4, [r3], #1
+ 105              	.LVL12:
+  65:Middlewares/LVGL/lvgl/src/stdlib/builtin/lv_string_builtin.c ****             s8++;
+ 106              		.loc 1 65 13 is_stmt 1 view .LVU33
+  66:Middlewares/LVGL/lvgl/src/stdlib/builtin/lv_string_builtin.c ****             len--;
+ 107              		.loc 1 66 13 view .LVU34
+  67:Middlewares/LVGL/lvgl/src/stdlib/builtin/lv_string_builtin.c ****         }
+ 108              		.loc 1 67 13 view .LVU35
+  67:Middlewares/LVGL/lvgl/src/stdlib/builtin/lv_string_builtin.c ****         }
+ 109              		.loc 1 67 16 is_stmt 0 view .LVU36
+ 110 003a 013A     		subs	r2, r2, #1
+ 111              	.LVL13:
+ 112              	.L2:
+  63:Middlewares/LVGL/lvgl/src/stdlib/builtin/lv_string_builtin.c ****             *d8 = *s8;
+ 113              		.loc 1 63 15 is_stmt 1 view .LVU37
+ 114 003c 002A     		cmp	r2, #0
+ 115 003e F8D1     		bne	.L4
+ 116              	.L5:
+  98:Middlewares/LVGL/lvgl/src/stdlib/builtin/lv_string_builtin.c ****         }
+  99:Middlewares/LVGL/lvgl/src/stdlib/builtin/lv_string_builtin.c ****     }
+ 100:Middlewares/LVGL/lvgl/src/stdlib/builtin/lv_string_builtin.c **** 
+ 101:Middlewares/LVGL/lvgl/src/stdlib/builtin/lv_string_builtin.c ****     uint32_t * d32 = (uint32_t *)d8;
+ 102:Middlewares/LVGL/lvgl/src/stdlib/builtin/lv_string_builtin.c ****     const uint32_t * s32 = (uint32_t *)s8;
+ 103:Middlewares/LVGL/lvgl/src/stdlib/builtin/lv_string_builtin.c ****     while(len > 32) {
+ 104:Middlewares/LVGL/lvgl/src/stdlib/builtin/lv_string_builtin.c ****         _REPEAT8(_COPY(d32, s32))
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccF8PBmu.s 			page 5
+
+
+ 105:Middlewares/LVGL/lvgl/src/stdlib/builtin/lv_string_builtin.c ****         len -= 32;
+ 106:Middlewares/LVGL/lvgl/src/stdlib/builtin/lv_string_builtin.c ****     }
+ 107:Middlewares/LVGL/lvgl/src/stdlib/builtin/lv_string_builtin.c **** 
+ 108:Middlewares/LVGL/lvgl/src/stdlib/builtin/lv_string_builtin.c ****     d8 = (uint8_t *)d32;
+ 109:Middlewares/LVGL/lvgl/src/stdlib/builtin/lv_string_builtin.c ****     s8 = (const uint8_t *)s32;
+ 110:Middlewares/LVGL/lvgl/src/stdlib/builtin/lv_string_builtin.c ****     while(len) {
+ 111:Middlewares/LVGL/lvgl/src/stdlib/builtin/lv_string_builtin.c ****         _COPY(d8, s8)
+ 112:Middlewares/LVGL/lvgl/src/stdlib/builtin/lv_string_builtin.c ****         len--;
+ 113:Middlewares/LVGL/lvgl/src/stdlib/builtin/lv_string_builtin.c ****     }
+ 114:Middlewares/LVGL/lvgl/src/stdlib/builtin/lv_string_builtin.c **** 
+ 115:Middlewares/LVGL/lvgl/src/stdlib/builtin/lv_string_builtin.c ****     return dst;
+ 116:Middlewares/LVGL/lvgl/src/stdlib/builtin/lv_string_builtin.c **** }
+ 117              		.loc 1 116 1 is_stmt 0 view .LVU38
+ 118 0040 5DF8044B 		ldr	r4, [sp], #4
+ 119 0044 7047     		bx	lr
+ 120              	.LVL14:
+ 121              	.L24:
+  58:Middlewares/LVGL/lvgl/src/stdlib/builtin/lv_string_builtin.c ****     const uint8_t * s8 = src;
+ 122              		.loc 1 58 24 view .LVU39
+ 123 0046 0346     		mov	r3, r0
+ 124 0048 F8E7     		b	.L2
+ 125              	.LVL15:
+ 126              	.L8:
+  78:Middlewares/LVGL/lvgl/src/stdlib/builtin/lv_string_builtin.c ****             _REPEAT8(_COPY(d8, s8));
+ 127              		.loc 1 78 13 is_stmt 1 view .LVU40
+ 128 004a 0C78     		ldrb	r4, [r1]	@ zero_extendqisi2
+ 129 004c 1C70     		strb	r4, [r3]
+  78:Middlewares/LVGL/lvgl/src/stdlib/builtin/lv_string_builtin.c ****             _REPEAT8(_COPY(d8, s8));
+ 130              		.loc 1 78 13 view .LVU41
+ 131              	.LVL16:
+  78:Middlewares/LVGL/lvgl/src/stdlib/builtin/lv_string_builtin.c ****             _REPEAT8(_COPY(d8, s8));
+ 132              		.loc 1 78 13 view .LVU42
+  78:Middlewares/LVGL/lvgl/src/stdlib/builtin/lv_string_builtin.c ****             _REPEAT8(_COPY(d8, s8));
+ 133              		.loc 1 78 13 view .LVU43
+ 134 004e 4C78     		ldrb	r4, [r1, #1]	@ zero_extendqisi2
+ 135 0050 5C70     		strb	r4, [r3, #1]
+  78:Middlewares/LVGL/lvgl/src/stdlib/builtin/lv_string_builtin.c ****             _REPEAT8(_COPY(d8, s8));
+ 136              		.loc 1 78 13 view .LVU44
+ 137              	.LVL17:
+  78:Middlewares/LVGL/lvgl/src/stdlib/builtin/lv_string_builtin.c ****             _REPEAT8(_COPY(d8, s8));
+ 138              		.loc 1 78 13 view .LVU45
+  78:Middlewares/LVGL/lvgl/src/stdlib/builtin/lv_string_builtin.c ****             _REPEAT8(_COPY(d8, s8));
+ 139              		.loc 1 78 13 view .LVU46
+ 140 0052 8C78     		ldrb	r4, [r1, #2]	@ zero_extendqisi2
+ 141 0054 9C70     		strb	r4, [r3, #2]
+  78:Middlewares/LVGL/lvgl/src/stdlib/builtin/lv_string_builtin.c ****             _REPEAT8(_COPY(d8, s8));
+ 142              		.loc 1 78 13 view .LVU47
+ 143              	.LVL18:
+  78:Middlewares/LVGL/lvgl/src/stdlib/builtin/lv_string_builtin.c ****             _REPEAT8(_COPY(d8, s8));
+ 144              		.loc 1 78 13 view .LVU48
+  78:Middlewares/LVGL/lvgl/src/stdlib/builtin/lv_string_builtin.c ****             _REPEAT8(_COPY(d8, s8));
+ 145              		.loc 1 78 13 view .LVU49
+ 146 0056 CC78     		ldrb	r4, [r1, #3]	@ zero_extendqisi2
+ 147 0058 DC70     		strb	r4, [r3, #3]
+  78:Middlewares/LVGL/lvgl/src/stdlib/builtin/lv_string_builtin.c ****             _REPEAT8(_COPY(d8, s8));
+ 148              		.loc 1 78 13 view .LVU50
+ 149              	.LVL19:
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccF8PBmu.s 			page 6
+
+
+  78:Middlewares/LVGL/lvgl/src/stdlib/builtin/lv_string_builtin.c ****             _REPEAT8(_COPY(d8, s8));
+ 150              		.loc 1 78 13 view .LVU51
+  78:Middlewares/LVGL/lvgl/src/stdlib/builtin/lv_string_builtin.c ****             _REPEAT8(_COPY(d8, s8));
+ 151              		.loc 1 78 13 view .LVU52
+ 152 005a 0C79     		ldrb	r4, [r1, #4]	@ zero_extendqisi2
+ 153 005c 1C71     		strb	r4, [r3, #4]
+  78:Middlewares/LVGL/lvgl/src/stdlib/builtin/lv_string_builtin.c ****             _REPEAT8(_COPY(d8, s8));
+ 154              		.loc 1 78 13 view .LVU53
+ 155              	.LVL20:
+  78:Middlewares/LVGL/lvgl/src/stdlib/builtin/lv_string_builtin.c ****             _REPEAT8(_COPY(d8, s8));
+ 156              		.loc 1 78 13 view .LVU54
+  78:Middlewares/LVGL/lvgl/src/stdlib/builtin/lv_string_builtin.c ****             _REPEAT8(_COPY(d8, s8));
+ 157              		.loc 1 78 13 view .LVU55
+ 158 005e 4C79     		ldrb	r4, [r1, #5]	@ zero_extendqisi2
+ 159 0060 5C71     		strb	r4, [r3, #5]
+  78:Middlewares/LVGL/lvgl/src/stdlib/builtin/lv_string_builtin.c ****             _REPEAT8(_COPY(d8, s8));
+ 160              		.loc 1 78 13 view .LVU56
+ 161              	.LVL21:
+  78:Middlewares/LVGL/lvgl/src/stdlib/builtin/lv_string_builtin.c ****             _REPEAT8(_COPY(d8, s8));
+ 162              		.loc 1 78 13 view .LVU57
+  78:Middlewares/LVGL/lvgl/src/stdlib/builtin/lv_string_builtin.c ****             _REPEAT8(_COPY(d8, s8));
+ 163              		.loc 1 78 13 view .LVU58
+ 164 0062 8C79     		ldrb	r4, [r1, #6]	@ zero_extendqisi2
+ 165 0064 9C71     		strb	r4, [r3, #6]
+  78:Middlewares/LVGL/lvgl/src/stdlib/builtin/lv_string_builtin.c ****             _REPEAT8(_COPY(d8, s8));
+ 166              		.loc 1 78 13 view .LVU59
+ 167              	.LVL22:
+  78:Middlewares/LVGL/lvgl/src/stdlib/builtin/lv_string_builtin.c ****             _REPEAT8(_COPY(d8, s8));
+ 168              		.loc 1 78 13 view .LVU60
+  78:Middlewares/LVGL/lvgl/src/stdlib/builtin/lv_string_builtin.c ****             _REPEAT8(_COPY(d8, s8));
+ 169              		.loc 1 78 13 view .LVU61
+ 170 0066 CC79     		ldrb	r4, [r1, #7]	@ zero_extendqisi2
+ 171 0068 DC71     		strb	r4, [r3, #7]
+  78:Middlewares/LVGL/lvgl/src/stdlib/builtin/lv_string_builtin.c ****             _REPEAT8(_COPY(d8, s8));
+ 172              		.loc 1 78 13 view .LVU62
+ 173              	.LVL23:
+  78:Middlewares/LVGL/lvgl/src/stdlib/builtin/lv_string_builtin.c ****             _REPEAT8(_COPY(d8, s8));
+ 174              		.loc 1 78 13 view .LVU63
+  78:Middlewares/LVGL/lvgl/src/stdlib/builtin/lv_string_builtin.c ****             _REPEAT8(_COPY(d8, s8));
+ 175              		.loc 1 78 36 view .LVU64
+  79:Middlewares/LVGL/lvgl/src/stdlib/builtin/lv_string_builtin.c ****             _REPEAT8(_COPY(d8, s8));
+ 176              		.loc 1 79 13 view .LVU65
+ 177 006a 0C7A     		ldrb	r4, [r1, #8]	@ zero_extendqisi2
+ 178 006c 1C72     		strb	r4, [r3, #8]
+  79:Middlewares/LVGL/lvgl/src/stdlib/builtin/lv_string_builtin.c ****             _REPEAT8(_COPY(d8, s8));
+ 179              		.loc 1 79 13 view .LVU66
+ 180              	.LVL24:
+  79:Middlewares/LVGL/lvgl/src/stdlib/builtin/lv_string_builtin.c ****             _REPEAT8(_COPY(d8, s8));
+ 181              		.loc 1 79 13 view .LVU67
+  79:Middlewares/LVGL/lvgl/src/stdlib/builtin/lv_string_builtin.c ****             _REPEAT8(_COPY(d8, s8));
+ 182              		.loc 1 79 13 view .LVU68
+ 183 006e 4C7A     		ldrb	r4, [r1, #9]	@ zero_extendqisi2
+ 184 0070 5C72     		strb	r4, [r3, #9]
+  79:Middlewares/LVGL/lvgl/src/stdlib/builtin/lv_string_builtin.c ****             _REPEAT8(_COPY(d8, s8));
+ 185              		.loc 1 79 13 view .LVU69
+ 186              	.LVL25:
+  79:Middlewares/LVGL/lvgl/src/stdlib/builtin/lv_string_builtin.c ****             _REPEAT8(_COPY(d8, s8));
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccF8PBmu.s 			page 7
+
+
+ 187              		.loc 1 79 13 view .LVU70
+  79:Middlewares/LVGL/lvgl/src/stdlib/builtin/lv_string_builtin.c ****             _REPEAT8(_COPY(d8, s8));
+ 188              		.loc 1 79 13 view .LVU71
+ 189 0072 8C7A     		ldrb	r4, [r1, #10]	@ zero_extendqisi2
+ 190 0074 9C72     		strb	r4, [r3, #10]
+  79:Middlewares/LVGL/lvgl/src/stdlib/builtin/lv_string_builtin.c ****             _REPEAT8(_COPY(d8, s8));
+ 191              		.loc 1 79 13 view .LVU72
+ 192              	.LVL26:
+  79:Middlewares/LVGL/lvgl/src/stdlib/builtin/lv_string_builtin.c ****             _REPEAT8(_COPY(d8, s8));
+ 193              		.loc 1 79 13 view .LVU73
+  79:Middlewares/LVGL/lvgl/src/stdlib/builtin/lv_string_builtin.c ****             _REPEAT8(_COPY(d8, s8));
+ 194              		.loc 1 79 13 view .LVU74
+ 195 0076 CC7A     		ldrb	r4, [r1, #11]	@ zero_extendqisi2
+ 196 0078 DC72     		strb	r4, [r3, #11]
+  79:Middlewares/LVGL/lvgl/src/stdlib/builtin/lv_string_builtin.c ****             _REPEAT8(_COPY(d8, s8));
+ 197              		.loc 1 79 13 view .LVU75
+ 198              	.LVL27:
+  79:Middlewares/LVGL/lvgl/src/stdlib/builtin/lv_string_builtin.c ****             _REPEAT8(_COPY(d8, s8));
+ 199              		.loc 1 79 13 view .LVU76
+  79:Middlewares/LVGL/lvgl/src/stdlib/builtin/lv_string_builtin.c ****             _REPEAT8(_COPY(d8, s8));
+ 200              		.loc 1 79 13 view .LVU77
+ 201 007a 0C7B     		ldrb	r4, [r1, #12]	@ zero_extendqisi2
+ 202 007c 1C73     		strb	r4, [r3, #12]
+  79:Middlewares/LVGL/lvgl/src/stdlib/builtin/lv_string_builtin.c ****             _REPEAT8(_COPY(d8, s8));
+ 203              		.loc 1 79 13 view .LVU78
+ 204              	.LVL28:
+  79:Middlewares/LVGL/lvgl/src/stdlib/builtin/lv_string_builtin.c ****             _REPEAT8(_COPY(d8, s8));
+ 205              		.loc 1 79 13 view .LVU79
+  79:Middlewares/LVGL/lvgl/src/stdlib/builtin/lv_string_builtin.c ****             _REPEAT8(_COPY(d8, s8));
+ 206              		.loc 1 79 13 view .LVU80
+ 207 007e 4C7B     		ldrb	r4, [r1, #13]	@ zero_extendqisi2
+ 208 0080 5C73     		strb	r4, [r3, #13]
+  79:Middlewares/LVGL/lvgl/src/stdlib/builtin/lv_string_builtin.c ****             _REPEAT8(_COPY(d8, s8));
+ 209              		.loc 1 79 13 view .LVU81
+ 210              	.LVL29:
+  79:Middlewares/LVGL/lvgl/src/stdlib/builtin/lv_string_builtin.c ****             _REPEAT8(_COPY(d8, s8));
+ 211              		.loc 1 79 13 view .LVU82
+  79:Middlewares/LVGL/lvgl/src/stdlib/builtin/lv_string_builtin.c ****             _REPEAT8(_COPY(d8, s8));
+ 212              		.loc 1 79 13 view .LVU83
+ 213 0082 8C7B     		ldrb	r4, [r1, #14]	@ zero_extendqisi2
+ 214 0084 9C73     		strb	r4, [r3, #14]
+  79:Middlewares/LVGL/lvgl/src/stdlib/builtin/lv_string_builtin.c ****             _REPEAT8(_COPY(d8, s8));
+ 215              		.loc 1 79 13 view .LVU84
+ 216              	.LVL30:
+  79:Middlewares/LVGL/lvgl/src/stdlib/builtin/lv_string_builtin.c ****             _REPEAT8(_COPY(d8, s8));
+ 217              		.loc 1 79 13 view .LVU85
+  79:Middlewares/LVGL/lvgl/src/stdlib/builtin/lv_string_builtin.c ****             _REPEAT8(_COPY(d8, s8));
+ 218              		.loc 1 79 13 view .LVU86
+ 219 0086 CC7B     		ldrb	r4, [r1, #15]	@ zero_extendqisi2
+ 220 0088 DC73     		strb	r4, [r3, #15]
+  79:Middlewares/LVGL/lvgl/src/stdlib/builtin/lv_string_builtin.c ****             _REPEAT8(_COPY(d8, s8));
+ 221              		.loc 1 79 13 view .LVU87
+ 222              	.LVL31:
+  79:Middlewares/LVGL/lvgl/src/stdlib/builtin/lv_string_builtin.c ****             _REPEAT8(_COPY(d8, s8));
+ 223              		.loc 1 79 13 view .LVU88
+  79:Middlewares/LVGL/lvgl/src/stdlib/builtin/lv_string_builtin.c ****             _REPEAT8(_COPY(d8, s8));
+ 224              		.loc 1 79 36 view .LVU89
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccF8PBmu.s 			page 8
+
+
+  80:Middlewares/LVGL/lvgl/src/stdlib/builtin/lv_string_builtin.c ****             _REPEAT8(_COPY(d8, s8));
+ 225              		.loc 1 80 13 view .LVU90
+ 226 008a 0C7C     		ldrb	r4, [r1, #16]	@ zero_extendqisi2
+ 227 008c 1C74     		strb	r4, [r3, #16]
+  80:Middlewares/LVGL/lvgl/src/stdlib/builtin/lv_string_builtin.c ****             _REPEAT8(_COPY(d8, s8));
+ 228              		.loc 1 80 13 view .LVU91
+ 229              	.LVL32:
+  80:Middlewares/LVGL/lvgl/src/stdlib/builtin/lv_string_builtin.c ****             _REPEAT8(_COPY(d8, s8));
+ 230              		.loc 1 80 13 view .LVU92
+  80:Middlewares/LVGL/lvgl/src/stdlib/builtin/lv_string_builtin.c ****             _REPEAT8(_COPY(d8, s8));
+ 231              		.loc 1 80 13 view .LVU93
+ 232 008e 4C7C     		ldrb	r4, [r1, #17]	@ zero_extendqisi2
+ 233 0090 5C74     		strb	r4, [r3, #17]
+  80:Middlewares/LVGL/lvgl/src/stdlib/builtin/lv_string_builtin.c ****             _REPEAT8(_COPY(d8, s8));
+ 234              		.loc 1 80 13 view .LVU94
+ 235              	.LVL33:
+  80:Middlewares/LVGL/lvgl/src/stdlib/builtin/lv_string_builtin.c ****             _REPEAT8(_COPY(d8, s8));
+ 236              		.loc 1 80 13 view .LVU95
+  80:Middlewares/LVGL/lvgl/src/stdlib/builtin/lv_string_builtin.c ****             _REPEAT8(_COPY(d8, s8));
+ 237              		.loc 1 80 13 view .LVU96
+ 238 0092 8C7C     		ldrb	r4, [r1, #18]	@ zero_extendqisi2
+ 239 0094 9C74     		strb	r4, [r3, #18]
+  80:Middlewares/LVGL/lvgl/src/stdlib/builtin/lv_string_builtin.c ****             _REPEAT8(_COPY(d8, s8));
+ 240              		.loc 1 80 13 view .LVU97
+ 241              	.LVL34:
+  80:Middlewares/LVGL/lvgl/src/stdlib/builtin/lv_string_builtin.c ****             _REPEAT8(_COPY(d8, s8));
+ 242              		.loc 1 80 13 view .LVU98
+  80:Middlewares/LVGL/lvgl/src/stdlib/builtin/lv_string_builtin.c ****             _REPEAT8(_COPY(d8, s8));
+ 243              		.loc 1 80 13 view .LVU99
+ 244 0096 CC7C     		ldrb	r4, [r1, #19]	@ zero_extendqisi2
+ 245 0098 DC74     		strb	r4, [r3, #19]
+  80:Middlewares/LVGL/lvgl/src/stdlib/builtin/lv_string_builtin.c ****             _REPEAT8(_COPY(d8, s8));
+ 246              		.loc 1 80 13 view .LVU100
+ 247              	.LVL35:
+  80:Middlewares/LVGL/lvgl/src/stdlib/builtin/lv_string_builtin.c ****             _REPEAT8(_COPY(d8, s8));
+ 248              		.loc 1 80 13 view .LVU101
+  80:Middlewares/LVGL/lvgl/src/stdlib/builtin/lv_string_builtin.c ****             _REPEAT8(_COPY(d8, s8));
+ 249              		.loc 1 80 13 view .LVU102
+ 250 009a 0C7D     		ldrb	r4, [r1, #20]	@ zero_extendqisi2
+ 251 009c 1C75     		strb	r4, [r3, #20]
+  80:Middlewares/LVGL/lvgl/src/stdlib/builtin/lv_string_builtin.c ****             _REPEAT8(_COPY(d8, s8));
+ 252              		.loc 1 80 13 view .LVU103
+ 253              	.LVL36:
+  80:Middlewares/LVGL/lvgl/src/stdlib/builtin/lv_string_builtin.c ****             _REPEAT8(_COPY(d8, s8));
+ 254              		.loc 1 80 13 view .LVU104
+  80:Middlewares/LVGL/lvgl/src/stdlib/builtin/lv_string_builtin.c ****             _REPEAT8(_COPY(d8, s8));
+ 255              		.loc 1 80 13 view .LVU105
+ 256 009e 4C7D     		ldrb	r4, [r1, #21]	@ zero_extendqisi2
+ 257 00a0 5C75     		strb	r4, [r3, #21]
+  80:Middlewares/LVGL/lvgl/src/stdlib/builtin/lv_string_builtin.c ****             _REPEAT8(_COPY(d8, s8));
+ 258              		.loc 1 80 13 view .LVU106
+ 259              	.LVL37:
+  80:Middlewares/LVGL/lvgl/src/stdlib/builtin/lv_string_builtin.c ****             _REPEAT8(_COPY(d8, s8));
+ 260              		.loc 1 80 13 view .LVU107
+  80:Middlewares/LVGL/lvgl/src/stdlib/builtin/lv_string_builtin.c ****             _REPEAT8(_COPY(d8, s8));
+ 261              		.loc 1 80 13 view .LVU108
+ 262 00a2 8C7D     		ldrb	r4, [r1, #22]	@ zero_extendqisi2
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccF8PBmu.s 			page 9
+
+
+ 263 00a4 9C75     		strb	r4, [r3, #22]
+  80:Middlewares/LVGL/lvgl/src/stdlib/builtin/lv_string_builtin.c ****             _REPEAT8(_COPY(d8, s8));
+ 264              		.loc 1 80 13 view .LVU109
+ 265              	.LVL38:
+  80:Middlewares/LVGL/lvgl/src/stdlib/builtin/lv_string_builtin.c ****             _REPEAT8(_COPY(d8, s8));
+ 266              		.loc 1 80 13 view .LVU110
+  80:Middlewares/LVGL/lvgl/src/stdlib/builtin/lv_string_builtin.c ****             _REPEAT8(_COPY(d8, s8));
+ 267              		.loc 1 80 13 view .LVU111
+ 268 00a6 CC7D     		ldrb	r4, [r1, #23]	@ zero_extendqisi2
+ 269 00a8 DC75     		strb	r4, [r3, #23]
+  80:Middlewares/LVGL/lvgl/src/stdlib/builtin/lv_string_builtin.c ****             _REPEAT8(_COPY(d8, s8));
+ 270              		.loc 1 80 13 view .LVU112
+ 271              	.LVL39:
+  80:Middlewares/LVGL/lvgl/src/stdlib/builtin/lv_string_builtin.c ****             _REPEAT8(_COPY(d8, s8));
+ 272              		.loc 1 80 13 view .LVU113
+  80:Middlewares/LVGL/lvgl/src/stdlib/builtin/lv_string_builtin.c ****             _REPEAT8(_COPY(d8, s8));
+ 273              		.loc 1 80 36 view .LVU114
+  81:Middlewares/LVGL/lvgl/src/stdlib/builtin/lv_string_builtin.c ****             len -= 32;
+ 274              		.loc 1 81 13 view .LVU115
+ 275 00aa 0C7E     		ldrb	r4, [r1, #24]	@ zero_extendqisi2
+ 276 00ac 1C76     		strb	r4, [r3, #24]
+  81:Middlewares/LVGL/lvgl/src/stdlib/builtin/lv_string_builtin.c ****             len -= 32;
+ 277              		.loc 1 81 13 view .LVU116
+ 278              	.LVL40:
+  81:Middlewares/LVGL/lvgl/src/stdlib/builtin/lv_string_builtin.c ****             len -= 32;
+ 279              		.loc 1 81 13 view .LVU117
+  81:Middlewares/LVGL/lvgl/src/stdlib/builtin/lv_string_builtin.c ****             len -= 32;
+ 280              		.loc 1 81 13 view .LVU118
+ 281 00ae 4C7E     		ldrb	r4, [r1, #25]	@ zero_extendqisi2
+ 282 00b0 5C76     		strb	r4, [r3, #25]
+  81:Middlewares/LVGL/lvgl/src/stdlib/builtin/lv_string_builtin.c ****             len -= 32;
+ 283              		.loc 1 81 13 view .LVU119
+ 284              	.LVL41:
+  81:Middlewares/LVGL/lvgl/src/stdlib/builtin/lv_string_builtin.c ****             len -= 32;
+ 285              		.loc 1 81 13 view .LVU120
+  81:Middlewares/LVGL/lvgl/src/stdlib/builtin/lv_string_builtin.c ****             len -= 32;
+ 286              		.loc 1 81 13 view .LVU121
+ 287 00b2 8C7E     		ldrb	r4, [r1, #26]	@ zero_extendqisi2
+ 288 00b4 9C76     		strb	r4, [r3, #26]
+  81:Middlewares/LVGL/lvgl/src/stdlib/builtin/lv_string_builtin.c ****             len -= 32;
+ 289              		.loc 1 81 13 view .LVU122
+ 290              	.LVL42:
+  81:Middlewares/LVGL/lvgl/src/stdlib/builtin/lv_string_builtin.c ****             len -= 32;
+ 291              		.loc 1 81 13 view .LVU123
+  81:Middlewares/LVGL/lvgl/src/stdlib/builtin/lv_string_builtin.c ****             len -= 32;
+ 292              		.loc 1 81 13 view .LVU124
+ 293 00b6 CC7E     		ldrb	r4, [r1, #27]	@ zero_extendqisi2
+ 294 00b8 DC76     		strb	r4, [r3, #27]
+  81:Middlewares/LVGL/lvgl/src/stdlib/builtin/lv_string_builtin.c ****             len -= 32;
+ 295              		.loc 1 81 13 view .LVU125
+ 296              	.LVL43:
+  81:Middlewares/LVGL/lvgl/src/stdlib/builtin/lv_string_builtin.c ****             len -= 32;
+ 297              		.loc 1 81 13 view .LVU126
+  81:Middlewares/LVGL/lvgl/src/stdlib/builtin/lv_string_builtin.c ****             len -= 32;
+ 298              		.loc 1 81 13 view .LVU127
+ 299 00ba 0C7F     		ldrb	r4, [r1, #28]	@ zero_extendqisi2
+ 300 00bc 1C77     		strb	r4, [r3, #28]
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccF8PBmu.s 			page 10
+
+
+  81:Middlewares/LVGL/lvgl/src/stdlib/builtin/lv_string_builtin.c ****             len -= 32;
+ 301              		.loc 1 81 13 view .LVU128
+ 302              	.LVL44:
+  81:Middlewares/LVGL/lvgl/src/stdlib/builtin/lv_string_builtin.c ****             len -= 32;
+ 303              		.loc 1 81 13 view .LVU129
+  81:Middlewares/LVGL/lvgl/src/stdlib/builtin/lv_string_builtin.c ****             len -= 32;
+ 304              		.loc 1 81 13 view .LVU130
+ 305 00be 4C7F     		ldrb	r4, [r1, #29]	@ zero_extendqisi2
+ 306 00c0 5C77     		strb	r4, [r3, #29]
+  81:Middlewares/LVGL/lvgl/src/stdlib/builtin/lv_string_builtin.c ****             len -= 32;
+ 307              		.loc 1 81 13 view .LVU131
+ 308              	.LVL45:
+  81:Middlewares/LVGL/lvgl/src/stdlib/builtin/lv_string_builtin.c ****             len -= 32;
+ 309              		.loc 1 81 13 view .LVU132
+  81:Middlewares/LVGL/lvgl/src/stdlib/builtin/lv_string_builtin.c ****             len -= 32;
+ 310              		.loc 1 81 13 view .LVU133
+ 311 00c2 8C7F     		ldrb	r4, [r1, #30]	@ zero_extendqisi2
+ 312 00c4 9C77     		strb	r4, [r3, #30]
+  81:Middlewares/LVGL/lvgl/src/stdlib/builtin/lv_string_builtin.c ****             len -= 32;
+ 313              		.loc 1 81 13 view .LVU134
+ 314              	.LVL46:
+  81:Middlewares/LVGL/lvgl/src/stdlib/builtin/lv_string_builtin.c ****             len -= 32;
+ 315              		.loc 1 81 13 view .LVU135
+  81:Middlewares/LVGL/lvgl/src/stdlib/builtin/lv_string_builtin.c ****             len -= 32;
+ 316              		.loc 1 81 13 view .LVU136
+ 317 00c6 CC7F     		ldrb	r4, [r1, #31]	@ zero_extendqisi2
+ 318 00c8 DC77     		strb	r4, [r3, #31]
+  81:Middlewares/LVGL/lvgl/src/stdlib/builtin/lv_string_builtin.c ****             len -= 32;
+ 319              		.loc 1 81 13 view .LVU137
+ 320 00ca 2033     		adds	r3, r3, #32
+ 321              	.LVL47:
+  81:Middlewares/LVGL/lvgl/src/stdlib/builtin/lv_string_builtin.c ****             len -= 32;
+ 322              		.loc 1 81 13 view .LVU138
+ 323 00cc 2031     		adds	r1, r1, #32
+ 324              	.LVL48:
+  81:Middlewares/LVGL/lvgl/src/stdlib/builtin/lv_string_builtin.c ****             len -= 32;
+ 325              		.loc 1 81 36 view .LVU139
+  82:Middlewares/LVGL/lvgl/src/stdlib/builtin/lv_string_builtin.c ****         }
+ 326              		.loc 1 82 13 view .LVU140
+  82:Middlewares/LVGL/lvgl/src/stdlib/builtin/lv_string_builtin.c ****         }
+ 327              		.loc 1 82 17 is_stmt 0 view .LVU141
+ 328 00ce 203A     		subs	r2, r2, #32
+ 329              	.LVL49:
+ 330              	.L6:
+  77:Middlewares/LVGL/lvgl/src/stdlib/builtin/lv_string_builtin.c ****             _REPEAT8(_COPY(d8, s8));
+ 331              		.loc 1 77 19 is_stmt 1 view .LVU142
+ 332 00d0 202A     		cmp	r2, #32
+ 333 00d2 BAD8     		bhi	.L8
+  77:Middlewares/LVGL/lvgl/src/stdlib/builtin/lv_string_builtin.c ****             _REPEAT8(_COPY(d8, s8));
+ 334              		.loc 1 77 19 is_stmt 0 view .LVU143
+ 335 00d4 06E0     		b	.L9
+ 336              	.LVL50:
+ 337              	.L19:
+  58:Middlewares/LVGL/lvgl/src/stdlib/builtin/lv_string_builtin.c ****     const uint8_t * s8 = src;
+ 338              		.loc 1 58 24 view .LVU144
+ 339 00d6 0346     		mov	r3, r0
+ 340              	.LVL51:
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccF8PBmu.s 			page 11
+
+
+  58:Middlewares/LVGL/lvgl/src/stdlib/builtin/lv_string_builtin.c ****     const uint8_t * s8 = src;
+ 341              		.loc 1 58 24 view .LVU145
+ 342 00d8 FAE7     		b	.L6
+ 343              	.LVL52:
+ 344              	.L10:
+  85:Middlewares/LVGL/lvgl/src/stdlib/builtin/lv_string_builtin.c ****             len--;
+ 345              		.loc 1 85 13 is_stmt 1 view .LVU146
+ 346 00da 11F8014B 		ldrb	r4, [r1], #1	@ zero_extendqisi2
+ 347              	.LVL53:
+  85:Middlewares/LVGL/lvgl/src/stdlib/builtin/lv_string_builtin.c ****             len--;
+ 348              		.loc 1 85 13 is_stmt 0 view .LVU147
+ 349 00de 03F8014B 		strb	r4, [r3], #1
+ 350              	.LVL54:
+  85:Middlewares/LVGL/lvgl/src/stdlib/builtin/lv_string_builtin.c ****             len--;
+ 351              		.loc 1 85 13 is_stmt 1 view .LVU148
+  85:Middlewares/LVGL/lvgl/src/stdlib/builtin/lv_string_builtin.c ****             len--;
+ 352              		.loc 1 85 13 view .LVU149
+  86:Middlewares/LVGL/lvgl/src/stdlib/builtin/lv_string_builtin.c ****         }
+ 353              		.loc 1 86 13 view .LVU150
+  86:Middlewares/LVGL/lvgl/src/stdlib/builtin/lv_string_builtin.c ****         }
+ 354              		.loc 1 86 16 is_stmt 0 view .LVU151
+ 355 00e2 013A     		subs	r2, r2, #1
+ 356              	.LVL55:
+ 357              	.L9:
+  84:Middlewares/LVGL/lvgl/src/stdlib/builtin/lv_string_builtin.c ****             _COPY(d8, s8)
+ 358              		.loc 1 84 15 is_stmt 1 view .LVU152
+ 359 00e4 002A     		cmp	r2, #0
+ 360 00e6 F8D1     		bne	.L10
+  84:Middlewares/LVGL/lvgl/src/stdlib/builtin/lv_string_builtin.c ****             _COPY(d8, s8)
+ 361              		.loc 1 84 15 is_stmt 0 view .LVU153
+ 362 00e8 AAE7     		b	.L5
+ 363              	.LVL56:
+ 364              	.L20:
+  58:Middlewares/LVGL/lvgl/src/stdlib/builtin/lv_string_builtin.c ****     const uint8_t * s8 = src;
+ 365              		.loc 1 58 24 view .LVU154
+ 366 00ea 0346     		mov	r3, r0
+ 367              	.LVL57:
+ 368              	.L14:
+ 103:Middlewares/LVGL/lvgl/src/stdlib/builtin/lv_string_builtin.c ****         _REPEAT8(_COPY(d32, s32))
+ 369              		.loc 1 103 15 is_stmt 1 view .LVU155
+ 370 00ec 202A     		cmp	r2, #32
+ 371 00ee 13D9     		bls	.L16
+ 104:Middlewares/LVGL/lvgl/src/stdlib/builtin/lv_string_builtin.c ****         len -= 32;
+ 372              		.loc 1 104 9 view .LVU156
+ 373 00f0 0C68     		ldr	r4, [r1]
+ 374 00f2 1C60     		str	r4, [r3]
+ 104:Middlewares/LVGL/lvgl/src/stdlib/builtin/lv_string_builtin.c ****         len -= 32;
+ 375              		.loc 1 104 9 view .LVU157
+ 376              	.LVL58:
+ 104:Middlewares/LVGL/lvgl/src/stdlib/builtin/lv_string_builtin.c ****         len -= 32;
+ 377              		.loc 1 104 9 view .LVU158
+ 104:Middlewares/LVGL/lvgl/src/stdlib/builtin/lv_string_builtin.c ****         len -= 32;
+ 378              		.loc 1 104 9 view .LVU159
+ 379 00f4 4C68     		ldr	r4, [r1, #4]
+ 380 00f6 5C60     		str	r4, [r3, #4]
+ 104:Middlewares/LVGL/lvgl/src/stdlib/builtin/lv_string_builtin.c ****         len -= 32;
+ 381              		.loc 1 104 9 view .LVU160
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccF8PBmu.s 			page 12
+
+
+ 382              	.LVL59:
+ 104:Middlewares/LVGL/lvgl/src/stdlib/builtin/lv_string_builtin.c ****         len -= 32;
+ 383              		.loc 1 104 9 view .LVU161
+ 104:Middlewares/LVGL/lvgl/src/stdlib/builtin/lv_string_builtin.c ****         len -= 32;
+ 384              		.loc 1 104 9 view .LVU162
+ 385 00f8 8C68     		ldr	r4, [r1, #8]
+ 386 00fa 9C60     		str	r4, [r3, #8]
+ 104:Middlewares/LVGL/lvgl/src/stdlib/builtin/lv_string_builtin.c ****         len -= 32;
+ 387              		.loc 1 104 9 view .LVU163
+ 388              	.LVL60:
+ 104:Middlewares/LVGL/lvgl/src/stdlib/builtin/lv_string_builtin.c ****         len -= 32;
+ 389              		.loc 1 104 9 view .LVU164
+ 104:Middlewares/LVGL/lvgl/src/stdlib/builtin/lv_string_builtin.c ****         len -= 32;
+ 390              		.loc 1 104 9 view .LVU165
+ 391 00fc CC68     		ldr	r4, [r1, #12]
+ 392 00fe DC60     		str	r4, [r3, #12]
+ 104:Middlewares/LVGL/lvgl/src/stdlib/builtin/lv_string_builtin.c ****         len -= 32;
+ 393              		.loc 1 104 9 view .LVU166
+ 394              	.LVL61:
+ 104:Middlewares/LVGL/lvgl/src/stdlib/builtin/lv_string_builtin.c ****         len -= 32;
+ 395              		.loc 1 104 9 view .LVU167
+ 104:Middlewares/LVGL/lvgl/src/stdlib/builtin/lv_string_builtin.c ****         len -= 32;
+ 396              		.loc 1 104 9 view .LVU168
+ 397 0100 0C69     		ldr	r4, [r1, #16]
+ 398 0102 1C61     		str	r4, [r3, #16]
+ 104:Middlewares/LVGL/lvgl/src/stdlib/builtin/lv_string_builtin.c ****         len -= 32;
+ 399              		.loc 1 104 9 view .LVU169
+ 400              	.LVL62:
+ 104:Middlewares/LVGL/lvgl/src/stdlib/builtin/lv_string_builtin.c ****         len -= 32;
+ 401              		.loc 1 104 9 view .LVU170
+ 104:Middlewares/LVGL/lvgl/src/stdlib/builtin/lv_string_builtin.c ****         len -= 32;
+ 402              		.loc 1 104 9 view .LVU171
+ 403 0104 4C69     		ldr	r4, [r1, #20]
+ 404 0106 5C61     		str	r4, [r3, #20]
+ 104:Middlewares/LVGL/lvgl/src/stdlib/builtin/lv_string_builtin.c ****         len -= 32;
+ 405              		.loc 1 104 9 view .LVU172
+ 406              	.LVL63:
+ 104:Middlewares/LVGL/lvgl/src/stdlib/builtin/lv_string_builtin.c ****         len -= 32;
+ 407              		.loc 1 104 9 view .LVU173
+ 104:Middlewares/LVGL/lvgl/src/stdlib/builtin/lv_string_builtin.c ****         len -= 32;
+ 408              		.loc 1 104 9 view .LVU174
+ 409 0108 8C69     		ldr	r4, [r1, #24]
+ 410 010a 9C61     		str	r4, [r3, #24]
+ 104:Middlewares/LVGL/lvgl/src/stdlib/builtin/lv_string_builtin.c ****         len -= 32;
+ 411              		.loc 1 104 9 view .LVU175
+ 412              	.LVL64:
+ 104:Middlewares/LVGL/lvgl/src/stdlib/builtin/lv_string_builtin.c ****         len -= 32;
+ 413              		.loc 1 104 9 view .LVU176
+ 104:Middlewares/LVGL/lvgl/src/stdlib/builtin/lv_string_builtin.c ****         len -= 32;
+ 414              		.loc 1 104 9 view .LVU177
+ 415 010c CC69     		ldr	r4, [r1, #28]
+ 416 010e DC61     		str	r4, [r3, #28]
+ 104:Middlewares/LVGL/lvgl/src/stdlib/builtin/lv_string_builtin.c ****         len -= 32;
+ 417              		.loc 1 104 9 view .LVU178
+ 418 0110 2033     		adds	r3, r3, #32
+ 419              	.LVL65:
+ 104:Middlewares/LVGL/lvgl/src/stdlib/builtin/lv_string_builtin.c ****         len -= 32;
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccF8PBmu.s 			page 13
+
+
+ 420              		.loc 1 104 9 view .LVU179
+ 421 0112 2031     		adds	r1, r1, #32
+ 422              	.LVL66:
+ 105:Middlewares/LVGL/lvgl/src/stdlib/builtin/lv_string_builtin.c ****     }
+ 423              		.loc 1 105 9 view .LVU180
+ 105:Middlewares/LVGL/lvgl/src/stdlib/builtin/lv_string_builtin.c ****     }
+ 424              		.loc 1 105 13 is_stmt 0 view .LVU181
+ 425 0114 203A     		subs	r2, r2, #32
+ 426              	.LVL67:
+ 105:Middlewares/LVGL/lvgl/src/stdlib/builtin/lv_string_builtin.c ****     }
+ 427              		.loc 1 105 13 view .LVU182
+ 428 0116 E9E7     		b	.L14
+ 429              	.LVL68:
+ 430              	.L16:
+ 110:Middlewares/LVGL/lvgl/src/stdlib/builtin/lv_string_builtin.c ****         _COPY(d8, s8)
+ 431              		.loc 1 110 11 is_stmt 1 view .LVU183
+ 432 0118 002A     		cmp	r2, #0
+ 433 011a 91D0     		beq	.L5
+ 111:Middlewares/LVGL/lvgl/src/stdlib/builtin/lv_string_builtin.c ****         len--;
+ 434              		.loc 1 111 9 view .LVU184
+ 435 011c 11F8014B 		ldrb	r4, [r1], #1	@ zero_extendqisi2
+ 436              	.LVL69:
+ 111:Middlewares/LVGL/lvgl/src/stdlib/builtin/lv_string_builtin.c ****         len--;
+ 437              		.loc 1 111 9 is_stmt 0 view .LVU185
+ 438 0120 03F8014B 		strb	r4, [r3], #1
+ 439              	.LVL70:
+ 111:Middlewares/LVGL/lvgl/src/stdlib/builtin/lv_string_builtin.c ****         len--;
+ 440              		.loc 1 111 9 is_stmt 1 view .LVU186
+ 111:Middlewares/LVGL/lvgl/src/stdlib/builtin/lv_string_builtin.c ****         len--;
+ 441              		.loc 1 111 9 view .LVU187
+ 112:Middlewares/LVGL/lvgl/src/stdlib/builtin/lv_string_builtin.c ****     }
+ 442              		.loc 1 112 9 view .LVU188
+ 112:Middlewares/LVGL/lvgl/src/stdlib/builtin/lv_string_builtin.c ****     }
+ 443              		.loc 1 112 12 is_stmt 0 view .LVU189
+ 444 0124 013A     		subs	r2, r2, #1
+ 445              	.LVL71:
+ 112:Middlewares/LVGL/lvgl/src/stdlib/builtin/lv_string_builtin.c ****     }
+ 446              		.loc 1 112 12 view .LVU190
+ 447 0126 F7E7     		b	.L16
+ 448              		.cfi_endproc
+ 449              	.LFE3:
+ 451              		.section	.text.lv_memset,"ax",%progbits
+ 452              		.align	1
+ 453              		.global	lv_memset
+ 454              		.syntax unified
+ 455              		.thumb
+ 456              		.thumb_func
+ 458              	lv_memset:
+ 459              	.LVL72:
+ 460              	.LFB4:
+ 117:Middlewares/LVGL/lvgl/src/stdlib/builtin/lv_string_builtin.c **** 
+ 118:Middlewares/LVGL/lvgl/src/stdlib/builtin/lv_string_builtin.c **** void LV_ATTRIBUTE_FAST_MEM lv_memset(void * dst, uint8_t v, size_t len)
+ 119:Middlewares/LVGL/lvgl/src/stdlib/builtin/lv_string_builtin.c **** {
+ 461              		.loc 1 119 1 is_stmt 1 view -0
+ 462              		.cfi_startproc
+ 463              		@ args = 0, pretend = 0, frame = 0
+ 464              		@ frame_needed = 0, uses_anonymous_args = 0
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccF8PBmu.s 			page 14
+
+
+ 465              		@ link register save eliminated.
+ 120:Middlewares/LVGL/lvgl/src/stdlib/builtin/lv_string_builtin.c ****     uint8_t * d8 = (uint8_t *)dst;
+ 466              		.loc 1 120 5 view .LVU192
+ 121:Middlewares/LVGL/lvgl/src/stdlib/builtin/lv_string_builtin.c ****     uintptr_t d_align = (lv_uintptr_t) d8 & ALIGN_MASK;
+ 467              		.loc 1 121 5 view .LVU193
+ 122:Middlewares/LVGL/lvgl/src/stdlib/builtin/lv_string_builtin.c **** 
+ 123:Middlewares/LVGL/lvgl/src/stdlib/builtin/lv_string_builtin.c ****     /*Make the address aligned*/
+ 124:Middlewares/LVGL/lvgl/src/stdlib/builtin/lv_string_builtin.c ****     if(d_align) {
+ 468              		.loc 1 124 5 view .LVU194
+ 469              		.loc 1 124 7 is_stmt 0 view .LVU195
+ 470 0000 10F00303 		ands	r3, r0, #3
+ 471              	.LVL73:
+ 472              		.loc 1 124 7 view .LVU196
+ 473 0004 09D0     		beq	.L26
+ 125:Middlewares/LVGL/lvgl/src/stdlib/builtin/lv_string_builtin.c ****         d_align = ALIGN_MASK + 1 - d_align;
+ 474              		.loc 1 125 9 is_stmt 1 view .LVU197
+ 475              		.loc 1 125 17 is_stmt 0 view .LVU198
+ 476 0006 C3F10403 		rsb	r3, r3, #4
+ 477              	.LVL74:
+ 126:Middlewares/LVGL/lvgl/src/stdlib/builtin/lv_string_builtin.c ****         while(d_align && len) {
+ 478              		.loc 1 126 9 is_stmt 1 view .LVU199
+ 479              		.loc 1 126 14 is_stmt 0 view .LVU200
+ 480 000a 03E0     		b	.L27
+ 481              	.LVL75:
+ 482              	.L28:
+ 127:Middlewares/LVGL/lvgl/src/stdlib/builtin/lv_string_builtin.c ****             _SET(d8, v);
+ 483              		.loc 1 127 13 is_stmt 1 view .LVU201
+ 484 000c 00F8011B 		strb	r1, [r0], #1
+ 485              	.LVL76:
+ 486              		.loc 1 127 13 view .LVU202
+ 487              		.loc 1 127 24 view .LVU203
+ 128:Middlewares/LVGL/lvgl/src/stdlib/builtin/lv_string_builtin.c ****             len--;
+ 488              		.loc 1 128 13 view .LVU204
+ 489              		.loc 1 128 16 is_stmt 0 view .LVU205
+ 490 0010 013A     		subs	r2, r2, #1
+ 491              	.LVL77:
+ 129:Middlewares/LVGL/lvgl/src/stdlib/builtin/lv_string_builtin.c ****             d_align--;
+ 492              		.loc 1 129 13 is_stmt 1 view .LVU206
+ 493              		.loc 1 129 20 is_stmt 0 view .LVU207
+ 494 0012 013B     		subs	r3, r3, #1
+ 495              	.LVL78:
+ 496              	.L27:
+ 126:Middlewares/LVGL/lvgl/src/stdlib/builtin/lv_string_builtin.c ****             _SET(d8, v);
+ 497              		.loc 1 126 23 is_stmt 1 view .LVU208
+ 498 0014 0BB1     		cbz	r3, .L26
+ 126:Middlewares/LVGL/lvgl/src/stdlib/builtin/lv_string_builtin.c ****             _SET(d8, v);
+ 499              		.loc 1 126 23 is_stmt 0 discriminator 1 view .LVU209
+ 500 0016 002A     		cmp	r2, #0
+ 501 0018 F8D1     		bne	.L28
+ 502              	.L26:
+ 130:Middlewares/LVGL/lvgl/src/stdlib/builtin/lv_string_builtin.c ****         }
+ 131:Middlewares/LVGL/lvgl/src/stdlib/builtin/lv_string_builtin.c ****     }
+ 132:Middlewares/LVGL/lvgl/src/stdlib/builtin/lv_string_builtin.c **** 
+ 133:Middlewares/LVGL/lvgl/src/stdlib/builtin/lv_string_builtin.c ****     uint32_t v32 = (uint32_t)v + ((uint32_t)v << 8) + ((uint32_t)v << 16) + ((uint32_t)v << 24);
+ 503              		.loc 1 133 5 is_stmt 1 view .LVU210
+ 504              		.loc 1 133 32 is_stmt 0 view .LVU211
+ 505 001a 01EB0123 		add	r3, r1, r1, lsl #8
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccF8PBmu.s 			page 15
+
+
+ 506              	.LVL79:
+ 507              		.loc 1 133 53 view .LVU212
+ 508 001e 03EB0143 		add	r3, r3, r1, lsl #16
+ 509              		.loc 1 133 14 view .LVU213
+ 510 0022 03EB0163 		add	r3, r3, r1, lsl #24
+ 511              	.LVL80:
+ 134:Middlewares/LVGL/lvgl/src/stdlib/builtin/lv_string_builtin.c ****     uint32_t * d32 = (uint32_t *)d8;
+ 512              		.loc 1 134 5 is_stmt 1 view .LVU214
+ 135:Middlewares/LVGL/lvgl/src/stdlib/builtin/lv_string_builtin.c **** 
+ 136:Middlewares/LVGL/lvgl/src/stdlib/builtin/lv_string_builtin.c ****     while(len > 32) {
+ 513              		.loc 1 136 5 view .LVU215
+ 514              		.loc 1 136 10 is_stmt 0 view .LVU216
+ 515 0026 09E0     		b	.L29
+ 516              	.LVL81:
+ 517              	.L30:
+ 137:Middlewares/LVGL/lvgl/src/stdlib/builtin/lv_string_builtin.c ****         _REPEAT8(_SET(d32, v32));
+ 518              		.loc 1 137 9 is_stmt 1 view .LVU217
+ 519 0028 0360     		str	r3, [r0]
+ 520              		.loc 1 137 9 view .LVU218
+ 521              	.LVL82:
+ 522              		.loc 1 137 9 view .LVU219
+ 523 002a 4360     		str	r3, [r0, #4]
+ 524              		.loc 1 137 9 view .LVU220
+ 525              	.LVL83:
+ 526              		.loc 1 137 9 view .LVU221
+ 527 002c 8360     		str	r3, [r0, #8]
+ 528              		.loc 1 137 9 view .LVU222
+ 529              	.LVL84:
+ 530              		.loc 1 137 9 view .LVU223
+ 531 002e C360     		str	r3, [r0, #12]
+ 532              		.loc 1 137 9 view .LVU224
+ 533              	.LVL85:
+ 534              		.loc 1 137 9 view .LVU225
+ 535 0030 0361     		str	r3, [r0, #16]
+ 536              		.loc 1 137 9 view .LVU226
+ 537              	.LVL86:
+ 538              		.loc 1 137 9 view .LVU227
+ 539 0032 4361     		str	r3, [r0, #20]
+ 540              		.loc 1 137 9 view .LVU228
+ 541              	.LVL87:
+ 542              		.loc 1 137 9 view .LVU229
+ 543 0034 8361     		str	r3, [r0, #24]
+ 544              		.loc 1 137 9 view .LVU230
+ 545              	.LVL88:
+ 546              		.loc 1 137 9 view .LVU231
+ 547 0036 C361     		str	r3, [r0, #28]
+ 548              		.loc 1 137 9 view .LVU232
+ 549 0038 2030     		adds	r0, r0, #32
+ 550              	.LVL89:
+ 551              		.loc 1 137 33 view .LVU233
+ 138:Middlewares/LVGL/lvgl/src/stdlib/builtin/lv_string_builtin.c ****         len -= 32;
+ 552              		.loc 1 138 9 view .LVU234
+ 553              		.loc 1 138 13 is_stmt 0 view .LVU235
+ 554 003a 203A     		subs	r2, r2, #32
+ 555              	.LVL90:
+ 556              	.L29:
+ 136:Middlewares/LVGL/lvgl/src/stdlib/builtin/lv_string_builtin.c ****         _REPEAT8(_SET(d32, v32));
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccF8PBmu.s 			page 16
+
+
+ 557              		.loc 1 136 15 is_stmt 1 view .LVU236
+ 558 003c 202A     		cmp	r2, #32
+ 559 003e F3D8     		bhi	.L30
+ 136:Middlewares/LVGL/lvgl/src/stdlib/builtin/lv_string_builtin.c ****         _REPEAT8(_SET(d32, v32));
+ 560              		.loc 1 136 15 is_stmt 0 view .LVU237
+ 561 0040 02E0     		b	.L31
+ 562              	.LVL91:
+ 563              	.L32:
+ 139:Middlewares/LVGL/lvgl/src/stdlib/builtin/lv_string_builtin.c ****     }
+ 140:Middlewares/LVGL/lvgl/src/stdlib/builtin/lv_string_builtin.c **** 
+ 141:Middlewares/LVGL/lvgl/src/stdlib/builtin/lv_string_builtin.c ****     d8 = (uint8_t *)d32;
+ 142:Middlewares/LVGL/lvgl/src/stdlib/builtin/lv_string_builtin.c ****     while(len) {
+ 143:Middlewares/LVGL/lvgl/src/stdlib/builtin/lv_string_builtin.c ****         _SET(d8, v);
+ 564              		.loc 1 143 9 is_stmt 1 view .LVU238
+ 565 0042 00F8011B 		strb	r1, [r0], #1
+ 566              	.LVL92:
+ 567              		.loc 1 143 9 view .LVU239
+ 568              		.loc 1 143 20 view .LVU240
+ 144:Middlewares/LVGL/lvgl/src/stdlib/builtin/lv_string_builtin.c ****         len--;
+ 569              		.loc 1 144 9 view .LVU241
+ 570              		.loc 1 144 12 is_stmt 0 view .LVU242
+ 571 0046 013A     		subs	r2, r2, #1
+ 572              	.LVL93:
+ 573              	.L31:
+ 142:Middlewares/LVGL/lvgl/src/stdlib/builtin/lv_string_builtin.c ****         _SET(d8, v);
+ 574              		.loc 1 142 11 is_stmt 1 view .LVU243
+ 575 0048 002A     		cmp	r2, #0
+ 576 004a FAD1     		bne	.L32
+ 145:Middlewares/LVGL/lvgl/src/stdlib/builtin/lv_string_builtin.c ****     }
+ 146:Middlewares/LVGL/lvgl/src/stdlib/builtin/lv_string_builtin.c **** }
+ 577              		.loc 1 146 1 is_stmt 0 view .LVU244
+ 578 004c 7047     		bx	lr
+ 579              		.cfi_endproc
+ 580              	.LFE4:
+ 582              		.section	.text.lv_memmove,"ax",%progbits
+ 583              		.align	1
+ 584              		.global	lv_memmove
+ 585              		.syntax unified
+ 586              		.thumb
+ 587              		.thumb_func
+ 589              	lv_memmove:
+ 590              	.LVL94:
+ 591              	.LFB5:
+ 147:Middlewares/LVGL/lvgl/src/stdlib/builtin/lv_string_builtin.c **** 
+ 148:Middlewares/LVGL/lvgl/src/stdlib/builtin/lv_string_builtin.c **** void * LV_ATTRIBUTE_FAST_MEM lv_memmove(void * dst, const void * src, size_t len)
+ 149:Middlewares/LVGL/lvgl/src/stdlib/builtin/lv_string_builtin.c **** {
+ 592              		.loc 1 149 1 is_stmt 1 view -0
+ 593              		.cfi_startproc
+ 594              		@ args = 0, pretend = 0, frame = 0
+ 595              		@ frame_needed = 0, uses_anonymous_args = 0
+ 596              		.loc 1 149 1 is_stmt 0 view .LVU246
+ 597 0000 08B5     		push	{r3, lr}
+ 598              	.LCFI1:
+ 599              		.cfi_def_cfa_offset 8
+ 600              		.cfi_offset 3, -8
+ 601              		.cfi_offset 14, -4
+ 150:Middlewares/LVGL/lvgl/src/stdlib/builtin/lv_string_builtin.c ****     if(dst < src || (char *)dst > ((char *)src + len)) {
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccF8PBmu.s 			page 17
+
+
+ 602              		.loc 1 150 5 is_stmt 1 view .LVU247
+ 603              		.loc 1 150 7 is_stmt 0 view .LVU248
+ 604 0002 8842     		cmp	r0, r1
+ 605 0004 0AD3     		bcc	.L34
+ 606              		.loc 1 150 48 discriminator 1 view .LVU249
+ 607 0006 8B18     		adds	r3, r1, r2
+ 608              		.loc 1 150 18 discriminator 1 view .LVU250
+ 609 0008 8342     		cmp	r3, r0
+ 610 000a 07D3     		bcc	.L34
+ 151:Middlewares/LVGL/lvgl/src/stdlib/builtin/lv_string_builtin.c ****         return lv_memcpy(dst, src, len);
+ 152:Middlewares/LVGL/lvgl/src/stdlib/builtin/lv_string_builtin.c ****     }
+ 153:Middlewares/LVGL/lvgl/src/stdlib/builtin/lv_string_builtin.c **** 
+ 154:Middlewares/LVGL/lvgl/src/stdlib/builtin/lv_string_builtin.c ****     if(dst > src) {
+ 611              		.loc 1 154 5 is_stmt 1 view .LVU251
+ 612              		.loc 1 154 7 is_stmt 0 view .LVU252
+ 613 000c 8842     		cmp	r0, r1
+ 614 000e 1CD9     		bls	.L41
+ 615              	.LBB2:
+ 155:Middlewares/LVGL/lvgl/src/stdlib/builtin/lv_string_builtin.c ****         char * tmp = (char *)dst + len - 1;
+ 616              		.loc 1 155 9 is_stmt 1 view .LVU253
+ 617              		.loc 1 155 40 is_stmt 0 view .LVU254
+ 618 0010 02F1FF3C 		add	ip, r2, #-1
+ 619              		.loc 1 155 16 view .LVU255
+ 620 0014 00EB0C03 		add	r3, r0, ip
+ 621              	.LVL95:
+ 156:Middlewares/LVGL/lvgl/src/stdlib/builtin/lv_string_builtin.c ****         char * s   = (char *)src + len - 1;
+ 622              		.loc 1 156 9 is_stmt 1 view .LVU256
+ 623              		.loc 1 156 16 is_stmt 0 view .LVU257
+ 624 0018 6144     		add	r1, r1, ip
+ 625              	.LVL96:
+ 157:Middlewares/LVGL/lvgl/src/stdlib/builtin/lv_string_builtin.c **** 
+ 158:Middlewares/LVGL/lvgl/src/stdlib/builtin/lv_string_builtin.c ****         while(len--) {
+ 626              		.loc 1 158 9 is_stmt 1 view .LVU258
+ 627              		.loc 1 158 14 is_stmt 0 view .LVU259
+ 628 001a 07E0     		b	.L38
+ 629              	.LVL97:
+ 630              	.L34:
+ 631              		.loc 1 158 14 view .LVU260
+ 632              	.LBE2:
+ 151:Middlewares/LVGL/lvgl/src/stdlib/builtin/lv_string_builtin.c ****     }
+ 633              		.loc 1 151 9 is_stmt 1 view .LVU261
+ 151:Middlewares/LVGL/lvgl/src/stdlib/builtin/lv_string_builtin.c ****     }
+ 634              		.loc 1 151 16 is_stmt 0 view .LVU262
+ 635 001c FFF7FEFF 		bl	lv_memcpy
+ 636              	.LVL98:
+ 637              	.L36:
+ 159:Middlewares/LVGL/lvgl/src/stdlib/builtin/lv_string_builtin.c ****             *tmp-- = *s--;
+ 160:Middlewares/LVGL/lvgl/src/stdlib/builtin/lv_string_builtin.c ****         }
+ 161:Middlewares/LVGL/lvgl/src/stdlib/builtin/lv_string_builtin.c ****     }
+ 162:Middlewares/LVGL/lvgl/src/stdlib/builtin/lv_string_builtin.c ****     else {
+ 163:Middlewares/LVGL/lvgl/src/stdlib/builtin/lv_string_builtin.c ****         char * tmp = (char *)dst;
+ 164:Middlewares/LVGL/lvgl/src/stdlib/builtin/lv_string_builtin.c ****         char * s   = (char *)src;
+ 165:Middlewares/LVGL/lvgl/src/stdlib/builtin/lv_string_builtin.c **** 
+ 166:Middlewares/LVGL/lvgl/src/stdlib/builtin/lv_string_builtin.c ****         while(len--) {
+ 167:Middlewares/LVGL/lvgl/src/stdlib/builtin/lv_string_builtin.c ****             *tmp++ = *s++;
+ 168:Middlewares/LVGL/lvgl/src/stdlib/builtin/lv_string_builtin.c ****         }
+ 169:Middlewares/LVGL/lvgl/src/stdlib/builtin/lv_string_builtin.c ****     }
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccF8PBmu.s 			page 18
+
+
+ 170:Middlewares/LVGL/lvgl/src/stdlib/builtin/lv_string_builtin.c **** 
+ 171:Middlewares/LVGL/lvgl/src/stdlib/builtin/lv_string_builtin.c ****     return dst;
+ 172:Middlewares/LVGL/lvgl/src/stdlib/builtin/lv_string_builtin.c **** }
+ 638              		.loc 1 172 1 view .LVU263
+ 639 0020 08BD     		pop	{r3, pc}
+ 640              	.LVL99:
+ 641              	.L39:
+ 642              	.LBB3:
+ 159:Middlewares/LVGL/lvgl/src/stdlib/builtin/lv_string_builtin.c ****             *tmp-- = *s--;
+ 643              		.loc 1 159 13 is_stmt 1 view .LVU264
+ 159:Middlewares/LVGL/lvgl/src/stdlib/builtin/lv_string_builtin.c ****             *tmp-- = *s--;
+ 644              		.loc 1 159 22 is_stmt 0 view .LVU265
+ 645 0022 11F80129 		ldrb	r2, [r1], #-1	@ zero_extendqisi2
+ 646              	.LVL100:
+ 159:Middlewares/LVGL/lvgl/src/stdlib/builtin/lv_string_builtin.c ****             *tmp-- = *s--;
+ 647              		.loc 1 159 20 view .LVU266
+ 648 0026 03F80129 		strb	r2, [r3], #-1
+ 649              	.LVL101:
+ 158:Middlewares/LVGL/lvgl/src/stdlib/builtin/lv_string_builtin.c ****             *tmp-- = *s--;
+ 650              		.loc 1 158 18 view .LVU267
+ 651 002a 6246     		mov	r2, ip
+ 652              	.LVL102:
+ 653              	.L38:
+ 158:Middlewares/LVGL/lvgl/src/stdlib/builtin/lv_string_builtin.c ****             *tmp-- = *s--;
+ 654              		.loc 1 158 15 is_stmt 1 view .LVU268
+ 158:Middlewares/LVGL/lvgl/src/stdlib/builtin/lv_string_builtin.c ****             *tmp-- = *s--;
+ 655              		.loc 1 158 18 is_stmt 0 view .LVU269
+ 656 002c 02F1FF3C 		add	ip, r2, #-1
+ 657              	.LVL103:
+ 158:Middlewares/LVGL/lvgl/src/stdlib/builtin/lv_string_builtin.c ****             *tmp-- = *s--;
+ 658              		.loc 1 158 15 view .LVU270
+ 659 0030 002A     		cmp	r2, #0
+ 660 0032 F6D1     		bne	.L39
+ 158:Middlewares/LVGL/lvgl/src/stdlib/builtin/lv_string_builtin.c ****             *tmp-- = *s--;
+ 661              		.loc 1 158 15 view .LVU271
+ 662 0034 F4E7     		b	.L36
+ 663              	.LVL104:
+ 664              	.L40:
+ 158:Middlewares/LVGL/lvgl/src/stdlib/builtin/lv_string_builtin.c ****             *tmp-- = *s--;
+ 665              		.loc 1 158 15 view .LVU272
+ 666              	.LBE3:
+ 667              	.LBB4:
+ 167:Middlewares/LVGL/lvgl/src/stdlib/builtin/lv_string_builtin.c ****         }
+ 668              		.loc 1 167 13 is_stmt 1 view .LVU273
+ 167:Middlewares/LVGL/lvgl/src/stdlib/builtin/lv_string_builtin.c ****         }
+ 669              		.loc 1 167 22 is_stmt 0 view .LVU274
+ 670 0036 11F8012B 		ldrb	r2, [r1], #1	@ zero_extendqisi2
+ 671              	.LVL105:
+ 167:Middlewares/LVGL/lvgl/src/stdlib/builtin/lv_string_builtin.c ****         }
+ 672              		.loc 1 167 20 view .LVU275
+ 673 003a 03F8012B 		strb	r2, [r3], #1
+ 674              	.LVL106:
+ 166:Middlewares/LVGL/lvgl/src/stdlib/builtin/lv_string_builtin.c ****             *tmp++ = *s++;
+ 675              		.loc 1 166 18 view .LVU276
+ 676 003e 6246     		mov	r2, ip
+ 677              	.LVL107:
+ 678              	.L37:
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccF8PBmu.s 			page 19
+
+
+ 166:Middlewares/LVGL/lvgl/src/stdlib/builtin/lv_string_builtin.c ****             *tmp++ = *s++;
+ 679              		.loc 1 166 15 is_stmt 1 view .LVU277
+ 166:Middlewares/LVGL/lvgl/src/stdlib/builtin/lv_string_builtin.c ****             *tmp++ = *s++;
+ 680              		.loc 1 166 18 is_stmt 0 view .LVU278
+ 681 0040 02F1FF3C 		add	ip, r2, #-1
+ 682              	.LVL108:
+ 166:Middlewares/LVGL/lvgl/src/stdlib/builtin/lv_string_builtin.c ****             *tmp++ = *s++;
+ 683              		.loc 1 166 15 view .LVU279
+ 684 0044 002A     		cmp	r2, #0
+ 685 0046 F6D1     		bne	.L40
+ 686 0048 EAE7     		b	.L36
+ 687              	.LVL109:
+ 688              	.L41:
+ 163:Middlewares/LVGL/lvgl/src/stdlib/builtin/lv_string_builtin.c ****         char * s   = (char *)src;
+ 689              		.loc 1 163 16 view .LVU280
+ 690 004a 0346     		mov	r3, r0
+ 691 004c F8E7     		b	.L37
+ 692              	.LBE4:
+ 693              		.cfi_endproc
+ 694              	.LFE5:
+ 696              		.section	.text.lv_memcmp,"ax",%progbits
+ 697              		.align	1
+ 698              		.global	lv_memcmp
+ 699              		.syntax unified
+ 700              		.thumb
+ 701              		.thumb_func
+ 703              	lv_memcmp:
+ 704              	.LVL110:
+ 705              	.LFB6:
+ 173:Middlewares/LVGL/lvgl/src/stdlib/builtin/lv_string_builtin.c **** 
+ 174:Middlewares/LVGL/lvgl/src/stdlib/builtin/lv_string_builtin.c **** int lv_memcmp(const void * p1, const void * p2, size_t len)
+ 175:Middlewares/LVGL/lvgl/src/stdlib/builtin/lv_string_builtin.c **** {
+ 706              		.loc 1 175 1 is_stmt 1 view -0
+ 707              		.cfi_startproc
+ 708              		@ args = 0, pretend = 0, frame = 0
+ 709              		@ frame_needed = 0, uses_anonymous_args = 0
+ 710              		@ link register save eliminated.
+ 176:Middlewares/LVGL/lvgl/src/stdlib/builtin/lv_string_builtin.c ****     const char * s1 = (const char *) p1;
+ 711              		.loc 1 176 5 view .LVU282
+ 177:Middlewares/LVGL/lvgl/src/stdlib/builtin/lv_string_builtin.c ****     const char * s2 = (const char *) p2;
+ 712              		.loc 1 177 5 view .LVU283
+ 178:Middlewares/LVGL/lvgl/src/stdlib/builtin/lv_string_builtin.c ****     while(--len > 0 && (*s1 == *s2)) {
+ 713              		.loc 1 178 5 view .LVU284
+ 714              		.loc 1 178 10 is_stmt 0 view .LVU285
+ 715 0000 01E0     		b	.L44
+ 716              	.LVL111:
+ 717              	.L46:
+ 179:Middlewares/LVGL/lvgl/src/stdlib/builtin/lv_string_builtin.c ****         s1++;
+ 718              		.loc 1 179 9 is_stmt 1 view .LVU286
+ 719              		.loc 1 179 11 is_stmt 0 view .LVU287
+ 720 0002 0130     		adds	r0, r0, #1
+ 721              	.LVL112:
+ 180:Middlewares/LVGL/lvgl/src/stdlib/builtin/lv_string_builtin.c ****         s2++;
+ 722              		.loc 1 180 9 is_stmt 1 view .LVU288
+ 723              		.loc 1 180 11 is_stmt 0 view .LVU289
+ 724 0004 0131     		adds	r1, r1, #1
+ 725              	.LVL113:
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccF8PBmu.s 			page 20
+
+
+ 726              	.L44:
+ 178:Middlewares/LVGL/lvgl/src/stdlib/builtin/lv_string_builtin.c ****     while(--len > 0 && (*s1 == *s2)) {
+ 727              		.loc 1 178 21 is_stmt 1 view .LVU290
+ 178:Middlewares/LVGL/lvgl/src/stdlib/builtin/lv_string_builtin.c ****     while(--len > 0 && (*s1 == *s2)) {
+ 728              		.loc 1 178 21 is_stmt 0 view .LVU291
+ 729 0006 013A     		subs	r2, r2, #1
+ 730              	.LVL114:
+ 178:Middlewares/LVGL/lvgl/src/stdlib/builtin/lv_string_builtin.c ****     while(--len > 0 && (*s1 == *s2)) {
+ 731              		.loc 1 178 21 view .LVU292
+ 732 0008 04D0     		beq	.L45
+ 178:Middlewares/LVGL/lvgl/src/stdlib/builtin/lv_string_builtin.c ****     while(--len > 0 && (*s1 == *s2)) {
+ 733              		.loc 1 178 25 discriminator 1 view .LVU293
+ 734 000a 90F800C0 		ldrb	ip, [r0]	@ zero_extendqisi2
+ 178:Middlewares/LVGL/lvgl/src/stdlib/builtin/lv_string_builtin.c ****     while(--len > 0 && (*s1 == *s2)) {
+ 735              		.loc 1 178 32 discriminator 1 view .LVU294
+ 736 000e 0B78     		ldrb	r3, [r1]	@ zero_extendqisi2
+ 178:Middlewares/LVGL/lvgl/src/stdlib/builtin/lv_string_builtin.c ****     while(--len > 0 && (*s1 == *s2)) {
+ 737              		.loc 1 178 21 discriminator 1 view .LVU295
+ 738 0010 9C45     		cmp	ip, r3
+ 739 0012 F6D0     		beq	.L46
+ 740              	.L45:
+ 181:Middlewares/LVGL/lvgl/src/stdlib/builtin/lv_string_builtin.c ****     }
+ 182:Middlewares/LVGL/lvgl/src/stdlib/builtin/lv_string_builtin.c ****     return *s1 - *s2;
+ 741              		.loc 1 182 5 is_stmt 1 view .LVU296
+ 742              		.loc 1 182 12 is_stmt 0 view .LVU297
+ 743 0014 0078     		ldrb	r0, [r0]	@ zero_extendqisi2
+ 744              	.LVL115:
+ 745              		.loc 1 182 18 view .LVU298
+ 746 0016 0B78     		ldrb	r3, [r1]	@ zero_extendqisi2
+ 183:Middlewares/LVGL/lvgl/src/stdlib/builtin/lv_string_builtin.c **** }
+ 747              		.loc 1 183 1 view .LVU299
+ 748 0018 C01A     		subs	r0, r0, r3
+ 749 001a 7047     		bx	lr
+ 750              		.cfi_endproc
+ 751              	.LFE6:
+ 753              		.section	.text.lv_strlen,"ax",%progbits
+ 754              		.align	1
+ 755              		.global	lv_strlen
+ 756              		.syntax unified
+ 757              		.thumb
+ 758              		.thumb_func
+ 760              	lv_strlen:
+ 761              	.LVL116:
+ 762              	.LFB7:
+ 184:Middlewares/LVGL/lvgl/src/stdlib/builtin/lv_string_builtin.c **** 
+ 185:Middlewares/LVGL/lvgl/src/stdlib/builtin/lv_string_builtin.c **** /* See https://en.cppreference.com/w/c/string/byte/strlen for reference */
+ 186:Middlewares/LVGL/lvgl/src/stdlib/builtin/lv_string_builtin.c **** size_t lv_strlen(const char * str)
+ 187:Middlewares/LVGL/lvgl/src/stdlib/builtin/lv_string_builtin.c **** {
+ 763              		.loc 1 187 1 is_stmt 1 view -0
+ 764              		.cfi_startproc
+ 765              		@ args = 0, pretend = 0, frame = 0
+ 766              		@ frame_needed = 0, uses_anonymous_args = 0
+ 767              		@ link register save eliminated.
+ 768              		.loc 1 187 1 is_stmt 0 view .LVU301
+ 769 0000 0246     		mov	r2, r0
+ 188:Middlewares/LVGL/lvgl/src/stdlib/builtin/lv_string_builtin.c ****     size_t i = 0;
+ 770              		.loc 1 188 5 is_stmt 1 view .LVU302
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccF8PBmu.s 			page 21
+
+
+ 771              	.LVL117:
+ 189:Middlewares/LVGL/lvgl/src/stdlib/builtin/lv_string_builtin.c ****     while(str[i]) i++;
+ 772              		.loc 1 189 5 view .LVU303
+ 188:Middlewares/LVGL/lvgl/src/stdlib/builtin/lv_string_builtin.c ****     size_t i = 0;
+ 773              		.loc 1 188 12 is_stmt 0 view .LVU304
+ 774 0002 0020     		movs	r0, #0
+ 775              	.LVL118:
+ 776              		.loc 1 189 10 view .LVU305
+ 777 0004 00E0     		b	.L48
+ 778              	.LVL119:
+ 779              	.L49:
+ 780              		.loc 1 189 19 is_stmt 1 discriminator 2 view .LVU306
+ 781              		.loc 1 189 20 is_stmt 0 discriminator 2 view .LVU307
+ 782 0006 0130     		adds	r0, r0, #1
+ 783              	.LVL120:
+ 784              	.L48:
+ 785              		.loc 1 189 11 is_stmt 1 discriminator 1 view .LVU308
+ 786              		.loc 1 189 14 is_stmt 0 discriminator 1 view .LVU309
+ 787 0008 135C     		ldrb	r3, [r2, r0]	@ zero_extendqisi2
+ 788              		.loc 1 189 11 discriminator 1 view .LVU310
+ 789 000a 002B     		cmp	r3, #0
+ 790 000c FBD1     		bne	.L49
+ 190:Middlewares/LVGL/lvgl/src/stdlib/builtin/lv_string_builtin.c **** 
+ 191:Middlewares/LVGL/lvgl/src/stdlib/builtin/lv_string_builtin.c ****     return i;
+ 791              		.loc 1 191 5 is_stmt 1 view .LVU311
+ 192:Middlewares/LVGL/lvgl/src/stdlib/builtin/lv_string_builtin.c **** }
+ 792              		.loc 1 192 1 is_stmt 0 view .LVU312
+ 793 000e 7047     		bx	lr
+ 794              		.cfi_endproc
+ 795              	.LFE7:
+ 797              		.section	.text.lv_strnlen,"ax",%progbits
+ 798              		.align	1
+ 799              		.global	lv_strnlen
+ 800              		.syntax unified
+ 801              		.thumb
+ 802              		.thumb_func
+ 804              	lv_strnlen:
+ 805              	.LVL121:
+ 806              	.LFB8:
+ 193:Middlewares/LVGL/lvgl/src/stdlib/builtin/lv_string_builtin.c **** 
+ 194:Middlewares/LVGL/lvgl/src/stdlib/builtin/lv_string_builtin.c **** size_t lv_strnlen(const char * str, size_t max_len)
+ 195:Middlewares/LVGL/lvgl/src/stdlib/builtin/lv_string_builtin.c **** {
+ 807              		.loc 1 195 1 is_stmt 1 view -0
+ 808              		.cfi_startproc
+ 809              		@ args = 0, pretend = 0, frame = 0
+ 810              		@ frame_needed = 0, uses_anonymous_args = 0
+ 811              		@ link register save eliminated.
+ 812              		.loc 1 195 1 is_stmt 0 view .LVU314
+ 813 0000 0246     		mov	r2, r0
+ 196:Middlewares/LVGL/lvgl/src/stdlib/builtin/lv_string_builtin.c ****     size_t i = 0;
+ 814              		.loc 1 196 5 is_stmt 1 view .LVU315
+ 815              	.LVL122:
+ 197:Middlewares/LVGL/lvgl/src/stdlib/builtin/lv_string_builtin.c ****     while(i < max_len && str[i]) i++;
+ 816              		.loc 1 197 5 view .LVU316
+ 196:Middlewares/LVGL/lvgl/src/stdlib/builtin/lv_string_builtin.c ****     size_t i = 0;
+ 817              		.loc 1 196 12 is_stmt 0 view .LVU317
+ 818 0002 0020     		movs	r0, #0
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccF8PBmu.s 			page 22
+
+
+ 819              	.LVL123:
+ 820              		.loc 1 197 10 view .LVU318
+ 821 0004 00E0     		b	.L51
+ 822              	.LVL124:
+ 823              	.L53:
+ 824              		.loc 1 197 34 is_stmt 1 discriminator 3 view .LVU319
+ 825              		.loc 1 197 35 is_stmt 0 discriminator 3 view .LVU320
+ 826 0006 0130     		adds	r0, r0, #1
+ 827              	.LVL125:
+ 828              	.L51:
+ 829              		.loc 1 197 23 is_stmt 1 discriminator 1 view .LVU321
+ 830 0008 8842     		cmp	r0, r1
+ 831 000a 02D2     		bcs	.L50
+ 832              		.loc 1 197 29 is_stmt 0 discriminator 2 view .LVU322
+ 833 000c 135C     		ldrb	r3, [r2, r0]	@ zero_extendqisi2
+ 834              		.loc 1 197 23 discriminator 2 view .LVU323
+ 835 000e 002B     		cmp	r3, #0
+ 836 0010 F9D1     		bne	.L53
+ 837              	.L50:
+ 198:Middlewares/LVGL/lvgl/src/stdlib/builtin/lv_string_builtin.c **** 
+ 199:Middlewares/LVGL/lvgl/src/stdlib/builtin/lv_string_builtin.c ****     return i;
+ 200:Middlewares/LVGL/lvgl/src/stdlib/builtin/lv_string_builtin.c **** }
+ 838              		.loc 1 200 1 view .LVU324
+ 839 0012 7047     		bx	lr
+ 840              		.cfi_endproc
+ 841              	.LFE8:
+ 843              		.section	.text.lv_strlcpy,"ax",%progbits
+ 844              		.align	1
+ 845              		.global	lv_strlcpy
+ 846              		.syntax unified
+ 847              		.thumb
+ 848              		.thumb_func
+ 850              	lv_strlcpy:
+ 851              	.LVL126:
+ 852              	.LFB9:
+ 201:Middlewares/LVGL/lvgl/src/stdlib/builtin/lv_string_builtin.c **** 
+ 202:Middlewares/LVGL/lvgl/src/stdlib/builtin/lv_string_builtin.c **** size_t lv_strlcpy(char * dst, const char * src, size_t dst_size)
+ 203:Middlewares/LVGL/lvgl/src/stdlib/builtin/lv_string_builtin.c **** {
+ 853              		.loc 1 203 1 is_stmt 1 view -0
+ 854              		.cfi_startproc
+ 855              		@ args = 0, pretend = 0, frame = 0
+ 856              		@ frame_needed = 0, uses_anonymous_args = 0
+ 857              		@ link register save eliminated.
+ 858              		.loc 1 203 1 is_stmt 0 view .LVU326
+ 859 0000 8446     		mov	ip, r0
+ 204:Middlewares/LVGL/lvgl/src/stdlib/builtin/lv_string_builtin.c ****     size_t i = 0;
+ 860              		.loc 1 204 5 is_stmt 1 view .LVU327
+ 861              	.LVL127:
+ 205:Middlewares/LVGL/lvgl/src/stdlib/builtin/lv_string_builtin.c ****     if(dst_size > 0) {
+ 862              		.loc 1 205 5 view .LVU328
+ 863              		.loc 1 205 7 is_stmt 0 view .LVU329
+ 864 0002 1046     		mov	r0, r2
+ 865              	.LVL128:
+ 866              		.loc 1 205 7 view .LVU330
+ 867 0004 82B1     		cbz	r2, .L59
+ 204:Middlewares/LVGL/lvgl/src/stdlib/builtin/lv_string_builtin.c ****     size_t i = 0;
+ 868              		.loc 1 204 12 view .LVU331
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccF8PBmu.s 			page 23
+
+
+ 869 0006 0023     		movs	r3, #0
+ 870 0008 02E0     		b	.L55
+ 871              	.LVL129:
+ 872              	.L58:
+ 206:Middlewares/LVGL/lvgl/src/stdlib/builtin/lv_string_builtin.c ****         for(; i < dst_size - 1 && src[i]; i++) {
+ 207:Middlewares/LVGL/lvgl/src/stdlib/builtin/lv_string_builtin.c ****             dst[i] = src[i];
+ 873              		.loc 1 207 13 is_stmt 1 view .LVU332
+ 874              		.loc 1 207 20 is_stmt 0 view .LVU333
+ 875 000a 0CF80320 		strb	r2, [ip, r3]
+ 206:Middlewares/LVGL/lvgl/src/stdlib/builtin/lv_string_builtin.c ****         for(; i < dst_size - 1 && src[i]; i++) {
+ 876              		.loc 1 206 44 is_stmt 1 discriminator 3 view .LVU334
+ 877 000e 0133     		adds	r3, r3, #1
+ 878              	.LVL130:
+ 879              	.L55:
+ 206:Middlewares/LVGL/lvgl/src/stdlib/builtin/lv_string_builtin.c ****         for(; i < dst_size - 1 && src[i]; i++) {
+ 880              		.loc 1 206 32 discriminator 1 view .LVU335
+ 206:Middlewares/LVGL/lvgl/src/stdlib/builtin/lv_string_builtin.c ****         for(; i < dst_size - 1 && src[i]; i++) {
+ 881              		.loc 1 206 28 is_stmt 0 discriminator 1 view .LVU336
+ 882 0010 421E     		subs	r2, r0, #1
+ 206:Middlewares/LVGL/lvgl/src/stdlib/builtin/lv_string_builtin.c ****         for(; i < dst_size - 1 && src[i]; i++) {
+ 883              		.loc 1 206 32 discriminator 1 view .LVU337
+ 884 0012 9A42     		cmp	r2, r3
+ 885 0014 02D9     		bls	.L57
+ 206:Middlewares/LVGL/lvgl/src/stdlib/builtin/lv_string_builtin.c ****         for(; i < dst_size - 1 && src[i]; i++) {
+ 886              		.loc 1 206 38 discriminator 2 view .LVU338
+ 887 0016 CA5C     		ldrb	r2, [r1, r3]	@ zero_extendqisi2
+ 206:Middlewares/LVGL/lvgl/src/stdlib/builtin/lv_string_builtin.c ****         for(; i < dst_size - 1 && src[i]; i++) {
+ 888              		.loc 1 206 32 discriminator 2 view .LVU339
+ 889 0018 002A     		cmp	r2, #0
+ 890 001a F6D1     		bne	.L58
+ 891              	.L57:
+ 208:Middlewares/LVGL/lvgl/src/stdlib/builtin/lv_string_builtin.c ****         }
+ 209:Middlewares/LVGL/lvgl/src/stdlib/builtin/lv_string_builtin.c ****         dst[i] = '\0';
+ 892              		.loc 1 209 9 is_stmt 1 view .LVU340
+ 893              		.loc 1 209 16 is_stmt 0 view .LVU341
+ 894 001c 0022     		movs	r2, #0
+ 895 001e 0CF80320 		strb	r2, [ip, r3]
+ 896 0022 1846     		mov	r0, r3
+ 897              	.LVL131:
+ 898              		.loc 1 209 16 view .LVU342
+ 899 0024 00E0     		b	.L59
+ 900              	.LVL132:
+ 901              	.L60:
+ 210:Middlewares/LVGL/lvgl/src/stdlib/builtin/lv_string_builtin.c ****     }
+ 211:Middlewares/LVGL/lvgl/src/stdlib/builtin/lv_string_builtin.c ****     while(src[i]) i++;
+ 902              		.loc 1 211 19 is_stmt 1 discriminator 2 view .LVU343
+ 903              		.loc 1 211 20 is_stmt 0 discriminator 2 view .LVU344
+ 904 0026 0130     		adds	r0, r0, #1
+ 905              	.LVL133:
+ 906              	.L59:
+ 907              		.loc 1 211 11 is_stmt 1 discriminator 1 view .LVU345
+ 908              		.loc 1 211 14 is_stmt 0 discriminator 1 view .LVU346
+ 909 0028 0B5C     		ldrb	r3, [r1, r0]	@ zero_extendqisi2
+ 910              		.loc 1 211 11 discriminator 1 view .LVU347
+ 911 002a 002B     		cmp	r3, #0
+ 912 002c FBD1     		bne	.L60
+ 212:Middlewares/LVGL/lvgl/src/stdlib/builtin/lv_string_builtin.c ****     return i;
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccF8PBmu.s 			page 24
+
+
+ 913              		.loc 1 212 5 is_stmt 1 view .LVU348
+ 213:Middlewares/LVGL/lvgl/src/stdlib/builtin/lv_string_builtin.c **** }
+ 914              		.loc 1 213 1 is_stmt 0 view .LVU349
+ 915 002e 7047     		bx	lr
+ 916              		.cfi_endproc
+ 917              	.LFE9:
+ 919              		.section	.text.lv_strncpy,"ax",%progbits
+ 920              		.align	1
+ 921              		.global	lv_strncpy
+ 922              		.syntax unified
+ 923              		.thumb
+ 924              		.thumb_func
+ 926              	lv_strncpy:
+ 927              	.LVL134:
+ 928              	.LFB10:
+ 214:Middlewares/LVGL/lvgl/src/stdlib/builtin/lv_string_builtin.c **** 
+ 215:Middlewares/LVGL/lvgl/src/stdlib/builtin/lv_string_builtin.c **** char * lv_strncpy(char * dst, const char * src, size_t dst_size)
+ 216:Middlewares/LVGL/lvgl/src/stdlib/builtin/lv_string_builtin.c **** {
+ 929              		.loc 1 216 1 is_stmt 1 view -0
+ 930              		.cfi_startproc
+ 931              		@ args = 0, pretend = 0, frame = 0
+ 932              		@ frame_needed = 0, uses_anonymous_args = 0
+ 933              		@ link register save eliminated.
+ 217:Middlewares/LVGL/lvgl/src/stdlib/builtin/lv_string_builtin.c ****     size_t i;
+ 934              		.loc 1 217 5 view .LVU351
+ 218:Middlewares/LVGL/lvgl/src/stdlib/builtin/lv_string_builtin.c ****     for(i = 0; i < dst_size && src[i]; i++) {
+ 935              		.loc 1 218 5 view .LVU352
+ 936              		.loc 1 218 11 is_stmt 0 view .LVU353
+ 937 0000 0023     		movs	r3, #0
+ 938              	.LVL135:
+ 939              		.loc 1 218 29 is_stmt 1 discriminator 1 view .LVU354
+ 940 0002 9342     		cmp	r3, r2
+ 941 0004 0FD2     		bcs	.L71
+ 216:Middlewares/LVGL/lvgl/src/stdlib/builtin/lv_string_builtin.c ****     size_t i;
+ 942              		.loc 1 216 1 is_stmt 0 view .LVU355
+ 943 0006 10B4     		push	{r4}
+ 944              	.LCFI2:
+ 945              		.cfi_def_cfa_offset 4
+ 946              		.cfi_offset 4, -4
+ 947              	.L70:
+ 948              		.loc 1 218 35 discriminator 3 view .LVU356
+ 949 0008 CC5C     		ldrb	r4, [r1, r3]	@ zero_extendqisi2
+ 950              		.loc 1 218 29 discriminator 3 view .LVU357
+ 951 000a 3CB1     		cbz	r4, .L66
+ 219:Middlewares/LVGL/lvgl/src/stdlib/builtin/lv_string_builtin.c ****         dst[i] = src[i];
+ 952              		.loc 1 219 9 is_stmt 1 view .LVU358
+ 953              		.loc 1 219 16 is_stmt 0 view .LVU359
+ 954 000c C454     		strb	r4, [r0, r3]
+ 218:Middlewares/LVGL/lvgl/src/stdlib/builtin/lv_string_builtin.c ****     for(i = 0; i < dst_size && src[i]; i++) {
+ 955              		.loc 1 218 41 is_stmt 1 discriminator 4 view .LVU360
+ 956 000e 0133     		adds	r3, r3, #1
+ 957              	.LVL136:
+ 218:Middlewares/LVGL/lvgl/src/stdlib/builtin/lv_string_builtin.c ****     for(i = 0; i < dst_size && src[i]; i++) {
+ 958              		.loc 1 218 29 discriminator 1 view .LVU361
+ 959 0010 9342     		cmp	r3, r2
+ 960 0012 F9D3     		bcc	.L70
+ 961 0014 02E0     		b	.L66
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccF8PBmu.s 			page 25
+
+
+ 962              	.LVL137:
+ 963              	.L67:
+ 220:Middlewares/LVGL/lvgl/src/stdlib/builtin/lv_string_builtin.c ****     }
+ 221:Middlewares/LVGL/lvgl/src/stdlib/builtin/lv_string_builtin.c ****     for(; i < dst_size; i++) {
+ 222:Middlewares/LVGL/lvgl/src/stdlib/builtin/lv_string_builtin.c ****         dst[i] = '\0';
+ 964              		.loc 1 222 9 view .LVU362
+ 965              		.loc 1 222 16 is_stmt 0 view .LVU363
+ 966 0016 0021     		movs	r1, #0
+ 967 0018 C154     		strb	r1, [r0, r3]
+ 221:Middlewares/LVGL/lvgl/src/stdlib/builtin/lv_string_builtin.c ****         dst[i] = '\0';
+ 968              		.loc 1 221 26 is_stmt 1 discriminator 2 view .LVU364
+ 969 001a 0133     		adds	r3, r3, #1
+ 970              	.LVL138:
+ 971              	.L66:
+ 221:Middlewares/LVGL/lvgl/src/stdlib/builtin/lv_string_builtin.c ****         dst[i] = '\0';
+ 972              		.loc 1 221 13 discriminator 1 view .LVU365
+ 973 001c 9342     		cmp	r3, r2
+ 974 001e FAD3     		bcc	.L67
+ 223:Middlewares/LVGL/lvgl/src/stdlib/builtin/lv_string_builtin.c ****     }
+ 224:Middlewares/LVGL/lvgl/src/stdlib/builtin/lv_string_builtin.c ****     return dst;
+ 975              		.loc 1 224 5 view .LVU366
+ 225:Middlewares/LVGL/lvgl/src/stdlib/builtin/lv_string_builtin.c **** }
+ 976              		.loc 1 225 1 is_stmt 0 view .LVU367
+ 977 0020 5DF8044B 		ldr	r4, [sp], #4
+ 978 0024 7047     		bx	lr
+ 979              	.LVL139:
+ 980              	.L71:
+ 981              	.LCFI3:
+ 982              		.cfi_def_cfa_offset 0
+ 983              		.cfi_restore 4
+ 221:Middlewares/LVGL/lvgl/src/stdlib/builtin/lv_string_builtin.c ****         dst[i] = '\0';
+ 984              		.loc 1 221 13 is_stmt 1 discriminator 1 view .LVU368
+ 985 0026 9342     		cmp	r3, r2
+ 986 0028 03D2     		bcs	.L75
+ 222:Middlewares/LVGL/lvgl/src/stdlib/builtin/lv_string_builtin.c ****     }
+ 987              		.loc 1 222 9 view .LVU369
+ 222:Middlewares/LVGL/lvgl/src/stdlib/builtin/lv_string_builtin.c ****     }
+ 988              		.loc 1 222 16 is_stmt 0 view .LVU370
+ 989 002a 0021     		movs	r1, #0
+ 990 002c C154     		strb	r1, [r0, r3]
+ 221:Middlewares/LVGL/lvgl/src/stdlib/builtin/lv_string_builtin.c ****         dst[i] = '\0';
+ 991              		.loc 1 221 26 is_stmt 1 discriminator 2 view .LVU371
+ 992 002e 0133     		adds	r3, r3, #1
+ 993              	.LVL140:
+ 221:Middlewares/LVGL/lvgl/src/stdlib/builtin/lv_string_builtin.c ****         dst[i] = '\0';
+ 994              		.loc 1 221 26 is_stmt 0 discriminator 2 view .LVU372
+ 995 0030 F9E7     		b	.L71
+ 996              	.LVL141:
+ 997              	.L75:
+ 221:Middlewares/LVGL/lvgl/src/stdlib/builtin/lv_string_builtin.c ****         dst[i] = '\0';
+ 998              		.loc 1 221 26 discriminator 2 view .LVU373
+ 999 0032 7047     		bx	lr
+ 1000              		.cfi_endproc
+ 1001              	.LFE10:
+ 1003              		.section	.text.lv_strcpy,"ax",%progbits
+ 1004              		.align	1
+ 1005              		.global	lv_strcpy
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccF8PBmu.s 			page 26
+
+
+ 1006              		.syntax unified
+ 1007              		.thumb
+ 1008              		.thumb_func
+ 1010              	lv_strcpy:
+ 1011              	.LVL142:
+ 1012              	.LFB11:
+ 226:Middlewares/LVGL/lvgl/src/stdlib/builtin/lv_string_builtin.c **** 
+ 227:Middlewares/LVGL/lvgl/src/stdlib/builtin/lv_string_builtin.c **** char * lv_strcpy(char * dst, const char * src)
+ 228:Middlewares/LVGL/lvgl/src/stdlib/builtin/lv_string_builtin.c **** {
+ 1013              		.loc 1 228 1 is_stmt 1 view -0
+ 1014              		.cfi_startproc
+ 1015              		@ args = 0, pretend = 0, frame = 0
+ 1016              		@ frame_needed = 0, uses_anonymous_args = 0
+ 1017              		@ link register save eliminated.
+ 229:Middlewares/LVGL/lvgl/src/stdlib/builtin/lv_string_builtin.c ****     char * tmp = dst;
+ 1018              		.loc 1 229 5 view .LVU375
+ 230:Middlewares/LVGL/lvgl/src/stdlib/builtin/lv_string_builtin.c ****     while((*dst++ = *src++) != '\0');
+ 1019              		.loc 1 230 5 view .LVU376
+ 1020              		.loc 1 230 10 is_stmt 0 view .LVU377
+ 1021 0000 8446     		mov	ip, r0
+ 1022              	.LVL143:
+ 1023              	.L77:
+ 1024              		.loc 1 230 29 is_stmt 1 discriminator 1 view .LVU378
+ 1025              		.loc 1 230 21 is_stmt 0 discriminator 1 view .LVU379
+ 1026 0002 0A78     		ldrb	r2, [r1]	@ zero_extendqisi2
+ 1027 0004 0131     		adds	r1, r1, #1
+ 1028              	.LVL144:
+ 1029              		.loc 1 230 19 discriminator 1 view .LVU380
+ 1030 0006 8CF80020 		strb	r2, [ip]
+ 1031 000a 0CF1010C 		add	ip, ip, #1
+ 1032              	.LVL145:
+ 1033              		.loc 1 230 29 discriminator 1 view .LVU381
+ 1034 000e 002A     		cmp	r2, #0
+ 1035 0010 F7D1     		bne	.L77
+ 231:Middlewares/LVGL/lvgl/src/stdlib/builtin/lv_string_builtin.c ****     return tmp;
+ 1036              		.loc 1 231 5 is_stmt 1 view .LVU382
+ 232:Middlewares/LVGL/lvgl/src/stdlib/builtin/lv_string_builtin.c **** }
+ 1037              		.loc 1 232 1 is_stmt 0 view .LVU383
+ 1038 0012 7047     		bx	lr
+ 1039              		.cfi_endproc
+ 1040              	.LFE11:
+ 1042              		.section	.text.lv_strcmp,"ax",%progbits
+ 1043              		.align	1
+ 1044              		.global	lv_strcmp
+ 1045              		.syntax unified
+ 1046              		.thumb
+ 1047              		.thumb_func
+ 1049              	lv_strcmp:
+ 1050              	.LVL146:
+ 1051              	.LFB12:
+ 233:Middlewares/LVGL/lvgl/src/stdlib/builtin/lv_string_builtin.c **** 
+ 234:Middlewares/LVGL/lvgl/src/stdlib/builtin/lv_string_builtin.c **** int lv_strcmp(const char * s1, const char * s2)
+ 235:Middlewares/LVGL/lvgl/src/stdlib/builtin/lv_string_builtin.c **** {
+ 1052              		.loc 1 235 1 is_stmt 1 view -0
+ 1053              		.cfi_startproc
+ 1054              		@ args = 0, pretend = 0, frame = 0
+ 1055              		@ frame_needed = 0, uses_anonymous_args = 0
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccF8PBmu.s 			page 27
+
+
+ 1056              		@ link register save eliminated.
+ 236:Middlewares/LVGL/lvgl/src/stdlib/builtin/lv_string_builtin.c ****     while(*s1 && (*s1 == *s2)) {
+ 1057              		.loc 1 236 5 view .LVU385
+ 1058              		.loc 1 236 10 is_stmt 0 view .LVU386
+ 1059 0000 01E0     		b	.L79
+ 1060              	.L81:
+ 237:Middlewares/LVGL/lvgl/src/stdlib/builtin/lv_string_builtin.c ****         s1++;
+ 1061              		.loc 1 237 9 is_stmt 1 view .LVU387
+ 1062              		.loc 1 237 11 is_stmt 0 view .LVU388
+ 1063 0002 0130     		adds	r0, r0, #1
+ 1064              	.LVL147:
+ 238:Middlewares/LVGL/lvgl/src/stdlib/builtin/lv_string_builtin.c ****         s2++;
+ 1065              		.loc 1 238 9 is_stmt 1 view .LVU389
+ 1066              		.loc 1 238 11 is_stmt 0 view .LVU390
+ 1067 0004 0131     		adds	r1, r1, #1
+ 1068              	.LVL148:
+ 1069              	.L79:
+ 236:Middlewares/LVGL/lvgl/src/stdlib/builtin/lv_string_builtin.c ****     while(*s1 && (*s1 == *s2)) {
+ 1070              		.loc 1 236 15 is_stmt 1 view .LVU391
+ 236:Middlewares/LVGL/lvgl/src/stdlib/builtin/lv_string_builtin.c ****     while(*s1 && (*s1 == *s2)) {
+ 1071              		.loc 1 236 11 is_stmt 0 view .LVU392
+ 1072 0006 0378     		ldrb	r3, [r0]	@ zero_extendqisi2
+ 236:Middlewares/LVGL/lvgl/src/stdlib/builtin/lv_string_builtin.c ****     while(*s1 && (*s1 == *s2)) {
+ 1073              		.loc 1 236 15 view .LVU393
+ 1074 0008 13B1     		cbz	r3, .L80
+ 236:Middlewares/LVGL/lvgl/src/stdlib/builtin/lv_string_builtin.c ****     while(*s1 && (*s1 == *s2)) {
+ 1075              		.loc 1 236 26 discriminator 1 view .LVU394
+ 1076 000a 0A78     		ldrb	r2, [r1]	@ zero_extendqisi2
+ 236:Middlewares/LVGL/lvgl/src/stdlib/builtin/lv_string_builtin.c ****     while(*s1 && (*s1 == *s2)) {
+ 1077              		.loc 1 236 15 discriminator 1 view .LVU395
+ 1078 000c 9342     		cmp	r3, r2
+ 1079 000e F8D0     		beq	.L81
+ 1080              	.L80:
+ 239:Middlewares/LVGL/lvgl/src/stdlib/builtin/lv_string_builtin.c ****     }
+ 240:Middlewares/LVGL/lvgl/src/stdlib/builtin/lv_string_builtin.c ****     return *(const unsigned char *)s1 - *(const unsigned char *)s2;
+ 1081              		.loc 1 240 5 is_stmt 1 view .LVU396
+ 1082              		.loc 1 240 41 is_stmt 0 view .LVU397
+ 1083 0010 0878     		ldrb	r0, [r1]	@ zero_extendqisi2
+ 1084              	.LVL149:
+ 241:Middlewares/LVGL/lvgl/src/stdlib/builtin/lv_string_builtin.c **** }
+ 1085              		.loc 1 241 1 view .LVU398
+ 1086 0012 181A     		subs	r0, r3, r0
+ 1087 0014 7047     		bx	lr
+ 1088              		.cfi_endproc
+ 1089              	.LFE12:
+ 1091              		.section	.text.lv_strncmp,"ax",%progbits
+ 1092              		.align	1
+ 1093              		.global	lv_strncmp
+ 1094              		.syntax unified
+ 1095              		.thumb
+ 1096              		.thumb_func
+ 1098              	lv_strncmp:
+ 1099              	.LVL150:
+ 1100              	.LFB13:
+ 242:Middlewares/LVGL/lvgl/src/stdlib/builtin/lv_string_builtin.c **** 
+ 243:Middlewares/LVGL/lvgl/src/stdlib/builtin/lv_string_builtin.c **** int lv_strncmp(const char * s1, const char * s2, size_t len)
+ 244:Middlewares/LVGL/lvgl/src/stdlib/builtin/lv_string_builtin.c **** {
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccF8PBmu.s 			page 28
+
+
+ 1101              		.loc 1 244 1 is_stmt 1 view -0
+ 1102              		.cfi_startproc
+ 1103              		@ args = 0, pretend = 0, frame = 0
+ 1104              		@ frame_needed = 0, uses_anonymous_args = 0
+ 1105              		@ link register save eliminated.
+ 245:Middlewares/LVGL/lvgl/src/stdlib/builtin/lv_string_builtin.c ****     if(len == 0) {
+ 1106              		.loc 1 245 5 view .LVU400
+ 1107              		.loc 1 245 7 is_stmt 0 view .LVU401
+ 1108 0000 1346     		mov	r3, r2
+ 1109 0002 7AB1     		cbz	r2, .L89
+ 1110              	.LVL151:
+ 1111              	.L84:
+ 246:Middlewares/LVGL/lvgl/src/stdlib/builtin/lv_string_builtin.c ****         return 0;
+ 247:Middlewares/LVGL/lvgl/src/stdlib/builtin/lv_string_builtin.c ****     }
+ 248:Middlewares/LVGL/lvgl/src/stdlib/builtin/lv_string_builtin.c **** 
+ 249:Middlewares/LVGL/lvgl/src/stdlib/builtin/lv_string_builtin.c ****     while(len > 0 && *s1 && (*s1 == *s2)) {
+ 1112              		.loc 1 249 26 is_stmt 1 view .LVU402
+ 1113 0004 53B1     		cbz	r3, .L85
+ 1114              		.loc 1 249 22 is_stmt 0 discriminator 1 view .LVU403
+ 1115 0006 0278     		ldrb	r2, [r0]	@ zero_extendqisi2
+ 1116              		.loc 1 249 19 discriminator 1 view .LVU404
+ 1117 0008 42B1     		cbz	r2, .L85
+ 1118              		.loc 1 249 37 discriminator 2 view .LVU405
+ 1119 000a 91F800C0 		ldrb	ip, [r1]	@ zero_extendqisi2
+ 1120              		.loc 1 249 26 discriminator 2 view .LVU406
+ 1121 000e 6245     		cmp	r2, ip
+ 1122 0010 04D1     		bne	.L85
+ 250:Middlewares/LVGL/lvgl/src/stdlib/builtin/lv_string_builtin.c ****         if(--len == 0) {
+ 1123              		.loc 1 250 9 is_stmt 1 view .LVU407
+ 1124              	.LVL152:
+ 1125              		.loc 1 250 11 is_stmt 0 view .LVU408
+ 1126 0012 013B     		subs	r3, r3, #1
+ 1127              	.LVL153:
+ 1128              		.loc 1 250 11 view .LVU409
+ 1129 0014 08D0     		beq	.L88
+ 251:Middlewares/LVGL/lvgl/src/stdlib/builtin/lv_string_builtin.c ****             return 0;
+ 252:Middlewares/LVGL/lvgl/src/stdlib/builtin/lv_string_builtin.c ****         }
+ 253:Middlewares/LVGL/lvgl/src/stdlib/builtin/lv_string_builtin.c ****         s1++;
+ 1130              		.loc 1 253 9 is_stmt 1 view .LVU410
+ 1131              		.loc 1 253 11 is_stmt 0 view .LVU411
+ 1132 0016 0130     		adds	r0, r0, #1
+ 1133              	.LVL154:
+ 254:Middlewares/LVGL/lvgl/src/stdlib/builtin/lv_string_builtin.c ****         s2++;
+ 1134              		.loc 1 254 9 is_stmt 1 view .LVU412
+ 1135              		.loc 1 254 11 is_stmt 0 view .LVU413
+ 1136 0018 0131     		adds	r1, r1, #1
+ 1137              	.LVL155:
+ 1138              		.loc 1 254 11 view .LVU414
+ 1139 001a F3E7     		b	.L84
+ 1140              	.LVL156:
+ 1141              	.L85:
+ 255:Middlewares/LVGL/lvgl/src/stdlib/builtin/lv_string_builtin.c ****     }
+ 256:Middlewares/LVGL/lvgl/src/stdlib/builtin/lv_string_builtin.c ****     return *(const unsigned char *)s1 - *(const unsigned char *)s2;
+ 1142              		.loc 1 256 5 is_stmt 1 view .LVU415
+ 1143              		.loc 1 256 12 is_stmt 0 view .LVU416
+ 1144 001c 0078     		ldrb	r0, [r0]	@ zero_extendqisi2
+ 1145              	.LVL157:
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccF8PBmu.s 			page 29
+
+
+ 1146              		.loc 1 256 41 view .LVU417
+ 1147 001e 0B78     		ldrb	r3, [r1]	@ zero_extendqisi2
+ 1148              	.LVL158:
+ 1149              		.loc 1 256 39 view .LVU418
+ 1150 0020 C01A     		subs	r0, r0, r3
+ 1151 0022 7047     		bx	lr
+ 1152              	.LVL159:
+ 1153              	.L89:
+ 246:Middlewares/LVGL/lvgl/src/stdlib/builtin/lv_string_builtin.c ****     }
+ 1154              		.loc 1 246 16 view .LVU419
+ 1155 0024 0020     		movs	r0, #0
+ 1156              	.LVL160:
+ 246:Middlewares/LVGL/lvgl/src/stdlib/builtin/lv_string_builtin.c ****     }
+ 1157              		.loc 1 246 16 view .LVU420
+ 1158 0026 7047     		bx	lr
+ 1159              	.LVL161:
+ 1160              	.L88:
+ 251:Middlewares/LVGL/lvgl/src/stdlib/builtin/lv_string_builtin.c ****         }
+ 1161              		.loc 1 251 20 view .LVU421
+ 1162 0028 0020     		movs	r0, #0
+ 1163              	.LVL162:
+ 257:Middlewares/LVGL/lvgl/src/stdlib/builtin/lv_string_builtin.c **** }
+ 1164              		.loc 1 257 1 view .LVU422
+ 1165 002a 7047     		bx	lr
+ 1166              		.cfi_endproc
+ 1167              	.LFE13:
+ 1169              		.section	.text.lv_strdup,"ax",%progbits
+ 1170              		.align	1
+ 1171              		.global	lv_strdup
+ 1172              		.syntax unified
+ 1173              		.thumb
+ 1174              		.thumb_func
+ 1176              	lv_strdup:
+ 1177              	.LVL163:
+ 1178              	.LFB14:
+ 258:Middlewares/LVGL/lvgl/src/stdlib/builtin/lv_string_builtin.c **** 
+ 259:Middlewares/LVGL/lvgl/src/stdlib/builtin/lv_string_builtin.c **** char * lv_strdup(const char * src)
+ 260:Middlewares/LVGL/lvgl/src/stdlib/builtin/lv_string_builtin.c **** {
+ 1179              		.loc 1 260 1 is_stmt 1 view -0
+ 1180              		.cfi_startproc
+ 1181              		@ args = 0, pretend = 0, frame = 0
+ 1182              		@ frame_needed = 0, uses_anonymous_args = 0
+ 1183              		.loc 1 260 1 is_stmt 0 view .LVU424
+ 1184 0000 70B5     		push	{r4, r5, r6, lr}
+ 1185              	.LCFI4:
+ 1186              		.cfi_def_cfa_offset 16
+ 1187              		.cfi_offset 4, -16
+ 1188              		.cfi_offset 5, -12
+ 1189              		.cfi_offset 6, -8
+ 1190              		.cfi_offset 14, -4
+ 1191 0002 0546     		mov	r5, r0
+ 261:Middlewares/LVGL/lvgl/src/stdlib/builtin/lv_string_builtin.c ****     size_t len = lv_strlen(src) + 1;
+ 1192              		.loc 1 261 5 is_stmt 1 view .LVU425
+ 1193              		.loc 1 261 18 is_stmt 0 view .LVU426
+ 1194 0004 FFF7FEFF 		bl	lv_strlen
+ 1195              	.LVL164:
+ 1196              		.loc 1 261 12 discriminator 1 view .LVU427
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccF8PBmu.s 			page 30
+
+
+ 1197 0008 441C     		adds	r4, r0, #1
+ 1198              	.LVL165:
+ 262:Middlewares/LVGL/lvgl/src/stdlib/builtin/lv_string_builtin.c ****     char * dst = lv_malloc(len);
+ 1199              		.loc 1 262 5 is_stmt 1 view .LVU428
+ 1200              		.loc 1 262 18 is_stmt 0 view .LVU429
+ 1201 000a 2046     		mov	r0, r4
+ 1202 000c FFF7FEFF 		bl	lv_malloc
+ 1203              	.LVL166:
+ 263:Middlewares/LVGL/lvgl/src/stdlib/builtin/lv_string_builtin.c ****     if(dst == NULL) return NULL;
+ 1204              		.loc 1 263 5 is_stmt 1 view .LVU430
+ 1205              		.loc 1 263 7 is_stmt 0 view .LVU431
+ 1206 0010 0646     		mov	r6, r0
+ 1207 0012 18B1     		cbz	r0, .L90
+ 264:Middlewares/LVGL/lvgl/src/stdlib/builtin/lv_string_builtin.c **** 
+ 265:Middlewares/LVGL/lvgl/src/stdlib/builtin/lv_string_builtin.c ****     lv_memcpy(dst, src, len); /*memcpy is faster than strncpy when length is known*/
+ 1208              		.loc 1 265 5 is_stmt 1 view .LVU432
+ 1209 0014 2246     		mov	r2, r4
+ 1210 0016 2946     		mov	r1, r5
+ 1211 0018 FFF7FEFF 		bl	lv_memcpy
+ 1212              	.LVL167:
+ 266:Middlewares/LVGL/lvgl/src/stdlib/builtin/lv_string_builtin.c ****     return dst;
+ 1213              		.loc 1 266 5 view .LVU433
+ 1214              	.L90:
+ 267:Middlewares/LVGL/lvgl/src/stdlib/builtin/lv_string_builtin.c **** }
+ 1215              		.loc 1 267 1 is_stmt 0 view .LVU434
+ 1216 001c 3046     		mov	r0, r6
+ 1217 001e 70BD     		pop	{r4, r5, r6, pc}
+ 1218              		.loc 1 267 1 view .LVU435
+ 1219              		.cfi_endproc
+ 1220              	.LFE14:
+ 1222              		.section	.text.lv_strndup,"ax",%progbits
+ 1223              		.align	1
+ 1224              		.global	lv_strndup
+ 1225              		.syntax unified
+ 1226              		.thumb
+ 1227              		.thumb_func
+ 1229              	lv_strndup:
+ 1230              	.LVL168:
+ 1231              	.LFB15:
+ 268:Middlewares/LVGL/lvgl/src/stdlib/builtin/lv_string_builtin.c **** 
+ 269:Middlewares/LVGL/lvgl/src/stdlib/builtin/lv_string_builtin.c **** char * lv_strndup(const char * src, size_t max_len)
+ 270:Middlewares/LVGL/lvgl/src/stdlib/builtin/lv_string_builtin.c **** {
+ 1232              		.loc 1 270 1 is_stmt 1 view -0
+ 1233              		.cfi_startproc
+ 1234              		@ args = 0, pretend = 0, frame = 0
+ 1235              		@ frame_needed = 0, uses_anonymous_args = 0
+ 1236              		.loc 1 270 1 is_stmt 0 view .LVU437
+ 1237 0000 70B5     		push	{r4, r5, r6, lr}
+ 1238              	.LCFI5:
+ 1239              		.cfi_def_cfa_offset 16
+ 1240              		.cfi_offset 4, -16
+ 1241              		.cfi_offset 5, -12
+ 1242              		.cfi_offset 6, -8
+ 1243              		.cfi_offset 14, -4
+ 1244 0002 0546     		mov	r5, r0
+ 271:Middlewares/LVGL/lvgl/src/stdlib/builtin/lv_string_builtin.c ****     size_t len = lv_strnlen(src, max_len);
+ 1245              		.loc 1 271 5 is_stmt 1 view .LVU438
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccF8PBmu.s 			page 31
+
+
+ 1246              		.loc 1 271 18 is_stmt 0 view .LVU439
+ 1247 0004 FFF7FEFF 		bl	lv_strnlen
+ 1248              	.LVL169:
+ 1249              		.loc 1 271 18 view .LVU440
+ 1250 0008 0446     		mov	r4, r0
+ 1251              	.LVL170:
+ 272:Middlewares/LVGL/lvgl/src/stdlib/builtin/lv_string_builtin.c ****     char * dst = lv_malloc(len + 1);
+ 1252              		.loc 1 272 5 is_stmt 1 view .LVU441
+ 1253              		.loc 1 272 18 is_stmt 0 view .LVU442
+ 1254 000a 0130     		adds	r0, r0, #1
+ 1255              	.LVL171:
+ 1256              		.loc 1 272 18 view .LVU443
+ 1257 000c FFF7FEFF 		bl	lv_malloc
+ 1258              	.LVL172:
+ 273:Middlewares/LVGL/lvgl/src/stdlib/builtin/lv_string_builtin.c ****     if(dst == NULL) return NULL;
+ 1259              		.loc 1 273 5 is_stmt 1 view .LVU444
+ 1260              		.loc 1 273 7 is_stmt 0 view .LVU445
+ 1261 0010 0646     		mov	r6, r0
+ 1262 0012 28B1     		cbz	r0, .L93
+ 274:Middlewares/LVGL/lvgl/src/stdlib/builtin/lv_string_builtin.c **** 
+ 275:Middlewares/LVGL/lvgl/src/stdlib/builtin/lv_string_builtin.c ****     lv_memcpy(dst, src, len);
+ 1263              		.loc 1 275 5 is_stmt 1 view .LVU446
+ 1264 0014 2246     		mov	r2, r4
+ 1265 0016 2946     		mov	r1, r5
+ 1266 0018 FFF7FEFF 		bl	lv_memcpy
+ 1267              	.LVL173:
+ 276:Middlewares/LVGL/lvgl/src/stdlib/builtin/lv_string_builtin.c ****     dst[len] = '\0';
+ 1268              		.loc 1 276 5 view .LVU447
+ 1269              		.loc 1 276 14 is_stmt 0 view .LVU448
+ 1270 001c 0023     		movs	r3, #0
+ 1271 001e 3355     		strb	r3, [r6, r4]
+ 277:Middlewares/LVGL/lvgl/src/stdlib/builtin/lv_string_builtin.c ****     return dst;
+ 1272              		.loc 1 277 5 is_stmt 1 view .LVU449
+ 1273              	.L93:
+ 278:Middlewares/LVGL/lvgl/src/stdlib/builtin/lv_string_builtin.c **** }
+ 1274              		.loc 1 278 1 is_stmt 0 view .LVU450
+ 1275 0020 3046     		mov	r0, r6
+ 1276 0022 70BD     		pop	{r4, r5, r6, pc}
+ 1277              		.loc 1 278 1 view .LVU451
+ 1278              		.cfi_endproc
+ 1279              	.LFE15:
+ 1281              		.section	.text.lv_strcat,"ax",%progbits
+ 1282              		.align	1
+ 1283              		.global	lv_strcat
+ 1284              		.syntax unified
+ 1285              		.thumb
+ 1286              		.thumb_func
+ 1288              	lv_strcat:
+ 1289              	.LVL174:
+ 1290              	.LFB16:
+ 279:Middlewares/LVGL/lvgl/src/stdlib/builtin/lv_string_builtin.c **** 
+ 280:Middlewares/LVGL/lvgl/src/stdlib/builtin/lv_string_builtin.c **** char * lv_strcat(char * dst, const char * src)
+ 281:Middlewares/LVGL/lvgl/src/stdlib/builtin/lv_string_builtin.c **** {
+ 1291              		.loc 1 281 1 is_stmt 1 view -0
+ 1292              		.cfi_startproc
+ 1293              		@ args = 0, pretend = 0, frame = 0
+ 1294              		@ frame_needed = 0, uses_anonymous_args = 0
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccF8PBmu.s 			page 32
+
+
+ 1295              		.loc 1 281 1 is_stmt 0 view .LVU453
+ 1296 0000 38B5     		push	{r3, r4, r5, lr}
+ 1297              	.LCFI6:
+ 1298              		.cfi_def_cfa_offset 16
+ 1299              		.cfi_offset 3, -16
+ 1300              		.cfi_offset 4, -12
+ 1301              		.cfi_offset 5, -8
+ 1302              		.cfi_offset 14, -4
+ 1303 0002 0446     		mov	r4, r0
+ 1304 0004 0D46     		mov	r5, r1
+ 282:Middlewares/LVGL/lvgl/src/stdlib/builtin/lv_string_builtin.c ****     lv_strcpy(dst + lv_strlen(dst), src);
+ 1305              		.loc 1 282 5 is_stmt 1 view .LVU454
+ 1306              		.loc 1 282 21 is_stmt 0 view .LVU455
+ 1307 0006 FFF7FEFF 		bl	lv_strlen
+ 1308              	.LVL175:
+ 1309              		.loc 1 282 5 discriminator 1 view .LVU456
+ 1310 000a 2946     		mov	r1, r5
+ 1311 000c 2044     		add	r0, r0, r4
+ 1312 000e FFF7FEFF 		bl	lv_strcpy
+ 1313              	.LVL176:
+ 283:Middlewares/LVGL/lvgl/src/stdlib/builtin/lv_string_builtin.c ****     return dst;
+ 1314              		.loc 1 283 5 is_stmt 1 view .LVU457
+ 284:Middlewares/LVGL/lvgl/src/stdlib/builtin/lv_string_builtin.c **** }
+ 1315              		.loc 1 284 1 is_stmt 0 view .LVU458
+ 1316 0012 2046     		mov	r0, r4
+ 1317 0014 38BD     		pop	{r3, r4, r5, pc}
+ 1318              		.loc 1 284 1 view .LVU459
+ 1319              		.cfi_endproc
+ 1320              	.LFE16:
+ 1322              		.section	.text.lv_strncat,"ax",%progbits
+ 1323              		.align	1
+ 1324              		.global	lv_strncat
+ 1325              		.syntax unified
+ 1326              		.thumb
+ 1327              		.thumb_func
+ 1329              	lv_strncat:
+ 1330              	.LVL177:
+ 1331              	.LFB17:
+ 285:Middlewares/LVGL/lvgl/src/stdlib/builtin/lv_string_builtin.c **** 
+ 286:Middlewares/LVGL/lvgl/src/stdlib/builtin/lv_string_builtin.c **** char * lv_strncat(char * dst, const char * src, size_t src_len)
+ 287:Middlewares/LVGL/lvgl/src/stdlib/builtin/lv_string_builtin.c **** {
+ 1332              		.loc 1 287 1 is_stmt 1 view -0
+ 1333              		.cfi_startproc
+ 1334              		@ args = 0, pretend = 0, frame = 0
+ 1335              		@ frame_needed = 0, uses_anonymous_args = 0
+ 1336              		@ link register save eliminated.
+ 1337              		.loc 1 287 1 is_stmt 0 view .LVU461
+ 1338 0000 10B4     		push	{r4}
+ 1339              	.LCFI7:
+ 1340              		.cfi_def_cfa_offset 4
+ 1341              		.cfi_offset 4, -4
+ 288:Middlewares/LVGL/lvgl/src/stdlib/builtin/lv_string_builtin.c ****     char * tmp = dst;
+ 1342              		.loc 1 288 5 is_stmt 1 view .LVU462
+ 1343              	.LVL178:
+ 289:Middlewares/LVGL/lvgl/src/stdlib/builtin/lv_string_builtin.c ****     while(*dst != '\0') {
+ 1344              		.loc 1 289 5 view .LVU463
+ 1345              		.loc 1 289 10 is_stmt 0 view .LVU464
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccF8PBmu.s 			page 33
+
+
+ 1346 0002 0346     		mov	r3, r0
+ 1347 0004 00E0     		b	.L99
+ 1348              	.LVL179:
+ 1349              	.L100:
+ 290:Middlewares/LVGL/lvgl/src/stdlib/builtin/lv_string_builtin.c ****         dst++;
+ 1350              		.loc 1 290 9 is_stmt 1 view .LVU465
+ 1351              		.loc 1 290 12 is_stmt 0 view .LVU466
+ 1352 0006 0133     		adds	r3, r3, #1
+ 1353              	.LVL180:
+ 1354              	.L99:
+ 289:Middlewares/LVGL/lvgl/src/stdlib/builtin/lv_string_builtin.c ****     while(*dst != '\0') {
+ 1355              		.loc 1 289 16 is_stmt 1 view .LVU467
+ 289:Middlewares/LVGL/lvgl/src/stdlib/builtin/lv_string_builtin.c ****     while(*dst != '\0') {
+ 1356              		.loc 1 289 11 is_stmt 0 view .LVU468
+ 1357 0008 1C78     		ldrb	r4, [r3]	@ zero_extendqisi2
+ 289:Middlewares/LVGL/lvgl/src/stdlib/builtin/lv_string_builtin.c ****     while(*dst != '\0') {
+ 1358              		.loc 1 289 16 view .LVU469
+ 1359 000a 002C     		cmp	r4, #0
+ 1360 000c FBD1     		bne	.L100
+ 1361 000e 03E0     		b	.L101
+ 1362              	.L103:
+ 291:Middlewares/LVGL/lvgl/src/stdlib/builtin/lv_string_builtin.c ****     }
+ 292:Middlewares/LVGL/lvgl/src/stdlib/builtin/lv_string_builtin.c ****     while(src_len != 0 && *src != '\0') {
+ 293:Middlewares/LVGL/lvgl/src/stdlib/builtin/lv_string_builtin.c ****         src_len--;
+ 1363              		.loc 1 293 9 is_stmt 1 view .LVU470
+ 1364              		.loc 1 293 16 is_stmt 0 view .LVU471
+ 1365 0010 013A     		subs	r2, r2, #1
+ 1366              	.LVL181:
+ 294:Middlewares/LVGL/lvgl/src/stdlib/builtin/lv_string_builtin.c ****         *dst++ = *src++;
+ 1367              		.loc 1 294 9 is_stmt 1 view .LVU472
+ 1368              		.loc 1 294 22 is_stmt 0 view .LVU473
+ 1369 0012 0131     		adds	r1, r1, #1
+ 1370              	.LVL182:
+ 1371              		.loc 1 294 16 view .LVU474
+ 1372 0014 03F8014B 		strb	r4, [r3], #1
+ 1373              	.LVL183:
+ 1374              	.L101:
+ 292:Middlewares/LVGL/lvgl/src/stdlib/builtin/lv_string_builtin.c ****         src_len--;
+ 1375              		.loc 1 292 24 is_stmt 1 view .LVU475
+ 1376 0018 12B1     		cbz	r2, .L102
+ 292:Middlewares/LVGL/lvgl/src/stdlib/builtin/lv_string_builtin.c ****         src_len--;
+ 1377              		.loc 1 292 27 is_stmt 0 discriminator 1 view .LVU476
+ 1378 001a 0C78     		ldrb	r4, [r1]	@ zero_extendqisi2
+ 292:Middlewares/LVGL/lvgl/src/stdlib/builtin/lv_string_builtin.c ****         src_len--;
+ 1379              		.loc 1 292 24 discriminator 1 view .LVU477
+ 1380 001c 002C     		cmp	r4, #0
+ 1381 001e F7D1     		bne	.L103
+ 1382              	.L102:
+ 295:Middlewares/LVGL/lvgl/src/stdlib/builtin/lv_string_builtin.c ****     }
+ 296:Middlewares/LVGL/lvgl/src/stdlib/builtin/lv_string_builtin.c ****     *dst = '\0';
+ 1383              		.loc 1 296 5 is_stmt 1 view .LVU478
+ 1384              		.loc 1 296 10 is_stmt 0 view .LVU479
+ 1385 0020 0022     		movs	r2, #0
+ 1386              	.LVL184:
+ 1387              		.loc 1 296 10 view .LVU480
+ 1388 0022 1A70     		strb	r2, [r3]
+ 297:Middlewares/LVGL/lvgl/src/stdlib/builtin/lv_string_builtin.c ****     return tmp;
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccF8PBmu.s 			page 34
+
+
+ 1389              		.loc 1 297 5 is_stmt 1 view .LVU481
+ 298:Middlewares/LVGL/lvgl/src/stdlib/builtin/lv_string_builtin.c **** }
+ 1390              		.loc 1 298 1 is_stmt 0 view .LVU482
+ 1391 0024 5DF8044B 		ldr	r4, [sp], #4
+ 1392 0028 7047     		bx	lr
+ 1393              		.cfi_endproc
+ 1394              	.LFE17:
+ 1396              		.section	.text.lv_strchr,"ax",%progbits
+ 1397              		.align	1
+ 1398              		.global	lv_strchr
+ 1399              		.syntax unified
+ 1400              		.thumb
+ 1401              		.thumb_func
+ 1403              	lv_strchr:
+ 1404              	.LFB18:
+ 299:Middlewares/LVGL/lvgl/src/stdlib/builtin/lv_string_builtin.c **** 
+ 300:Middlewares/LVGL/lvgl/src/stdlib/builtin/lv_string_builtin.c **** char * lv_strchr(const char * s, int c)
+ 301:Middlewares/LVGL/lvgl/src/stdlib/builtin/lv_string_builtin.c **** {
+ 1405              		.loc 1 301 1 is_stmt 1 view -0
+ 1406              		.cfi_startproc
+ 1407              		@ args = 0, pretend = 0, frame = 0
+ 1408              		@ frame_needed = 0, uses_anonymous_args = 0
+ 1409              		@ link register save eliminated.
+ 1410              	.LVL185:
+ 1411              		.loc 1 301 1 is_stmt 0 view .LVU484
+ 1412 0000 00E0     		b	.L107
+ 1413              	.L109:
+ 302:Middlewares/LVGL/lvgl/src/stdlib/builtin/lv_string_builtin.c ****     for(; ; s++) {
+ 1414              		.loc 1 302 14 is_stmt 1 view .LVU485
+ 1415 0002 0130     		adds	r0, r0, #1
+ 1416              	.LVL186:
+ 1417              		.loc 1 302 5 view .LVU486
+ 1418              	.L107:
+ 1419              		.loc 1 302 5 view .LVU487
+ 303:Middlewares/LVGL/lvgl/src/stdlib/builtin/lv_string_builtin.c ****         if(*s == c) {
+ 1420              		.loc 1 303 9 view .LVU488
+ 1421              		.loc 1 303 12 is_stmt 0 view .LVU489
+ 1422 0004 0378     		ldrb	r3, [r0]	@ zero_extendqisi2
+ 1423              		.loc 1 303 11 view .LVU490
+ 1424 0006 8B42     		cmp	r3, r1
+ 1425 0008 02D0     		beq	.L106
+ 304:Middlewares/LVGL/lvgl/src/stdlib/builtin/lv_string_builtin.c ****             return (char *)s;
+ 305:Middlewares/LVGL/lvgl/src/stdlib/builtin/lv_string_builtin.c ****         }
+ 306:Middlewares/LVGL/lvgl/src/stdlib/builtin/lv_string_builtin.c **** 
+ 307:Middlewares/LVGL/lvgl/src/stdlib/builtin/lv_string_builtin.c ****         if(*s == '\0') {
+ 1426              		.loc 1 307 9 is_stmt 1 view .LVU491
+ 1427              		.loc 1 307 11 is_stmt 0 view .LVU492
+ 1428 000a 002B     		cmp	r3, #0
+ 1429 000c F9D1     		bne	.L109
+ 308:Middlewares/LVGL/lvgl/src/stdlib/builtin/lv_string_builtin.c ****             break;
+ 309:Middlewares/LVGL/lvgl/src/stdlib/builtin/lv_string_builtin.c ****         }
+ 310:Middlewares/LVGL/lvgl/src/stdlib/builtin/lv_string_builtin.c ****     }
+ 311:Middlewares/LVGL/lvgl/src/stdlib/builtin/lv_string_builtin.c **** 
+ 312:Middlewares/LVGL/lvgl/src/stdlib/builtin/lv_string_builtin.c ****     return NULL;
+ 1430              		.loc 1 312 12 view .LVU493
+ 1431 000e 0020     		movs	r0, #0
+ 1432              	.LVL187:
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccF8PBmu.s 			page 35
+
+
+ 1433              	.L106:
+ 313:Middlewares/LVGL/lvgl/src/stdlib/builtin/lv_string_builtin.c **** }
+ 1434              		.loc 1 313 1 view .LVU494
+ 1435 0010 7047     		bx	lr
+ 1436              		.cfi_endproc
+ 1437              	.LFE18:
+ 1439              		.text
+ 1440              	.Letext0:
+ 1441              		.file 2 "D:\\STM32CubeIDE\\STM32CubeIDE_2.1.1\\STM32CubeIDE\\plugins\\com.st.stm32cube.ide.mcu.ext
+ 1442              		.file 3 "D:\\STM32CubeIDE\\STM32CubeIDE_2.1.1\\STM32CubeIDE\\plugins\\com.st.stm32cube.ide.mcu.ext
+ 1443              		.file 4 "D:\\STM32CubeIDE\\STM32CubeIDE_2.1.1\\STM32CubeIDE\\plugins\\com.st.stm32cube.ide.mcu.ext
+ 1444              		.file 5 "Middlewares/LVGL/lvgl/src/stdlib/builtin/../../misc/lv_types.h"
+ 1445              		.file 6 "Middlewares/LVGL/lvgl/src/stdlib/builtin/../../misc/../stdlib/lv_mem.h"
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccF8PBmu.s 			page 36
+
+
+DEFINED SYMBOLS
+                            *ABS*:00000000 lv_string_builtin.c
+C:\Users\w1785\AppData\Local\Temp\ccF8PBmu.s:21     .text.lv_memcpy:00000000 $t
+C:\Users\w1785\AppData\Local\Temp\ccF8PBmu.s:27     .text.lv_memcpy:00000000 lv_memcpy
+C:\Users\w1785\AppData\Local\Temp\ccF8PBmu.s:452    .text.lv_memset:00000000 $t
+C:\Users\w1785\AppData\Local\Temp\ccF8PBmu.s:458    .text.lv_memset:00000000 lv_memset
+C:\Users\w1785\AppData\Local\Temp\ccF8PBmu.s:583    .text.lv_memmove:00000000 $t
+C:\Users\w1785\AppData\Local\Temp\ccF8PBmu.s:589    .text.lv_memmove:00000000 lv_memmove
+C:\Users\w1785\AppData\Local\Temp\ccF8PBmu.s:697    .text.lv_memcmp:00000000 $t
+C:\Users\w1785\AppData\Local\Temp\ccF8PBmu.s:703    .text.lv_memcmp:00000000 lv_memcmp
+C:\Users\w1785\AppData\Local\Temp\ccF8PBmu.s:754    .text.lv_strlen:00000000 $t
+C:\Users\w1785\AppData\Local\Temp\ccF8PBmu.s:760    .text.lv_strlen:00000000 lv_strlen
+C:\Users\w1785\AppData\Local\Temp\ccF8PBmu.s:798    .text.lv_strnlen:00000000 $t
+C:\Users\w1785\AppData\Local\Temp\ccF8PBmu.s:804    .text.lv_strnlen:00000000 lv_strnlen
+C:\Users\w1785\AppData\Local\Temp\ccF8PBmu.s:844    .text.lv_strlcpy:00000000 $t
+C:\Users\w1785\AppData\Local\Temp\ccF8PBmu.s:850    .text.lv_strlcpy:00000000 lv_strlcpy
+C:\Users\w1785\AppData\Local\Temp\ccF8PBmu.s:920    .text.lv_strncpy:00000000 $t
+C:\Users\w1785\AppData\Local\Temp\ccF8PBmu.s:926    .text.lv_strncpy:00000000 lv_strncpy
+C:\Users\w1785\AppData\Local\Temp\ccF8PBmu.s:1004   .text.lv_strcpy:00000000 $t
+C:\Users\w1785\AppData\Local\Temp\ccF8PBmu.s:1010   .text.lv_strcpy:00000000 lv_strcpy
+C:\Users\w1785\AppData\Local\Temp\ccF8PBmu.s:1043   .text.lv_strcmp:00000000 $t
+C:\Users\w1785\AppData\Local\Temp\ccF8PBmu.s:1049   .text.lv_strcmp:00000000 lv_strcmp
+C:\Users\w1785\AppData\Local\Temp\ccF8PBmu.s:1092   .text.lv_strncmp:00000000 $t
+C:\Users\w1785\AppData\Local\Temp\ccF8PBmu.s:1098   .text.lv_strncmp:00000000 lv_strncmp
+C:\Users\w1785\AppData\Local\Temp\ccF8PBmu.s:1170   .text.lv_strdup:00000000 $t
+C:\Users\w1785\AppData\Local\Temp\ccF8PBmu.s:1176   .text.lv_strdup:00000000 lv_strdup
+C:\Users\w1785\AppData\Local\Temp\ccF8PBmu.s:1223   .text.lv_strndup:00000000 $t
+C:\Users\w1785\AppData\Local\Temp\ccF8PBmu.s:1229   .text.lv_strndup:00000000 lv_strndup
+C:\Users\w1785\AppData\Local\Temp\ccF8PBmu.s:1282   .text.lv_strcat:00000000 $t
+C:\Users\w1785\AppData\Local\Temp\ccF8PBmu.s:1288   .text.lv_strcat:00000000 lv_strcat
+C:\Users\w1785\AppData\Local\Temp\ccF8PBmu.s:1323   .text.lv_strncat:00000000 $t
+C:\Users\w1785\AppData\Local\Temp\ccF8PBmu.s:1329   .text.lv_strncat:00000000 lv_strncat
+C:\Users\w1785\AppData\Local\Temp\ccF8PBmu.s:1397   .text.lv_strchr:00000000 $t
+C:\Users\w1785\AppData\Local\Temp\ccF8PBmu.s:1403   .text.lv_strchr:00000000 lv_strchr
+
+UNDEFINED SYMBOLS
+lv_malloc

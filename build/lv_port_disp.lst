@@ -1,0 +1,228 @@
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccEEpB9n.s 			page 1
+
+
+   1              		.cpu cortex-m4
+   2              		.arch armv7e-m
+   3              		.fpu fpv4-sp-d16
+   4              		.eabi_attribute 27, 1
+   5              		.eabi_attribute 28, 1
+   6              		.eabi_attribute 20, 1
+   7              		.eabi_attribute 21, 1
+   8              		.eabi_attribute 23, 3
+   9              		.eabi_attribute 24, 1
+  10              		.eabi_attribute 25, 1
+  11              		.eabi_attribute 26, 1
+  12              		.eabi_attribute 30, 1
+  13              		.eabi_attribute 34, 1
+  14              		.eabi_attribute 18, 4
+  15              		.file	"lv_port_disp.c"
+  16              		.text
+  17              	.Ltext0:
+  18              		.cfi_sections	.debug_frame
+  19              		.file 1 "Core/Src/lv_port_disp.c"
+  20              		.section	.text.LVGL_Flush_Callback,"ax",%progbits
+  21              		.align	1
+  22              		.syntax unified
+  23              		.thumb
+  24              		.thumb_func
+  26              	LVGL_Flush_Callback:
+  27              	.LVL0:
+  28              	.LFB329:
+   1:Core/Src/lv_port_disp.c **** #include "lv_port_disp.h"
+   2:Core/Src/lv_port_disp.c **** #include "st7789.h"
+   3:Core/Src/lv_port_disp.c **** 
+   4:Core/Src/lv_port_disp.c **** #define LCD_HOR_RES    ST7789_WIDTH
+   5:Core/Src/lv_port_disp.c **** #define LCD_VER_RES    ST7789_HEIGHT
+   6:Core/Src/lv_port_disp.c **** #define LCD_BUF_LINES  20U
+   7:Core/Src/lv_port_disp.c **** 
+   8:Core/Src/lv_port_disp.c **** static uint16_t s_lvgl_draw_buf[LCD_HOR_RES * LCD_BUF_LINES];
+   9:Core/Src/lv_port_disp.c **** 
+  10:Core/Src/lv_port_disp.c **** static void LVGL_Flush_Callback(lv_display_t *disp, const lv_area_t *area, uint8_t *px_map)
+  11:Core/Src/lv_port_disp.c **** {
+  29              		.loc 1 11 1 view -0
+  30              		.cfi_startproc
+  31              		@ args = 0, pretend = 0, frame = 0
+  32              		@ frame_needed = 0, uses_anonymous_args = 0
+  33              		.loc 1 11 1 is_stmt 0 view .LVU1
+  34 0000 70B5     		push	{r4, r5, r6, lr}
+  35              	.LCFI0:
+  36              		.cfi_def_cfa_offset 16
+  37              		.cfi_offset 4, -16
+  38              		.cfi_offset 5, -12
+  39              		.cfi_offset 6, -8
+  40              		.cfi_offset 14, -4
+  41 0002 0546     		mov	r5, r0
+  42 0004 1646     		mov	r6, r2
+  12:Core/Src/lv_port_disp.c ****   uint16_t width = (uint16_t)(area->x2 - area->x1 + 1);
+  43              		.loc 1 12 3 is_stmt 1 view .LVU2
+  44              		.loc 1 12 40 is_stmt 0 view .LVU3
+  45 0006 0A89     		ldrh	r2, [r1, #8]
+  46              	.LVL1:
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccEEpB9n.s 			page 2
+
+
+  47              		.loc 1 12 40 view .LVU4
+  48 0008 0888     		ldrh	r0, [r1]
+  49              	.LVL2:
+  50              		.loc 1 12 40 view .LVU5
+  51 000a 141A     		subs	r4, r2, r0
+  52 000c A4B2     		uxth	r4, r4
+  53              		.loc 1 12 12 view .LVU6
+  54 000e 0134     		adds	r4, r4, #1
+  55 0010 A4B2     		uxth	r4, r4
+  56              	.LVL3:
+  13:Core/Src/lv_port_disp.c ****   uint16_t height = (uint16_t)(area->y2 - area->y1 + 1);
+  57              		.loc 1 13 3 is_stmt 1 view .LVU7
+  58              		.loc 1 13 41 is_stmt 0 view .LVU8
+  59 0012 8B89     		ldrh	r3, [r1, #12]
+  60 0014 8988     		ldrh	r1, [r1, #4]
+  61              	.LVL4:
+  62              		.loc 1 13 41 view .LVU9
+  63 0016 A3EB010C 		sub	ip, r3, r1
+  64 001a 1FFA8CFC 		uxth	ip, ip
+  65              		.loc 1 13 12 view .LVU10
+  66 001e 0CF1010C 		add	ip, ip, #1
+  67 0022 1FFA8CFC 		uxth	ip, ip
+  68              	.LVL5:
+  14:Core/Src/lv_port_disp.c ****   uint32_t pixel_count = (uint32_t)width * (uint32_t)height;
+  69              		.loc 1 14 3 is_stmt 1 view .LVU11
+  70              		.loc 1 14 12 is_stmt 0 view .LVU12
+  71 0026 0CFB04F4 		mul	r4, ip, r4
+  72              	.LVL6:
+  15:Core/Src/lv_port_disp.c **** 
+  16:Core/Src/lv_port_disp.c ****   ST7789_SetWindow((uint16_t)area->x1,
+  73              		.loc 1 16 3 is_stmt 1 view .LVU13
+  74 002a FFF7FEFF 		bl	ST7789_SetWindow
+  75              	.LVL7:
+  17:Core/Src/lv_port_disp.c ****                    (uint16_t)area->y1,
+  18:Core/Src/lv_port_disp.c ****                    (uint16_t)area->x2,
+  19:Core/Src/lv_port_disp.c ****                    (uint16_t)area->y2);
+  20:Core/Src/lv_port_disp.c ****   ST7789_WritePixels((uint16_t *)px_map, pixel_count);
+  76              		.loc 1 20 3 view .LVU14
+  77 002e 2146     		mov	r1, r4
+  78 0030 3046     		mov	r0, r6
+  79 0032 FFF7FEFF 		bl	ST7789_WritePixels
+  80              	.LVL8:
+  21:Core/Src/lv_port_disp.c **** 
+  22:Core/Src/lv_port_disp.c ****   lv_display_flush_ready(disp);
+  81              		.loc 1 22 3 view .LVU15
+  82 0036 2846     		mov	r0, r5
+  83 0038 FFF7FEFF 		bl	lv_display_flush_ready
+  84              	.LVL9:
+  23:Core/Src/lv_port_disp.c **** }
+  85              		.loc 1 23 1 is_stmt 0 view .LVU16
+  86 003c 70BD     		pop	{r4, r5, r6, pc}
+  87              		.loc 1 23 1 view .LVU17
+  88              		.cfi_endproc
+  89              	.LFE329:
+  91              		.section	.text.LV_Port_Disp_Init,"ax",%progbits
+  92              		.align	1
+  93              		.global	LV_Port_Disp_Init
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccEEpB9n.s 			page 3
+
+
+  94              		.syntax unified
+  95              		.thumb
+  96              		.thumb_func
+  98              	LV_Port_Disp_Init:
+  99              	.LFB330:
+  24:Core/Src/lv_port_disp.c **** 
+  25:Core/Src/lv_port_disp.c **** void LV_Port_Disp_Init(void)
+  26:Core/Src/lv_port_disp.c **** {
+ 100              		.loc 1 26 1 is_stmt 1 view -0
+ 101              		.cfi_startproc
+ 102              		@ args = 0, pretend = 0, frame = 0
+ 103              		@ frame_needed = 0, uses_anonymous_args = 0
+ 104 0000 10B5     		push	{r4, lr}
+ 105              	.LCFI1:
+ 106              		.cfi_def_cfa_offset 8
+ 107              		.cfi_offset 4, -8
+ 108              		.cfi_offset 14, -4
+ 109 0002 82B0     		sub	sp, sp, #8
+ 110              	.LCFI2:
+ 111              		.cfi_def_cfa_offset 16
+  27:Core/Src/lv_port_disp.c ****   lv_display_t *disp = lv_display_create(LCD_HOR_RES, LCD_VER_RES);
+ 112              		.loc 1 27 3 view .LVU19
+ 113              		.loc 1 27 24 is_stmt 0 view .LVU20
+ 114 0004 4FF4A071 		mov	r1, #320
+ 115 0008 AC20     		movs	r0, #172
+ 116 000a FFF7FEFF 		bl	lv_display_create
+ 117              	.LVL10:
+ 118 000e 0446     		mov	r4, r0
+ 119              	.LVL11:
+  28:Core/Src/lv_port_disp.c **** 
+  29:Core/Src/lv_port_disp.c ****   lv_display_set_flush_cb(disp, LVGL_Flush_Callback);
+ 120              		.loc 1 29 3 is_stmt 1 view .LVU21
+ 121 0010 0649     		ldr	r1, .L5
+ 122 0012 FFF7FEFF 		bl	lv_display_set_flush_cb
+ 123              	.LVL12:
+  30:Core/Src/lv_port_disp.c ****   lv_display_set_buffers(disp,
+ 124              		.loc 1 30 3 view .LVU22
+ 125 0016 0022     		movs	r2, #0
+ 126 0018 0092     		str	r2, [sp]
+ 127 001a 4FF4D753 		mov	r3, #6880
+ 128 001e 0449     		ldr	r1, .L5+4
+ 129 0020 2046     		mov	r0, r4
+ 130 0022 FFF7FEFF 		bl	lv_display_set_buffers
+ 131              	.LVL13:
+  31:Core/Src/lv_port_disp.c ****                          s_lvgl_draw_buf,
+  32:Core/Src/lv_port_disp.c ****                          NULL,
+  33:Core/Src/lv_port_disp.c ****                          sizeof(s_lvgl_draw_buf),
+  34:Core/Src/lv_port_disp.c ****                          LV_DISPLAY_RENDER_MODE_PARTIAL);
+  35:Core/Src/lv_port_disp.c **** }
+ 132              		.loc 1 35 1 is_stmt 0 view .LVU23
+ 133 0026 02B0     		add	sp, sp, #8
+ 134              	.LCFI3:
+ 135              		.cfi_def_cfa_offset 8
+ 136              		@ sp needed
+ 137 0028 10BD     		pop	{r4, pc}
+ 138              	.LVL14:
+ 139              	.L6:
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccEEpB9n.s 			page 4
+
+
+ 140              		.loc 1 35 1 view .LVU24
+ 141 002a 00BF     		.align	2
+ 142              	.L5:
+ 143 002c 00000000 		.word	LVGL_Flush_Callback
+ 144 0030 00000000 		.word	s_lvgl_draw_buf
+ 145              		.cfi_endproc
+ 146              	.LFE330:
+ 148              		.section	.bss.s_lvgl_draw_buf,"aw",%nobits
+ 149              		.align	2
+ 152              	s_lvgl_draw_buf:
+ 153 0000 00000000 		.space	6880
+ 153      00000000 
+ 153      00000000 
+ 153      00000000 
+ 153      00000000 
+ 154              		.text
+ 155              	.Letext0:
+ 156              		.file 2 "D:\\STM32CubeIDE\\STM32CubeIDE_2.1.1\\STM32CubeIDE\\plugins\\com.st.stm32cube.ide.mcu.ext
+ 157              		.file 3 "D:\\STM32CubeIDE\\STM32CubeIDE_2.1.1\\STM32CubeIDE\\plugins\\com.st.stm32cube.ide.mcu.ext
+ 158              		.file 4 "Middlewares/LVGL/lvgl/src/misc/lv_types.h"
+ 159              		.file 5 "Middlewares/LVGL/lvgl/src/misc/../draw/../misc/lv_area.h"
+ 160              		.file 6 "Middlewares/LVGL/lvgl/src/core/../display/lv_display.h"
+ 161              		.file 7 "Middlewares/LVGL/lvgl/src/core/../indev/lv_indev.h"
+ 162              		.file 8 "Middlewares/LVGL/lvgl/src/widgets/bar/lv_bar.h"
+ 163              		.file 9 "DeviceDrivers/LCD/Inc/st7789.h"
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccEEpB9n.s 			page 5
+
+
+DEFINED SYMBOLS
+                            *ABS*:00000000 lv_port_disp.c
+C:\Users\w1785\AppData\Local\Temp\ccEEpB9n.s:21     .text.LVGL_Flush_Callback:00000000 $t
+C:\Users\w1785\AppData\Local\Temp\ccEEpB9n.s:26     .text.LVGL_Flush_Callback:00000000 LVGL_Flush_Callback
+C:\Users\w1785\AppData\Local\Temp\ccEEpB9n.s:92     .text.LV_Port_Disp_Init:00000000 $t
+C:\Users\w1785\AppData\Local\Temp\ccEEpB9n.s:98     .text.LV_Port_Disp_Init:00000000 LV_Port_Disp_Init
+C:\Users\w1785\AppData\Local\Temp\ccEEpB9n.s:143    .text.LV_Port_Disp_Init:0000002c $d
+C:\Users\w1785\AppData\Local\Temp\ccEEpB9n.s:152    .bss.s_lvgl_draw_buf:00000000 s_lvgl_draw_buf
+C:\Users\w1785\AppData\Local\Temp\ccEEpB9n.s:149    .bss.s_lvgl_draw_buf:00000000 $d
+
+UNDEFINED SYMBOLS
+ST7789_SetWindow
+ST7789_WritePixels
+lv_display_flush_ready
+lv_display_create
+lv_display_set_flush_cb
+lv_display_set_buffers

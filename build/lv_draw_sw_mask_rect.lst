@@ -1,0 +1,684 @@
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccQpxgp7.s 			page 1
+
+
+   1              		.cpu cortex-m4
+   2              		.arch armv7e-m
+   3              		.fpu fpv4-sp-d16
+   4              		.eabi_attribute 27, 1
+   5              		.eabi_attribute 28, 1
+   6              		.eabi_attribute 20, 1
+   7              		.eabi_attribute 21, 1
+   8              		.eabi_attribute 23, 3
+   9              		.eabi_attribute 24, 1
+  10              		.eabi_attribute 25, 1
+  11              		.eabi_attribute 26, 1
+  12              		.eabi_attribute 30, 1
+  13              		.eabi_attribute 34, 1
+  14              		.eabi_attribute 18, 4
+  15              		.file	"lv_draw_sw_mask_rect.c"
+  16              		.text
+  17              	.Ltext0:
+  18              		.cfi_sections	.debug_frame
+  19              		.file 1 "Middlewares/LVGL/lvgl/src/draw/sw/lv_draw_sw_mask_rect.c"
+  20              		.section	.text.lv_draw_sw_mask_rect,"ax",%progbits
+  21              		.align	1
+  22              		.global	lv_draw_sw_mask_rect
+  23              		.syntax unified
+  24              		.thumb
+  25              		.thumb_func
+  27              	lv_draw_sw_mask_rect:
+  28              	.LVL0:
+  29              	.LFB43:
+   1:Middlewares/LVGL/lvgl/src/draw/sw/lv_draw_sw_mask_rect.c **** /**
+   2:Middlewares/LVGL/lvgl/src/draw/sw/lv_draw_sw_mask_rect.c ****  * @file lv_draw_sw_mask_rect.c
+   3:Middlewares/LVGL/lvgl/src/draw/sw/lv_draw_sw_mask_rect.c ****  *
+   4:Middlewares/LVGL/lvgl/src/draw/sw/lv_draw_sw_mask_rect.c ****  */
+   5:Middlewares/LVGL/lvgl/src/draw/sw/lv_draw_sw_mask_rect.c **** 
+   6:Middlewares/LVGL/lvgl/src/draw/sw/lv_draw_sw_mask_rect.c **** /*********************
+   7:Middlewares/LVGL/lvgl/src/draw/sw/lv_draw_sw_mask_rect.c ****  *      INCLUDES
+   8:Middlewares/LVGL/lvgl/src/draw/sw/lv_draw_sw_mask_rect.c ****  *********************/
+   9:Middlewares/LVGL/lvgl/src/draw/sw/lv_draw_sw_mask_rect.c **** #include "../../misc/lv_area_private.h"
+  10:Middlewares/LVGL/lvgl/src/draw/sw/lv_draw_sw_mask_rect.c **** #include "../lv_draw_mask.h"
+  11:Middlewares/LVGL/lvgl/src/draw/sw/lv_draw_sw_mask_rect.c **** #include "../lv_draw_private.h"
+  12:Middlewares/LVGL/lvgl/src/draw/sw/lv_draw_sw_mask_rect.c **** #if LV_USE_DRAW_SW
+  13:Middlewares/LVGL/lvgl/src/draw/sw/lv_draw_sw_mask_rect.c **** #if LV_DRAW_SW_COMPLEX
+  14:Middlewares/LVGL/lvgl/src/draw/sw/lv_draw_sw_mask_rect.c **** 
+  15:Middlewares/LVGL/lvgl/src/draw/sw/lv_draw_sw_mask_rect.c **** #include "../../misc/lv_math.h"
+  16:Middlewares/LVGL/lvgl/src/draw/sw/lv_draw_sw_mask_rect.c **** #include "../../misc/lv_log.h"
+  17:Middlewares/LVGL/lvgl/src/draw/sw/lv_draw_sw_mask_rect.c **** #include "../../stdlib/lv_mem.h"
+  18:Middlewares/LVGL/lvgl/src/draw/sw/lv_draw_sw_mask_rect.c **** #include "../../stdlib/lv_string.h"
+  19:Middlewares/LVGL/lvgl/src/draw/sw/lv_draw_sw_mask_rect.c **** #include "lv_draw_sw.h"
+  20:Middlewares/LVGL/lvgl/src/draw/sw/lv_draw_sw_mask_rect.c **** #include "lv_draw_sw_mask_private.h"
+  21:Middlewares/LVGL/lvgl/src/draw/sw/lv_draw_sw_mask_rect.c **** 
+  22:Middlewares/LVGL/lvgl/src/draw/sw/lv_draw_sw_mask_rect.c **** /*********************
+  23:Middlewares/LVGL/lvgl/src/draw/sw/lv_draw_sw_mask_rect.c ****  *      DEFINES
+  24:Middlewares/LVGL/lvgl/src/draw/sw/lv_draw_sw_mask_rect.c ****  *********************/
+  25:Middlewares/LVGL/lvgl/src/draw/sw/lv_draw_sw_mask_rect.c **** 
+  26:Middlewares/LVGL/lvgl/src/draw/sw/lv_draw_sw_mask_rect.c **** /**********************
+  27:Middlewares/LVGL/lvgl/src/draw/sw/lv_draw_sw_mask_rect.c ****  *      TYPEDEFS
+  28:Middlewares/LVGL/lvgl/src/draw/sw/lv_draw_sw_mask_rect.c ****  **********************/
+  29:Middlewares/LVGL/lvgl/src/draw/sw/lv_draw_sw_mask_rect.c **** 
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccQpxgp7.s 			page 2
+
+
+  30:Middlewares/LVGL/lvgl/src/draw/sw/lv_draw_sw_mask_rect.c **** /**********************
+  31:Middlewares/LVGL/lvgl/src/draw/sw/lv_draw_sw_mask_rect.c ****  *  STATIC PROTOTYPES
+  32:Middlewares/LVGL/lvgl/src/draw/sw/lv_draw_sw_mask_rect.c ****  **********************/
+  33:Middlewares/LVGL/lvgl/src/draw/sw/lv_draw_sw_mask_rect.c **** 
+  34:Middlewares/LVGL/lvgl/src/draw/sw/lv_draw_sw_mask_rect.c **** /**********************
+  35:Middlewares/LVGL/lvgl/src/draw/sw/lv_draw_sw_mask_rect.c ****  *  STATIC VARIABLES
+  36:Middlewares/LVGL/lvgl/src/draw/sw/lv_draw_sw_mask_rect.c ****  **********************/
+  37:Middlewares/LVGL/lvgl/src/draw/sw/lv_draw_sw_mask_rect.c **** 
+  38:Middlewares/LVGL/lvgl/src/draw/sw/lv_draw_sw_mask_rect.c **** /**********************
+  39:Middlewares/LVGL/lvgl/src/draw/sw/lv_draw_sw_mask_rect.c ****  *      MACROS
+  40:Middlewares/LVGL/lvgl/src/draw/sw/lv_draw_sw_mask_rect.c ****  **********************/
+  41:Middlewares/LVGL/lvgl/src/draw/sw/lv_draw_sw_mask_rect.c **** 
+  42:Middlewares/LVGL/lvgl/src/draw/sw/lv_draw_sw_mask_rect.c **** /**********************
+  43:Middlewares/LVGL/lvgl/src/draw/sw/lv_draw_sw_mask_rect.c ****  *   GLOBAL FUNCTIONS
+  44:Middlewares/LVGL/lvgl/src/draw/sw/lv_draw_sw_mask_rect.c ****  **********************/
+  45:Middlewares/LVGL/lvgl/src/draw/sw/lv_draw_sw_mask_rect.c **** 
+  46:Middlewares/LVGL/lvgl/src/draw/sw/lv_draw_sw_mask_rect.c **** void lv_draw_sw_mask_rect(lv_draw_task_t * t, const lv_draw_mask_rect_dsc_t * dsc)
+  47:Middlewares/LVGL/lvgl/src/draw/sw/lv_draw_sw_mask_rect.c **** {
+  30              		.loc 1 47 1 view -0
+  31              		.cfi_startproc
+  32              		@ args = 0, pretend = 0, frame = 80
+  33              		@ frame_needed = 0, uses_anonymous_args = 0
+  34              		.loc 1 47 1 is_stmt 0 view .LVU1
+  35 0000 2DE9F043 		push	{r4, r5, r6, r7, r8, r9, lr}
+  36              	.LCFI0:
+  37              		.cfi_def_cfa_offset 28
+  38              		.cfi_offset 4, -28
+  39              		.cfi_offset 5, -24
+  40              		.cfi_offset 6, -20
+  41              		.cfi_offset 7, -16
+  42              		.cfi_offset 8, -12
+  43              		.cfi_offset 9, -8
+  44              		.cfi_offset 14, -4
+  45 0004 97B0     		sub	sp, sp, #92
+  46              	.LCFI1:
+  47              		.cfi_def_cfa_offset 120
+  48 0006 8046     		mov	r8, r0
+  49 0008 0C46     		mov	r4, r1
+  48:Middlewares/LVGL/lvgl/src/draw/sw/lv_draw_sw_mask_rect.c ****     lv_area_t draw_area;
+  50              		.loc 1 48 5 is_stmt 1 view .LVU2
+  49:Middlewares/LVGL/lvgl/src/draw/sw/lv_draw_sw_mask_rect.c ****     if(!lv_area_intersect(&draw_area, &dsc->area, &t->clip_area)) {
+  51              		.loc 1 49 5 view .LVU3
+  52              		.loc 1 49 9 is_stmt 0 view .LVU4
+  53 000a 01F12806 		add	r6, r1, #40
+  54 000e 00F13802 		add	r2, r0, #56
+  55 0012 3146     		mov	r1, r6
+  56              	.LVL1:
+  57              		.loc 1 49 9 view .LVU5
+  58 0014 12A8     		add	r0, sp, #72
+  59              	.LVL2:
+  60              		.loc 1 49 9 view .LVU6
+  61 0016 FFF7FEFF 		bl	lv_area_intersect
+  62              	.LVL3:
+  63              		.loc 1 49 7 discriminator 1 view .LVU7
+  64 001a 0028     		cmp	r0, #0
+  65 001c 00F0B380 		beq	.L1
+  50:Middlewares/LVGL/lvgl/src/draw/sw/lv_draw_sw_mask_rect.c ****         return;
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccQpxgp7.s 			page 3
+
+
+  51:Middlewares/LVGL/lvgl/src/draw/sw/lv_draw_sw_mask_rect.c ****     }
+  52:Middlewares/LVGL/lvgl/src/draw/sw/lv_draw_sw_mask_rect.c **** 
+  53:Middlewares/LVGL/lvgl/src/draw/sw/lv_draw_sw_mask_rect.c ****     lv_layer_t * target_layer = t->target_layer;
+  66              		.loc 1 53 5 is_stmt 1 view .LVU8
+  67              		.loc 1 53 18 is_stmt 0 view .LVU9
+  68 0020 D8F84870 		ldr	r7, [r8, #72]
+  69              	.LVL4:
+  54:Middlewares/LVGL/lvgl/src/draw/sw/lv_draw_sw_mask_rect.c ****     lv_area_t * buf_area = &target_layer->buf_area;
+  70              		.loc 1 54 5 is_stmt 1 view .LVU10
+  55:Middlewares/LVGL/lvgl/src/draw/sw/lv_draw_sw_mask_rect.c ****     lv_area_t clear_area;
+  71              		.loc 1 55 5 view .LVU11
+  56:Middlewares/LVGL/lvgl/src/draw/sw/lv_draw_sw_mask_rect.c **** 
+  57:Middlewares/LVGL/lvgl/src/draw/sw/lv_draw_sw_mask_rect.c ****     void * draw_buf = target_layer->draw_buf;
+  72              		.loc 1 57 5 view .LVU12
+  73              		.loc 1 57 12 is_stmt 0 view .LVU13
+  74 0024 D7F80090 		ldr	r9, [r7]
+  75              	.LVL5:
+  58:Middlewares/LVGL/lvgl/src/draw/sw/lv_draw_sw_mask_rect.c **** 
+  59:Middlewares/LVGL/lvgl/src/draw/sw/lv_draw_sw_mask_rect.c ****     if(dsc->keep_outside == 0) {
+  76              		.loc 1 59 5 is_stmt 1 view .LVU14
+  77              		.loc 1 59 26 is_stmt 0 view .LVU15
+  78 0028 94F83C30 		ldrb	r3, [r4, #60]	@ zero_extendqisi2
+  79              		.loc 1 59 7 view .LVU16
+  80 002c 13F0010F 		tst	r3, #1
+  81 0030 13D0     		beq	.L13
+  82              	.L4:
+  60:Middlewares/LVGL/lvgl/src/draw/sw/lv_draw_sw_mask_rect.c ****         /*Clear the top part*/
+  61:Middlewares/LVGL/lvgl/src/draw/sw/lv_draw_sw_mask_rect.c ****         lv_area_set(&clear_area, t->clip_area.x1, t->clip_area.y1, t->clip_area.x2,
+  62:Middlewares/LVGL/lvgl/src/draw/sw/lv_draw_sw_mask_rect.c ****                     dsc->area.y1 - 1);
+  63:Middlewares/LVGL/lvgl/src/draw/sw/lv_draw_sw_mask_rect.c ****         lv_area_move(&clear_area, -buf_area->x1, -buf_area->y1);
+  64:Middlewares/LVGL/lvgl/src/draw/sw/lv_draw_sw_mask_rect.c ****         lv_draw_buf_clear(draw_buf, &clear_area);
+  65:Middlewares/LVGL/lvgl/src/draw/sw/lv_draw_sw_mask_rect.c **** 
+  66:Middlewares/LVGL/lvgl/src/draw/sw/lv_draw_sw_mask_rect.c ****         /*Clear the bottom part*/
+  67:Middlewares/LVGL/lvgl/src/draw/sw/lv_draw_sw_mask_rect.c ****         lv_area_set(&clear_area, t->clip_area.x1, dsc->area.y2 + 1, t->clip_area.x2,
+  68:Middlewares/LVGL/lvgl/src/draw/sw/lv_draw_sw_mask_rect.c ****                     t->clip_area.y2);
+  69:Middlewares/LVGL/lvgl/src/draw/sw/lv_draw_sw_mask_rect.c ****         lv_area_move(&clear_area, -buf_area->x1, -buf_area->y1);
+  70:Middlewares/LVGL/lvgl/src/draw/sw/lv_draw_sw_mask_rect.c ****         lv_draw_buf_clear(draw_buf, &clear_area);
+  71:Middlewares/LVGL/lvgl/src/draw/sw/lv_draw_sw_mask_rect.c **** 
+  72:Middlewares/LVGL/lvgl/src/draw/sw/lv_draw_sw_mask_rect.c ****         /*Clear the left part*/
+  73:Middlewares/LVGL/lvgl/src/draw/sw/lv_draw_sw_mask_rect.c ****         lv_area_set(&clear_area, t->clip_area.x1, dsc->area.y1, dsc->area.x1 - 1, dsc->area.y2);
+  74:Middlewares/LVGL/lvgl/src/draw/sw/lv_draw_sw_mask_rect.c ****         lv_area_move(&clear_area, -buf_area->x1, -buf_area->y1);
+  75:Middlewares/LVGL/lvgl/src/draw/sw/lv_draw_sw_mask_rect.c ****         lv_draw_buf_clear(draw_buf, &clear_area);
+  76:Middlewares/LVGL/lvgl/src/draw/sw/lv_draw_sw_mask_rect.c **** 
+  77:Middlewares/LVGL/lvgl/src/draw/sw/lv_draw_sw_mask_rect.c ****         /*Clear the right part*/
+  78:Middlewares/LVGL/lvgl/src/draw/sw/lv_draw_sw_mask_rect.c ****         lv_area_set(&clear_area, dsc->area.x2 + 1, dsc->area.y1, t->clip_area.x2, dsc->area.y2);
+  79:Middlewares/LVGL/lvgl/src/draw/sw/lv_draw_sw_mask_rect.c ****         lv_area_move(&clear_area, -buf_area->x1, -buf_area->y1);
+  80:Middlewares/LVGL/lvgl/src/draw/sw/lv_draw_sw_mask_rect.c ****         lv_draw_buf_clear(draw_buf, &clear_area);
+  81:Middlewares/LVGL/lvgl/src/draw/sw/lv_draw_sw_mask_rect.c ****     }
+  82:Middlewares/LVGL/lvgl/src/draw/sw/lv_draw_sw_mask_rect.c **** 
+  83:Middlewares/LVGL/lvgl/src/draw/sw/lv_draw_sw_mask_rect.c ****     lv_draw_sw_mask_radius_param_t param;
+  83              		.loc 1 83 5 is_stmt 1 view .LVU17
+  84:Middlewares/LVGL/lvgl/src/draw/sw/lv_draw_sw_mask_rect.c ****     lv_draw_sw_mask_radius_init(&param, &dsc->area, dsc->radius, false);
+  84              		.loc 1 84 5 view .LVU18
+  85 0032 05AD     		add	r5, sp, #20
+  86 0034 0023     		movs	r3, #0
+  87 0036 A26B     		ldr	r2, [r4, #56]
+  88 0038 3146     		mov	r1, r6
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccQpxgp7.s 			page 4
+
+
+  89 003a 2846     		mov	r0, r5
+  90 003c FFF7FEFF 		bl	lv_draw_sw_mask_radius_init
+  91              	.LVL6:
+  85:Middlewares/LVGL/lvgl/src/draw/sw/lv_draw_sw_mask_rect.c **** 
+  86:Middlewares/LVGL/lvgl/src/draw/sw/lv_draw_sw_mask_rect.c ****     void * masks[2] = {0};
+  92              		.loc 1 86 5 view .LVU19
+  93              		.loc 1 86 12 is_stmt 0 view .LVU20
+  94 0040 0023     		movs	r3, #0
+  95 0042 0393     		str	r3, [sp, #12]
+  96 0044 0493     		str	r3, [sp, #16]
+  87:Middlewares/LVGL/lvgl/src/draw/sw/lv_draw_sw_mask_rect.c ****     masks[0] = &param;
+  97              		.loc 1 87 5 is_stmt 1 view .LVU21
+  98              		.loc 1 87 14 is_stmt 0 view .LVU22
+  99 0046 0395     		str	r5, [sp, #12]
+  88:Middlewares/LVGL/lvgl/src/draw/sw/lv_draw_sw_mask_rect.c **** 
+  89:Middlewares/LVGL/lvgl/src/draw/sw/lv_draw_sw_mask_rect.c ****     uint32_t area_w = lv_area_get_width(&draw_area);
+ 100              		.loc 1 89 5 is_stmt 1 view .LVU23
+ 101              		.loc 1 89 23 is_stmt 0 view .LVU24
+ 102 0048 12A8     		add	r0, sp, #72
+ 103 004a FFF7FEFF 		bl	lv_area_get_width
+ 104              	.LVL7:
+ 105 004e 0446     		mov	r4, r0
+ 106              	.LVL8:
+  90:Middlewares/LVGL/lvgl/src/draw/sw/lv_draw_sw_mask_rect.c ****     lv_opa_t * mask_buf = lv_malloc(area_w);
+ 107              		.loc 1 90 5 is_stmt 1 view .LVU25
+ 108              		.loc 1 90 27 is_stmt 0 view .LVU26
+ 109 0050 FFF7FEFF 		bl	lv_malloc
+ 110              	.LVL9:
+ 111              		.loc 1 90 27 view .LVU27
+ 112 0054 0646     		mov	r6, r0
+ 113              	.LVL10:
+  91:Middlewares/LVGL/lvgl/src/draw/sw/lv_draw_sw_mask_rect.c **** 
+  92:Middlewares/LVGL/lvgl/src/draw/sw/lv_draw_sw_mask_rect.c ****     int32_t y;
+ 114              		.loc 1 92 5 is_stmt 1 view .LVU28
+  93:Middlewares/LVGL/lvgl/src/draw/sw/lv_draw_sw_mask_rect.c ****     for(y = draw_area.y1; y <= draw_area.y2; y++) {
+ 115              		.loc 1 93 5 view .LVU29
+ 116              		.loc 1 93 11 is_stmt 0 view .LVU30
+ 117 0056 139D     		ldr	r5, [sp, #76]
+ 118              	.LVL11:
+ 119              		.loc 1 93 5 view .LVU31
+ 120 0058 6DE0     		b	.L5
+ 121              	.LVL12:
+ 122              	.L13:
+  61:Middlewares/LVGL/lvgl/src/draw/sw/lv_draw_sw_mask_rect.c ****                     dsc->area.y1 - 1);
+ 123              		.loc 1 61 9 is_stmt 1 view .LVU32
+  62:Middlewares/LVGL/lvgl/src/draw/sw/lv_draw_sw_mask_rect.c ****         lv_area_move(&clear_area, -buf_area->x1, -buf_area->y1);
+ 124              		.loc 1 62 30 is_stmt 0 view .LVU33
+ 125 005a E36A     		ldr	r3, [r4, #44]
+  62:Middlewares/LVGL/lvgl/src/draw/sw/lv_draw_sw_mask_rect.c ****         lv_area_move(&clear_area, -buf_area->x1, -buf_area->y1);
+ 126              		.loc 1 62 34 view .LVU34
+ 127 005c 013B     		subs	r3, r3, #1
+  61:Middlewares/LVGL/lvgl/src/draw/sw/lv_draw_sw_mask_rect.c ****                     dsc->area.y1 - 1);
+ 128              		.loc 1 61 9 view .LVU35
+ 129 005e 0EAD     		add	r5, sp, #56
+ 130 0060 0093     		str	r3, [sp]
+ 131 0062 D8F84030 		ldr	r3, [r8, #64]
+ 132 0066 D8F83C20 		ldr	r2, [r8, #60]
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccQpxgp7.s 			page 5
+
+
+ 133 006a D8F83810 		ldr	r1, [r8, #56]
+ 134 006e 2846     		mov	r0, r5
+ 135 0070 FFF7FEFF 		bl	lv_area_set
+ 136              	.LVL13:
+  63:Middlewares/LVGL/lvgl/src/draw/sw/lv_draw_sw_mask_rect.c ****         lv_draw_buf_clear(draw_buf, &clear_area);
+ 137              		.loc 1 63 9 is_stmt 1 view .LVU36
+  63:Middlewares/LVGL/lvgl/src/draw/sw/lv_draw_sw_mask_rect.c ****         lv_draw_buf_clear(draw_buf, &clear_area);
+ 138              		.loc 1 63 44 is_stmt 0 view .LVU37
+ 139 0074 7969     		ldr	r1, [r7, #20]
+  63:Middlewares/LVGL/lvgl/src/draw/sw/lv_draw_sw_mask_rect.c ****         lv_draw_buf_clear(draw_buf, &clear_area);
+ 140              		.loc 1 63 59 view .LVU38
+ 141 0076 BA69     		ldr	r2, [r7, #24]
+  63:Middlewares/LVGL/lvgl/src/draw/sw/lv_draw_sw_mask_rect.c ****         lv_draw_buf_clear(draw_buf, &clear_area);
+ 142              		.loc 1 63 9 view .LVU39
+ 143 0078 5242     		rsbs	r2, r2, #0
+ 144 007a 4942     		rsbs	r1, r1, #0
+ 145 007c 2846     		mov	r0, r5
+ 146 007e FFF7FEFF 		bl	lv_area_move
+ 147              	.LVL14:
+  64:Middlewares/LVGL/lvgl/src/draw/sw/lv_draw_sw_mask_rect.c **** 
+ 148              		.loc 1 64 9 is_stmt 1 view .LVU40
+ 149 0082 2946     		mov	r1, r5
+ 150 0084 4846     		mov	r0, r9
+ 151 0086 FFF7FEFF 		bl	lv_draw_buf_clear
+ 152              	.LVL15:
+  67:Middlewares/LVGL/lvgl/src/draw/sw/lv_draw_sw_mask_rect.c ****                     t->clip_area.y2);
+ 153              		.loc 1 67 9 view .LVU41
+  67:Middlewares/LVGL/lvgl/src/draw/sw/lv_draw_sw_mask_rect.c ****                     t->clip_area.y2);
+ 154              		.loc 1 67 60 is_stmt 0 view .LVU42
+ 155 008a 626B     		ldr	r2, [r4, #52]
+  67:Middlewares/LVGL/lvgl/src/draw/sw/lv_draw_sw_mask_rect.c ****                     t->clip_area.y2);
+ 156              		.loc 1 67 9 view .LVU43
+ 157 008c D8F84430 		ldr	r3, [r8, #68]
+ 158 0090 0093     		str	r3, [sp]
+ 159 0092 D8F84030 		ldr	r3, [r8, #64]
+ 160 0096 0132     		adds	r2, r2, #1
+ 161 0098 D8F83810 		ldr	r1, [r8, #56]
+ 162 009c 2846     		mov	r0, r5
+ 163 009e FFF7FEFF 		bl	lv_area_set
+ 164              	.LVL16:
+  69:Middlewares/LVGL/lvgl/src/draw/sw/lv_draw_sw_mask_rect.c ****         lv_draw_buf_clear(draw_buf, &clear_area);
+ 165              		.loc 1 69 9 is_stmt 1 view .LVU44
+  69:Middlewares/LVGL/lvgl/src/draw/sw/lv_draw_sw_mask_rect.c ****         lv_draw_buf_clear(draw_buf, &clear_area);
+ 166              		.loc 1 69 44 is_stmt 0 view .LVU45
+ 167 00a2 7969     		ldr	r1, [r7, #20]
+  69:Middlewares/LVGL/lvgl/src/draw/sw/lv_draw_sw_mask_rect.c ****         lv_draw_buf_clear(draw_buf, &clear_area);
+ 168              		.loc 1 69 59 view .LVU46
+ 169 00a4 BA69     		ldr	r2, [r7, #24]
+  69:Middlewares/LVGL/lvgl/src/draw/sw/lv_draw_sw_mask_rect.c ****         lv_draw_buf_clear(draw_buf, &clear_area);
+ 170              		.loc 1 69 9 view .LVU47
+ 171 00a6 5242     		rsbs	r2, r2, #0
+ 172 00a8 4942     		rsbs	r1, r1, #0
+ 173 00aa 2846     		mov	r0, r5
+ 174 00ac FFF7FEFF 		bl	lv_area_move
+ 175              	.LVL17:
+  70:Middlewares/LVGL/lvgl/src/draw/sw/lv_draw_sw_mask_rect.c **** 
+ 176              		.loc 1 70 9 is_stmt 1 view .LVU48
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccQpxgp7.s 			page 6
+
+
+ 177 00b0 2946     		mov	r1, r5
+ 178 00b2 4846     		mov	r0, r9
+ 179 00b4 FFF7FEFF 		bl	lv_draw_buf_clear
+ 180              	.LVL18:
+  73:Middlewares/LVGL/lvgl/src/draw/sw/lv_draw_sw_mask_rect.c ****         lv_area_move(&clear_area, -buf_area->x1, -buf_area->y1);
+ 181              		.loc 1 73 9 view .LVU49
+  73:Middlewares/LVGL/lvgl/src/draw/sw/lv_draw_sw_mask_rect.c ****         lv_area_move(&clear_area, -buf_area->x1, -buf_area->y1);
+ 182              		.loc 1 73 74 is_stmt 0 view .LVU50
+ 183 00b8 A36A     		ldr	r3, [r4, #40]
+  73:Middlewares/LVGL/lvgl/src/draw/sw/lv_draw_sw_mask_rect.c ****         lv_area_move(&clear_area, -buf_area->x1, -buf_area->y1);
+ 184              		.loc 1 73 92 view .LVU51
+ 185 00ba 626B     		ldr	r2, [r4, #52]
+  73:Middlewares/LVGL/lvgl/src/draw/sw/lv_draw_sw_mask_rect.c ****         lv_area_move(&clear_area, -buf_area->x1, -buf_area->y1);
+ 186              		.loc 1 73 9 view .LVU52
+ 187 00bc 0092     		str	r2, [sp]
+ 188 00be 013B     		subs	r3, r3, #1
+ 189 00c0 E26A     		ldr	r2, [r4, #44]
+ 190 00c2 D8F83810 		ldr	r1, [r8, #56]
+ 191 00c6 2846     		mov	r0, r5
+ 192 00c8 FFF7FEFF 		bl	lv_area_set
+ 193              	.LVL19:
+  74:Middlewares/LVGL/lvgl/src/draw/sw/lv_draw_sw_mask_rect.c ****         lv_draw_buf_clear(draw_buf, &clear_area);
+ 194              		.loc 1 74 9 is_stmt 1 view .LVU53
+  74:Middlewares/LVGL/lvgl/src/draw/sw/lv_draw_sw_mask_rect.c ****         lv_draw_buf_clear(draw_buf, &clear_area);
+ 195              		.loc 1 74 44 is_stmt 0 view .LVU54
+ 196 00cc 7969     		ldr	r1, [r7, #20]
+  74:Middlewares/LVGL/lvgl/src/draw/sw/lv_draw_sw_mask_rect.c ****         lv_draw_buf_clear(draw_buf, &clear_area);
+ 197              		.loc 1 74 59 view .LVU55
+ 198 00ce BA69     		ldr	r2, [r7, #24]
+  74:Middlewares/LVGL/lvgl/src/draw/sw/lv_draw_sw_mask_rect.c ****         lv_draw_buf_clear(draw_buf, &clear_area);
+ 199              		.loc 1 74 9 view .LVU56
+ 200 00d0 5242     		rsbs	r2, r2, #0
+ 201 00d2 4942     		rsbs	r1, r1, #0
+ 202 00d4 2846     		mov	r0, r5
+ 203 00d6 FFF7FEFF 		bl	lv_area_move
+ 204              	.LVL20:
+  75:Middlewares/LVGL/lvgl/src/draw/sw/lv_draw_sw_mask_rect.c **** 
+ 205              		.loc 1 75 9 is_stmt 1 view .LVU57
+ 206 00da 2946     		mov	r1, r5
+ 207 00dc 4846     		mov	r0, r9
+ 208 00de FFF7FEFF 		bl	lv_draw_buf_clear
+ 209              	.LVL21:
+  78:Middlewares/LVGL/lvgl/src/draw/sw/lv_draw_sw_mask_rect.c ****         lv_area_move(&clear_area, -buf_area->x1, -buf_area->y1);
+ 210              		.loc 1 78 9 view .LVU58
+  78:Middlewares/LVGL/lvgl/src/draw/sw/lv_draw_sw_mask_rect.c ****         lv_area_move(&clear_area, -buf_area->x1, -buf_area->y1);
+ 211              		.loc 1 78 43 is_stmt 0 view .LVU59
+ 212 00e2 216B     		ldr	r1, [r4, #48]
+  78:Middlewares/LVGL/lvgl/src/draw/sw/lv_draw_sw_mask_rect.c ****         lv_area_move(&clear_area, -buf_area->x1, -buf_area->y1);
+ 213              		.loc 1 78 92 view .LVU60
+ 214 00e4 636B     		ldr	r3, [r4, #52]
+  78:Middlewares/LVGL/lvgl/src/draw/sw/lv_draw_sw_mask_rect.c ****         lv_area_move(&clear_area, -buf_area->x1, -buf_area->y1);
+ 215              		.loc 1 78 9 view .LVU61
+ 216 00e6 0093     		str	r3, [sp]
+ 217 00e8 D8F84030 		ldr	r3, [r8, #64]
+ 218 00ec E26A     		ldr	r2, [r4, #44]
+ 219 00ee 0131     		adds	r1, r1, #1
+ 220 00f0 2846     		mov	r0, r5
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccQpxgp7.s 			page 7
+
+
+ 221 00f2 FFF7FEFF 		bl	lv_area_set
+ 222              	.LVL22:
+  79:Middlewares/LVGL/lvgl/src/draw/sw/lv_draw_sw_mask_rect.c ****         lv_draw_buf_clear(draw_buf, &clear_area);
+ 223              		.loc 1 79 9 is_stmt 1 view .LVU62
+  79:Middlewares/LVGL/lvgl/src/draw/sw/lv_draw_sw_mask_rect.c ****         lv_draw_buf_clear(draw_buf, &clear_area);
+ 224              		.loc 1 79 44 is_stmt 0 view .LVU63
+ 225 00f6 7969     		ldr	r1, [r7, #20]
+  79:Middlewares/LVGL/lvgl/src/draw/sw/lv_draw_sw_mask_rect.c ****         lv_draw_buf_clear(draw_buf, &clear_area);
+ 226              		.loc 1 79 59 view .LVU64
+ 227 00f8 BA69     		ldr	r2, [r7, #24]
+  79:Middlewares/LVGL/lvgl/src/draw/sw/lv_draw_sw_mask_rect.c ****         lv_draw_buf_clear(draw_buf, &clear_area);
+ 228              		.loc 1 79 9 view .LVU65
+ 229 00fa 5242     		rsbs	r2, r2, #0
+ 230 00fc 4942     		rsbs	r1, r1, #0
+ 231 00fe 2846     		mov	r0, r5
+ 232 0100 FFF7FEFF 		bl	lv_area_move
+ 233              	.LVL23:
+  80:Middlewares/LVGL/lvgl/src/draw/sw/lv_draw_sw_mask_rect.c ****     }
+ 234              		.loc 1 80 9 is_stmt 1 view .LVU66
+ 235 0104 2946     		mov	r1, r5
+ 236 0106 4846     		mov	r0, r9
+ 237 0108 FFF7FEFF 		bl	lv_draw_buf_clear
+ 238              	.LVL24:
+ 239 010c 91E7     		b	.L4
+ 240              	.LVL25:
+ 241              	.L8:
+ 242              	.LBB6:
+ 243              	.LBB7:
+  94:Middlewares/LVGL/lvgl/src/draw/sw/lv_draw_sw_mask_rect.c ****         lv_memset(mask_buf, 0xff, area_w);
+  95:Middlewares/LVGL/lvgl/src/draw/sw/lv_draw_sw_mask_rect.c ****         lv_draw_sw_mask_res_t res = lv_draw_sw_mask_apply(masks, mask_buf, draw_area.x1, y, area_w)
+  96:Middlewares/LVGL/lvgl/src/draw/sw/lv_draw_sw_mask_rect.c ****         if(res == LV_DRAW_SW_MASK_RES_FULL_COVER) continue;
+  97:Middlewares/LVGL/lvgl/src/draw/sw/lv_draw_sw_mask_rect.c **** 
+  98:Middlewares/LVGL/lvgl/src/draw/sw/lv_draw_sw_mask_rect.c ****         lv_color32_t * c32_buf = lv_draw_layer_go_to_xy(target_layer, draw_area.x1 - buf_area->x1,
+  99:Middlewares/LVGL/lvgl/src/draw/sw/lv_draw_sw_mask_rect.c ****                                                         y - buf_area->y1);
+ 100:Middlewares/LVGL/lvgl/src/draw/sw/lv_draw_sw_mask_rect.c **** 
+ 101:Middlewares/LVGL/lvgl/src/draw/sw/lv_draw_sw_mask_rect.c ****         if(res == LV_DRAW_SW_MASK_RES_TRANSP) {
+ 102:Middlewares/LVGL/lvgl/src/draw/sw/lv_draw_sw_mask_rect.c ****             lv_memzero(c32_buf, area_w * sizeof(lv_color32_t));
+ 103:Middlewares/LVGL/lvgl/src/draw/sw/lv_draw_sw_mask_rect.c ****         }
+ 104:Middlewares/LVGL/lvgl/src/draw/sw/lv_draw_sw_mask_rect.c ****         else {
+ 105:Middlewares/LVGL/lvgl/src/draw/sw/lv_draw_sw_mask_rect.c ****             uint32_t i;
+ 106:Middlewares/LVGL/lvgl/src/draw/sw/lv_draw_sw_mask_rect.c ****             for(i = 0; i < area_w; i++) {
+ 244              		.loc 1 106 37 discriminator 2 view .LVU67
+ 245 010e 0133     		adds	r3, r3, #1
+ 246              	.LVL26:
+ 247              	.L7:
+ 248              		.loc 1 106 26 discriminator 1 view .LVU68
+ 249 0110 A342     		cmp	r3, r4
+ 250 0112 0FD2     		bcs	.L6
+ 107:Middlewares/LVGL/lvgl/src/draw/sw/lv_draw_sw_mask_rect.c ****                 if(mask_buf[i] != LV_OPA_COVER) {
+ 251              		.loc 1 107 17 view .LVU69
+ 252              		.loc 1 107 28 is_stmt 0 view .LVU70
+ 253 0114 F25C     		ldrb	r2, [r6, r3]	@ zero_extendqisi2
+ 254              		.loc 1 107 19 view .LVU71
+ 255 0116 FF2A     		cmp	r2, #255
+ 256 0118 F9D0     		beq	.L8
+ 108:Middlewares/LVGL/lvgl/src/draw/sw/lv_draw_sw_mask_rect.c ****                     c32_buf[i].alpha = LV_OPA_MIX2(c32_buf[i].alpha, mask_buf[i]);
+ 257              		.loc 1 108 21 is_stmt 1 view .LVU72
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccQpxgp7.s 			page 8
+
+
+ 258              		.loc 1 108 40 is_stmt 0 view .LVU73
+ 259 011a 00EB8301 		add	r1, r0, r3, lsl #2
+ 260 011e 91F803C0 		ldrb	ip, [r1, #3]	@ zero_extendqisi2
+ 261 0122 02FB0CFC 		mul	ip, r2, ip
+ 262 0126 4FEA1C2C 		lsr	ip, ip, #8
+ 263              		.loc 1 108 38 view .LVU74
+ 264 012a 81F803C0 		strb	ip, [r1, #3]
+ 265 012e EEE7     		b	.L8
+ 266              	.LVL27:
+ 267              	.L11:
+ 106:Middlewares/LVGL/lvgl/src/draw/sw/lv_draw_sw_mask_rect.c ****                 if(mask_buf[i] != LV_OPA_COVER) {
+ 268              		.loc 1 106 19 view .LVU75
+ 269 0130 0023     		movs	r3, #0
+ 270 0132 EDE7     		b	.L7
+ 271              	.LVL28:
+ 272              	.L6:
+ 106:Middlewares/LVGL/lvgl/src/draw/sw/lv_draw_sw_mask_rect.c ****                 if(mask_buf[i] != LV_OPA_COVER) {
+ 273              		.loc 1 106 19 view .LVU76
+ 274              	.LBE7:
+ 275              	.LBE6:
+  93:Middlewares/LVGL/lvgl/src/draw/sw/lv_draw_sw_mask_rect.c ****         lv_memset(mask_buf, 0xff, area_w);
+ 276              		.loc 1 93 47 is_stmt 1 discriminator 2 view .LVU77
+ 277 0134 0135     		adds	r5, r5, #1
+ 278              	.LVL29:
+ 279              	.L5:
+  93:Middlewares/LVGL/lvgl/src/draw/sw/lv_draw_sw_mask_rect.c ****         lv_memset(mask_buf, 0xff, area_w);
+ 280              		.loc 1 93 29 discriminator 1 view .LVU78
+  93:Middlewares/LVGL/lvgl/src/draw/sw/lv_draw_sw_mask_rect.c ****         lv_memset(mask_buf, 0xff, area_w);
+ 281              		.loc 1 93 41 is_stmt 0 discriminator 1 view .LVU79
+ 282 0136 159B     		ldr	r3, [sp, #84]
+  93:Middlewares/LVGL/lvgl/src/draw/sw/lv_draw_sw_mask_rect.c ****         lv_memset(mask_buf, 0xff, area_w);
+ 283              		.loc 1 93 29 discriminator 1 view .LVU80
+ 284 0138 AB42     		cmp	r3, r5
+ 285 013a 1EDB     		blt	.L14
+ 286              	.LBB10:
+  94:Middlewares/LVGL/lvgl/src/draw/sw/lv_draw_sw_mask_rect.c ****         lv_draw_sw_mask_res_t res = lv_draw_sw_mask_apply(masks, mask_buf, draw_area.x1, y, area_w)
+ 287              		.loc 1 94 9 is_stmt 1 view .LVU81
+ 288 013c 2246     		mov	r2, r4
+ 289 013e FF21     		movs	r1, #255
+ 290 0140 3046     		mov	r0, r6
+ 291 0142 FFF7FEFF 		bl	lv_memset
+ 292              	.LVL30:
+  95:Middlewares/LVGL/lvgl/src/draw/sw/lv_draw_sw_mask_rect.c ****         if(res == LV_DRAW_SW_MASK_RES_FULL_COVER) continue;
+ 293              		.loc 1 95 9 view .LVU82
+  95:Middlewares/LVGL/lvgl/src/draw/sw/lv_draw_sw_mask_rect.c ****         if(res == LV_DRAW_SW_MASK_RES_FULL_COVER) continue;
+ 294              		.loc 1 95 37 is_stmt 0 view .LVU83
+ 295 0146 0094     		str	r4, [sp]
+ 296 0148 2B46     		mov	r3, r5
+ 297 014a 129A     		ldr	r2, [sp, #72]
+ 298 014c 3146     		mov	r1, r6
+ 299 014e 03A8     		add	r0, sp, #12
+ 300 0150 FFF7FEFF 		bl	lv_draw_sw_mask_apply
+ 301              	.LVL31:
+ 302 0154 8046     		mov	r8, r0
+ 303              	.LVL32:
+  96:Middlewares/LVGL/lvgl/src/draw/sw/lv_draw_sw_mask_rect.c **** 
+ 304              		.loc 1 96 9 is_stmt 1 view .LVU84
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccQpxgp7.s 			page 9
+
+
+  96:Middlewares/LVGL/lvgl/src/draw/sw/lv_draw_sw_mask_rect.c **** 
+ 305              		.loc 1 96 11 is_stmt 0 view .LVU85
+ 306 0156 0128     		cmp	r0, #1
+ 307 0158 ECD0     		beq	.L6
+  98:Middlewares/LVGL/lvgl/src/draw/sw/lv_draw_sw_mask_rect.c ****                                                         y - buf_area->y1);
+ 308              		.loc 1 98 9 is_stmt 1 view .LVU86
+  98:Middlewares/LVGL/lvgl/src/draw/sw/lv_draw_sw_mask_rect.c ****                                                         y - buf_area->y1);
+ 309              		.loc 1 98 94 is_stmt 0 view .LVU87
+ 310 015a 7B69     		ldr	r3, [r7, #20]
+  99:Middlewares/LVGL/lvgl/src/draw/sw/lv_draw_sw_mask_rect.c **** 
+ 311              		.loc 1 99 69 view .LVU88
+ 312 015c BA69     		ldr	r2, [r7, #24]
+  98:Middlewares/LVGL/lvgl/src/draw/sw/lv_draw_sw_mask_rect.c ****                                                         y - buf_area->y1);
+ 313              		.loc 1 98 34 view .LVU89
+ 314 015e AA1A     		subs	r2, r5, r2
+ 315 0160 1299     		ldr	r1, [sp, #72]
+ 316 0162 C91A     		subs	r1, r1, r3
+ 317 0164 3846     		mov	r0, r7
+ 318              	.LVL33:
+  98:Middlewares/LVGL/lvgl/src/draw/sw/lv_draw_sw_mask_rect.c ****                                                         y - buf_area->y1);
+ 319              		.loc 1 98 34 view .LVU90
+ 320 0166 FFF7FEFF 		bl	lv_draw_layer_go_to_xy
+ 321              	.LVL34:
+ 101:Middlewares/LVGL/lvgl/src/draw/sw/lv_draw_sw_mask_rect.c ****             lv_memzero(c32_buf, area_w * sizeof(lv_color32_t));
+ 322              		.loc 1 101 9 is_stmt 1 view .LVU91
+ 101:Middlewares/LVGL/lvgl/src/draw/sw/lv_draw_sw_mask_rect.c ****             lv_memzero(c32_buf, area_w * sizeof(lv_color32_t));
+ 323              		.loc 1 101 11 is_stmt 0 view .LVU92
+ 324 016a B8F1000F 		cmp	r8, #0
+ 325 016e DFD1     		bne	.L11
+ 102:Middlewares/LVGL/lvgl/src/draw/sw/lv_draw_sw_mask_rect.c ****         }
+ 326              		.loc 1 102 13 is_stmt 1 view .LVU93
+ 327              	.LVL35:
+ 328              	.LBB8:
+ 329              	.LBI8:
+ 330              		.file 2 "Middlewares/LVGL/lvgl/src/draw/sw/../../misc/../font/../draw/../misc/../stdlib/lv_string.
+   1:Middlewares/LVGL/lvgl/src/draw/sw/../../misc/../font/../draw/../misc/../stdlib/lv_string.h **** /**
+   2:Middlewares/LVGL/lvgl/src/draw/sw/../../misc/../font/../draw/../misc/../stdlib/lv_string.h ****  * @file lv_string.h
+   3:Middlewares/LVGL/lvgl/src/draw/sw/../../misc/../font/../draw/../misc/../stdlib/lv_string.h ****  *
+   4:Middlewares/LVGL/lvgl/src/draw/sw/../../misc/../font/../draw/../misc/../stdlib/lv_string.h ****  */
+   5:Middlewares/LVGL/lvgl/src/draw/sw/../../misc/../font/../draw/../misc/../stdlib/lv_string.h **** 
+   6:Middlewares/LVGL/lvgl/src/draw/sw/../../misc/../font/../draw/../misc/../stdlib/lv_string.h **** #ifndef LV_STRING_H
+   7:Middlewares/LVGL/lvgl/src/draw/sw/../../misc/../font/../draw/../misc/../stdlib/lv_string.h **** #define LV_STRING_H
+   8:Middlewares/LVGL/lvgl/src/draw/sw/../../misc/../font/../draw/../misc/../stdlib/lv_string.h **** 
+   9:Middlewares/LVGL/lvgl/src/draw/sw/../../misc/../font/../draw/../misc/../stdlib/lv_string.h **** #ifdef __cplusplus
+  10:Middlewares/LVGL/lvgl/src/draw/sw/../../misc/../font/../draw/../misc/../stdlib/lv_string.h **** extern "C" {
+  11:Middlewares/LVGL/lvgl/src/draw/sw/../../misc/../font/../draw/../misc/../stdlib/lv_string.h **** #endif
+  12:Middlewares/LVGL/lvgl/src/draw/sw/../../misc/../font/../draw/../misc/../stdlib/lv_string.h **** 
+  13:Middlewares/LVGL/lvgl/src/draw/sw/../../misc/../font/../draw/../misc/../stdlib/lv_string.h **** /*********************
+  14:Middlewares/LVGL/lvgl/src/draw/sw/../../misc/../font/../draw/../misc/../stdlib/lv_string.h ****  *      INCLUDES
+  15:Middlewares/LVGL/lvgl/src/draw/sw/../../misc/../font/../draw/../misc/../stdlib/lv_string.h ****  *********************/
+  16:Middlewares/LVGL/lvgl/src/draw/sw/../../misc/../font/../draw/../misc/../stdlib/lv_string.h **** #include "../lv_conf_internal.h"
+  17:Middlewares/LVGL/lvgl/src/draw/sw/../../misc/../font/../draw/../misc/../stdlib/lv_string.h **** #include "../misc/lv_types.h"
+  18:Middlewares/LVGL/lvgl/src/draw/sw/../../misc/../font/../draw/../misc/../stdlib/lv_string.h **** 
+  19:Middlewares/LVGL/lvgl/src/draw/sw/../../misc/../font/../draw/../misc/../stdlib/lv_string.h **** /*********************
+  20:Middlewares/LVGL/lvgl/src/draw/sw/../../misc/../font/../draw/../misc/../stdlib/lv_string.h ****  *      DEFINES
+  21:Middlewares/LVGL/lvgl/src/draw/sw/../../misc/../font/../draw/../misc/../stdlib/lv_string.h ****  *********************/
+  22:Middlewares/LVGL/lvgl/src/draw/sw/../../misc/../font/../draw/../misc/../stdlib/lv_string.h **** 
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccQpxgp7.s 			page 10
+
+
+  23:Middlewares/LVGL/lvgl/src/draw/sw/../../misc/../font/../draw/../misc/../stdlib/lv_string.h **** /**********************
+  24:Middlewares/LVGL/lvgl/src/draw/sw/../../misc/../font/../draw/../misc/../stdlib/lv_string.h ****  *      TYPEDEFS
+  25:Middlewares/LVGL/lvgl/src/draw/sw/../../misc/../font/../draw/../misc/../stdlib/lv_string.h ****  **********************/
+  26:Middlewares/LVGL/lvgl/src/draw/sw/../../misc/../font/../draw/../misc/../stdlib/lv_string.h **** 
+  27:Middlewares/LVGL/lvgl/src/draw/sw/../../misc/../font/../draw/../misc/../stdlib/lv_string.h **** /**********************
+  28:Middlewares/LVGL/lvgl/src/draw/sw/../../misc/../font/../draw/../misc/../stdlib/lv_string.h ****  * GLOBAL PROTOTYPES
+  29:Middlewares/LVGL/lvgl/src/draw/sw/../../misc/../font/../draw/../misc/../stdlib/lv_string.h ****  **********************/
+  30:Middlewares/LVGL/lvgl/src/draw/sw/../../misc/../font/../draw/../misc/../stdlib/lv_string.h **** 
+  31:Middlewares/LVGL/lvgl/src/draw/sw/../../misc/../font/../draw/../misc/../stdlib/lv_string.h **** /**
+  32:Middlewares/LVGL/lvgl/src/draw/sw/../../misc/../font/../draw/../misc/../stdlib/lv_string.h ****  * @brief Copies a block of memory from a source address to a destination address.
+  33:Middlewares/LVGL/lvgl/src/draw/sw/../../misc/../font/../draw/../misc/../stdlib/lv_string.h ****  * @param dst Pointer to the destination array where the content is to be copied.
+  34:Middlewares/LVGL/lvgl/src/draw/sw/../../misc/../font/../draw/../misc/../stdlib/lv_string.h ****  * @param src Pointer to the source of data to be copied.
+  35:Middlewares/LVGL/lvgl/src/draw/sw/../../misc/../font/../draw/../misc/../stdlib/lv_string.h ****  * @param len Number of bytes to copy.
+  36:Middlewares/LVGL/lvgl/src/draw/sw/../../misc/../font/../draw/../misc/../stdlib/lv_string.h ****  * @return Pointer to the destination array.
+  37:Middlewares/LVGL/lvgl/src/draw/sw/../../misc/../font/../draw/../misc/../stdlib/lv_string.h ****  * @note The function does not check for any overlapping of the source and destination memory block
+  38:Middlewares/LVGL/lvgl/src/draw/sw/../../misc/../font/../draw/../misc/../stdlib/lv_string.h ****  */
+  39:Middlewares/LVGL/lvgl/src/draw/sw/../../misc/../font/../draw/../misc/../stdlib/lv_string.h **** void * lv_memcpy(void * dst, const void * src, size_t len);
+  40:Middlewares/LVGL/lvgl/src/draw/sw/../../misc/../font/../draw/../misc/../stdlib/lv_string.h **** 
+  41:Middlewares/LVGL/lvgl/src/draw/sw/../../misc/../font/../draw/../misc/../stdlib/lv_string.h **** /**
+  42:Middlewares/LVGL/lvgl/src/draw/sw/../../misc/../font/../draw/../misc/../stdlib/lv_string.h ****  * @brief Fills a block of memory with a specified value.
+  43:Middlewares/LVGL/lvgl/src/draw/sw/../../misc/../font/../draw/../misc/../stdlib/lv_string.h ****  * @param dst Pointer to the destination array to fill with the specified value.
+  44:Middlewares/LVGL/lvgl/src/draw/sw/../../misc/../font/../draw/../misc/../stdlib/lv_string.h ****  * @param v Value to be set. The value is passed as an int, but the function fills
+  45:Middlewares/LVGL/lvgl/src/draw/sw/../../misc/../font/../draw/../misc/../stdlib/lv_string.h ****  *          the block of memory using the unsigned char conversion of this value.
+  46:Middlewares/LVGL/lvgl/src/draw/sw/../../misc/../font/../draw/../misc/../stdlib/lv_string.h ****  * @param len Number of bytes to be set to the value.
+  47:Middlewares/LVGL/lvgl/src/draw/sw/../../misc/../font/../draw/../misc/../stdlib/lv_string.h ****  */
+  48:Middlewares/LVGL/lvgl/src/draw/sw/../../misc/../font/../draw/../misc/../stdlib/lv_string.h **** void lv_memset(void * dst, uint8_t v, size_t len);
+  49:Middlewares/LVGL/lvgl/src/draw/sw/../../misc/../font/../draw/../misc/../stdlib/lv_string.h **** 
+  50:Middlewares/LVGL/lvgl/src/draw/sw/../../misc/../font/../draw/../misc/../stdlib/lv_string.h **** /**
+  51:Middlewares/LVGL/lvgl/src/draw/sw/../../misc/../font/../draw/../misc/../stdlib/lv_string.h ****  * @brief Move a block of memory from source to destination
+  52:Middlewares/LVGL/lvgl/src/draw/sw/../../misc/../font/../draw/../misc/../stdlib/lv_string.h ****  * @param dst Pointer to the destination array where the content is to be copied.
+  53:Middlewares/LVGL/lvgl/src/draw/sw/../../misc/../font/../draw/../misc/../stdlib/lv_string.h ****  * @param src Pointer to the source of data to be copied.
+  54:Middlewares/LVGL/lvgl/src/draw/sw/../../misc/../font/../draw/../misc/../stdlib/lv_string.h ****  * @param len Number of bytes to copy
+  55:Middlewares/LVGL/lvgl/src/draw/sw/../../misc/../font/../draw/../misc/../stdlib/lv_string.h ****  * @return Pointer to the destination array.
+  56:Middlewares/LVGL/lvgl/src/draw/sw/../../misc/../font/../draw/../misc/../stdlib/lv_string.h ****  */
+  57:Middlewares/LVGL/lvgl/src/draw/sw/../../misc/../font/../draw/../misc/../stdlib/lv_string.h **** void * lv_memmove(void * dst, const void * src, size_t len);
+  58:Middlewares/LVGL/lvgl/src/draw/sw/../../misc/../font/../draw/../misc/../stdlib/lv_string.h **** 
+  59:Middlewares/LVGL/lvgl/src/draw/sw/../../misc/../font/../draw/../misc/../stdlib/lv_string.h **** /**
+  60:Middlewares/LVGL/lvgl/src/draw/sw/../../misc/../font/../draw/../misc/../stdlib/lv_string.h ****  * @brief This function will compare two memory blocks
+  61:Middlewares/LVGL/lvgl/src/draw/sw/../../misc/../font/../draw/../misc/../stdlib/lv_string.h ****  * @param p1 Pointer to the first memory block
+  62:Middlewares/LVGL/lvgl/src/draw/sw/../../misc/../font/../draw/../misc/../stdlib/lv_string.h ****  * @param p2 Pointer to the second memory block
+  63:Middlewares/LVGL/lvgl/src/draw/sw/../../misc/../font/../draw/../misc/../stdlib/lv_string.h ****  * @param len Number of bytes to compare
+  64:Middlewares/LVGL/lvgl/src/draw/sw/../../misc/../font/../draw/../misc/../stdlib/lv_string.h ****  * @return The difference between the value of the first unmatching byte.
+  65:Middlewares/LVGL/lvgl/src/draw/sw/../../misc/../font/../draw/../misc/../stdlib/lv_string.h ****  */
+  66:Middlewares/LVGL/lvgl/src/draw/sw/../../misc/../font/../draw/../misc/../stdlib/lv_string.h **** int lv_memcmp(const void * p1, const void * p2, size_t len);
+  67:Middlewares/LVGL/lvgl/src/draw/sw/../../misc/../font/../draw/../misc/../stdlib/lv_string.h **** 
+  68:Middlewares/LVGL/lvgl/src/draw/sw/../../misc/../font/../draw/../misc/../stdlib/lv_string.h **** /**
+  69:Middlewares/LVGL/lvgl/src/draw/sw/../../misc/../font/../draw/../misc/../stdlib/lv_string.h ****  * Same as `memset(dst, 0x00, len)`.
+  70:Middlewares/LVGL/lvgl/src/draw/sw/../../misc/../font/../draw/../misc/../stdlib/lv_string.h ****  * @param dst pointer to the destination buffer
+  71:Middlewares/LVGL/lvgl/src/draw/sw/../../misc/../font/../draw/../misc/../stdlib/lv_string.h ****  * @param len number of byte to set
+  72:Middlewares/LVGL/lvgl/src/draw/sw/../../misc/../font/../draw/../misc/../stdlib/lv_string.h ****  */
+  73:Middlewares/LVGL/lvgl/src/draw/sw/../../misc/../font/../draw/../misc/../stdlib/lv_string.h **** static inline void lv_memzero(void * dst, size_t len)
+ 331              		.loc 2 73 20 view .LVU94
+ 332              	.LBB9:
+  74:Middlewares/LVGL/lvgl/src/draw/sw/../../misc/../font/../draw/../misc/../stdlib/lv_string.h **** {
+  75:Middlewares/LVGL/lvgl/src/draw/sw/../../misc/../font/../draw/../misc/../stdlib/lv_string.h ****     lv_memset(dst, 0x00, len);
+ 333              		.loc 2 75 5 view .LVU95
+ 334 0170 A200     		lsls	r2, r4, #2
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccQpxgp7.s 			page 11
+
+
+ 335              	.LVL36:
+ 336              		.loc 2 75 5 is_stmt 0 view .LVU96
+ 337 0172 0021     		movs	r1, #0
+ 338 0174 FFF7FEFF 		bl	lv_memset
+ 339              	.LVL37:
+  76:Middlewares/LVGL/lvgl/src/draw/sw/../../misc/../font/../draw/../misc/../stdlib/lv_string.h **** }
+ 340              		.loc 2 76 1 view .LVU97
+ 341 0178 DCE7     		b	.L6
+ 342              	.LVL38:
+ 343              	.L14:
+ 344              		.loc 2 76 1 view .LVU98
+ 345              	.LBE9:
+ 346              	.LBE8:
+ 347              	.LBE10:
+ 109:Middlewares/LVGL/lvgl/src/draw/sw/lv_draw_sw_mask_rect.c ****                 }
+ 110:Middlewares/LVGL/lvgl/src/draw/sw/lv_draw_sw_mask_rect.c ****             }
+ 111:Middlewares/LVGL/lvgl/src/draw/sw/lv_draw_sw_mask_rect.c ****         }
+ 112:Middlewares/LVGL/lvgl/src/draw/sw/lv_draw_sw_mask_rect.c ****     }
+ 113:Middlewares/LVGL/lvgl/src/draw/sw/lv_draw_sw_mask_rect.c **** 
+ 114:Middlewares/LVGL/lvgl/src/draw/sw/lv_draw_sw_mask_rect.c ****     lv_free(mask_buf);
+ 348              		.loc 1 114 5 is_stmt 1 view .LVU99
+ 349 017a 3046     		mov	r0, r6
+ 350 017c FFF7FEFF 		bl	lv_free
+ 351              	.LVL39:
+ 115:Middlewares/LVGL/lvgl/src/draw/sw/lv_draw_sw_mask_rect.c ****     lv_draw_sw_mask_free_param(&param);
+ 352              		.loc 1 115 5 view .LVU100
+ 353 0180 05A8     		add	r0, sp, #20
+ 354 0182 FFF7FEFF 		bl	lv_draw_sw_mask_free_param
+ 355              	.LVL40:
+ 356              	.L1:
+ 116:Middlewares/LVGL/lvgl/src/draw/sw/lv_draw_sw_mask_rect.c **** }
+ 357              		.loc 1 116 1 is_stmt 0 view .LVU101
+ 358 0186 17B0     		add	sp, sp, #92
+ 359              	.LCFI2:
+ 360              		.cfi_def_cfa_offset 28
+ 361              		@ sp needed
+ 362 0188 BDE8F083 		pop	{r4, r5, r6, r7, r8, r9, pc}
+ 363              		.cfi_endproc
+ 364              	.LFE43:
+ 366              		.text
+ 367              	.Letext0:
+ 368              		.file 3 "D:\\STM32CubeIDE\\STM32CubeIDE_2.1.1\\STM32CubeIDE\\plugins\\com.st.stm32cube.ide.mcu.ext
+ 369              		.file 4 "D:\\STM32CubeIDE\\STM32CubeIDE_2.1.1\\STM32CubeIDE\\plugins\\com.st.stm32cube.ide.mcu.ext
+ 370              		.file 5 "D:\\STM32CubeIDE\\STM32CubeIDE_2.1.1\\STM32CubeIDE\\plugins\\com.st.stm32cube.ide.mcu.ext
+ 371              		.file 6 "Middlewares/LVGL/lvgl/src/draw/sw/../../misc/lv_types.h"
+ 372              		.file 7 "Middlewares/LVGL/lvgl/src/draw/sw/../lv_draw.h"
+ 373              		.file 8 "Middlewares/LVGL/lvgl/src/draw/sw/../lv_draw_private.h"
+ 374              		.file 9 "Middlewares/LVGL/lvgl/src/draw/sw/../lv_draw_mask.h"
+ 375              		.file 10 "Middlewares/LVGL/lvgl/src/draw/sw/lv_draw_sw_mask_private.h"
+ 376              		.file 11 "Middlewares/LVGL/lvgl/src/draw/sw/../../misc/../font/../draw/lv_draw_buf.h"
+ 377              		.file 12 "Middlewares/LVGL/lvgl/src/draw/sw/../../misc/lv_area.h"
+ 378              		.file 13 "Middlewares/LVGL/lvgl/src/draw/sw/../../misc/../font/../draw/../misc/lv_color.h"
+ 379              		.file 14 "Middlewares/LVGL/lvgl/src/draw/sw/../../misc/../font/../draw/lv_image_dsc.h"
+ 380              		.file 15 "Middlewares/LVGL/lvgl/src/draw/sw/../../misc/lv_style.h"
+ 381              		.file 16 "Middlewares/LVGL/lvgl/src/draw/sw/blend/../lv_draw_sw_mask.h"
+ 382              		.file 17 "Middlewares/LVGL/lvgl/src/draw/sw/../../misc/../font/../draw/../misc/../stdlib/lv_mem.h"
+ 383              		.file 18 "Middlewares/LVGL/lvgl/src/draw/sw/../../misc/lv_area_private.h"
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccQpxgp7.s 			page 12
+
+
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccQpxgp7.s 			page 13
+
+
+DEFINED SYMBOLS
+                            *ABS*:00000000 lv_draw_sw_mask_rect.c
+C:\Users\w1785\AppData\Local\Temp\ccQpxgp7.s:21     .text.lv_draw_sw_mask_rect:00000000 $t
+C:\Users\w1785\AppData\Local\Temp\ccQpxgp7.s:27     .text.lv_draw_sw_mask_rect:00000000 lv_draw_sw_mask_rect
+
+UNDEFINED SYMBOLS
+lv_area_intersect
+lv_draw_sw_mask_radius_init
+lv_area_get_width
+lv_malloc
+lv_area_set
+lv_area_move
+lv_draw_buf_clear
+lv_memset
+lv_draw_sw_mask_apply
+lv_draw_layer_go_to_xy
+lv_free
+lv_draw_sw_mask_free_param

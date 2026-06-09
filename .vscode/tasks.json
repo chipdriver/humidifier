@@ -1,0 +1,72 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "Build HumidifierCode",
+      "type": "shell",
+      "command": "D:/STM32CubeIDE/STM32CubeIDE_2.1.1/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.make.win32_2.2.100.202601091506/tools/bin/make.exe",
+      "args": [
+        "GCC_PATH=D:/STM32CubeIDE/STM32CubeIDE_2.1.1/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.14.3.rel1.win32_1.0.100.202602081740/tools/bin"
+      ],
+      "options": {
+        "cwd": "${workspaceFolder}"
+      },
+      "problemMatcher": "$gcc",
+      "group": {
+        "kind": "build",
+        "isDefault": true
+      }
+    },
+    {
+      "label": "Download HumidifierCode",
+      "type": "shell",
+      "command": "D:/STM32CubeIDE/STM32CubeIDE_2.1.1/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.cubeprogrammer.win32_2.2.400.202601091506/tools/bin/STM32_Programmer_CLI.exe",
+      "args": [
+        "-c",
+        "port=SWD",
+        "-w",
+        "${workspaceFolder}/build/HumidifierCode.hex",
+        "-v",
+        "-rst"
+      ],
+      "options": {
+        "cwd": "${workspaceFolder}"
+      },
+      "problemMatcher": []
+    },
+    {
+      "label": "Build and Download HumidifierCode",
+      "dependsOrder": "sequence",
+      "dependsOn": [
+        "Build HumidifierCode",
+        "Download HumidifierCode"
+      ],
+      "problemMatcher": []
+    },
+    {
+      "label": "Clean HumidifierCode",
+      "type": "shell",
+      "command": "powershell",
+      "args": [
+        "-NoProfile",
+        "-ExecutionPolicy",
+        "Bypass",
+        "-Command",
+        "Remove-Item -LiteralPath '${workspaceFolder}/build' -Recurse -Force -ErrorAction SilentlyContinue"
+      ],
+      "options": {
+        "cwd": "${workspaceFolder}"
+      },
+      "problemMatcher": []
+    },
+    {
+      "label": "Rebuild HumidifierCode",
+      "dependsOrder": "sequence",
+      "dependsOn": [
+        "Clean HumidifierCode",
+        "Build HumidifierCode"
+      ],
+      "problemMatcher": []
+    }
+  ]
+}

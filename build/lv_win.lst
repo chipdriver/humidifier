@@ -1,0 +1,654 @@
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccvUzdOB.s 			page 1
+
+
+   1              		.cpu cortex-m4
+   2              		.arch armv7e-m
+   3              		.fpu fpv4-sp-d16
+   4              		.eabi_attribute 27, 1
+   5              		.eabi_attribute 28, 1
+   6              		.eabi_attribute 20, 1
+   7              		.eabi_attribute 21, 1
+   8              		.eabi_attribute 23, 3
+   9              		.eabi_attribute 24, 1
+  10              		.eabi_attribute 25, 1
+  11              		.eabi_attribute 26, 1
+  12              		.eabi_attribute 30, 1
+  13              		.eabi_attribute 34, 1
+  14              		.eabi_attribute 18, 4
+  15              		.file	"lv_win.c"
+  16              		.text
+  17              	.Ltext0:
+  18              		.cfi_sections	.debug_frame
+  19              		.file 1 "Middlewares/LVGL/lvgl/src/widgets/win/lv_win.c"
+  20              		.section	.text.lv_win_constructor,"ax",%progbits
+  21              		.align	1
+  22              		.syntax unified
+  23              		.thumb
+  24              		.thumb_func
+  26              	lv_win_constructor:
+  27              	.LVL0:
+  28              	.LFB202:
+   1:Middlewares/LVGL/lvgl/src/widgets/win/lv_win.c **** /**
+   2:Middlewares/LVGL/lvgl/src/widgets/win/lv_win.c ****  * @file lv_win.c
+   3:Middlewares/LVGL/lvgl/src/widgets/win/lv_win.c ****  *
+   4:Middlewares/LVGL/lvgl/src/widgets/win/lv_win.c ****  */
+   5:Middlewares/LVGL/lvgl/src/widgets/win/lv_win.c **** 
+   6:Middlewares/LVGL/lvgl/src/widgets/win/lv_win.c **** /*********************
+   7:Middlewares/LVGL/lvgl/src/widgets/win/lv_win.c ****  *      INCLUDES
+   8:Middlewares/LVGL/lvgl/src/widgets/win/lv_win.c ****  *********************/
+   9:Middlewares/LVGL/lvgl/src/widgets/win/lv_win.c **** #include "lv_win_private.h"
+  10:Middlewares/LVGL/lvgl/src/widgets/win/lv_win.c **** #include "../../core/lv_obj_class_private.h"
+  11:Middlewares/LVGL/lvgl/src/widgets/win/lv_win.c **** #include "../../lvgl.h"
+  12:Middlewares/LVGL/lvgl/src/widgets/win/lv_win.c **** #if LV_USE_WIN
+  13:Middlewares/LVGL/lvgl/src/widgets/win/lv_win.c **** 
+  14:Middlewares/LVGL/lvgl/src/widgets/win/lv_win.c **** /*********************
+  15:Middlewares/LVGL/lvgl/src/widgets/win/lv_win.c ****  *      DEFINES
+  16:Middlewares/LVGL/lvgl/src/widgets/win/lv_win.c ****  *********************/
+  17:Middlewares/LVGL/lvgl/src/widgets/win/lv_win.c **** 
+  18:Middlewares/LVGL/lvgl/src/widgets/win/lv_win.c **** /**********************
+  19:Middlewares/LVGL/lvgl/src/widgets/win/lv_win.c ****  *      TYPEDEFS
+  20:Middlewares/LVGL/lvgl/src/widgets/win/lv_win.c ****  **********************/
+  21:Middlewares/LVGL/lvgl/src/widgets/win/lv_win.c **** 
+  22:Middlewares/LVGL/lvgl/src/widgets/win/lv_win.c **** /**********************
+  23:Middlewares/LVGL/lvgl/src/widgets/win/lv_win.c ****  *  STATIC PROTOTYPES
+  24:Middlewares/LVGL/lvgl/src/widgets/win/lv_win.c ****  **********************/
+  25:Middlewares/LVGL/lvgl/src/widgets/win/lv_win.c **** static void lv_win_constructor(const lv_obj_class_t * class_p, lv_obj_t * obj);
+  26:Middlewares/LVGL/lvgl/src/widgets/win/lv_win.c **** 
+  27:Middlewares/LVGL/lvgl/src/widgets/win/lv_win.c **** /**********************
+  28:Middlewares/LVGL/lvgl/src/widgets/win/lv_win.c ****  *  STATIC VARIABLES
+  29:Middlewares/LVGL/lvgl/src/widgets/win/lv_win.c ****  **********************/
+  30:Middlewares/LVGL/lvgl/src/widgets/win/lv_win.c **** const lv_obj_class_t lv_win_class = {
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccvUzdOB.s 			page 2
+
+
+  31:Middlewares/LVGL/lvgl/src/widgets/win/lv_win.c ****     .constructor_cb = lv_win_constructor,
+  32:Middlewares/LVGL/lvgl/src/widgets/win/lv_win.c ****     .width_def = LV_PCT(100),
+  33:Middlewares/LVGL/lvgl/src/widgets/win/lv_win.c ****     .height_def = LV_PCT(100),
+  34:Middlewares/LVGL/lvgl/src/widgets/win/lv_win.c ****     .base_class = &lv_obj_class,
+  35:Middlewares/LVGL/lvgl/src/widgets/win/lv_win.c ****     .instance_size = sizeof(lv_win_t),
+  36:Middlewares/LVGL/lvgl/src/widgets/win/lv_win.c ****     .name = "lv_win",
+  37:Middlewares/LVGL/lvgl/src/widgets/win/lv_win.c **** };
+  38:Middlewares/LVGL/lvgl/src/widgets/win/lv_win.c **** /**********************
+  39:Middlewares/LVGL/lvgl/src/widgets/win/lv_win.c ****  *      MACROS
+  40:Middlewares/LVGL/lvgl/src/widgets/win/lv_win.c ****  **********************/
+  41:Middlewares/LVGL/lvgl/src/widgets/win/lv_win.c **** 
+  42:Middlewares/LVGL/lvgl/src/widgets/win/lv_win.c **** /**********************
+  43:Middlewares/LVGL/lvgl/src/widgets/win/lv_win.c ****  *   GLOBAL FUNCTIONS
+  44:Middlewares/LVGL/lvgl/src/widgets/win/lv_win.c ****  **********************/
+  45:Middlewares/LVGL/lvgl/src/widgets/win/lv_win.c **** 
+  46:Middlewares/LVGL/lvgl/src/widgets/win/lv_win.c **** lv_obj_t * lv_win_create(lv_obj_t * parent)
+  47:Middlewares/LVGL/lvgl/src/widgets/win/lv_win.c **** {
+  48:Middlewares/LVGL/lvgl/src/widgets/win/lv_win.c ****     LV_LOG_INFO("begin");
+  49:Middlewares/LVGL/lvgl/src/widgets/win/lv_win.c ****     lv_obj_t * obj = lv_obj_class_create_obj(&lv_win_class, parent);
+  50:Middlewares/LVGL/lvgl/src/widgets/win/lv_win.c ****     lv_obj_class_init_obj(obj);
+  51:Middlewares/LVGL/lvgl/src/widgets/win/lv_win.c ****     return obj;
+  52:Middlewares/LVGL/lvgl/src/widgets/win/lv_win.c **** }
+  53:Middlewares/LVGL/lvgl/src/widgets/win/lv_win.c **** 
+  54:Middlewares/LVGL/lvgl/src/widgets/win/lv_win.c **** lv_obj_t * lv_win_add_title(lv_obj_t * win, const char * txt)
+  55:Middlewares/LVGL/lvgl/src/widgets/win/lv_win.c **** {
+  56:Middlewares/LVGL/lvgl/src/widgets/win/lv_win.c ****     lv_obj_t * header = lv_win_get_header(win);
+  57:Middlewares/LVGL/lvgl/src/widgets/win/lv_win.c ****     lv_obj_t * title = lv_label_create(header);
+  58:Middlewares/LVGL/lvgl/src/widgets/win/lv_win.c ****     lv_label_set_long_mode(title, LV_LABEL_LONG_MODE_DOTS);
+  59:Middlewares/LVGL/lvgl/src/widgets/win/lv_win.c ****     lv_label_set_text(title, txt);
+  60:Middlewares/LVGL/lvgl/src/widgets/win/lv_win.c ****     lv_obj_set_flex_grow(title, 1);
+  61:Middlewares/LVGL/lvgl/src/widgets/win/lv_win.c ****     return title;
+  62:Middlewares/LVGL/lvgl/src/widgets/win/lv_win.c **** }
+  63:Middlewares/LVGL/lvgl/src/widgets/win/lv_win.c **** 
+  64:Middlewares/LVGL/lvgl/src/widgets/win/lv_win.c **** lv_obj_t * lv_win_add_button(lv_obj_t * win, const void * icon, int32_t btn_w)
+  65:Middlewares/LVGL/lvgl/src/widgets/win/lv_win.c **** {
+  66:Middlewares/LVGL/lvgl/src/widgets/win/lv_win.c ****     lv_obj_t * header = lv_win_get_header(win);
+  67:Middlewares/LVGL/lvgl/src/widgets/win/lv_win.c ****     lv_obj_t * btn = lv_button_create(header);
+  68:Middlewares/LVGL/lvgl/src/widgets/win/lv_win.c ****     lv_obj_set_size(btn, btn_w, LV_PCT(100));
+  69:Middlewares/LVGL/lvgl/src/widgets/win/lv_win.c **** 
+  70:Middlewares/LVGL/lvgl/src/widgets/win/lv_win.c ****     if(icon) {
+  71:Middlewares/LVGL/lvgl/src/widgets/win/lv_win.c ****         lv_obj_t * img = lv_image_create(btn);
+  72:Middlewares/LVGL/lvgl/src/widgets/win/lv_win.c ****         lv_image_set_src(img, icon);
+  73:Middlewares/LVGL/lvgl/src/widgets/win/lv_win.c ****         lv_obj_align(img, LV_ALIGN_CENTER, 0, 0);
+  74:Middlewares/LVGL/lvgl/src/widgets/win/lv_win.c ****     }
+  75:Middlewares/LVGL/lvgl/src/widgets/win/lv_win.c **** 
+  76:Middlewares/LVGL/lvgl/src/widgets/win/lv_win.c ****     return btn;
+  77:Middlewares/LVGL/lvgl/src/widgets/win/lv_win.c **** }
+  78:Middlewares/LVGL/lvgl/src/widgets/win/lv_win.c **** 
+  79:Middlewares/LVGL/lvgl/src/widgets/win/lv_win.c **** lv_obj_t * lv_win_get_header(lv_obj_t * win)
+  80:Middlewares/LVGL/lvgl/src/widgets/win/lv_win.c **** {
+  81:Middlewares/LVGL/lvgl/src/widgets/win/lv_win.c ****     return lv_obj_get_child(win, 0);
+  82:Middlewares/LVGL/lvgl/src/widgets/win/lv_win.c **** }
+  83:Middlewares/LVGL/lvgl/src/widgets/win/lv_win.c **** 
+  84:Middlewares/LVGL/lvgl/src/widgets/win/lv_win.c **** lv_obj_t * lv_win_get_content(lv_obj_t * win)
+  85:Middlewares/LVGL/lvgl/src/widgets/win/lv_win.c **** {
+  86:Middlewares/LVGL/lvgl/src/widgets/win/lv_win.c ****     return lv_obj_get_child(win, 1);
+  87:Middlewares/LVGL/lvgl/src/widgets/win/lv_win.c **** }
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccvUzdOB.s 			page 3
+
+
+  88:Middlewares/LVGL/lvgl/src/widgets/win/lv_win.c **** 
+  89:Middlewares/LVGL/lvgl/src/widgets/win/lv_win.c **** /**********************
+  90:Middlewares/LVGL/lvgl/src/widgets/win/lv_win.c ****  *   STATIC FUNCTIONS
+  91:Middlewares/LVGL/lvgl/src/widgets/win/lv_win.c ****  **********************/
+  92:Middlewares/LVGL/lvgl/src/widgets/win/lv_win.c **** 
+  93:Middlewares/LVGL/lvgl/src/widgets/win/lv_win.c **** static void lv_win_constructor(const lv_obj_class_t * class_p, lv_obj_t * obj)
+  94:Middlewares/LVGL/lvgl/src/widgets/win/lv_win.c **** {
+  29              		.loc 1 94 1 view -0
+  30              		.cfi_startproc
+  31              		@ args = 0, pretend = 0, frame = 0
+  32              		@ frame_needed = 0, uses_anonymous_args = 0
+  33              		.loc 1 94 1 is_stmt 0 view .LVU1
+  34 0000 70B5     		push	{r4, r5, r6, lr}
+  35              	.LCFI0:
+  36              		.cfi_def_cfa_offset 16
+  37              		.cfi_offset 4, -16
+  38              		.cfi_offset 5, -12
+  39              		.cfi_offset 6, -8
+  40              		.cfi_offset 14, -4
+  41 0002 0C46     		mov	r4, r1
+  95:Middlewares/LVGL/lvgl/src/widgets/win/lv_win.c ****     LV_UNUSED(class_p);
+  42              		.loc 1 95 5 is_stmt 1 view .LVU2
+  96:Middlewares/LVGL/lvgl/src/widgets/win/lv_win.c ****     lv_obj_t * parent = lv_obj_get_parent(obj);
+  43              		.loc 1 96 5 view .LVU3
+  44              		.loc 1 96 25 is_stmt 0 view .LVU4
+  45 0004 0846     		mov	r0, r1
+  46              	.LVL1:
+  47              		.loc 1 96 25 view .LVU5
+  48 0006 FFF7FEFF 		bl	lv_obj_get_parent
+  49              	.LVL2:
+  50              		.loc 1 96 25 view .LVU6
+  51 000a 0646     		mov	r6, r0
+  52              	.LVL3:
+  97:Middlewares/LVGL/lvgl/src/widgets/win/lv_win.c ****     lv_obj_set_size(obj, lv_obj_get_width(parent), lv_obj_get_height(parent));
+  53              		.loc 1 97 5 is_stmt 1 view .LVU7
+  54 000c FFF7FEFF 		bl	lv_obj_get_width
+  55              	.LVL4:
+  56              		.loc 1 97 5 is_stmt 0 view .LVU8
+  57 0010 0546     		mov	r5, r0
+  58              		.loc 1 97 5 discriminator 1 view .LVU9
+  59 0012 3046     		mov	r0, r6
+  60 0014 FFF7FEFF 		bl	lv_obj_get_height
+  61              	.LVL5:
+  62 0018 0246     		mov	r2, r0
+  63              		.loc 1 97 5 discriminator 2 view .LVU10
+  64 001a 2946     		mov	r1, r5
+  65 001c 2046     		mov	r0, r4
+  66 001e FFF7FEFF 		bl	lv_obj_set_size
+  67              	.LVL6:
+  98:Middlewares/LVGL/lvgl/src/widgets/win/lv_win.c ****     lv_obj_set_flex_flow(obj, LV_FLEX_FLOW_COLUMN);
+  68              		.loc 1 98 5 is_stmt 1 view .LVU11
+  69 0022 0121     		movs	r1, #1
+  70 0024 2046     		mov	r0, r4
+  71 0026 FFF7FEFF 		bl	lv_obj_set_flex_flow
+  72              	.LVL7:
+  99:Middlewares/LVGL/lvgl/src/widgets/win/lv_win.c **** 
+ 100:Middlewares/LVGL/lvgl/src/widgets/win/lv_win.c ****     lv_obj_t * header = lv_obj_create(obj);
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccvUzdOB.s 			page 4
+
+
+  73              		.loc 1 100 5 view .LVU12
+  74              		.loc 1 100 25 is_stmt 0 view .LVU13
+  75 002a 2046     		mov	r0, r4
+  76 002c FFF7FEFF 		bl	lv_obj_create
+  77              	.LVL8:
+  78 0030 0546     		mov	r5, r0
+  79              	.LVL9:
+ 101:Middlewares/LVGL/lvgl/src/widgets/win/lv_win.c ****     lv_obj_set_size(header, LV_PCT(100), lv_display_get_dpi(lv_obj_get_display(obj)) / 2);
+  80              		.loc 1 101 5 is_stmt 1 view .LVU14
+  81              		.loc 1 101 61 is_stmt 0 view .LVU15
+  82 0032 2046     		mov	r0, r4
+  83              	.LVL10:
+  84              		.loc 1 101 61 view .LVU16
+  85 0034 FFF7FEFF 		bl	lv_obj_get_display
+  86              	.LVL11:
+  87              		.loc 1 101 42 discriminator 1 view .LVU17
+  88 0038 FFF7FEFF 		bl	lv_display_get_dpi
+  89              	.LVL12:
+  90              		.loc 1 101 86 discriminator 2 view .LVU18
+  91 003c 00EBD070 		add	r0, r0, r0, lsr #31
+  92              		.loc 1 101 5 discriminator 2 view .LVU19
+  93 0040 0D4E     		ldr	r6, .L3
+  94              	.LVL13:
+  95              		.loc 1 101 5 discriminator 2 view .LVU20
+  96 0042 4210     		asrs	r2, r0, #1
+  97 0044 3146     		mov	r1, r6
+  98 0046 2846     		mov	r0, r5
+  99 0048 FFF7FEFF 		bl	lv_obj_set_size
+ 100              	.LVL14:
+ 102:Middlewares/LVGL/lvgl/src/widgets/win/lv_win.c ****     lv_obj_set_flex_flow(header, LV_FLEX_FLOW_ROW);
+ 101              		.loc 1 102 5 is_stmt 1 view .LVU21
+ 102 004c 0021     		movs	r1, #0
+ 103 004e 2846     		mov	r0, r5
+ 104 0050 FFF7FEFF 		bl	lv_obj_set_flex_flow
+ 105              	.LVL15:
+ 103:Middlewares/LVGL/lvgl/src/widgets/win/lv_win.c ****     lv_obj_set_flex_align(header, LV_FLEX_ALIGN_START, LV_FLEX_ALIGN_CENTER, LV_FLEX_ALIGN_CENTER);
+ 106              		.loc 1 103 5 view .LVU22
+ 107 0054 0223     		movs	r3, #2
+ 108 0056 1A46     		mov	r2, r3
+ 109 0058 0021     		movs	r1, #0
+ 110 005a 2846     		mov	r0, r5
+ 111 005c FFF7FEFF 		bl	lv_obj_set_flex_align
+ 112              	.LVL16:
+ 104:Middlewares/LVGL/lvgl/src/widgets/win/lv_win.c **** 
+ 105:Middlewares/LVGL/lvgl/src/widgets/win/lv_win.c ****     lv_obj_t * cont = lv_obj_create(obj);
+ 113              		.loc 1 105 5 view .LVU23
+ 114              		.loc 1 105 23 is_stmt 0 view .LVU24
+ 115 0060 2046     		mov	r0, r4
+ 116 0062 FFF7FEFF 		bl	lv_obj_create
+ 117              	.LVL17:
+ 118 0066 0446     		mov	r4, r0
+ 119              	.LVL18:
+ 106:Middlewares/LVGL/lvgl/src/widgets/win/lv_win.c ****     lv_obj_set_flex_grow(cont, 1);
+ 120              		.loc 1 106 5 is_stmt 1 view .LVU25
+ 121 0068 0121     		movs	r1, #1
+ 122 006a FFF7FEFF 		bl	lv_obj_set_flex_grow
+ 123              	.LVL19:
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccvUzdOB.s 			page 5
+
+
+ 107:Middlewares/LVGL/lvgl/src/widgets/win/lv_win.c ****     lv_obj_set_width(cont, LV_PCT(100));
+ 124              		.loc 1 107 5 view .LVU26
+ 125 006e 3146     		mov	r1, r6
+ 126 0070 2046     		mov	r0, r4
+ 127 0072 FFF7FEFF 		bl	lv_obj_set_width
+ 128              	.LVL20:
+ 108:Middlewares/LVGL/lvgl/src/widgets/win/lv_win.c **** }
+ 129              		.loc 1 108 1 is_stmt 0 view .LVU27
+ 130 0076 70BD     		pop	{r4, r5, r6, pc}
+ 131              	.LVL21:
+ 132              	.L4:
+ 133              		.loc 1 108 1 view .LVU28
+ 134              		.align	2
+ 135              	.L3:
+ 136 0078 64000020 		.word	536871012
+ 137              		.cfi_endproc
+ 138              	.LFE202:
+ 140              		.section	.text.lv_win_create,"ax",%progbits
+ 141              		.align	1
+ 142              		.global	lv_win_create
+ 143              		.syntax unified
+ 144              		.thumb
+ 145              		.thumb_func
+ 147              	lv_win_create:
+ 148              	.LVL22:
+ 149              	.LFB197:
+  47:Middlewares/LVGL/lvgl/src/widgets/win/lv_win.c ****     LV_LOG_INFO("begin");
+ 150              		.loc 1 47 1 is_stmt 1 view -0
+ 151              		.cfi_startproc
+ 152              		@ args = 0, pretend = 0, frame = 0
+ 153              		@ frame_needed = 0, uses_anonymous_args = 0
+  47:Middlewares/LVGL/lvgl/src/widgets/win/lv_win.c ****     LV_LOG_INFO("begin");
+ 154              		.loc 1 47 1 is_stmt 0 view .LVU30
+ 155 0000 10B5     		push	{r4, lr}
+ 156              	.LCFI1:
+ 157              		.cfi_def_cfa_offset 8
+ 158              		.cfi_offset 4, -8
+ 159              		.cfi_offset 14, -4
+ 160 0002 0146     		mov	r1, r0
+  48:Middlewares/LVGL/lvgl/src/widgets/win/lv_win.c ****     lv_obj_t * obj = lv_obj_class_create_obj(&lv_win_class, parent);
+ 161              		.loc 1 48 5 is_stmt 1 view .LVU31
+  48:Middlewares/LVGL/lvgl/src/widgets/win/lv_win.c ****     lv_obj_t * obj = lv_obj_class_create_obj(&lv_win_class, parent);
+ 162              		.loc 1 48 5 view .LVU32
+  48:Middlewares/LVGL/lvgl/src/widgets/win/lv_win.c ****     lv_obj_t * obj = lv_obj_class_create_obj(&lv_win_class, parent);
+ 163              		.loc 1 48 5 view .LVU33
+  49:Middlewares/LVGL/lvgl/src/widgets/win/lv_win.c ****     lv_obj_class_init_obj(obj);
+ 164              		.loc 1 49 5 view .LVU34
+  49:Middlewares/LVGL/lvgl/src/widgets/win/lv_win.c ****     lv_obj_class_init_obj(obj);
+ 165              		.loc 1 49 22 is_stmt 0 view .LVU35
+ 166 0004 0348     		ldr	r0, .L7
+ 167              	.LVL23:
+  49:Middlewares/LVGL/lvgl/src/widgets/win/lv_win.c ****     lv_obj_class_init_obj(obj);
+ 168              		.loc 1 49 22 view .LVU36
+ 169 0006 FFF7FEFF 		bl	lv_obj_class_create_obj
+ 170              	.LVL24:
+  49:Middlewares/LVGL/lvgl/src/widgets/win/lv_win.c ****     lv_obj_class_init_obj(obj);
+ 171              		.loc 1 49 22 view .LVU37
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccvUzdOB.s 			page 6
+
+
+ 172 000a 0446     		mov	r4, r0
+ 173              	.LVL25:
+  50:Middlewares/LVGL/lvgl/src/widgets/win/lv_win.c ****     return obj;
+ 174              		.loc 1 50 5 is_stmt 1 view .LVU38
+ 175 000c FFF7FEFF 		bl	lv_obj_class_init_obj
+ 176              	.LVL26:
+  51:Middlewares/LVGL/lvgl/src/widgets/win/lv_win.c **** }
+ 177              		.loc 1 51 5 view .LVU39
+  52:Middlewares/LVGL/lvgl/src/widgets/win/lv_win.c **** 
+ 178              		.loc 1 52 1 is_stmt 0 view .LVU40
+ 179 0010 2046     		mov	r0, r4
+ 180 0012 10BD     		pop	{r4, pc}
+ 181              	.LVL27:
+ 182              	.L8:
+  52:Middlewares/LVGL/lvgl/src/widgets/win/lv_win.c **** 
+ 183              		.loc 1 52 1 view .LVU41
+ 184              		.align	2
+ 185              	.L7:
+ 186 0014 00000000 		.word	lv_win_class
+ 187              		.cfi_endproc
+ 188              	.LFE197:
+ 190              		.section	.text.lv_win_get_header,"ax",%progbits
+ 191              		.align	1
+ 192              		.global	lv_win_get_header
+ 193              		.syntax unified
+ 194              		.thumb
+ 195              		.thumb_func
+ 197              	lv_win_get_header:
+ 198              	.LVL28:
+ 199              	.LFB200:
+  80:Middlewares/LVGL/lvgl/src/widgets/win/lv_win.c ****     return lv_obj_get_child(win, 0);
+ 200              		.loc 1 80 1 is_stmt 1 view -0
+ 201              		.cfi_startproc
+ 202              		@ args = 0, pretend = 0, frame = 0
+ 203              		@ frame_needed = 0, uses_anonymous_args = 0
+  80:Middlewares/LVGL/lvgl/src/widgets/win/lv_win.c ****     return lv_obj_get_child(win, 0);
+ 204              		.loc 1 80 1 is_stmt 0 view .LVU43
+ 205 0000 08B5     		push	{r3, lr}
+ 206              	.LCFI2:
+ 207              		.cfi_def_cfa_offset 8
+ 208              		.cfi_offset 3, -8
+ 209              		.cfi_offset 14, -4
+  81:Middlewares/LVGL/lvgl/src/widgets/win/lv_win.c **** }
+ 210              		.loc 1 81 5 is_stmt 1 view .LVU44
+  81:Middlewares/LVGL/lvgl/src/widgets/win/lv_win.c **** }
+ 211              		.loc 1 81 12 is_stmt 0 view .LVU45
+ 212 0002 0021     		movs	r1, #0
+ 213 0004 FFF7FEFF 		bl	lv_obj_get_child
+ 214              	.LVL29:
+  82:Middlewares/LVGL/lvgl/src/widgets/win/lv_win.c **** 
+ 215              		.loc 1 82 1 view .LVU46
+ 216 0008 08BD     		pop	{r3, pc}
+ 217              		.cfi_endproc
+ 218              	.LFE200:
+ 220              		.section	.text.lv_win_add_title,"ax",%progbits
+ 221              		.align	1
+ 222              		.global	lv_win_add_title
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccvUzdOB.s 			page 7
+
+
+ 223              		.syntax unified
+ 224              		.thumb
+ 225              		.thumb_func
+ 227              	lv_win_add_title:
+ 228              	.LVL30:
+ 229              	.LFB198:
+  55:Middlewares/LVGL/lvgl/src/widgets/win/lv_win.c ****     lv_obj_t * header = lv_win_get_header(win);
+ 230              		.loc 1 55 1 is_stmt 1 view -0
+ 231              		.cfi_startproc
+ 232              		@ args = 0, pretend = 0, frame = 0
+ 233              		@ frame_needed = 0, uses_anonymous_args = 0
+  55:Middlewares/LVGL/lvgl/src/widgets/win/lv_win.c ****     lv_obj_t * header = lv_win_get_header(win);
+ 234              		.loc 1 55 1 is_stmt 0 view .LVU48
+ 235 0000 38B5     		push	{r3, r4, r5, lr}
+ 236              	.LCFI3:
+ 237              		.cfi_def_cfa_offset 16
+ 238              		.cfi_offset 3, -16
+ 239              		.cfi_offset 4, -12
+ 240              		.cfi_offset 5, -8
+ 241              		.cfi_offset 14, -4
+ 242 0002 0D46     		mov	r5, r1
+  56:Middlewares/LVGL/lvgl/src/widgets/win/lv_win.c ****     lv_obj_t * title = lv_label_create(header);
+ 243              		.loc 1 56 5 is_stmt 1 view .LVU49
+  56:Middlewares/LVGL/lvgl/src/widgets/win/lv_win.c ****     lv_obj_t * title = lv_label_create(header);
+ 244              		.loc 1 56 25 is_stmt 0 view .LVU50
+ 245 0004 FFF7FEFF 		bl	lv_win_get_header
+ 246              	.LVL31:
+  57:Middlewares/LVGL/lvgl/src/widgets/win/lv_win.c ****     lv_label_set_long_mode(title, LV_LABEL_LONG_MODE_DOTS);
+ 247              		.loc 1 57 5 is_stmt 1 view .LVU51
+  57:Middlewares/LVGL/lvgl/src/widgets/win/lv_win.c ****     lv_label_set_long_mode(title, LV_LABEL_LONG_MODE_DOTS);
+ 248              		.loc 1 57 24 is_stmt 0 view .LVU52
+ 249 0008 FFF7FEFF 		bl	lv_label_create
+ 250              	.LVL32:
+  57:Middlewares/LVGL/lvgl/src/widgets/win/lv_win.c ****     lv_label_set_long_mode(title, LV_LABEL_LONG_MODE_DOTS);
+ 251              		.loc 1 57 24 view .LVU53
+ 252 000c 0446     		mov	r4, r0
+ 253              	.LVL33:
+  58:Middlewares/LVGL/lvgl/src/widgets/win/lv_win.c ****     lv_label_set_text(title, txt);
+ 254              		.loc 1 58 5 is_stmt 1 view .LVU54
+ 255 000e 0121     		movs	r1, #1
+ 256 0010 FFF7FEFF 		bl	lv_label_set_long_mode
+ 257              	.LVL34:
+  59:Middlewares/LVGL/lvgl/src/widgets/win/lv_win.c ****     lv_obj_set_flex_grow(title, 1);
+ 258              		.loc 1 59 5 view .LVU55
+ 259 0014 2946     		mov	r1, r5
+ 260 0016 2046     		mov	r0, r4
+ 261 0018 FFF7FEFF 		bl	lv_label_set_text
+ 262              	.LVL35:
+  60:Middlewares/LVGL/lvgl/src/widgets/win/lv_win.c ****     return title;
+ 263              		.loc 1 60 5 view .LVU56
+ 264 001c 0121     		movs	r1, #1
+ 265 001e 2046     		mov	r0, r4
+ 266 0020 FFF7FEFF 		bl	lv_obj_set_flex_grow
+ 267              	.LVL36:
+  61:Middlewares/LVGL/lvgl/src/widgets/win/lv_win.c **** }
+ 268              		.loc 1 61 5 view .LVU57
+  62:Middlewares/LVGL/lvgl/src/widgets/win/lv_win.c **** 
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccvUzdOB.s 			page 8
+
+
+ 269              		.loc 1 62 1 is_stmt 0 view .LVU58
+ 270 0024 2046     		mov	r0, r4
+ 271 0026 38BD     		pop	{r3, r4, r5, pc}
+  62:Middlewares/LVGL/lvgl/src/widgets/win/lv_win.c **** 
+ 272              		.loc 1 62 1 view .LVU59
+ 273              		.cfi_endproc
+ 274              	.LFE198:
+ 276              		.section	.text.lv_win_add_button,"ax",%progbits
+ 277              		.align	1
+ 278              		.global	lv_win_add_button
+ 279              		.syntax unified
+ 280              		.thumb
+ 281              		.thumb_func
+ 283              	lv_win_add_button:
+ 284              	.LVL37:
+ 285              	.LFB199:
+  65:Middlewares/LVGL/lvgl/src/widgets/win/lv_win.c ****     lv_obj_t * header = lv_win_get_header(win);
+ 286              		.loc 1 65 1 is_stmt 1 view -0
+ 287              		.cfi_startproc
+ 288              		@ args = 0, pretend = 0, frame = 0
+ 289              		@ frame_needed = 0, uses_anonymous_args = 0
+  65:Middlewares/LVGL/lvgl/src/widgets/win/lv_win.c ****     lv_obj_t * header = lv_win_get_header(win);
+ 290              		.loc 1 65 1 is_stmt 0 view .LVU61
+ 291 0000 70B5     		push	{r4, r5, r6, lr}
+ 292              	.LCFI4:
+ 293              		.cfi_def_cfa_offset 16
+ 294              		.cfi_offset 4, -16
+ 295              		.cfi_offset 5, -12
+ 296              		.cfi_offset 6, -8
+ 297              		.cfi_offset 14, -4
+ 298 0002 0D46     		mov	r5, r1
+ 299 0004 1646     		mov	r6, r2
+  66:Middlewares/LVGL/lvgl/src/widgets/win/lv_win.c ****     lv_obj_t * btn = lv_button_create(header);
+ 300              		.loc 1 66 5 is_stmt 1 view .LVU62
+  66:Middlewares/LVGL/lvgl/src/widgets/win/lv_win.c ****     lv_obj_t * btn = lv_button_create(header);
+ 301              		.loc 1 66 25 is_stmt 0 view .LVU63
+ 302 0006 FFF7FEFF 		bl	lv_win_get_header
+ 303              	.LVL38:
+  67:Middlewares/LVGL/lvgl/src/widgets/win/lv_win.c ****     lv_obj_set_size(btn, btn_w, LV_PCT(100));
+ 304              		.loc 1 67 5 is_stmt 1 view .LVU64
+  67:Middlewares/LVGL/lvgl/src/widgets/win/lv_win.c ****     lv_obj_set_size(btn, btn_w, LV_PCT(100));
+ 305              		.loc 1 67 22 is_stmt 0 view .LVU65
+ 306 000a FFF7FEFF 		bl	lv_button_create
+ 307              	.LVL39:
+  67:Middlewares/LVGL/lvgl/src/widgets/win/lv_win.c ****     lv_obj_set_size(btn, btn_w, LV_PCT(100));
+ 308              		.loc 1 67 22 view .LVU66
+ 309 000e 0446     		mov	r4, r0
+ 310              	.LVL40:
+  68:Middlewares/LVGL/lvgl/src/widgets/win/lv_win.c **** 
+ 311              		.loc 1 68 5 is_stmt 1 view .LVU67
+ 312 0010 094A     		ldr	r2, .L16
+ 313 0012 3146     		mov	r1, r6
+ 314 0014 FFF7FEFF 		bl	lv_obj_set_size
+ 315              	.LVL41:
+  70:Middlewares/LVGL/lvgl/src/widgets/win/lv_win.c ****         lv_obj_t * img = lv_image_create(btn);
+ 316              		.loc 1 70 5 view .LVU68
+  70:Middlewares/LVGL/lvgl/src/widgets/win/lv_win.c ****         lv_obj_t * img = lv_image_create(btn);
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccvUzdOB.s 			page 9
+
+
+ 317              		.loc 1 70 7 is_stmt 0 view .LVU69
+ 318 0018 65B1     		cbz	r5, .L13
+ 319              	.LBB2:
+  71:Middlewares/LVGL/lvgl/src/widgets/win/lv_win.c ****         lv_image_set_src(img, icon);
+ 320              		.loc 1 71 9 is_stmt 1 view .LVU70
+  71:Middlewares/LVGL/lvgl/src/widgets/win/lv_win.c ****         lv_image_set_src(img, icon);
+ 321              		.loc 1 71 26 is_stmt 0 view .LVU71
+ 322 001a 2046     		mov	r0, r4
+ 323 001c FFF7FEFF 		bl	lv_image_create
+ 324              	.LVL42:
+ 325 0020 0646     		mov	r6, r0
+ 326              	.LVL43:
+  72:Middlewares/LVGL/lvgl/src/widgets/win/lv_win.c ****         lv_obj_align(img, LV_ALIGN_CENTER, 0, 0);
+ 327              		.loc 1 72 9 is_stmt 1 view .LVU72
+ 328 0022 2946     		mov	r1, r5
+ 329 0024 FFF7FEFF 		bl	lv_image_set_src
+ 330              	.LVL44:
+  73:Middlewares/LVGL/lvgl/src/widgets/win/lv_win.c ****     }
+ 331              		.loc 1 73 9 view .LVU73
+ 332 0028 0023     		movs	r3, #0
+ 333 002a 1A46     		mov	r2, r3
+ 334 002c 0921     		movs	r1, #9
+ 335 002e 3046     		mov	r0, r6
+ 336 0030 FFF7FEFF 		bl	lv_obj_align
+ 337              	.LVL45:
+ 338              	.LBE2:
+  76:Middlewares/LVGL/lvgl/src/widgets/win/lv_win.c **** }
+ 339              		.loc 1 76 5 view .LVU74
+ 340              	.L13:
+  77:Middlewares/LVGL/lvgl/src/widgets/win/lv_win.c **** 
+ 341              		.loc 1 77 1 is_stmt 0 view .LVU75
+ 342 0034 2046     		mov	r0, r4
+ 343 0036 70BD     		pop	{r4, r5, r6, pc}
+ 344              	.LVL46:
+ 345              	.L17:
+  77:Middlewares/LVGL/lvgl/src/widgets/win/lv_win.c **** 
+ 346              		.loc 1 77 1 view .LVU76
+ 347              		.align	2
+ 348              	.L16:
+ 349 0038 64000020 		.word	536871012
+ 350              		.cfi_endproc
+ 351              	.LFE199:
+ 353              		.section	.text.lv_win_get_content,"ax",%progbits
+ 354              		.align	1
+ 355              		.global	lv_win_get_content
+ 356              		.syntax unified
+ 357              		.thumb
+ 358              		.thumb_func
+ 360              	lv_win_get_content:
+ 361              	.LVL47:
+ 362              	.LFB201:
+  85:Middlewares/LVGL/lvgl/src/widgets/win/lv_win.c ****     return lv_obj_get_child(win, 1);
+ 363              		.loc 1 85 1 is_stmt 1 view -0
+ 364              		.cfi_startproc
+ 365              		@ args = 0, pretend = 0, frame = 0
+ 366              		@ frame_needed = 0, uses_anonymous_args = 0
+  85:Middlewares/LVGL/lvgl/src/widgets/win/lv_win.c ****     return lv_obj_get_child(win, 1);
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccvUzdOB.s 			page 10
+
+
+ 367              		.loc 1 85 1 is_stmt 0 view .LVU78
+ 368 0000 08B5     		push	{r3, lr}
+ 369              	.LCFI5:
+ 370              		.cfi_def_cfa_offset 8
+ 371              		.cfi_offset 3, -8
+ 372              		.cfi_offset 14, -4
+  86:Middlewares/LVGL/lvgl/src/widgets/win/lv_win.c **** }
+ 373              		.loc 1 86 5 is_stmt 1 view .LVU79
+  86:Middlewares/LVGL/lvgl/src/widgets/win/lv_win.c **** }
+ 374              		.loc 1 86 12 is_stmt 0 view .LVU80
+ 375 0002 0121     		movs	r1, #1
+ 376 0004 FFF7FEFF 		bl	lv_obj_get_child
+ 377              	.LVL48:
+  87:Middlewares/LVGL/lvgl/src/widgets/win/lv_win.c **** 
+ 378              		.loc 1 87 1 view .LVU81
+ 379 0008 08BD     		pop	{r3, pc}
+ 380              		.cfi_endproc
+ 381              	.LFE201:
+ 383              		.global	lv_win_class
+ 384              		.section	.rodata.str1.4,"aMS",%progbits,1
+ 385              		.align	2
+ 386              	.LC0:
+ 387 0000 6C765F77 		.ascii	"lv_win\000"
+ 387      696E00
+ 388              		.section	.rodata.lv_win_class,"a"
+ 389              		.align	2
+ 392              	lv_win_class:
+ 393 0000 00000000 		.word	lv_obj_class
+ 394 0004 00000000 		.word	lv_win_constructor
+ 395 0008 00000000 		.space	12
+ 395      00000000 
+ 395      00000000 
+ 396 0014 00000000 		.word	.LC0
+ 397 0018 64000020 		.word	536871012
+ 398 001c 64000020 		.word	536871012
+ 399 0020 00       		.byte	0
+ 400 0021 03       		.byte	3
+ 401 0022 00       		.byte	0
+ 402 0023 00       		.space	1
+ 403              		.text
+ 404              	.Letext0:
+ 405              		.file 2 "D:\\STM32CubeIDE\\STM32CubeIDE_2.1.1\\STM32CubeIDE\\plugins\\com.st.stm32cube.ide.mcu.ext
+ 406              		.file 3 "D:\\STM32CubeIDE\\STM32CubeIDE_2.1.1\\STM32CubeIDE\\plugins\\com.st.stm32cube.ide.mcu.ext
+ 407              		.file 4 "Middlewares/LVGL/lvgl/src/widgets/win/../../core/../misc/lv_types.h"
+ 408              		.file 5 "Middlewares/LVGL/lvgl/src/widgets/win/../../core/lv_obj_private.h"
+ 409              		.file 6 "Middlewares/LVGL/lvgl/src/widgets/win/../../core/lv_obj_class_private.h"
+ 410              		.file 7 "Middlewares/LVGL/lvgl/src/widgets/win/../../core/../display/../misc/lv_array.h"
+ 411              		.file 8 "Middlewares/LVGL/lvgl/src/widgets/win/../../core/../misc/../font/../draw/../misc/lv_area.
+ 412              		.file 9 "Middlewares/LVGL/lvgl/src/widgets/win/../../core/../misc/../layouts/flex/lv_flex.h"
+ 413              		.file 10 "Middlewares/LVGL/lvgl/src/widgets/win/../../core/../display/../misc/lv_event.h"
+ 414              		.file 11 "Middlewares/LVGL/lvgl/src/widgets/win/../../core/../indev/lv_indev.h"
+ 415              		.file 12 "Middlewares/LVGL/lvgl/src/widgets/win/../../core/lv_obj.h"
+ 416              		.file 13 "Middlewares/LVGL/lvgl/src/widgets/win/lv_win.h"
+ 417              		.file 14 "Middlewares/LVGL/lvgl/src/widgets/win/../../../src/widgets/bar/../label/lv_label.h"
+ 418              		.file 15 "Middlewares/LVGL/lvgl/src/widgets/win/../../../src/widgets/bar/lv_bar.h"
+ 419              		.file 16 "Middlewares/LVGL/lvgl/src/widgets/win/../../core/lv_obj_pos.h"
+ 420              		.file 17 "Middlewares/LVGL/lvgl/src/widgets/win/../../../src/widgets/animimage/../image/lv_image.h
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccvUzdOB.s 			page 11
+
+
+ 421              		.file 18 "Middlewares/LVGL/lvgl/src/widgets/win/../../core/lv_obj_tree.h"
+ 422              		.file 19 "Middlewares/LVGL/lvgl/src/widgets/win/../../../src/widgets/button/lv_button.h"
+ 423              		.file 20 "Middlewares/LVGL/lvgl/src/widgets/win/../../core/lv_obj_class.h"
+ 424              		.file 21 "Middlewares/LVGL/lvgl/src/widgets/win/../../core/../display/lv_display.h"
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccvUzdOB.s 			page 12
+
+
+DEFINED SYMBOLS
+                            *ABS*:00000000 lv_win.c
+C:\Users\w1785\AppData\Local\Temp\ccvUzdOB.s:21     .text.lv_win_constructor:00000000 $t
+C:\Users\w1785\AppData\Local\Temp\ccvUzdOB.s:26     .text.lv_win_constructor:00000000 lv_win_constructor
+C:\Users\w1785\AppData\Local\Temp\ccvUzdOB.s:136    .text.lv_win_constructor:00000078 $d
+C:\Users\w1785\AppData\Local\Temp\ccvUzdOB.s:141    .text.lv_win_create:00000000 $t
+C:\Users\w1785\AppData\Local\Temp\ccvUzdOB.s:147    .text.lv_win_create:00000000 lv_win_create
+C:\Users\w1785\AppData\Local\Temp\ccvUzdOB.s:186    .text.lv_win_create:00000014 $d
+C:\Users\w1785\AppData\Local\Temp\ccvUzdOB.s:392    .rodata.lv_win_class:00000000 lv_win_class
+C:\Users\w1785\AppData\Local\Temp\ccvUzdOB.s:191    .text.lv_win_get_header:00000000 $t
+C:\Users\w1785\AppData\Local\Temp\ccvUzdOB.s:197    .text.lv_win_get_header:00000000 lv_win_get_header
+C:\Users\w1785\AppData\Local\Temp\ccvUzdOB.s:221    .text.lv_win_add_title:00000000 $t
+C:\Users\w1785\AppData\Local\Temp\ccvUzdOB.s:227    .text.lv_win_add_title:00000000 lv_win_add_title
+C:\Users\w1785\AppData\Local\Temp\ccvUzdOB.s:277    .text.lv_win_add_button:00000000 $t
+C:\Users\w1785\AppData\Local\Temp\ccvUzdOB.s:283    .text.lv_win_add_button:00000000 lv_win_add_button
+C:\Users\w1785\AppData\Local\Temp\ccvUzdOB.s:349    .text.lv_win_add_button:00000038 $d
+C:\Users\w1785\AppData\Local\Temp\ccvUzdOB.s:354    .text.lv_win_get_content:00000000 $t
+C:\Users\w1785\AppData\Local\Temp\ccvUzdOB.s:360    .text.lv_win_get_content:00000000 lv_win_get_content
+C:\Users\w1785\AppData\Local\Temp\ccvUzdOB.s:385    .rodata.str1.4:00000000 $d
+C:\Users\w1785\AppData\Local\Temp\ccvUzdOB.s:389    .rodata.lv_win_class:00000000 $d
+
+UNDEFINED SYMBOLS
+lv_obj_get_parent
+lv_obj_get_width
+lv_obj_get_height
+lv_obj_set_size
+lv_obj_set_flex_flow
+lv_obj_create
+lv_obj_get_display
+lv_display_get_dpi
+lv_obj_set_flex_align
+lv_obj_set_flex_grow
+lv_obj_set_width
+lv_obj_class_create_obj
+lv_obj_class_init_obj
+lv_obj_get_child
+lv_label_create
+lv_label_set_long_mode
+lv_label_set_text
+lv_button_create
+lv_image_create
+lv_image_set_src
+lv_obj_align
+lv_obj_class

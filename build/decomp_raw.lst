@@ -1,0 +1,391 @@
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccbTqHYZ.s 			page 1
+
+
+   1              		.cpu cortex-m4
+   2              		.arch armv7e-m
+   3              		.fpu fpv4-sp-d16
+   4              		.eabi_attribute 27, 1
+   5              		.eabi_attribute 28, 1
+   6              		.eabi_attribute 20, 1
+   7              		.eabi_attribute 21, 1
+   8              		.eabi_attribute 23, 3
+   9              		.eabi_attribute 24, 1
+  10              		.eabi_attribute 25, 1
+  11              		.eabi_attribute 26, 1
+  12              		.eabi_attribute 30, 1
+  13              		.eabi_attribute 34, 1
+  14              		.eabi_attribute 18, 4
+  15              		.file	"decomp_raw.c"
+  16              		.text
+  17              	.Ltext0:
+  18              		.cfi_sections	.debug_frame
+  19              		.file 1 "Middlewares/LVGL/lvgl/src/libs/frogfs/src/decomp_raw.c"
+  20              		.section	.text.seek_raw,"ax",%progbits
+  21              		.align	1
+  22              		.syntax unified
+  23              		.thumb
+  24              		.thumb_func
+  26              	seek_raw:
+  27              	.LVL0:
+  28              	.LFB3:
+   1:Middlewares/LVGL/lvgl/src/libs/frogfs/src/decomp_raw.c **** /* This Source Code Form is subject to the terms of the Mozilla Public
+   2:Middlewares/LVGL/lvgl/src/libs/frogfs/src/decomp_raw.c ****  * License, v. 2.0. If a copy of the MPL was not distributed with this
+   3:Middlewares/LVGL/lvgl/src/libs/frogfs/src/decomp_raw.c ****  * file, You can obtain one at http://mozilla.org/MPL/2.0/. */
+   4:Middlewares/LVGL/lvgl/src/libs/frogfs/src/decomp_raw.c **** 
+   5:Middlewares/LVGL/lvgl/src/libs/frogfs/src/decomp_raw.c **** #include "../../../lv_conf_internal.h"
+   6:Middlewares/LVGL/lvgl/src/libs/frogfs/src/decomp_raw.c **** #include LV_STDDEF_INCLUDE
+   7:Middlewares/LVGL/lvgl/src/libs/frogfs/src/decomp_raw.c **** #include LV_STDINT_INCLUDE
+   8:Middlewares/LVGL/lvgl/src/libs/frogfs/src/decomp_raw.c **** #include "../../../stdlib/lv_string.h"
+   9:Middlewares/LVGL/lvgl/src/libs/frogfs/src/decomp_raw.c **** #include "../../../misc/lv_fs.h"
+  10:Middlewares/LVGL/lvgl/src/libs/frogfs/src/decomp_raw.c **** 
+  11:Middlewares/LVGL/lvgl/src/libs/frogfs/src/decomp_raw.c **** #include "frogfs_priv.h"
+  12:Middlewares/LVGL/lvgl/src/libs/frogfs/src/decomp_raw.c **** #include "frogfs_format.h"
+  13:Middlewares/LVGL/lvgl/src/libs/frogfs/src/decomp_raw.c **** #include "../include/frogfs/frogfs.h"
+  14:Middlewares/LVGL/lvgl/src/libs/frogfs/src/decomp_raw.c **** 
+  15:Middlewares/LVGL/lvgl/src/libs/frogfs/src/decomp_raw.c **** 
+  16:Middlewares/LVGL/lvgl/src/libs/frogfs/src/decomp_raw.c **** static ssize_t read_raw(frogfs_fh_t *f, void *buf, size_t len)
+  17:Middlewares/LVGL/lvgl/src/libs/frogfs/src/decomp_raw.c **** {
+  18:Middlewares/LVGL/lvgl/src/libs/frogfs/src/decomp_raw.c ****     size_t remaining = f->data_sz - ((char *)f->data_ptr - (char *)f->data_start);
+  19:Middlewares/LVGL/lvgl/src/libs/frogfs/src/decomp_raw.c **** 
+  20:Middlewares/LVGL/lvgl/src/libs/frogfs/src/decomp_raw.c ****     if (len > remaining) {
+  21:Middlewares/LVGL/lvgl/src/libs/frogfs/src/decomp_raw.c ****         len = remaining;
+  22:Middlewares/LVGL/lvgl/src/libs/frogfs/src/decomp_raw.c ****     }
+  23:Middlewares/LVGL/lvgl/src/libs/frogfs/src/decomp_raw.c **** 
+  24:Middlewares/LVGL/lvgl/src/libs/frogfs/src/decomp_raw.c ****     if (buf) {
+  25:Middlewares/LVGL/lvgl/src/libs/frogfs/src/decomp_raw.c ****         lv_memcpy(buf, f->data_ptr, len);
+  26:Middlewares/LVGL/lvgl/src/libs/frogfs/src/decomp_raw.c ****     }
+  27:Middlewares/LVGL/lvgl/src/libs/frogfs/src/decomp_raw.c ****     f->data_ptr = (char *)f->data_ptr + len;
+  28:Middlewares/LVGL/lvgl/src/libs/frogfs/src/decomp_raw.c **** 
+  29:Middlewares/LVGL/lvgl/src/libs/frogfs/src/decomp_raw.c ****     return len;
+  30:Middlewares/LVGL/lvgl/src/libs/frogfs/src/decomp_raw.c **** }
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccbTqHYZ.s 			page 2
+
+
+  31:Middlewares/LVGL/lvgl/src/libs/frogfs/src/decomp_raw.c **** 
+  32:Middlewares/LVGL/lvgl/src/libs/frogfs/src/decomp_raw.c **** static ssize_t seek_raw(frogfs_fh_t *f, long offset, int mode)
+  33:Middlewares/LVGL/lvgl/src/libs/frogfs/src/decomp_raw.c **** {
+  29              		.loc 1 33 1 view -0
+  30              		.cfi_startproc
+  31              		@ args = 0, pretend = 0, frame = 0
+  32              		@ frame_needed = 0, uses_anonymous_args = 0
+  33              		@ link register save eliminated.
+  34              		.loc 1 33 1 is_stmt 0 view .LVU1
+  35 0000 10B4     		push	{r4}
+  36              	.LCFI0:
+  37              		.cfi_def_cfa_offset 4
+  38              		.cfi_offset 4, -4
+  39 0002 0346     		mov	r3, r0
+  34:Middlewares/LVGL/lvgl/src/libs/frogfs/src/decomp_raw.c ****     ssize_t new_pos = (char *)f->data_ptr - (char *)f->data_start;
+  40              		.loc 1 34 5 is_stmt 1 view .LVU2
+  41              		.loc 1 34 32 is_stmt 0 view .LVU3
+  42 0004 C068     		ldr	r0, [r0, #12]
+  43              	.LVL1:
+  44              		.loc 1 34 54 view .LVU4
+  45 0006 9C68     		ldr	r4, [r3, #8]
+  46              		.loc 1 34 13 view .LVU5
+  47 0008 A0EB040C 		sub	ip, r0, r4
+  48              	.LVL2:
+  35:Middlewares/LVGL/lvgl/src/libs/frogfs/src/decomp_raw.c **** 
+  36:Middlewares/LVGL/lvgl/src/libs/frogfs/src/decomp_raw.c ****     if (mode == LV_FS_SEEK_SET) {
+  49              		.loc 1 36 5 is_stmt 1 view .LVU6
+  50              		.loc 1 36 8 is_stmt 0 view .LVU7
+  51 000c 32B9     		cbnz	r2, .L2
+  37:Middlewares/LVGL/lvgl/src/libs/frogfs/src/decomp_raw.c ****         if (offset < 0) {
+  52              		.loc 1 37 9 is_stmt 1 view .LVU8
+  53              		.loc 1 37 12 is_stmt 0 view .LVU9
+  54 000e 0029     		cmp	r1, #0
+  55 0010 1FDB     		blt	.L7
+  38:Middlewares/LVGL/lvgl/src/libs/frogfs/src/decomp_raw.c ****             return -1;
+  39:Middlewares/LVGL/lvgl/src/libs/frogfs/src/decomp_raw.c ****         }
+  40:Middlewares/LVGL/lvgl/src/libs/frogfs/src/decomp_raw.c ****         if ((size_t)offset > f->data_sz) {
+  56              		.loc 1 40 9 is_stmt 1 view .LVU10
+  57              		.loc 1 40 31 is_stmt 0 view .LVU11
+  58 0012 1869     		ldr	r0, [r3, #16]
+  59              		.loc 1 40 12 view .LVU12
+  60 0014 8842     		cmp	r0, r1
+  61 0016 0DD3     		bcc	.L4
+  62 0018 0846     		mov	r0, r1
+  63 001a 0BE0     		b	.L4
+  64              	.L2:
+  41:Middlewares/LVGL/lvgl/src/libs/frogfs/src/decomp_raw.c ****             offset = f->data_sz;
+  42:Middlewares/LVGL/lvgl/src/libs/frogfs/src/decomp_raw.c ****         }
+  43:Middlewares/LVGL/lvgl/src/libs/frogfs/src/decomp_raw.c ****         new_pos = offset;
+  44:Middlewares/LVGL/lvgl/src/libs/frogfs/src/decomp_raw.c ****     } else if (mode == LV_FS_SEEK_CUR) {
+  65              		.loc 1 44 12 is_stmt 1 view .LVU13
+  66              		.loc 1 44 15 is_stmt 0 view .LVU14
+  67 001c 012A     		cmp	r2, #1
+  68 001e 0ED0     		beq	.L14
+  45:Middlewares/LVGL/lvgl/src/libs/frogfs/src/decomp_raw.c ****         if (new_pos + offset < 0) {
+  46:Middlewares/LVGL/lvgl/src/libs/frogfs/src/decomp_raw.c ****             new_pos = 0;
+  47:Middlewares/LVGL/lvgl/src/libs/frogfs/src/decomp_raw.c ****         } else if ((size_t)new_pos > f->data_sz) {
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccbTqHYZ.s 			page 3
+
+
+  48:Middlewares/LVGL/lvgl/src/libs/frogfs/src/decomp_raw.c ****             new_pos = f->data_sz;
+  49:Middlewares/LVGL/lvgl/src/libs/frogfs/src/decomp_raw.c ****         } else {
+  50:Middlewares/LVGL/lvgl/src/libs/frogfs/src/decomp_raw.c ****             new_pos += offset;
+  51:Middlewares/LVGL/lvgl/src/libs/frogfs/src/decomp_raw.c ****         }
+  52:Middlewares/LVGL/lvgl/src/libs/frogfs/src/decomp_raw.c ****     } else if (mode == LV_FS_SEEK_END) {
+  69              		.loc 1 52 12 is_stmt 1 view .LVU15
+  70              		.loc 1 52 15 is_stmt 0 view .LVU16
+  71 0020 022A     		cmp	r2, #2
+  72 0022 19D1     		bne	.L10
+  53:Middlewares/LVGL/lvgl/src/libs/frogfs/src/decomp_raw.c ****         if (offset > 0) {
+  73              		.loc 1 53 9 is_stmt 1 view .LVU17
+  74              		.loc 1 53 12 is_stmt 0 view .LVU18
+  75 0024 0029     		cmp	r1, #0
+  76 0026 1ADC     		bgt	.L11
+  54:Middlewares/LVGL/lvgl/src/libs/frogfs/src/decomp_raw.c ****             return -1;
+  55:Middlewares/LVGL/lvgl/src/libs/frogfs/src/decomp_raw.c ****         }
+  56:Middlewares/LVGL/lvgl/src/libs/frogfs/src/decomp_raw.c ****         if (offset < -(ssize_t) f->data_sz) {
+  77              		.loc 1 56 9 is_stmt 1 view .LVU19
+  78              		.loc 1 56 34 is_stmt 0 view .LVU20
+  79 0028 1A69     		ldr	r2, [r3, #16]
+  80              	.LVL3:
+  81              		.loc 1 56 22 view .LVU21
+  82 002a 5042     		rsbs	r0, r2, #0
+  83              		.loc 1 56 12 view .LVU22
+  84 002c 8842     		cmp	r0, r1
+  85 002e 00DD     		ble	.L6
+  57:Middlewares/LVGL/lvgl/src/libs/frogfs/src/decomp_raw.c ****             offset = 0;
+  86              		.loc 1 57 20 view .LVU23
+  87 0030 0021     		movs	r1, #0
+  88              	.LVL4:
+  89              	.L6:
+  58:Middlewares/LVGL/lvgl/src/libs/frogfs/src/decomp_raw.c ****         }
+  59:Middlewares/LVGL/lvgl/src/libs/frogfs/src/decomp_raw.c ****         new_pos = f->data_sz + offset;
+  90              		.loc 1 59 9 is_stmt 1 view .LVU24
+  91              		.loc 1 59 30 is_stmt 0 view .LVU25
+  92 0032 8818     		adds	r0, r1, r2
+  93              	.LVL5:
+  94              	.L4:
+  60:Middlewares/LVGL/lvgl/src/libs/frogfs/src/decomp_raw.c ****     } else {
+  61:Middlewares/LVGL/lvgl/src/libs/frogfs/src/decomp_raw.c ****         return -1;
+  62:Middlewares/LVGL/lvgl/src/libs/frogfs/src/decomp_raw.c ****     }
+  63:Middlewares/LVGL/lvgl/src/libs/frogfs/src/decomp_raw.c **** 
+  64:Middlewares/LVGL/lvgl/src/libs/frogfs/src/decomp_raw.c ****     f->data_ptr = (char *)f->data_start + new_pos;
+  95              		.loc 1 64 5 is_stmt 1 view .LVU26
+  96              		.loc 1 64 41 is_stmt 0 view .LVU27
+  97 0034 0444     		add	r4, r4, r0
+  98              		.loc 1 64 17 view .LVU28
+  99 0036 DC60     		str	r4, [r3, #12]
+  65:Middlewares/LVGL/lvgl/src/libs/frogfs/src/decomp_raw.c ****     return new_pos;
+ 100              		.loc 1 65 5 is_stmt 1 view .LVU29
+ 101              	.LVL6:
+ 102              	.L1:
+  66:Middlewares/LVGL/lvgl/src/libs/frogfs/src/decomp_raw.c **** }
+ 103              		.loc 1 66 1 is_stmt 0 view .LVU30
+ 104 0038 5DF8044B 		ldr	r4, [sp], #4
+ 105 003c 7047     		bx	lr
+ 106              	.LVL7:
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccbTqHYZ.s 			page 4
+
+
+ 107              	.L14:
+  45:Middlewares/LVGL/lvgl/src/libs/frogfs/src/decomp_raw.c ****             new_pos = 0;
+ 108              		.loc 1 45 9 is_stmt 1 view .LVU31
+  45:Middlewares/LVGL/lvgl/src/libs/frogfs/src/decomp_raw.c ****             new_pos = 0;
+ 109              		.loc 1 45 12 is_stmt 0 view .LVU32
+ 110 003e 1CEB0100 		adds	r0, ip, r1
+ 111 0042 04D4     		bmi	.L9
+  47:Middlewares/LVGL/lvgl/src/libs/frogfs/src/decomp_raw.c ****             new_pos = f->data_sz;
+ 112              		.loc 1 47 16 is_stmt 1 view .LVU33
+  47:Middlewares/LVGL/lvgl/src/libs/frogfs/src/decomp_raw.c ****             new_pos = f->data_sz;
+ 113              		.loc 1 47 39 is_stmt 0 view .LVU34
+ 114 0044 1A69     		ldr	r2, [r3, #16]
+ 115              	.LVL8:
+  47:Middlewares/LVGL/lvgl/src/libs/frogfs/src/decomp_raw.c ****             new_pos = f->data_sz;
+ 116              		.loc 1 47 19 view .LVU35
+ 117 0046 6245     		cmp	r2, ip
+ 118 0048 F4D2     		bcs	.L4
+  48:Middlewares/LVGL/lvgl/src/libs/frogfs/src/decomp_raw.c ****         } else {
+ 119              		.loc 1 48 13 is_stmt 1 view .LVU36
+  48:Middlewares/LVGL/lvgl/src/libs/frogfs/src/decomp_raw.c ****         } else {
+ 120              		.loc 1 48 21 is_stmt 0 view .LVU37
+ 121 004a 1046     		mov	r0, r2
+ 122              	.LVL9:
+  48:Middlewares/LVGL/lvgl/src/libs/frogfs/src/decomp_raw.c ****         } else {
+ 123              		.loc 1 48 21 view .LVU38
+ 124 004c F2E7     		b	.L4
+ 125              	.LVL10:
+ 126              	.L9:
+  46:Middlewares/LVGL/lvgl/src/libs/frogfs/src/decomp_raw.c ****         } else if ((size_t)new_pos > f->data_sz) {
+ 127              		.loc 1 46 21 view .LVU39
+ 128 004e 0020     		movs	r0, #0
+ 129 0050 F0E7     		b	.L4
+ 130              	.L7:
+  38:Middlewares/LVGL/lvgl/src/libs/frogfs/src/decomp_raw.c ****         }
+ 131              		.loc 1 38 20 view .LVU40
+ 132 0052 4FF0FF30 		mov	r0, #-1
+ 133 0056 EFE7     		b	.L1
+ 134              	.L10:
+  61:Middlewares/LVGL/lvgl/src/libs/frogfs/src/decomp_raw.c ****     }
+ 135              		.loc 1 61 16 view .LVU41
+ 136 0058 4FF0FF30 		mov	r0, #-1
+ 137 005c ECE7     		b	.L1
+ 138              	.L11:
+  54:Middlewares/LVGL/lvgl/src/libs/frogfs/src/decomp_raw.c ****         }
+ 139              		.loc 1 54 20 view .LVU42
+ 140 005e 4FF0FF30 		mov	r0, #-1
+ 141 0062 E9E7     		b	.L1
+ 142              		.cfi_endproc
+ 143              	.LFE3:
+ 145              		.section	.text.tell_raw,"ax",%progbits
+ 146              		.align	1
+ 147              		.syntax unified
+ 148              		.thumb
+ 149              		.thumb_func
+ 151              	tell_raw:
+ 152              	.LVL11:
+ 153              	.LFB4:
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccbTqHYZ.s 			page 5
+
+
+  67:Middlewares/LVGL/lvgl/src/libs/frogfs/src/decomp_raw.c **** 
+  68:Middlewares/LVGL/lvgl/src/libs/frogfs/src/decomp_raw.c **** static size_t tell_raw(frogfs_fh_t *f)
+  69:Middlewares/LVGL/lvgl/src/libs/frogfs/src/decomp_raw.c **** {
+ 154              		.loc 1 69 1 is_stmt 1 view -0
+ 155              		.cfi_startproc
+ 156              		@ args = 0, pretend = 0, frame = 0
+ 157              		@ frame_needed = 0, uses_anonymous_args = 0
+ 158              		@ link register save eliminated.
+  70:Middlewares/LVGL/lvgl/src/libs/frogfs/src/decomp_raw.c ****     return (char *)f->data_ptr - (char *)f->data_start;
+ 159              		.loc 1 70 5 view .LVU44
+ 160              		.loc 1 70 21 is_stmt 0 view .LVU45
+ 161 0000 C268     		ldr	r2, [r0, #12]
+ 162              		.loc 1 70 43 view .LVU46
+ 163 0002 8068     		ldr	r0, [r0, #8]
+ 164              	.LVL12:
+  71:Middlewares/LVGL/lvgl/src/libs/frogfs/src/decomp_raw.c **** }
+ 165              		.loc 1 71 1 view .LVU47
+ 166 0004 101A     		subs	r0, r2, r0
+ 167 0006 7047     		bx	lr
+ 168              		.cfi_endproc
+ 169              	.LFE4:
+ 171              		.section	.text.read_raw,"ax",%progbits
+ 172              		.align	1
+ 173              		.syntax unified
+ 174              		.thumb
+ 175              		.thumb_func
+ 177              	read_raw:
+ 178              	.LVL13:
+ 179              	.LFB2:
+  17:Middlewares/LVGL/lvgl/src/libs/frogfs/src/decomp_raw.c ****     size_t remaining = f->data_sz - ((char *)f->data_ptr - (char *)f->data_start);
+ 180              		.loc 1 17 1 is_stmt 1 view -0
+ 181              		.cfi_startproc
+ 182              		@ args = 0, pretend = 0, frame = 0
+ 183              		@ frame_needed = 0, uses_anonymous_args = 0
+  17:Middlewares/LVGL/lvgl/src/libs/frogfs/src/decomp_raw.c ****     size_t remaining = f->data_sz - ((char *)f->data_ptr - (char *)f->data_start);
+ 184              		.loc 1 17 1 is_stmt 0 view .LVU49
+ 185 0000 38B5     		push	{r3, r4, r5, lr}
+ 186              	.LCFI1:
+ 187              		.cfi_def_cfa_offset 16
+ 188              		.cfi_offset 3, -16
+ 189              		.cfi_offset 4, -12
+ 190              		.cfi_offset 5, -8
+ 191              		.cfi_offset 14, -4
+ 192 0002 0446     		mov	r4, r0
+ 193 0004 0846     		mov	r0, r1
+ 194              	.LVL14:
+  18:Middlewares/LVGL/lvgl/src/libs/frogfs/src/decomp_raw.c **** 
+ 195              		.loc 1 18 5 is_stmt 1 view .LVU50
+  18:Middlewares/LVGL/lvgl/src/libs/frogfs/src/decomp_raw.c **** 
+ 196              		.loc 1 18 25 is_stmt 0 view .LVU51
+ 197 0006 2569     		ldr	r5, [r4, #16]
+  18:Middlewares/LVGL/lvgl/src/libs/frogfs/src/decomp_raw.c **** 
+ 198              		.loc 1 18 47 view .LVU52
+ 199 0008 E168     		ldr	r1, [r4, #12]
+ 200              	.LVL15:
+  18:Middlewares/LVGL/lvgl/src/libs/frogfs/src/decomp_raw.c **** 
+ 201              		.loc 1 18 69 view .LVU53
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccbTqHYZ.s 			page 6
+
+
+ 202 000a A368     		ldr	r3, [r4, #8]
+  18:Middlewares/LVGL/lvgl/src/libs/frogfs/src/decomp_raw.c **** 
+ 203              		.loc 1 18 58 view .LVU54
+ 204 000c CB1A     		subs	r3, r1, r3
+  18:Middlewares/LVGL/lvgl/src/libs/frogfs/src/decomp_raw.c **** 
+ 205              		.loc 1 18 12 view .LVU55
+ 206 000e ED1A     		subs	r5, r5, r3
+ 207              	.LVL16:
+  20:Middlewares/LVGL/lvgl/src/libs/frogfs/src/decomp_raw.c ****         len = remaining;
+ 208              		.loc 1 20 5 is_stmt 1 view .LVU56
+  20:Middlewares/LVGL/lvgl/src/libs/frogfs/src/decomp_raw.c ****         len = remaining;
+ 209              		.loc 1 20 8 is_stmt 0 view .LVU57
+ 210 0010 9542     		cmp	r5, r2
+ 211 0012 00D3     		bcc	.L17
+ 212 0014 1546     		mov	r5, r2
+ 213              	.LVL17:
+ 214              	.L17:
+  24:Middlewares/LVGL/lvgl/src/libs/frogfs/src/decomp_raw.c ****         lv_memcpy(buf, f->data_ptr, len);
+ 215              		.loc 1 24 5 is_stmt 1 view .LVU58
+  24:Middlewares/LVGL/lvgl/src/libs/frogfs/src/decomp_raw.c ****         lv_memcpy(buf, f->data_ptr, len);
+ 216              		.loc 1 24 8 is_stmt 0 view .LVU59
+ 217 0016 10B1     		cbz	r0, .L18
+  25:Middlewares/LVGL/lvgl/src/libs/frogfs/src/decomp_raw.c ****     }
+ 218              		.loc 1 25 9 is_stmt 1 view .LVU60
+ 219 0018 2A46     		mov	r2, r5
+ 220 001a FFF7FEFF 		bl	lv_memcpy
+ 221              	.LVL18:
+ 222              	.L18:
+  27:Middlewares/LVGL/lvgl/src/libs/frogfs/src/decomp_raw.c **** 
+ 223              		.loc 1 27 5 view .LVU61
+  27:Middlewares/LVGL/lvgl/src/libs/frogfs/src/decomp_raw.c **** 
+ 224              		.loc 1 27 28 is_stmt 0 view .LVU62
+ 225 001e E368     		ldr	r3, [r4, #12]
+  27:Middlewares/LVGL/lvgl/src/libs/frogfs/src/decomp_raw.c **** 
+ 226              		.loc 1 27 39 view .LVU63
+ 227 0020 2B44     		add	r3, r3, r5
+  27:Middlewares/LVGL/lvgl/src/libs/frogfs/src/decomp_raw.c **** 
+ 228              		.loc 1 27 17 view .LVU64
+ 229 0022 E360     		str	r3, [r4, #12]
+  29:Middlewares/LVGL/lvgl/src/libs/frogfs/src/decomp_raw.c **** }
+ 230              		.loc 1 29 5 is_stmt 1 view .LVU65
+  30:Middlewares/LVGL/lvgl/src/libs/frogfs/src/decomp_raw.c **** 
+ 231              		.loc 1 30 1 is_stmt 0 view .LVU66
+ 232 0024 2846     		mov	r0, r5
+ 233 0026 38BD     		pop	{r3, r4, r5, pc}
+  30:Middlewares/LVGL/lvgl/src/libs/frogfs/src/decomp_raw.c **** 
+ 234              		.loc 1 30 1 view .LVU67
+ 235              		.cfi_endproc
+ 236              	.LFE2:
+ 238              		.global	frogfs_decomp_raw
+ 239              		.section	.rodata.frogfs_decomp_raw,"a"
+ 240              		.align	2
+ 243              	frogfs_decomp_raw:
+ 244 0000 00000000 		.space	8
+ 244      00000000 
+ 245 0008 00000000 		.word	read_raw
+ 246 000c 00000000 		.word	seek_raw
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccbTqHYZ.s 			page 7
+
+
+ 247 0010 00000000 		.word	tell_raw
+ 248              		.text
+ 249              	.Letext0:
+ 250              		.file 2 "D:\\STM32CubeIDE\\STM32CubeIDE_2.1.1\\STM32CubeIDE\\plugins\\com.st.stm32cube.ide.mcu.ext
+ 251              		.file 3 "D:\\STM32CubeIDE\\STM32CubeIDE_2.1.1\\STM32CubeIDE\\plugins\\com.st.stm32cube.ide.mcu.ext
+ 252              		.file 4 "D:\\STM32CubeIDE\\STM32CubeIDE_2.1.1\\STM32CubeIDE\\plugins\\com.st.stm32cube.ide.mcu.ext
+ 253              		.file 5 "Middlewares/LVGL/lvgl/src/libs/frogfs/src/../include/frogfs/frogfs_types.h"
+ 254              		.file 6 "Middlewares/LVGL/lvgl/src/libs/frogfs/src/../include/frogfs/frogfs.h"
+ 255              		.file 7 "Middlewares/LVGL/lvgl/src/libs/frogfs/src/frogfs_format.h"
+ 256              		.file 8 "Middlewares/LVGL/lvgl/src/libs/frogfs/src/frogfs_priv.h"
+ 257              		.file 9 "Middlewares/LVGL/lvgl/src/libs/frogfs/src/../../../misc/lv_fs.h"
+ 258              		.file 10 "Middlewares/LVGL/lvgl/src/libs/frogfs/src/../../../stdlib/lv_string.h"
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccbTqHYZ.s 			page 8
+
+
+DEFINED SYMBOLS
+                            *ABS*:00000000 decomp_raw.c
+C:\Users\w1785\AppData\Local\Temp\ccbTqHYZ.s:21     .text.seek_raw:00000000 $t
+C:\Users\w1785\AppData\Local\Temp\ccbTqHYZ.s:26     .text.seek_raw:00000000 seek_raw
+C:\Users\w1785\AppData\Local\Temp\ccbTqHYZ.s:146    .text.tell_raw:00000000 $t
+C:\Users\w1785\AppData\Local\Temp\ccbTqHYZ.s:151    .text.tell_raw:00000000 tell_raw
+C:\Users\w1785\AppData\Local\Temp\ccbTqHYZ.s:172    .text.read_raw:00000000 $t
+C:\Users\w1785\AppData\Local\Temp\ccbTqHYZ.s:177    .text.read_raw:00000000 read_raw
+C:\Users\w1785\AppData\Local\Temp\ccbTqHYZ.s:243    .rodata.frogfs_decomp_raw:00000000 frogfs_decomp_raw
+C:\Users\w1785\AppData\Local\Temp\ccbTqHYZ.s:240    .rodata.frogfs_decomp_raw:00000000 $d
+
+UNDEFINED SYMBOLS
+lv_memcpy

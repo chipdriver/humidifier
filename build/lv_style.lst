@@ -1,0 +1,3198 @@
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccp11hL6.s 			page 1
+
+
+   1              		.cpu cortex-m4
+   2              		.arch armv7e-m
+   3              		.fpu fpv4-sp-d16
+   4              		.eabi_attribute 27, 1
+   5              		.eabi_attribute 28, 1
+   6              		.eabi_attribute 20, 1
+   7              		.eabi_attribute 21, 1
+   8              		.eabi_attribute 23, 3
+   9              		.eabi_attribute 24, 1
+  10              		.eabi_attribute 25, 1
+  11              		.eabi_attribute 26, 1
+  12              		.eabi_attribute 30, 1
+  13              		.eabi_attribute 34, 1
+  14              		.eabi_attribute 18, 4
+  15              		.file	"lv_style.c"
+  16              		.text
+  17              	.Ltext0:
+  18              		.cfi_sections	.debug_frame
+  19              		.file 1 "Middlewares/LVGL/lvgl/src/misc/lv_style.c"
+  20              		.section	.text.lv_style_get_prop_inlined,"ax",%progbits
+  21              		.align	1
+  22              		.syntax unified
+  23              		.thumb
+  24              		.thumb_func
+  26              	lv_style_get_prop_inlined:
+  27              	.LVL0:
+  28              	.LFB12:
+  29              		.file 2 "Middlewares/LVGL/lvgl/src/misc/lv_style.h"
+   1:Middlewares/LVGL/lvgl/src/misc/lv_style.h **** /**
+   2:Middlewares/LVGL/lvgl/src/misc/lv_style.h ****  * @file lv_style.h
+   3:Middlewares/LVGL/lvgl/src/misc/lv_style.h ****  *
+   4:Middlewares/LVGL/lvgl/src/misc/lv_style.h ****  */
+   5:Middlewares/LVGL/lvgl/src/misc/lv_style.h **** 
+   6:Middlewares/LVGL/lvgl/src/misc/lv_style.h **** #ifndef LV_STYLE_H
+   7:Middlewares/LVGL/lvgl/src/misc/lv_style.h **** #define LV_STYLE_H
+   8:Middlewares/LVGL/lvgl/src/misc/lv_style.h **** 
+   9:Middlewares/LVGL/lvgl/src/misc/lv_style.h **** #ifdef __cplusplus
+  10:Middlewares/LVGL/lvgl/src/misc/lv_style.h **** extern "C" {
+  11:Middlewares/LVGL/lvgl/src/misc/lv_style.h **** #endif
+  12:Middlewares/LVGL/lvgl/src/misc/lv_style.h **** 
+  13:Middlewares/LVGL/lvgl/src/misc/lv_style.h **** /*********************
+  14:Middlewares/LVGL/lvgl/src/misc/lv_style.h ****  *      INCLUDES
+  15:Middlewares/LVGL/lvgl/src/misc/lv_style.h ****  *********************/
+  16:Middlewares/LVGL/lvgl/src/misc/lv_style.h **** #include "../font/lv_font.h"
+  17:Middlewares/LVGL/lvgl/src/misc/lv_style.h **** #include "lv_color.h"
+  18:Middlewares/LVGL/lvgl/src/misc/lv_style.h **** #include "lv_area.h"
+  19:Middlewares/LVGL/lvgl/src/misc/lv_style.h **** #include "lv_anim.h"
+  20:Middlewares/LVGL/lvgl/src/misc/lv_style.h **** #include "lv_text.h"
+  21:Middlewares/LVGL/lvgl/src/misc/lv_style.h **** #include "lv_types.h"
+  22:Middlewares/LVGL/lvgl/src/misc/lv_style.h **** #include "lv_assert.h"
+  23:Middlewares/LVGL/lvgl/src/misc/lv_style.h **** #include "lv_bidi.h"
+  24:Middlewares/LVGL/lvgl/src/misc/lv_style.h **** #include "lv_grad.h"
+  25:Middlewares/LVGL/lvgl/src/misc/lv_style.h **** #include "../layouts/lv_layout.h"
+  26:Middlewares/LVGL/lvgl/src/misc/lv_style.h **** 
+  27:Middlewares/LVGL/lvgl/src/misc/lv_style.h **** /*********************
+  28:Middlewares/LVGL/lvgl/src/misc/lv_style.h ****  *      DEFINES
+  29:Middlewares/LVGL/lvgl/src/misc/lv_style.h ****  *********************/
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccp11hL6.s 			page 2
+
+
+  30:Middlewares/LVGL/lvgl/src/misc/lv_style.h **** 
+  31:Middlewares/LVGL/lvgl/src/misc/lv_style.h **** #define LV_STYLE_SENTINEL_VALUE     0xAABBCCDD
+  32:Middlewares/LVGL/lvgl/src/misc/lv_style.h **** 
+  33:Middlewares/LVGL/lvgl/src/misc/lv_style.h **** /*
+  34:Middlewares/LVGL/lvgl/src/misc/lv_style.h ****  * Flags for style behavior
+  35:Middlewares/LVGL/lvgl/src/misc/lv_style.h ****  */
+  36:Middlewares/LVGL/lvgl/src/misc/lv_style.h **** #define LV_STYLE_PROP_FLAG_NONE                     (0)       /**< No special behavior */
+  37:Middlewares/LVGL/lvgl/src/misc/lv_style.h **** #define LV_STYLE_PROP_FLAG_INHERITABLE              (1 << 0)  /**< Inherited */
+  38:Middlewares/LVGL/lvgl/src/misc/lv_style.h **** #define LV_STYLE_PROP_FLAG_EXT_DRAW_UPDATE          (1 << 1)  /**< Requires ext. draw size update w
+  39:Middlewares/LVGL/lvgl/src/misc/lv_style.h **** #define LV_STYLE_PROP_FLAG_LAYOUT_UPDATE            (1 << 2)  /**< Requires layout update when chan
+  40:Middlewares/LVGL/lvgl/src/misc/lv_style.h **** #define LV_STYLE_PROP_FLAG_PARENT_LAYOUT_UPDATE     (1 << 3)  /**< Requires layout update on parent
+  41:Middlewares/LVGL/lvgl/src/misc/lv_style.h **** #define LV_STYLE_PROP_FLAG_LAYER_UPDATE             (1 << 4)  /**< Affects layer handling */
+  42:Middlewares/LVGL/lvgl/src/misc/lv_style.h **** #define LV_STYLE_PROP_FLAG_TRANSFORM                (1 << 5)  /**< Affects the object's transformat
+  43:Middlewares/LVGL/lvgl/src/misc/lv_style.h **** #define LV_STYLE_PROP_FLAG_ALL                      (0x3F)    /**< Indicating all flags */
+  44:Middlewares/LVGL/lvgl/src/misc/lv_style.h **** 
+  45:Middlewares/LVGL/lvgl/src/misc/lv_style.h **** /*
+  46:Middlewares/LVGL/lvgl/src/misc/lv_style.h ****  * Other constants
+  47:Middlewares/LVGL/lvgl/src/misc/lv_style.h ****  */
+  48:Middlewares/LVGL/lvgl/src/misc/lv_style.h **** #define LV_SCALE_NONE            256        /**< Value for not zooming the image */
+  49:Middlewares/LVGL/lvgl/src/misc/lv_style.h **** LV_EXPORT_CONST_INT(LV_SCALE_NONE);
+  50:Middlewares/LVGL/lvgl/src/misc/lv_style.h **** 
+  51:Middlewares/LVGL/lvgl/src/misc/lv_style.h **** // *INDENT-OFF*
+  52:Middlewares/LVGL/lvgl/src/misc/lv_style.h **** #if LV_USE_ASSERT_STYLE
+  53:Middlewares/LVGL/lvgl/src/misc/lv_style.h **** #define LV_STYLE_CONST_INIT(var_name, prop_array)                       \
+  54:Middlewares/LVGL/lvgl/src/misc/lv_style.h ****     const lv_style_t var_name = {                                       \
+  55:Middlewares/LVGL/lvgl/src/misc/lv_style.h ****         .sentinel = LV_STYLE_SENTINEL_VALUE,                            \
+  56:Middlewares/LVGL/lvgl/src/misc/lv_style.h ****         .values_and_props = (void*)prop_array,                          \
+  57:Middlewares/LVGL/lvgl/src/misc/lv_style.h ****         .has_group = 0xFFFFFFFF,                                        \
+  58:Middlewares/LVGL/lvgl/src/misc/lv_style.h ****         .prop_cnt = 255                                                 \
+  59:Middlewares/LVGL/lvgl/src/misc/lv_style.h ****     }
+  60:Middlewares/LVGL/lvgl/src/misc/lv_style.h **** #else
+  61:Middlewares/LVGL/lvgl/src/misc/lv_style.h **** #define LV_STYLE_CONST_INIT(var_name, prop_array)                       \
+  62:Middlewares/LVGL/lvgl/src/misc/lv_style.h ****     const lv_style_t var_name = {                                       \
+  63:Middlewares/LVGL/lvgl/src/misc/lv_style.h ****         .values_and_props = (void*)prop_array,                          \
+  64:Middlewares/LVGL/lvgl/src/misc/lv_style.h ****         .has_group = 0xFFFFFFFF,                                        \
+  65:Middlewares/LVGL/lvgl/src/misc/lv_style.h ****         .prop_cnt = 255,                                                \
+  66:Middlewares/LVGL/lvgl/src/misc/lv_style.h ****     }
+  67:Middlewares/LVGL/lvgl/src/misc/lv_style.h **** #endif
+  68:Middlewares/LVGL/lvgl/src/misc/lv_style.h **** // *INDENT-ON*
+  69:Middlewares/LVGL/lvgl/src/misc/lv_style.h **** 
+  70:Middlewares/LVGL/lvgl/src/misc/lv_style.h **** #define LV_STYLE_CONST_PROPS_END { .prop = LV_STYLE_PROP_INV, .value = { .num = 0 } }
+  71:Middlewares/LVGL/lvgl/src/misc/lv_style.h **** 
+  72:Middlewares/LVGL/lvgl/src/misc/lv_style.h **** #if LV_GRADIENT_MAX_STOPS < 2
+  73:Middlewares/LVGL/lvgl/src/misc/lv_style.h **** #error LVGL needs at least 2 stops for gradients. Please increase the LV_GRADIENT_MAX_STOPS
+  74:Middlewares/LVGL/lvgl/src/misc/lv_style.h **** #endif
+  75:Middlewares/LVGL/lvgl/src/misc/lv_style.h **** 
+  76:Middlewares/LVGL/lvgl/src/misc/lv_style.h **** #define LV_GRAD_LEFT    LV_PCT(0)
+  77:Middlewares/LVGL/lvgl/src/misc/lv_style.h **** #define LV_GRAD_RIGHT   LV_PCT(100)
+  78:Middlewares/LVGL/lvgl/src/misc/lv_style.h **** #define LV_GRAD_TOP     LV_PCT(0)
+  79:Middlewares/LVGL/lvgl/src/misc/lv_style.h **** #define LV_GRAD_BOTTOM  LV_PCT(100)
+  80:Middlewares/LVGL/lvgl/src/misc/lv_style.h **** #define LV_GRAD_CENTER  LV_PCT(50)
+  81:Middlewares/LVGL/lvgl/src/misc/lv_style.h **** 
+  82:Middlewares/LVGL/lvgl/src/misc/lv_style.h **** /**********************
+  83:Middlewares/LVGL/lvgl/src/misc/lv_style.h ****  *      TYPEDEFS
+  84:Middlewares/LVGL/lvgl/src/misc/lv_style.h ****  **********************/
+  85:Middlewares/LVGL/lvgl/src/misc/lv_style.h **** 
+  86:Middlewares/LVGL/lvgl/src/misc/lv_style.h **** /**
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccp11hL6.s 			page 3
+
+
+  87:Middlewares/LVGL/lvgl/src/misc/lv_style.h ****  * Possible options for blending opaque drawings
+  88:Middlewares/LVGL/lvgl/src/misc/lv_style.h ****  */
+  89:Middlewares/LVGL/lvgl/src/misc/lv_style.h **** typedef enum {
+  90:Middlewares/LVGL/lvgl/src/misc/lv_style.h ****     LV_BLEND_MODE_NORMAL,     /**< Simply mix according to the opacity value*/
+  91:Middlewares/LVGL/lvgl/src/misc/lv_style.h ****     LV_BLEND_MODE_ADDITIVE,   /**< Add the respective color channels*/
+  92:Middlewares/LVGL/lvgl/src/misc/lv_style.h ****     LV_BLEND_MODE_SUBTRACTIVE,/**< Subtract the foreground from the background*/
+  93:Middlewares/LVGL/lvgl/src/misc/lv_style.h ****     LV_BLEND_MODE_MULTIPLY,   /**< Multiply the foreground and background*/
+  94:Middlewares/LVGL/lvgl/src/misc/lv_style.h ****     LV_BLEND_MODE_DIFFERENCE, /**< Absolute difference between foreground and background*/
+  95:Middlewares/LVGL/lvgl/src/misc/lv_style.h **** } lv_blend_mode_t;
+  96:Middlewares/LVGL/lvgl/src/misc/lv_style.h **** 
+  97:Middlewares/LVGL/lvgl/src/misc/lv_style.h **** /**
+  98:Middlewares/LVGL/lvgl/src/misc/lv_style.h ****  * Some options to apply decorations on texts.
+  99:Middlewares/LVGL/lvgl/src/misc/lv_style.h ****  * 'OR'ed values can be used.
+ 100:Middlewares/LVGL/lvgl/src/misc/lv_style.h ****  */
+ 101:Middlewares/LVGL/lvgl/src/misc/lv_style.h **** typedef enum {
+ 102:Middlewares/LVGL/lvgl/src/misc/lv_style.h ****     LV_TEXT_DECOR_NONE          = 0x00,
+ 103:Middlewares/LVGL/lvgl/src/misc/lv_style.h ****     LV_TEXT_DECOR_UNDERLINE     = 0x01,
+ 104:Middlewares/LVGL/lvgl/src/misc/lv_style.h ****     LV_TEXT_DECOR_STRIKETHROUGH = 0x02,
+ 105:Middlewares/LVGL/lvgl/src/misc/lv_style.h **** } lv_text_decor_t;
+ 106:Middlewares/LVGL/lvgl/src/misc/lv_style.h **** 
+ 107:Middlewares/LVGL/lvgl/src/misc/lv_style.h **** /**
+ 108:Middlewares/LVGL/lvgl/src/misc/lv_style.h ****  * Selects on which sides border should be drawn
+ 109:Middlewares/LVGL/lvgl/src/misc/lv_style.h ****  * 'OR'ed values can be used.
+ 110:Middlewares/LVGL/lvgl/src/misc/lv_style.h ****  */
+ 111:Middlewares/LVGL/lvgl/src/misc/lv_style.h **** typedef enum {
+ 112:Middlewares/LVGL/lvgl/src/misc/lv_style.h ****     LV_BORDER_SIDE_NONE     = 0x00,
+ 113:Middlewares/LVGL/lvgl/src/misc/lv_style.h ****     LV_BORDER_SIDE_BOTTOM   = 0x01,
+ 114:Middlewares/LVGL/lvgl/src/misc/lv_style.h ****     LV_BORDER_SIDE_TOP      = 0x02,
+ 115:Middlewares/LVGL/lvgl/src/misc/lv_style.h ****     LV_BORDER_SIDE_LEFT     = 0x04,
+ 116:Middlewares/LVGL/lvgl/src/misc/lv_style.h ****     LV_BORDER_SIDE_RIGHT    = 0x08,
+ 117:Middlewares/LVGL/lvgl/src/misc/lv_style.h ****     LV_BORDER_SIDE_FULL     = 0x0F,
+ 118:Middlewares/LVGL/lvgl/src/misc/lv_style.h ****     LV_BORDER_SIDE_INTERNAL = 0x10, /**< FOR matrix-like objects (e.g. Button matrix)*/
+ 119:Middlewares/LVGL/lvgl/src/misc/lv_style.h **** } lv_border_side_t;
+ 120:Middlewares/LVGL/lvgl/src/misc/lv_style.h **** 
+ 121:Middlewares/LVGL/lvgl/src/misc/lv_style.h **** typedef enum {
+ 122:Middlewares/LVGL/lvgl/src/misc/lv_style.h ****     LV_BLUR_QUALITY_AUTO = 0,   /**< Set the quality automatically */
+ 123:Middlewares/LVGL/lvgl/src/misc/lv_style.h ****     LV_BLUR_QUALITY_SPEED,      /**< Prefer speed over precision */
+ 124:Middlewares/LVGL/lvgl/src/misc/lv_style.h ****     LV_BLUR_QUALITY_PRECISION,  /**< Prefer precision over speed*/
+ 125:Middlewares/LVGL/lvgl/src/misc/lv_style.h **** } lv_blur_quality_t;
+ 126:Middlewares/LVGL/lvgl/src/misc/lv_style.h **** 
+ 127:Middlewares/LVGL/lvgl/src/misc/lv_style.h **** /** A image colorkey definition.
+ 128:Middlewares/LVGL/lvgl/src/misc/lv_style.h ****  *  The transparency within the color range of [low, high] will be set to LV_OPA_TRANSP If the "ena
+ 129:Middlewares/LVGL/lvgl/src/misc/lv_style.h ****  */
+ 130:Middlewares/LVGL/lvgl/src/misc/lv_style.h **** typedef struct {
+ 131:Middlewares/LVGL/lvgl/src/misc/lv_style.h ****     lv_color_t low;
+ 132:Middlewares/LVGL/lvgl/src/misc/lv_style.h ****     lv_color_t high;
+ 133:Middlewares/LVGL/lvgl/src/misc/lv_style.h **** } lv_image_colorkey_t;
+ 134:Middlewares/LVGL/lvgl/src/misc/lv_style.h **** 
+ 135:Middlewares/LVGL/lvgl/src/misc/lv_style.h **** /**
+ 136:Middlewares/LVGL/lvgl/src/misc/lv_style.h ****  * A common type to handle all the property types in the same way.
+ 137:Middlewares/LVGL/lvgl/src/misc/lv_style.h ****  */
+ 138:Middlewares/LVGL/lvgl/src/misc/lv_style.h **** typedef union {
+ 139:Middlewares/LVGL/lvgl/src/misc/lv_style.h ****     int32_t num;         /**< Number integer number (opacity, enums, booleans or "normal" numbers)*
+ 140:Middlewares/LVGL/lvgl/src/misc/lv_style.h ****     const void * ptr;    /**< Constant pointers  (font, cone text, etc)*/
+ 141:Middlewares/LVGL/lvgl/src/misc/lv_style.h ****     lv_color_t color;    /**< Colors*/
+ 142:Middlewares/LVGL/lvgl/src/misc/lv_style.h **** } lv_style_value_t;
+ 143:Middlewares/LVGL/lvgl/src/misc/lv_style.h **** 
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccp11hL6.s 			page 4
+
+
+ 144:Middlewares/LVGL/lvgl/src/misc/lv_style.h **** /**
+ 145:Middlewares/LVGL/lvgl/src/misc/lv_style.h ****  * Enumeration of all built in style properties
+ 146:Middlewares/LVGL/lvgl/src/misc/lv_style.h ****  *
+ 147:Middlewares/LVGL/lvgl/src/misc/lv_style.h ****  * Props are split into groups of 16. When adding a new prop to a group, ensure it does not overflo
+ 148:Middlewares/LVGL/lvgl/src/misc/lv_style.h ****  */
+ 149:Middlewares/LVGL/lvgl/src/misc/lv_style.h **** enum _lv_style_id_t {
+ 150:Middlewares/LVGL/lvgl/src/misc/lv_style.h ****     LV_STYLE_PROP_INV               = 0,
+ 151:Middlewares/LVGL/lvgl/src/misc/lv_style.h **** 
+ 152:Middlewares/LVGL/lvgl/src/misc/lv_style.h ****     /*The properties are listed in a special order to make caching more effective.
+ 153:Middlewares/LVGL/lvgl/src/misc/lv_style.h ****      *Groups are used when LV_OBJ_STYLE_CACHE is enabled.
+ 154:Middlewares/LVGL/lvgl/src/misc/lv_style.h ****      *If a property from a groups is set, a bit will be set in
+ 155:Middlewares/LVGL/lvgl/src/misc/lv_style.h ****      *obj->style_main_prop_is_set and style_other_prop_is_set
+ 156:Middlewares/LVGL/lvgl/src/misc/lv_style.h ****      *to indicate that the property is set.
+ 157:Middlewares/LVGL/lvgl/src/misc/lv_style.h ****      *
+ 158:Middlewares/LVGL/lvgl/src/misc/lv_style.h ****      *Strategy 1: group related properties. E.g. if no "border" properties are set
+ 159:Middlewares/LVGL/lvgl/src/misc/lv_style.h ****      *            they will be skipped quickly.
+ 160:Middlewares/LVGL/lvgl/src/misc/lv_style.h ****      *
+ 161:Middlewares/LVGL/lvgl/src/misc/lv_style.h ****      *Strategy 2: group common property with rarely used properties. This way
+ 162:Middlewares/LVGL/lvgl/src/misc/lv_style.h ****      *            the common property is cached properly and it's rarely affected
+ 163:Middlewares/LVGL/lvgl/src/misc/lv_style.h ****      *            by other props. The other props are cached in an sub-optimal way,
+ 164:Middlewares/LVGL/lvgl/src/misc/lv_style.h ****      *            but they are used rarely.
+ 165:Middlewares/LVGL/lvgl/src/misc/lv_style.h ****      *
+ 166:Middlewares/LVGL/lvgl/src/misc/lv_style.h ****      *Strategy 3: group properties they are used rarely together so that caching doesn't
+ 167:Middlewares/LVGL/lvgl/src/misc/lv_style.h ****      *            interfere
+ 168:Middlewares/LVGL/lvgl/src/misc/lv_style.h ****      *
+ 169:Middlewares/LVGL/lvgl/src/misc/lv_style.h ****      *Each group can have 8 properties. (see STYLE_PROP_SHIFTED)*/
+ 170:Middlewares/LVGL/lvgl/src/misc/lv_style.h **** 
+ 171:Middlewares/LVGL/lvgl/src/misc/lv_style.h ****     /* Size related properties*/
+ 172:Middlewares/LVGL/lvgl/src/misc/lv_style.h ****     LV_STYLE_WIDTH = 1,
+ 173:Middlewares/LVGL/lvgl/src/misc/lv_style.h ****     LV_STYLE_HEIGHT,
+ 174:Middlewares/LVGL/lvgl/src/misc/lv_style.h ****     LV_STYLE_LENGTH,
+ 175:Middlewares/LVGL/lvgl/src/misc/lv_style.h ****     LV_STYLE_TRANSFORM_WIDTH,
+ 176:Middlewares/LVGL/lvgl/src/misc/lv_style.h ****     LV_STYLE_TRANSFORM_HEIGHT,
+ 177:Middlewares/LVGL/lvgl/src/misc/lv_style.h **** 
+ 178:Middlewares/LVGL/lvgl/src/misc/lv_style.h ****     LV_STYLE_MIN_WIDTH = 8,
+ 179:Middlewares/LVGL/lvgl/src/misc/lv_style.h ****     LV_STYLE_MAX_WIDTH,
+ 180:Middlewares/LVGL/lvgl/src/misc/lv_style.h ****     LV_STYLE_MIN_HEIGHT,
+ 181:Middlewares/LVGL/lvgl/src/misc/lv_style.h ****     LV_STYLE_MAX_HEIGHT,
+ 182:Middlewares/LVGL/lvgl/src/misc/lv_style.h ****     LV_STYLE_TRANSLATE_X,
+ 183:Middlewares/LVGL/lvgl/src/misc/lv_style.h ****     LV_STYLE_TRANSLATE_Y,
+ 184:Middlewares/LVGL/lvgl/src/misc/lv_style.h ****     LV_STYLE_RADIAL_OFFSET,
+ 185:Middlewares/LVGL/lvgl/src/misc/lv_style.h **** 
+ 186:Middlewares/LVGL/lvgl/src/misc/lv_style.h ****     /*Position related properties */
+ 187:Middlewares/LVGL/lvgl/src/misc/lv_style.h ****     LV_STYLE_X = 16,
+ 188:Middlewares/LVGL/lvgl/src/misc/lv_style.h ****     LV_STYLE_Y,
+ 189:Middlewares/LVGL/lvgl/src/misc/lv_style.h ****     LV_STYLE_ALIGN,
+ 190:Middlewares/LVGL/lvgl/src/misc/lv_style.h **** 
+ 191:Middlewares/LVGL/lvgl/src/misc/lv_style.h ****     /*Padding related properties */
+ 192:Middlewares/LVGL/lvgl/src/misc/lv_style.h ****     LV_STYLE_PAD_TOP = 24,
+ 193:Middlewares/LVGL/lvgl/src/misc/lv_style.h ****     LV_STYLE_PAD_BOTTOM,
+ 194:Middlewares/LVGL/lvgl/src/misc/lv_style.h ****     LV_STYLE_PAD_LEFT,
+ 195:Middlewares/LVGL/lvgl/src/misc/lv_style.h ****     LV_STYLE_PAD_RIGHT,
+ 196:Middlewares/LVGL/lvgl/src/misc/lv_style.h ****     LV_STYLE_PAD_RADIAL,
+ 197:Middlewares/LVGL/lvgl/src/misc/lv_style.h ****     LV_STYLE_PAD_ROW,
+ 198:Middlewares/LVGL/lvgl/src/misc/lv_style.h ****     LV_STYLE_PAD_COLUMN,
+ 199:Middlewares/LVGL/lvgl/src/misc/lv_style.h **** 
+ 200:Middlewares/LVGL/lvgl/src/misc/lv_style.h ****     /*Margin related properties*/
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccp11hL6.s 			page 5
+
+
+ 201:Middlewares/LVGL/lvgl/src/misc/lv_style.h ****     LV_STYLE_MARGIN_TOP = 32,
+ 202:Middlewares/LVGL/lvgl/src/misc/lv_style.h ****     LV_STYLE_MARGIN_BOTTOM,
+ 203:Middlewares/LVGL/lvgl/src/misc/lv_style.h ****     LV_STYLE_MARGIN_LEFT,
+ 204:Middlewares/LVGL/lvgl/src/misc/lv_style.h ****     LV_STYLE_MARGIN_RIGHT,
+ 205:Middlewares/LVGL/lvgl/src/misc/lv_style.h **** 
+ 206:Middlewares/LVGL/lvgl/src/misc/lv_style.h ****     /*Bg. Gradient*/
+ 207:Middlewares/LVGL/lvgl/src/misc/lv_style.h ****     LV_STYLE_BG_GRAD = 40,
+ 208:Middlewares/LVGL/lvgl/src/misc/lv_style.h ****     LV_STYLE_BG_GRAD_DIR,
+ 209:Middlewares/LVGL/lvgl/src/misc/lv_style.h ****     LV_STYLE_BG_MAIN_OPA,
+ 210:Middlewares/LVGL/lvgl/src/misc/lv_style.h ****     LV_STYLE_BG_GRAD_OPA,
+ 211:Middlewares/LVGL/lvgl/src/misc/lv_style.h ****     LV_STYLE_BG_GRAD_COLOR,
+ 212:Middlewares/LVGL/lvgl/src/misc/lv_style.h ****     LV_STYLE_BG_MAIN_STOP,
+ 213:Middlewares/LVGL/lvgl/src/misc/lv_style.h ****     LV_STYLE_BG_GRAD_STOP,
+ 214:Middlewares/LVGL/lvgl/src/misc/lv_style.h **** 
+ 215:Middlewares/LVGL/lvgl/src/misc/lv_style.h ****     /*Bg image*/
+ 216:Middlewares/LVGL/lvgl/src/misc/lv_style.h ****     LV_STYLE_BG_IMAGE_SRC = 48,
+ 217:Middlewares/LVGL/lvgl/src/misc/lv_style.h ****     LV_STYLE_BG_IMAGE_OPA,
+ 218:Middlewares/LVGL/lvgl/src/misc/lv_style.h ****     LV_STYLE_BG_IMAGE_RECOLOR_OPA,
+ 219:Middlewares/LVGL/lvgl/src/misc/lv_style.h ****     LV_STYLE_BG_IMAGE_TILED,
+ 220:Middlewares/LVGL/lvgl/src/misc/lv_style.h ****     LV_STYLE_BG_IMAGE_RECOLOR,
+ 221:Middlewares/LVGL/lvgl/src/misc/lv_style.h **** 
+ 222:Middlewares/LVGL/lvgl/src/misc/lv_style.h ****     /*Group 3*/
+ 223:Middlewares/LVGL/lvgl/src/misc/lv_style.h ****     LV_STYLE_BORDER_WIDTH = 56,
+ 224:Middlewares/LVGL/lvgl/src/misc/lv_style.h ****     LV_STYLE_BORDER_COLOR,
+ 225:Middlewares/LVGL/lvgl/src/misc/lv_style.h ****     LV_STYLE_BORDER_OPA,
+ 226:Middlewares/LVGL/lvgl/src/misc/lv_style.h ****     LV_STYLE_BORDER_POST,
+ 227:Middlewares/LVGL/lvgl/src/misc/lv_style.h ****     LV_STYLE_BORDER_SIDE,
+ 228:Middlewares/LVGL/lvgl/src/misc/lv_style.h **** 
+ 229:Middlewares/LVGL/lvgl/src/misc/lv_style.h ****     /*Outline */
+ 230:Middlewares/LVGL/lvgl/src/misc/lv_style.h ****     LV_STYLE_OUTLINE_WIDTH = 64,
+ 231:Middlewares/LVGL/lvgl/src/misc/lv_style.h ****     LV_STYLE_OUTLINE_COLOR,
+ 232:Middlewares/LVGL/lvgl/src/misc/lv_style.h ****     LV_STYLE_OUTLINE_OPA,
+ 233:Middlewares/LVGL/lvgl/src/misc/lv_style.h ****     LV_STYLE_OUTLINE_PAD,
+ 234:Middlewares/LVGL/lvgl/src/misc/lv_style.h **** 
+ 235:Middlewares/LVGL/lvgl/src/misc/lv_style.h ****     /*Image, Shadow, Line, Arc, and Text are rarely used together.*/
+ 236:Middlewares/LVGL/lvgl/src/misc/lv_style.h ****     LV_STYLE_BG_OPA = 72,
+ 237:Middlewares/LVGL/lvgl/src/misc/lv_style.h ****     LV_STYLE_BG_COLOR,
+ 238:Middlewares/LVGL/lvgl/src/misc/lv_style.h ****     LV_STYLE_SHADOW_WIDTH,
+ 239:Middlewares/LVGL/lvgl/src/misc/lv_style.h ****     LV_STYLE_LINE_WIDTH,
+ 240:Middlewares/LVGL/lvgl/src/misc/lv_style.h ****     LV_STYLE_ARC_WIDTH,
+ 241:Middlewares/LVGL/lvgl/src/misc/lv_style.h ****     LV_STYLE_TEXT_FONT,
+ 242:Middlewares/LVGL/lvgl/src/misc/lv_style.h ****     LV_STYLE_IMAGE_RECOLOR_OPA,
+ 243:Middlewares/LVGL/lvgl/src/misc/lv_style.h **** 
+ 244:Middlewares/LVGL/lvgl/src/misc/lv_style.h ****     LV_STYLE_IMAGE_OPA = 80,
+ 245:Middlewares/LVGL/lvgl/src/misc/lv_style.h ****     LV_STYLE_SHADOW_OPA,
+ 246:Middlewares/LVGL/lvgl/src/misc/lv_style.h ****     LV_STYLE_LINE_OPA,
+ 247:Middlewares/LVGL/lvgl/src/misc/lv_style.h ****     LV_STYLE_ARC_OPA,
+ 248:Middlewares/LVGL/lvgl/src/misc/lv_style.h ****     LV_STYLE_TEXT_OPA,
+ 249:Middlewares/LVGL/lvgl/src/misc/lv_style.h **** 
+ 250:Middlewares/LVGL/lvgl/src/misc/lv_style.h ****     LV_STYLE_SHADOW_COLOR = 88,
+ 251:Middlewares/LVGL/lvgl/src/misc/lv_style.h ****     LV_STYLE_IMAGE_RECOLOR,
+ 252:Middlewares/LVGL/lvgl/src/misc/lv_style.h ****     LV_STYLE_LINE_COLOR,
+ 253:Middlewares/LVGL/lvgl/src/misc/lv_style.h ****     LV_STYLE_ARC_COLOR,
+ 254:Middlewares/LVGL/lvgl/src/misc/lv_style.h ****     LV_STYLE_TEXT_COLOR,
+ 255:Middlewares/LVGL/lvgl/src/misc/lv_style.h **** 
+ 256:Middlewares/LVGL/lvgl/src/misc/lv_style.h ****     LV_STYLE_ARC_IMAGE_SRC = 96,
+ 257:Middlewares/LVGL/lvgl/src/misc/lv_style.h ****     LV_STYLE_SHADOW_OFFSET_X,
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccp11hL6.s 			page 6
+
+
+ 258:Middlewares/LVGL/lvgl/src/misc/lv_style.h ****     LV_STYLE_SHADOW_OFFSET_Y,
+ 259:Middlewares/LVGL/lvgl/src/misc/lv_style.h ****     LV_STYLE_SHADOW_SPREAD,
+ 260:Middlewares/LVGL/lvgl/src/misc/lv_style.h ****     LV_STYLE_LINE_DASH_WIDTH,
+ 261:Middlewares/LVGL/lvgl/src/misc/lv_style.h ****     LV_STYLE_TEXT_ALIGN,
+ 262:Middlewares/LVGL/lvgl/src/misc/lv_style.h ****     LV_STYLE_TEXT_LETTER_SPACE,
+ 263:Middlewares/LVGL/lvgl/src/misc/lv_style.h ****     LV_STYLE_TEXT_LINE_SPACE,
+ 264:Middlewares/LVGL/lvgl/src/misc/lv_style.h **** 
+ 265:Middlewares/LVGL/lvgl/src/misc/lv_style.h ****     LV_STYLE_LINE_DASH_GAP = 104,
+ 266:Middlewares/LVGL/lvgl/src/misc/lv_style.h ****     LV_STYLE_LINE_ROUNDED,
+ 267:Middlewares/LVGL/lvgl/src/misc/lv_style.h ****     LV_STYLE_IMAGE_COLORKEY,
+ 268:Middlewares/LVGL/lvgl/src/misc/lv_style.h ****     LV_STYLE_TEXT_OUTLINE_STROKE_WIDTH,
+ 269:Middlewares/LVGL/lvgl/src/misc/lv_style.h ****     LV_STYLE_TEXT_OUTLINE_STROKE_OPA,
+ 270:Middlewares/LVGL/lvgl/src/misc/lv_style.h ****     LV_STYLE_TEXT_OUTLINE_STROKE_COLOR,
+ 271:Middlewares/LVGL/lvgl/src/misc/lv_style.h ****     LV_STYLE_TEXT_DECOR,
+ 272:Middlewares/LVGL/lvgl/src/misc/lv_style.h ****     LV_STYLE_ARC_ROUNDED,
+ 273:Middlewares/LVGL/lvgl/src/misc/lv_style.h **** 
+ 274:Middlewares/LVGL/lvgl/src/misc/lv_style.h ****     /*Group unrelated props*/
+ 275:Middlewares/LVGL/lvgl/src/misc/lv_style.h ****     LV_STYLE_OPA = 112,
+ 276:Middlewares/LVGL/lvgl/src/misc/lv_style.h ****     LV_STYLE_OPA_LAYERED,
+ 277:Middlewares/LVGL/lvgl/src/misc/lv_style.h ****     LV_STYLE_COLOR_FILTER_DSC,
+ 278:Middlewares/LVGL/lvgl/src/misc/lv_style.h ****     LV_STYLE_COLOR_FILTER_OPA,
+ 279:Middlewares/LVGL/lvgl/src/misc/lv_style.h ****     LV_STYLE_ANIM,
+ 280:Middlewares/LVGL/lvgl/src/misc/lv_style.h ****     LV_STYLE_ANIM_DURATION,
+ 281:Middlewares/LVGL/lvgl/src/misc/lv_style.h ****     LV_STYLE_TRANSITION,
+ 282:Middlewares/LVGL/lvgl/src/misc/lv_style.h **** 
+ 283:Middlewares/LVGL/lvgl/src/misc/lv_style.h ****     /*Radius is requested a lot, group it with rarely requested ones*/
+ 284:Middlewares/LVGL/lvgl/src/misc/lv_style.h ****     LV_STYLE_RADIUS = 120,
+ 285:Middlewares/LVGL/lvgl/src/misc/lv_style.h ****     LV_STYLE_BITMAP_MASK_SRC,
+ 286:Middlewares/LVGL/lvgl/src/misc/lv_style.h ****     LV_STYLE_BLEND_MODE,
+ 287:Middlewares/LVGL/lvgl/src/misc/lv_style.h ****     LV_STYLE_ROTARY_SENSITIVITY,
+ 288:Middlewares/LVGL/lvgl/src/misc/lv_style.h ****     LV_STYLE_TRANSLATE_RADIAL,
+ 289:Middlewares/LVGL/lvgl/src/misc/lv_style.h **** 
+ 290:Middlewares/LVGL/lvgl/src/misc/lv_style.h ****     /*Requested a lot but rarely used*/
+ 291:Middlewares/LVGL/lvgl/src/misc/lv_style.h ****     LV_STYLE_CLIP_CORNER = 128,
+ 292:Middlewares/LVGL/lvgl/src/misc/lv_style.h ****     LV_STYLE_BASE_DIR,
+ 293:Middlewares/LVGL/lvgl/src/misc/lv_style.h ****     LV_STYLE_RECOLOR,
+ 294:Middlewares/LVGL/lvgl/src/misc/lv_style.h ****     LV_STYLE_RECOLOR_OPA,
+ 295:Middlewares/LVGL/lvgl/src/misc/lv_style.h ****     LV_STYLE_LAYOUT,
+ 296:Middlewares/LVGL/lvgl/src/misc/lv_style.h **** 
+ 297:Middlewares/LVGL/lvgl/src/misc/lv_style.h ****     /*Blur*/
+ 298:Middlewares/LVGL/lvgl/src/misc/lv_style.h ****     LV_STYLE_BLUR_RADIUS = 136,
+ 299:Middlewares/LVGL/lvgl/src/misc/lv_style.h ****     LV_STYLE_BLUR_BACKDROP,
+ 300:Middlewares/LVGL/lvgl/src/misc/lv_style.h ****     LV_STYLE_BLUR_QUALITY,
+ 301:Middlewares/LVGL/lvgl/src/misc/lv_style.h **** 
+ 302:Middlewares/LVGL/lvgl/src/misc/lv_style.h ****     /*Drop shadow*/
+ 303:Middlewares/LVGL/lvgl/src/misc/lv_style.h ****     LV_STYLE_DROP_SHADOW_RADIUS = 144,
+ 304:Middlewares/LVGL/lvgl/src/misc/lv_style.h ****     LV_STYLE_DROP_SHADOW_OFFSET_X,
+ 305:Middlewares/LVGL/lvgl/src/misc/lv_style.h ****     LV_STYLE_DROP_SHADOW_OFFSET_Y,
+ 306:Middlewares/LVGL/lvgl/src/misc/lv_style.h ****     LV_STYLE_DROP_SHADOW_COLOR,
+ 307:Middlewares/LVGL/lvgl/src/misc/lv_style.h ****     LV_STYLE_DROP_SHADOW_OPA,
+ 308:Middlewares/LVGL/lvgl/src/misc/lv_style.h ****     LV_STYLE_DROP_SHADOW_QUALITY,
+ 309:Middlewares/LVGL/lvgl/src/misc/lv_style.h **** 
+ 310:Middlewares/LVGL/lvgl/src/misc/lv_style.h ****     /*Scale and transform*/
+ 311:Middlewares/LVGL/lvgl/src/misc/lv_style.h ****     LV_STYLE_TRANSFORM_SCALE_X = 152,
+ 312:Middlewares/LVGL/lvgl/src/misc/lv_style.h ****     LV_STYLE_TRANSFORM_SCALE_Y,
+ 313:Middlewares/LVGL/lvgl/src/misc/lv_style.h ****     LV_STYLE_TRANSFORM_PIVOT_X,
+ 314:Middlewares/LVGL/lvgl/src/misc/lv_style.h ****     LV_STYLE_TRANSFORM_PIVOT_Y,
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccp11hL6.s 			page 7
+
+
+ 315:Middlewares/LVGL/lvgl/src/misc/lv_style.h ****     LV_STYLE_TRANSFORM_ROTATION,
+ 316:Middlewares/LVGL/lvgl/src/misc/lv_style.h ****     LV_STYLE_TRANSFORM_SKEW_X,
+ 317:Middlewares/LVGL/lvgl/src/misc/lv_style.h ****     LV_STYLE_TRANSFORM_SKEW_Y,
+ 318:Middlewares/LVGL/lvgl/src/misc/lv_style.h **** 
+ 319:Middlewares/LVGL/lvgl/src/misc/lv_style.h ****     /*Flex and basic grid (rarely used together)*/
+ 320:Middlewares/LVGL/lvgl/src/misc/lv_style.h ****     LV_STYLE_FLEX_FLOW = 160,
+ 321:Middlewares/LVGL/lvgl/src/misc/lv_style.h ****     LV_STYLE_FLEX_MAIN_PLACE,
+ 322:Middlewares/LVGL/lvgl/src/misc/lv_style.h ****     LV_STYLE_FLEX_CROSS_PLACE,
+ 323:Middlewares/LVGL/lvgl/src/misc/lv_style.h ****     LV_STYLE_FLEX_TRACK_PLACE,
+ 324:Middlewares/LVGL/lvgl/src/misc/lv_style.h ****     LV_STYLE_FLEX_GROW,
+ 325:Middlewares/LVGL/lvgl/src/misc/lv_style.h ****     LV_STYLE_GRID_COLUMN_DSC_ARRAY,
+ 326:Middlewares/LVGL/lvgl/src/misc/lv_style.h ****     LV_STYLE_GRID_ROW_DSC_ARRAY,
+ 327:Middlewares/LVGL/lvgl/src/misc/lv_style.h **** 
+ 328:Middlewares/LVGL/lvgl/src/misc/lv_style.h ****     LV_STYLE_GRID_COLUMN_ALIGN = 168,
+ 329:Middlewares/LVGL/lvgl/src/misc/lv_style.h ****     LV_STYLE_GRID_ROW_ALIGN,
+ 330:Middlewares/LVGL/lvgl/src/misc/lv_style.h ****     LV_STYLE_GRID_CELL_COLUMN_POS,
+ 331:Middlewares/LVGL/lvgl/src/misc/lv_style.h ****     LV_STYLE_GRID_CELL_COLUMN_SPAN,
+ 332:Middlewares/LVGL/lvgl/src/misc/lv_style.h ****     LV_STYLE_GRID_CELL_X_ALIGN,
+ 333:Middlewares/LVGL/lvgl/src/misc/lv_style.h ****     LV_STYLE_GRID_CELL_ROW_POS,
+ 334:Middlewares/LVGL/lvgl/src/misc/lv_style.h ****     LV_STYLE_GRID_CELL_ROW_SPAN,
+ 335:Middlewares/LVGL/lvgl/src/misc/lv_style.h ****     LV_STYLE_GRID_CELL_Y_ALIGN,
+ 336:Middlewares/LVGL/lvgl/src/misc/lv_style.h **** 
+ 337:Middlewares/LVGL/lvgl/src/misc/lv_style.h ****     LV_STYLE_LAST_BUILT_IN_PROP,
+ 338:Middlewares/LVGL/lvgl/src/misc/lv_style.h ****     LV_STYLE_NUM_BUILT_IN_PROPS     = LV_STYLE_LAST_BUILT_IN_PROP + 1,
+ 339:Middlewares/LVGL/lvgl/src/misc/lv_style.h **** 
+ 340:Middlewares/LVGL/lvgl/src/misc/lv_style.h ****     LV_STYLE_PROP_ANY                = 0xFF,
+ 341:Middlewares/LVGL/lvgl/src/misc/lv_style.h ****     LV_STYLE_PROP_CONST             = 0xFF /* magic value for const styles */
+ 342:Middlewares/LVGL/lvgl/src/misc/lv_style.h **** };
+ 343:Middlewares/LVGL/lvgl/src/misc/lv_style.h **** 
+ 344:Middlewares/LVGL/lvgl/src/misc/lv_style.h **** typedef enum {
+ 345:Middlewares/LVGL/lvgl/src/misc/lv_style.h ****     LV_STYLE_RES_NOT_FOUND,
+ 346:Middlewares/LVGL/lvgl/src/misc/lv_style.h ****     LV_STYLE_RES_FOUND,
+ 347:Middlewares/LVGL/lvgl/src/misc/lv_style.h **** } lv_style_res_t;
+ 348:Middlewares/LVGL/lvgl/src/misc/lv_style.h **** 
+ 349:Middlewares/LVGL/lvgl/src/misc/lv_style.h **** /**
+ 350:Middlewares/LVGL/lvgl/src/misc/lv_style.h ****  * Descriptor for style transitions
+ 351:Middlewares/LVGL/lvgl/src/misc/lv_style.h ****  */
+ 352:Middlewares/LVGL/lvgl/src/misc/lv_style.h **** typedef struct {
+ 353:Middlewares/LVGL/lvgl/src/misc/lv_style.h ****     const lv_style_prop_t * props; /**< An array with the properties to animate.*/
+ 354:Middlewares/LVGL/lvgl/src/misc/lv_style.h ****     void * user_data;              /**< A custom user data that will be passed to the animation's u
+ 355:Middlewares/LVGL/lvgl/src/misc/lv_style.h ****     lv_anim_path_cb_t path_xcb;    /**< A path for the animation.*/
+ 356:Middlewares/LVGL/lvgl/src/misc/lv_style.h ****     uint32_t time;                 /**< Duration of the transition in [ms]*/
+ 357:Middlewares/LVGL/lvgl/src/misc/lv_style.h ****     uint32_t delay;                /**< Delay before the transition in [ms]*/
+ 358:Middlewares/LVGL/lvgl/src/misc/lv_style.h **** } lv_style_transition_dsc_t;
+ 359:Middlewares/LVGL/lvgl/src/misc/lv_style.h **** 
+ 360:Middlewares/LVGL/lvgl/src/misc/lv_style.h **** /**
+ 361:Middlewares/LVGL/lvgl/src/misc/lv_style.h ****  * Descriptor of a constant style property.
+ 362:Middlewares/LVGL/lvgl/src/misc/lv_style.h ****  */
+ 363:Middlewares/LVGL/lvgl/src/misc/lv_style.h **** typedef struct {
+ 364:Middlewares/LVGL/lvgl/src/misc/lv_style.h ****     lv_style_prop_t prop;
+ 365:Middlewares/LVGL/lvgl/src/misc/lv_style.h ****     lv_style_value_t value;
+ 366:Middlewares/LVGL/lvgl/src/misc/lv_style.h **** } lv_style_const_prop_t;
+ 367:Middlewares/LVGL/lvgl/src/misc/lv_style.h **** 
+ 368:Middlewares/LVGL/lvgl/src/misc/lv_style.h **** /**
+ 369:Middlewares/LVGL/lvgl/src/misc/lv_style.h ****  * Descriptor of a style (a collection of properties and values).
+ 370:Middlewares/LVGL/lvgl/src/misc/lv_style.h ****  */
+ 371:Middlewares/LVGL/lvgl/src/misc/lv_style.h **** typedef struct {
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccp11hL6.s 			page 8
+
+
+ 372:Middlewares/LVGL/lvgl/src/misc/lv_style.h **** 
+ 373:Middlewares/LVGL/lvgl/src/misc/lv_style.h **** #if LV_USE_ASSERT_STYLE
+ 374:Middlewares/LVGL/lvgl/src/misc/lv_style.h ****     uint32_t sentinel;
+ 375:Middlewares/LVGL/lvgl/src/misc/lv_style.h **** #endif
+ 376:Middlewares/LVGL/lvgl/src/misc/lv_style.h **** 
+ 377:Middlewares/LVGL/lvgl/src/misc/lv_style.h ****     void * values_and_props;
+ 378:Middlewares/LVGL/lvgl/src/misc/lv_style.h **** 
+ 379:Middlewares/LVGL/lvgl/src/misc/lv_style.h ****     uint32_t has_group;
+ 380:Middlewares/LVGL/lvgl/src/misc/lv_style.h ****     uint8_t prop_cnt;   /**< 255 means it's a constant style*/
+ 381:Middlewares/LVGL/lvgl/src/misc/lv_style.h **** } lv_style_t;
+ 382:Middlewares/LVGL/lvgl/src/misc/lv_style.h **** 
+ 383:Middlewares/LVGL/lvgl/src/misc/lv_style.h **** /**********************
+ 384:Middlewares/LVGL/lvgl/src/misc/lv_style.h ****  * GLOBAL PROTOTYPES
+ 385:Middlewares/LVGL/lvgl/src/misc/lv_style.h ****  **********************/
+ 386:Middlewares/LVGL/lvgl/src/misc/lv_style.h **** 
+ 387:Middlewares/LVGL/lvgl/src/misc/lv_style.h **** /**
+ 388:Middlewares/LVGL/lvgl/src/misc/lv_style.h ****  * Initialize a style
+ 389:Middlewares/LVGL/lvgl/src/misc/lv_style.h ****  * @param style pointer to a style to initialize
+ 390:Middlewares/LVGL/lvgl/src/misc/lv_style.h ****  * @note Do not call `lv_style_init` on styles that already have some properties
+ 391:Middlewares/LVGL/lvgl/src/misc/lv_style.h ****  *       because this function won't free the used memory, just sets a default state for the style.
+ 392:Middlewares/LVGL/lvgl/src/misc/lv_style.h ****  *       In other words be sure to initialize styles only once!
+ 393:Middlewares/LVGL/lvgl/src/misc/lv_style.h ****  */
+ 394:Middlewares/LVGL/lvgl/src/misc/lv_style.h **** void lv_style_init(lv_style_t * style);
+ 395:Middlewares/LVGL/lvgl/src/misc/lv_style.h **** 
+ 396:Middlewares/LVGL/lvgl/src/misc/lv_style.h **** /**
+ 397:Middlewares/LVGL/lvgl/src/misc/lv_style.h ****  * Clear all properties from a style and free all allocated memories.
+ 398:Middlewares/LVGL/lvgl/src/misc/lv_style.h ****  * @param style pointer to a style
+ 399:Middlewares/LVGL/lvgl/src/misc/lv_style.h ****  */
+ 400:Middlewares/LVGL/lvgl/src/misc/lv_style.h **** void lv_style_reset(lv_style_t * style);
+ 401:Middlewares/LVGL/lvgl/src/misc/lv_style.h **** 
+ 402:Middlewares/LVGL/lvgl/src/misc/lv_style.h **** /**
+ 403:Middlewares/LVGL/lvgl/src/misc/lv_style.h ****  * Copy all properties of a style to an other.
+ 404:Middlewares/LVGL/lvgl/src/misc/lv_style.h ****  * It has the same affect callying the same `lv_set_style_...`
+ 405:Middlewares/LVGL/lvgl/src/misc/lv_style.h ****  * functions on both styles.
+ 406:Middlewares/LVGL/lvgl/src/misc/lv_style.h ****  * It means new memory will be allocated to store the properties in
+ 407:Middlewares/LVGL/lvgl/src/misc/lv_style.h ****  * the destination style.
+ 408:Middlewares/LVGL/lvgl/src/misc/lv_style.h ****  * After the copy the destination style is fully independent of the source
+ 409:Middlewares/LVGL/lvgl/src/misc/lv_style.h ****  * and source can removed without affecting the destination style.
+ 410:Middlewares/LVGL/lvgl/src/misc/lv_style.h ****  * @param dst   the destination to copy into (can not the a constant style)
+ 411:Middlewares/LVGL/lvgl/src/misc/lv_style.h ****  * @param src   the source style to copy from.
+ 412:Middlewares/LVGL/lvgl/src/misc/lv_style.h ****  */
+ 413:Middlewares/LVGL/lvgl/src/misc/lv_style.h **** void lv_style_copy(lv_style_t * dst, const lv_style_t * src);
+ 414:Middlewares/LVGL/lvgl/src/misc/lv_style.h **** 
+ 415:Middlewares/LVGL/lvgl/src/misc/lv_style.h **** /**
+ 416:Middlewares/LVGL/lvgl/src/misc/lv_style.h ****  * Copy all properties of a style to an other without resetting the dst style.
+ 417:Middlewares/LVGL/lvgl/src/misc/lv_style.h ****  * It has the same effect as calling the same `lv_set_style_...`
+ 418:Middlewares/LVGL/lvgl/src/misc/lv_style.h ****  * functions on both styles.
+ 419:Middlewares/LVGL/lvgl/src/misc/lv_style.h ****  * It means new memory will be allocated to store the properties in
+ 420:Middlewares/LVGL/lvgl/src/misc/lv_style.h ****  * the destination style.
+ 421:Middlewares/LVGL/lvgl/src/misc/lv_style.h ****  * After the copy the destination style is fully independent of the source
+ 422:Middlewares/LVGL/lvgl/src/misc/lv_style.h ****  * and source can removed without affecting the destination style.
+ 423:Middlewares/LVGL/lvgl/src/misc/lv_style.h ****  * @param dst   the destination to copy into (cannot be a constant style)
+ 424:Middlewares/LVGL/lvgl/src/misc/lv_style.h ****  * @param src   the source style to copy from.
+ 425:Middlewares/LVGL/lvgl/src/misc/lv_style.h ****  */
+ 426:Middlewares/LVGL/lvgl/src/misc/lv_style.h **** void lv_style_merge(lv_style_t * dst, const lv_style_t * src);
+ 427:Middlewares/LVGL/lvgl/src/misc/lv_style.h **** 
+ 428:Middlewares/LVGL/lvgl/src/misc/lv_style.h **** 
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccp11hL6.s 			page 9
+
+
+ 429:Middlewares/LVGL/lvgl/src/misc/lv_style.h **** /**
+ 430:Middlewares/LVGL/lvgl/src/misc/lv_style.h ****  * Check if a style is constant
+ 431:Middlewares/LVGL/lvgl/src/misc/lv_style.h ****  * @param style     pointer to a style
+ 432:Middlewares/LVGL/lvgl/src/misc/lv_style.h ****  * @return          true: the style is constant
+ 433:Middlewares/LVGL/lvgl/src/misc/lv_style.h ****  */
+ 434:Middlewares/LVGL/lvgl/src/misc/lv_style.h **** static inline bool lv_style_is_const(const lv_style_t * style)
+ 435:Middlewares/LVGL/lvgl/src/misc/lv_style.h **** {
+ 436:Middlewares/LVGL/lvgl/src/misc/lv_style.h ****     if(style->prop_cnt == 255) return true;
+ 437:Middlewares/LVGL/lvgl/src/misc/lv_style.h ****     return false;
+ 438:Middlewares/LVGL/lvgl/src/misc/lv_style.h **** }
+ 439:Middlewares/LVGL/lvgl/src/misc/lv_style.h **** 
+ 440:Middlewares/LVGL/lvgl/src/misc/lv_style.h **** 
+ 441:Middlewares/LVGL/lvgl/src/misc/lv_style.h **** /**
+ 442:Middlewares/LVGL/lvgl/src/misc/lv_style.h ****  * Register a new style property for custom usage
+ 443:Middlewares/LVGL/lvgl/src/misc/lv_style.h ****  * @return a new property ID, or LV_STYLE_PROP_INV if there are no more available.
+ 444:Middlewares/LVGL/lvgl/src/misc/lv_style.h ****  *
+ 445:Middlewares/LVGL/lvgl/src/misc/lv_style.h ****  * Example:
+ 446:Middlewares/LVGL/lvgl/src/misc/lv_style.h ****  * @code
+ 447:Middlewares/LVGL/lvgl/src/misc/lv_style.h ****  * lv_style_prop_t MY_PROP;
+ 448:Middlewares/LVGL/lvgl/src/misc/lv_style.h ****  * static inline void lv_style_set_my_prop(lv_style_t * style, lv_color_t value) {
+ 449:Middlewares/LVGL/lvgl/src/misc/lv_style.h ****  * lv_style_value_t v = {.color = value}; lv_style_set_prop(style, MY_PROP, v); }
+ 450:Middlewares/LVGL/lvgl/src/misc/lv_style.h ****  *
+ 451:Middlewares/LVGL/lvgl/src/misc/lv_style.h ****  * ...
+ 452:Middlewares/LVGL/lvgl/src/misc/lv_style.h ****  * MY_PROP = lv_style_register_prop();
+ 453:Middlewares/LVGL/lvgl/src/misc/lv_style.h ****  * ...
+ 454:Middlewares/LVGL/lvgl/src/misc/lv_style.h ****  * lv_style_set_my_prop(&style1, lv_palette_main(LV_PALETTE_RED));
+ 455:Middlewares/LVGL/lvgl/src/misc/lv_style.h ****  * @endcode
+ 456:Middlewares/LVGL/lvgl/src/misc/lv_style.h ****  */
+ 457:Middlewares/LVGL/lvgl/src/misc/lv_style.h **** lv_style_prop_t lv_style_register_prop(uint8_t flag);
+ 458:Middlewares/LVGL/lvgl/src/misc/lv_style.h **** 
+ 459:Middlewares/LVGL/lvgl/src/misc/lv_style.h **** /**
+ 460:Middlewares/LVGL/lvgl/src/misc/lv_style.h ****  * Get the number of custom properties that have been registered thus far.
+ 461:Middlewares/LVGL/lvgl/src/misc/lv_style.h ****  */
+ 462:Middlewares/LVGL/lvgl/src/misc/lv_style.h **** lv_style_prop_t lv_style_get_num_custom_props(void);
+ 463:Middlewares/LVGL/lvgl/src/misc/lv_style.h **** 
+ 464:Middlewares/LVGL/lvgl/src/misc/lv_style.h **** /**
+ 465:Middlewares/LVGL/lvgl/src/misc/lv_style.h ****  * Remove a property from a style
+ 466:Middlewares/LVGL/lvgl/src/misc/lv_style.h ****  * @param style pointer to a style
+ 467:Middlewares/LVGL/lvgl/src/misc/lv_style.h ****  * @param prop  a style property ORed with a state.
+ 468:Middlewares/LVGL/lvgl/src/misc/lv_style.h ****  * @return true: the property was found and removed; false: the property wasn't found
+ 469:Middlewares/LVGL/lvgl/src/misc/lv_style.h ****  */
+ 470:Middlewares/LVGL/lvgl/src/misc/lv_style.h **** bool lv_style_remove_prop(lv_style_t * style, lv_style_prop_t prop);
+ 471:Middlewares/LVGL/lvgl/src/misc/lv_style.h **** 
+ 472:Middlewares/LVGL/lvgl/src/misc/lv_style.h **** /**
+ 473:Middlewares/LVGL/lvgl/src/misc/lv_style.h ****  * Set the value of property in a style.
+ 474:Middlewares/LVGL/lvgl/src/misc/lv_style.h ****  * This function shouldn't be used directly by the user.
+ 475:Middlewares/LVGL/lvgl/src/misc/lv_style.h ****  * Instead use `lv_style_set_<prop_name>()`. E.g. `lv_style_set_bg_color()`
+ 476:Middlewares/LVGL/lvgl/src/misc/lv_style.h ****  * @param style pointer to style
+ 477:Middlewares/LVGL/lvgl/src/misc/lv_style.h ****  * @param prop the ID of a property (e.g. `LV_STYLE_BG_COLOR`)
+ 478:Middlewares/LVGL/lvgl/src/misc/lv_style.h ****  * @param value `lv_style_value_t` variable in which a field is set according to the type of `prop`
+ 479:Middlewares/LVGL/lvgl/src/misc/lv_style.h ****  */
+ 480:Middlewares/LVGL/lvgl/src/misc/lv_style.h **** void lv_style_set_prop(lv_style_t * style, lv_style_prop_t prop, lv_style_value_t value);
+ 481:Middlewares/LVGL/lvgl/src/misc/lv_style.h **** 
+ 482:Middlewares/LVGL/lvgl/src/misc/lv_style.h **** /**
+ 483:Middlewares/LVGL/lvgl/src/misc/lv_style.h ****  * Get the value of a property
+ 484:Middlewares/LVGL/lvgl/src/misc/lv_style.h ****  * @param style pointer to a style
+ 485:Middlewares/LVGL/lvgl/src/misc/lv_style.h ****  * @param prop  the ID of a property
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccp11hL6.s 			page 10
+
+
+ 486:Middlewares/LVGL/lvgl/src/misc/lv_style.h ****  * @param value pointer to a `lv_style_value_t` variable to store the value
+ 487:Middlewares/LVGL/lvgl/src/misc/lv_style.h ****  * @return LV_RESULT_INVALID: the property wasn't found in the style (`value` is unchanged)
+ 488:Middlewares/LVGL/lvgl/src/misc/lv_style.h ****  *         LV_RESULT_OK: the property was fond, and `value` is set accordingly
+ 489:Middlewares/LVGL/lvgl/src/misc/lv_style.h ****  * @note For performance reasons there are no sanity check on `style`
+ 490:Middlewares/LVGL/lvgl/src/misc/lv_style.h ****  */
+ 491:Middlewares/LVGL/lvgl/src/misc/lv_style.h **** lv_style_res_t lv_style_get_prop(const lv_style_t * style, lv_style_prop_t prop, lv_style_value_t *
+ 492:Middlewares/LVGL/lvgl/src/misc/lv_style.h **** 
+ 493:Middlewares/LVGL/lvgl/src/misc/lv_style.h **** /**
+ 494:Middlewares/LVGL/lvgl/src/misc/lv_style.h ****  * Initialize a transition descriptor.
+ 495:Middlewares/LVGL/lvgl/src/misc/lv_style.h ****  * @param tr        pointer to a transition descriptor to initialize
+ 496:Middlewares/LVGL/lvgl/src/misc/lv_style.h ****  * @param props     an array with the properties to transition. The last element must be zero.
+ 497:Middlewares/LVGL/lvgl/src/misc/lv_style.h ****  * @param path_cb   an animation path (ease) callback. If `NULL` liner path will be used.
+ 498:Middlewares/LVGL/lvgl/src/misc/lv_style.h ****  * @param time      duration of the transition in [ms]
+ 499:Middlewares/LVGL/lvgl/src/misc/lv_style.h ****  * @param delay     delay before the transition in [ms]
+ 500:Middlewares/LVGL/lvgl/src/misc/lv_style.h ****  * @param user_data any custom data that will be saved in the transition animation and will be avai
+ 501:Middlewares/LVGL/lvgl/src/misc/lv_style.h ****  *
+ 502:Middlewares/LVGL/lvgl/src/misc/lv_style.h ****  * Example:
+ 503:Middlewares/LVGL/lvgl/src/misc/lv_style.h ****  * @code
+ 504:Middlewares/LVGL/lvgl/src/misc/lv_style.h ****  * const static lv_style_prop_t trans_props[] = { LV_STYLE_BG_OPA, LV_STYLE_BG_COLOR, 0 };
+ 505:Middlewares/LVGL/lvgl/src/misc/lv_style.h ****  * static lv_style_transition_dsc_t trans1;
+ 506:Middlewares/LVGL/lvgl/src/misc/lv_style.h ****  * lv_style_transition_dsc_init(&trans1, trans_props, NULL, 300, 0, NULL);
+ 507:Middlewares/LVGL/lvgl/src/misc/lv_style.h ****  * @endcode
+ 508:Middlewares/LVGL/lvgl/src/misc/lv_style.h ****  */
+ 509:Middlewares/LVGL/lvgl/src/misc/lv_style.h **** void lv_style_transition_dsc_init(lv_style_transition_dsc_t * tr, const lv_style_prop_t props[],
+ 510:Middlewares/LVGL/lvgl/src/misc/lv_style.h ****                                   lv_anim_path_cb_t path_cb, uint32_t time, uint32_t delay, void * 
+ 511:Middlewares/LVGL/lvgl/src/misc/lv_style.h **** 
+ 512:Middlewares/LVGL/lvgl/src/misc/lv_style.h **** /**
+ 513:Middlewares/LVGL/lvgl/src/misc/lv_style.h ****  * Get the default value of a property
+ 514:Middlewares/LVGL/lvgl/src/misc/lv_style.h ****  * @param prop the ID of a property
+ 515:Middlewares/LVGL/lvgl/src/misc/lv_style.h ****  * @return the default value
+ 516:Middlewares/LVGL/lvgl/src/misc/lv_style.h ****  */
+ 517:Middlewares/LVGL/lvgl/src/misc/lv_style.h **** lv_style_value_t lv_style_prop_get_default(lv_style_prop_t prop);
+ 518:Middlewares/LVGL/lvgl/src/misc/lv_style.h **** 
+ 519:Middlewares/LVGL/lvgl/src/misc/lv_style.h **** /**
+ 520:Middlewares/LVGL/lvgl/src/misc/lv_style.h ****  * Get the value of a property
+ 521:Middlewares/LVGL/lvgl/src/misc/lv_style.h ****  * @param style pointer to a style
+ 522:Middlewares/LVGL/lvgl/src/misc/lv_style.h ****  * @param prop  the ID of a property
+ 523:Middlewares/LVGL/lvgl/src/misc/lv_style.h ****  * @param value pointer to a `lv_style_value_t` variable to store the value
+ 524:Middlewares/LVGL/lvgl/src/misc/lv_style.h ****  * @return LV_RESULT_INVALID: the property wasn't found in the style (`value` is unchanged)
+ 525:Middlewares/LVGL/lvgl/src/misc/lv_style.h ****  *         LV_RESULT_OK: the property was fond, and `value` is set accordingly
+ 526:Middlewares/LVGL/lvgl/src/misc/lv_style.h ****  * @note For performance reasons there are no sanity check on `style`
+ 527:Middlewares/LVGL/lvgl/src/misc/lv_style.h ****  * @note This function is the same as ::lv_style_get_prop but inlined. Use it only on performance c
+ 528:Middlewares/LVGL/lvgl/src/misc/lv_style.h ****  */
+ 529:Middlewares/LVGL/lvgl/src/misc/lv_style.h **** static inline lv_style_res_t lv_style_get_prop_inlined(const lv_style_t * style, lv_style_prop_t pr
+ 530:Middlewares/LVGL/lvgl/src/misc/lv_style.h ****                                                        lv_style_value_t * value)
+ 531:Middlewares/LVGL/lvgl/src/misc/lv_style.h **** {
+  30              		.loc 2 531 1 view -0
+  31              		.cfi_startproc
+  32              		@ args = 0, pretend = 0, frame = 0
+  33              		@ frame_needed = 0, uses_anonymous_args = 0
+  34              		.loc 2 531 1 is_stmt 0 view .LVU1
+  35 0000 10B5     		push	{r4, lr}
+  36              	.LCFI0:
+  37              		.cfi_def_cfa_offset 8
+  38              		.cfi_offset 4, -8
+  39              		.cfi_offset 14, -4
+ 532:Middlewares/LVGL/lvgl/src/misc/lv_style.h ****     if(lv_style_is_const(style)) {
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccp11hL6.s 			page 11
+
+
+  40              		.loc 2 532 5 is_stmt 1 view .LVU2
+  41              	.LVL1:
+  42              	.LBB29:
+  43              	.LBI29:
+ 434:Middlewares/LVGL/lvgl/src/misc/lv_style.h **** {
+  44              		.loc 2 434 20 view .LVU3
+  45              	.LBB30:
+ 436:Middlewares/LVGL/lvgl/src/misc/lv_style.h ****     return false;
+  46              		.loc 2 436 5 view .LVU4
+ 436:Middlewares/LVGL/lvgl/src/misc/lv_style.h ****     return false;
+  47              		.loc 2 436 13 is_stmt 0 view .LVU5
+  48 0002 90F808C0 		ldrb	ip, [r0, #8]	@ zero_extendqisi2
+ 436:Middlewares/LVGL/lvgl/src/misc/lv_style.h ****     return false;
+  49              		.loc 2 436 7 view .LVU6
+  50 0006 BCF1FF0F 		cmp	ip, #255
+  51 000a 0CD0     		beq	.L2
+  52              	.LVL2:
+ 436:Middlewares/LVGL/lvgl/src/misc/lv_style.h ****     return false;
+  53              		.loc 2 436 7 view .LVU7
+  54              	.LBE30:
+  55              	.LBE29:
+  56              	.LBB32:
+ 533:Middlewares/LVGL/lvgl/src/misc/lv_style.h ****         lv_style_const_prop_t * props = (lv_style_const_prop_t *)style->values_and_props;
+ 534:Middlewares/LVGL/lvgl/src/misc/lv_style.h ****         uint32_t i;
+ 535:Middlewares/LVGL/lvgl/src/misc/lv_style.h ****         for(i = 0; props[i].prop != LV_STYLE_PROP_INV; i++) {
+ 536:Middlewares/LVGL/lvgl/src/misc/lv_style.h ****             if(props[i].prop == prop) {
+ 537:Middlewares/LVGL/lvgl/src/misc/lv_style.h ****                 *value = props[i].value;
+ 538:Middlewares/LVGL/lvgl/src/misc/lv_style.h ****                 return LV_STYLE_RES_FOUND;
+ 539:Middlewares/LVGL/lvgl/src/misc/lv_style.h ****             }
+ 540:Middlewares/LVGL/lvgl/src/misc/lv_style.h ****         }
+ 541:Middlewares/LVGL/lvgl/src/misc/lv_style.h ****     }
+ 542:Middlewares/LVGL/lvgl/src/misc/lv_style.h ****     else {
+ 543:Middlewares/LVGL/lvgl/src/misc/lv_style.h ****         lv_style_prop_t * props = (lv_style_prop_t *)style->values_and_props + style->prop_cnt * si
+  57              		.loc 2 543 9 is_stmt 1 view .LVU8
+  58              		.loc 2 543 59 is_stmt 0 view .LVU9
+  59 000c 0468     		ldr	r4, [r0]
+  60              		.loc 2 543 96 view .LVU10
+  61 000e 4FEA8C0E 		lsl	lr, ip, #2
+  62              	.LVL3:
+ 544:Middlewares/LVGL/lvgl/src/misc/lv_style.h ****         uint32_t i;
+  63              		.loc 2 544 9 is_stmt 1 view .LVU11
+ 545:Middlewares/LVGL/lvgl/src/misc/lv_style.h ****         for(i = 0; i < style->prop_cnt; i++) {
+  64              		.loc 2 545 9 view .LVU12
+  65              		.loc 2 545 15 is_stmt 0 view .LVU13
+  66 0012 0023     		movs	r3, #0
+  67              	.LVL4:
+  68              	.L3:
+  69              		.loc 2 545 22 is_stmt 1 discriminator 1 view .LVU14
+  70 0014 9C45     		cmp	ip, r3
+  71 0016 1BD9     		bls	.L11
+ 546:Middlewares/LVGL/lvgl/src/misc/lv_style.h ****             if(props[i] == prop) {
+  72              		.loc 2 546 13 view .LVU15
+  73              		.loc 2 546 21 is_stmt 0 view .LVU16
+  74 0018 04EB0E00 		add	r0, r4, lr
+  75 001c C05C     		ldrb	r0, [r0, r3]	@ zero_extendqisi2
+  76              		.loc 2 546 15 view .LVU17
+  77 001e 8842     		cmp	r0, r1
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccp11hL6.s 			page 12
+
+
+  78 0020 11D0     		beq	.L12
+ 545:Middlewares/LVGL/lvgl/src/misc/lv_style.h ****         for(i = 0; i < style->prop_cnt; i++) {
+  79              		.loc 2 545 42 is_stmt 1 discriminator 2 view .LVU18
+  80 0022 0133     		adds	r3, r3, #1
+  81              	.LVL5:
+ 545:Middlewares/LVGL/lvgl/src/misc/lv_style.h ****         for(i = 0; i < style->prop_cnt; i++) {
+  82              		.loc 2 545 42 is_stmt 0 discriminator 2 view .LVU19
+  83 0024 F6E7     		b	.L3
+  84              	.LVL6:
+  85              	.L2:
+ 545:Middlewares/LVGL/lvgl/src/misc/lv_style.h ****         for(i = 0; i < style->prop_cnt; i++) {
+  86              		.loc 2 545 42 discriminator 2 view .LVU20
+  87              	.LBE32:
+  88              	.LBB34:
+  89              	.LBB31:
+ 436:Middlewares/LVGL/lvgl/src/misc/lv_style.h ****     return false;
+  90              		.loc 2 436 32 is_stmt 1 discriminator 1 view .LVU21
+ 436:Middlewares/LVGL/lvgl/src/misc/lv_style.h ****     return false;
+  91              		.loc 2 436 32 is_stmt 0 discriminator 1 view .LVU22
+  92              	.LBE31:
+  93              	.LBE34:
+  94              	.LBB35:
+ 533:Middlewares/LVGL/lvgl/src/misc/lv_style.h ****         uint32_t i;
+  95              		.loc 2 533 9 is_stmt 1 view .LVU23
+ 533:Middlewares/LVGL/lvgl/src/misc/lv_style.h ****         uint32_t i;
+  96              		.loc 2 533 33 is_stmt 0 view .LVU24
+  97 0026 0468     		ldr	r4, [r0]
+  98              	.LVL7:
+ 534:Middlewares/LVGL/lvgl/src/misc/lv_style.h ****         for(i = 0; props[i].prop != LV_STYLE_PROP_INV; i++) {
+  99              		.loc 2 534 9 is_stmt 1 view .LVU25
+ 535:Middlewares/LVGL/lvgl/src/misc/lv_style.h ****             if(props[i].prop == prop) {
+ 100              		.loc 2 535 9 view .LVU26
+ 535:Middlewares/LVGL/lvgl/src/misc/lv_style.h ****             if(props[i].prop == prop) {
+ 101              		.loc 2 535 15 is_stmt 0 view .LVU27
+ 102 0028 0023     		movs	r3, #0
+ 103              	.LVL8:
+ 104              	.L4:
+ 535:Middlewares/LVGL/lvgl/src/misc/lv_style.h ****             if(props[i].prop == prop) {
+ 105              		.loc 2 535 34 is_stmt 1 discriminator 1 view .LVU28
+ 535:Middlewares/LVGL/lvgl/src/misc/lv_style.h ****             if(props[i].prop == prop) {
+ 106              		.loc 2 535 25 is_stmt 0 discriminator 1 view .LVU29
+ 107 002a 04EBC30C 		add	ip, r4, r3, lsl #3
+ 535:Middlewares/LVGL/lvgl/src/misc/lv_style.h ****             if(props[i].prop == prop) {
+ 108              		.loc 2 535 28 discriminator 1 view .LVU30
+ 109 002e 14F83300 		ldrb	r0, [r4, r3, lsl #3]	@ zero_extendqisi2
+ 535:Middlewares/LVGL/lvgl/src/misc/lv_style.h ****             if(props[i].prop == prop) {
+ 110              		.loc 2 535 34 discriminator 1 view .LVU31
+ 111 0032 70B1     		cbz	r0, .L6
+ 536:Middlewares/LVGL/lvgl/src/misc/lv_style.h ****                 *value = props[i].value;
+ 112              		.loc 2 536 13 is_stmt 1 view .LVU32
+ 536:Middlewares/LVGL/lvgl/src/misc/lv_style.h ****                 *value = props[i].value;
+ 113              		.loc 2 536 15 is_stmt 0 view .LVU33
+ 114 0034 8842     		cmp	r0, r1
+ 115 0036 01D0     		beq	.L13
+ 535:Middlewares/LVGL/lvgl/src/misc/lv_style.h ****             if(props[i].prop == prop) {
+ 116              		.loc 2 535 57 is_stmt 1 discriminator 2 view .LVU34
+ 117 0038 0133     		adds	r3, r3, #1
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccp11hL6.s 			page 13
+
+
+ 118              	.LVL9:
+ 535:Middlewares/LVGL/lvgl/src/misc/lv_style.h ****             if(props[i].prop == prop) {
+ 119              		.loc 2 535 57 is_stmt 0 discriminator 2 view .LVU35
+ 120 003a F6E7     		b	.L4
+ 121              	.LVL10:
+ 122              	.L13:
+ 537:Middlewares/LVGL/lvgl/src/misc/lv_style.h ****                 return LV_STYLE_RES_FOUND;
+ 123              		.loc 2 537 17 is_stmt 1 view .LVU36
+ 537:Middlewares/LVGL/lvgl/src/misc/lv_style.h ****                 return LV_STYLE_RES_FOUND;
+ 124              		.loc 2 537 24 is_stmt 0 view .LVU37
+ 125 003c DCF80430 		ldr	r3, [ip, #4]
+ 126              	.LVL11:
+ 537:Middlewares/LVGL/lvgl/src/misc/lv_style.h ****                 return LV_STYLE_RES_FOUND;
+ 127              		.loc 2 537 24 view .LVU38
+ 128 0040 1360     		str	r3, [r2]
+ 538:Middlewares/LVGL/lvgl/src/misc/lv_style.h ****             }
+ 129              		.loc 2 538 17 is_stmt 1 view .LVU39
+ 538:Middlewares/LVGL/lvgl/src/misc/lv_style.h ****             }
+ 130              		.loc 2 538 24 is_stmt 0 view .LVU40
+ 131 0042 0120     		movs	r0, #1
+ 132 0044 05E0     		b	.L6
+ 133              	.LVL12:
+ 134              	.L12:
+ 538:Middlewares/LVGL/lvgl/src/misc/lv_style.h ****             }
+ 135              		.loc 2 538 24 view .LVU41
+ 136              	.LBE35:
+ 137              	.LBB36:
+ 138              	.LBB33:
+ 547:Middlewares/LVGL/lvgl/src/misc/lv_style.h ****                 lv_style_value_t * values = (lv_style_value_t *)style->values_and_props;
+ 139              		.loc 2 547 17 is_stmt 1 view .LVU42
+ 548:Middlewares/LVGL/lvgl/src/misc/lv_style.h ****                 *value = values[i];
+ 140              		.loc 2 548 17 view .LVU43
+ 141              		.loc 2 548 24 is_stmt 0 view .LVU44
+ 142 0046 54F82330 		ldr	r3, [r4, r3, lsl #2]
+ 143              	.LVL13:
+ 144              		.loc 2 548 24 view .LVU45
+ 145 004a 1360     		str	r3, [r2]
+ 549:Middlewares/LVGL/lvgl/src/misc/lv_style.h ****                 return LV_STYLE_RES_FOUND;
+ 146              		.loc 2 549 17 is_stmt 1 view .LVU46
+ 147              		.loc 2 549 24 is_stmt 0 view .LVU47
+ 148 004c 0120     		movs	r0, #1
+ 149 004e 00E0     		b	.L6
+ 150              	.LVL14:
+ 151              	.L11:
+ 152              		.loc 2 549 24 view .LVU48
+ 153              	.LBE33:
+ 154              	.LBE36:
+ 550:Middlewares/LVGL/lvgl/src/misc/lv_style.h ****             }
+ 551:Middlewares/LVGL/lvgl/src/misc/lv_style.h ****         }
+ 552:Middlewares/LVGL/lvgl/src/misc/lv_style.h ****     }
+ 553:Middlewares/LVGL/lvgl/src/misc/lv_style.h ****     return LV_STYLE_RES_NOT_FOUND;
+ 155              		.loc 2 553 12 view .LVU49
+ 156 0050 0020     		movs	r0, #0
+ 157              	.LVL15:
+ 158              	.L6:
+ 554:Middlewares/LVGL/lvgl/src/misc/lv_style.h **** }
+ 159              		.loc 2 554 1 view .LVU50
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccp11hL6.s 			page 14
+
+
+ 160 0052 10BD     		pop	{r4, pc}
+ 161              		.cfi_endproc
+ 162              	.LFE12:
+ 164              		.section	.text.lv_style_init,"ax",%progbits
+ 165              		.align	1
+ 166              		.global	lv_style_init
+ 167              		.syntax unified
+ 168              		.thumb
+ 169              		.thumb_func
+ 171              	lv_style_init:
+ 172              	.LVL16:
+ 173              	.LFB200:
+   1:Middlewares/LVGL/lvgl/src/misc/lv_style.c **** /**
+   2:Middlewares/LVGL/lvgl/src/misc/lv_style.c ****  * @file lv_style.c
+   3:Middlewares/LVGL/lvgl/src/misc/lv_style.c ****  *
+   4:Middlewares/LVGL/lvgl/src/misc/lv_style.c ****  */
+   5:Middlewares/LVGL/lvgl/src/misc/lv_style.c **** 
+   6:Middlewares/LVGL/lvgl/src/misc/lv_style.c **** /*********************
+   7:Middlewares/LVGL/lvgl/src/misc/lv_style.c ****  *      INCLUDES
+   8:Middlewares/LVGL/lvgl/src/misc/lv_style.c ****  *********************/
+   9:Middlewares/LVGL/lvgl/src/misc/lv_style.c **** #include "lv_style_private.h"
+  10:Middlewares/LVGL/lvgl/src/misc/lv_style.c **** #include "../core/lv_global.h"
+  11:Middlewares/LVGL/lvgl/src/misc/lv_style.c **** #include "../stdlib/lv_mem.h"
+  12:Middlewares/LVGL/lvgl/src/misc/lv_style.c **** #include "../stdlib/lv_string.h"
+  13:Middlewares/LVGL/lvgl/src/misc/lv_style.c **** #include "lv_assert.h"
+  14:Middlewares/LVGL/lvgl/src/misc/lv_style.c **** #include "lv_types.h"
+  15:Middlewares/LVGL/lvgl/src/misc/lv_style.c **** 
+  16:Middlewares/LVGL/lvgl/src/misc/lv_style.c **** /*********************
+  17:Middlewares/LVGL/lvgl/src/misc/lv_style.c ****  *      DEFINES
+  18:Middlewares/LVGL/lvgl/src/misc/lv_style.c ****  *********************/
+  19:Middlewares/LVGL/lvgl/src/misc/lv_style.c **** #define lv_style_custom_prop_flag_lookup_table_size LV_GLOBAL_DEFAULT()->style_custom_table_size
+  20:Middlewares/LVGL/lvgl/src/misc/lv_style.c **** #define lv_style_custom_prop_flag_lookup_table LV_GLOBAL_DEFAULT()->style_custom_prop_flag_lookup_t
+  21:Middlewares/LVGL/lvgl/src/misc/lv_style.c **** #define last_custom_prop_id LV_GLOBAL_DEFAULT()->style_last_custom_prop_id
+  22:Middlewares/LVGL/lvgl/src/misc/lv_style.c **** 
+  23:Middlewares/LVGL/lvgl/src/misc/lv_style.c **** /**********************
+  24:Middlewares/LVGL/lvgl/src/misc/lv_style.c ****  *      TYPEDEFS
+  25:Middlewares/LVGL/lvgl/src/misc/lv_style.c ****  **********************/
+  26:Middlewares/LVGL/lvgl/src/misc/lv_style.c **** 
+  27:Middlewares/LVGL/lvgl/src/misc/lv_style.c **** /**********************
+  28:Middlewares/LVGL/lvgl/src/misc/lv_style.c ****  *  STATIC PROTOTYPES
+  29:Middlewares/LVGL/lvgl/src/misc/lv_style.c ****  **********************/
+  30:Middlewares/LVGL/lvgl/src/misc/lv_style.c **** 
+  31:Middlewares/LVGL/lvgl/src/misc/lv_style.c **** /**********************
+  32:Middlewares/LVGL/lvgl/src/misc/lv_style.c ****  *  GLOBAL VARIABLES
+  33:Middlewares/LVGL/lvgl/src/misc/lv_style.c ****  **********************/
+  34:Middlewares/LVGL/lvgl/src/misc/lv_style.c **** 
+  35:Middlewares/LVGL/lvgl/src/misc/lv_style.c **** const lv_style_prop_t lv_style_const_prop_id_inv = LV_STYLE_PROP_INV;
+  36:Middlewares/LVGL/lvgl/src/misc/lv_style.c **** 
+  37:Middlewares/LVGL/lvgl/src/misc/lv_style.c **** const uint8_t lv_style_builtin_prop_flag_lookup_table[LV_STYLE_NUM_BUILT_IN_PROPS] = {
+  38:Middlewares/LVGL/lvgl/src/misc/lv_style.c ****     [LV_STYLE_WIDTH] =                    LV_STYLE_PROP_FLAG_LAYOUT_UPDATE,
+  39:Middlewares/LVGL/lvgl/src/misc/lv_style.c ****     [LV_STYLE_MIN_WIDTH] =                LV_STYLE_PROP_FLAG_LAYOUT_UPDATE,
+  40:Middlewares/LVGL/lvgl/src/misc/lv_style.c ****     [LV_STYLE_MAX_WIDTH] =                LV_STYLE_PROP_FLAG_LAYOUT_UPDATE,
+  41:Middlewares/LVGL/lvgl/src/misc/lv_style.c ****     [LV_STYLE_HEIGHT] =                   LV_STYLE_PROP_FLAG_LAYOUT_UPDATE,
+  42:Middlewares/LVGL/lvgl/src/misc/lv_style.c ****     [LV_STYLE_MIN_HEIGHT] =               LV_STYLE_PROP_FLAG_LAYOUT_UPDATE,
+  43:Middlewares/LVGL/lvgl/src/misc/lv_style.c ****     [LV_STYLE_MAX_HEIGHT] =               LV_STYLE_PROP_FLAG_LAYOUT_UPDATE,
+  44:Middlewares/LVGL/lvgl/src/misc/lv_style.c ****     [LV_STYLE_LENGTH] =                   LV_STYLE_PROP_FLAG_EXT_DRAW_UPDATE,
+  45:Middlewares/LVGL/lvgl/src/misc/lv_style.c ****     [LV_STYLE_X] =                        LV_STYLE_PROP_FLAG_LAYOUT_UPDATE,
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccp11hL6.s 			page 15
+
+
+  46:Middlewares/LVGL/lvgl/src/misc/lv_style.c ****     [LV_STYLE_Y] =                        LV_STYLE_PROP_FLAG_LAYOUT_UPDATE,
+  47:Middlewares/LVGL/lvgl/src/misc/lv_style.c ****     [LV_STYLE_ALIGN] =                    LV_STYLE_PROP_FLAG_LAYOUT_UPDATE,
+  48:Middlewares/LVGL/lvgl/src/misc/lv_style.c ****     [LV_STYLE_TRANSFORM_WIDTH] =           LV_STYLE_PROP_FLAG_EXT_DRAW_UPDATE | LV_STYLE_PROP_FLAG_
+  49:Middlewares/LVGL/lvgl/src/misc/lv_style.c ****     [LV_STYLE_TRANSFORM_HEIGHT] =          LV_STYLE_PROP_FLAG_EXT_DRAW_UPDATE | LV_STYLE_PROP_FLAG_
+  50:Middlewares/LVGL/lvgl/src/misc/lv_style.c ****     [LV_STYLE_TRANSLATE_X] =               LV_STYLE_PROP_FLAG_LAYOUT_UPDATE | LV_STYLE_PROP_FLAG_PA
+  51:Middlewares/LVGL/lvgl/src/misc/lv_style.c ****     [LV_STYLE_TRANSLATE_Y] =               LV_STYLE_PROP_FLAG_LAYOUT_UPDATE | LV_STYLE_PROP_FLAG_PA
+  52:Middlewares/LVGL/lvgl/src/misc/lv_style.c ****     [LV_STYLE_TRANSFORM_SCALE_X] =           LV_STYLE_PROP_FLAG_EXT_DRAW_UPDATE | LV_STYLE_PROP_FLA
+  53:Middlewares/LVGL/lvgl/src/misc/lv_style.c ****     [LV_STYLE_TRANSFORM_SCALE_Y] =           LV_STYLE_PROP_FLAG_EXT_DRAW_UPDATE | LV_STYLE_PROP_FLA
+  54:Middlewares/LVGL/lvgl/src/misc/lv_style.c ****     [LV_STYLE_TRANSFORM_SKEW_X] =          LV_STYLE_PROP_FLAG_EXT_DRAW_UPDATE | LV_STYLE_PROP_FLAG_
+  55:Middlewares/LVGL/lvgl/src/misc/lv_style.c ****     [LV_STYLE_TRANSFORM_SKEW_Y] =          LV_STYLE_PROP_FLAG_EXT_DRAW_UPDATE | LV_STYLE_PROP_FLAG_
+  56:Middlewares/LVGL/lvgl/src/misc/lv_style.c ****     [LV_STYLE_TRANSFORM_ROTATION] =        LV_STYLE_PROP_FLAG_EXT_DRAW_UPDATE | LV_STYLE_PROP_FLAG_
+  57:Middlewares/LVGL/lvgl/src/misc/lv_style.c **** 
+  58:Middlewares/LVGL/lvgl/src/misc/lv_style.c ****     [LV_STYLE_PAD_TOP] =                   LV_STYLE_PROP_FLAG_EXT_DRAW_UPDATE | LV_STYLE_PROP_FLAG_
+  59:Middlewares/LVGL/lvgl/src/misc/lv_style.c ****     [LV_STYLE_PAD_BOTTOM] =                LV_STYLE_PROP_FLAG_EXT_DRAW_UPDATE | LV_STYLE_PROP_FLAG_
+  60:Middlewares/LVGL/lvgl/src/misc/lv_style.c ****     [LV_STYLE_PAD_LEFT] =                  LV_STYLE_PROP_FLAG_EXT_DRAW_UPDATE | LV_STYLE_PROP_FLAG_
+  61:Middlewares/LVGL/lvgl/src/misc/lv_style.c ****     [LV_STYLE_PAD_RIGHT] =                 LV_STYLE_PROP_FLAG_EXT_DRAW_UPDATE | LV_STYLE_PROP_FLAG_
+  62:Middlewares/LVGL/lvgl/src/misc/lv_style.c ****     [LV_STYLE_PAD_ROW] =                   LV_STYLE_PROP_FLAG_EXT_DRAW_UPDATE | LV_STYLE_PROP_FLAG_
+  63:Middlewares/LVGL/lvgl/src/misc/lv_style.c ****     [LV_STYLE_PAD_COLUMN] =                LV_STYLE_PROP_FLAG_EXT_DRAW_UPDATE | LV_STYLE_PROP_FLAG_
+  64:Middlewares/LVGL/lvgl/src/misc/lv_style.c ****     [LV_STYLE_MARGIN_TOP] =                LV_STYLE_PROP_FLAG_EXT_DRAW_UPDATE | LV_STYLE_PROP_FLAG_
+  65:Middlewares/LVGL/lvgl/src/misc/lv_style.c ****     [LV_STYLE_MARGIN_BOTTOM] =             LV_STYLE_PROP_FLAG_EXT_DRAW_UPDATE | LV_STYLE_PROP_FLAG_
+  66:Middlewares/LVGL/lvgl/src/misc/lv_style.c ****     [LV_STYLE_MARGIN_LEFT] =               LV_STYLE_PROP_FLAG_EXT_DRAW_UPDATE | LV_STYLE_PROP_FLAG_
+  67:Middlewares/LVGL/lvgl/src/misc/lv_style.c ****     [LV_STYLE_MARGIN_RIGHT] =              LV_STYLE_PROP_FLAG_EXT_DRAW_UPDATE | LV_STYLE_PROP_FLAG_
+  68:Middlewares/LVGL/lvgl/src/misc/lv_style.c **** 
+  69:Middlewares/LVGL/lvgl/src/misc/lv_style.c ****     [LV_STYLE_BG_COLOR] = 0,
+  70:Middlewares/LVGL/lvgl/src/misc/lv_style.c ****     [LV_STYLE_BG_OPA] = 0,
+  71:Middlewares/LVGL/lvgl/src/misc/lv_style.c ****     [LV_STYLE_BG_GRAD_COLOR] = 0,
+  72:Middlewares/LVGL/lvgl/src/misc/lv_style.c ****     [LV_STYLE_BG_GRAD_DIR] = 0,
+  73:Middlewares/LVGL/lvgl/src/misc/lv_style.c ****     [LV_STYLE_BG_MAIN_STOP] = 0,
+  74:Middlewares/LVGL/lvgl/src/misc/lv_style.c ****     [LV_STYLE_BG_GRAD_STOP] = 0,
+  75:Middlewares/LVGL/lvgl/src/misc/lv_style.c ****     [LV_STYLE_BG_MAIN_OPA] = 0,
+  76:Middlewares/LVGL/lvgl/src/misc/lv_style.c ****     [LV_STYLE_BG_GRAD_OPA] = 0,
+  77:Middlewares/LVGL/lvgl/src/misc/lv_style.c ****     [LV_STYLE_BG_GRAD] = 0,
+  78:Middlewares/LVGL/lvgl/src/misc/lv_style.c **** 
+  79:Middlewares/LVGL/lvgl/src/misc/lv_style.c ****     [LV_STYLE_BG_IMAGE_SRC] =                LV_STYLE_PROP_FLAG_EXT_DRAW_UPDATE,
+  80:Middlewares/LVGL/lvgl/src/misc/lv_style.c ****     [LV_STYLE_BG_IMAGE_OPA] = 0,
+  81:Middlewares/LVGL/lvgl/src/misc/lv_style.c ****     [LV_STYLE_BG_IMAGE_RECOLOR] = 0,
+  82:Middlewares/LVGL/lvgl/src/misc/lv_style.c ****     [LV_STYLE_BG_IMAGE_RECOLOR_OPA] = 0,
+  83:Middlewares/LVGL/lvgl/src/misc/lv_style.c ****     [LV_STYLE_BG_IMAGE_TILED] = 0,
+  84:Middlewares/LVGL/lvgl/src/misc/lv_style.c **** 
+  85:Middlewares/LVGL/lvgl/src/misc/lv_style.c ****     [LV_STYLE_BORDER_COLOR] = 0,
+  86:Middlewares/LVGL/lvgl/src/misc/lv_style.c ****     [LV_STYLE_BORDER_OPA] = 0,
+  87:Middlewares/LVGL/lvgl/src/misc/lv_style.c ****     [LV_STYLE_BORDER_WIDTH] =              LV_STYLE_PROP_FLAG_LAYOUT_UPDATE,
+  88:Middlewares/LVGL/lvgl/src/misc/lv_style.c ****     [LV_STYLE_BORDER_SIDE] = 0,
+  89:Middlewares/LVGL/lvgl/src/misc/lv_style.c ****     [LV_STYLE_BORDER_POST] = 0,
+  90:Middlewares/LVGL/lvgl/src/misc/lv_style.c **** 
+  91:Middlewares/LVGL/lvgl/src/misc/lv_style.c ****     [LV_STYLE_OUTLINE_WIDTH] =             LV_STYLE_PROP_FLAG_EXT_DRAW_UPDATE,
+  92:Middlewares/LVGL/lvgl/src/misc/lv_style.c ****     [LV_STYLE_OUTLINE_COLOR] = 0,
+  93:Middlewares/LVGL/lvgl/src/misc/lv_style.c ****     [LV_STYLE_OUTLINE_OPA] =               LV_STYLE_PROP_FLAG_EXT_DRAW_UPDATE,
+  94:Middlewares/LVGL/lvgl/src/misc/lv_style.c ****     [LV_STYLE_OUTLINE_PAD] =               LV_STYLE_PROP_FLAG_EXT_DRAW_UPDATE,
+  95:Middlewares/LVGL/lvgl/src/misc/lv_style.c **** 
+  96:Middlewares/LVGL/lvgl/src/misc/lv_style.c ****     [LV_STYLE_SHADOW_WIDTH] =              LV_STYLE_PROP_FLAG_EXT_DRAW_UPDATE,
+  97:Middlewares/LVGL/lvgl/src/misc/lv_style.c ****     [LV_STYLE_SHADOW_OFFSET_X] =           LV_STYLE_PROP_FLAG_EXT_DRAW_UPDATE,
+  98:Middlewares/LVGL/lvgl/src/misc/lv_style.c ****     [LV_STYLE_SHADOW_OFFSET_Y] =           LV_STYLE_PROP_FLAG_EXT_DRAW_UPDATE,
+  99:Middlewares/LVGL/lvgl/src/misc/lv_style.c ****     [LV_STYLE_SHADOW_SPREAD] =             LV_STYLE_PROP_FLAG_EXT_DRAW_UPDATE,
+ 100:Middlewares/LVGL/lvgl/src/misc/lv_style.c ****     [LV_STYLE_SHADOW_COLOR] = 0,
+ 101:Middlewares/LVGL/lvgl/src/misc/lv_style.c ****     [LV_STYLE_SHADOW_OPA] =                LV_STYLE_PROP_FLAG_EXT_DRAW_UPDATE,
+ 102:Middlewares/LVGL/lvgl/src/misc/lv_style.c **** 
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccp11hL6.s 			page 16
+
+
+ 103:Middlewares/LVGL/lvgl/src/misc/lv_style.c ****     [LV_STYLE_IMAGE_OPA] = 0,
+ 104:Middlewares/LVGL/lvgl/src/misc/lv_style.c ****     [LV_STYLE_IMAGE_RECOLOR] = 0,
+ 105:Middlewares/LVGL/lvgl/src/misc/lv_style.c ****     [LV_STYLE_IMAGE_RECOLOR_OPA] = 0,
+ 106:Middlewares/LVGL/lvgl/src/misc/lv_style.c **** 
+ 107:Middlewares/LVGL/lvgl/src/misc/lv_style.c ****     [LV_STYLE_LINE_WIDTH] =                LV_STYLE_PROP_FLAG_EXT_DRAW_UPDATE,
+ 108:Middlewares/LVGL/lvgl/src/misc/lv_style.c ****     [LV_STYLE_LINE_DASH_WIDTH] = 0,
+ 109:Middlewares/LVGL/lvgl/src/misc/lv_style.c ****     [LV_STYLE_LINE_DASH_GAP] = 0,
+ 110:Middlewares/LVGL/lvgl/src/misc/lv_style.c ****     [LV_STYLE_LINE_ROUNDED] = 0,
+ 111:Middlewares/LVGL/lvgl/src/misc/lv_style.c ****     [LV_STYLE_LINE_COLOR] = 0,
+ 112:Middlewares/LVGL/lvgl/src/misc/lv_style.c ****     [LV_STYLE_LINE_OPA] = 0,
+ 113:Middlewares/LVGL/lvgl/src/misc/lv_style.c **** 
+ 114:Middlewares/LVGL/lvgl/src/misc/lv_style.c ****     [LV_STYLE_ARC_WIDTH] =                 LV_STYLE_PROP_FLAG_EXT_DRAW_UPDATE,
+ 115:Middlewares/LVGL/lvgl/src/misc/lv_style.c ****     [LV_STYLE_ARC_ROUNDED] = 0,
+ 116:Middlewares/LVGL/lvgl/src/misc/lv_style.c ****     [LV_STYLE_ARC_COLOR] = 0,
+ 117:Middlewares/LVGL/lvgl/src/misc/lv_style.c ****     [LV_STYLE_ARC_OPA] = 0,
+ 118:Middlewares/LVGL/lvgl/src/misc/lv_style.c ****     [LV_STYLE_ARC_IMAGE_SRC] = 0,
+ 119:Middlewares/LVGL/lvgl/src/misc/lv_style.c **** 
+ 120:Middlewares/LVGL/lvgl/src/misc/lv_style.c ****     [LV_STYLE_TEXT_COLOR] =                LV_STYLE_PROP_FLAG_INHERITABLE,
+ 121:Middlewares/LVGL/lvgl/src/misc/lv_style.c ****     [LV_STYLE_TEXT_OPA] =                  LV_STYLE_PROP_FLAG_INHERITABLE,
+ 122:Middlewares/LVGL/lvgl/src/misc/lv_style.c ****     [LV_STYLE_TEXT_FONT] =                 LV_STYLE_PROP_FLAG_INHERITABLE | LV_STYLE_PROP_FLAG_LAYO
+ 123:Middlewares/LVGL/lvgl/src/misc/lv_style.c ****     [LV_STYLE_TEXT_LETTER_SPACE] =         LV_STYLE_PROP_FLAG_INHERITABLE | LV_STYLE_PROP_FLAG_LAYO
+ 124:Middlewares/LVGL/lvgl/src/misc/lv_style.c ****     [LV_STYLE_TEXT_LINE_SPACE] =           LV_STYLE_PROP_FLAG_INHERITABLE | LV_STYLE_PROP_FLAG_LAYO
+ 125:Middlewares/LVGL/lvgl/src/misc/lv_style.c ****     [LV_STYLE_TEXT_DECOR] =                LV_STYLE_PROP_FLAG_INHERITABLE,
+ 126:Middlewares/LVGL/lvgl/src/misc/lv_style.c ****     [LV_STYLE_TEXT_ALIGN] =                LV_STYLE_PROP_FLAG_INHERITABLE | LV_STYLE_PROP_FLAG_LAYO
+ 127:Middlewares/LVGL/lvgl/src/misc/lv_style.c **** 
+ 128:Middlewares/LVGL/lvgl/src/misc/lv_style.c ****     [LV_STYLE_RADIUS] = 0,
+ 129:Middlewares/LVGL/lvgl/src/misc/lv_style.c ****     [LV_STYLE_CLIP_CORNER] = 0,
+ 130:Middlewares/LVGL/lvgl/src/misc/lv_style.c ****     [LV_STYLE_OPA] = 0,
+ 131:Middlewares/LVGL/lvgl/src/misc/lv_style.c ****     [LV_STYLE_OPA_LAYERED] =               LV_STYLE_PROP_FLAG_LAYER_UPDATE,
+ 132:Middlewares/LVGL/lvgl/src/misc/lv_style.c ****     [LV_STYLE_COLOR_FILTER_DSC] =          LV_STYLE_PROP_FLAG_INHERITABLE,
+ 133:Middlewares/LVGL/lvgl/src/misc/lv_style.c ****     [LV_STYLE_COLOR_FILTER_OPA] =          LV_STYLE_PROP_FLAG_INHERITABLE,
+ 134:Middlewares/LVGL/lvgl/src/misc/lv_style.c ****     [LV_STYLE_ANIM_DURATION] = 0,
+ 135:Middlewares/LVGL/lvgl/src/misc/lv_style.c ****     [LV_STYLE_TRANSITION] = 0,
+ 136:Middlewares/LVGL/lvgl/src/misc/lv_style.c ****     [LV_STYLE_BLEND_MODE] =                LV_STYLE_PROP_FLAG_LAYER_UPDATE,
+ 137:Middlewares/LVGL/lvgl/src/misc/lv_style.c ****     [LV_STYLE_LAYOUT] =                    LV_STYLE_PROP_FLAG_LAYOUT_UPDATE,
+ 138:Middlewares/LVGL/lvgl/src/misc/lv_style.c ****     [LV_STYLE_BASE_DIR] =                  LV_STYLE_PROP_FLAG_INHERITABLE | LV_STYLE_PROP_FLAG_LAYO
+ 139:Middlewares/LVGL/lvgl/src/misc/lv_style.c ****     [LV_STYLE_BITMAP_MASK_SRC] =           LV_STYLE_PROP_FLAG_LAYER_UPDATE,
+ 140:Middlewares/LVGL/lvgl/src/misc/lv_style.c ****     [LV_STYLE_RECOLOR] = 0,
+ 141:Middlewares/LVGL/lvgl/src/misc/lv_style.c ****     [LV_STYLE_RECOLOR_OPA] = 0,
+ 142:Middlewares/LVGL/lvgl/src/misc/lv_style.c **** 
+ 143:Middlewares/LVGL/lvgl/src/misc/lv_style.c ****     [LV_STYLE_DROP_SHADOW_RADIUS] =        LV_STYLE_PROP_FLAG_EXT_DRAW_UPDATE,
+ 144:Middlewares/LVGL/lvgl/src/misc/lv_style.c ****     [LV_STYLE_DROP_SHADOW_OFFSET_X] =      LV_STYLE_PROP_FLAG_EXT_DRAW_UPDATE,
+ 145:Middlewares/LVGL/lvgl/src/misc/lv_style.c ****     [LV_STYLE_DROP_SHADOW_OFFSET_Y] =      LV_STYLE_PROP_FLAG_EXT_DRAW_UPDATE,
+ 146:Middlewares/LVGL/lvgl/src/misc/lv_style.c ****     [LV_STYLE_DROP_SHADOW_OPA] =           LV_STYLE_PROP_FLAG_EXT_DRAW_UPDATE,
+ 147:Middlewares/LVGL/lvgl/src/misc/lv_style.c **** 
+ 148:Middlewares/LVGL/lvgl/src/misc/lv_style.c **** #if LV_USE_FLEX
+ 149:Middlewares/LVGL/lvgl/src/misc/lv_style.c ****     [LV_STYLE_FLEX_FLOW] =                 LV_STYLE_PROP_FLAG_LAYOUT_UPDATE,
+ 150:Middlewares/LVGL/lvgl/src/misc/lv_style.c ****     [LV_STYLE_FLEX_MAIN_PLACE] =           LV_STYLE_PROP_FLAG_LAYOUT_UPDATE,
+ 151:Middlewares/LVGL/lvgl/src/misc/lv_style.c ****     [LV_STYLE_FLEX_CROSS_PLACE] =          LV_STYLE_PROP_FLAG_LAYOUT_UPDATE,
+ 152:Middlewares/LVGL/lvgl/src/misc/lv_style.c ****     [LV_STYLE_FLEX_TRACK_PLACE] =          LV_STYLE_PROP_FLAG_LAYOUT_UPDATE,
+ 153:Middlewares/LVGL/lvgl/src/misc/lv_style.c ****     [LV_STYLE_FLEX_GROW] =                 LV_STYLE_PROP_FLAG_LAYOUT_UPDATE,
+ 154:Middlewares/LVGL/lvgl/src/misc/lv_style.c **** #endif
+ 155:Middlewares/LVGL/lvgl/src/misc/lv_style.c **** 
+ 156:Middlewares/LVGL/lvgl/src/misc/lv_style.c **** #if LV_USE_GRID
+ 157:Middlewares/LVGL/lvgl/src/misc/lv_style.c ****     [LV_STYLE_GRID_COLUMN_DSC_ARRAY] =      LV_STYLE_PROP_FLAG_LAYOUT_UPDATE,
+ 158:Middlewares/LVGL/lvgl/src/misc/lv_style.c ****     [LV_STYLE_GRID_ROW_DSC_ARRAY] =         LV_STYLE_PROP_FLAG_LAYOUT_UPDATE,
+ 159:Middlewares/LVGL/lvgl/src/misc/lv_style.c ****     [LV_STYLE_GRID_COLUMN_ALIGN] =          LV_STYLE_PROP_FLAG_LAYOUT_UPDATE,
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccp11hL6.s 			page 17
+
+
+ 160:Middlewares/LVGL/lvgl/src/misc/lv_style.c ****     [LV_STYLE_GRID_ROW_ALIGN] =             LV_STYLE_PROP_FLAG_LAYOUT_UPDATE,
+ 161:Middlewares/LVGL/lvgl/src/misc/lv_style.c ****     [LV_STYLE_GRID_CELL_ROW_SPAN] =         LV_STYLE_PROP_FLAG_LAYOUT_UPDATE,
+ 162:Middlewares/LVGL/lvgl/src/misc/lv_style.c ****     [LV_STYLE_GRID_CELL_ROW_POS] =          LV_STYLE_PROP_FLAG_LAYOUT_UPDATE,
+ 163:Middlewares/LVGL/lvgl/src/misc/lv_style.c ****     [LV_STYLE_GRID_CELL_COLUMN_SPAN] =      LV_STYLE_PROP_FLAG_LAYOUT_UPDATE,
+ 164:Middlewares/LVGL/lvgl/src/misc/lv_style.c ****     [LV_STYLE_GRID_CELL_COLUMN_POS] =       LV_STYLE_PROP_FLAG_LAYOUT_UPDATE,
+ 165:Middlewares/LVGL/lvgl/src/misc/lv_style.c ****     [LV_STYLE_GRID_CELL_X_ALIGN] =          LV_STYLE_PROP_FLAG_LAYOUT_UPDATE,
+ 166:Middlewares/LVGL/lvgl/src/misc/lv_style.c ****     [LV_STYLE_GRID_CELL_Y_ALIGN] =          LV_STYLE_PROP_FLAG_LAYOUT_UPDATE,
+ 167:Middlewares/LVGL/lvgl/src/misc/lv_style.c **** #endif
+ 168:Middlewares/LVGL/lvgl/src/misc/lv_style.c ****     [LV_STYLE_IMAGE_COLORKEY]         = 0,
+ 169:Middlewares/LVGL/lvgl/src/misc/lv_style.c **** 
+ 170:Middlewares/LVGL/lvgl/src/misc/lv_style.c **** };
+ 171:Middlewares/LVGL/lvgl/src/misc/lv_style.c **** 
+ 172:Middlewares/LVGL/lvgl/src/misc/lv_style.c **** /**********************
+ 173:Middlewares/LVGL/lvgl/src/misc/lv_style.c ****  *  STATIC VARIABLES
+ 174:Middlewares/LVGL/lvgl/src/misc/lv_style.c ****  **********************/
+ 175:Middlewares/LVGL/lvgl/src/misc/lv_style.c **** 
+ 176:Middlewares/LVGL/lvgl/src/misc/lv_style.c **** /**********************
+ 177:Middlewares/LVGL/lvgl/src/misc/lv_style.c ****  *      MACROS
+ 178:Middlewares/LVGL/lvgl/src/misc/lv_style.c ****  **********************/
+ 179:Middlewares/LVGL/lvgl/src/misc/lv_style.c **** 
+ 180:Middlewares/LVGL/lvgl/src/misc/lv_style.c **** /**********************
+ 181:Middlewares/LVGL/lvgl/src/misc/lv_style.c ****  *   GLOBAL FUNCTIONS
+ 182:Middlewares/LVGL/lvgl/src/misc/lv_style.c ****  **********************/
+ 183:Middlewares/LVGL/lvgl/src/misc/lv_style.c **** 
+ 184:Middlewares/LVGL/lvgl/src/misc/lv_style.c **** void lv_style_init(lv_style_t * style)
+ 185:Middlewares/LVGL/lvgl/src/misc/lv_style.c **** {
+ 174              		.loc 1 185 1 is_stmt 1 view -0
+ 175              		.cfi_startproc
+ 176              		@ args = 0, pretend = 0, frame = 0
+ 177              		@ frame_needed = 0, uses_anonymous_args = 0
+ 178              		.loc 1 185 1 is_stmt 0 view .LVU52
+ 179 0000 08B5     		push	{r3, lr}
+ 180              	.LCFI1:
+ 181              		.cfi_def_cfa_offset 8
+ 182              		.cfi_offset 3, -8
+ 183              		.cfi_offset 14, -4
+ 186:Middlewares/LVGL/lvgl/src/misc/lv_style.c **** #if LV_USE_ASSERT_STYLE
+ 187:Middlewares/LVGL/lvgl/src/misc/lv_style.c ****     if(style->sentinel == LV_STYLE_SENTINEL_VALUE && style->prop_cnt > 1) {
+ 188:Middlewares/LVGL/lvgl/src/misc/lv_style.c ****         LV_LOG_WARN("Style might be already inited. (Potential memory leak)");
+ 189:Middlewares/LVGL/lvgl/src/misc/lv_style.c ****     }
+ 190:Middlewares/LVGL/lvgl/src/misc/lv_style.c **** #endif
+ 191:Middlewares/LVGL/lvgl/src/misc/lv_style.c **** 
+ 192:Middlewares/LVGL/lvgl/src/misc/lv_style.c ****     lv_memzero(style, sizeof(lv_style_t));
+ 184              		.loc 1 192 5 is_stmt 1 view .LVU53
+ 185              	.LVL17:
+ 186              	.LBB37:
+ 187              	.LBI37:
+ 188              		.file 3 "Middlewares/LVGL/lvgl/src/misc/../font/../draw/../misc/../stdlib/lv_string.h"
+   1:Middlewares/LVGL/lvgl/src/misc/../font/../draw/../misc/../stdlib/lv_string.h **** /**
+   2:Middlewares/LVGL/lvgl/src/misc/../font/../draw/../misc/../stdlib/lv_string.h ****  * @file lv_string.h
+   3:Middlewares/LVGL/lvgl/src/misc/../font/../draw/../misc/../stdlib/lv_string.h ****  *
+   4:Middlewares/LVGL/lvgl/src/misc/../font/../draw/../misc/../stdlib/lv_string.h ****  */
+   5:Middlewares/LVGL/lvgl/src/misc/../font/../draw/../misc/../stdlib/lv_string.h **** 
+   6:Middlewares/LVGL/lvgl/src/misc/../font/../draw/../misc/../stdlib/lv_string.h **** #ifndef LV_STRING_H
+   7:Middlewares/LVGL/lvgl/src/misc/../font/../draw/../misc/../stdlib/lv_string.h **** #define LV_STRING_H
+   8:Middlewares/LVGL/lvgl/src/misc/../font/../draw/../misc/../stdlib/lv_string.h **** 
+   9:Middlewares/LVGL/lvgl/src/misc/../font/../draw/../misc/../stdlib/lv_string.h **** #ifdef __cplusplus
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccp11hL6.s 			page 18
+
+
+  10:Middlewares/LVGL/lvgl/src/misc/../font/../draw/../misc/../stdlib/lv_string.h **** extern "C" {
+  11:Middlewares/LVGL/lvgl/src/misc/../font/../draw/../misc/../stdlib/lv_string.h **** #endif
+  12:Middlewares/LVGL/lvgl/src/misc/../font/../draw/../misc/../stdlib/lv_string.h **** 
+  13:Middlewares/LVGL/lvgl/src/misc/../font/../draw/../misc/../stdlib/lv_string.h **** /*********************
+  14:Middlewares/LVGL/lvgl/src/misc/../font/../draw/../misc/../stdlib/lv_string.h ****  *      INCLUDES
+  15:Middlewares/LVGL/lvgl/src/misc/../font/../draw/../misc/../stdlib/lv_string.h ****  *********************/
+  16:Middlewares/LVGL/lvgl/src/misc/../font/../draw/../misc/../stdlib/lv_string.h **** #include "../lv_conf_internal.h"
+  17:Middlewares/LVGL/lvgl/src/misc/../font/../draw/../misc/../stdlib/lv_string.h **** #include "../misc/lv_types.h"
+  18:Middlewares/LVGL/lvgl/src/misc/../font/../draw/../misc/../stdlib/lv_string.h **** 
+  19:Middlewares/LVGL/lvgl/src/misc/../font/../draw/../misc/../stdlib/lv_string.h **** /*********************
+  20:Middlewares/LVGL/lvgl/src/misc/../font/../draw/../misc/../stdlib/lv_string.h ****  *      DEFINES
+  21:Middlewares/LVGL/lvgl/src/misc/../font/../draw/../misc/../stdlib/lv_string.h ****  *********************/
+  22:Middlewares/LVGL/lvgl/src/misc/../font/../draw/../misc/../stdlib/lv_string.h **** 
+  23:Middlewares/LVGL/lvgl/src/misc/../font/../draw/../misc/../stdlib/lv_string.h **** /**********************
+  24:Middlewares/LVGL/lvgl/src/misc/../font/../draw/../misc/../stdlib/lv_string.h ****  *      TYPEDEFS
+  25:Middlewares/LVGL/lvgl/src/misc/../font/../draw/../misc/../stdlib/lv_string.h ****  **********************/
+  26:Middlewares/LVGL/lvgl/src/misc/../font/../draw/../misc/../stdlib/lv_string.h **** 
+  27:Middlewares/LVGL/lvgl/src/misc/../font/../draw/../misc/../stdlib/lv_string.h **** /**********************
+  28:Middlewares/LVGL/lvgl/src/misc/../font/../draw/../misc/../stdlib/lv_string.h ****  * GLOBAL PROTOTYPES
+  29:Middlewares/LVGL/lvgl/src/misc/../font/../draw/../misc/../stdlib/lv_string.h ****  **********************/
+  30:Middlewares/LVGL/lvgl/src/misc/../font/../draw/../misc/../stdlib/lv_string.h **** 
+  31:Middlewares/LVGL/lvgl/src/misc/../font/../draw/../misc/../stdlib/lv_string.h **** /**
+  32:Middlewares/LVGL/lvgl/src/misc/../font/../draw/../misc/../stdlib/lv_string.h ****  * @brief Copies a block of memory from a source address to a destination address.
+  33:Middlewares/LVGL/lvgl/src/misc/../font/../draw/../misc/../stdlib/lv_string.h ****  * @param dst Pointer to the destination array where the content is to be copied.
+  34:Middlewares/LVGL/lvgl/src/misc/../font/../draw/../misc/../stdlib/lv_string.h ****  * @param src Pointer to the source of data to be copied.
+  35:Middlewares/LVGL/lvgl/src/misc/../font/../draw/../misc/../stdlib/lv_string.h ****  * @param len Number of bytes to copy.
+  36:Middlewares/LVGL/lvgl/src/misc/../font/../draw/../misc/../stdlib/lv_string.h ****  * @return Pointer to the destination array.
+  37:Middlewares/LVGL/lvgl/src/misc/../font/../draw/../misc/../stdlib/lv_string.h ****  * @note The function does not check for any overlapping of the source and destination memory block
+  38:Middlewares/LVGL/lvgl/src/misc/../font/../draw/../misc/../stdlib/lv_string.h ****  */
+  39:Middlewares/LVGL/lvgl/src/misc/../font/../draw/../misc/../stdlib/lv_string.h **** void * lv_memcpy(void * dst, const void * src, size_t len);
+  40:Middlewares/LVGL/lvgl/src/misc/../font/../draw/../misc/../stdlib/lv_string.h **** 
+  41:Middlewares/LVGL/lvgl/src/misc/../font/../draw/../misc/../stdlib/lv_string.h **** /**
+  42:Middlewares/LVGL/lvgl/src/misc/../font/../draw/../misc/../stdlib/lv_string.h ****  * @brief Fills a block of memory with a specified value.
+  43:Middlewares/LVGL/lvgl/src/misc/../font/../draw/../misc/../stdlib/lv_string.h ****  * @param dst Pointer to the destination array to fill with the specified value.
+  44:Middlewares/LVGL/lvgl/src/misc/../font/../draw/../misc/../stdlib/lv_string.h ****  * @param v Value to be set. The value is passed as an int, but the function fills
+  45:Middlewares/LVGL/lvgl/src/misc/../font/../draw/../misc/../stdlib/lv_string.h ****  *          the block of memory using the unsigned char conversion of this value.
+  46:Middlewares/LVGL/lvgl/src/misc/../font/../draw/../misc/../stdlib/lv_string.h ****  * @param len Number of bytes to be set to the value.
+  47:Middlewares/LVGL/lvgl/src/misc/../font/../draw/../misc/../stdlib/lv_string.h ****  */
+  48:Middlewares/LVGL/lvgl/src/misc/../font/../draw/../misc/../stdlib/lv_string.h **** void lv_memset(void * dst, uint8_t v, size_t len);
+  49:Middlewares/LVGL/lvgl/src/misc/../font/../draw/../misc/../stdlib/lv_string.h **** 
+  50:Middlewares/LVGL/lvgl/src/misc/../font/../draw/../misc/../stdlib/lv_string.h **** /**
+  51:Middlewares/LVGL/lvgl/src/misc/../font/../draw/../misc/../stdlib/lv_string.h ****  * @brief Move a block of memory from source to destination
+  52:Middlewares/LVGL/lvgl/src/misc/../font/../draw/../misc/../stdlib/lv_string.h ****  * @param dst Pointer to the destination array where the content is to be copied.
+  53:Middlewares/LVGL/lvgl/src/misc/../font/../draw/../misc/../stdlib/lv_string.h ****  * @param src Pointer to the source of data to be copied.
+  54:Middlewares/LVGL/lvgl/src/misc/../font/../draw/../misc/../stdlib/lv_string.h ****  * @param len Number of bytes to copy
+  55:Middlewares/LVGL/lvgl/src/misc/../font/../draw/../misc/../stdlib/lv_string.h ****  * @return Pointer to the destination array.
+  56:Middlewares/LVGL/lvgl/src/misc/../font/../draw/../misc/../stdlib/lv_string.h ****  */
+  57:Middlewares/LVGL/lvgl/src/misc/../font/../draw/../misc/../stdlib/lv_string.h **** void * lv_memmove(void * dst, const void * src, size_t len);
+  58:Middlewares/LVGL/lvgl/src/misc/../font/../draw/../misc/../stdlib/lv_string.h **** 
+  59:Middlewares/LVGL/lvgl/src/misc/../font/../draw/../misc/../stdlib/lv_string.h **** /**
+  60:Middlewares/LVGL/lvgl/src/misc/../font/../draw/../misc/../stdlib/lv_string.h ****  * @brief This function will compare two memory blocks
+  61:Middlewares/LVGL/lvgl/src/misc/../font/../draw/../misc/../stdlib/lv_string.h ****  * @param p1 Pointer to the first memory block
+  62:Middlewares/LVGL/lvgl/src/misc/../font/../draw/../misc/../stdlib/lv_string.h ****  * @param p2 Pointer to the second memory block
+  63:Middlewares/LVGL/lvgl/src/misc/../font/../draw/../misc/../stdlib/lv_string.h ****  * @param len Number of bytes to compare
+  64:Middlewares/LVGL/lvgl/src/misc/../font/../draw/../misc/../stdlib/lv_string.h ****  * @return The difference between the value of the first unmatching byte.
+  65:Middlewares/LVGL/lvgl/src/misc/../font/../draw/../misc/../stdlib/lv_string.h ****  */
+  66:Middlewares/LVGL/lvgl/src/misc/../font/../draw/../misc/../stdlib/lv_string.h **** int lv_memcmp(const void * p1, const void * p2, size_t len);
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccp11hL6.s 			page 19
+
+
+  67:Middlewares/LVGL/lvgl/src/misc/../font/../draw/../misc/../stdlib/lv_string.h **** 
+  68:Middlewares/LVGL/lvgl/src/misc/../font/../draw/../misc/../stdlib/lv_string.h **** /**
+  69:Middlewares/LVGL/lvgl/src/misc/../font/../draw/../misc/../stdlib/lv_string.h ****  * Same as `memset(dst, 0x00, len)`.
+  70:Middlewares/LVGL/lvgl/src/misc/../font/../draw/../misc/../stdlib/lv_string.h ****  * @param dst pointer to the destination buffer
+  71:Middlewares/LVGL/lvgl/src/misc/../font/../draw/../misc/../stdlib/lv_string.h ****  * @param len number of byte to set
+  72:Middlewares/LVGL/lvgl/src/misc/../font/../draw/../misc/../stdlib/lv_string.h ****  */
+  73:Middlewares/LVGL/lvgl/src/misc/../font/../draw/../misc/../stdlib/lv_string.h **** static inline void lv_memzero(void * dst, size_t len)
+ 189              		.loc 3 73 20 view .LVU54
+ 190              	.LBB38:
+  74:Middlewares/LVGL/lvgl/src/misc/../font/../draw/../misc/../stdlib/lv_string.h **** {
+  75:Middlewares/LVGL/lvgl/src/misc/../font/../draw/../misc/../stdlib/lv_string.h ****     lv_memset(dst, 0x00, len);
+ 191              		.loc 3 75 5 view .LVU55
+ 192 0002 0C22     		movs	r2, #12
+ 193 0004 0021     		movs	r1, #0
+ 194 0006 FFF7FEFF 		bl	lv_memset
+ 195              	.LVL18:
+ 196              		.loc 3 75 5 is_stmt 0 view .LVU56
+ 197              	.LBE38:
+ 198              	.LBE37:
+ 193:Middlewares/LVGL/lvgl/src/misc/lv_style.c **** #if LV_USE_ASSERT_STYLE
+ 194:Middlewares/LVGL/lvgl/src/misc/lv_style.c ****     style->sentinel = LV_STYLE_SENTINEL_VALUE;
+ 195:Middlewares/LVGL/lvgl/src/misc/lv_style.c **** #endif
+ 196:Middlewares/LVGL/lvgl/src/misc/lv_style.c **** }
+ 199              		.loc 1 196 1 view .LVU57
+ 200 000a 08BD     		pop	{r3, pc}
+ 201              		.cfi_endproc
+ 202              	.LFE200:
+ 204              		.section	.text.lv_style_reset,"ax",%progbits
+ 205              		.align	1
+ 206              		.global	lv_style_reset
+ 207              		.syntax unified
+ 208              		.thumb
+ 209              		.thumb_func
+ 211              	lv_style_reset:
+ 212              	.LVL19:
+ 213              	.LFB201:
+ 197:Middlewares/LVGL/lvgl/src/misc/lv_style.c **** 
+ 198:Middlewares/LVGL/lvgl/src/misc/lv_style.c **** void lv_style_reset(lv_style_t * style)
+ 199:Middlewares/LVGL/lvgl/src/misc/lv_style.c **** {
+ 214              		.loc 1 199 1 is_stmt 1 view -0
+ 215              		.cfi_startproc
+ 216              		@ args = 0, pretend = 0, frame = 0
+ 217              		@ frame_needed = 0, uses_anonymous_args = 0
+ 218              		.loc 1 199 1 is_stmt 0 view .LVU59
+ 219 0000 10B5     		push	{r4, lr}
+ 220              	.LCFI2:
+ 221              		.cfi_def_cfa_offset 8
+ 222              		.cfi_offset 4, -8
+ 223              		.cfi_offset 14, -4
+ 224 0002 0446     		mov	r4, r0
+ 200:Middlewares/LVGL/lvgl/src/misc/lv_style.c ****     LV_ASSERT_STYLE(style);
+ 225              		.loc 1 200 5 is_stmt 1 view .LVU60
+ 226              		.loc 1 200 5 view .LVU61
+ 227              		.loc 1 200 5 view .LVU62
+ 201:Middlewares/LVGL/lvgl/src/misc/lv_style.c **** 
+ 202:Middlewares/LVGL/lvgl/src/misc/lv_style.c ****     if(style->prop_cnt != 255) lv_free(style->values_and_props);
+ 228              		.loc 1 202 5 view .LVU63
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccp11hL6.s 			page 20
+
+
+ 229              		.loc 1 202 13 is_stmt 0 view .LVU64
+ 230 0004 037A     		ldrb	r3, [r0, #8]	@ zero_extendqisi2
+ 231              		.loc 1 202 7 view .LVU65
+ 232 0006 FF2B     		cmp	r3, #255
+ 233 0008 05D1     		bne	.L19
+ 234              	.LVL20:
+ 235              	.L17:
+ 203:Middlewares/LVGL/lvgl/src/misc/lv_style.c ****     lv_memzero(style, sizeof(lv_style_t));
+ 236              		.loc 1 203 5 is_stmt 1 view .LVU66
+ 237              	.LBB39:
+ 238              	.LBI39:
+  73:Middlewares/LVGL/lvgl/src/misc/../font/../draw/../misc/../stdlib/lv_string.h **** {
+ 239              		.loc 3 73 20 view .LVU67
+ 240              	.LBB40:
+ 241              		.loc 3 75 5 view .LVU68
+ 242 000a 0C22     		movs	r2, #12
+ 243 000c 0021     		movs	r1, #0
+ 244 000e 2046     		mov	r0, r4
+ 245 0010 FFF7FEFF 		bl	lv_memset
+ 246              	.LVL21:
+ 247              		.loc 3 75 5 is_stmt 0 view .LVU69
+ 248              	.LBE40:
+ 249              	.LBE39:
+ 204:Middlewares/LVGL/lvgl/src/misc/lv_style.c **** #if LV_USE_ASSERT_STYLE
+ 205:Middlewares/LVGL/lvgl/src/misc/lv_style.c ****     style->sentinel = LV_STYLE_SENTINEL_VALUE;
+ 206:Middlewares/LVGL/lvgl/src/misc/lv_style.c **** #endif
+ 207:Middlewares/LVGL/lvgl/src/misc/lv_style.c **** }
+ 250              		.loc 1 207 1 view .LVU70
+ 251 0014 10BD     		pop	{r4, pc}
+ 252              	.LVL22:
+ 253              	.L19:
+ 202:Middlewares/LVGL/lvgl/src/misc/lv_style.c ****     lv_memzero(style, sizeof(lv_style_t));
+ 254              		.loc 1 202 32 is_stmt 1 discriminator 1 view .LVU71
+ 255 0016 0068     		ldr	r0, [r0]
+ 256              	.LVL23:
+ 202:Middlewares/LVGL/lvgl/src/misc/lv_style.c ****     lv_memzero(style, sizeof(lv_style_t));
+ 257              		.loc 1 202 32 is_stmt 0 discriminator 1 view .LVU72
+ 258 0018 FFF7FEFF 		bl	lv_free
+ 259              	.LVL24:
+ 260 001c F5E7     		b	.L17
+ 261              		.cfi_endproc
+ 262              	.LFE201:
+ 264              		.section	.text.lv_style_register_prop,"ax",%progbits
+ 265              		.align	1
+ 266              		.global	lv_style_register_prop
+ 267              		.syntax unified
+ 268              		.thumb
+ 269              		.thumb_func
+ 271              	lv_style_register_prop:
+ 272              	.LVL25:
+ 273              	.LFB204:
+ 208:Middlewares/LVGL/lvgl/src/misc/lv_style.c **** 
+ 209:Middlewares/LVGL/lvgl/src/misc/lv_style.c **** 
+ 210:Middlewares/LVGL/lvgl/src/misc/lv_style.c **** void lv_style_copy(lv_style_t * dst, const lv_style_t * src)
+ 211:Middlewares/LVGL/lvgl/src/misc/lv_style.c **** {
+ 212:Middlewares/LVGL/lvgl/src/misc/lv_style.c ****     if(lv_style_is_const(dst)) {
+ 213:Middlewares/LVGL/lvgl/src/misc/lv_style.c ****         LV_LOG_WARN("The destination can not be a constant style");
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccp11hL6.s 			page 21
+
+
+ 214:Middlewares/LVGL/lvgl/src/misc/lv_style.c ****         return;
+ 215:Middlewares/LVGL/lvgl/src/misc/lv_style.c ****     }
+ 216:Middlewares/LVGL/lvgl/src/misc/lv_style.c **** 
+ 217:Middlewares/LVGL/lvgl/src/misc/lv_style.c ****     lv_style_reset(dst);
+ 218:Middlewares/LVGL/lvgl/src/misc/lv_style.c **** 
+ 219:Middlewares/LVGL/lvgl/src/misc/lv_style.c ****     lv_style_merge(dst, src);
+ 220:Middlewares/LVGL/lvgl/src/misc/lv_style.c **** }
+ 221:Middlewares/LVGL/lvgl/src/misc/lv_style.c **** 
+ 222:Middlewares/LVGL/lvgl/src/misc/lv_style.c **** void lv_style_merge(lv_style_t * dst, const lv_style_t * src)
+ 223:Middlewares/LVGL/lvgl/src/misc/lv_style.c **** {
+ 224:Middlewares/LVGL/lvgl/src/misc/lv_style.c ****     if(lv_style_is_const(dst)) {
+ 225:Middlewares/LVGL/lvgl/src/misc/lv_style.c ****         LV_LOG_WARN("The destination can not be a constant style");
+ 226:Middlewares/LVGL/lvgl/src/misc/lv_style.c ****         return;
+ 227:Middlewares/LVGL/lvgl/src/misc/lv_style.c ****     }
+ 228:Middlewares/LVGL/lvgl/src/misc/lv_style.c **** 
+ 229:Middlewares/LVGL/lvgl/src/misc/lv_style.c ****     /*Source is empty*/
+ 230:Middlewares/LVGL/lvgl/src/misc/lv_style.c ****     if(src->values_and_props == NULL) {
+ 231:Middlewares/LVGL/lvgl/src/misc/lv_style.c ****         LV_LOG_TRACE("Source style is empty");
+ 232:Middlewares/LVGL/lvgl/src/misc/lv_style.c ****         return;
+ 233:Middlewares/LVGL/lvgl/src/misc/lv_style.c ****     }
+ 234:Middlewares/LVGL/lvgl/src/misc/lv_style.c ****     if(src->prop_cnt == 0) {
+ 235:Middlewares/LVGL/lvgl/src/misc/lv_style.c ****         LV_LOG_TRACE("Source style has no properties");
+ 236:Middlewares/LVGL/lvgl/src/misc/lv_style.c ****         return;
+ 237:Middlewares/LVGL/lvgl/src/misc/lv_style.c ****     }
+ 238:Middlewares/LVGL/lvgl/src/misc/lv_style.c **** 
+ 239:Middlewares/LVGL/lvgl/src/misc/lv_style.c ****     /* Merge the styles */
+ 240:Middlewares/LVGL/lvgl/src/misc/lv_style.c ****     int32_t i;
+ 241:Middlewares/LVGL/lvgl/src/misc/lv_style.c ****     if(lv_style_is_const(src)) {
+ 242:Middlewares/LVGL/lvgl/src/misc/lv_style.c ****         lv_style_const_prop_t * props_and_values = (lv_style_const_prop_t *)src->values_and_props;
+ 243:Middlewares/LVGL/lvgl/src/misc/lv_style.c ****         for(i = 0; props_and_values[i].prop != LV_STYLE_PROP_INV; i++) {
+ 244:Middlewares/LVGL/lvgl/src/misc/lv_style.c ****             lv_style_set_prop(dst, props_and_values[i].prop, props_and_values[i].value);
+ 245:Middlewares/LVGL/lvgl/src/misc/lv_style.c ****         }
+ 246:Middlewares/LVGL/lvgl/src/misc/lv_style.c ****     }
+ 247:Middlewares/LVGL/lvgl/src/misc/lv_style.c ****     else {
+ 248:Middlewares/LVGL/lvgl/src/misc/lv_style.c ****         lv_style_prop_t * props = (lv_style_prop_t *)src->values_and_props + src->prop_cnt * sizeof
+ 249:Middlewares/LVGL/lvgl/src/misc/lv_style.c ****         lv_style_value_t * values = (lv_style_value_t *)src->values_and_props;
+ 250:Middlewares/LVGL/lvgl/src/misc/lv_style.c ****         for(i = 0; i < src->prop_cnt; i++) {
+ 251:Middlewares/LVGL/lvgl/src/misc/lv_style.c ****             lv_style_set_prop(dst, props[i], values[i]);
+ 252:Middlewares/LVGL/lvgl/src/misc/lv_style.c ****         }
+ 253:Middlewares/LVGL/lvgl/src/misc/lv_style.c ****     }
+ 254:Middlewares/LVGL/lvgl/src/misc/lv_style.c **** }
+ 255:Middlewares/LVGL/lvgl/src/misc/lv_style.c **** 
+ 256:Middlewares/LVGL/lvgl/src/misc/lv_style.c **** lv_style_prop_t lv_style_register_prop(uint8_t flag)
+ 257:Middlewares/LVGL/lvgl/src/misc/lv_style.c **** {
+ 274              		.loc 1 257 1 is_stmt 1 view -0
+ 275              		.cfi_startproc
+ 276              		@ args = 0, pretend = 0, frame = 0
+ 277              		@ frame_needed = 0, uses_anonymous_args = 0
+ 278              		.loc 1 257 1 is_stmt 0 view .LVU74
+ 279 0000 38B5     		push	{r3, r4, r5, lr}
+ 280              	.LCFI3:
+ 281              		.cfi_def_cfa_offset 16
+ 282              		.cfi_offset 3, -16
+ 283              		.cfi_offset 4, -12
+ 284              		.cfi_offset 5, -8
+ 285              		.cfi_offset 14, -4
+ 286 0002 0546     		mov	r5, r0
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccp11hL6.s 			page 22
+
+
+ 258:Middlewares/LVGL/lvgl/src/misc/lv_style.c ****     if(lv_style_custom_prop_flag_lookup_table == NULL) {
+ 287              		.loc 1 258 5 is_stmt 1 view .LVU75
+ 288              		.loc 1 258 8 is_stmt 0 view .LVU76
+ 289 0004 144B     		ldr	r3, .L31
+ 290 0006 586B     		ldr	r0, [r3, #52]
+ 291              	.LVL26:
+ 292              		.loc 1 258 7 view .LVU77
+ 293 0008 58B1     		cbz	r0, .L30
+ 294              	.L21:
+ 259:Middlewares/LVGL/lvgl/src/misc/lv_style.c ****         lv_style_custom_prop_flag_lookup_table_size = 0;
+ 260:Middlewares/LVGL/lvgl/src/misc/lv_style.c ****         last_custom_prop_id = (uint16_t)LV_STYLE_LAST_BUILT_IN_PROP;
+ 261:Middlewares/LVGL/lvgl/src/misc/lv_style.c ****     }
+ 262:Middlewares/LVGL/lvgl/src/misc/lv_style.c **** 
+ 263:Middlewares/LVGL/lvgl/src/misc/lv_style.c ****     /*
+ 264:Middlewares/LVGL/lvgl/src/misc/lv_style.c ****      * Allocate the lookup table if it's not yet available.
+ 265:Middlewares/LVGL/lvgl/src/misc/lv_style.c ****      */
+ 266:Middlewares/LVGL/lvgl/src/misc/lv_style.c ****     size_t required_size = (last_custom_prop_id + 1 - LV_STYLE_LAST_BUILT_IN_PROP);
+ 295              		.loc 1 266 5 is_stmt 1 view .LVU78
+ 296              		.loc 1 266 29 is_stmt 0 view .LVU79
+ 297 000a 134A     		ldr	r2, .L31
+ 298 000c 136B     		ldr	r3, [r2, #48]
+ 299              		.loc 1 266 12 view .LVU80
+ 300 000e A3F1AF01 		sub	r1, r3, #175
+ 301              	.LVL27:
+ 267:Middlewares/LVGL/lvgl/src/misc/lv_style.c ****     if(lv_style_custom_prop_flag_lookup_table_size < required_size) {
+ 302              		.loc 1 267 5 is_stmt 1 view .LVU81
+ 303              		.loc 1 267 8 is_stmt 0 view .LVU82
+ 304 0012 D26A     		ldr	r2, [r2, #44]
+ 305              		.loc 1 267 7 view .LVU83
+ 306 0014 8A42     		cmp	r2, r1
+ 307 0016 10D2     		bcs	.L22
+ 308              	.LBB41:
+ 268:Middlewares/LVGL/lvgl/src/misc/lv_style.c ****         /* Round required_size up to the nearest 32-byte value */
+ 269:Middlewares/LVGL/lvgl/src/misc/lv_style.c ****         required_size = (required_size + 31) & ~31;
+ 309              		.loc 1 269 9 is_stmt 1 view .LVU84
+ 310              		.loc 1 269 40 is_stmt 0 view .LVU85
+ 311 0018 903B     		subs	r3, r3, #144
+ 312              	.LVL28:
+ 270:Middlewares/LVGL/lvgl/src/misc/lv_style.c ****         LV_ASSERT_MSG(required_size > 0, "required size has become 0?");
+ 313              		.loc 1 270 9 is_stmt 1 view .LVU86
+ 314              		.loc 1 270 9 view .LVU87
+ 315 001a 33F01F04 		bics	r4, r3, #31
+ 316              	.LVL29:
+ 317              		.loc 1 270 9 is_stmt 0 view .LVU88
+ 318 001e 05D1     		bne	.L23
+ 319              	.L24:
+ 320              		.loc 1 270 9 is_stmt 1 view .LVU89
+ 321              		.loc 1 270 9 view .LVU90
+ 322              		.loc 1 270 9 view .LVU91
+ 323              		.loc 1 270 9 view .LVU92
+ 324              		.loc 1 270 9 view .LVU93
+ 325 0020 FEE7     		b	.L24
+ 326              	.LVL30:
+ 327              	.L30:
+ 328              		.loc 1 270 9 is_stmt 0 view .LVU94
+ 329              	.LBE41:
+ 259:Middlewares/LVGL/lvgl/src/misc/lv_style.c ****         last_custom_prop_id = (uint16_t)LV_STYLE_LAST_BUILT_IN_PROP;
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccp11hL6.s 			page 23
+
+
+ 330              		.loc 1 259 9 is_stmt 1 view .LVU95
+ 259:Middlewares/LVGL/lvgl/src/misc/lv_style.c ****         last_custom_prop_id = (uint16_t)LV_STYLE_LAST_BUILT_IN_PROP;
+ 331              		.loc 1 259 53 is_stmt 0 view .LVU96
+ 332 0022 0022     		movs	r2, #0
+ 333 0024 DA62     		str	r2, [r3, #44]
+ 260:Middlewares/LVGL/lvgl/src/misc/lv_style.c ****     }
+ 334              		.loc 1 260 9 is_stmt 1 view .LVU97
+ 260:Middlewares/LVGL/lvgl/src/misc/lv_style.c ****     }
+ 335              		.loc 1 260 29 is_stmt 0 view .LVU98
+ 336 0026 B022     		movs	r2, #176
+ 337 0028 1A63     		str	r2, [r3, #48]
+ 338 002a EEE7     		b	.L21
+ 339              	.LVL31:
+ 340              	.L23:
+ 341              	.LBB42:
+ 342              		.loc 1 270 9 is_stmt 1 view .LVU99
+ 271:Middlewares/LVGL/lvgl/src/misc/lv_style.c ****         uint8_t * old_p = lv_style_custom_prop_flag_lookup_table;
+ 343              		.loc 1 271 9 view .LVU100
+ 272:Middlewares/LVGL/lvgl/src/misc/lv_style.c ****         uint8_t * new_p = lv_realloc(old_p, required_size * sizeof(uint8_t));
+ 344              		.loc 1 272 9 view .LVU101
+ 345              		.loc 1 272 27 is_stmt 0 view .LVU102
+ 346 002c 2146     		mov	r1, r4
+ 347 002e FFF7FEFF 		bl	lv_realloc
+ 348              	.LVL32:
+ 273:Middlewares/LVGL/lvgl/src/misc/lv_style.c ****         if(new_p == NULL) {
+ 349              		.loc 1 273 9 is_stmt 1 view .LVU103
+ 350              		.loc 1 273 11 is_stmt 0 view .LVU104
+ 351 0032 78B1     		cbz	r0, .L28
+ 274:Middlewares/LVGL/lvgl/src/misc/lv_style.c ****             LV_LOG_ERROR("Unable to allocate space for custom property lookup table");
+ 275:Middlewares/LVGL/lvgl/src/misc/lv_style.c ****             return LV_STYLE_PROP_INV;
+ 276:Middlewares/LVGL/lvgl/src/misc/lv_style.c ****         }
+ 277:Middlewares/LVGL/lvgl/src/misc/lv_style.c ****         lv_style_custom_prop_flag_lookup_table = new_p;
+ 352              		.loc 1 277 9 is_stmt 1 view .LVU105
+ 353              		.loc 1 277 48 is_stmt 0 view .LVU106
+ 354 0034 084B     		ldr	r3, .L31
+ 355 0036 5863     		str	r0, [r3, #52]
+ 278:Middlewares/LVGL/lvgl/src/misc/lv_style.c ****         lv_style_custom_prop_flag_lookup_table_size = required_size;
+ 356              		.loc 1 278 9 is_stmt 1 view .LVU107
+ 357              		.loc 1 278 53 is_stmt 0 view .LVU108
+ 358 0038 DC62     		str	r4, [r3, #44]
+ 359              	.LVL33:
+ 360              	.L22:
+ 361              		.loc 1 278 53 view .LVU109
+ 362              	.LBE42:
+ 279:Middlewares/LVGL/lvgl/src/misc/lv_style.c ****     }
+ 280:Middlewares/LVGL/lvgl/src/misc/lv_style.c ****     last_custom_prop_id++;
+ 363              		.loc 1 280 5 is_stmt 1 view .LVU110
+ 364 003a 074A     		ldr	r2, .L31
+ 365 003c 136B     		ldr	r3, [r2, #48]
+ 366              		.loc 1 280 24 is_stmt 0 view .LVU111
+ 367 003e 591C     		adds	r1, r3, #1
+ 368 0040 1163     		str	r1, [r2, #48]
+ 281:Middlewares/LVGL/lvgl/src/misc/lv_style.c ****     /* This should never happen - we should bail out above */
+ 282:Middlewares/LVGL/lvgl/src/misc/lv_style.c ****     LV_ASSERT_NULL(lv_style_custom_prop_flag_lookup_table);
+ 369              		.loc 1 282 5 is_stmt 1 view .LVU112
+ 370              		.loc 1 282 5 view .LVU113
+ 371 0042 526B     		ldr	r2, [r2, #52]
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccp11hL6.s 			page 24
+
+
+ 372 0044 2AB1     		cbz	r2, .L27
+ 373              		.loc 1 282 5 view .LVU114
+ 374              		.loc 1 282 59 view .LVU115
+ 283:Middlewares/LVGL/lvgl/src/misc/lv_style.c ****     lv_style_custom_prop_flag_lookup_table[last_custom_prop_id - LV_STYLE_NUM_BUILT_IN_PROPS] = fla
+ 375              		.loc 1 283 5 view .LVU116
+ 376              		.loc 1 283 43 is_stmt 0 view .LVU117
+ 377 0046 B03B     		subs	r3, r3, #176
+ 378              		.loc 1 283 95 view .LVU118
+ 379 0048 D554     		strb	r5, [r2, r3]
+ 284:Middlewares/LVGL/lvgl/src/misc/lv_style.c ****     return last_custom_prop_id;
+ 380              		.loc 1 284 5 is_stmt 1 view .LVU119
+ 381              		.loc 1 284 12 is_stmt 0 view .LVU120
+ 382 004a 034B     		ldr	r3, .L31
+ 383 004c 93F83000 		ldrb	r0, [r3, #48]	@ zero_extendqisi2
+ 384              	.L25:
+ 285:Middlewares/LVGL/lvgl/src/misc/lv_style.c **** }
+ 385              		.loc 1 285 1 view .LVU121
+ 386 0050 38BD     		pop	{r3, r4, r5, pc}
+ 387              	.LVL34:
+ 388              	.L27:
+ 282:Middlewares/LVGL/lvgl/src/misc/lv_style.c ****     lv_style_custom_prop_flag_lookup_table[last_custom_prop_id - LV_STYLE_NUM_BUILT_IN_PROPS] = fla
+ 389              		.loc 1 282 5 is_stmt 1 view .LVU122
+ 282:Middlewares/LVGL/lvgl/src/misc/lv_style.c ****     lv_style_custom_prop_flag_lookup_table[last_custom_prop_id - LV_STYLE_NUM_BUILT_IN_PROPS] = fla
+ 390              		.loc 1 282 5 view .LVU123
+ 282:Middlewares/LVGL/lvgl/src/misc/lv_style.c ****     lv_style_custom_prop_flag_lookup_table[last_custom_prop_id - LV_STYLE_NUM_BUILT_IN_PROPS] = fla
+ 391              		.loc 1 282 5 view .LVU124
+ 282:Middlewares/LVGL/lvgl/src/misc/lv_style.c ****     lv_style_custom_prop_flag_lookup_table[last_custom_prop_id - LV_STYLE_NUM_BUILT_IN_PROPS] = fla
+ 392              		.loc 1 282 5 view .LVU125
+ 282:Middlewares/LVGL/lvgl/src/misc/lv_style.c ****     lv_style_custom_prop_flag_lookup_table[last_custom_prop_id - LV_STYLE_NUM_BUILT_IN_PROPS] = fla
+ 393              		.loc 1 282 5 view .LVU126
+ 394 0052 FEE7     		b	.L27
+ 395              	.LVL35:
+ 396              	.L28:
+ 397              	.LBB43:
+ 275:Middlewares/LVGL/lvgl/src/misc/lv_style.c ****         }
+ 398              		.loc 1 275 20 is_stmt 0 view .LVU127
+ 399 0054 0020     		movs	r0, #0
+ 400              	.LVL36:
+ 275:Middlewares/LVGL/lvgl/src/misc/lv_style.c ****         }
+ 401              		.loc 1 275 20 view .LVU128
+ 402 0056 FBE7     		b	.L25
+ 403              	.L32:
+ 404              		.align	2
+ 405              	.L31:
+ 406 0058 00000000 		.word	lv_global
+ 407              	.LBE43:
+ 408              		.cfi_endproc
+ 409              	.LFE204:
+ 411              		.section	.text.lv_style_get_num_custom_props,"ax",%progbits
+ 412              		.align	1
+ 413              		.global	lv_style_get_num_custom_props
+ 414              		.syntax unified
+ 415              		.thumb
+ 416              		.thumb_func
+ 418              	lv_style_get_num_custom_props:
+ 419              	.LFB205:
+ 286:Middlewares/LVGL/lvgl/src/misc/lv_style.c **** 
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccp11hL6.s 			page 25
+
+
+ 287:Middlewares/LVGL/lvgl/src/misc/lv_style.c **** lv_style_prop_t lv_style_get_num_custom_props(void)
+ 288:Middlewares/LVGL/lvgl/src/misc/lv_style.c **** {
+ 420              		.loc 1 288 1 is_stmt 1 view -0
+ 421              		.cfi_startproc
+ 422              		@ args = 0, pretend = 0, frame = 0
+ 423              		@ frame_needed = 0, uses_anonymous_args = 0
+ 424              		@ link register save eliminated.
+ 289:Middlewares/LVGL/lvgl/src/misc/lv_style.c ****     return last_custom_prop_id - LV_STYLE_LAST_BUILT_IN_PROP;
+ 425              		.loc 1 289 5 view .LVU130
+ 426              		.loc 1 289 12 is_stmt 0 view .LVU131
+ 427 0000 024B     		ldr	r3, .L34
+ 428 0002 186B     		ldr	r0, [r3, #48]
+ 429              		.loc 1 289 32 view .LVU132
+ 430 0004 5030     		adds	r0, r0, #80
+ 290:Middlewares/LVGL/lvgl/src/misc/lv_style.c **** }
+ 431              		.loc 1 290 1 view .LVU133
+ 432 0006 C0B2     		uxtb	r0, r0
+ 433 0008 7047     		bx	lr
+ 434              	.L35:
+ 435 000a 00BF     		.align	2
+ 436              	.L34:
+ 437 000c 00000000 		.word	lv_global
+ 438              		.cfi_endproc
+ 439              	.LFE205:
+ 441              		.section	.text.lv_style_remove_prop,"ax",%progbits
+ 442              		.align	1
+ 443              		.global	lv_style_remove_prop
+ 444              		.syntax unified
+ 445              		.thumb
+ 446              		.thumb_func
+ 448              	lv_style_remove_prop:
+ 449              	.LVL37:
+ 450              	.LFB206:
+ 291:Middlewares/LVGL/lvgl/src/misc/lv_style.c **** 
+ 292:Middlewares/LVGL/lvgl/src/misc/lv_style.c **** bool lv_style_remove_prop(lv_style_t * style, lv_style_prop_t prop)
+ 293:Middlewares/LVGL/lvgl/src/misc/lv_style.c **** {
+ 451              		.loc 1 293 1 is_stmt 1 view -0
+ 452              		.cfi_startproc
+ 453              		@ args = 0, pretend = 0, frame = 0
+ 454              		@ frame_needed = 0, uses_anonymous_args = 0
+ 455              		.loc 1 293 1 is_stmt 0 view .LVU135
+ 456 0000 2DE9F041 		push	{r4, r5, r6, r7, r8, lr}
+ 457              	.LCFI4:
+ 458              		.cfi_def_cfa_offset 24
+ 459              		.cfi_offset 4, -24
+ 460              		.cfi_offset 5, -20
+ 461              		.cfi_offset 6, -16
+ 462              		.cfi_offset 7, -12
+ 463              		.cfi_offset 8, -8
+ 464              		.cfi_offset 14, -4
+ 465 0004 0746     		mov	r7, r0
+ 294:Middlewares/LVGL/lvgl/src/misc/lv_style.c ****     LV_ASSERT_STYLE(style);
+ 466              		.loc 1 294 5 is_stmt 1 view .LVU136
+ 467              		.loc 1 294 5 view .LVU137
+ 468              		.loc 1 294 5 view .LVU138
+ 295:Middlewares/LVGL/lvgl/src/misc/lv_style.c **** 
+ 296:Middlewares/LVGL/lvgl/src/misc/lv_style.c ****     if(lv_style_is_const(style)) {
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccp11hL6.s 			page 26
+
+
+ 469              		.loc 1 296 5 view .LVU139
+ 470              	.LVL38:
+ 471              	.LBB44:
+ 472              	.LBI44:
+ 434:Middlewares/LVGL/lvgl/src/misc/lv_style.h **** {
+ 473              		.loc 2 434 20 view .LVU140
+ 474              	.LBB45:
+ 436:Middlewares/LVGL/lvgl/src/misc/lv_style.h ****     return false;
+ 475              		.loc 2 436 5 view .LVU141
+ 436:Middlewares/LVGL/lvgl/src/misc/lv_style.h ****     return false;
+ 476              		.loc 2 436 13 is_stmt 0 view .LVU142
+ 477 0006 007A     		ldrb	r0, [r0, #8]	@ zero_extendqisi2
+ 478              	.LVL39:
+ 436:Middlewares/LVGL/lvgl/src/misc/lv_style.h ****     return false;
+ 479              		.loc 2 436 7 view .LVU143
+ 480 0008 FF28     		cmp	r0, #255
+ 481 000a 36D0     		beq	.L44
+ 482 000c 0D46     		mov	r5, r1
+ 483              	.LVL40:
+ 436:Middlewares/LVGL/lvgl/src/misc/lv_style.h ****     return false;
+ 484              		.loc 2 436 7 view .LVU144
+ 485              	.LBE45:
+ 486              	.LBE44:
+ 297:Middlewares/LVGL/lvgl/src/misc/lv_style.c ****         LV_LOG_ERROR("Cannot remove prop from const style");
+ 298:Middlewares/LVGL/lvgl/src/misc/lv_style.c ****         return false;
+ 299:Middlewares/LVGL/lvgl/src/misc/lv_style.c ****     }
+ 300:Middlewares/LVGL/lvgl/src/misc/lv_style.c **** 
+ 301:Middlewares/LVGL/lvgl/src/misc/lv_style.c ****     if(style->prop_cnt == 0)  return false;
+ 487              		.loc 1 301 5 is_stmt 1 view .LVU145
+ 488              		.loc 1 301 7 is_stmt 0 view .LVU146
+ 489 000e B0B3     		cbz	r0, .L45
+ 302:Middlewares/LVGL/lvgl/src/misc/lv_style.c **** 
+ 303:Middlewares/LVGL/lvgl/src/misc/lv_style.c ****     LV_PROFILER_STYLE_BEGIN;
+ 490              		.loc 1 303 28 is_stmt 1 view .LVU147
+ 304:Middlewares/LVGL/lvgl/src/misc/lv_style.c **** 
+ 305:Middlewares/LVGL/lvgl/src/misc/lv_style.c ****     uint8_t * tmp = (lv_style_prop_t *)style->values_and_props + style->prop_cnt * sizeof(lv_style_
+ 491              		.loc 1 305 5 view .LVU148
+ 492              		.loc 1 305 45 is_stmt 0 view .LVU149
+ 493 0010 D7F80080 		ldr	r8, [r7]
+ 494              		.loc 1 305 15 view .LVU150
+ 495 0014 08EB8006 		add	r6, r8, r0, lsl #2
+ 496              	.LVL41:
+ 306:Middlewares/LVGL/lvgl/src/misc/lv_style.c ****     uint8_t * old_props = (uint8_t *)tmp;
+ 497              		.loc 1 306 5 is_stmt 1 view .LVU151
+ 307:Middlewares/LVGL/lvgl/src/misc/lv_style.c ****     uint32_t i;
+ 498              		.loc 1 307 5 view .LVU152
+ 308:Middlewares/LVGL/lvgl/src/misc/lv_style.c ****     for(i = 0; i < style->prop_cnt; i++) {
+ 499              		.loc 1 308 5 view .LVU153
+ 500              		.loc 1 308 11 is_stmt 0 view .LVU154
+ 501 0018 0023     		movs	r3, #0
+ 502              	.LVL42:
+ 503              	.L38:
+ 504              		.loc 1 308 18 is_stmt 1 discriminator 1 view .LVU155
+ 505 001a 9842     		cmp	r0, r3
+ 506 001c 2BD9     		bls	.L48
+ 309:Middlewares/LVGL/lvgl/src/misc/lv_style.c ****         if(old_props[i] == prop) {
+ 507              		.loc 1 309 9 view .LVU156
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccp11hL6.s 			page 27
+
+
+ 508              		.loc 1 309 21 is_stmt 0 view .LVU157
+ 509 001e F25C     		ldrb	r2, [r6, r3]	@ zero_extendqisi2
+ 510              		.loc 1 309 11 view .LVU158
+ 511 0020 AA42     		cmp	r2, r5
+ 512 0022 01D0     		beq	.L49
+ 308:Middlewares/LVGL/lvgl/src/misc/lv_style.c ****     for(i = 0; i < style->prop_cnt; i++) {
+ 513              		.loc 1 308 38 is_stmt 1 discriminator 2 view .LVU159
+ 514 0024 0133     		adds	r3, r3, #1
+ 515              	.LVL43:
+ 308:Middlewares/LVGL/lvgl/src/misc/lv_style.c ****     for(i = 0; i < style->prop_cnt; i++) {
+ 516              		.loc 1 308 38 is_stmt 0 discriminator 2 view .LVU160
+ 517 0026 F8E7     		b	.L38
+ 518              	.LVL44:
+ 519              	.L49:
+ 520              	.LBB46:
+ 310:Middlewares/LVGL/lvgl/src/misc/lv_style.c ****             lv_style_value_t * old_values = (lv_style_value_t *)style->values_and_props;
+ 521              		.loc 1 310 13 is_stmt 1 view .LVU161
+ 311:Middlewares/LVGL/lvgl/src/misc/lv_style.c **** 
+ 312:Middlewares/LVGL/lvgl/src/misc/lv_style.c ****             size_t size = (style->prop_cnt - 1) * (sizeof(lv_style_value_t) + sizeof(lv_style_prop_
+ 522              		.loc 1 312 13 view .LVU162
+ 523              		.loc 1 312 44 is_stmt 0 view .LVU163
+ 524 0028 0138     		subs	r0, r0, #1
+ 525              	.LVL45:
+ 313:Middlewares/LVGL/lvgl/src/misc/lv_style.c ****             uint8_t * new_values_and_props = lv_malloc(size);
+ 526              		.loc 1 313 13 is_stmt 1 view .LVU164
+ 527              		.loc 1 313 46 is_stmt 0 view .LVU165
+ 528 002a 00EB8000 		add	r0, r0, r0, lsl #2
+ 529              	.LVL46:
+ 530              		.loc 1 313 46 view .LVU166
+ 531 002e FFF7FEFF 		bl	lv_malloc
+ 532              	.LVL47:
+ 314:Middlewares/LVGL/lvgl/src/misc/lv_style.c ****             if(new_values_and_props == NULL) {
+ 533              		.loc 1 314 13 is_stmt 1 view .LVU167
+ 534              		.loc 1 314 15 is_stmt 0 view .LVU168
+ 535 0032 0446     		mov	r4, r0
+ 536 0034 30B3     		cbz	r0, .L46
+ 315:Middlewares/LVGL/lvgl/src/misc/lv_style.c ****                 LV_PROFILER_STYLE_END;
+ 316:Middlewares/LVGL/lvgl/src/misc/lv_style.c ****                 return false;
+ 317:Middlewares/LVGL/lvgl/src/misc/lv_style.c ****             }
+ 318:Middlewares/LVGL/lvgl/src/misc/lv_style.c **** 
+ 319:Middlewares/LVGL/lvgl/src/misc/lv_style.c ****             style->values_and_props = new_values_and_props;
+ 537              		.loc 1 319 13 is_stmt 1 view .LVU169
+ 538              		.loc 1 319 37 is_stmt 0 view .LVU170
+ 539 0036 3860     		str	r0, [r7]
+ 320:Middlewares/LVGL/lvgl/src/misc/lv_style.c ****             style->prop_cnt--;
+ 540              		.loc 1 320 13 is_stmt 1 view .LVU171
+ 541              		.loc 1 320 18 is_stmt 0 view .LVU172
+ 542 0038 387A     		ldrb	r0, [r7, #8]	@ zero_extendqisi2
+ 543              	.LVL48:
+ 544              		.loc 1 320 28 view .LVU173
+ 545 003a 0138     		subs	r0, r0, #1
+ 546 003c C0B2     		uxtb	r0, r0
+ 547 003e 3872     		strb	r0, [r7, #8]
+ 321:Middlewares/LVGL/lvgl/src/misc/lv_style.c **** 
+ 322:Middlewares/LVGL/lvgl/src/misc/lv_style.c ****             tmp = new_values_and_props + style->prop_cnt * sizeof(lv_style_value_t);
+ 548              		.loc 1 322 13 is_stmt 1 view .LVU174
+ 549              		.loc 1 322 58 is_stmt 0 view .LVU175
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccp11hL6.s 			page 28
+
+
+ 550 0040 8000     		lsls	r0, r0, #2
+ 551              	.LVL49:
+ 323:Middlewares/LVGL/lvgl/src/misc/lv_style.c ****             uint8_t * new_props = (uint8_t *)tmp;
+ 552              		.loc 1 323 13 is_stmt 1 view .LVU176
+ 324:Middlewares/LVGL/lvgl/src/misc/lv_style.c ****             lv_style_value_t * new_values = (lv_style_value_t *)new_values_and_props;
+ 553              		.loc 1 324 13 view .LVU177
+ 325:Middlewares/LVGL/lvgl/src/misc/lv_style.c **** 
+ 326:Middlewares/LVGL/lvgl/src/misc/lv_style.c ****             uint32_t j;
+ 554              		.loc 1 326 13 view .LVU178
+ 327:Middlewares/LVGL/lvgl/src/misc/lv_style.c ****             for(i = j = 0; j <= style->prop_cnt;
+ 555              		.loc 1 327 13 view .LVU179
+ 556              		.loc 1 327 23 is_stmt 0 view .LVU180
+ 557 0042 0023     		movs	r3, #0
+ 558              		.loc 1 327 19 view .LVU181
+ 559 0044 1A46     		mov	r2, r3
+ 560              		.loc 1 327 13 view .LVU182
+ 561 0046 00E0     		b	.L40
+ 562              	.LVL50:
+ 563              	.L41:
+ 328:Middlewares/LVGL/lvgl/src/misc/lv_style.c ****                 j++) { /*<=: because prop_cnt already reduced but all the old props. needs to be ch
+ 564              		.loc 1 328 18 is_stmt 1 view .LVU183
+ 565 0048 0133     		adds	r3, r3, #1
+ 566              	.LVL51:
+ 567              	.L40:
+ 327:Middlewares/LVGL/lvgl/src/misc/lv_style.c ****             for(i = j = 0; j <= style->prop_cnt;
+ 568              		.loc 1 327 30 discriminator 1 view .LVU184
+ 327:Middlewares/LVGL/lvgl/src/misc/lv_style.c ****             for(i = j = 0; j <= style->prop_cnt;
+ 569              		.loc 1 327 38 is_stmt 0 discriminator 1 view .LVU185
+ 570 004a 397A     		ldrb	r1, [r7, #8]	@ zero_extendqisi2
+ 327:Middlewares/LVGL/lvgl/src/misc/lv_style.c ****             for(i = j = 0; j <= style->prop_cnt;
+ 571              		.loc 1 327 30 discriminator 1 view .LVU186
+ 572 004c 9942     		cmp	r1, r3
+ 573 004e 0DD3     		bcc	.L50
+ 329:Middlewares/LVGL/lvgl/src/misc/lv_style.c ****                 if(old_props[j] != prop) {
+ 574              		.loc 1 329 17 is_stmt 1 view .LVU187
+ 575              		.loc 1 329 29 is_stmt 0 view .LVU188
+ 576 0050 F15C     		ldrb	r1, [r6, r3]	@ zero_extendqisi2
+ 577              		.loc 1 329 19 view .LVU189
+ 578 0052 A942     		cmp	r1, r5
+ 579 0054 F8D0     		beq	.L41
+ 330:Middlewares/LVGL/lvgl/src/misc/lv_style.c ****                     new_values[i] = old_values[j];
+ 580              		.loc 1 330 21 is_stmt 1 view .LVU190
+ 581              		.loc 1 330 35 is_stmt 0 view .LVU191
+ 582 0056 58F82310 		ldr	r1, [r8, r3, lsl #2]
+ 583 005a 44F82210 		str	r1, [r4, r2, lsl #2]
+ 331:Middlewares/LVGL/lvgl/src/misc/lv_style.c ****                     new_props[i++] = old_props[j];
+ 584              		.loc 1 331 21 is_stmt 1 view .LVU192
+ 585              	.LVL52:
+ 586              		.loc 1 331 30 is_stmt 0 view .LVU193
+ 587 005e 8118     		adds	r1, r0, r2
+ 588              		.loc 1 331 47 view .LVU194
+ 589 0060 16F803C0 		ldrb	ip, [r6, r3]	@ zero_extendqisi2
+ 590              		.loc 1 331 36 view .LVU195
+ 591 0064 04F801C0 		strb	ip, [r4, r1]
+ 592              		.loc 1 331 32 view .LVU196
+ 593 0068 0132     		adds	r2, r2, #1
+ 594              	.LVL53:
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccp11hL6.s 			page 29
+
+
+ 595              		.loc 1 331 32 view .LVU197
+ 596 006a EDE7     		b	.L41
+ 597              	.L50:
+ 332:Middlewares/LVGL/lvgl/src/misc/lv_style.c ****                 }
+ 333:Middlewares/LVGL/lvgl/src/misc/lv_style.c ****             }
+ 334:Middlewares/LVGL/lvgl/src/misc/lv_style.c **** 
+ 335:Middlewares/LVGL/lvgl/src/misc/lv_style.c ****             lv_free(old_values);
+ 598              		.loc 1 335 13 is_stmt 1 view .LVU198
+ 599 006c 4046     		mov	r0, r8
+ 600              	.LVL54:
+ 601              		.loc 1 335 13 is_stmt 0 view .LVU199
+ 602 006e FFF7FEFF 		bl	lv_free
+ 603              	.LVL55:
+ 336:Middlewares/LVGL/lvgl/src/misc/lv_style.c ****             LV_PROFILER_STYLE_END;
+ 604              		.loc 1 336 34 is_stmt 1 view .LVU200
+ 337:Middlewares/LVGL/lvgl/src/misc/lv_style.c ****             return true;
+ 605              		.loc 1 337 13 view .LVU201
+ 606              		.loc 1 337 20 is_stmt 0 view .LVU202
+ 607 0072 0120     		movs	r0, #1
+ 608 0074 04E0     		b	.L37
+ 609              	.LVL56:
+ 610              	.L48:
+ 611              		.loc 1 337 20 view .LVU203
+ 612              	.LBE46:
+ 338:Middlewares/LVGL/lvgl/src/misc/lv_style.c ****         }
+ 339:Middlewares/LVGL/lvgl/src/misc/lv_style.c ****     }
+ 340:Middlewares/LVGL/lvgl/src/misc/lv_style.c **** 
+ 341:Middlewares/LVGL/lvgl/src/misc/lv_style.c ****     LV_PROFILER_STYLE_END;
+ 342:Middlewares/LVGL/lvgl/src/misc/lv_style.c ****     return false;
+ 613              		.loc 1 342 12 view .LVU204
+ 614 0076 0020     		movs	r0, #0
+ 615 0078 02E0     		b	.L37
+ 616              	.LVL57:
+ 617              	.L44:
+ 298:Middlewares/LVGL/lvgl/src/misc/lv_style.c ****     }
+ 618              		.loc 1 298 16 view .LVU205
+ 619 007a 0020     		movs	r0, #0
+ 620 007c 00E0     		b	.L37
+ 621              	.LVL58:
+ 622              	.L45:
+ 301:Middlewares/LVGL/lvgl/src/misc/lv_style.c **** 
+ 623              		.loc 1 301 38 discriminator 1 view .LVU206
+ 624 007e 0020     		movs	r0, #0
+ 625              	.LVL59:
+ 626              	.L37:
+ 343:Middlewares/LVGL/lvgl/src/misc/lv_style.c **** }
+ 627              		.loc 1 343 1 view .LVU207
+ 628 0080 BDE8F081 		pop	{r4, r5, r6, r7, r8, pc}
+ 629              	.LVL60:
+ 630              	.L46:
+ 631              	.LBB47:
+ 316:Middlewares/LVGL/lvgl/src/misc/lv_style.c ****             }
+ 632              		.loc 1 316 24 view .LVU208
+ 633 0084 0020     		movs	r0, #0
+ 634              	.LVL61:
+ 316:Middlewares/LVGL/lvgl/src/misc/lv_style.c ****             }
+ 635              		.loc 1 316 24 view .LVU209
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccp11hL6.s 			page 30
+
+
+ 636 0086 FBE7     		b	.L37
+ 637              	.LBE47:
+ 638              		.cfi_endproc
+ 639              	.LFE206:
+ 641              		.section	.text.lv_style_set_prop,"ax",%progbits
+ 642              		.align	1
+ 643              		.global	lv_style_set_prop
+ 644              		.syntax unified
+ 645              		.thumb
+ 646              		.thumb_func
+ 648              	lv_style_set_prop:
+ 649              	.LVL62:
+ 650              	.LFB207:
+ 344:Middlewares/LVGL/lvgl/src/misc/lv_style.c **** 
+ 345:Middlewares/LVGL/lvgl/src/misc/lv_style.c **** void lv_style_set_prop(lv_style_t * style, lv_style_prop_t prop, lv_style_value_t value)
+ 346:Middlewares/LVGL/lvgl/src/misc/lv_style.c **** {
+ 651              		.loc 1 346 1 is_stmt 1 view -0
+ 652              		.cfi_startproc
+ 653              		@ args = 0, pretend = 0, frame = 8
+ 654              		@ frame_needed = 0, uses_anonymous_args = 0
+ 655              		.loc 1 346 1 is_stmt 0 view .LVU211
+ 656 0000 30B5     		push	{r4, r5, lr}
+ 657              	.LCFI5:
+ 658              		.cfi_def_cfa_offset 12
+ 659              		.cfi_offset 4, -12
+ 660              		.cfi_offset 5, -8
+ 661              		.cfi_offset 14, -4
+ 662 0002 83B0     		sub	sp, sp, #12
+ 663              	.LCFI6:
+ 664              		.cfi_def_cfa_offset 24
+ 665 0004 0C46     		mov	r4, r1
+ 666 0006 0192     		str	r2, [sp, #4]
+ 347:Middlewares/LVGL/lvgl/src/misc/lv_style.c ****     LV_ASSERT_STYLE(style);
+ 667              		.loc 1 347 5 is_stmt 1 view .LVU212
+ 668              		.loc 1 347 5 view .LVU213
+ 669              		.loc 1 347 5 view .LVU214
+ 348:Middlewares/LVGL/lvgl/src/misc/lv_style.c **** 
+ 349:Middlewares/LVGL/lvgl/src/misc/lv_style.c ****     if(lv_style_is_const(style)) {
+ 670              		.loc 1 349 5 view .LVU215
+ 671              	.LVL63:
+ 672              	.LBB48:
+ 673              	.LBI48:
+ 434:Middlewares/LVGL/lvgl/src/misc/lv_style.h **** {
+ 674              		.loc 2 434 20 view .LVU216
+ 675              	.LBB49:
+ 436:Middlewares/LVGL/lvgl/src/misc/lv_style.h ****     return false;
+ 676              		.loc 2 436 5 view .LVU217
+ 436:Middlewares/LVGL/lvgl/src/misc/lv_style.h ****     return false;
+ 677              		.loc 2 436 13 is_stmt 0 view .LVU218
+ 678 0008 017A     		ldrb	r1, [r0, #8]	@ zero_extendqisi2
+ 679              	.LVL64:
+ 436:Middlewares/LVGL/lvgl/src/misc/lv_style.h ****     return false;
+ 680              		.loc 2 436 7 view .LVU219
+ 681 000a FF29     		cmp	r1, #255
+ 682 000c 3FD0     		beq	.L51
+ 683 000e 0546     		mov	r5, r0
+ 684              	.LVL65:
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccp11hL6.s 			page 31
+
+
+ 436:Middlewares/LVGL/lvgl/src/misc/lv_style.h ****     return false;
+ 685              		.loc 2 436 7 view .LVU220
+ 686              	.LBE49:
+ 687              	.LBE48:
+ 350:Middlewares/LVGL/lvgl/src/misc/lv_style.c ****         LV_LOG_ERROR("Cannot set property of constant style");
+ 351:Middlewares/LVGL/lvgl/src/misc/lv_style.c ****         return;
+ 352:Middlewares/LVGL/lvgl/src/misc/lv_style.c ****     }
+ 353:Middlewares/LVGL/lvgl/src/misc/lv_style.c **** 
+ 354:Middlewares/LVGL/lvgl/src/misc/lv_style.c ****     LV_ASSERT(prop != LV_STYLE_PROP_INV);
+ 688              		.loc 1 354 5 is_stmt 1 view .LVU221
+ 689              		.loc 1 354 5 view .LVU222
+ 690 0010 04B9     		cbnz	r4, .L53
+ 691              	.L54:
+ 692              		.loc 1 354 5 view .LVU223
+ 693              		.loc 1 354 5 view .LVU224
+ 694              		.loc 1 354 5 view .LVU225
+ 695              		.loc 1 354 5 view .LVU226
+ 696              		.loc 1 354 5 view .LVU227
+ 697 0012 FEE7     		b	.L54
+ 698              	.L53:
+ 699              		.loc 1 354 5 view .LVU228
+ 355:Middlewares/LVGL/lvgl/src/misc/lv_style.c ****     LV_PROFILER_STYLE_BEGIN;
+ 700              		.loc 1 355 28 view .LVU229
+ 356:Middlewares/LVGL/lvgl/src/misc/lv_style.c ****     lv_style_prop_t * props;
+ 701              		.loc 1 356 5 view .LVU230
+ 357:Middlewares/LVGL/lvgl/src/misc/lv_style.c ****     int32_t i;
+ 702              		.loc 1 357 5 view .LVU231
+ 358:Middlewares/LVGL/lvgl/src/misc/lv_style.c **** 
+ 359:Middlewares/LVGL/lvgl/src/misc/lv_style.c ****     if(style->values_and_props) {
+ 703              		.loc 1 359 5 view .LVU232
+ 704              		.loc 1 359 13 is_stmt 0 view .LVU233
+ 705 0014 0068     		ldr	r0, [r0]
+ 706              	.LVL66:
+ 707              		.loc 1 359 7 view .LVU234
+ 708 0016 78B1     		cbz	r0, .L55
+ 360:Middlewares/LVGL/lvgl/src/misc/lv_style.c ****         props = (lv_style_prop_t *)style->values_and_props + style->prop_cnt * sizeof(lv_style_valu
+ 709              		.loc 1 360 9 is_stmt 1 view .LVU235
+ 710              		.loc 1 360 78 is_stmt 0 view .LVU236
+ 711 0018 4FEA810C 		lsl	ip, r1, #2
+ 712              	.LVL67:
+ 361:Middlewares/LVGL/lvgl/src/misc/lv_style.c ****         for(i = style->prop_cnt - 1; i >= 0; i--) {
+ 713              		.loc 1 361 9 is_stmt 1 view .LVU237
+ 714              		.loc 1 361 15 is_stmt 0 view .LVU238
+ 715 001c 4B1E     		subs	r3, r1, #1
+ 716              	.LVL68:
+ 717              	.L56:
+ 718              		.loc 1 361 40 is_stmt 1 discriminator 1 view .LVU239
+ 719 001e 002B     		cmp	r3, #0
+ 720 0020 0ADB     		blt	.L55
+ 362:Middlewares/LVGL/lvgl/src/misc/lv_style.c ****             if(props[i] == prop) {
+ 721              		.loc 1 362 13 view .LVU240
+ 722              		.loc 1 362 21 is_stmt 0 view .LVU241
+ 723 0022 00EB0C02 		add	r2, r0, ip
+ 724 0026 D25C     		ldrb	r2, [r2, r3]	@ zero_extendqisi2
+ 725              		.loc 1 362 15 view .LVU242
+ 726 0028 A242     		cmp	r2, r4
+ 727 002a 01D0     		beq	.L64
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccp11hL6.s 			page 32
+
+
+ 361:Middlewares/LVGL/lvgl/src/misc/lv_style.c ****         for(i = style->prop_cnt - 1; i >= 0; i--) {
+ 728              		.loc 1 361 47 is_stmt 1 discriminator 2 view .LVU243
+ 729 002c 013B     		subs	r3, r3, #1
+ 730              	.LVL69:
+ 361:Middlewares/LVGL/lvgl/src/misc/lv_style.c ****         for(i = style->prop_cnt - 1; i >= 0; i--) {
+ 731              		.loc 1 361 47 is_stmt 0 discriminator 2 view .LVU244
+ 732 002e F6E7     		b	.L56
+ 733              	.LVL70:
+ 734              	.L64:
+ 735              	.LBB50:
+ 363:Middlewares/LVGL/lvgl/src/misc/lv_style.c ****                 lv_style_value_t * values = (lv_style_value_t *)style->values_and_props;
+ 736              		.loc 1 363 17 is_stmt 1 view .LVU245
+ 364:Middlewares/LVGL/lvgl/src/misc/lv_style.c ****                 values[i] = value;
+ 737              		.loc 1 364 17 view .LVU246
+ 738              		.loc 1 364 27 is_stmt 0 view .LVU247
+ 739 0030 019A     		ldr	r2, [sp, #4]
+ 740 0032 40F82320 		str	r2, [r0, r3, lsl #2]
+ 365:Middlewares/LVGL/lvgl/src/misc/lv_style.c ****                 LV_PROFILER_STYLE_END;
+ 741              		.loc 1 365 38 is_stmt 1 view .LVU248
+ 366:Middlewares/LVGL/lvgl/src/misc/lv_style.c ****                 return;
+ 742              		.loc 1 366 17 view .LVU249
+ 743 0036 2AE0     		b	.L51
+ 744              	.LVL71:
+ 745              	.L55:
+ 746              		.loc 1 366 17 is_stmt 0 view .LVU250
+ 747              	.LBE50:
+ 367:Middlewares/LVGL/lvgl/src/misc/lv_style.c ****             }
+ 368:Middlewares/LVGL/lvgl/src/misc/lv_style.c ****         }
+ 369:Middlewares/LVGL/lvgl/src/misc/lv_style.c ****     }
+ 370:Middlewares/LVGL/lvgl/src/misc/lv_style.c **** 
+ 371:Middlewares/LVGL/lvgl/src/misc/lv_style.c ****     size_t size = (style->prop_cnt + 1) * (sizeof(lv_style_value_t) + sizeof(lv_style_prop_t));
+ 748              		.loc 1 371 5 is_stmt 1 view .LVU251
+ 749              		.loc 1 371 36 is_stmt 0 view .LVU252
+ 750 0038 0131     		adds	r1, r1, #1
+ 751              	.LVL72:
+ 372:Middlewares/LVGL/lvgl/src/misc/lv_style.c ****     uint8_t * values_and_props = lv_realloc(style->values_and_props, size);
+ 752              		.loc 1 372 5 is_stmt 1 view .LVU253
+ 753              		.loc 1 372 34 is_stmt 0 view .LVU254
+ 754 003a 01EB8101 		add	r1, r1, r1, lsl #2
+ 755              	.LVL73:
+ 756              		.loc 1 372 34 view .LVU255
+ 757 003e FFF7FEFF 		bl	lv_realloc
+ 758              	.LVL74:
+ 373:Middlewares/LVGL/lvgl/src/misc/lv_style.c ****     if(values_and_props == NULL) {
+ 759              		.loc 1 373 5 is_stmt 1 view .LVU256
+ 760              		.loc 1 373 7 is_stmt 0 view .LVU257
+ 761 0042 8446     		mov	ip, r0
+ 762 0044 18B3     		cbz	r0, .L51
+ 374:Middlewares/LVGL/lvgl/src/misc/lv_style.c ****         LV_PROFILER_STYLE_END;
+ 375:Middlewares/LVGL/lvgl/src/misc/lv_style.c ****         return;
+ 376:Middlewares/LVGL/lvgl/src/misc/lv_style.c ****     }
+ 377:Middlewares/LVGL/lvgl/src/misc/lv_style.c **** 
+ 378:Middlewares/LVGL/lvgl/src/misc/lv_style.c ****     style->values_and_props = values_and_props;
+ 763              		.loc 1 378 5 is_stmt 1 view .LVU258
+ 764              		.loc 1 378 29 is_stmt 0 view .LVU259
+ 765 0046 2860     		str	r0, [r5]
+ 379:Middlewares/LVGL/lvgl/src/misc/lv_style.c **** 
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccp11hL6.s 			page 33
+
+
+ 380:Middlewares/LVGL/lvgl/src/misc/lv_style.c ****     props = values_and_props + style->prop_cnt * sizeof(lv_style_value_t);
+ 766              		.loc 1 380 5 is_stmt 1 view .LVU260
+ 767              		.loc 1 380 37 is_stmt 0 view .LVU261
+ 768 0048 2B7A     		ldrb	r3, [r5, #8]	@ zero_extendqisi2
+ 769              		.loc 1 380 11 view .LVU262
+ 770 004a 00EB8302 		add	r2, r0, r3, lsl #2
+ 771              	.LVL75:
+ 381:Middlewares/LVGL/lvgl/src/misc/lv_style.c ****     /*Shift all props to make place for the value before them*/
+ 382:Middlewares/LVGL/lvgl/src/misc/lv_style.c ****     for(i = style->prop_cnt - 1; i >= 0; i--) {
+ 772              		.loc 1 382 5 is_stmt 1 view .LVU263
+ 773              		.loc 1 382 11 is_stmt 0 view .LVU264
+ 774 004e 013B     		subs	r3, r3, #1
+ 775              	.LVL76:
+ 776              		.loc 1 382 5 view .LVU265
+ 777 0050 03E0     		b	.L59
+ 778              	.LVL77:
+ 779              	.L60:
+ 383:Middlewares/LVGL/lvgl/src/misc/lv_style.c ****         props[i + sizeof(lv_style_value_t) / sizeof(lv_style_prop_t)] = props[i];
+ 780              		.loc 1 383 9 is_stmt 1 view .LVU266
+ 781              		.loc 1 383 14 is_stmt 0 view .LVU267
+ 782 0052 191D     		adds	r1, r3, #4
+ 783              		.loc 1 383 78 view .LVU268
+ 784 0054 D05C     		ldrb	r0, [r2, r3]	@ zero_extendqisi2
+ 785              		.loc 1 383 71 view .LVU269
+ 786 0056 5054     		strb	r0, [r2, r1]
+ 382:Middlewares/LVGL/lvgl/src/misc/lv_style.c ****         props[i + sizeof(lv_style_value_t) / sizeof(lv_style_prop_t)] = props[i];
+ 787              		.loc 1 382 43 is_stmt 1 discriminator 3 view .LVU270
+ 788 0058 013B     		subs	r3, r3, #1
+ 789              	.LVL78:
+ 790              	.L59:
+ 382:Middlewares/LVGL/lvgl/src/misc/lv_style.c ****         props[i + sizeof(lv_style_value_t) / sizeof(lv_style_prop_t)] = props[i];
+ 791              		.loc 1 382 36 discriminator 1 view .LVU271
+ 792 005a 002B     		cmp	r3, #0
+ 793 005c F9DA     		bge	.L60
+ 384:Middlewares/LVGL/lvgl/src/misc/lv_style.c ****     }
+ 385:Middlewares/LVGL/lvgl/src/misc/lv_style.c ****     style->prop_cnt++;
+ 794              		.loc 1 385 5 view .LVU272
+ 795              		.loc 1 385 10 is_stmt 0 view .LVU273
+ 796 005e 2B7A     		ldrb	r3, [r5, #8]	@ zero_extendqisi2
+ 797              	.LVL79:
+ 798              		.loc 1 385 20 view .LVU274
+ 799 0060 0133     		adds	r3, r3, #1
+ 800 0062 DBB2     		uxtb	r3, r3
+ 801 0064 2B72     		strb	r3, [r5, #8]
+ 386:Middlewares/LVGL/lvgl/src/misc/lv_style.c **** 
+ 387:Middlewares/LVGL/lvgl/src/misc/lv_style.c ****     /*Go to the new position with the props*/
+ 388:Middlewares/LVGL/lvgl/src/misc/lv_style.c ****     props = values_and_props + style->prop_cnt * sizeof(lv_style_value_t);
+ 802              		.loc 1 388 5 is_stmt 1 view .LVU275
+ 803              	.LVL80:
+ 389:Middlewares/LVGL/lvgl/src/misc/lv_style.c ****     lv_style_value_t * values = (lv_style_value_t *)values_and_props;
+ 804              		.loc 1 389 5 view .LVU276
+ 390:Middlewares/LVGL/lvgl/src/misc/lv_style.c **** 
+ 391:Middlewares/LVGL/lvgl/src/misc/lv_style.c ****     /*Set the new property and value*/
+ 392:Middlewares/LVGL/lvgl/src/misc/lv_style.c ****     props[style->prop_cnt - 1] = prop;
+ 805              		.loc 1 392 5 view .LVU277
+ 806              		.loc 1 392 10 is_stmt 0 view .LVU278
+ 807 0066 5A1E     		subs	r2, r3, #1
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccp11hL6.s 			page 34
+
+
+ 808 0068 02EB8303 		add	r3, r2, r3, lsl #2
+ 809              	.LVL81:
+ 810              		.loc 1 392 32 view .LVU279
+ 811 006c 0CF80340 		strb	r4, [ip, r3]
+ 393:Middlewares/LVGL/lvgl/src/misc/lv_style.c ****     values[style->prop_cnt - 1] = value;
+ 812              		.loc 1 393 5 is_stmt 1 view .LVU280
+ 813              		.loc 1 393 17 is_stmt 0 view .LVU281
+ 814 0070 2B7A     		ldrb	r3, [r5, #8]	@ zero_extendqisi2
+ 815              		.loc 1 393 11 view .LVU282
+ 816 0072 03F18043 		add	r3, r3, #1073741824
+ 817 0076 013B     		subs	r3, r3, #1
+ 818              		.loc 1 393 33 view .LVU283
+ 819 0078 019A     		ldr	r2, [sp, #4]
+ 820              	.LVL82:
+ 821              		.loc 1 393 33 view .LVU284
+ 822 007a 4CF82320 		str	r2, [ip, r3, lsl #2]
+ 394:Middlewares/LVGL/lvgl/src/misc/lv_style.c **** 
+ 395:Middlewares/LVGL/lvgl/src/misc/lv_style.c ****     uint32_t group = lv_style_get_prop_group(prop);
+ 823              		.loc 1 395 5 is_stmt 1 view .LVU285
+ 824              	.LVL83:
+ 825              	.LBB51:
+ 826              	.LBI51:
+ 555:Middlewares/LVGL/lvgl/src/misc/lv_style.h **** 
+ 556:Middlewares/LVGL/lvgl/src/misc/lv_style.h **** /**
+ 557:Middlewares/LVGL/lvgl/src/misc/lv_style.h ****  * Checks if a style is empty (has no properties)
+ 558:Middlewares/LVGL/lvgl/src/misc/lv_style.h ****  * @param style pointer to a style
+ 559:Middlewares/LVGL/lvgl/src/misc/lv_style.h ****  * @return true if the style is empty
+ 560:Middlewares/LVGL/lvgl/src/misc/lv_style.h ****  */
+ 561:Middlewares/LVGL/lvgl/src/misc/lv_style.h **** bool lv_style_is_empty(const lv_style_t * style);
+ 562:Middlewares/LVGL/lvgl/src/misc/lv_style.h **** 
+ 563:Middlewares/LVGL/lvgl/src/misc/lv_style.h **** /**
+ 564:Middlewares/LVGL/lvgl/src/misc/lv_style.h ****  * Tell the group of a property. If the a property from a group is set in a style the (1 << group) 
+ 565:Middlewares/LVGL/lvgl/src/misc/lv_style.h ****  * It allows early skipping the style if the property is not exists in the style at all.
+ 566:Middlewares/LVGL/lvgl/src/misc/lv_style.h ****  * @param prop a style property
+ 567:Middlewares/LVGL/lvgl/src/misc/lv_style.h ****  * @return the group [0..30] 30 means all the custom properties with index > 120
+ 568:Middlewares/LVGL/lvgl/src/misc/lv_style.h ****  */
+ 569:Middlewares/LVGL/lvgl/src/misc/lv_style.h **** static inline uint32_t lv_style_get_prop_group(lv_style_prop_t prop)
+ 827              		.loc 2 569 24 view .LVU286
+ 828              	.LBB52:
+ 570:Middlewares/LVGL/lvgl/src/misc/lv_style.h **** {
+ 571:Middlewares/LVGL/lvgl/src/misc/lv_style.h ****     uint32_t group = prop >> 2;
+ 829              		.loc 2 571 5 view .LVU287
+ 830              		.loc 2 571 27 is_stmt 0 view .LVU288
+ 831 007e A108     		lsrs	r1, r4, #2
+ 832              	.LVL84:
+ 572:Middlewares/LVGL/lvgl/src/misc/lv_style.h ****     if(group > 30) group = 31;    /*The MSB marks all the custom properties*/
+ 833              		.loc 2 572 5 is_stmt 1 view .LVU289
+ 834              		.loc 2 572 7 is_stmt 0 view .LVU290
+ 835 0080 7B2C     		cmp	r4, #123
+ 836 0082 06D8     		bhi	.L65
+ 837              	.LVL85:
+ 838              	.L61:
+ 573:Middlewares/LVGL/lvgl/src/misc/lv_style.h ****     return group;
+ 839              		.loc 2 573 5 is_stmt 1 view .LVU291
+ 840              		.loc 2 573 5 is_stmt 0 view .LVU292
+ 841              	.LBE52:
+ 842              	.LBE51:
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccp11hL6.s 			page 35
+
+
+ 396:Middlewares/LVGL/lvgl/src/misc/lv_style.c ****     style->has_group |= (uint32_t)1 << group;
+ 843              		.loc 1 396 5 is_stmt 1 view .LVU293
+ 844              		.loc 1 396 10 is_stmt 0 view .LVU294
+ 845 0084 6B68     		ldr	r3, [r5, #4]
+ 846              		.loc 1 396 37 view .LVU295
+ 847 0086 0122     		movs	r2, #1
+ 848 0088 8A40     		lsls	r2, r2, r1
+ 849              		.loc 1 396 22 view .LVU296
+ 850 008a 1343     		orrs	r3, r3, r2
+ 851 008c 6B60     		str	r3, [r5, #4]
+ 397:Middlewares/LVGL/lvgl/src/misc/lv_style.c ****     LV_PROFILER_STYLE_END;
+ 852              		.loc 1 397 26 is_stmt 1 view .LVU297
+ 853              	.LVL86:
+ 854              	.L51:
+ 398:Middlewares/LVGL/lvgl/src/misc/lv_style.c **** }
+ 855              		.loc 1 398 1 is_stmt 0 view .LVU298
+ 856 008e 03B0     		add	sp, sp, #12
+ 857              	.LCFI7:
+ 858              		.cfi_remember_state
+ 859              		.cfi_def_cfa_offset 12
+ 860              		@ sp needed
+ 861 0090 30BD     		pop	{r4, r5, pc}
+ 862              	.LVL87:
+ 863              	.L65:
+ 864              	.LCFI8:
+ 865              		.cfi_restore_state
+ 866              	.LBB54:
+ 867              	.LBB53:
+ 572:Middlewares/LVGL/lvgl/src/misc/lv_style.h ****     return group;
+ 868              		.loc 2 572 26 discriminator 1 view .LVU299
+ 869 0092 1F21     		movs	r1, #31
+ 870              	.LVL88:
+ 572:Middlewares/LVGL/lvgl/src/misc/lv_style.h ****     return group;
+ 871              		.loc 2 572 26 discriminator 1 view .LVU300
+ 872 0094 F6E7     		b	.L61
+ 873              	.LBE53:
+ 874              	.LBE54:
+ 875              		.cfi_endproc
+ 876              	.LFE207:
+ 878              		.section	.text.lv_style_merge,"ax",%progbits
+ 879              		.align	1
+ 880              		.global	lv_style_merge
+ 881              		.syntax unified
+ 882              		.thumb
+ 883              		.thumb_func
+ 885              	lv_style_merge:
+ 886              	.LVL89:
+ 887              	.LFB203:
+ 223:Middlewares/LVGL/lvgl/src/misc/lv_style.c ****     if(lv_style_is_const(dst)) {
+ 888              		.loc 1 223 1 is_stmt 1 view -0
+ 889              		.cfi_startproc
+ 890              		@ args = 0, pretend = 0, frame = 0
+ 891              		@ frame_needed = 0, uses_anonymous_args = 0
+ 224:Middlewares/LVGL/lvgl/src/misc/lv_style.c ****         LV_LOG_WARN("The destination can not be a constant style");
+ 892              		.loc 1 224 5 view .LVU302
+ 893              	.LBB55:
+ 894              	.LBI55:
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccp11hL6.s 			page 36
+
+
+ 434:Middlewares/LVGL/lvgl/src/misc/lv_style.h **** {
+ 895              		.loc 2 434 20 view .LVU303
+ 896              	.LBB56:
+ 436:Middlewares/LVGL/lvgl/src/misc/lv_style.h ****     return false;
+ 897              		.loc 2 436 5 view .LVU304
+ 436:Middlewares/LVGL/lvgl/src/misc/lv_style.h ****     return false;
+ 898              		.loc 2 436 13 is_stmt 0 view .LVU305
+ 899 0000 037A     		ldrb	r3, [r0, #8]	@ zero_extendqisi2
+ 436:Middlewares/LVGL/lvgl/src/misc/lv_style.h ****     return false;
+ 900              		.loc 2 436 7 view .LVU306
+ 901 0002 FF2B     		cmp	r3, #255
+ 902 0004 29D0     		beq	.L74
+ 903              	.LBE56:
+ 904              	.LBE55:
+ 223:Middlewares/LVGL/lvgl/src/misc/lv_style.c ****     if(lv_style_is_const(dst)) {
+ 905              		.loc 1 223 1 view .LVU307
+ 906 0006 2DE9F041 		push	{r4, r5, r6, r7, r8, lr}
+ 907              	.LCFI9:
+ 908              		.cfi_def_cfa_offset 24
+ 909              		.cfi_offset 4, -24
+ 910              		.cfi_offset 5, -20
+ 911              		.cfi_offset 6, -16
+ 912              		.cfi_offset 7, -12
+ 913              		.cfi_offset 8, -8
+ 914              		.cfi_offset 14, -4
+ 915 000a 0746     		mov	r7, r0
+ 916 000c 0E46     		mov	r6, r1
+ 917              	.LVL90:
+ 230:Middlewares/LVGL/lvgl/src/misc/lv_style.c ****         LV_LOG_TRACE("Source style is empty");
+ 918              		.loc 1 230 5 is_stmt 1 view .LVU308
+ 230:Middlewares/LVGL/lvgl/src/misc/lv_style.c ****         LV_LOG_TRACE("Source style is empty");
+ 919              		.loc 1 230 11 is_stmt 0 view .LVU309
+ 920 000e 0D68     		ldr	r5, [r1]
+ 230:Middlewares/LVGL/lvgl/src/misc/lv_style.c ****         LV_LOG_TRACE("Source style is empty");
+ 921              		.loc 1 230 7 view .LVU310
+ 922 0010 0DB3     		cbz	r5, .L66
+ 234:Middlewares/LVGL/lvgl/src/misc/lv_style.c ****         LV_LOG_TRACE("Source style has no properties");
+ 923              		.loc 1 234 5 is_stmt 1 view .LVU311
+ 234:Middlewares/LVGL/lvgl/src/misc/lv_style.c ****         LV_LOG_TRACE("Source style has no properties");
+ 924              		.loc 1 234 11 is_stmt 0 view .LVU312
+ 925 0012 0B7A     		ldrb	r3, [r1, #8]	@ zero_extendqisi2
+ 234:Middlewares/LVGL/lvgl/src/misc/lv_style.c ****         LV_LOG_TRACE("Source style has no properties");
+ 926              		.loc 1 234 7 view .LVU313
+ 927 0014 FBB1     		cbz	r3, .L66
+ 240:Middlewares/LVGL/lvgl/src/misc/lv_style.c ****     if(lv_style_is_const(src)) {
+ 928              		.loc 1 240 5 is_stmt 1 view .LVU314
+ 241:Middlewares/LVGL/lvgl/src/misc/lv_style.c ****         lv_style_const_prop_t * props_and_values = (lv_style_const_prop_t *)src->values_and_props;
+ 929              		.loc 1 241 5 view .LVU315
+ 930              	.LVL91:
+ 931              	.LBB57:
+ 932              	.LBI57:
+ 434:Middlewares/LVGL/lvgl/src/misc/lv_style.h **** {
+ 933              		.loc 2 434 20 view .LVU316
+ 934              	.LBB58:
+ 436:Middlewares/LVGL/lvgl/src/misc/lv_style.h ****     return false;
+ 935              		.loc 2 436 5 view .LVU317
+ 436:Middlewares/LVGL/lvgl/src/misc/lv_style.h ****     return false;
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccp11hL6.s 			page 37
+
+
+ 936              		.loc 2 436 7 is_stmt 0 view .LVU318
+ 937 0016 FF2B     		cmp	r3, #255
+ 938 0018 0FD0     		beq	.L72
+ 939              	.LVL92:
+ 436:Middlewares/LVGL/lvgl/src/misc/lv_style.h ****     return false;
+ 940              		.loc 2 436 7 view .LVU319
+ 941              	.LBE58:
+ 942              	.LBE57:
+ 943              	.LBB59:
+ 248:Middlewares/LVGL/lvgl/src/misc/lv_style.c ****         lv_style_value_t * values = (lv_style_value_t *)src->values_and_props;
+ 944              		.loc 1 248 9 is_stmt 1 view .LVU320
+ 248:Middlewares/LVGL/lvgl/src/misc/lv_style.c ****         lv_style_value_t * values = (lv_style_value_t *)src->values_and_props;
+ 945              		.loc 1 248 92 is_stmt 0 view .LVU321
+ 946 001a 4FEA8308 		lsl	r8, r3, #2
+ 947              	.LVL93:
+ 249:Middlewares/LVGL/lvgl/src/misc/lv_style.c ****         for(i = 0; i < src->prop_cnt; i++) {
+ 948              		.loc 1 249 9 is_stmt 1 view .LVU322
+ 250:Middlewares/LVGL/lvgl/src/misc/lv_style.c ****             lv_style_set_prop(dst, props[i], values[i]);
+ 949              		.loc 1 250 9 view .LVU323
+ 250:Middlewares/LVGL/lvgl/src/misc/lv_style.c ****             lv_style_set_prop(dst, props[i], values[i]);
+ 950              		.loc 1 250 15 is_stmt 0 view .LVU324
+ 951 001e 0024     		movs	r4, #0
+ 250:Middlewares/LVGL/lvgl/src/misc/lv_style.c ****             lv_style_set_prop(dst, props[i], values[i]);
+ 952              		.loc 1 250 9 view .LVU325
+ 953 0020 16E0     		b	.L69
+ 954              	.LVL94:
+ 955              	.L70:
+ 250:Middlewares/LVGL/lvgl/src/misc/lv_style.c ****             lv_style_set_prop(dst, props[i], values[i]);
+ 956              		.loc 1 250 9 view .LVU326
+ 957              	.LBE59:
+ 958              	.LBB60:
+ 244:Middlewares/LVGL/lvgl/src/misc/lv_style.c ****         }
+ 959              		.loc 1 244 13 is_stmt 1 view .LVU327
+ 960 0022 5A68     		ldr	r2, [r3, #4]
+ 961 0024 3846     		mov	r0, r7
+ 962 0026 FFF7FEFF 		bl	lv_style_set_prop
+ 963              	.LVL95:
+ 243:Middlewares/LVGL/lvgl/src/misc/lv_style.c ****             lv_style_set_prop(dst, props_and_values[i].prop, props_and_values[i].value);
+ 964              		.loc 1 243 68 discriminator 3 view .LVU328
+ 965 002a 0134     		adds	r4, r4, #1
+ 966              	.LVL96:
+ 967              	.L68:
+ 243:Middlewares/LVGL/lvgl/src/misc/lv_style.c ****             lv_style_set_prop(dst, props_and_values[i].prop, props_and_values[i].value);
+ 968              		.loc 1 243 45 discriminator 1 view .LVU329
+ 243:Middlewares/LVGL/lvgl/src/misc/lv_style.c ****             lv_style_set_prop(dst, props_and_values[i].prop, props_and_values[i].value);
+ 969              		.loc 1 243 36 is_stmt 0 discriminator 1 view .LVU330
+ 970 002c 05EBC403 		add	r3, r5, r4, lsl #3
+ 243:Middlewares/LVGL/lvgl/src/misc/lv_style.c ****             lv_style_set_prop(dst, props_and_values[i].prop, props_and_values[i].value);
+ 971              		.loc 1 243 39 discriminator 1 view .LVU331
+ 972 0030 15F83410 		ldrb	r1, [r5, r4, lsl #3]	@ zero_extendqisi2
+ 243:Middlewares/LVGL/lvgl/src/misc/lv_style.c ****             lv_style_set_prop(dst, props_and_values[i].prop, props_and_values[i].value);
+ 973              		.loc 1 243 45 discriminator 1 view .LVU332
+ 974 0034 0029     		cmp	r1, #0
+ 975 0036 F4D1     		bne	.L70
+ 976 0038 0DE0     		b	.L66
+ 977              	.LVL97:
+ 978              	.L72:
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccp11hL6.s 			page 38
+
+
+ 243:Middlewares/LVGL/lvgl/src/misc/lv_style.c ****             lv_style_set_prop(dst, props_and_values[i].prop, props_and_values[i].value);
+ 979              		.loc 1 243 15 view .LVU333
+ 980 003a 0024     		movs	r4, #0
+ 981 003c F6E7     		b	.L68
+ 982              	.LVL98:
+ 983              	.L71:
+ 243:Middlewares/LVGL/lvgl/src/misc/lv_style.c ****             lv_style_set_prop(dst, props_and_values[i].prop, props_and_values[i].value);
+ 984              		.loc 1 243 15 view .LVU334
+ 985              	.LBE60:
+ 986              	.LBB61:
+ 251:Middlewares/LVGL/lvgl/src/misc/lv_style.c ****         }
+ 987              		.loc 1 251 13 is_stmt 1 view .LVU335
+ 251:Middlewares/LVGL/lvgl/src/misc/lv_style.c ****         }
+ 988              		.loc 1 251 41 is_stmt 0 view .LVU336
+ 989 003e 08EB0403 		add	r3, r8, r4
+ 251:Middlewares/LVGL/lvgl/src/misc/lv_style.c ****         }
+ 990              		.loc 1 251 13 view .LVU337
+ 991 0042 55F82420 		ldr	r2, [r5, r4, lsl #2]
+ 992 0046 E95C     		ldrb	r1, [r5, r3]	@ zero_extendqisi2
+ 993 0048 3846     		mov	r0, r7
+ 994 004a FFF7FEFF 		bl	lv_style_set_prop
+ 995              	.LVL99:
+ 250:Middlewares/LVGL/lvgl/src/misc/lv_style.c ****             lv_style_set_prop(dst, props[i], values[i]);
+ 996              		.loc 1 250 40 is_stmt 1 discriminator 3 view .LVU338
+ 997 004e 0134     		adds	r4, r4, #1
+ 998              	.LVL100:
+ 999              	.L69:
+ 250:Middlewares/LVGL/lvgl/src/misc/lv_style.c ****             lv_style_set_prop(dst, props[i], values[i]);
+ 1000              		.loc 1 250 22 discriminator 1 view .LVU339
+ 250:Middlewares/LVGL/lvgl/src/misc/lv_style.c ****             lv_style_set_prop(dst, props[i], values[i]);
+ 1001              		.loc 1 250 27 is_stmt 0 discriminator 1 view .LVU340
+ 1002 0050 337A     		ldrb	r3, [r6, #8]	@ zero_extendqisi2
+ 250:Middlewares/LVGL/lvgl/src/misc/lv_style.c ****             lv_style_set_prop(dst, props[i], values[i]);
+ 1003              		.loc 1 250 22 discriminator 1 view .LVU341
+ 1004 0052 A342     		cmp	r3, r4
+ 1005 0054 F3DC     		bgt	.L71
+ 1006              	.LVL101:
+ 1007              	.L66:
+ 250:Middlewares/LVGL/lvgl/src/misc/lv_style.c ****             lv_style_set_prop(dst, props[i], values[i]);
+ 1008              		.loc 1 250 22 discriminator 1 view .LVU342
+ 1009              	.LBE61:
+ 254:Middlewares/LVGL/lvgl/src/misc/lv_style.c **** 
+ 1010              		.loc 1 254 1 view .LVU343
+ 1011 0056 BDE8F081 		pop	{r4, r5, r6, r7, r8, pc}
+ 1012              	.LVL102:
+ 1013              	.L74:
+ 1014              	.LCFI10:
+ 1015              		.cfi_def_cfa_offset 0
+ 1016              		.cfi_restore 4
+ 1017              		.cfi_restore 5
+ 1018              		.cfi_restore 6
+ 1019              		.cfi_restore 7
+ 1020              		.cfi_restore 8
+ 1021              		.cfi_restore 14
+ 254:Middlewares/LVGL/lvgl/src/misc/lv_style.c **** 
+ 1022              		.loc 1 254 1 view .LVU344
+ 1023 005a 7047     		bx	lr
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccp11hL6.s 			page 39
+
+
+ 1024              		.cfi_endproc
+ 1025              	.LFE203:
+ 1027              		.section	.text.lv_style_copy,"ax",%progbits
+ 1028              		.align	1
+ 1029              		.global	lv_style_copy
+ 1030              		.syntax unified
+ 1031              		.thumb
+ 1032              		.thumb_func
+ 1034              	lv_style_copy:
+ 1035              	.LVL103:
+ 1036              	.LFB202:
+ 211:Middlewares/LVGL/lvgl/src/misc/lv_style.c ****     if(lv_style_is_const(dst)) {
+ 1037              		.loc 1 211 1 is_stmt 1 view -0
+ 1038              		.cfi_startproc
+ 1039              		@ args = 0, pretend = 0, frame = 0
+ 1040              		@ frame_needed = 0, uses_anonymous_args = 0
+ 211:Middlewares/LVGL/lvgl/src/misc/lv_style.c ****     if(lv_style_is_const(dst)) {
+ 1041              		.loc 1 211 1 is_stmt 0 view .LVU346
+ 1042 0000 38B5     		push	{r3, r4, r5, lr}
+ 1043              	.LCFI11:
+ 1044              		.cfi_def_cfa_offset 16
+ 1045              		.cfi_offset 3, -16
+ 1046              		.cfi_offset 4, -12
+ 1047              		.cfi_offset 5, -8
+ 1048              		.cfi_offset 14, -4
+ 212:Middlewares/LVGL/lvgl/src/misc/lv_style.c ****         LV_LOG_WARN("The destination can not be a constant style");
+ 1049              		.loc 1 212 5 is_stmt 1 view .LVU347
+ 1050              	.LVL104:
+ 1051              	.LBB62:
+ 1052              	.LBI62:
+ 434:Middlewares/LVGL/lvgl/src/misc/lv_style.h **** {
+ 1053              		.loc 2 434 20 view .LVU348
+ 1054              	.LBB63:
+ 436:Middlewares/LVGL/lvgl/src/misc/lv_style.h ****     return false;
+ 1055              		.loc 2 436 5 view .LVU349
+ 436:Middlewares/LVGL/lvgl/src/misc/lv_style.h ****     return false;
+ 1056              		.loc 2 436 13 is_stmt 0 view .LVU350
+ 1057 0002 037A     		ldrb	r3, [r0, #8]	@ zero_extendqisi2
+ 436:Middlewares/LVGL/lvgl/src/misc/lv_style.h ****     return false;
+ 1058              		.loc 2 436 7 view .LVU351
+ 1059 0004 FF2B     		cmp	r3, #255
+ 1060 0006 07D0     		beq	.L77
+ 1061 0008 0446     		mov	r4, r0
+ 1062 000a 0D46     		mov	r5, r1
+ 1063              	.LVL105:
+ 436:Middlewares/LVGL/lvgl/src/misc/lv_style.h ****     return false;
+ 1064              		.loc 2 436 7 view .LVU352
+ 1065              	.LBE63:
+ 1066              	.LBE62:
+ 217:Middlewares/LVGL/lvgl/src/misc/lv_style.c **** 
+ 1067              		.loc 1 217 5 is_stmt 1 view .LVU353
+ 1068 000c FFF7FEFF 		bl	lv_style_reset
+ 1069              	.LVL106:
+ 219:Middlewares/LVGL/lvgl/src/misc/lv_style.c **** }
+ 1070              		.loc 1 219 5 view .LVU354
+ 1071 0010 2946     		mov	r1, r5
+ 1072 0012 2046     		mov	r0, r4
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccp11hL6.s 			page 40
+
+
+ 1073 0014 FFF7FEFF 		bl	lv_style_merge
+ 1074              	.LVL107:
+ 1075              	.L77:
+ 220:Middlewares/LVGL/lvgl/src/misc/lv_style.c **** 
+ 1076              		.loc 1 220 1 is_stmt 0 view .LVU355
+ 1077 0018 38BD     		pop	{r3, r4, r5, pc}
+ 1078              		.cfi_endproc
+ 1079              	.LFE202:
+ 1081              		.section	.text.lv_style_get_prop,"ax",%progbits
+ 1082              		.align	1
+ 1083              		.global	lv_style_get_prop
+ 1084              		.syntax unified
+ 1085              		.thumb
+ 1086              		.thumb_func
+ 1088              	lv_style_get_prop:
+ 1089              	.LVL108:
+ 1090              	.LFB208:
+ 399:Middlewares/LVGL/lvgl/src/misc/lv_style.c **** 
+ 400:Middlewares/LVGL/lvgl/src/misc/lv_style.c **** lv_style_res_t lv_style_get_prop(const lv_style_t * style, lv_style_prop_t prop, lv_style_value_t *
+ 401:Middlewares/LVGL/lvgl/src/misc/lv_style.c **** {
+ 1091              		.loc 1 401 1 is_stmt 1 view -0
+ 1092              		.cfi_startproc
+ 1093              		@ args = 0, pretend = 0, frame = 0
+ 1094              		@ frame_needed = 0, uses_anonymous_args = 0
+ 1095              		.loc 1 401 1 is_stmt 0 view .LVU357
+ 1096 0000 08B5     		push	{r3, lr}
+ 1097              	.LCFI12:
+ 1098              		.cfi_def_cfa_offset 8
+ 1099              		.cfi_offset 3, -8
+ 1100              		.cfi_offset 14, -4
+ 402:Middlewares/LVGL/lvgl/src/misc/lv_style.c ****     return lv_style_get_prop_inlined(style, prop, value);
+ 1101              		.loc 1 402 5 is_stmt 1 view .LVU358
+ 1102              		.loc 1 402 12 is_stmt 0 view .LVU359
+ 1103 0002 FFF7FEFF 		bl	lv_style_get_prop_inlined
+ 1104              	.LVL109:
+ 403:Middlewares/LVGL/lvgl/src/misc/lv_style.c **** }
+ 1105              		.loc 1 403 1 view .LVU360
+ 1106 0006 08BD     		pop	{r3, pc}
+ 1107              		.cfi_endproc
+ 1108              	.LFE208:
+ 1110              		.section	.text.lv_style_transition_dsc_init,"ax",%progbits
+ 1111              		.align	1
+ 1112              		.global	lv_style_transition_dsc_init
+ 1113              		.syntax unified
+ 1114              		.thumb
+ 1115              		.thumb_func
+ 1117              	lv_style_transition_dsc_init:
+ 1118              	.LVL110:
+ 1119              	.LFB209:
+ 404:Middlewares/LVGL/lvgl/src/misc/lv_style.c **** 
+ 405:Middlewares/LVGL/lvgl/src/misc/lv_style.c **** void lv_style_transition_dsc_init(lv_style_transition_dsc_t * tr, const lv_style_prop_t props[],
+ 406:Middlewares/LVGL/lvgl/src/misc/lv_style.c ****                                   lv_anim_path_cb_t path_cb, uint32_t time, uint32_t delay, void * 
+ 407:Middlewares/LVGL/lvgl/src/misc/lv_style.c **** {
+ 1120              		.loc 1 407 1 is_stmt 1 view -0
+ 1121              		.cfi_startproc
+ 1122              		@ args = 8, pretend = 0, frame = 0
+ 1123              		@ frame_needed = 0, uses_anonymous_args = 0
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccp11hL6.s 			page 41
+
+
+ 1124              		.loc 1 407 1 is_stmt 0 view .LVU362
+ 1125 0000 F8B5     		push	{r3, r4, r5, r6, r7, lr}
+ 1126              	.LCFI13:
+ 1127              		.cfi_def_cfa_offset 24
+ 1128              		.cfi_offset 3, -24
+ 1129              		.cfi_offset 4, -20
+ 1130              		.cfi_offset 5, -16
+ 1131              		.cfi_offset 6, -12
+ 1132              		.cfi_offset 7, -8
+ 1133              		.cfi_offset 14, -4
+ 1134 0002 0446     		mov	r4, r0
+ 1135 0004 0F46     		mov	r7, r1
+ 1136 0006 1546     		mov	r5, r2
+ 1137 0008 1E46     		mov	r6, r3
+ 408:Middlewares/LVGL/lvgl/src/misc/lv_style.c ****     lv_memzero(tr, sizeof(lv_style_transition_dsc_t));
+ 1138              		.loc 1 408 5 is_stmt 1 view .LVU363
+ 1139              	.LVL111:
+ 1140              	.LBB64:
+ 1141              	.LBI64:
+  73:Middlewares/LVGL/lvgl/src/misc/../font/../draw/../misc/../stdlib/lv_string.h **** {
+ 1142              		.loc 3 73 20 view .LVU364
+ 1143              	.LBB65:
+ 1144              		.loc 3 75 5 view .LVU365
+ 1145 000a 1422     		movs	r2, #20
+ 1146              	.LVL112:
+ 1147              		.loc 3 75 5 is_stmt 0 view .LVU366
+ 1148 000c 0021     		movs	r1, #0
+ 1149              	.LVL113:
+ 1150              		.loc 3 75 5 view .LVU367
+ 1151 000e FFF7FEFF 		bl	lv_memset
+ 1152              	.LVL114:
+ 1153              		.loc 3 75 5 view .LVU368
+ 1154              	.LBE65:
+ 1155              	.LBE64:
+ 409:Middlewares/LVGL/lvgl/src/misc/lv_style.c ****     tr->props = props;
+ 1156              		.loc 1 409 5 is_stmt 1 view .LVU369
+ 1157              		.loc 1 409 15 is_stmt 0 view .LVU370
+ 1158 0012 2760     		str	r7, [r4]
+ 410:Middlewares/LVGL/lvgl/src/misc/lv_style.c ****     tr->path_xcb = path_cb == NULL ? lv_anim_path_linear : path_cb;
+ 1159              		.loc 1 410 5 is_stmt 1 view .LVU371
+ 1160              		.loc 1 410 58 is_stmt 0 view .LVU372
+ 1161 0014 35B1     		cbz	r5, .L86
+ 1162              	.LVL115:
+ 1163              	.L83:
+ 1164              		.loc 1 410 18 discriminator 4 view .LVU373
+ 1165 0016 A560     		str	r5, [r4, #8]
+ 411:Middlewares/LVGL/lvgl/src/misc/lv_style.c ****     tr->time = time;
+ 1166              		.loc 1 411 5 is_stmt 1 view .LVU374
+ 1167              		.loc 1 411 14 is_stmt 0 view .LVU375
+ 1168 0018 E660     		str	r6, [r4, #12]
+ 412:Middlewares/LVGL/lvgl/src/misc/lv_style.c ****     tr->delay = delay;
+ 1169              		.loc 1 412 5 is_stmt 1 view .LVU376
+ 1170              		.loc 1 412 15 is_stmt 0 view .LVU377
+ 1171 001a 069B     		ldr	r3, [sp, #24]
+ 1172 001c 2361     		str	r3, [r4, #16]
+ 413:Middlewares/LVGL/lvgl/src/misc/lv_style.c ****     tr->user_data = user_data;
+ 1173              		.loc 1 413 5 is_stmt 1 view .LVU378
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccp11hL6.s 			page 42
+
+
+ 1174              		.loc 1 413 19 is_stmt 0 view .LVU379
+ 1175 001e 079B     		ldr	r3, [sp, #28]
+ 1176 0020 6360     		str	r3, [r4, #4]
+ 414:Middlewares/LVGL/lvgl/src/misc/lv_style.c **** }
+ 1177              		.loc 1 414 1 view .LVU380
+ 1178 0022 F8BD     		pop	{r3, r4, r5, r6, r7, pc}
+ 1179              	.LVL116:
+ 1180              	.L86:
+ 410:Middlewares/LVGL/lvgl/src/misc/lv_style.c ****     tr->time = time;
+ 1181              		.loc 1 410 58 discriminator 2 view .LVU381
+ 1182 0024 004D     		ldr	r5, .L87
+ 1183              	.LVL117:
+ 410:Middlewares/LVGL/lvgl/src/misc/lv_style.c ****     tr->time = time;
+ 1184              		.loc 1 410 58 discriminator 2 view .LVU382
+ 1185 0026 F6E7     		b	.L83
+ 1186              	.L88:
+ 1187              		.align	2
+ 1188              	.L87:
+ 1189 0028 00000000 		.word	lv_anim_path_linear
+ 1190              		.cfi_endproc
+ 1191              	.LFE209:
+ 1193              		.section	.text.lv_style_prop_get_default,"ax",%progbits
+ 1194              		.align	1
+ 1195              		.global	lv_style_prop_get_default
+ 1196              		.syntax unified
+ 1197              		.thumb
+ 1198              		.thumb_func
+ 1200              	lv_style_prop_get_default:
+ 1201              	.LVL118:
+ 1202              	.LFB210:
+ 415:Middlewares/LVGL/lvgl/src/misc/lv_style.c **** 
+ 416:Middlewares/LVGL/lvgl/src/misc/lv_style.c **** lv_style_value_t lv_style_prop_get_default(lv_style_prop_t prop)
+ 417:Middlewares/LVGL/lvgl/src/misc/lv_style.c **** {
+ 1203              		.loc 1 417 1 is_stmt 1 view -0
+ 1204              		.cfi_startproc
+ 1205              		@ args = 0, pretend = 0, frame = 8
+ 1206              		@ frame_needed = 0, uses_anonymous_args = 0
+ 1207              		@ link register save eliminated.
+ 1208              		.loc 1 417 1 is_stmt 0 view .LVU384
+ 1209 0000 82B0     		sub	sp, sp, #8
+ 1210              	.LCFI14:
+ 1211              		.cfi_def_cfa_offset 8
+ 418:Middlewares/LVGL/lvgl/src/misc/lv_style.c ****     const lv_color_t black = LV_COLOR_MAKE(0x00, 0x00, 0x00);
+ 1212              		.loc 1 418 5 is_stmt 1 view .LVU385
+ 1213              		.loc 1 418 22 is_stmt 0 view .LVU386
+ 1214 0002 0023     		movs	r3, #0
+ 1215 0004 8DF80030 		strb	r3, [sp]
+ 1216 0008 8DF80130 		strb	r3, [sp, #1]
+ 1217 000c 8DF80230 		strb	r3, [sp, #2]
+ 419:Middlewares/LVGL/lvgl/src/misc/lv_style.c ****     const lv_color_t white = LV_COLOR_MAKE(0xff, 0xff, 0xff);
+ 1218              		.loc 1 419 5 is_stmt 1 view .LVU387
+ 420:Middlewares/LVGL/lvgl/src/misc/lv_style.c ****     switch(prop) {
+ 1219              		.loc 1 420 5 view .LVU388
+ 1220 0010 0938     		subs	r0, r0, #9
+ 1221              	.LVL119:
+ 1222              		.loc 1 420 5 is_stmt 0 view .LVU389
+ 1223 0012 A528     		cmp	r0, #165
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccp11hL6.s 			page 43
+
+
+ 1224 0014 00F28680 		bhi	.L90
+ 1225 0018 DFE800F0 		tbb	[pc, r0]
+ 1226              	.L92:
+ 1227 001c 76       		.byte	(.L102-.L92)/2
+ 1228 001d 84       		.byte	(.L90-.L92)/2
+ 1229 001e 76       		.byte	(.L102-.L92)/2
+ 1230 001f 84       		.byte	(.L90-.L92)/2
+ 1231 0020 84       		.byte	(.L90-.L92)/2
+ 1232 0021 84       		.byte	(.L90-.L92)/2
+ 1233 0022 84       		.byte	(.L90-.L92)/2
+ 1234 0023 84       		.byte	(.L90-.L92)/2
+ 1235 0024 84       		.byte	(.L90-.L92)/2
+ 1236 0025 84       		.byte	(.L90-.L92)/2
+ 1237 0026 84       		.byte	(.L90-.L92)/2
+ 1238 0027 84       		.byte	(.L90-.L92)/2
+ 1239 0028 84       		.byte	(.L90-.L92)/2
+ 1240 0029 84       		.byte	(.L90-.L92)/2
+ 1241 002a 84       		.byte	(.L90-.L92)/2
+ 1242 002b 84       		.byte	(.L90-.L92)/2
+ 1243 002c 84       		.byte	(.L90-.L92)/2
+ 1244 002d 84       		.byte	(.L90-.L92)/2
+ 1245 002e 84       		.byte	(.L90-.L92)/2
+ 1246 002f 84       		.byte	(.L90-.L92)/2
+ 1247 0030 84       		.byte	(.L90-.L92)/2
+ 1248 0031 84       		.byte	(.L90-.L92)/2
+ 1249 0032 84       		.byte	(.L90-.L92)/2
+ 1250 0033 84       		.byte	(.L90-.L92)/2
+ 1251 0034 84       		.byte	(.L90-.L92)/2
+ 1252 0035 84       		.byte	(.L90-.L92)/2
+ 1253 0036 84       		.byte	(.L90-.L92)/2
+ 1254 0037 84       		.byte	(.L90-.L92)/2
+ 1255 0038 84       		.byte	(.L90-.L92)/2
+ 1256 0039 84       		.byte	(.L90-.L92)/2
+ 1257 003a 84       		.byte	(.L90-.L92)/2
+ 1258 003b 84       		.byte	(.L90-.L92)/2
+ 1259 003c 84       		.byte	(.L90-.L92)/2
+ 1260 003d 6A       		.byte	(.L97-.L92)/2
+ 1261 003e 6A       		.byte	(.L97-.L92)/2
+ 1262 003f 61       		.byte	(.L95-.L92)/2
+ 1263 0040 84       		.byte	(.L90-.L92)/2
+ 1264 0041 6D       		.byte	(.L101-.L92)/2
+ 1265 0042 84       		.byte	(.L90-.L92)/2
+ 1266 0043 84       		.byte	(.L90-.L92)/2
+ 1267 0044 6A       		.byte	(.L97-.L92)/2
+ 1268 0045 84       		.byte	(.L90-.L92)/2
+ 1269 0046 84       		.byte	(.L90-.L92)/2
+ 1270 0047 84       		.byte	(.L90-.L92)/2
+ 1271 0048 84       		.byte	(.L90-.L92)/2
+ 1272 0049 84       		.byte	(.L90-.L92)/2
+ 1273 004a 84       		.byte	(.L90-.L92)/2
+ 1274 004b 84       		.byte	(.L90-.L92)/2
+ 1275 004c 61       		.byte	(.L95-.L92)/2
+ 1276 004d 6A       		.byte	(.L97-.L92)/2
+ 1277 004e 84       		.byte	(.L90-.L92)/2
+ 1278 004f 70       		.byte	(.L100-.L92)/2
+ 1279 0050 84       		.byte	(.L90-.L92)/2
+ 1280 0051 84       		.byte	(.L90-.L92)/2
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccp11hL6.s 			page 44
+
+
+ 1281 0052 84       		.byte	(.L90-.L92)/2
+ 1282 0053 84       		.byte	(.L90-.L92)/2
+ 1283 0054 61       		.byte	(.L95-.L92)/2
+ 1284 0055 6A       		.byte	(.L97-.L92)/2
+ 1285 0056 84       		.byte	(.L90-.L92)/2
+ 1286 0057 84       		.byte	(.L90-.L92)/2
+ 1287 0058 84       		.byte	(.L90-.L92)/2
+ 1288 0059 84       		.byte	(.L90-.L92)/2
+ 1289 005a 84       		.byte	(.L90-.L92)/2
+ 1290 005b 84       		.byte	(.L90-.L92)/2
+ 1291 005c 57       		.byte	(.L99-.L92)/2
+ 1292 005d 84       		.byte	(.L90-.L92)/2
+ 1293 005e 84       		.byte	(.L90-.L92)/2
+ 1294 005f 84       		.byte	(.L90-.L92)/2
+ 1295 0060 73       		.byte	(.L98-.L92)/2
+ 1296 0061 84       		.byte	(.L90-.L92)/2
+ 1297 0062 84       		.byte	(.L90-.L92)/2
+ 1298 0063 6A       		.byte	(.L97-.L92)/2
+ 1299 0064 6A       		.byte	(.L97-.L92)/2
+ 1300 0065 6A       		.byte	(.L97-.L92)/2
+ 1301 0066 6A       		.byte	(.L97-.L92)/2
+ 1302 0067 6A       		.byte	(.L97-.L92)/2
+ 1303 0068 84       		.byte	(.L90-.L92)/2
+ 1304 0069 84       		.byte	(.L90-.L92)/2
+ 1305 006a 84       		.byte	(.L90-.L92)/2
+ 1306 006b 61       		.byte	(.L95-.L92)/2
+ 1307 006c 61       		.byte	(.L95-.L92)/2
+ 1308 006d 61       		.byte	(.L95-.L92)/2
+ 1309 006e 61       		.byte	(.L95-.L92)/2
+ 1310 006f 61       		.byte	(.L95-.L92)/2
+ 1311 0070 84       		.byte	(.L90-.L92)/2
+ 1312 0071 84       		.byte	(.L90-.L92)/2
+ 1313 0072 84       		.byte	(.L90-.L92)/2
+ 1314 0073 84       		.byte	(.L90-.L92)/2
+ 1315 0074 84       		.byte	(.L90-.L92)/2
+ 1316 0075 84       		.byte	(.L90-.L92)/2
+ 1317 0076 84       		.byte	(.L90-.L92)/2
+ 1318 0077 84       		.byte	(.L90-.L92)/2
+ 1319 0078 84       		.byte	(.L90-.L92)/2
+ 1320 0079 84       		.byte	(.L90-.L92)/2
+ 1321 007a 84       		.byte	(.L90-.L92)/2
+ 1322 007b 84       		.byte	(.L90-.L92)/2
+ 1323 007c 84       		.byte	(.L90-.L92)/2
+ 1324 007d 84       		.byte	(.L90-.L92)/2
+ 1325 007e 84       		.byte	(.L90-.L92)/2
+ 1326 007f 84       		.byte	(.L90-.L92)/2
+ 1327 0080 84       		.byte	(.L90-.L92)/2
+ 1328 0081 84       		.byte	(.L90-.L92)/2
+ 1329 0082 84       		.byte	(.L90-.L92)/2
+ 1330 0083 6A       		.byte	(.L97-.L92)/2
+ 1331 0084 6A       		.byte	(.L97-.L92)/2
+ 1332 0085 84       		.byte	(.L90-.L92)/2
+ 1333 0086 84       		.byte	(.L90-.L92)/2
+ 1334 0087 84       		.byte	(.L90-.L92)/2
+ 1335 0088 84       		.byte	(.L90-.L92)/2
+ 1336 0089 84       		.byte	(.L90-.L92)/2
+ 1337 008a 84       		.byte	(.L90-.L92)/2
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccp11hL6.s 			page 45
+
+
+ 1338 008b 84       		.byte	(.L90-.L92)/2
+ 1339 008c 84       		.byte	(.L90-.L92)/2
+ 1340 008d 84       		.byte	(.L90-.L92)/2
+ 1341 008e 7A       		.byte	(.L96-.L92)/2
+ 1342 008f 84       		.byte	(.L90-.L92)/2
+ 1343 0090 84       		.byte	(.L90-.L92)/2
+ 1344 0091 84       		.byte	(.L90-.L92)/2
+ 1345 0092 84       		.byte	(.L90-.L92)/2
+ 1346 0093 84       		.byte	(.L90-.L92)/2
+ 1347 0094 84       		.byte	(.L90-.L92)/2
+ 1348 0095 61       		.byte	(.L95-.L92)/2
+ 1349 0096 84       		.byte	(.L90-.L92)/2
+ 1350 0097 84       		.byte	(.L90-.L92)/2
+ 1351 0098 84       		.byte	(.L90-.L92)/2
+ 1352 0099 84       		.byte	(.L90-.L92)/2
+ 1353 009a 84       		.byte	(.L90-.L92)/2
+ 1354 009b 84       		.byte	(.L90-.L92)/2
+ 1355 009c 84       		.byte	(.L90-.L92)/2
+ 1356 009d 84       		.byte	(.L90-.L92)/2
+ 1357 009e 84       		.byte	(.L90-.L92)/2
+ 1358 009f 84       		.byte	(.L90-.L92)/2
+ 1359 00a0 84       		.byte	(.L90-.L92)/2
+ 1360 00a1 84       		.byte	(.L90-.L92)/2
+ 1361 00a2 84       		.byte	(.L90-.L92)/2
+ 1362 00a3 84       		.byte	(.L90-.L92)/2
+ 1363 00a4 84       		.byte	(.L90-.L92)/2
+ 1364 00a5 84       		.byte	(.L90-.L92)/2
+ 1365 00a6 61       		.byte	(.L95-.L92)/2
+ 1366 00a7 84       		.byte	(.L90-.L92)/2
+ 1367 00a8 7E       		.byte	(.L94-.L92)/2
+ 1368 00a9 84       		.byte	(.L90-.L92)/2
+ 1369 00aa 84       		.byte	(.L90-.L92)/2
+ 1370 00ab 53       		.byte	(.L93-.L92)/2
+ 1371 00ac 53       		.byte	(.L93-.L92)/2
+ 1372 00ad 84       		.byte	(.L90-.L92)/2
+ 1373 00ae 84       		.byte	(.L90-.L92)/2
+ 1374 00af 84       		.byte	(.L90-.L92)/2
+ 1375 00b0 84       		.byte	(.L90-.L92)/2
+ 1376 00b1 84       		.byte	(.L90-.L92)/2
+ 1377 00b2 84       		.byte	(.L90-.L92)/2
+ 1378 00b3 84       		.byte	(.L90-.L92)/2
+ 1379 00b4 84       		.byte	(.L90-.L92)/2
+ 1380 00b5 84       		.byte	(.L90-.L92)/2
+ 1381 00b6 84       		.byte	(.L90-.L92)/2
+ 1382 00b7 84       		.byte	(.L90-.L92)/2
+ 1383 00b8 84       		.byte	(.L90-.L92)/2
+ 1384 00b9 84       		.byte	(.L90-.L92)/2
+ 1385 00ba 84       		.byte	(.L90-.L92)/2
+ 1386 00bb 84       		.byte	(.L90-.L92)/2
+ 1387 00bc 84       		.byte	(.L90-.L92)/2
+ 1388 00bd 84       		.byte	(.L90-.L92)/2
+ 1389 00be 81       		.byte	(.L91-.L92)/2
+ 1390 00bf 84       		.byte	(.L90-.L92)/2
+ 1391 00c0 84       		.byte	(.L90-.L92)/2
+ 1392 00c1 81       		.byte	(.L91-.L92)/2
+ 1393              		.p2align 1
+ 1394              	.L93:
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccp11hL6.s 			page 46
+
+
+ 1395              	.LBB66:
+ 421:Middlewares/LVGL/lvgl/src/misc/lv_style.c ****         case LV_STYLE_TRANSFORM_SCALE_X:
+ 422:Middlewares/LVGL/lvgl/src/misc/lv_style.c ****         case LV_STYLE_TRANSFORM_SCALE_Y:
+ 423:Middlewares/LVGL/lvgl/src/misc/lv_style.c ****             return (lv_style_value_t) {
+ 1396              		.loc 1 423 13 is_stmt 1 view .LVU390
+ 1397              		.loc 1 423 20 is_stmt 0 view .LVU391
+ 1398 00c2 4FF48073 		mov	r3, #256
+ 1399 00c6 0193     		str	r3, [sp, #4]
+ 1400 00c8 2EE0     		b	.L103
+ 1401              	.L99:
+ 424:Middlewares/LVGL/lvgl/src/misc/lv_style.c ****                 .num = LV_SCALE_NONE
+ 425:Middlewares/LVGL/lvgl/src/misc/lv_style.c ****             };
+ 426:Middlewares/LVGL/lvgl/src/misc/lv_style.c ****         case LV_STYLE_BG_COLOR:
+ 427:Middlewares/LVGL/lvgl/src/misc/lv_style.c ****             return (lv_style_value_t) {
+ 1402              		.loc 1 427 13 is_stmt 1 view .LVU392
+ 1403              		.loc 1 427 20 is_stmt 0 view .LVU393
+ 1404 00ca 0023     		movs	r3, #0
+ 1405 00cc 0193     		str	r3, [sp, #4]
+ 1406 00ce 184B     		ldr	r3, .L105
+ 1407 00d0 1B68     		ldr	r3, [r3]
+ 1408 00d2 ADF80430 		strh	r3, [sp, #4]	@ movhi
+ 1409 00d6 1B0C     		lsrs	r3, r3, #16
+ 1410 00d8 8DF80630 		strb	r3, [sp, #6]
+ 1411 00dc 24E0     		b	.L103
+ 1412              	.L95:
+ 428:Middlewares/LVGL/lvgl/src/misc/lv_style.c ****                 .color = white
+ 429:Middlewares/LVGL/lvgl/src/misc/lv_style.c ****             };
+ 430:Middlewares/LVGL/lvgl/src/misc/lv_style.c ****         case LV_STYLE_BG_GRAD_COLOR:
+ 431:Middlewares/LVGL/lvgl/src/misc/lv_style.c ****         case LV_STYLE_BORDER_COLOR:
+ 432:Middlewares/LVGL/lvgl/src/misc/lv_style.c ****         case LV_STYLE_SHADOW_COLOR:
+ 433:Middlewares/LVGL/lvgl/src/misc/lv_style.c ****         case LV_STYLE_OUTLINE_COLOR:
+ 434:Middlewares/LVGL/lvgl/src/misc/lv_style.c ****         case LV_STYLE_ARC_COLOR:
+ 435:Middlewares/LVGL/lvgl/src/misc/lv_style.c ****         case LV_STYLE_LINE_COLOR:
+ 436:Middlewares/LVGL/lvgl/src/misc/lv_style.c ****         case LV_STYLE_TEXT_COLOR:
+ 437:Middlewares/LVGL/lvgl/src/misc/lv_style.c ****         case LV_STYLE_DROP_SHADOW_COLOR:
+ 438:Middlewares/LVGL/lvgl/src/misc/lv_style.c ****         case LV_STYLE_IMAGE_RECOLOR:
+ 439:Middlewares/LVGL/lvgl/src/misc/lv_style.c ****         case LV_STYLE_RECOLOR:
+ 440:Middlewares/LVGL/lvgl/src/misc/lv_style.c ****             return (lv_style_value_t) {
+ 1413              		.loc 1 440 13 is_stmt 1 view .LVU394
+ 1414              		.loc 1 440 20 is_stmt 0 view .LVU395
+ 1415 00de 0023     		movs	r3, #0
+ 1416 00e0 0193     		str	r3, [sp, #4]
+ 1417 00e2 009B     		ldr	r3, [sp]
+ 1418 00e4 ADF80430 		strh	r3, [sp, #4]	@ movhi
+ 1419 00e8 1B0C     		lsrs	r3, r3, #16
+ 1420 00ea 8DF80630 		strb	r3, [sp, #6]
+ 1421 00ee 1BE0     		b	.L103
+ 1422              	.L97:
+ 441:Middlewares/LVGL/lvgl/src/misc/lv_style.c ****                 .color = black
+ 442:Middlewares/LVGL/lvgl/src/misc/lv_style.c ****             };
+ 443:Middlewares/LVGL/lvgl/src/misc/lv_style.c ****         case LV_STYLE_OPA:
+ 444:Middlewares/LVGL/lvgl/src/misc/lv_style.c ****         case LV_STYLE_OPA_LAYERED:
+ 445:Middlewares/LVGL/lvgl/src/misc/lv_style.c ****         case LV_STYLE_BORDER_OPA:
+ 446:Middlewares/LVGL/lvgl/src/misc/lv_style.c ****         case LV_STYLE_TEXT_OPA:
+ 447:Middlewares/LVGL/lvgl/src/misc/lv_style.c ****         case LV_STYLE_IMAGE_OPA:
+ 448:Middlewares/LVGL/lvgl/src/misc/lv_style.c ****         case LV_STYLE_BG_GRAD_OPA:
+ 449:Middlewares/LVGL/lvgl/src/misc/lv_style.c ****         case LV_STYLE_BG_MAIN_OPA:
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccp11hL6.s 			page 47
+
+
+ 450:Middlewares/LVGL/lvgl/src/misc/lv_style.c ****         case LV_STYLE_BG_IMAGE_OPA:
+ 451:Middlewares/LVGL/lvgl/src/misc/lv_style.c ****         case LV_STYLE_OUTLINE_OPA:
+ 452:Middlewares/LVGL/lvgl/src/misc/lv_style.c ****         case LV_STYLE_LINE_OPA:
+ 453:Middlewares/LVGL/lvgl/src/misc/lv_style.c ****         case LV_STYLE_ARC_OPA:
+ 454:Middlewares/LVGL/lvgl/src/misc/lv_style.c ****         case LV_STYLE_SHADOW_OPA:
+ 455:Middlewares/LVGL/lvgl/src/misc/lv_style.c ****             return (lv_style_value_t) {
+ 1423              		.loc 1 455 13 is_stmt 1 view .LVU396
+ 1424              		.loc 1 455 20 is_stmt 0 view .LVU397
+ 1425 00f0 FF23     		movs	r3, #255
+ 1426 00f2 0193     		str	r3, [sp, #4]
+ 1427 00f4 18E0     		b	.L103
+ 1428              	.L101:
+ 456:Middlewares/LVGL/lvgl/src/misc/lv_style.c ****                 .num = LV_OPA_COVER
+ 457:Middlewares/LVGL/lvgl/src/misc/lv_style.c ****             };
+ 458:Middlewares/LVGL/lvgl/src/misc/lv_style.c ****         case LV_STYLE_BG_GRAD_STOP:
+ 459:Middlewares/LVGL/lvgl/src/misc/lv_style.c ****             return (lv_style_value_t) {
+ 1429              		.loc 1 459 13 is_stmt 1 view .LVU398
+ 1430              		.loc 1 459 20 is_stmt 0 view .LVU399
+ 1431 00f6 FF23     		movs	r3, #255
+ 1432 00f8 0193     		str	r3, [sp, #4]
+ 1433 00fa 15E0     		b	.L103
+ 1434              	.L100:
+ 460:Middlewares/LVGL/lvgl/src/misc/lv_style.c ****                 .num = 255
+ 461:Middlewares/LVGL/lvgl/src/misc/lv_style.c ****             };
+ 462:Middlewares/LVGL/lvgl/src/misc/lv_style.c ****         case LV_STYLE_BORDER_SIDE:
+ 463:Middlewares/LVGL/lvgl/src/misc/lv_style.c ****             return (lv_style_value_t) {
+ 1435              		.loc 1 463 13 is_stmt 1 view .LVU400
+ 1436              		.loc 1 463 20 is_stmt 0 view .LVU401
+ 1437 00fc 0F23     		movs	r3, #15
+ 1438 00fe 0193     		str	r3, [sp, #4]
+ 1439 0100 12E0     		b	.L103
+ 1440              	.L98:
+ 464:Middlewares/LVGL/lvgl/src/misc/lv_style.c ****                 .num = LV_BORDER_SIDE_FULL
+ 465:Middlewares/LVGL/lvgl/src/misc/lv_style.c ****             };
+ 466:Middlewares/LVGL/lvgl/src/misc/lv_style.c ****         case LV_STYLE_TEXT_FONT:
+ 467:Middlewares/LVGL/lvgl/src/misc/lv_style.c ****             return (lv_style_value_t) {
+ 1441              		.loc 1 467 13 is_stmt 1 view .LVU402
+ 1442              		.loc 1 467 20 is_stmt 0 view .LVU403
+ 1443 0102 0C4B     		ldr	r3, .L105+4
+ 1444 0104 0193     		str	r3, [sp, #4]
+ 1445 0106 0FE0     		b	.L103
+ 1446              	.L102:
+ 468:Middlewares/LVGL/lvgl/src/misc/lv_style.c ****                 .ptr = LV_FONT_DEFAULT
+ 469:Middlewares/LVGL/lvgl/src/misc/lv_style.c ****             };
+ 470:Middlewares/LVGL/lvgl/src/misc/lv_style.c ****         case LV_STYLE_MAX_WIDTH:
+ 471:Middlewares/LVGL/lvgl/src/misc/lv_style.c ****         case LV_STYLE_MAX_HEIGHT:
+ 472:Middlewares/LVGL/lvgl/src/misc/lv_style.c ****             return (lv_style_value_t) {
+ 1447              		.loc 1 472 13 is_stmt 1 view .LVU404
+ 1448              		.loc 1 472 20 is_stmt 0 view .LVU405
+ 1449 0108 6FF06043 		mvn	r3, #-536870912
+ 1450 010c 0193     		str	r3, [sp, #4]
+ 1451 010e 0BE0     		b	.L103
+ 1452              	.L96:
+ 473:Middlewares/LVGL/lvgl/src/misc/lv_style.c ****                 .num = LV_COORD_MAX
+ 474:Middlewares/LVGL/lvgl/src/misc/lv_style.c ****             };
+ 475:Middlewares/LVGL/lvgl/src/misc/lv_style.c ****         case LV_STYLE_ROTARY_SENSITIVITY:
+ 476:Middlewares/LVGL/lvgl/src/misc/lv_style.c ****             return (lv_style_value_t) {
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccp11hL6.s 			page 48
+
+
+ 1453              		.loc 1 476 13 is_stmt 1 view .LVU406
+ 1454              		.loc 1 476 20 is_stmt 0 view .LVU407
+ 1455 0110 4FF48073 		mov	r3, #256
+ 1456 0114 0193     		str	r3, [sp, #4]
+ 1457 0116 07E0     		b	.L103
+ 1458              	.L94:
+ 477:Middlewares/LVGL/lvgl/src/misc/lv_style.c ****                 .num = 256
+ 478:Middlewares/LVGL/lvgl/src/misc/lv_style.c ****             };
+ 479:Middlewares/LVGL/lvgl/src/misc/lv_style.c ****         case LV_STYLE_DROP_SHADOW_QUALITY:
+ 480:Middlewares/LVGL/lvgl/src/misc/lv_style.c ****             return (lv_style_value_t) {
+ 1459              		.loc 1 480 13 is_stmt 1 view .LVU408
+ 1460              		.loc 1 480 20 is_stmt 0 view .LVU409
+ 1461 0118 0223     		movs	r3, #2
+ 1462 011a 0193     		str	r3, [sp, #4]
+ 1463 011c 04E0     		b	.L103
+ 1464              	.L91:
+ 481:Middlewares/LVGL/lvgl/src/misc/lv_style.c ****                 .num = LV_BLUR_QUALITY_PRECISION
+ 482:Middlewares/LVGL/lvgl/src/misc/lv_style.c ****             };
+ 483:Middlewares/LVGL/lvgl/src/misc/lv_style.c **** 
+ 484:Middlewares/LVGL/lvgl/src/misc/lv_style.c **** #if LV_USE_GRID
+ 485:Middlewares/LVGL/lvgl/src/misc/lv_style.c ****         case LV_STYLE_GRID_CELL_ROW_SPAN:
+ 486:Middlewares/LVGL/lvgl/src/misc/lv_style.c ****         case LV_STYLE_GRID_CELL_COLUMN_SPAN:
+ 487:Middlewares/LVGL/lvgl/src/misc/lv_style.c ****             return (lv_style_value_t) {
+ 1465              		.loc 1 487 13 is_stmt 1 view .LVU410
+ 1466              		.loc 1 487 20 is_stmt 0 view .LVU411
+ 1467 011e 0123     		movs	r3, #1
+ 1468 0120 0193     		str	r3, [sp, #4]
+ 1469 0122 01E0     		b	.L103
+ 1470              	.L90:
+ 488:Middlewares/LVGL/lvgl/src/misc/lv_style.c ****                 .num = 1
+ 489:Middlewares/LVGL/lvgl/src/misc/lv_style.c ****             };
+ 490:Middlewares/LVGL/lvgl/src/misc/lv_style.c **** #endif
+ 491:Middlewares/LVGL/lvgl/src/misc/lv_style.c **** 
+ 492:Middlewares/LVGL/lvgl/src/misc/lv_style.c ****         default:
+ 493:Middlewares/LVGL/lvgl/src/misc/lv_style.c ****             return (lv_style_value_t) {
+ 1471              		.loc 1 493 13 is_stmt 1 view .LVU412
+ 1472              		.loc 1 493 20 is_stmt 0 view .LVU413
+ 1473 0124 0023     		movs	r3, #0
+ 1474 0126 0193     		str	r3, [sp, #4]
+ 1475              	.L103:
+ 1476              	.LBE66:
+ 494:Middlewares/LVGL/lvgl/src/misc/lv_style.c ****                 .ptr = NULL
+ 495:Middlewares/LVGL/lvgl/src/misc/lv_style.c ****             };
+ 496:Middlewares/LVGL/lvgl/src/misc/lv_style.c ****     }
+ 497:Middlewares/LVGL/lvgl/src/misc/lv_style.c **** }
+ 1477              		.loc 1 497 1 view .LVU414
+ 1478 0128 0198     		ldr	r0, [sp, #4]
+ 1479              	.LVL120:
+ 1480              		.loc 1 497 1 view .LVU415
+ 1481 012a 02B0     		add	sp, sp, #8
+ 1482              	.LCFI15:
+ 1483              		.cfi_def_cfa_offset 0
+ 1484              		@ sp needed
+ 1485 012c 7047     		bx	lr
+ 1486              	.L106:
+ 1487 012e 00BF     		.align	2
+ 1488              	.L105:
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccp11hL6.s 			page 49
+
+
+ 1489 0130 00000000 		.word	white.0
+ 1490 0134 00000000 		.word	lv_font_montserrat_14
+ 1491              		.cfi_endproc
+ 1492              	.LFE210:
+ 1494              		.section	.text.lv_style_is_empty,"ax",%progbits
+ 1495              		.align	1
+ 1496              		.global	lv_style_is_empty
+ 1497              		.syntax unified
+ 1498              		.thumb
+ 1499              		.thumb_func
+ 1501              	lv_style_is_empty:
+ 1502              	.LVL121:
+ 1503              	.LFB211:
+ 498:Middlewares/LVGL/lvgl/src/misc/lv_style.c **** 
+ 499:Middlewares/LVGL/lvgl/src/misc/lv_style.c **** bool lv_style_is_empty(const lv_style_t * style)
+ 500:Middlewares/LVGL/lvgl/src/misc/lv_style.c **** {
+ 1504              		.loc 1 500 1 is_stmt 1 view -0
+ 1505              		.cfi_startproc
+ 1506              		@ args = 0, pretend = 0, frame = 0
+ 1507              		@ frame_needed = 0, uses_anonymous_args = 0
+ 1508              		@ link register save eliminated.
+ 501:Middlewares/LVGL/lvgl/src/misc/lv_style.c ****     LV_ASSERT_STYLE(style);
+ 1509              		.loc 1 501 5 view .LVU417
+ 1510              		.loc 1 501 5 view .LVU418
+ 1511              		.loc 1 501 5 view .LVU419
+ 502:Middlewares/LVGL/lvgl/src/misc/lv_style.c **** 
+ 503:Middlewares/LVGL/lvgl/src/misc/lv_style.c ****     return style->prop_cnt == 0;
+ 1512              		.loc 1 503 5 view .LVU420
+ 1513              		.loc 1 503 17 is_stmt 0 view .LVU421
+ 1514 0000 007A     		ldrb	r0, [r0, #8]	@ zero_extendqisi2
+ 1515              	.LVL122:
+ 504:Middlewares/LVGL/lvgl/src/misc/lv_style.c **** }
+ 1516              		.loc 1 504 1 view .LVU422
+ 1517 0002 B0FA80F0 		clz	r0, r0
+ 1518 0006 4009     		lsrs	r0, r0, #5
+ 1519 0008 7047     		bx	lr
+ 1520              		.cfi_endproc
+ 1521              	.LFE211:
+ 1523              		.section	.text.lv_style_prop_lookup_flags,"ax",%progbits
+ 1524              		.align	1
+ 1525              		.global	lv_style_prop_lookup_flags
+ 1526              		.syntax unified
+ 1527              		.thumb
+ 1528              		.thumb_func
+ 1530              	lv_style_prop_lookup_flags:
+ 1531              	.LVL123:
+ 1532              	.LFB212:
+ 505:Middlewares/LVGL/lvgl/src/misc/lv_style.c **** 
+ 506:Middlewares/LVGL/lvgl/src/misc/lv_style.c **** uint8_t lv_style_prop_lookup_flags(lv_style_prop_t prop)
+ 507:Middlewares/LVGL/lvgl/src/misc/lv_style.c **** {
+ 1533              		.loc 1 507 1 is_stmt 1 view -0
+ 1534              		.cfi_startproc
+ 1535              		@ args = 0, pretend = 0, frame = 0
+ 1536              		@ frame_needed = 0, uses_anonymous_args = 0
+ 1537              		@ link register save eliminated.
+ 508:Middlewares/LVGL/lvgl/src/misc/lv_style.c ****     if(prop == LV_STYLE_PROP_ANY) return LV_STYLE_PROP_FLAG_ALL; /*Any prop can have any flags*/
+ 1538              		.loc 1 508 5 view .LVU424
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccp11hL6.s 			page 50
+
+
+ 1539              		.loc 1 508 7 is_stmt 0 view .LVU425
+ 1540 0000 FF28     		cmp	r0, #255
+ 1541 0002 12D0     		beq	.L111
+ 509:Middlewares/LVGL/lvgl/src/misc/lv_style.c ****     if(prop == LV_STYLE_PROP_INV) return 0;
+ 1542              		.loc 1 509 5 is_stmt 1 view .LVU426
+ 1543              		.loc 1 509 7 is_stmt 0 view .LVU427
+ 1544 0004 58B1     		cbz	r0, .L109
+ 510:Middlewares/LVGL/lvgl/src/misc/lv_style.c **** 
+ 511:Middlewares/LVGL/lvgl/src/misc/lv_style.c ****     if(prop < LV_STYLE_NUM_BUILT_IN_PROPS)
+ 1545              		.loc 1 511 5 is_stmt 1 view .LVU428
+ 1546              		.loc 1 511 7 is_stmt 0 view .LVU429
+ 1547 0006 B028     		cmp	r0, #176
+ 1548 0008 0AD9     		bls	.L115
+ 512:Middlewares/LVGL/lvgl/src/misc/lv_style.c ****         return lv_style_builtin_prop_flag_lookup_table[prop];
+ 513:Middlewares/LVGL/lvgl/src/misc/lv_style.c ****     prop -= LV_STYLE_NUM_BUILT_IN_PROPS;
+ 1549              		.loc 1 513 5 is_stmt 1 view .LVU430
+ 1550              		.loc 1 513 10 is_stmt 0 view .LVU431
+ 1551 000a 4F30     		adds	r0, r0, #79
+ 1552              	.LVL124:
+ 1553              		.loc 1 513 10 view .LVU432
+ 1554 000c C0B2     		uxtb	r0, r0
+ 1555              	.LVL125:
+ 514:Middlewares/LVGL/lvgl/src/misc/lv_style.c ****     if(lv_style_custom_prop_flag_lookup_table != NULL && prop < lv_style_custom_prop_flag_lookup_ta
+ 1556              		.loc 1 514 5 is_stmt 1 view .LVU433
+ 1557              		.loc 1 514 8 is_stmt 0 view .LVU434
+ 1558 000e 094B     		ldr	r3, .L117
+ 1559 0010 5B6B     		ldr	r3, [r3, #52]
+ 1560              		.loc 1 514 7 view .LVU435
+ 1561 0012 63B1     		cbz	r3, .L113
+ 1562              		.loc 1 514 65 discriminator 1 view .LVU436
+ 1563 0014 074A     		ldr	r2, .L117
+ 1564 0016 D26A     		ldr	r2, [r2, #44]
+ 1565              		.loc 1 514 55 discriminator 1 view .LVU437
+ 1566 0018 9042     		cmp	r0, r2
+ 1567 001a 04D3     		bcc	.L116
+ 515:Middlewares/LVGL/lvgl/src/misc/lv_style.c ****         return lv_style_custom_prop_flag_lookup_table[prop];
+ 516:Middlewares/LVGL/lvgl/src/misc/lv_style.c ****     return 0;
+ 1568              		.loc 1 516 12 view .LVU438
+ 1569 001c 0020     		movs	r0, #0
+ 1570              	.LVL126:
+ 1571              	.L109:
+ 517:Middlewares/LVGL/lvgl/src/misc/lv_style.c **** }
+ 1572              		.loc 1 517 1 view .LVU439
+ 1573 001e 7047     		bx	lr
+ 1574              	.LVL127:
+ 1575              	.L115:
+ 512:Middlewares/LVGL/lvgl/src/misc/lv_style.c ****     prop -= LV_STYLE_NUM_BUILT_IN_PROPS;
+ 1576              		.loc 1 512 9 is_stmt 1 view .LVU440
+ 512:Middlewares/LVGL/lvgl/src/misc/lv_style.c ****     prop -= LV_STYLE_NUM_BUILT_IN_PROPS;
+ 1577              		.loc 1 512 55 is_stmt 0 view .LVU441
+ 1578 0020 054B     		ldr	r3, .L117+4
+ 1579 0022 185C     		ldrb	r0, [r3, r0]	@ zero_extendqisi2
+ 1580              	.LVL128:
+ 512:Middlewares/LVGL/lvgl/src/misc/lv_style.c ****     prop -= LV_STYLE_NUM_BUILT_IN_PROPS;
+ 1581              		.loc 1 512 55 view .LVU442
+ 1582 0024 7047     		bx	lr
+ 1583              	.LVL129:
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccp11hL6.s 			page 51
+
+
+ 1584              	.L116:
+ 515:Middlewares/LVGL/lvgl/src/misc/lv_style.c ****         return lv_style_custom_prop_flag_lookup_table[prop];
+ 1585              		.loc 1 515 9 is_stmt 1 view .LVU443
+ 515:Middlewares/LVGL/lvgl/src/misc/lv_style.c ****         return lv_style_custom_prop_flag_lookup_table[prop];
+ 1586              		.loc 1 515 54 is_stmt 0 view .LVU444
+ 1587 0026 185C     		ldrb	r0, [r3, r0]	@ zero_extendqisi2
+ 1588              	.LVL130:
+ 515:Middlewares/LVGL/lvgl/src/misc/lv_style.c ****         return lv_style_custom_prop_flag_lookup_table[prop];
+ 1589              		.loc 1 515 54 view .LVU445
+ 1590 0028 7047     		bx	lr
+ 1591              	.LVL131:
+ 1592              	.L111:
+ 508:Middlewares/LVGL/lvgl/src/misc/lv_style.c ****     if(prop == LV_STYLE_PROP_INV) return 0;
+ 1593              		.loc 1 508 42 discriminator 1 view .LVU446
+ 1594 002a 3F20     		movs	r0, #63
+ 1595              	.LVL132:
+ 508:Middlewares/LVGL/lvgl/src/misc/lv_style.c ****     if(prop == LV_STYLE_PROP_INV) return 0;
+ 1596              		.loc 1 508 42 discriminator 1 view .LVU447
+ 1597 002c 7047     		bx	lr
+ 1598              	.LVL133:
+ 1599              	.L113:
+ 516:Middlewares/LVGL/lvgl/src/misc/lv_style.c **** }
+ 1600              		.loc 1 516 12 view .LVU448
+ 1601 002e 0020     		movs	r0, #0
+ 1602              	.LVL134:
+ 516:Middlewares/LVGL/lvgl/src/misc/lv_style.c **** }
+ 1603              		.loc 1 516 12 view .LVU449
+ 1604 0030 7047     		bx	lr
+ 1605              	.L118:
+ 1606 0032 00BF     		.align	2
+ 1607              	.L117:
+ 1608 0034 00000000 		.word	lv_global
+ 1609 0038 00000000 		.word	lv_style_builtin_prop_flag_lookup_table
+ 1610              		.cfi_endproc
+ 1611              	.LFE212:
+ 1613              		.section	.rodata.white.0,"a"
+ 1614              		.align	2
+ 1617              	white.0:
+ 1618 0000 FF       		.byte	-1
+ 1619 0001 FF       		.byte	-1
+ 1620 0002 FF       		.byte	-1
+ 1621              		.global	lv_style_builtin_prop_flag_lookup_table
+ 1622              		.section	.rodata.lv_style_builtin_prop_flag_lookup_table,"a"
+ 1623              		.align	2
+ 1626              	lv_style_builtin_prop_flag_lookup_table:
+ 1627 0000 00040402 		.ascii	"\000\004\004\002\"\"\000\000\004\004\004\004\014\014"
+ 1627      22220000 
+ 1627      04040404 
+ 1627      0C0C
+ 1628 000e 00000404 		.ascii	"\000\000\004\004\004\000\000\000\000\000\006\006\006"
+ 1628      04000000 
+ 1628      00000606 
+ 1628      06
+ 1629 001b 06000606 		.ascii	"\006\000\006\006\000\006\006\006\006\000\000\000\000"
+ 1629      00060606 
+ 1629      06000000 
+ 1629      00
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccp11hL6.s 			page 52
+
+
+ 1630 0028 00000000 		.ascii	"\000\000\000\000\000\000\000\000\002\000\000\000\000"
+ 1630      00000000 
+ 1630      02000000 
+ 1630      00
+ 1631 0035 00000004 		.ascii	"\000\000\000\004\000\000\000\000\000\000\000\002\000"
+ 1631      00000000 
+ 1631      00000002 
+ 1631      00
+ 1632 0042 02020000 		.ascii	"\002\002\000\000\000\000\000\000\002\002\002\005\000"
+ 1632      00000000 
+ 1632      02020205 
+ 1632      00
+ 1633 004f 00000200 		.ascii	"\000\000\002\000\000\001\000\000\000\000\000\000\000"
+ 1633      00010000 
+ 1633      00000000 
+ 1633      00
+ 1634 005c 01000000 		.ascii	"\001\000\000\000\000\002\002\002\000\005\005\005\000"
+ 1634      00020202 
+ 1634      00050505 
+ 1634      00
+ 1635 0069 00000000 		.ascii	"\000\000\000\000\000\001\000\000\020\001\001\000\000"
+ 1635      00010000 
+ 1635      10010100 
+ 1635      00
+ 1636 0076 00000010 		.ascii	"\000\000\000\020\020\000\000\000\000\000\000\005\000"
+ 1636      10000000 
+ 1636      00000005 
+ 1636      00
+ 1637 0083 00040000 		.ascii	"\000\004\000\000\000\000\000\000\000\000\000\000\000"
+ 1637      00000000 
+ 1637      00000000 
+ 1637      00
+ 1638 0090 02020200 		.ascii	"\002\002\002\000\002\000\000\00022\000\000222\000\004"
+ 1638      02000000 
+ 1638      32320000 
+ 1638      32323200 
+ 1638      04
+ 1639 00a1 04040404 		.ascii	"\004\004\004\004\004\004\000\004\004\004\004\004\004"
+ 1639      04040004 
+ 1639      04040404 
+ 1639      04
+ 1640 00ae 040400   		.ascii	"\004\004\000"
+ 1641              		.global	lv_style_const_prop_id_inv
+ 1642              		.section	.rodata.lv_style_const_prop_id_inv,"a"
+ 1645              	lv_style_const_prop_id_inv:
+ 1646 0000 00       		.space	1
+ 1647              		.text
+ 1648              	.Letext0:
+ 1649              		.file 4 "D:\\STM32CubeIDE\\STM32CubeIDE_2.1.1\\STM32CubeIDE\\plugins\\com.st.stm32cube.ide.mcu.ext
+ 1650              		.file 5 "D:\\STM32CubeIDE\\STM32CubeIDE_2.1.1\\STM32CubeIDE\\plugins\\com.st.stm32cube.ide.mcu.ext
+ 1651              		.file 6 "D:\\STM32CubeIDE\\STM32CubeIDE_2.1.1\\STM32CubeIDE\\plugins\\com.st.stm32cube.ide.mcu.ext
+ 1652              		.file 7 "Middlewares/LVGL/lvgl/src/misc/../font/../misc/lv_types.h"
+ 1653              		.file 8 "Middlewares/LVGL/lvgl/src/misc/../core/../draw/lv_draw.h"
+ 1654              		.file 9 "Middlewares/LVGL/lvgl/src/misc/../core/../draw/lv_draw_private.h"
+ 1655              		.file 10 "Middlewares/LVGL/lvgl/src/misc/../core/../misc/lv_timer_private.h"
+ 1656              		.file 11 "Middlewares/LVGL/lvgl/src/misc/lv_anim.h"
+ 1657              		.file 12 "Middlewares/LVGL/lvgl/src/misc/../font/lv_font.h"
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccp11hL6.s 			page 53
+
+
+ 1658              		.file 13 "Middlewares/LVGL/lvgl/src/misc/../core/../draw/../misc/cache/class/../lv_cache_private.h
+ 1659              		.file 14 "Middlewares/LVGL/lvgl/src/misc/../core/../draw/lv_draw_buf_private.h"
+ 1660              		.file 15 "Middlewares/LVGL/lvgl/src/misc/../font/../draw/lv_draw_buf.h"
+ 1661              		.file 16 "Middlewares/LVGL/lvgl/src/misc/../font/../draw/../misc/lv_area.h"
+ 1662              		.file 17 "Middlewares/LVGL/lvgl/src/misc/../font/../draw/../misc/lv_color.h"
+ 1663              		.file 18 "Middlewares/LVGL/lvgl/src/misc/../font/../draw/lv_image_dsc.h"
+ 1664              		.file 19 "Middlewares/LVGL/lvgl/src/misc/../tick/lv_tick.h"
+ 1665              		.file 20 "Middlewares/LVGL/lvgl/src/misc/lv_ll.h"
+ 1666              		.file 21 "Middlewares/LVGL/lvgl/src/misc/lv_timer.h"
+ 1667              		.file 22 "Middlewares/LVGL/lvgl/src/misc/../layouts/lv_layout.h"
+ 1668              		.file 23 "Middlewares/LVGL/lvgl/src/misc/../core/../osal/lv_os_none.h"
+ 1669              		.file 24 "Middlewares/LVGL/lvgl/src/misc/../core/../debugging/sysmon/../../core/../indev/lv_indev.
+ 1670              		.file 25 "Middlewares/LVGL/lvgl/src/misc/../core/../stdlib/builtin/lv_tlsf.h"
+ 1671              		.file 26 "Middlewares/LVGL/lvgl/src/misc/../core/../misc/lv_anim_private.h"
+ 1672              		.file 27 "Middlewares/LVGL/lvgl/src/misc/../core/../tick/lv_tick_private.h"
+ 1673              		.file 28 "Middlewares/LVGL/lvgl/src/misc/../core/../draw/sw/lv_draw_sw_mask_private.h"
+ 1674              		.file 29 "Middlewares/LVGL/lvgl/src/misc/../core/../stdlib/builtin/lv_tlsf_private.h"
+ 1675              		.file 30 "Middlewares/LVGL/lvgl/src/misc/../core/../layouts/lv_layout_private.h"
+ 1676              		.file 31 "Middlewares/LVGL/lvgl/src/misc/../core/lv_global.h"
+ 1677              		.file 32 "Middlewares/LVGL/lvgl/src/misc/../font/../draw/../misc/../stdlib/lv_mem.h"
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccp11hL6.s 			page 54
+
+
+DEFINED SYMBOLS
+                            *ABS*:00000000 lv_style.c
+C:\Users\w1785\AppData\Local\Temp\ccp11hL6.s:21     .text.lv_style_get_prop_inlined:00000000 $t
+C:\Users\w1785\AppData\Local\Temp\ccp11hL6.s:26     .text.lv_style_get_prop_inlined:00000000 lv_style_get_prop_inlined
+C:\Users\w1785\AppData\Local\Temp\ccp11hL6.s:165    .text.lv_style_init:00000000 $t
+C:\Users\w1785\AppData\Local\Temp\ccp11hL6.s:171    .text.lv_style_init:00000000 lv_style_init
+C:\Users\w1785\AppData\Local\Temp\ccp11hL6.s:205    .text.lv_style_reset:00000000 $t
+C:\Users\w1785\AppData\Local\Temp\ccp11hL6.s:211    .text.lv_style_reset:00000000 lv_style_reset
+C:\Users\w1785\AppData\Local\Temp\ccp11hL6.s:265    .text.lv_style_register_prop:00000000 $t
+C:\Users\w1785\AppData\Local\Temp\ccp11hL6.s:271    .text.lv_style_register_prop:00000000 lv_style_register_prop
+C:\Users\w1785\AppData\Local\Temp\ccp11hL6.s:406    .text.lv_style_register_prop:00000058 $d
+C:\Users\w1785\AppData\Local\Temp\ccp11hL6.s:412    .text.lv_style_get_num_custom_props:00000000 $t
+C:\Users\w1785\AppData\Local\Temp\ccp11hL6.s:418    .text.lv_style_get_num_custom_props:00000000 lv_style_get_num_custom_props
+C:\Users\w1785\AppData\Local\Temp\ccp11hL6.s:437    .text.lv_style_get_num_custom_props:0000000c $d
+C:\Users\w1785\AppData\Local\Temp\ccp11hL6.s:442    .text.lv_style_remove_prop:00000000 $t
+C:\Users\w1785\AppData\Local\Temp\ccp11hL6.s:448    .text.lv_style_remove_prop:00000000 lv_style_remove_prop
+C:\Users\w1785\AppData\Local\Temp\ccp11hL6.s:642    .text.lv_style_set_prop:00000000 $t
+C:\Users\w1785\AppData\Local\Temp\ccp11hL6.s:648    .text.lv_style_set_prop:00000000 lv_style_set_prop
+C:\Users\w1785\AppData\Local\Temp\ccp11hL6.s:879    .text.lv_style_merge:00000000 $t
+C:\Users\w1785\AppData\Local\Temp\ccp11hL6.s:885    .text.lv_style_merge:00000000 lv_style_merge
+C:\Users\w1785\AppData\Local\Temp\ccp11hL6.s:1028   .text.lv_style_copy:00000000 $t
+C:\Users\w1785\AppData\Local\Temp\ccp11hL6.s:1034   .text.lv_style_copy:00000000 lv_style_copy
+C:\Users\w1785\AppData\Local\Temp\ccp11hL6.s:1082   .text.lv_style_get_prop:00000000 $t
+C:\Users\w1785\AppData\Local\Temp\ccp11hL6.s:1088   .text.lv_style_get_prop:00000000 lv_style_get_prop
+C:\Users\w1785\AppData\Local\Temp\ccp11hL6.s:1111   .text.lv_style_transition_dsc_init:00000000 $t
+C:\Users\w1785\AppData\Local\Temp\ccp11hL6.s:1117   .text.lv_style_transition_dsc_init:00000000 lv_style_transition_dsc_init
+C:\Users\w1785\AppData\Local\Temp\ccp11hL6.s:1189   .text.lv_style_transition_dsc_init:00000028 $d
+C:\Users\w1785\AppData\Local\Temp\ccp11hL6.s:1194   .text.lv_style_prop_get_default:00000000 $t
+C:\Users\w1785\AppData\Local\Temp\ccp11hL6.s:1200   .text.lv_style_prop_get_default:00000000 lv_style_prop_get_default
+C:\Users\w1785\AppData\Local\Temp\ccp11hL6.s:1227   .text.lv_style_prop_get_default:0000001c $d
+C:\Users\w1785\AppData\Local\Temp\ccp11hL6.s:1393   .text.lv_style_prop_get_default:000000c2 $t
+C:\Users\w1785\AppData\Local\Temp\ccp11hL6.s:1489   .text.lv_style_prop_get_default:00000130 $d
+C:\Users\w1785\AppData\Local\Temp\ccp11hL6.s:1617   .rodata.white.0:00000000 white.0
+C:\Users\w1785\AppData\Local\Temp\ccp11hL6.s:1495   .text.lv_style_is_empty:00000000 $t
+C:\Users\w1785\AppData\Local\Temp\ccp11hL6.s:1501   .text.lv_style_is_empty:00000000 lv_style_is_empty
+C:\Users\w1785\AppData\Local\Temp\ccp11hL6.s:1524   .text.lv_style_prop_lookup_flags:00000000 $t
+C:\Users\w1785\AppData\Local\Temp\ccp11hL6.s:1530   .text.lv_style_prop_lookup_flags:00000000 lv_style_prop_lookup_flags
+C:\Users\w1785\AppData\Local\Temp\ccp11hL6.s:1608   .text.lv_style_prop_lookup_flags:00000034 $d
+C:\Users\w1785\AppData\Local\Temp\ccp11hL6.s:1626   .rodata.lv_style_builtin_prop_flag_lookup_table:00000000 lv_style_builtin_prop_flag_lookup_table
+C:\Users\w1785\AppData\Local\Temp\ccp11hL6.s:1614   .rodata.white.0:00000000 $d
+C:\Users\w1785\AppData\Local\Temp\ccp11hL6.s:1623   .rodata.lv_style_builtin_prop_flag_lookup_table:00000000 $d
+C:\Users\w1785\AppData\Local\Temp\ccp11hL6.s:1645   .rodata.lv_style_const_prop_id_inv:00000000 lv_style_const_prop_id_inv
+C:\Users\w1785\AppData\Local\Temp\ccp11hL6.s:1646   .rodata.lv_style_const_prop_id_inv:00000000 $d
+
+UNDEFINED SYMBOLS
+lv_memset
+lv_free
+lv_realloc
+lv_global
+lv_malloc
+lv_anim_path_linear
+lv_font_montserrat_14

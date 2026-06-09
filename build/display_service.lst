@@ -1,0 +1,111 @@
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccpoOibE.s 			page 1
+
+
+   1              		.cpu cortex-m4
+   2              		.arch armv7e-m
+   3              		.fpu fpv4-sp-d16
+   4              		.eabi_attribute 27, 1
+   5              		.eabi_attribute 28, 1
+   6              		.eabi_attribute 20, 1
+   7              		.eabi_attribute 21, 1
+   8              		.eabi_attribute 23, 3
+   9              		.eabi_attribute 24, 1
+  10              		.eabi_attribute 25, 1
+  11              		.eabi_attribute 26, 1
+  12              		.eabi_attribute 30, 1
+  13              		.eabi_attribute 34, 1
+  14              		.eabi_attribute 18, 4
+  15              		.file	"display_service.c"
+  16              		.text
+  17              	.Ltext0:
+  18              		.cfi_sections	.debug_frame
+  19              		.file 1 "Services/Src/display_service.c"
+  20              		.section	.text.DisplayService_Init,"ax",%progbits
+  21              		.align	1
+  22              		.global	DisplayService_Init
+  23              		.syntax unified
+  24              		.thumb
+  25              		.thumb_func
+  27              	DisplayService_Init:
+  28              	.LFB132:
+   1:Services/Src/display_service.c **** #include "display_service.h"
+   2:Services/Src/display_service.c **** #include "st7789.h"
+   3:Services/Src/display_service.c **** 
+   4:Services/Src/display_service.c **** /**
+   5:Services/Src/display_service.c ****  * @brief 初始化显示服务。
+   6:Services/Src/display_service.c ****  * @retval 无
+   7:Services/Src/display_service.c ****  */
+   8:Services/Src/display_service.c **** void DisplayService_Init(void)
+   9:Services/Src/display_service.c **** {
+  29              		.loc 1 9 1 view -0
+  30              		.cfi_startproc
+  31              		@ args = 0, pretend = 0, frame = 0
+  32              		@ frame_needed = 0, uses_anonymous_args = 0
+  33 0000 08B5     		push	{r3, lr}
+  34              	.LCFI0:
+  35              		.cfi_def_cfa_offset 8
+  36              		.cfi_offset 3, -8
+  37              		.cfi_offset 14, -4
+  10:Services/Src/display_service.c ****   /* 显示服务通过设备驱动层初始化 ST7789 屏幕。 */
+  11:Services/Src/display_service.c ****   ST7789_Init();
+  38              		.loc 1 11 3 view .LVU1
+  39 0002 FFF7FEFF 		bl	ST7789_Init
+  40              	.LVL0:
+  12:Services/Src/display_service.c **** }
+  41              		.loc 1 12 1 is_stmt 0 view .LVU2
+  42 0006 08BD     		pop	{r3, pc}
+  43              		.cfi_endproc
+  44              	.LFE132:
+  46              		.section	.text.DisplayService_TestColorCycle,"ax",%progbits
+  47              		.align	1
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccpoOibE.s 			page 2
+
+
+  48              		.global	DisplayService_TestColorCycle
+  49              		.syntax unified
+  50              		.thumb
+  51              		.thumb_func
+  53              	DisplayService_TestColorCycle:
+  54              	.LFB133:
+  13:Services/Src/display_service.c **** 
+  14:Services/Src/display_service.c **** /**
+  15:Services/Src/display_service.c ****  * @brief 执行显示服务的颜色循环测试。
+  16:Services/Src/display_service.c ****  * @retval 无
+  17:Services/Src/display_service.c ****  */
+  18:Services/Src/display_service.c **** void DisplayService_TestColorCycle(void)
+  19:Services/Src/display_service.c **** {
+  55              		.loc 1 19 1 is_stmt 1 view -0
+  56              		.cfi_startproc
+  57              		@ args = 0, pretend = 0, frame = 0
+  58              		@ frame_needed = 0, uses_anonymous_args = 0
+  59 0000 08B5     		push	{r3, lr}
+  60              	.LCFI1:
+  61              		.cfi_def_cfa_offset 8
+  62              		.cfi_offset 3, -8
+  63              		.cfi_offset 14, -4
+  20:Services/Src/display_service.c ****   /* 显示服务通过设备驱动层执行 ST7789 颜色循环测试。 */
+  21:Services/Src/display_service.c ****   ST7789_TestColorCycle();
+  64              		.loc 1 21 3 view .LVU4
+  65 0002 FFF7FEFF 		bl	ST7789_TestColorCycle
+  66              	.LVL1:
+  22:Services/Src/display_service.c **** }
+  67              		.loc 1 22 1 is_stmt 0 view .LVU5
+  68 0006 08BD     		pop	{r3, pc}
+  69              		.cfi_endproc
+  70              	.LFE133:
+  72              		.text
+  73              	.Letext0:
+  74              		.file 2 "DeviceDrivers/LCD/Inc/st7789.h"
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccpoOibE.s 			page 3
+
+
+DEFINED SYMBOLS
+                            *ABS*:00000000 display_service.c
+C:\Users\w1785\AppData\Local\Temp\ccpoOibE.s:21     .text.DisplayService_Init:00000000 $t
+C:\Users\w1785\AppData\Local\Temp\ccpoOibE.s:27     .text.DisplayService_Init:00000000 DisplayService_Init
+C:\Users\w1785\AppData\Local\Temp\ccpoOibE.s:47     .text.DisplayService_TestColorCycle:00000000 $t
+C:\Users\w1785\AppData\Local\Temp\ccpoOibE.s:53     .text.DisplayService_TestColorCycle:00000000 DisplayService_TestColorCycle
+
+UNDEFINED SYMBOLS
+ST7789_Init
+ST7789_TestColorCycle

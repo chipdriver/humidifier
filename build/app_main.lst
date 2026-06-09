@@ -1,0 +1,162 @@
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\cca7eJE0.s 			page 1
+
+
+   1              		.cpu cortex-m4
+   2              		.arch armv7e-m
+   3              		.fpu fpv4-sp-d16
+   4              		.eabi_attribute 27, 1
+   5              		.eabi_attribute 28, 1
+   6              		.eabi_attribute 20, 1
+   7              		.eabi_attribute 21, 1
+   8              		.eabi_attribute 23, 3
+   9              		.eabi_attribute 24, 1
+  10              		.eabi_attribute 25, 1
+  11              		.eabi_attribute 26, 1
+  12              		.eabi_attribute 30, 1
+  13              		.eabi_attribute 34, 1
+  14              		.eabi_attribute 18, 4
+  15              		.file	"app_main.c"
+  16              		.text
+  17              	.Ltext0:
+  18              		.cfi_sections	.debug_frame
+  19              		.file 1 "Application/Src/app_main.c"
+  20              		.section	.rodata.App_Main.str1.4,"aMS",%progbits,1
+  21              		.align	2
+  22              	.LC0:
+  23 0000 48656C6C 		.ascii	"Hello LVGL\000"
+  23      6F204C56 
+  23      474C00
+  24              		.section	.text.App_Main,"ax",%progbits
+  25              		.align	1
+  26              		.global	App_Main
+  27              		.syntax unified
+  28              		.thumb
+  29              		.thumb_func
+  31              	App_Main:
+  32              	.LFB329:
+   1:Application/Src/app_main.c **** #include "app_main.h"
+   2:Application/Src/app_main.c **** #include "display_service.h"
+   3:Application/Src/app_main.c **** #include "lv_port_disp.h"
+   4:Application/Src/app_main.c **** #include "lvgl.h"
+   5:Application/Src/app_main.c **** 
+   6:Application/Src/app_main.c **** /**
+   7:Application/Src/app_main.c ****  * @brief 应用层主流程入口。
+   8:Application/Src/app_main.c ****  * @retval 无
+   9:Application/Src/app_main.c ****  */
+  10:Application/Src/app_main.c **** void App_Main(void)
+  11:Application/Src/app_main.c **** {
+  33              		.loc 1 11 1 view -0
+  34              		.cfi_startproc
+  35              		@ args = 0, pretend = 0, frame = 0
+  36              		@ frame_needed = 0, uses_anonymous_args = 0
+  37 0000 10B5     		push	{r4, lr}
+  38              	.LCFI0:
+  39              		.cfi_def_cfa_offset 8
+  40              		.cfi_offset 4, -8
+  41              		.cfi_offset 14, -4
+  12:Application/Src/app_main.c ****   /* 初始化显示相关业务服务。 */
+  13:Application/Src/app_main.c ****   DisplayService_Init();
+  42              		.loc 1 13 3 view .LVU1
+  43 0002 FFF7FEFF 		bl	DisplayService_Init
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\cca7eJE0.s 			page 2
+
+
+  44              	.LVL0:
+  14:Application/Src/app_main.c **** 
+  15:Application/Src/app_main.c ****   lv_init();
+  45              		.loc 1 15 3 view .LVU2
+  46 0006 FFF7FEFF 		bl	lv_init
+  47              	.LVL1:
+  16:Application/Src/app_main.c ****   lv_tick_set_cb(HAL_GetTick);
+  48              		.loc 1 16 3 view .LVU3
+  49 000a 0B48     		ldr	r0, .L4
+  50 000c FFF7FEFF 		bl	lv_tick_set_cb
+  51              	.LVL2:
+  17:Application/Src/app_main.c ****   LV_Port_Disp_Init();
+  52              		.loc 1 17 3 view .LVU4
+  53 0010 FFF7FEFF 		bl	LV_Port_Disp_Init
+  54              	.LVL3:
+  18:Application/Src/app_main.c **** 
+  19:Application/Src/app_main.c ****   lv_obj_t *label = lv_label_create(lv_screen_active());
+  55              		.loc 1 19 3 view .LVU5
+  56              		.loc 1 19 21 is_stmt 0 view .LVU6
+  57 0014 FFF7FEFF 		bl	lv_screen_active
+  58              	.LVL4:
+  59              		.loc 1 19 21 discriminator 1 view .LVU7
+  60 0018 FFF7FEFF 		bl	lv_label_create
+  61              	.LVL5:
+  62 001c 0446     		mov	r4, r0
+  63              	.LVL6:
+  20:Application/Src/app_main.c ****   lv_label_set_text(label, "Hello LVGL");
+  64              		.loc 1 20 3 is_stmt 1 view .LVU8
+  65 001e 0749     		ldr	r1, .L4+4
+  66 0020 FFF7FEFF 		bl	lv_label_set_text
+  67              	.LVL7:
+  21:Application/Src/app_main.c ****   lv_obj_center(label);
+  68              		.loc 1 21 3 view .LVU9
+  69 0024 2046     		mov	r0, r4
+  70 0026 FFF7FEFF 		bl	lv_obj_center
+  71              	.LVL8:
+  72              	.L2:
+  22:Application/Src/app_main.c **** 
+  23:Application/Src/app_main.c ****   while (1)
+  73              		.loc 1 23 3 view .LVU10
+  24:Application/Src/app_main.c ****   {
+  25:Application/Src/app_main.c ****     lv_timer_handler();
+  74              		.loc 1 25 5 view .LVU11
+  75 002a FFF7FEFF 		bl	lv_timer_handler
+  76              	.LVL9:
+  26:Application/Src/app_main.c ****     HAL_Delay(5U);
+  77              		.loc 1 26 5 discriminator 1 view .LVU12
+  78 002e 0520     		movs	r0, #5
+  79 0030 FFF7FEFF 		bl	HAL_Delay
+  80              	.LVL10:
+  23:Application/Src/app_main.c ****   {
+  81              		.loc 1 23 9 view .LVU13
+  82 0034 F9E7     		b	.L2
+  83              	.L5:
+  84 0036 00BF     		.align	2
+  85              	.L4:
+  86 0038 00000000 		.word	HAL_GetTick
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\cca7eJE0.s 			page 3
+
+
+  87 003c 00000000 		.word	.LC0
+  88              		.cfi_endproc
+  89              	.LFE329:
+  91              		.text
+  92              	.Letext0:
+  93              		.file 2 "D:\\STM32CubeIDE\\STM32CubeIDE_2.1.1\\STM32CubeIDE\\plugins\\com.st.stm32cube.ide.mcu.ext
+  94              		.file 3 "D:\\STM32CubeIDE\\STM32CubeIDE_2.1.1\\STM32CubeIDE\\plugins\\com.st.stm32cube.ide.mcu.ext
+  95              		.file 4 "Middlewares/LVGL/lvgl/src/misc/lv_types.h"
+  96              		.file 5 "Middlewares/LVGL/lvgl/src/misc/../tick/lv_tick.h"
+  97              		.file 6 "Drivers/STM32G4xx_HAL_Driver/Inc/stm32g4xx_hal.h"
+  98              		.file 7 "Middlewares/LVGL/lvgl/src/core/lv_obj_pos.h"
+  99              		.file 8 "Middlewares/LVGL/lvgl/src/widgets/bar/../label/lv_label.h"
+ 100              		.file 9 "Middlewares/LVGL/lvgl/src/misc/lv_timer.h"
+ 101              		.file 10 "Middlewares/LVGL/lvgl/src/core/../display/lv_display.h"
+ 102              		.file 11 "Core/Inc/lv_port_disp.h"
+ 103              		.file 12 "Middlewares/LVGL/lvgl/src/lv_init.h"
+ 104              		.file 13 "Services/Inc/display_service.h"
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\cca7eJE0.s 			page 4
+
+
+DEFINED SYMBOLS
+                            *ABS*:00000000 app_main.c
+C:\Users\w1785\AppData\Local\Temp\cca7eJE0.s:21     .rodata.App_Main.str1.4:00000000 $d
+C:\Users\w1785\AppData\Local\Temp\cca7eJE0.s:25     .text.App_Main:00000000 $t
+C:\Users\w1785\AppData\Local\Temp\cca7eJE0.s:31     .text.App_Main:00000000 App_Main
+C:\Users\w1785\AppData\Local\Temp\cca7eJE0.s:86     .text.App_Main:00000038 $d
+
+UNDEFINED SYMBOLS
+DisplayService_Init
+lv_init
+lv_tick_set_cb
+LV_Port_Disp_Init
+lv_screen_active
+lv_label_create
+lv_label_set_text
+lv_obj_center
+lv_timer_handler
+HAL_Delay
+HAL_GetTick

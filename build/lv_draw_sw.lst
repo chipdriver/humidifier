@@ -1,0 +1,1479 @@
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\cc1l5BWF.s 			page 1
+
+
+   1              		.cpu cortex-m4
+   2              		.arch armv7e-m
+   3              		.fpu fpv4-sp-d16
+   4              		.eabi_attribute 27, 1
+   5              		.eabi_attribute 28, 1
+   6              		.eabi_attribute 20, 1
+   7              		.eabi_attribute 21, 1
+   8              		.eabi_attribute 23, 3
+   9              		.eabi_attribute 24, 1
+  10              		.eabi_attribute 25, 1
+  11              		.eabi_attribute 26, 1
+  12              		.eabi_attribute 30, 1
+  13              		.eabi_attribute 34, 1
+  14              		.eabi_attribute 18, 4
+  15              		.file	"lv_draw_sw.c"
+  16              		.text
+  17              	.Ltext0:
+  18              		.cfi_sections	.debug_frame
+  19              		.file 1 "Middlewares/LVGL/lvgl/src/draw/sw/lv_draw_sw.c"
+  20              		.section	.text.evaluate,"ax",%progbits
+  21              		.align	1
+  22              		.syntax unified
+  23              		.thumb
+  24              		.thumb_func
+  26              	evaluate:
+  27              	.LVL0:
+  28              	.LFB206:
+   1:Middlewares/LVGL/lvgl/src/draw/sw/lv_draw_sw.c **** /**
+   2:Middlewares/LVGL/lvgl/src/draw/sw/lv_draw_sw.c ****  * @file lv_draw_sw.c
+   3:Middlewares/LVGL/lvgl/src/draw/sw/lv_draw_sw.c ****  *
+   4:Middlewares/LVGL/lvgl/src/draw/sw/lv_draw_sw.c ****  */
+   5:Middlewares/LVGL/lvgl/src/draw/sw/lv_draw_sw.c **** 
+   6:Middlewares/LVGL/lvgl/src/draw/sw/lv_draw_sw.c **** /*********************
+   7:Middlewares/LVGL/lvgl/src/draw/sw/lv_draw_sw.c ****  *      INCLUDES
+   8:Middlewares/LVGL/lvgl/src/draw/sw/lv_draw_sw.c ****  *********************/
+   9:Middlewares/LVGL/lvgl/src/draw/sw/lv_draw_sw.c **** #include "lv_draw_sw_private.h"
+  10:Middlewares/LVGL/lvgl/src/draw/sw/lv_draw_sw.c **** #include "../lv_draw_private.h"
+  11:Middlewares/LVGL/lvgl/src/draw/sw/lv_draw_sw.c **** #if LV_USE_DRAW_SW
+  12:Middlewares/LVGL/lvgl/src/draw/sw/lv_draw_sw.c **** 
+  13:Middlewares/LVGL/lvgl/src/draw/sw/lv_draw_sw.c **** #include "../../core/lv_refr.h"
+  14:Middlewares/LVGL/lvgl/src/draw/sw/lv_draw_sw.c **** #include "../../display/lv_display_private.h"
+  15:Middlewares/LVGL/lvgl/src/draw/sw/lv_draw_sw.c **** #include "../../stdlib/lv_string.h"
+  16:Middlewares/LVGL/lvgl/src/draw/sw/lv_draw_sw.c **** #include "../../core/lv_global.h"
+  17:Middlewares/LVGL/lvgl/src/draw/sw/lv_draw_sw.c **** #include "../../misc/lv_area_private.h"
+  18:Middlewares/LVGL/lvgl/src/draw/sw/lv_draw_sw.c **** 
+  19:Middlewares/LVGL/lvgl/src/draw/sw/lv_draw_sw.c **** #if LV_USE_VECTOR_GRAPHIC && LV_USE_THORVG
+  20:Middlewares/LVGL/lvgl/src/draw/sw/lv_draw_sw.c ****     #if LV_USE_THORVG_EXTERNAL
+  21:Middlewares/LVGL/lvgl/src/draw/sw/lv_draw_sw.c ****         #include <thorvg_capi.h>
+  22:Middlewares/LVGL/lvgl/src/draw/sw/lv_draw_sw.c ****     #else
+  23:Middlewares/LVGL/lvgl/src/draw/sw/lv_draw_sw.c ****         #include "../../libs/thorvg/thorvg_capi.h"
+  24:Middlewares/LVGL/lvgl/src/draw/sw/lv_draw_sw.c ****     #endif
+  25:Middlewares/LVGL/lvgl/src/draw/sw/lv_draw_sw.c **** #endif
+  26:Middlewares/LVGL/lvgl/src/draw/sw/lv_draw_sw.c **** 
+  27:Middlewares/LVGL/lvgl/src/draw/sw/lv_draw_sw.c **** #if LV_USE_DRAW_SW_ASM == LV_DRAW_SW_ASM_HELIUM
+  28:Middlewares/LVGL/lvgl/src/draw/sw/lv_draw_sw.c ****     #include "arm2d/lv_draw_sw_helium.h"
+  29:Middlewares/LVGL/lvgl/src/draw/sw/lv_draw_sw.c **** #elif LV_USE_DRAW_SW_ASM == LV_DRAW_SW_ASM_CUSTOM
+  30:Middlewares/LVGL/lvgl/src/draw/sw/lv_draw_sw.c ****     #include LV_DRAW_SW_ASM_CUSTOM_INCLUDE
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\cc1l5BWF.s 			page 2
+
+
+  31:Middlewares/LVGL/lvgl/src/draw/sw/lv_draw_sw.c **** #endif
+  32:Middlewares/LVGL/lvgl/src/draw/sw/lv_draw_sw.c **** 
+  33:Middlewares/LVGL/lvgl/src/draw/sw/lv_draw_sw.c **** #if LV_DRAW_SW_DRAW_UNIT_CNT > 1 && LV_USE_OS == LV_OS_NONE
+  34:Middlewares/LVGL/lvgl/src/draw/sw/lv_draw_sw.c ****     #error "OS support is required when more than one SW rendering units are enabled"
+  35:Middlewares/LVGL/lvgl/src/draw/sw/lv_draw_sw.c **** #endif
+  36:Middlewares/LVGL/lvgl/src/draw/sw/lv_draw_sw.c **** 
+  37:Middlewares/LVGL/lvgl/src/draw/sw/lv_draw_sw.c **** /*********************
+  38:Middlewares/LVGL/lvgl/src/draw/sw/lv_draw_sw.c ****  *      DEFINES
+  39:Middlewares/LVGL/lvgl/src/draw/sw/lv_draw_sw.c ****  *********************/
+  40:Middlewares/LVGL/lvgl/src/draw/sw/lv_draw_sw.c **** #define DRAW_UNIT_ID_SW     1
+  41:Middlewares/LVGL/lvgl/src/draw/sw/lv_draw_sw.c **** 
+  42:Middlewares/LVGL/lvgl/src/draw/sw/lv_draw_sw.c **** /**********************
+  43:Middlewares/LVGL/lvgl/src/draw/sw/lv_draw_sw.c ****  *      TYPEDEFS
+  44:Middlewares/LVGL/lvgl/src/draw/sw/lv_draw_sw.c ****  **********************/
+  45:Middlewares/LVGL/lvgl/src/draw/sw/lv_draw_sw.c **** 
+  46:Middlewares/LVGL/lvgl/src/draw/sw/lv_draw_sw.c **** /**********************
+  47:Middlewares/LVGL/lvgl/src/draw/sw/lv_draw_sw.c ****  *  STATIC PROTOTYPES
+  48:Middlewares/LVGL/lvgl/src/draw/sw/lv_draw_sw.c ****  **********************/
+  49:Middlewares/LVGL/lvgl/src/draw/sw/lv_draw_sw.c **** #if LV_USE_OS
+  50:Middlewares/LVGL/lvgl/src/draw/sw/lv_draw_sw.c ****     static void render_thread_cb(void * ptr);
+  51:Middlewares/LVGL/lvgl/src/draw/sw/lv_draw_sw.c **** #endif
+  52:Middlewares/LVGL/lvgl/src/draw/sw/lv_draw_sw.c **** 
+  53:Middlewares/LVGL/lvgl/src/draw/sw/lv_draw_sw.c **** static void execute_drawing(lv_draw_task_t * t);
+  54:Middlewares/LVGL/lvgl/src/draw/sw/lv_draw_sw.c **** 
+  55:Middlewares/LVGL/lvgl/src/draw/sw/lv_draw_sw.c **** static int32_t dispatch(lv_draw_unit_t * draw_unit, lv_layer_t * layer);
+  56:Middlewares/LVGL/lvgl/src/draw/sw/lv_draw_sw.c **** static int32_t evaluate(lv_draw_unit_t * draw_unit, lv_draw_task_t * task);
+  57:Middlewares/LVGL/lvgl/src/draw/sw/lv_draw_sw.c **** static int32_t lv_draw_sw_delete(lv_draw_unit_t * draw_unit);
+  58:Middlewares/LVGL/lvgl/src/draw/sw/lv_draw_sw.c **** #if LV_USE_PARALLEL_DRAW_DEBUG
+  59:Middlewares/LVGL/lvgl/src/draw/sw/lv_draw_sw.c ****     static void parallel_debug_draw(lv_draw_task_t * t, uint32_t idx);
+  60:Middlewares/LVGL/lvgl/src/draw/sw/lv_draw_sw.c **** #endif
+  61:Middlewares/LVGL/lvgl/src/draw/sw/lv_draw_sw.c **** 
+  62:Middlewares/LVGL/lvgl/src/draw/sw/lv_draw_sw.c **** /**********************
+  63:Middlewares/LVGL/lvgl/src/draw/sw/lv_draw_sw.c ****  *  STATIC VARIABLES
+  64:Middlewares/LVGL/lvgl/src/draw/sw/lv_draw_sw.c ****  **********************/
+  65:Middlewares/LVGL/lvgl/src/draw/sw/lv_draw_sw.c **** #define _draw_info LV_GLOBAL_DEFAULT()->draw_info
+  66:Middlewares/LVGL/lvgl/src/draw/sw/lv_draw_sw.c **** 
+  67:Middlewares/LVGL/lvgl/src/draw/sw/lv_draw_sw.c **** /**********************
+  68:Middlewares/LVGL/lvgl/src/draw/sw/lv_draw_sw.c ****  *      MACROS
+  69:Middlewares/LVGL/lvgl/src/draw/sw/lv_draw_sw.c ****  **********************/
+  70:Middlewares/LVGL/lvgl/src/draw/sw/lv_draw_sw.c **** 
+  71:Middlewares/LVGL/lvgl/src/draw/sw/lv_draw_sw.c **** /**********************
+  72:Middlewares/LVGL/lvgl/src/draw/sw/lv_draw_sw.c ****  *   GLOBAL FUNCTIONS
+  73:Middlewares/LVGL/lvgl/src/draw/sw/lv_draw_sw.c ****  **********************/
+  74:Middlewares/LVGL/lvgl/src/draw/sw/lv_draw_sw.c **** 
+  75:Middlewares/LVGL/lvgl/src/draw/sw/lv_draw_sw.c **** void lv_draw_sw_init(void)
+  76:Middlewares/LVGL/lvgl/src/draw/sw/lv_draw_sw.c **** {
+  77:Middlewares/LVGL/lvgl/src/draw/sw/lv_draw_sw.c **** 
+  78:Middlewares/LVGL/lvgl/src/draw/sw/lv_draw_sw.c **** #if LV_DRAW_SW_COMPLEX == 1
+  79:Middlewares/LVGL/lvgl/src/draw/sw/lv_draw_sw.c ****     lv_draw_sw_mask_init();
+  80:Middlewares/LVGL/lvgl/src/draw/sw/lv_draw_sw.c **** #endif
+  81:Middlewares/LVGL/lvgl/src/draw/sw/lv_draw_sw.c **** 
+  82:Middlewares/LVGL/lvgl/src/draw/sw/lv_draw_sw.c ****     lv_draw_sw_unit_t * draw_sw_unit = lv_draw_create_unit(sizeof(lv_draw_sw_unit_t));
+  83:Middlewares/LVGL/lvgl/src/draw/sw/lv_draw_sw.c ****     draw_sw_unit->base_unit.dispatch_cb = dispatch;
+  84:Middlewares/LVGL/lvgl/src/draw/sw/lv_draw_sw.c ****     draw_sw_unit->base_unit.evaluate_cb = evaluate;
+  85:Middlewares/LVGL/lvgl/src/draw/sw/lv_draw_sw.c ****     draw_sw_unit->base_unit.delete_cb = LV_USE_OS ? lv_draw_sw_delete : NULL;
+  86:Middlewares/LVGL/lvgl/src/draw/sw/lv_draw_sw.c **** #if LV_USE_DRAW_ARM2D_SYNC
+  87:Middlewares/LVGL/lvgl/src/draw/sw/lv_draw_sw.c ****     draw_sw_unit->base_unit.name = "SW_ARM2D";
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\cc1l5BWF.s 			page 3
+
+
+  88:Middlewares/LVGL/lvgl/src/draw/sw/lv_draw_sw.c **** #else
+  89:Middlewares/LVGL/lvgl/src/draw/sw/lv_draw_sw.c ****     draw_sw_unit->base_unit.name = "SW";
+  90:Middlewares/LVGL/lvgl/src/draw/sw/lv_draw_sw.c **** #endif
+  91:Middlewares/LVGL/lvgl/src/draw/sw/lv_draw_sw.c **** 
+  92:Middlewares/LVGL/lvgl/src/draw/sw/lv_draw_sw.c **** #if LV_USE_OS
+  93:Middlewares/LVGL/lvgl/src/draw/sw/lv_draw_sw.c ****     uint32_t i;
+  94:Middlewares/LVGL/lvgl/src/draw/sw/lv_draw_sw.c ****     for(i = 0; i < LV_DRAW_SW_DRAW_UNIT_CNT; i++) {
+  95:Middlewares/LVGL/lvgl/src/draw/sw/lv_draw_sw.c ****         lv_draw_sw_thread_dsc_t * thread_dsc = &draw_sw_unit->thread_dscs[i];
+  96:Middlewares/LVGL/lvgl/src/draw/sw/lv_draw_sw.c ****         thread_dsc->idx = i;
+  97:Middlewares/LVGL/lvgl/src/draw/sw/lv_draw_sw.c ****         thread_dsc->draw_unit = (void *) draw_sw_unit;
+  98:Middlewares/LVGL/lvgl/src/draw/sw/lv_draw_sw.c ****         lv_thread_init(&thread_dsc->thread, "swdraw", LV_DRAW_THREAD_PRIO, render_thread_cb,
+  99:Middlewares/LVGL/lvgl/src/draw/sw/lv_draw_sw.c ****                        LV_DRAW_THREAD_STACK_SIZE, thread_dsc);
+ 100:Middlewares/LVGL/lvgl/src/draw/sw/lv_draw_sw.c ****     }
+ 101:Middlewares/LVGL/lvgl/src/draw/sw/lv_draw_sw.c **** #endif
+ 102:Middlewares/LVGL/lvgl/src/draw/sw/lv_draw_sw.c **** 
+ 103:Middlewares/LVGL/lvgl/src/draw/sw/lv_draw_sw.c **** #if LV_USE_VECTOR_GRAPHIC && LV_USE_THORVG
+ 104:Middlewares/LVGL/lvgl/src/draw/sw/lv_draw_sw.c ****     if(LV_DRAW_SW_DRAW_UNIT_CNT > 1) {
+ 105:Middlewares/LVGL/lvgl/src/draw/sw/lv_draw_sw.c ****         tvg_engine_init(TVG_ENGINE_SW, LV_DRAW_SW_DRAW_UNIT_CNT);
+ 106:Middlewares/LVGL/lvgl/src/draw/sw/lv_draw_sw.c ****     }
+ 107:Middlewares/LVGL/lvgl/src/draw/sw/lv_draw_sw.c ****     else {
+ 108:Middlewares/LVGL/lvgl/src/draw/sw/lv_draw_sw.c ****         tvg_engine_init(TVG_ENGINE_SW, 0);
+ 109:Middlewares/LVGL/lvgl/src/draw/sw/lv_draw_sw.c ****     }
+ 110:Middlewares/LVGL/lvgl/src/draw/sw/lv_draw_sw.c **** #endif
+ 111:Middlewares/LVGL/lvgl/src/draw/sw/lv_draw_sw.c **** 
+ 112:Middlewares/LVGL/lvgl/src/draw/sw/lv_draw_sw.c ****     lv_ll_init(&LV_GLOBAL_DEFAULT()->draw_sw_blend_handler_ll, sizeof(lv_draw_sw_custom_blend_handl
+ 113:Middlewares/LVGL/lvgl/src/draw/sw/lv_draw_sw.c **** }
+ 114:Middlewares/LVGL/lvgl/src/draw/sw/lv_draw_sw.c **** 
+ 115:Middlewares/LVGL/lvgl/src/draw/sw/lv_draw_sw.c **** void lv_draw_sw_deinit(void)
+ 116:Middlewares/LVGL/lvgl/src/draw/sw/lv_draw_sw.c **** {
+ 117:Middlewares/LVGL/lvgl/src/draw/sw/lv_draw_sw.c **** #if LV_USE_VECTOR_GRAPHIC && LV_USE_THORVG
+ 118:Middlewares/LVGL/lvgl/src/draw/sw/lv_draw_sw.c ****     tvg_engine_term(TVG_ENGINE_SW);
+ 119:Middlewares/LVGL/lvgl/src/draw/sw/lv_draw_sw.c **** #endif
+ 120:Middlewares/LVGL/lvgl/src/draw/sw/lv_draw_sw.c **** 
+ 121:Middlewares/LVGL/lvgl/src/draw/sw/lv_draw_sw.c **** #if LV_DRAW_SW_COMPLEX == 1
+ 122:Middlewares/LVGL/lvgl/src/draw/sw/lv_draw_sw.c ****     lv_draw_sw_mask_deinit();
+ 123:Middlewares/LVGL/lvgl/src/draw/sw/lv_draw_sw.c **** #endif
+ 124:Middlewares/LVGL/lvgl/src/draw/sw/lv_draw_sw.c **** }
+ 125:Middlewares/LVGL/lvgl/src/draw/sw/lv_draw_sw.c **** 
+ 126:Middlewares/LVGL/lvgl/src/draw/sw/lv_draw_sw.c **** static int32_t lv_draw_sw_delete(lv_draw_unit_t * draw_unit)
+ 127:Middlewares/LVGL/lvgl/src/draw/sw/lv_draw_sw.c **** {
+ 128:Middlewares/LVGL/lvgl/src/draw/sw/lv_draw_sw.c **** #if LV_USE_OS
+ 129:Middlewares/LVGL/lvgl/src/draw/sw/lv_draw_sw.c ****     lv_draw_sw_unit_t * draw_sw_unit = (lv_draw_sw_unit_t *) draw_unit;
+ 130:Middlewares/LVGL/lvgl/src/draw/sw/lv_draw_sw.c **** 
+ 131:Middlewares/LVGL/lvgl/src/draw/sw/lv_draw_sw.c ****     uint32_t i;
+ 132:Middlewares/LVGL/lvgl/src/draw/sw/lv_draw_sw.c ****     for(i = 0; i < LV_DRAW_SW_DRAW_UNIT_CNT; i++) {
+ 133:Middlewares/LVGL/lvgl/src/draw/sw/lv_draw_sw.c ****         lv_draw_sw_thread_dsc_t * thread_dsc = &draw_sw_unit->thread_dscs[i];
+ 134:Middlewares/LVGL/lvgl/src/draw/sw/lv_draw_sw.c **** 
+ 135:Middlewares/LVGL/lvgl/src/draw/sw/lv_draw_sw.c ****         LV_LOG_INFO("cancel software rendering thread");
+ 136:Middlewares/LVGL/lvgl/src/draw/sw/lv_draw_sw.c ****         thread_dsc->exit_status = true;
+ 137:Middlewares/LVGL/lvgl/src/draw/sw/lv_draw_sw.c **** 
+ 138:Middlewares/LVGL/lvgl/src/draw/sw/lv_draw_sw.c ****         if(thread_dsc->inited) {
+ 139:Middlewares/LVGL/lvgl/src/draw/sw/lv_draw_sw.c ****             lv_thread_sync_signal(&thread_dsc->sync);
+ 140:Middlewares/LVGL/lvgl/src/draw/sw/lv_draw_sw.c ****         }
+ 141:Middlewares/LVGL/lvgl/src/draw/sw/lv_draw_sw.c ****         lv_thread_delete(&thread_dsc->thread);
+ 142:Middlewares/LVGL/lvgl/src/draw/sw/lv_draw_sw.c ****     }
+ 143:Middlewares/LVGL/lvgl/src/draw/sw/lv_draw_sw.c **** 
+ 144:Middlewares/LVGL/lvgl/src/draw/sw/lv_draw_sw.c ****     return 0;
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\cc1l5BWF.s 			page 4
+
+
+ 145:Middlewares/LVGL/lvgl/src/draw/sw/lv_draw_sw.c **** #else
+ 146:Middlewares/LVGL/lvgl/src/draw/sw/lv_draw_sw.c ****     LV_UNUSED(draw_unit);
+ 147:Middlewares/LVGL/lvgl/src/draw/sw/lv_draw_sw.c ****     return 0;
+ 148:Middlewares/LVGL/lvgl/src/draw/sw/lv_draw_sw.c **** #endif
+ 149:Middlewares/LVGL/lvgl/src/draw/sw/lv_draw_sw.c **** }
+ 150:Middlewares/LVGL/lvgl/src/draw/sw/lv_draw_sw.c **** 
+ 151:Middlewares/LVGL/lvgl/src/draw/sw/lv_draw_sw.c **** bool lv_draw_sw_register_blend_handler(lv_draw_sw_custom_blend_handler_t * handler)
+ 152:Middlewares/LVGL/lvgl/src/draw/sw/lv_draw_sw.c **** {
+ 153:Middlewares/LVGL/lvgl/src/draw/sw/lv_draw_sw.c ****     lv_draw_sw_custom_blend_handler_t * existing_handler = NULL;
+ 154:Middlewares/LVGL/lvgl/src/draw/sw/lv_draw_sw.c ****     lv_draw_sw_custom_blend_handler_t * new_handler = NULL;
+ 155:Middlewares/LVGL/lvgl/src/draw/sw/lv_draw_sw.c **** 
+ 156:Middlewares/LVGL/lvgl/src/draw/sw/lv_draw_sw.c ****     // Check if a handler is already registered for the color format
+ 157:Middlewares/LVGL/lvgl/src/draw/sw/lv_draw_sw.c ****     LV_LL_READ(&LV_GLOBAL_DEFAULT()->draw_sw_blend_handler_ll, existing_handler) {
+ 158:Middlewares/LVGL/lvgl/src/draw/sw/lv_draw_sw.c ****         if(existing_handler->dest_cf == handler->dest_cf) {
+ 159:Middlewares/LVGL/lvgl/src/draw/sw/lv_draw_sw.c ****             new_handler = existing_handler;
+ 160:Middlewares/LVGL/lvgl/src/draw/sw/lv_draw_sw.c ****             break;
+ 161:Middlewares/LVGL/lvgl/src/draw/sw/lv_draw_sw.c ****         }
+ 162:Middlewares/LVGL/lvgl/src/draw/sw/lv_draw_sw.c ****     }
+ 163:Middlewares/LVGL/lvgl/src/draw/sw/lv_draw_sw.c **** 
+ 164:Middlewares/LVGL/lvgl/src/draw/sw/lv_draw_sw.c ****     if(new_handler == NULL) {
+ 165:Middlewares/LVGL/lvgl/src/draw/sw/lv_draw_sw.c ****         new_handler = lv_ll_ins_head(&LV_GLOBAL_DEFAULT()->draw_sw_blend_handler_ll);
+ 166:Middlewares/LVGL/lvgl/src/draw/sw/lv_draw_sw.c ****         if(new_handler == NULL) {
+ 167:Middlewares/LVGL/lvgl/src/draw/sw/lv_draw_sw.c ****             LV_ASSERT_MALLOC(new_handler);
+ 168:Middlewares/LVGL/lvgl/src/draw/sw/lv_draw_sw.c ****             return false;
+ 169:Middlewares/LVGL/lvgl/src/draw/sw/lv_draw_sw.c ****         }
+ 170:Middlewares/LVGL/lvgl/src/draw/sw/lv_draw_sw.c ****     }
+ 171:Middlewares/LVGL/lvgl/src/draw/sw/lv_draw_sw.c **** 
+ 172:Middlewares/LVGL/lvgl/src/draw/sw/lv_draw_sw.c ****     lv_memcpy(new_handler, handler, sizeof(lv_draw_sw_custom_blend_handler_t));
+ 173:Middlewares/LVGL/lvgl/src/draw/sw/lv_draw_sw.c ****     return true;
+ 174:Middlewares/LVGL/lvgl/src/draw/sw/lv_draw_sw.c **** }
+ 175:Middlewares/LVGL/lvgl/src/draw/sw/lv_draw_sw.c **** 
+ 176:Middlewares/LVGL/lvgl/src/draw/sw/lv_draw_sw.c **** bool lv_draw_sw_unregister_blend_handler(lv_color_format_t dest_cf)
+ 177:Middlewares/LVGL/lvgl/src/draw/sw/lv_draw_sw.c **** {
+ 178:Middlewares/LVGL/lvgl/src/draw/sw/lv_draw_sw.c ****     lv_draw_sw_custom_blend_handler_t * handler;
+ 179:Middlewares/LVGL/lvgl/src/draw/sw/lv_draw_sw.c **** 
+ 180:Middlewares/LVGL/lvgl/src/draw/sw/lv_draw_sw.c ****     LV_LL_READ(&LV_GLOBAL_DEFAULT()->draw_sw_blend_handler_ll, handler) {
+ 181:Middlewares/LVGL/lvgl/src/draw/sw/lv_draw_sw.c ****         if(handler->dest_cf == dest_cf) {
+ 182:Middlewares/LVGL/lvgl/src/draw/sw/lv_draw_sw.c ****             lv_ll_remove(&LV_GLOBAL_DEFAULT()->draw_sw_blend_handler_ll, handler);
+ 183:Middlewares/LVGL/lvgl/src/draw/sw/lv_draw_sw.c ****             lv_free(handler);
+ 184:Middlewares/LVGL/lvgl/src/draw/sw/lv_draw_sw.c ****             return true;
+ 185:Middlewares/LVGL/lvgl/src/draw/sw/lv_draw_sw.c ****         }
+ 186:Middlewares/LVGL/lvgl/src/draw/sw/lv_draw_sw.c ****     }
+ 187:Middlewares/LVGL/lvgl/src/draw/sw/lv_draw_sw.c **** 
+ 188:Middlewares/LVGL/lvgl/src/draw/sw/lv_draw_sw.c ****     return false;
+ 189:Middlewares/LVGL/lvgl/src/draw/sw/lv_draw_sw.c **** }
+ 190:Middlewares/LVGL/lvgl/src/draw/sw/lv_draw_sw.c **** 
+ 191:Middlewares/LVGL/lvgl/src/draw/sw/lv_draw_sw.c **** lv_draw_sw_blend_handler_t lv_draw_sw_get_blend_handler(lv_color_format_t dest_cf)
+ 192:Middlewares/LVGL/lvgl/src/draw/sw/lv_draw_sw.c **** {
+ 193:Middlewares/LVGL/lvgl/src/draw/sw/lv_draw_sw.c ****     lv_draw_sw_custom_blend_handler_t * handler;
+ 194:Middlewares/LVGL/lvgl/src/draw/sw/lv_draw_sw.c **** 
+ 195:Middlewares/LVGL/lvgl/src/draw/sw/lv_draw_sw.c ****     LV_LL_READ(&LV_GLOBAL_DEFAULT()->draw_sw_blend_handler_ll, handler) {
+ 196:Middlewares/LVGL/lvgl/src/draw/sw/lv_draw_sw.c ****         if(handler->dest_cf == dest_cf) {
+ 197:Middlewares/LVGL/lvgl/src/draw/sw/lv_draw_sw.c ****             return handler->handler;
+ 198:Middlewares/LVGL/lvgl/src/draw/sw/lv_draw_sw.c ****         }
+ 199:Middlewares/LVGL/lvgl/src/draw/sw/lv_draw_sw.c ****     }
+ 200:Middlewares/LVGL/lvgl/src/draw/sw/lv_draw_sw.c **** 
+ 201:Middlewares/LVGL/lvgl/src/draw/sw/lv_draw_sw.c ****     return NULL;
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\cc1l5BWF.s 			page 5
+
+
+ 202:Middlewares/LVGL/lvgl/src/draw/sw/lv_draw_sw.c **** }
+ 203:Middlewares/LVGL/lvgl/src/draw/sw/lv_draw_sw.c **** 
+ 204:Middlewares/LVGL/lvgl/src/draw/sw/lv_draw_sw.c **** /**********************
+ 205:Middlewares/LVGL/lvgl/src/draw/sw/lv_draw_sw.c ****  *   STATIC FUNCTIONS
+ 206:Middlewares/LVGL/lvgl/src/draw/sw/lv_draw_sw.c ****  **********************/
+ 207:Middlewares/LVGL/lvgl/src/draw/sw/lv_draw_sw.c **** 
+ 208:Middlewares/LVGL/lvgl/src/draw/sw/lv_draw_sw.c **** static int32_t evaluate(lv_draw_unit_t * draw_unit, lv_draw_task_t * task)
+ 209:Middlewares/LVGL/lvgl/src/draw/sw/lv_draw_sw.c **** {
+  29              		.loc 1 209 1 view -0
+  30              		.cfi_startproc
+  31              		@ args = 0, pretend = 0, frame = 0
+  32              		@ frame_needed = 0, uses_anonymous_args = 0
+  33              		@ link register save eliminated.
+ 210:Middlewares/LVGL/lvgl/src/draw/sw/lv_draw_sw.c ****     LV_UNUSED(draw_unit);
+  34              		.loc 1 210 5 view .LVU1
+ 211:Middlewares/LVGL/lvgl/src/draw/sw/lv_draw_sw.c **** 
+ 212:Middlewares/LVGL/lvgl/src/draw/sw/lv_draw_sw.c ****     switch(task->type) {
+  35              		.loc 1 212 5 view .LVU2
+  36              		.loc 1 212 16 is_stmt 0 view .LVU3
+  37 0000 0B79     		ldrb	r3, [r1, #4]	@ zero_extendqisi2
+  38              		.loc 1 212 5 view .LVU4
+  39 0002 063B     		subs	r3, r3, #6
+  40 0004 012B     		cmp	r3, #1
+  41 0006 0BD9     		bls	.L5
+  42              	.L2:
+ 213:Middlewares/LVGL/lvgl/src/draw/sw/lv_draw_sw.c ****         case LV_DRAW_TASK_TYPE_IMAGE:
+ 214:Middlewares/LVGL/lvgl/src/draw/sw/lv_draw_sw.c ****         case LV_DRAW_TASK_TYPE_LAYER: {
+ 215:Middlewares/LVGL/lvgl/src/draw/sw/lv_draw_sw.c ****                 lv_draw_image_dsc_t * draw_dsc = task->draw_dsc;
+ 216:Middlewares/LVGL/lvgl/src/draw/sw/lv_draw_sw.c **** 
+ 217:Middlewares/LVGL/lvgl/src/draw/sw/lv_draw_sw.c ****                 /* not support skew */
+ 218:Middlewares/LVGL/lvgl/src/draw/sw/lv_draw_sw.c ****                 if(draw_dsc->skew_x != 0 || draw_dsc->skew_y != 0) {
+ 219:Middlewares/LVGL/lvgl/src/draw/sw/lv_draw_sw.c ****                     return 0;
+ 220:Middlewares/LVGL/lvgl/src/draw/sw/lv_draw_sw.c ****                 }
+ 221:Middlewares/LVGL/lvgl/src/draw/sw/lv_draw_sw.c **** 
+ 222:Middlewares/LVGL/lvgl/src/draw/sw/lv_draw_sw.c ****                 bool masked = draw_dsc->bitmap_mask_src != NULL;
+ 223:Middlewares/LVGL/lvgl/src/draw/sw/lv_draw_sw.c **** 
+ 224:Middlewares/LVGL/lvgl/src/draw/sw/lv_draw_sw.c ****                 lv_color_format_t cf = draw_dsc->header.cf;
+ 225:Middlewares/LVGL/lvgl/src/draw/sw/lv_draw_sw.c ****                 if(masked && (cf == LV_COLOR_FORMAT_A8 || cf == LV_COLOR_FORMAT_RGB565A8)) {
+ 226:Middlewares/LVGL/lvgl/src/draw/sw/lv_draw_sw.c ****                     return 0;
+ 227:Middlewares/LVGL/lvgl/src/draw/sw/lv_draw_sw.c ****                 }
+ 228:Middlewares/LVGL/lvgl/src/draw/sw/lv_draw_sw.c **** 
+ 229:Middlewares/LVGL/lvgl/src/draw/sw/lv_draw_sw.c ****                 if(cf >= LV_COLOR_FORMAT_PROPRIETARY_START) {
+ 230:Middlewares/LVGL/lvgl/src/draw/sw/lv_draw_sw.c ****                     return 0;
+ 231:Middlewares/LVGL/lvgl/src/draw/sw/lv_draw_sw.c ****                 }
+ 232:Middlewares/LVGL/lvgl/src/draw/sw/lv_draw_sw.c ****             }
+ 233:Middlewares/LVGL/lvgl/src/draw/sw/lv_draw_sw.c ****             break;
+ 234:Middlewares/LVGL/lvgl/src/draw/sw/lv_draw_sw.c **** #if LV_USE_3DTEXTURE
+ 235:Middlewares/LVGL/lvgl/src/draw/sw/lv_draw_sw.c ****         case LV_DRAW_TASK_TYPE_3D:
+ 236:Middlewares/LVGL/lvgl/src/draw/sw/lv_draw_sw.c ****             return 0;
+ 237:Middlewares/LVGL/lvgl/src/draw/sw/lv_draw_sw.c **** #endif
+ 238:Middlewares/LVGL/lvgl/src/draw/sw/lv_draw_sw.c ****         default:
+ 239:Middlewares/LVGL/lvgl/src/draw/sw/lv_draw_sw.c ****             break;
+ 240:Middlewares/LVGL/lvgl/src/draw/sw/lv_draw_sw.c ****     }
+ 241:Middlewares/LVGL/lvgl/src/draw/sw/lv_draw_sw.c **** 
+ 242:Middlewares/LVGL/lvgl/src/draw/sw/lv_draw_sw.c ****     if(task->preference_score >= 100) {
+  43              		.loc 1 242 5 is_stmt 1 view .LVU5
+  44              		.loc 1 242 12 is_stmt 0 view .LVU6
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\cc1l5BWF.s 			page 6
+
+
+  45 0008 91F85A30 		ldrb	r3, [r1, #90]	@ zero_extendqisi2
+  46              		.loc 1 242 7 view .LVU7
+  47 000c 632B     		cmp	r3, #99
+  48 000e 05D9     		bls	.L3
+ 243:Middlewares/LVGL/lvgl/src/draw/sw/lv_draw_sw.c ****         task->preference_score = 100;
+  49              		.loc 1 243 9 is_stmt 1 view .LVU8
+  50              		.loc 1 243 32 is_stmt 0 view .LVU9
+  51 0010 6423     		movs	r3, #100
+  52 0012 81F85A30 		strb	r3, [r1, #90]
+ 244:Middlewares/LVGL/lvgl/src/draw/sw/lv_draw_sw.c ****         task->preferred_draw_unit_id = DRAW_UNIT_ID_SW;
+  53              		.loc 1 244 9 is_stmt 1 view .LVU10
+  54              		.loc 1 244 38 is_stmt 0 view .LVU11
+  55 0016 0123     		movs	r3, #1
+  56 0018 81F85930 		strb	r3, [r1, #89]
+  57              	.L3:
+ 245:Middlewares/LVGL/lvgl/src/draw/sw/lv_draw_sw.c ****     }
+ 246:Middlewares/LVGL/lvgl/src/draw/sw/lv_draw_sw.c **** 
+ 247:Middlewares/LVGL/lvgl/src/draw/sw/lv_draw_sw.c ****     return 0;
+ 248:Middlewares/LVGL/lvgl/src/draw/sw/lv_draw_sw.c **** }
+  58              		.loc 1 248 1 view .LVU12
+  59 001c 0020     		movs	r0, #0
+  60              	.LVL1:
+  61              		.loc 1 248 1 view .LVU13
+  62 001e 7047     		bx	lr
+  63              	.LVL2:
+  64              	.L5:
+  65              	.LBB2:
+ 215:Middlewares/LVGL/lvgl/src/draw/sw/lv_draw_sw.c **** 
+  66              		.loc 1 215 17 is_stmt 1 view .LVU14
+ 215:Middlewares/LVGL/lvgl/src/draw/sw/lv_draw_sw.c **** 
+  67              		.loc 1 215 39 is_stmt 0 view .LVU15
+  68 0020 4B6D     		ldr	r3, [r1, #84]
+  69              	.LVL3:
+ 218:Middlewares/LVGL/lvgl/src/draw/sw/lv_draw_sw.c ****                     return 0;
+  70              		.loc 1 218 17 is_stmt 1 view .LVU16
+ 218:Middlewares/LVGL/lvgl/src/draw/sw/lv_draw_sw.c ****                     return 0;
+  71              		.loc 1 218 28 is_stmt 0 view .LVU17
+  72 0022 9A6C     		ldr	r2, [r3, #72]
+ 218:Middlewares/LVGL/lvgl/src/draw/sw/lv_draw_sw.c ****                     return 0;
+  73              		.loc 1 218 19 view .LVU18
+  74 0024 002A     		cmp	r2, #0
+  75 0026 F9D1     		bne	.L3
+ 218:Middlewares/LVGL/lvgl/src/draw/sw/lv_draw_sw.c ****                     return 0;
+  76              		.loc 1 218 53 discriminator 1 view .LVU19
+  77 0028 DA6C     		ldr	r2, [r3, #76]
+ 218:Middlewares/LVGL/lvgl/src/draw/sw/lv_draw_sw.c ****                     return 0;
+  78              		.loc 1 218 42 discriminator 1 view .LVU20
+  79 002a 002A     		cmp	r2, #0
+  80 002c F6D1     		bne	.L3
+ 222:Middlewares/LVGL/lvgl/src/draw/sw/lv_draw_sw.c **** 
+  81              		.loc 1 222 17 is_stmt 1 view .LVU21
+ 222:Middlewares/LVGL/lvgl/src/draw/sw/lv_draw_sw.c **** 
+  82              		.loc 1 222 39 is_stmt 0 view .LVU22
+  83 002e 9A6F     		ldr	r2, [r3, #120]
+  84              	.LVL4:
+ 224:Middlewares/LVGL/lvgl/src/draw/sw/lv_draw_sw.c ****                 if(masked && (cf == LV_COLOR_FORMAT_A8 || cf == LV_COLOR_FORMAT_RGB565A8)) {
+  85              		.loc 1 224 17 is_stmt 1 view .LVU23
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\cc1l5BWF.s 			page 7
+
+
+ 224:Middlewares/LVGL/lvgl/src/draw/sw/lv_draw_sw.c ****                 if(masked && (cf == LV_COLOR_FORMAT_A8 || cf == LV_COLOR_FORMAT_RGB565A8)) {
+  86              		.loc 1 224 35 is_stmt 0 view .LVU24
+  87 0030 93F82D30 		ldrb	r3, [r3, #45]	@ zero_extendqisi2
+  88              	.LVL5:
+ 225:Middlewares/LVGL/lvgl/src/draw/sw/lv_draw_sw.c ****                     return 0;
+  89              		.loc 1 225 17 is_stmt 1 view .LVU25
+ 225:Middlewares/LVGL/lvgl/src/draw/sw/lv_draw_sw.c ****                     return 0;
+  90              		.loc 1 225 19 is_stmt 0 view .LVU26
+  91 0034 1AB1     		cbz	r2, .L4
+ 225:Middlewares/LVGL/lvgl/src/draw/sw/lv_draw_sw.c ****                     return 0;
+  92              		.loc 1 225 27 discriminator 1 view .LVU27
+  93 0036 0E2B     		cmp	r3, #14
+  94 0038 F0D0     		beq	.L3
+ 225:Middlewares/LVGL/lvgl/src/draw/sw/lv_draw_sw.c ****                     return 0;
+  95              		.loc 1 225 56 discriminator 2 view .LVU28
+  96 003a 142B     		cmp	r3, #20
+  97 003c EED0     		beq	.L3
+  98              	.L4:
+ 229:Middlewares/LVGL/lvgl/src/draw/sw/lv_draw_sw.c ****                     return 0;
+  99              		.loc 1 229 17 is_stmt 1 view .LVU29
+ 229:Middlewares/LVGL/lvgl/src/draw/sw/lv_draw_sw.c ****                     return 0;
+ 100              		.loc 1 229 19 is_stmt 0 view .LVU30
+ 101 003e 2F2B     		cmp	r3, #47
+ 102 0040 E2D9     		bls	.L2
+ 103 0042 EBE7     		b	.L3
+ 104              	.LBE2:
+ 105              		.cfi_endproc
+ 106              	.LFE206:
+ 108              		.section	.text.execute_drawing,"ax",%progbits
+ 109              		.align	1
+ 110              		.syntax unified
+ 111              		.thumb
+ 112              		.thumb_func
+ 114              	execute_drawing:
+ 115              	.LVL6:
+ 116              	.LFB208:
+ 249:Middlewares/LVGL/lvgl/src/draw/sw/lv_draw_sw.c **** 
+ 250:Middlewares/LVGL/lvgl/src/draw/sw/lv_draw_sw.c **** static int32_t dispatch(lv_draw_unit_t * draw_unit, lv_layer_t * layer)
+ 251:Middlewares/LVGL/lvgl/src/draw/sw/lv_draw_sw.c **** {
+ 252:Middlewares/LVGL/lvgl/src/draw/sw/lv_draw_sw.c ****     LV_PROFILER_DRAW_BEGIN;
+ 253:Middlewares/LVGL/lvgl/src/draw/sw/lv_draw_sw.c ****     lv_draw_sw_unit_t * draw_sw_unit = (lv_draw_sw_unit_t *) draw_unit;
+ 254:Middlewares/LVGL/lvgl/src/draw/sw/lv_draw_sw.c **** 
+ 255:Middlewares/LVGL/lvgl/src/draw/sw/lv_draw_sw.c **** #if LV_USE_OS
+ 256:Middlewares/LVGL/lvgl/src/draw/sw/lv_draw_sw.c ****     uint32_t i;
+ 257:Middlewares/LVGL/lvgl/src/draw/sw/lv_draw_sw.c ****     uint32_t taken_cnt = 0;
+ 258:Middlewares/LVGL/lvgl/src/draw/sw/lv_draw_sw.c ****     /* All idle (couldn't take any tasks): return LV_DRAW_UNIT_IDLE;
+ 259:Middlewares/LVGL/lvgl/src/draw/sw/lv_draw_sw.c ****      * All busy: return 0; as 0 tasks were taken
+ 260:Middlewares/LVGL/lvgl/src/draw/sw/lv_draw_sw.c ****      * Otherwise return taken_cnt;
+ 261:Middlewares/LVGL/lvgl/src/draw/sw/lv_draw_sw.c ****      */
+ 262:Middlewares/LVGL/lvgl/src/draw/sw/lv_draw_sw.c **** 
+ 263:Middlewares/LVGL/lvgl/src/draw/sw/lv_draw_sw.c ****     /*If at least one is busy, it's not all idle*/
+ 264:Middlewares/LVGL/lvgl/src/draw/sw/lv_draw_sw.c ****     bool all_idle = true;
+ 265:Middlewares/LVGL/lvgl/src/draw/sw/lv_draw_sw.c ****     for(i = 0; i < LV_DRAW_SW_DRAW_UNIT_CNT; i++) {
+ 266:Middlewares/LVGL/lvgl/src/draw/sw/lv_draw_sw.c ****         if(draw_sw_unit->thread_dscs[i].task_act) {
+ 267:Middlewares/LVGL/lvgl/src/draw/sw/lv_draw_sw.c ****             all_idle = false;
+ 268:Middlewares/LVGL/lvgl/src/draw/sw/lv_draw_sw.c ****             break;
+ 269:Middlewares/LVGL/lvgl/src/draw/sw/lv_draw_sw.c ****         }
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\cc1l5BWF.s 			page 8
+
+
+ 270:Middlewares/LVGL/lvgl/src/draw/sw/lv_draw_sw.c ****     }
+ 271:Middlewares/LVGL/lvgl/src/draw/sw/lv_draw_sw.c **** 
+ 272:Middlewares/LVGL/lvgl/src/draw/sw/lv_draw_sw.c ****     lv_draw_task_t * t = NULL;
+ 273:Middlewares/LVGL/lvgl/src/draw/sw/lv_draw_sw.c ****     for(i = 0; i < LV_DRAW_SW_DRAW_UNIT_CNT; i++) {
+ 274:Middlewares/LVGL/lvgl/src/draw/sw/lv_draw_sw.c ****         lv_draw_sw_thread_dsc_t * thread_dsc = &draw_sw_unit->thread_dscs[i];
+ 275:Middlewares/LVGL/lvgl/src/draw/sw/lv_draw_sw.c **** 
+ 276:Middlewares/LVGL/lvgl/src/draw/sw/lv_draw_sw.c ****         /*Do nothing if busy*/
+ 277:Middlewares/LVGL/lvgl/src/draw/sw/lv_draw_sw.c ****         if(thread_dsc->task_act) continue;
+ 278:Middlewares/LVGL/lvgl/src/draw/sw/lv_draw_sw.c **** 
+ 279:Middlewares/LVGL/lvgl/src/draw/sw/lv_draw_sw.c ****         /*Find an available task. Start from the previously taken task.*/
+ 280:Middlewares/LVGL/lvgl/src/draw/sw/lv_draw_sw.c ****         t = lv_draw_get_next_available_task(layer, t, DRAW_UNIT_ID_SW);
+ 281:Middlewares/LVGL/lvgl/src/draw/sw/lv_draw_sw.c **** 
+ 282:Middlewares/LVGL/lvgl/src/draw/sw/lv_draw_sw.c ****         /*If there is not available task don't try other threads as there won't be available
+ 283:Middlewares/LVGL/lvgl/src/draw/sw/lv_draw_sw.c ****          *tasks for then either*/
+ 284:Middlewares/LVGL/lvgl/src/draw/sw/lv_draw_sw.c ****         if(t == NULL) {
+ 285:Middlewares/LVGL/lvgl/src/draw/sw/lv_draw_sw.c ****             LV_PROFILER_DRAW_END;
+ 286:Middlewares/LVGL/lvgl/src/draw/sw/lv_draw_sw.c ****             if(all_idle) return LV_DRAW_UNIT_IDLE;  /*Couldn't start rendering*/
+ 287:Middlewares/LVGL/lvgl/src/draw/sw/lv_draw_sw.c ****             else return taken_cnt;
+ 288:Middlewares/LVGL/lvgl/src/draw/sw/lv_draw_sw.c ****         }
+ 289:Middlewares/LVGL/lvgl/src/draw/sw/lv_draw_sw.c **** 
+ 290:Middlewares/LVGL/lvgl/src/draw/sw/lv_draw_sw.c ****         /*Allocate a buffer if not done yet.*/
+ 291:Middlewares/LVGL/lvgl/src/draw/sw/lv_draw_sw.c ****         void * buf = lv_draw_layer_alloc_buf(layer);
+ 292:Middlewares/LVGL/lvgl/src/draw/sw/lv_draw_sw.c ****         /*Do not return is failed. The other thread might already have a buffer can do something. *
+ 293:Middlewares/LVGL/lvgl/src/draw/sw/lv_draw_sw.c ****         if(buf == NULL) continue;
+ 294:Middlewares/LVGL/lvgl/src/draw/sw/lv_draw_sw.c **** 
+ 295:Middlewares/LVGL/lvgl/src/draw/sw/lv_draw_sw.c ****         /*Take the task*/
+ 296:Middlewares/LVGL/lvgl/src/draw/sw/lv_draw_sw.c ****         all_idle = false;
+ 297:Middlewares/LVGL/lvgl/src/draw/sw/lv_draw_sw.c ****         taken_cnt++;
+ 298:Middlewares/LVGL/lvgl/src/draw/sw/lv_draw_sw.c ****         t->state = LV_DRAW_TASK_STATE_IN_PROGRESS;
+ 299:Middlewares/LVGL/lvgl/src/draw/sw/lv_draw_sw.c ****         thread_dsc->task_act = t;
+ 300:Middlewares/LVGL/lvgl/src/draw/sw/lv_draw_sw.c **** 
+ 301:Middlewares/LVGL/lvgl/src/draw/sw/lv_draw_sw.c ****         /*Let the render thread work*/
+ 302:Middlewares/LVGL/lvgl/src/draw/sw/lv_draw_sw.c ****         if(thread_dsc->inited) lv_thread_sync_signal(&thread_dsc->sync);
+ 303:Middlewares/LVGL/lvgl/src/draw/sw/lv_draw_sw.c ****     }
+ 304:Middlewares/LVGL/lvgl/src/draw/sw/lv_draw_sw.c **** 
+ 305:Middlewares/LVGL/lvgl/src/draw/sw/lv_draw_sw.c ****     LV_PROFILER_DRAW_END;
+ 306:Middlewares/LVGL/lvgl/src/draw/sw/lv_draw_sw.c ****     if(all_idle) return LV_DRAW_UNIT_IDLE;  /*Couldn't start rendering*/
+ 307:Middlewares/LVGL/lvgl/src/draw/sw/lv_draw_sw.c ****     else return taken_cnt;
+ 308:Middlewares/LVGL/lvgl/src/draw/sw/lv_draw_sw.c **** 
+ 309:Middlewares/LVGL/lvgl/src/draw/sw/lv_draw_sw.c **** #else
+ 310:Middlewares/LVGL/lvgl/src/draw/sw/lv_draw_sw.c ****     /*Return immediately if it's busy with draw task*/
+ 311:Middlewares/LVGL/lvgl/src/draw/sw/lv_draw_sw.c ****     if(draw_sw_unit->task_act) {
+ 312:Middlewares/LVGL/lvgl/src/draw/sw/lv_draw_sw.c ****         LV_PROFILER_DRAW_END;
+ 313:Middlewares/LVGL/lvgl/src/draw/sw/lv_draw_sw.c ****         return 0;
+ 314:Middlewares/LVGL/lvgl/src/draw/sw/lv_draw_sw.c ****     }
+ 315:Middlewares/LVGL/lvgl/src/draw/sw/lv_draw_sw.c **** 
+ 316:Middlewares/LVGL/lvgl/src/draw/sw/lv_draw_sw.c ****     lv_draw_task_t * t = NULL;
+ 317:Middlewares/LVGL/lvgl/src/draw/sw/lv_draw_sw.c ****     t = lv_draw_get_available_task(layer, NULL, DRAW_UNIT_ID_SW);
+ 318:Middlewares/LVGL/lvgl/src/draw/sw/lv_draw_sw.c ****     if(t == NULL) {
+ 319:Middlewares/LVGL/lvgl/src/draw/sw/lv_draw_sw.c ****         LV_PROFILER_DRAW_END;
+ 320:Middlewares/LVGL/lvgl/src/draw/sw/lv_draw_sw.c ****         return LV_DRAW_UNIT_IDLE;  /*Couldn't start rendering*/
+ 321:Middlewares/LVGL/lvgl/src/draw/sw/lv_draw_sw.c ****     }
+ 322:Middlewares/LVGL/lvgl/src/draw/sw/lv_draw_sw.c **** 
+ 323:Middlewares/LVGL/lvgl/src/draw/sw/lv_draw_sw.c ****     void * buf = lv_draw_layer_alloc_buf(layer);
+ 324:Middlewares/LVGL/lvgl/src/draw/sw/lv_draw_sw.c ****     if(buf == NULL) {
+ 325:Middlewares/LVGL/lvgl/src/draw/sw/lv_draw_sw.c ****         LV_PROFILER_DRAW_END;
+ 326:Middlewares/LVGL/lvgl/src/draw/sw/lv_draw_sw.c ****         return LV_DRAW_UNIT_IDLE;  /*Couldn't start rendering*/
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\cc1l5BWF.s 			page 9
+
+
+ 327:Middlewares/LVGL/lvgl/src/draw/sw/lv_draw_sw.c ****     }
+ 328:Middlewares/LVGL/lvgl/src/draw/sw/lv_draw_sw.c **** 
+ 329:Middlewares/LVGL/lvgl/src/draw/sw/lv_draw_sw.c ****     t->state = LV_DRAW_TASK_STATE_IN_PROGRESS;
+ 330:Middlewares/LVGL/lvgl/src/draw/sw/lv_draw_sw.c ****     draw_sw_unit->task_act = t;
+ 331:Middlewares/LVGL/lvgl/src/draw/sw/lv_draw_sw.c **** 
+ 332:Middlewares/LVGL/lvgl/src/draw/sw/lv_draw_sw.c ****     execute_drawing(t);
+ 333:Middlewares/LVGL/lvgl/src/draw/sw/lv_draw_sw.c ****     draw_sw_unit->task_act->state = LV_DRAW_TASK_STATE_FINISHED;
+ 334:Middlewares/LVGL/lvgl/src/draw/sw/lv_draw_sw.c ****     draw_sw_unit->task_act = NULL;
+ 335:Middlewares/LVGL/lvgl/src/draw/sw/lv_draw_sw.c **** 
+ 336:Middlewares/LVGL/lvgl/src/draw/sw/lv_draw_sw.c ****     /*The draw unit is free now. Request a new dispatching as it can get a new task*/
+ 337:Middlewares/LVGL/lvgl/src/draw/sw/lv_draw_sw.c ****     lv_draw_dispatch_request();
+ 338:Middlewares/LVGL/lvgl/src/draw/sw/lv_draw_sw.c **** 
+ 339:Middlewares/LVGL/lvgl/src/draw/sw/lv_draw_sw.c ****     LV_PROFILER_DRAW_END;
+ 340:Middlewares/LVGL/lvgl/src/draw/sw/lv_draw_sw.c ****     return 1;
+ 341:Middlewares/LVGL/lvgl/src/draw/sw/lv_draw_sw.c **** #endif
+ 342:Middlewares/LVGL/lvgl/src/draw/sw/lv_draw_sw.c **** 
+ 343:Middlewares/LVGL/lvgl/src/draw/sw/lv_draw_sw.c **** }
+ 344:Middlewares/LVGL/lvgl/src/draw/sw/lv_draw_sw.c **** 
+ 345:Middlewares/LVGL/lvgl/src/draw/sw/lv_draw_sw.c **** #if LV_USE_OS
+ 346:Middlewares/LVGL/lvgl/src/draw/sw/lv_draw_sw.c **** static void render_thread_cb(void * ptr)
+ 347:Middlewares/LVGL/lvgl/src/draw/sw/lv_draw_sw.c **** {
+ 348:Middlewares/LVGL/lvgl/src/draw/sw/lv_draw_sw.c ****     lv_draw_sw_thread_dsc_t * thread_dsc = ptr;
+ 349:Middlewares/LVGL/lvgl/src/draw/sw/lv_draw_sw.c **** 
+ 350:Middlewares/LVGL/lvgl/src/draw/sw/lv_draw_sw.c ****     lv_thread_sync_init(&thread_dsc->sync);
+ 351:Middlewares/LVGL/lvgl/src/draw/sw/lv_draw_sw.c ****     thread_dsc->inited = true;
+ 352:Middlewares/LVGL/lvgl/src/draw/sw/lv_draw_sw.c **** 
+ 353:Middlewares/LVGL/lvgl/src/draw/sw/lv_draw_sw.c ****     while(1) {
+ 354:Middlewares/LVGL/lvgl/src/draw/sw/lv_draw_sw.c ****         while(thread_dsc->task_act == NULL) {
+ 355:Middlewares/LVGL/lvgl/src/draw/sw/lv_draw_sw.c ****             if(thread_dsc->exit_status) {
+ 356:Middlewares/LVGL/lvgl/src/draw/sw/lv_draw_sw.c ****                 break;
+ 357:Middlewares/LVGL/lvgl/src/draw/sw/lv_draw_sw.c ****             }
+ 358:Middlewares/LVGL/lvgl/src/draw/sw/lv_draw_sw.c ****             lv_thread_sync_wait(&thread_dsc->sync);
+ 359:Middlewares/LVGL/lvgl/src/draw/sw/lv_draw_sw.c ****         }
+ 360:Middlewares/LVGL/lvgl/src/draw/sw/lv_draw_sw.c **** 
+ 361:Middlewares/LVGL/lvgl/src/draw/sw/lv_draw_sw.c ****         if(thread_dsc->exit_status) {
+ 362:Middlewares/LVGL/lvgl/src/draw/sw/lv_draw_sw.c ****             LV_LOG_INFO("ready to exit software rendering thread");
+ 363:Middlewares/LVGL/lvgl/src/draw/sw/lv_draw_sw.c ****             break;
+ 364:Middlewares/LVGL/lvgl/src/draw/sw/lv_draw_sw.c ****         }
+ 365:Middlewares/LVGL/lvgl/src/draw/sw/lv_draw_sw.c **** 
+ 366:Middlewares/LVGL/lvgl/src/draw/sw/lv_draw_sw.c ****         execute_drawing(thread_dsc->task_act);
+ 367:Middlewares/LVGL/lvgl/src/draw/sw/lv_draw_sw.c **** #if LV_USE_PARALLEL_DRAW_DEBUG
+ 368:Middlewares/LVGL/lvgl/src/draw/sw/lv_draw_sw.c ****         parallel_debug_draw(thread_dsc->task_act, thread_dsc->idx);
+ 369:Middlewares/LVGL/lvgl/src/draw/sw/lv_draw_sw.c **** #endif
+ 370:Middlewares/LVGL/lvgl/src/draw/sw/lv_draw_sw.c ****         thread_dsc->task_act->state = LV_DRAW_TASK_STATE_FINISHED;
+ 371:Middlewares/LVGL/lvgl/src/draw/sw/lv_draw_sw.c ****         thread_dsc->task_act = NULL;
+ 372:Middlewares/LVGL/lvgl/src/draw/sw/lv_draw_sw.c **** 
+ 373:Middlewares/LVGL/lvgl/src/draw/sw/lv_draw_sw.c ****         /*The draw unit is free now. Request a new dispatching as it can get a new task*/
+ 374:Middlewares/LVGL/lvgl/src/draw/sw/lv_draw_sw.c ****         lv_draw_dispatch_request();
+ 375:Middlewares/LVGL/lvgl/src/draw/sw/lv_draw_sw.c **** 
+ 376:Middlewares/LVGL/lvgl/src/draw/sw/lv_draw_sw.c ****     }
+ 377:Middlewares/LVGL/lvgl/src/draw/sw/lv_draw_sw.c **** 
+ 378:Middlewares/LVGL/lvgl/src/draw/sw/lv_draw_sw.c ****     thread_dsc->inited = false;
+ 379:Middlewares/LVGL/lvgl/src/draw/sw/lv_draw_sw.c ****     lv_thread_sync_delete(&thread_dsc->sync);
+ 380:Middlewares/LVGL/lvgl/src/draw/sw/lv_draw_sw.c ****     LV_LOG_INFO("exit software rendering thread");
+ 381:Middlewares/LVGL/lvgl/src/draw/sw/lv_draw_sw.c **** }
+ 382:Middlewares/LVGL/lvgl/src/draw/sw/lv_draw_sw.c **** #endif
+ 383:Middlewares/LVGL/lvgl/src/draw/sw/lv_draw_sw.c **** 
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\cc1l5BWF.s 			page 10
+
+
+ 384:Middlewares/LVGL/lvgl/src/draw/sw/lv_draw_sw.c **** static void execute_drawing(lv_draw_task_t * t)
+ 385:Middlewares/LVGL/lvgl/src/draw/sw/lv_draw_sw.c **** {
+ 117              		.loc 1 385 1 is_stmt 1 view -0
+ 118              		.cfi_startproc
+ 119              		@ args = 0, pretend = 0, frame = 0
+ 120              		@ frame_needed = 0, uses_anonymous_args = 0
+ 121              		.loc 1 385 1 is_stmt 0 view .LVU32
+ 122 0000 08B5     		push	{r3, lr}
+ 123              	.LCFI0:
+ 124              		.cfi_def_cfa_offset 8
+ 125              		.cfi_offset 3, -8
+ 126              		.cfi_offset 14, -4
+ 386:Middlewares/LVGL/lvgl/src/draw/sw/lv_draw_sw.c ****     LV_PROFILER_DRAW_BEGIN;
+ 127              		.loc 1 386 27 is_stmt 1 view .LVU33
+ 387:Middlewares/LVGL/lvgl/src/draw/sw/lv_draw_sw.c ****     /*Render the draw task*/
+ 388:Middlewares/LVGL/lvgl/src/draw/sw/lv_draw_sw.c ****     switch(t->type) {
+ 128              		.loc 1 388 5 view .LVU34
+ 129              		.loc 1 388 13 is_stmt 0 view .LVU35
+ 130 0002 0379     		ldrb	r3, [r0, #4]	@ zero_extendqisi2
+ 131              		.loc 1 388 5 view .LVU36
+ 132 0004 013B     		subs	r3, r3, #1
+ 133 0006 0C2B     		cmp	r3, #12
+ 134 0008 0DD8     		bhi	.L6
+ 135 000a DFE803F0 		tbb	[pc, r3]
+ 136              	.L9:
+ 137 000e 07       		.byte	(.L20-.L9)/2
+ 138 000f 0D       		.byte	(.L19-.L9)/2
+ 139 0010 13       		.byte	(.L18-.L9)/2
+ 140 0011 19       		.byte	(.L17-.L9)/2
+ 141 0012 1F       		.byte	(.L16-.L9)/2
+ 142 0013 25       		.byte	(.L15-.L9)/2
+ 143 0014 40       		.byte	(.L14-.L9)/2
+ 144 0015 31       		.byte	(.L13-.L9)/2
+ 145 0016 2B       		.byte	(.L12-.L9)/2
+ 146 0017 3C       		.byte	(.L11-.L9)/2
+ 147 0018 46       		.byte	(.L10-.L9)/2
+ 148 0019 0C       		.byte	(.L6-.L9)/2
+ 149 001a 36       		.byte	(.L8-.L9)/2
+ 150 001b 00       		.p2align 1
+ 151              	.L20:
+ 389:Middlewares/LVGL/lvgl/src/draw/sw/lv_draw_sw.c ****         case LV_DRAW_TASK_TYPE_FILL:
+ 390:Middlewares/LVGL/lvgl/src/draw/sw/lv_draw_sw.c ****             lv_draw_sw_fill(t, t->draw_dsc, &t->area);
+ 152              		.loc 1 390 13 is_stmt 1 view .LVU37
+ 153 001c 00F10802 		add	r2, r0, #8
+ 154 0020 416D     		ldr	r1, [r0, #84]
+ 155 0022 FFF7FEFF 		bl	lv_draw_sw_fill
+ 156              	.LVL7:
+ 391:Middlewares/LVGL/lvgl/src/draw/sw/lv_draw_sw.c ****             break;
+ 157              		.loc 1 391 13 view .LVU38
+ 158              	.L6:
+ 392:Middlewares/LVGL/lvgl/src/draw/sw/lv_draw_sw.c ****         case LV_DRAW_TASK_TYPE_BORDER:
+ 393:Middlewares/LVGL/lvgl/src/draw/sw/lv_draw_sw.c ****             lv_draw_sw_border(t, t->draw_dsc, &t->area);
+ 394:Middlewares/LVGL/lvgl/src/draw/sw/lv_draw_sw.c ****             break;
+ 395:Middlewares/LVGL/lvgl/src/draw/sw/lv_draw_sw.c ****         case LV_DRAW_TASK_TYPE_BOX_SHADOW:
+ 396:Middlewares/LVGL/lvgl/src/draw/sw/lv_draw_sw.c ****             lv_draw_sw_box_shadow(t, t->draw_dsc, &t->area);
+ 397:Middlewares/LVGL/lvgl/src/draw/sw/lv_draw_sw.c ****             break;
+ 398:Middlewares/LVGL/lvgl/src/draw/sw/lv_draw_sw.c ****         case LV_DRAW_TASK_TYPE_LETTER:
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\cc1l5BWF.s 			page 11
+
+
+ 399:Middlewares/LVGL/lvgl/src/draw/sw/lv_draw_sw.c ****             lv_draw_sw_letter(t, t->draw_dsc, &t->area);
+ 400:Middlewares/LVGL/lvgl/src/draw/sw/lv_draw_sw.c ****             break;
+ 401:Middlewares/LVGL/lvgl/src/draw/sw/lv_draw_sw.c ****         case LV_DRAW_TASK_TYPE_LABEL:
+ 402:Middlewares/LVGL/lvgl/src/draw/sw/lv_draw_sw.c ****             lv_draw_sw_label(t, t->draw_dsc, &t->area);
+ 403:Middlewares/LVGL/lvgl/src/draw/sw/lv_draw_sw.c ****             break;
+ 404:Middlewares/LVGL/lvgl/src/draw/sw/lv_draw_sw.c ****         case LV_DRAW_TASK_TYPE_IMAGE:
+ 405:Middlewares/LVGL/lvgl/src/draw/sw/lv_draw_sw.c ****             lv_draw_sw_image(t, t->draw_dsc, &t->area);
+ 406:Middlewares/LVGL/lvgl/src/draw/sw/lv_draw_sw.c ****             break;
+ 407:Middlewares/LVGL/lvgl/src/draw/sw/lv_draw_sw.c ****         case LV_DRAW_TASK_TYPE_ARC:
+ 408:Middlewares/LVGL/lvgl/src/draw/sw/lv_draw_sw.c ****             lv_draw_sw_arc(t, t->draw_dsc, &t->area);
+ 409:Middlewares/LVGL/lvgl/src/draw/sw/lv_draw_sw.c ****             break;
+ 410:Middlewares/LVGL/lvgl/src/draw/sw/lv_draw_sw.c ****         case LV_DRAW_TASK_TYPE_LINE:
+ 411:Middlewares/LVGL/lvgl/src/draw/sw/lv_draw_sw.c ****             lv_draw_line_iterate(t, t->draw_dsc, lv_draw_sw_line);
+ 412:Middlewares/LVGL/lvgl/src/draw/sw/lv_draw_sw.c ****             break;
+ 413:Middlewares/LVGL/lvgl/src/draw/sw/lv_draw_sw.c ****         case LV_DRAW_TASK_TYPE_BLUR:
+ 414:Middlewares/LVGL/lvgl/src/draw/sw/lv_draw_sw.c ****             lv_draw_sw_blur(t, t->draw_dsc, &t->area);
+ 415:Middlewares/LVGL/lvgl/src/draw/sw/lv_draw_sw.c ****             break;
+ 416:Middlewares/LVGL/lvgl/src/draw/sw/lv_draw_sw.c ****         case LV_DRAW_TASK_TYPE_TRIANGLE:
+ 417:Middlewares/LVGL/lvgl/src/draw/sw/lv_draw_sw.c ****             lv_draw_sw_triangle(t, t->draw_dsc);
+ 418:Middlewares/LVGL/lvgl/src/draw/sw/lv_draw_sw.c ****             break;
+ 419:Middlewares/LVGL/lvgl/src/draw/sw/lv_draw_sw.c ****         case LV_DRAW_TASK_TYPE_LAYER:
+ 420:Middlewares/LVGL/lvgl/src/draw/sw/lv_draw_sw.c ****             lv_draw_sw_layer(t, t->draw_dsc, &t->area);
+ 421:Middlewares/LVGL/lvgl/src/draw/sw/lv_draw_sw.c ****             break;
+ 422:Middlewares/LVGL/lvgl/src/draw/sw/lv_draw_sw.c ****         case LV_DRAW_TASK_TYPE_MASK_RECTANGLE:
+ 423:Middlewares/LVGL/lvgl/src/draw/sw/lv_draw_sw.c ****             lv_draw_sw_mask_rect(t, t->draw_dsc);
+ 424:Middlewares/LVGL/lvgl/src/draw/sw/lv_draw_sw.c ****             break;
+ 425:Middlewares/LVGL/lvgl/src/draw/sw/lv_draw_sw.c **** #if LV_USE_VECTOR_GRAPHIC && LV_USE_THORVG
+ 426:Middlewares/LVGL/lvgl/src/draw/sw/lv_draw_sw.c ****         case LV_DRAW_TASK_TYPE_VECTOR:
+ 427:Middlewares/LVGL/lvgl/src/draw/sw/lv_draw_sw.c ****             lv_draw_sw_vector(t, t->draw_dsc);
+ 428:Middlewares/LVGL/lvgl/src/draw/sw/lv_draw_sw.c ****             break;
+ 429:Middlewares/LVGL/lvgl/src/draw/sw/lv_draw_sw.c **** #endif
+ 430:Middlewares/LVGL/lvgl/src/draw/sw/lv_draw_sw.c ****         default:
+ 431:Middlewares/LVGL/lvgl/src/draw/sw/lv_draw_sw.c ****             break;
+ 432:Middlewares/LVGL/lvgl/src/draw/sw/lv_draw_sw.c ****     }
+ 433:Middlewares/LVGL/lvgl/src/draw/sw/lv_draw_sw.c **** 
+ 434:Middlewares/LVGL/lvgl/src/draw/sw/lv_draw_sw.c **** 
+ 435:Middlewares/LVGL/lvgl/src/draw/sw/lv_draw_sw.c ****     LV_PROFILER_DRAW_END;
+ 436:Middlewares/LVGL/lvgl/src/draw/sw/lv_draw_sw.c **** }
+ 159              		.loc 1 436 1 is_stmt 0 view .LVU39
+ 160 0026 08BD     		pop	{r3, pc}
+ 161              	.LVL8:
+ 162              	.L19:
+ 393:Middlewares/LVGL/lvgl/src/draw/sw/lv_draw_sw.c ****             break;
+ 163              		.loc 1 393 13 is_stmt 1 view .LVU40
+ 164 0028 00F10802 		add	r2, r0, #8
+ 165 002c 416D     		ldr	r1, [r0, #84]
+ 166 002e FFF7FEFF 		bl	lv_draw_sw_border
+ 167              	.LVL9:
+ 394:Middlewares/LVGL/lvgl/src/draw/sw/lv_draw_sw.c ****         case LV_DRAW_TASK_TYPE_BOX_SHADOW:
+ 168              		.loc 1 394 13 view .LVU41
+ 169 0032 F8E7     		b	.L6
+ 170              	.LVL10:
+ 171              	.L18:
+ 396:Middlewares/LVGL/lvgl/src/draw/sw/lv_draw_sw.c ****             break;
+ 172              		.loc 1 396 13 view .LVU42
+ 173 0034 00F10802 		add	r2, r0, #8
+ 174 0038 416D     		ldr	r1, [r0, #84]
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\cc1l5BWF.s 			page 12
+
+
+ 175 003a FFF7FEFF 		bl	lv_draw_sw_box_shadow
+ 176              	.LVL11:
+ 397:Middlewares/LVGL/lvgl/src/draw/sw/lv_draw_sw.c ****         case LV_DRAW_TASK_TYPE_LETTER:
+ 177              		.loc 1 397 13 view .LVU43
+ 178 003e F2E7     		b	.L6
+ 179              	.LVL12:
+ 180              	.L17:
+ 399:Middlewares/LVGL/lvgl/src/draw/sw/lv_draw_sw.c ****             break;
+ 181              		.loc 1 399 13 view .LVU44
+ 182 0040 00F10802 		add	r2, r0, #8
+ 183 0044 416D     		ldr	r1, [r0, #84]
+ 184 0046 FFF7FEFF 		bl	lv_draw_sw_letter
+ 185              	.LVL13:
+ 400:Middlewares/LVGL/lvgl/src/draw/sw/lv_draw_sw.c ****         case LV_DRAW_TASK_TYPE_LABEL:
+ 186              		.loc 1 400 13 view .LVU45
+ 187 004a ECE7     		b	.L6
+ 188              	.LVL14:
+ 189              	.L16:
+ 402:Middlewares/LVGL/lvgl/src/draw/sw/lv_draw_sw.c ****             break;
+ 190              		.loc 1 402 13 view .LVU46
+ 191 004c 00F10802 		add	r2, r0, #8
+ 192 0050 416D     		ldr	r1, [r0, #84]
+ 193 0052 FFF7FEFF 		bl	lv_draw_sw_label
+ 194              	.LVL15:
+ 403:Middlewares/LVGL/lvgl/src/draw/sw/lv_draw_sw.c ****         case LV_DRAW_TASK_TYPE_IMAGE:
+ 195              		.loc 1 403 13 view .LVU47
+ 196 0056 E6E7     		b	.L6
+ 197              	.LVL16:
+ 198              	.L15:
+ 405:Middlewares/LVGL/lvgl/src/draw/sw/lv_draw_sw.c ****             break;
+ 199              		.loc 1 405 13 view .LVU48
+ 200 0058 00F10802 		add	r2, r0, #8
+ 201 005c 416D     		ldr	r1, [r0, #84]
+ 202 005e FFF7FEFF 		bl	lv_draw_sw_image
+ 203              	.LVL17:
+ 406:Middlewares/LVGL/lvgl/src/draw/sw/lv_draw_sw.c ****         case LV_DRAW_TASK_TYPE_ARC:
+ 204              		.loc 1 406 13 view .LVU49
+ 205 0062 E0E7     		b	.L6
+ 206              	.LVL18:
+ 207              	.L12:
+ 408:Middlewares/LVGL/lvgl/src/draw/sw/lv_draw_sw.c ****             break;
+ 208              		.loc 1 408 13 view .LVU50
+ 209 0064 00F10802 		add	r2, r0, #8
+ 210 0068 416D     		ldr	r1, [r0, #84]
+ 211 006a FFF7FEFF 		bl	lv_draw_sw_arc
+ 212              	.LVL19:
+ 409:Middlewares/LVGL/lvgl/src/draw/sw/lv_draw_sw.c ****         case LV_DRAW_TASK_TYPE_LINE:
+ 213              		.loc 1 409 13 view .LVU51
+ 214 006e DAE7     		b	.L6
+ 215              	.LVL20:
+ 216              	.L13:
+ 411:Middlewares/LVGL/lvgl/src/draw/sw/lv_draw_sw.c ****             break;
+ 217              		.loc 1 411 13 view .LVU52
+ 218 0070 0C4A     		ldr	r2, .L23
+ 219 0072 416D     		ldr	r1, [r0, #84]
+ 220 0074 FFF7FEFF 		bl	lv_draw_line_iterate
+ 221              	.LVL21:
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\cc1l5BWF.s 			page 13
+
+
+ 412:Middlewares/LVGL/lvgl/src/draw/sw/lv_draw_sw.c ****         case LV_DRAW_TASK_TYPE_BLUR:
+ 222              		.loc 1 412 13 view .LVU53
+ 223 0078 D5E7     		b	.L6
+ 224              	.LVL22:
+ 225              	.L8:
+ 414:Middlewares/LVGL/lvgl/src/draw/sw/lv_draw_sw.c ****             break;
+ 226              		.loc 1 414 13 view .LVU54
+ 227 007a 00F10802 		add	r2, r0, #8
+ 228 007e 416D     		ldr	r1, [r0, #84]
+ 229 0080 FFF7FEFF 		bl	lv_draw_sw_blur
+ 230              	.LVL23:
+ 415:Middlewares/LVGL/lvgl/src/draw/sw/lv_draw_sw.c ****         case LV_DRAW_TASK_TYPE_TRIANGLE:
+ 231              		.loc 1 415 13 view .LVU55
+ 232 0084 CFE7     		b	.L6
+ 233              	.LVL24:
+ 234              	.L11:
+ 417:Middlewares/LVGL/lvgl/src/draw/sw/lv_draw_sw.c ****             break;
+ 235              		.loc 1 417 13 view .LVU56
+ 236 0086 416D     		ldr	r1, [r0, #84]
+ 237 0088 FFF7FEFF 		bl	lv_draw_sw_triangle
+ 238              	.LVL25:
+ 418:Middlewares/LVGL/lvgl/src/draw/sw/lv_draw_sw.c ****         case LV_DRAW_TASK_TYPE_LAYER:
+ 239              		.loc 1 418 13 view .LVU57
+ 240 008c CBE7     		b	.L6
+ 241              	.LVL26:
+ 242              	.L14:
+ 420:Middlewares/LVGL/lvgl/src/draw/sw/lv_draw_sw.c ****             break;
+ 243              		.loc 1 420 13 view .LVU58
+ 244 008e 00F10802 		add	r2, r0, #8
+ 245 0092 416D     		ldr	r1, [r0, #84]
+ 246 0094 FFF7FEFF 		bl	lv_draw_sw_layer
+ 247              	.LVL27:
+ 421:Middlewares/LVGL/lvgl/src/draw/sw/lv_draw_sw.c ****         case LV_DRAW_TASK_TYPE_MASK_RECTANGLE:
+ 248              		.loc 1 421 13 view .LVU59
+ 249 0098 C5E7     		b	.L6
+ 250              	.LVL28:
+ 251              	.L10:
+ 423:Middlewares/LVGL/lvgl/src/draw/sw/lv_draw_sw.c ****             break;
+ 252              		.loc 1 423 13 view .LVU60
+ 253 009a 416D     		ldr	r1, [r0, #84]
+ 254 009c FFF7FEFF 		bl	lv_draw_sw_mask_rect
+ 255              	.LVL29:
+ 424:Middlewares/LVGL/lvgl/src/draw/sw/lv_draw_sw.c **** #if LV_USE_VECTOR_GRAPHIC && LV_USE_THORVG
+ 256              		.loc 1 424 13 view .LVU61
+ 435:Middlewares/LVGL/lvgl/src/draw/sw/lv_draw_sw.c **** }
+ 257              		.loc 1 435 25 view .LVU62
+ 258              		.loc 1 436 1 is_stmt 0 view .LVU63
+ 259 00a0 C1E7     		b	.L6
+ 260              	.L24:
+ 261 00a2 00BF     		.align	2
+ 262              	.L23:
+ 263 00a4 00000000 		.word	lv_draw_sw_line
+ 264              		.cfi_endproc
+ 265              	.LFE208:
+ 267              		.section	.text.dispatch,"ax",%progbits
+ 268              		.align	1
+ 269              		.syntax unified
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\cc1l5BWF.s 			page 14
+
+
+ 270              		.thumb
+ 271              		.thumb_func
+ 273              	dispatch:
+ 274              	.LVL30:
+ 275              	.LFB207:
+ 251:Middlewares/LVGL/lvgl/src/draw/sw/lv_draw_sw.c ****     LV_PROFILER_DRAW_BEGIN;
+ 276              		.loc 1 251 1 is_stmt 1 view -0
+ 277              		.cfi_startproc
+ 278              		@ args = 0, pretend = 0, frame = 0
+ 279              		@ frame_needed = 0, uses_anonymous_args = 0
+ 252:Middlewares/LVGL/lvgl/src/draw/sw/lv_draw_sw.c ****     lv_draw_sw_unit_t * draw_sw_unit = (lv_draw_sw_unit_t *) draw_unit;
+ 280              		.loc 1 252 27 view .LVU65
+ 253:Middlewares/LVGL/lvgl/src/draw/sw/lv_draw_sw.c **** 
+ 281              		.loc 1 253 5 view .LVU66
+ 311:Middlewares/LVGL/lvgl/src/draw/sw/lv_draw_sw.c ****         LV_PROFILER_DRAW_END;
+ 282              		.loc 1 311 5 view .LVU67
+ 311:Middlewares/LVGL/lvgl/src/draw/sw/lv_draw_sw.c ****         LV_PROFILER_DRAW_END;
+ 283              		.loc 1 311 20 is_stmt 0 view .LVU68
+ 284 0000 036A     		ldr	r3, [r0, #32]
+ 311:Middlewares/LVGL/lvgl/src/draw/sw/lv_draw_sw.c ****         LV_PROFILER_DRAW_END;
+ 285              		.loc 1 311 7 view .LVU69
+ 286 0002 0BB1     		cbz	r3, .L34
+ 313:Middlewares/LVGL/lvgl/src/draw/sw/lv_draw_sw.c ****     }
+ 287              		.loc 1 313 16 view .LVU70
+ 288 0004 0020     		movs	r0, #0
+ 289              	.LVL31:
+ 343:Middlewares/LVGL/lvgl/src/draw/sw/lv_draw_sw.c **** 
+ 290              		.loc 1 343 1 view .LVU71
+ 291 0006 7047     		bx	lr
+ 292              	.LVL32:
+ 293              	.L34:
+ 251:Middlewares/LVGL/lvgl/src/draw/sw/lv_draw_sw.c ****     LV_PROFILER_DRAW_BEGIN;
+ 294              		.loc 1 251 1 view .LVU72
+ 295 0008 70B5     		push	{r4, r5, r6, lr}
+ 296              	.LCFI1:
+ 297              		.cfi_def_cfa_offset 16
+ 298              		.cfi_offset 4, -16
+ 299              		.cfi_offset 5, -12
+ 300              		.cfi_offset 6, -8
+ 301              		.cfi_offset 14, -4
+ 302 000a 0446     		mov	r4, r0
+ 303 000c 0D46     		mov	r5, r1
+ 316:Middlewares/LVGL/lvgl/src/draw/sw/lv_draw_sw.c ****     t = lv_draw_get_available_task(layer, NULL, DRAW_UNIT_ID_SW);
+ 304              		.loc 1 316 5 is_stmt 1 view .LVU73
+ 305              	.LVL33:
+ 317:Middlewares/LVGL/lvgl/src/draw/sw/lv_draw_sw.c ****     if(t == NULL) {
+ 306              		.loc 1 317 5 view .LVU74
+ 317:Middlewares/LVGL/lvgl/src/draw/sw/lv_draw_sw.c ****     if(t == NULL) {
+ 307              		.loc 1 317 9 is_stmt 0 view .LVU75
+ 308 000e 0122     		movs	r2, #1
+ 309 0010 0021     		movs	r1, #0
+ 310              	.LVL34:
+ 317:Middlewares/LVGL/lvgl/src/draw/sw/lv_draw_sw.c ****     if(t == NULL) {
+ 311              		.loc 1 317 9 view .LVU76
+ 312 0012 2846     		mov	r0, r5
+ 313              	.LVL35:
+ 317:Middlewares/LVGL/lvgl/src/draw/sw/lv_draw_sw.c ****     if(t == NULL) {
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\cc1l5BWF.s 			page 15
+
+
+ 314              		.loc 1 317 9 view .LVU77
+ 315 0014 FFF7FEFF 		bl	lv_draw_get_available_task
+ 316              	.LVL36:
+ 318:Middlewares/LVGL/lvgl/src/draw/sw/lv_draw_sw.c ****         LV_PROFILER_DRAW_END;
+ 317              		.loc 1 318 5 is_stmt 1 view .LVU78
+ 318:Middlewares/LVGL/lvgl/src/draw/sw/lv_draw_sw.c ****         LV_PROFILER_DRAW_END;
+ 318              		.loc 1 318 7 is_stmt 0 view .LVU79
+ 319 0018 0646     		mov	r6, r0
+ 320 001a 90B1     		cbz	r0, .L28
+ 323:Middlewares/LVGL/lvgl/src/draw/sw/lv_draw_sw.c ****     if(buf == NULL) {
+ 321              		.loc 1 323 5 is_stmt 1 view .LVU80
+ 323:Middlewares/LVGL/lvgl/src/draw/sw/lv_draw_sw.c ****     if(buf == NULL) {
+ 322              		.loc 1 323 18 is_stmt 0 view .LVU81
+ 323 001c 2846     		mov	r0, r5
+ 324              	.LVL37:
+ 323:Middlewares/LVGL/lvgl/src/draw/sw/lv_draw_sw.c ****     if(buf == NULL) {
+ 325              		.loc 1 323 18 view .LVU82
+ 326 001e FFF7FEFF 		bl	lv_draw_layer_alloc_buf
+ 327              	.LVL38:
+ 324:Middlewares/LVGL/lvgl/src/draw/sw/lv_draw_sw.c ****         LV_PROFILER_DRAW_END;
+ 328              		.loc 1 324 5 is_stmt 1 view .LVU83
+ 324:Middlewares/LVGL/lvgl/src/draw/sw/lv_draw_sw.c ****         LV_PROFILER_DRAW_END;
+ 329              		.loc 1 324 7 is_stmt 0 view .LVU84
+ 330 0022 88B1     		cbz	r0, .L29
+ 329:Middlewares/LVGL/lvgl/src/draw/sw/lv_draw_sw.c ****     draw_sw_unit->task_act = t;
+ 331              		.loc 1 329 5 is_stmt 1 view .LVU85
+ 329:Middlewares/LVGL/lvgl/src/draw/sw/lv_draw_sw.c ****     draw_sw_unit->task_act = t;
+ 332              		.loc 1 329 14 is_stmt 0 view .LVU86
+ 333 0024 0323     		movs	r3, #3
+ 334 0026 3365     		str	r3, [r6, #80]
+ 330:Middlewares/LVGL/lvgl/src/draw/sw/lv_draw_sw.c **** 
+ 335              		.loc 1 330 5 is_stmt 1 view .LVU87
+ 330:Middlewares/LVGL/lvgl/src/draw/sw/lv_draw_sw.c **** 
+ 336              		.loc 1 330 28 is_stmt 0 view .LVU88
+ 337 0028 2662     		str	r6, [r4, #32]
+ 332:Middlewares/LVGL/lvgl/src/draw/sw/lv_draw_sw.c ****     draw_sw_unit->task_act->state = LV_DRAW_TASK_STATE_FINISHED;
+ 338              		.loc 1 332 5 is_stmt 1 view .LVU89
+ 339 002a 3046     		mov	r0, r6
+ 340              	.LVL39:
+ 332:Middlewares/LVGL/lvgl/src/draw/sw/lv_draw_sw.c ****     draw_sw_unit->task_act->state = LV_DRAW_TASK_STATE_FINISHED;
+ 341              		.loc 1 332 5 is_stmt 0 view .LVU90
+ 342 002c FFF7FEFF 		bl	execute_drawing
+ 343              	.LVL40:
+ 333:Middlewares/LVGL/lvgl/src/draw/sw/lv_draw_sw.c ****     draw_sw_unit->task_act = NULL;
+ 344              		.loc 1 333 5 is_stmt 1 view .LVU91
+ 333:Middlewares/LVGL/lvgl/src/draw/sw/lv_draw_sw.c ****     draw_sw_unit->task_act = NULL;
+ 345              		.loc 1 333 17 is_stmt 0 view .LVU92
+ 346 0030 236A     		ldr	r3, [r4, #32]
+ 333:Middlewares/LVGL/lvgl/src/draw/sw/lv_draw_sw.c ****     draw_sw_unit->task_act = NULL;
+ 347              		.loc 1 333 35 view .LVU93
+ 348 0032 0422     		movs	r2, #4
+ 349 0034 1A65     		str	r2, [r3, #80]
+ 334:Middlewares/LVGL/lvgl/src/draw/sw/lv_draw_sw.c **** 
+ 350              		.loc 1 334 5 is_stmt 1 view .LVU94
+ 334:Middlewares/LVGL/lvgl/src/draw/sw/lv_draw_sw.c **** 
+ 351              		.loc 1 334 28 is_stmt 0 view .LVU95
+ 352 0036 0023     		movs	r3, #0
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\cc1l5BWF.s 			page 16
+
+
+ 353 0038 2362     		str	r3, [r4, #32]
+ 337:Middlewares/LVGL/lvgl/src/draw/sw/lv_draw_sw.c **** 
+ 354              		.loc 1 337 5 is_stmt 1 view .LVU96
+ 355 003a FFF7FEFF 		bl	lv_draw_dispatch_request
+ 356              	.LVL41:
+ 339:Middlewares/LVGL/lvgl/src/draw/sw/lv_draw_sw.c ****     return 1;
+ 357              		.loc 1 339 25 view .LVU97
+ 340:Middlewares/LVGL/lvgl/src/draw/sw/lv_draw_sw.c **** #endif
+ 358              		.loc 1 340 5 view .LVU98
+ 340:Middlewares/LVGL/lvgl/src/draw/sw/lv_draw_sw.c **** #endif
+ 359              		.loc 1 340 12 is_stmt 0 view .LVU99
+ 360 003e 0120     		movs	r0, #1
+ 361              	.LVL42:
+ 362              	.L25:
+ 343:Middlewares/LVGL/lvgl/src/draw/sw/lv_draw_sw.c **** 
+ 363              		.loc 1 343 1 view .LVU100
+ 364 0040 70BD     		pop	{r4, r5, r6, pc}
+ 365              	.LVL43:
+ 366              	.L28:
+ 320:Middlewares/LVGL/lvgl/src/draw/sw/lv_draw_sw.c ****     }
+ 367              		.loc 1 320 16 view .LVU101
+ 368 0042 4FF0FF30 		mov	r0, #-1
+ 369              	.LVL44:
+ 320:Middlewares/LVGL/lvgl/src/draw/sw/lv_draw_sw.c ****     }
+ 370              		.loc 1 320 16 view .LVU102
+ 371 0046 FBE7     		b	.L25
+ 372              	.LVL45:
+ 373              	.L29:
+ 326:Middlewares/LVGL/lvgl/src/draw/sw/lv_draw_sw.c ****     }
+ 374              		.loc 1 326 16 view .LVU103
+ 375 0048 4FF0FF30 		mov	r0, #-1
+ 376              	.LVL46:
+ 326:Middlewares/LVGL/lvgl/src/draw/sw/lv_draw_sw.c ****     }
+ 377              		.loc 1 326 16 view .LVU104
+ 378 004c F8E7     		b	.L25
+ 379              		.cfi_endproc
+ 380              	.LFE207:
+ 382              		.section	.rodata.lv_draw_sw_init.str1.4,"aMS",%progbits,1
+ 383              		.align	2
+ 384              	.LC0:
+ 385 0000 535700   		.ascii	"SW\000"
+ 386              		.section	.text.lv_draw_sw_init,"ax",%progbits
+ 387              		.align	1
+ 388              		.global	lv_draw_sw_init
+ 389              		.syntax unified
+ 390              		.thumb
+ 391              		.thumb_func
+ 393              	lv_draw_sw_init:
+ 394              	.LFB200:
+  76:Middlewares/LVGL/lvgl/src/draw/sw/lv_draw_sw.c **** 
+ 395              		.loc 1 76 1 is_stmt 1 view -0
+ 396              		.cfi_startproc
+ 397              		@ args = 0, pretend = 0, frame = 0
+ 398              		@ frame_needed = 0, uses_anonymous_args = 0
+ 399 0000 08B5     		push	{r3, lr}
+ 400              	.LCFI2:
+ 401              		.cfi_def_cfa_offset 8
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\cc1l5BWF.s 			page 17
+
+
+ 402              		.cfi_offset 3, -8
+ 403              		.cfi_offset 14, -4
+  79:Middlewares/LVGL/lvgl/src/draw/sw/lv_draw_sw.c **** #endif
+ 404              		.loc 1 79 5 view .LVU106
+ 405 0002 FFF7FEFF 		bl	lv_draw_sw_mask_init
+ 406              	.LVL47:
+  82:Middlewares/LVGL/lvgl/src/draw/sw/lv_draw_sw.c ****     draw_sw_unit->base_unit.dispatch_cb = dispatch;
+ 407              		.loc 1 82 5 view .LVU107
+  82:Middlewares/LVGL/lvgl/src/draw/sw/lv_draw_sw.c ****     draw_sw_unit->base_unit.dispatch_cb = dispatch;
+ 408              		.loc 1 82 40 is_stmt 0 view .LVU108
+ 409 0006 2420     		movs	r0, #36
+ 410 0008 FFF7FEFF 		bl	lv_draw_create_unit
+ 411              	.LVL48:
+  83:Middlewares/LVGL/lvgl/src/draw/sw/lv_draw_sw.c ****     draw_sw_unit->base_unit.evaluate_cb = evaluate;
+ 412              		.loc 1 83 5 is_stmt 1 view .LVU109
+  83:Middlewares/LVGL/lvgl/src/draw/sw/lv_draw_sw.c ****     draw_sw_unit->base_unit.evaluate_cb = evaluate;
+ 413              		.loc 1 83 41 is_stmt 0 view .LVU110
+ 414 000c 064B     		ldr	r3, .L37
+ 415 000e C360     		str	r3, [r0, #12]
+  84:Middlewares/LVGL/lvgl/src/draw/sw/lv_draw_sw.c ****     draw_sw_unit->base_unit.delete_cb = LV_USE_OS ? lv_draw_sw_delete : NULL;
+ 416              		.loc 1 84 5 is_stmt 1 view .LVU111
+  84:Middlewares/LVGL/lvgl/src/draw/sw/lv_draw_sw.c ****     draw_sw_unit->base_unit.delete_cb = LV_USE_OS ? lv_draw_sw_delete : NULL;
+ 417              		.loc 1 84 41 is_stmt 0 view .LVU112
+ 418 0010 064B     		ldr	r3, .L37+4
+ 419 0012 0361     		str	r3, [r0, #16]
+  85:Middlewares/LVGL/lvgl/src/draw/sw/lv_draw_sw.c **** #if LV_USE_DRAW_ARM2D_SYNC
+ 420              		.loc 1 85 5 is_stmt 1 view .LVU113
+  85:Middlewares/LVGL/lvgl/src/draw/sw/lv_draw_sw.c **** #if LV_USE_DRAW_ARM2D_SYNC
+ 421              		.loc 1 85 39 is_stmt 0 view .LVU114
+ 422 0014 0023     		movs	r3, #0
+ 423 0016 8361     		str	r3, [r0, #24]
+  89:Middlewares/LVGL/lvgl/src/draw/sw/lv_draw_sw.c **** #endif
+ 424              		.loc 1 89 5 is_stmt 1 view .LVU115
+  89:Middlewares/LVGL/lvgl/src/draw/sw/lv_draw_sw.c **** #endif
+ 425              		.loc 1 89 34 is_stmt 0 view .LVU116
+ 426 0018 054B     		ldr	r3, .L37+8
+ 427 001a 4360     		str	r3, [r0, #4]
+ 112:Middlewares/LVGL/lvgl/src/draw/sw/lv_draw_sw.c **** }
+ 428              		.loc 1 112 5 is_stmt 1 view .LVU117
+ 429 001c 0821     		movs	r1, #8
+ 430 001e 0548     		ldr	r0, .L37+12
+ 431              	.LVL49:
+ 112:Middlewares/LVGL/lvgl/src/draw/sw/lv_draw_sw.c **** }
+ 432              		.loc 1 112 5 is_stmt 0 view .LVU118
+ 433 0020 FFF7FEFF 		bl	lv_ll_init
+ 434              	.LVL50:
+ 113:Middlewares/LVGL/lvgl/src/draw/sw/lv_draw_sw.c **** 
+ 435              		.loc 1 113 1 view .LVU119
+ 436 0024 08BD     		pop	{r3, pc}
+ 437              	.L38:
+ 438 0026 00BF     		.align	2
+ 439              	.L37:
+ 440 0028 00000000 		.word	dispatch
+ 441 002c 00000000 		.word	evaluate
+ 442 0030 00000000 		.word	.LC0
+ 443 0034 4C010000 		.word	lv_global+332
+ 444              		.cfi_endproc
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\cc1l5BWF.s 			page 18
+
+
+ 445              	.LFE200:
+ 447              		.section	.text.lv_draw_sw_deinit,"ax",%progbits
+ 448              		.align	1
+ 449              		.global	lv_draw_sw_deinit
+ 450              		.syntax unified
+ 451              		.thumb
+ 452              		.thumb_func
+ 454              	lv_draw_sw_deinit:
+ 455              	.LFB201:
+ 116:Middlewares/LVGL/lvgl/src/draw/sw/lv_draw_sw.c **** #if LV_USE_VECTOR_GRAPHIC && LV_USE_THORVG
+ 456              		.loc 1 116 1 is_stmt 1 view -0
+ 457              		.cfi_startproc
+ 458              		@ args = 0, pretend = 0, frame = 0
+ 459              		@ frame_needed = 0, uses_anonymous_args = 0
+ 460 0000 08B5     		push	{r3, lr}
+ 461              	.LCFI3:
+ 462              		.cfi_def_cfa_offset 8
+ 463              		.cfi_offset 3, -8
+ 464              		.cfi_offset 14, -4
+ 122:Middlewares/LVGL/lvgl/src/draw/sw/lv_draw_sw.c **** #endif
+ 465              		.loc 1 122 5 view .LVU121
+ 466 0002 FFF7FEFF 		bl	lv_draw_sw_mask_deinit
+ 467              	.LVL51:
+ 124:Middlewares/LVGL/lvgl/src/draw/sw/lv_draw_sw.c **** 
+ 468              		.loc 1 124 1 is_stmt 0 view .LVU122
+ 469 0006 08BD     		pop	{r3, pc}
+ 470              		.cfi_endproc
+ 471              	.LFE201:
+ 473              		.section	.text.lv_draw_sw_register_blend_handler,"ax",%progbits
+ 474              		.align	1
+ 475              		.global	lv_draw_sw_register_blend_handler
+ 476              		.syntax unified
+ 477              		.thumb
+ 478              		.thumb_func
+ 480              	lv_draw_sw_register_blend_handler:
+ 481              	.LVL52:
+ 482              	.LFB203:
+ 152:Middlewares/LVGL/lvgl/src/draw/sw/lv_draw_sw.c ****     lv_draw_sw_custom_blend_handler_t * existing_handler = NULL;
+ 483              		.loc 1 152 1 is_stmt 1 view -0
+ 484              		.cfi_startproc
+ 485              		@ args = 0, pretend = 0, frame = 0
+ 486              		@ frame_needed = 0, uses_anonymous_args = 0
+ 152:Middlewares/LVGL/lvgl/src/draw/sw/lv_draw_sw.c ****     lv_draw_sw_custom_blend_handler_t * existing_handler = NULL;
+ 487              		.loc 1 152 1 is_stmt 0 view .LVU124
+ 488 0000 10B5     		push	{r4, lr}
+ 489              	.LCFI4:
+ 490              		.cfi_def_cfa_offset 8
+ 491              		.cfi_offset 4, -8
+ 492              		.cfi_offset 14, -4
+ 493 0002 0446     		mov	r4, r0
+ 153:Middlewares/LVGL/lvgl/src/draw/sw/lv_draw_sw.c ****     lv_draw_sw_custom_blend_handler_t * new_handler = NULL;
+ 494              		.loc 1 153 5 is_stmt 1 view .LVU125
+ 495              	.LVL53:
+ 154:Middlewares/LVGL/lvgl/src/draw/sw/lv_draw_sw.c **** 
+ 496              		.loc 1 154 5 view .LVU126
+ 157:Middlewares/LVGL/lvgl/src/draw/sw/lv_draw_sw.c ****         if(existing_handler->dest_cf == handler->dest_cf) {
+ 497              		.loc 1 157 5 view .LVU127
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\cc1l5BWF.s 			page 19
+
+
+ 498 0004 0C48     		ldr	r0, .L50
+ 499              	.LVL54:
+ 157:Middlewares/LVGL/lvgl/src/draw/sw/lv_draw_sw.c ****         if(existing_handler->dest_cf == handler->dest_cf) {
+ 500              		.loc 1 157 5 is_stmt 0 view .LVU128
+ 501 0006 FFF7FEFF 		bl	lv_ll_get_head
+ 502              	.LVL55:
+ 157:Middlewares/LVGL/lvgl/src/draw/sw/lv_draw_sw.c ****         if(existing_handler->dest_cf == handler->dest_cf) {
+ 503              		.loc 1 157 5 view .LVU129
+ 504 000a 03E0     		b	.L42
+ 505              	.L48:
+ 157:Middlewares/LVGL/lvgl/src/draw/sw/lv_draw_sw.c ****         if(existing_handler->dest_cf == handler->dest_cf) {
+ 506              		.loc 1 157 5 is_stmt 1 discriminator 2 view .LVU130
+ 507 000c 0146     		mov	r1, r0
+ 508 000e 0A48     		ldr	r0, .L50
+ 509              	.LVL56:
+ 157:Middlewares/LVGL/lvgl/src/draw/sw/lv_draw_sw.c ****         if(existing_handler->dest_cf == handler->dest_cf) {
+ 510              		.loc 1 157 5 is_stmt 0 discriminator 2 view .LVU131
+ 511 0010 FFF7FEFF 		bl	lv_ll_get_next
+ 512              	.LVL57:
+ 513              	.L42:
+ 157:Middlewares/LVGL/lvgl/src/draw/sw/lv_draw_sw.c ****         if(existing_handler->dest_cf == handler->dest_cf) {
+ 514              		.loc 1 157 5 is_stmt 1 discriminator 1 view .LVU132
+ 515 0014 18B1     		cbz	r0, .L43
+ 158:Middlewares/LVGL/lvgl/src/draw/sw/lv_draw_sw.c ****             new_handler = existing_handler;
+ 516              		.loc 1 158 9 view .LVU133
+ 158:Middlewares/LVGL/lvgl/src/draw/sw/lv_draw_sw.c ****             new_handler = existing_handler;
+ 517              		.loc 1 158 28 is_stmt 0 view .LVU134
+ 518 0016 0278     		ldrb	r2, [r0]	@ zero_extendqisi2
+ 158:Middlewares/LVGL/lvgl/src/draw/sw/lv_draw_sw.c ****             new_handler = existing_handler;
+ 519              		.loc 1 158 48 view .LVU135
+ 520 0018 2378     		ldrb	r3, [r4]	@ zero_extendqisi2
+ 158:Middlewares/LVGL/lvgl/src/draw/sw/lv_draw_sw.c ****             new_handler = existing_handler;
+ 521              		.loc 1 158 11 view .LVU136
+ 522 001a 9A42     		cmp	r2, r3
+ 523 001c F6D1     		bne	.L48
+ 524              	.L43:
+ 525              	.LVL58:
+ 164:Middlewares/LVGL/lvgl/src/draw/sw/lv_draw_sw.c ****         new_handler = lv_ll_ins_head(&LV_GLOBAL_DEFAULT()->draw_sw_blend_handler_ll);
+ 526              		.loc 1 164 5 is_stmt 1 view .LVU137
+ 164:Middlewares/LVGL/lvgl/src/draw/sw/lv_draw_sw.c ****         new_handler = lv_ll_ins_head(&LV_GLOBAL_DEFAULT()->draw_sw_blend_handler_ll);
+ 527              		.loc 1 164 7 is_stmt 0 view .LVU138
+ 528 001e 28B1     		cbz	r0, .L49
+ 529              	.LVL59:
+ 530              	.L45:
+ 172:Middlewares/LVGL/lvgl/src/draw/sw/lv_draw_sw.c ****     return true;
+ 531              		.loc 1 172 5 is_stmt 1 view .LVU139
+ 532 0020 0822     		movs	r2, #8
+ 533 0022 2146     		mov	r1, r4
+ 534 0024 FFF7FEFF 		bl	lv_memcpy
+ 535              	.LVL60:
+ 173:Middlewares/LVGL/lvgl/src/draw/sw/lv_draw_sw.c **** }
+ 536              		.loc 1 173 5 view .LVU140
+ 174:Middlewares/LVGL/lvgl/src/draw/sw/lv_draw_sw.c **** 
+ 537              		.loc 1 174 1 is_stmt 0 view .LVU141
+ 538 0028 0120     		movs	r0, #1
+ 539 002a 10BD     		pop	{r4, pc}
+ 540              	.LVL61:
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\cc1l5BWF.s 			page 20
+
+
+ 541              	.L49:
+ 165:Middlewares/LVGL/lvgl/src/draw/sw/lv_draw_sw.c ****         if(new_handler == NULL) {
+ 542              		.loc 1 165 9 is_stmt 1 view .LVU142
+ 165:Middlewares/LVGL/lvgl/src/draw/sw/lv_draw_sw.c ****         if(new_handler == NULL) {
+ 543              		.loc 1 165 23 is_stmt 0 view .LVU143
+ 544 002c 0248     		ldr	r0, .L50
+ 545              	.LVL62:
+ 165:Middlewares/LVGL/lvgl/src/draw/sw/lv_draw_sw.c ****         if(new_handler == NULL) {
+ 546              		.loc 1 165 23 view .LVU144
+ 547 002e FFF7FEFF 		bl	lv_ll_ins_head
+ 548              	.LVL63:
+ 166:Middlewares/LVGL/lvgl/src/draw/sw/lv_draw_sw.c ****             LV_ASSERT_MALLOC(new_handler);
+ 549              		.loc 1 166 9 is_stmt 1 view .LVU145
+ 166:Middlewares/LVGL/lvgl/src/draw/sw/lv_draw_sw.c ****             LV_ASSERT_MALLOC(new_handler);
+ 550              		.loc 1 166 11 is_stmt 0 view .LVU146
+ 551 0032 0028     		cmp	r0, #0
+ 552 0034 F4D1     		bne	.L45
+ 553              	.L46:
+ 167:Middlewares/LVGL/lvgl/src/draw/sw/lv_draw_sw.c ****             return false;
+ 554              		.loc 1 167 13 is_stmt 1 view .LVU147
+ 167:Middlewares/LVGL/lvgl/src/draw/sw/lv_draw_sw.c ****             return false;
+ 555              		.loc 1 167 13 view .LVU148
+ 167:Middlewares/LVGL/lvgl/src/draw/sw/lv_draw_sw.c ****             return false;
+ 556              		.loc 1 167 13 view .LVU149
+ 167:Middlewares/LVGL/lvgl/src/draw/sw/lv_draw_sw.c ****             return false;
+ 557              		.loc 1 167 13 view .LVU150
+ 167:Middlewares/LVGL/lvgl/src/draw/sw/lv_draw_sw.c ****             return false;
+ 558              		.loc 1 167 13 view .LVU151
+ 559 0036 FEE7     		b	.L46
+ 560              	.L51:
+ 561              		.align	2
+ 562              	.L50:
+ 563 0038 4C010000 		.word	lv_global+332
+ 564              		.cfi_endproc
+ 565              	.LFE203:
+ 567              		.section	.text.lv_draw_sw_unregister_blend_handler,"ax",%progbits
+ 568              		.align	1
+ 569              		.global	lv_draw_sw_unregister_blend_handler
+ 570              		.syntax unified
+ 571              		.thumb
+ 572              		.thumb_func
+ 574              	lv_draw_sw_unregister_blend_handler:
+ 575              	.LVL64:
+ 576              	.LFB204:
+ 177:Middlewares/LVGL/lvgl/src/draw/sw/lv_draw_sw.c ****     lv_draw_sw_custom_blend_handler_t * handler;
+ 577              		.loc 1 177 1 view -0
+ 578              		.cfi_startproc
+ 579              		@ args = 0, pretend = 0, frame = 0
+ 580              		@ frame_needed = 0, uses_anonymous_args = 0
+ 177:Middlewares/LVGL/lvgl/src/draw/sw/lv_draw_sw.c ****     lv_draw_sw_custom_blend_handler_t * handler;
+ 581              		.loc 1 177 1 is_stmt 0 view .LVU153
+ 582 0000 38B5     		push	{r3, r4, r5, lr}
+ 583              	.LCFI5:
+ 584              		.cfi_def_cfa_offset 16
+ 585              		.cfi_offset 3, -16
+ 586              		.cfi_offset 4, -12
+ 587              		.cfi_offset 5, -8
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\cc1l5BWF.s 			page 21
+
+
+ 588              		.cfi_offset 14, -4
+ 589 0002 0546     		mov	r5, r0
+ 178:Middlewares/LVGL/lvgl/src/draw/sw/lv_draw_sw.c **** 
+ 590              		.loc 1 178 5 is_stmt 1 view .LVU154
+ 180:Middlewares/LVGL/lvgl/src/draw/sw/lv_draw_sw.c ****         if(handler->dest_cf == dest_cf) {
+ 591              		.loc 1 180 5 view .LVU155
+ 592 0004 0C48     		ldr	r0, .L59
+ 593              	.LVL65:
+ 180:Middlewares/LVGL/lvgl/src/draw/sw/lv_draw_sw.c ****         if(handler->dest_cf == dest_cf) {
+ 594              		.loc 1 180 5 is_stmt 0 view .LVU156
+ 595 0006 FFF7FEFF 		bl	lv_ll_get_head
+ 596              	.LVL66:
+ 597 000a 0446     		mov	r4, r0
+ 598              	.LVL67:
+ 180:Middlewares/LVGL/lvgl/src/draw/sw/lv_draw_sw.c ****         if(handler->dest_cf == dest_cf) {
+ 599              		.loc 1 180 5 view .LVU157
+ 600 000c 04E0     		b	.L53
+ 601              	.LVL68:
+ 602              	.L54:
+ 180:Middlewares/LVGL/lvgl/src/draw/sw/lv_draw_sw.c ****         if(handler->dest_cf == dest_cf) {
+ 603              		.loc 1 180 5 is_stmt 1 discriminator 2 view .LVU158
+ 604 000e 2146     		mov	r1, r4
+ 605 0010 0948     		ldr	r0, .L59
+ 606 0012 FFF7FEFF 		bl	lv_ll_get_next
+ 607              	.LVL69:
+ 608 0016 0446     		mov	r4, r0
+ 609              	.LVL70:
+ 610              	.L53:
+ 180:Middlewares/LVGL/lvgl/src/draw/sw/lv_draw_sw.c ****         if(handler->dest_cf == dest_cf) {
+ 611              		.loc 1 180 5 discriminator 1 view .LVU159
+ 612 0018 5CB1     		cbz	r4, .L58
+ 181:Middlewares/LVGL/lvgl/src/draw/sw/lv_draw_sw.c ****             lv_ll_remove(&LV_GLOBAL_DEFAULT()->draw_sw_blend_handler_ll, handler);
+ 613              		.loc 1 181 9 view .LVU160
+ 181:Middlewares/LVGL/lvgl/src/draw/sw/lv_draw_sw.c ****             lv_ll_remove(&LV_GLOBAL_DEFAULT()->draw_sw_blend_handler_ll, handler);
+ 614              		.loc 1 181 19 is_stmt 0 view .LVU161
+ 615 001a 2378     		ldrb	r3, [r4]	@ zero_extendqisi2
+ 181:Middlewares/LVGL/lvgl/src/draw/sw/lv_draw_sw.c ****             lv_ll_remove(&LV_GLOBAL_DEFAULT()->draw_sw_blend_handler_ll, handler);
+ 616              		.loc 1 181 11 view .LVU162
+ 617 001c AB42     		cmp	r3, r5
+ 618 001e F6D1     		bne	.L54
+ 182:Middlewares/LVGL/lvgl/src/draw/sw/lv_draw_sw.c ****             lv_free(handler);
+ 619              		.loc 1 182 13 is_stmt 1 view .LVU163
+ 620 0020 2146     		mov	r1, r4
+ 621 0022 0548     		ldr	r0, .L59
+ 622 0024 FFF7FEFF 		bl	lv_ll_remove
+ 623              	.LVL71:
+ 183:Middlewares/LVGL/lvgl/src/draw/sw/lv_draw_sw.c ****             return true;
+ 624              		.loc 1 183 13 view .LVU164
+ 625 0028 2046     		mov	r0, r4
+ 626 002a FFF7FEFF 		bl	lv_free
+ 627              	.LVL72:
+ 184:Middlewares/LVGL/lvgl/src/draw/sw/lv_draw_sw.c ****         }
+ 628              		.loc 1 184 13 view .LVU165
+ 184:Middlewares/LVGL/lvgl/src/draw/sw/lv_draw_sw.c ****         }
+ 629              		.loc 1 184 20 is_stmt 0 view .LVU166
+ 630 002e 0120     		movs	r0, #1
+ 631 0030 00E0     		b	.L55
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\cc1l5BWF.s 			page 22
+
+
+ 632              	.L58:
+ 188:Middlewares/LVGL/lvgl/src/draw/sw/lv_draw_sw.c **** }
+ 633              		.loc 1 188 12 view .LVU167
+ 634 0032 0020     		movs	r0, #0
+ 635              	.L55:
+ 189:Middlewares/LVGL/lvgl/src/draw/sw/lv_draw_sw.c **** 
+ 636              		.loc 1 189 1 view .LVU168
+ 637 0034 38BD     		pop	{r3, r4, r5, pc}
+ 638              	.LVL73:
+ 639              	.L60:
+ 189:Middlewares/LVGL/lvgl/src/draw/sw/lv_draw_sw.c **** 
+ 640              		.loc 1 189 1 view .LVU169
+ 641 0036 00BF     		.align	2
+ 642              	.L59:
+ 643 0038 4C010000 		.word	lv_global+332
+ 644              		.cfi_endproc
+ 645              	.LFE204:
+ 647              		.section	.text.lv_draw_sw_get_blend_handler,"ax",%progbits
+ 648              		.align	1
+ 649              		.global	lv_draw_sw_get_blend_handler
+ 650              		.syntax unified
+ 651              		.thumb
+ 652              		.thumb_func
+ 654              	lv_draw_sw_get_blend_handler:
+ 655              	.LVL74:
+ 656              	.LFB205:
+ 192:Middlewares/LVGL/lvgl/src/draw/sw/lv_draw_sw.c ****     lv_draw_sw_custom_blend_handler_t * handler;
+ 657              		.loc 1 192 1 is_stmt 1 view -0
+ 658              		.cfi_startproc
+ 659              		@ args = 0, pretend = 0, frame = 0
+ 660              		@ frame_needed = 0, uses_anonymous_args = 0
+ 192:Middlewares/LVGL/lvgl/src/draw/sw/lv_draw_sw.c ****     lv_draw_sw_custom_blend_handler_t * handler;
+ 661              		.loc 1 192 1 is_stmt 0 view .LVU171
+ 662 0000 10B5     		push	{r4, lr}
+ 663              	.LCFI6:
+ 664              		.cfi_def_cfa_offset 8
+ 665              		.cfi_offset 4, -8
+ 666              		.cfi_offset 14, -4
+ 667 0002 0446     		mov	r4, r0
+ 193:Middlewares/LVGL/lvgl/src/draw/sw/lv_draw_sw.c **** 
+ 668              		.loc 1 193 5 is_stmt 1 view .LVU172
+ 195:Middlewares/LVGL/lvgl/src/draw/sw/lv_draw_sw.c ****         if(handler->dest_cf == dest_cf) {
+ 669              		.loc 1 195 5 view .LVU173
+ 670 0004 0848     		ldr	r0, .L68
+ 671              	.LVL75:
+ 195:Middlewares/LVGL/lvgl/src/draw/sw/lv_draw_sw.c ****         if(handler->dest_cf == dest_cf) {
+ 672              		.loc 1 195 5 is_stmt 0 view .LVU174
+ 673 0006 FFF7FEFF 		bl	lv_ll_get_head
+ 674              	.LVL76:
+ 675 000a 0146     		mov	r1, r0
+ 676              	.LVL77:
+ 195:Middlewares/LVGL/lvgl/src/draw/sw/lv_draw_sw.c ****         if(handler->dest_cf == dest_cf) {
+ 677              		.loc 1 195 5 view .LVU175
+ 678 000c 03E0     		b	.L62
+ 679              	.LVL78:
+ 680              	.L63:
+ 195:Middlewares/LVGL/lvgl/src/draw/sw/lv_draw_sw.c ****         if(handler->dest_cf == dest_cf) {
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\cc1l5BWF.s 			page 23
+
+
+ 681              		.loc 1 195 5 is_stmt 1 discriminator 2 view .LVU176
+ 682 000e 0648     		ldr	r0, .L68
+ 683 0010 FFF7FEFF 		bl	lv_ll_get_next
+ 684              	.LVL79:
+ 195:Middlewares/LVGL/lvgl/src/draw/sw/lv_draw_sw.c ****         if(handler->dest_cf == dest_cf) {
+ 685              		.loc 1 195 5 is_stmt 0 discriminator 2 view .LVU177
+ 686 0014 0146     		mov	r1, r0
+ 687              	.LVL80:
+ 688              	.L62:
+ 195:Middlewares/LVGL/lvgl/src/draw/sw/lv_draw_sw.c ****         if(handler->dest_cf == dest_cf) {
+ 689              		.loc 1 195 5 is_stmt 1 discriminator 1 view .LVU178
+ 690 0016 21B1     		cbz	r1, .L67
+ 196:Middlewares/LVGL/lvgl/src/draw/sw/lv_draw_sw.c ****             return handler->handler;
+ 691              		.loc 1 196 9 view .LVU179
+ 196:Middlewares/LVGL/lvgl/src/draw/sw/lv_draw_sw.c ****             return handler->handler;
+ 692              		.loc 1 196 19 is_stmt 0 view .LVU180
+ 693 0018 0B78     		ldrb	r3, [r1]	@ zero_extendqisi2
+ 196:Middlewares/LVGL/lvgl/src/draw/sw/lv_draw_sw.c ****             return handler->handler;
+ 694              		.loc 1 196 11 view .LVU181
+ 695 001a A342     		cmp	r3, r4
+ 696 001c F7D1     		bne	.L63
+ 197:Middlewares/LVGL/lvgl/src/draw/sw/lv_draw_sw.c ****         }
+ 697              		.loc 1 197 13 is_stmt 1 view .LVU182
+ 197:Middlewares/LVGL/lvgl/src/draw/sw/lv_draw_sw.c ****         }
+ 698              		.loc 1 197 27 is_stmt 0 view .LVU183
+ 699 001e 4868     		ldr	r0, [r1, #4]
+ 700 0020 00E0     		b	.L61
+ 701              	.L67:
+ 201:Middlewares/LVGL/lvgl/src/draw/sw/lv_draw_sw.c **** }
+ 702              		.loc 1 201 12 view .LVU184
+ 703 0022 0020     		movs	r0, #0
+ 704              	.L61:
+ 202:Middlewares/LVGL/lvgl/src/draw/sw/lv_draw_sw.c **** 
+ 705              		.loc 1 202 1 view .LVU185
+ 706 0024 10BD     		pop	{r4, pc}
+ 707              	.LVL81:
+ 708              	.L69:
+ 202:Middlewares/LVGL/lvgl/src/draw/sw/lv_draw_sw.c **** 
+ 709              		.loc 1 202 1 view .LVU186
+ 710 0026 00BF     		.align	2
+ 711              	.L68:
+ 712 0028 4C010000 		.word	lv_global+332
+ 713              		.cfi_endproc
+ 714              	.LFE205:
+ 716              		.text
+ 717              	.Letext0:
+ 718              		.file 2 "D:\\STM32CubeIDE\\STM32CubeIDE_2.1.1\\STM32CubeIDE\\plugins\\com.st.stm32cube.ide.mcu.ext
+ 719              		.file 3 "D:\\STM32CubeIDE\\STM32CubeIDE_2.1.1\\STM32CubeIDE\\plugins\\com.st.stm32cube.ide.mcu.ext
+ 720              		.file 4 "D:\\STM32CubeIDE\\STM32CubeIDE_2.1.1\\STM32CubeIDE\\plugins\\com.st.stm32cube.ide.mcu.ext
+ 721              		.file 5 "Middlewares/LVGL/lvgl/src/draw/sw/../../misc/lv_types.h"
+ 722              		.file 6 "Middlewares/LVGL/lvgl/src/draw/sw/../../display/lv_display_private.h"
+ 723              		.file 7 "Middlewares/LVGL/lvgl/src/draw/sw/../lv_draw.h"
+ 724              		.file 8 "Middlewares/LVGL/lvgl/src/draw/sw/../lv_draw_private.h"
+ 725              		.file 9 "Middlewares/LVGL/lvgl/src/draw/sw/../../core/../misc/lv_timer_private.h"
+ 726              		.file 10 "Middlewares/LVGL/lvgl/src/draw/sw/../../misc/../font/lv_font.h"
+ 727              		.file 11 "Middlewares/LVGL/lvgl/src/draw/sw/../lv_draw_image.h"
+ 728              		.file 12 "Middlewares/LVGL/lvgl/src/draw/sw/../../misc/cache/class/../lv_cache_private.h"
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\cc1l5BWF.s 			page 24
+
+
+ 729              		.file 13 "Middlewares/LVGL/lvgl/src/draw/sw/../lv_draw_mask.h"
+ 730              		.file 14 "Middlewares/LVGL/lvgl/src/draw/sw/lv_draw_sw_private.h"
+ 731              		.file 15 "Middlewares/LVGL/lvgl/src/draw/sw/../../core/../draw/lv_draw_buf_private.h"
+ 732              		.file 16 "Middlewares/LVGL/lvgl/src/draw/sw/../../misc/lv_array.h"
+ 733              		.file 17 "Middlewares/LVGL/lvgl/src/draw/sw/../../misc/../font/../draw/lv_draw_buf.h"
+ 734              		.file 18 "Middlewares/LVGL/lvgl/src/draw/sw/../../misc/../font/../draw/../misc/lv_area.h"
+ 735              		.file 19 "Middlewares/LVGL/lvgl/src/draw/sw/../../misc/../font/../draw/../misc/lv_color.h"
+ 736              		.file 20 "Middlewares/LVGL/lvgl/src/draw/sw/../../misc/../font/../draw/lv_image_dsc.h"
+ 737              		.file 21 "Middlewares/LVGL/lvgl/src/draw/sw/../../misc/../tick/lv_tick.h"
+ 738              		.file 22 "Middlewares/LVGL/lvgl/src/draw/sw/../../misc/lv_ll.h"
+ 739              		.file 23 "Middlewares/LVGL/lvgl/src/draw/sw/../../misc/lv_timer.h"
+ 740              		.file 24 "Middlewares/LVGL/lvgl/src/draw/sw/../../misc/lv_text.h"
+ 741              		.file 25 "Middlewares/LVGL/lvgl/src/draw/sw/../../misc/lv_bidi.h"
+ 742              		.file 26 "Middlewares/LVGL/lvgl/src/draw/sw/../../misc/lv_grad.h"
+ 743              		.file 27 "Middlewares/LVGL/lvgl/src/draw/sw/../../misc/../layouts/lv_layout.h"
+ 744              		.file 28 "Middlewares/LVGL/lvgl/src/draw/sw/../../misc/lv_style.h"
+ 745              		.file 29 "Middlewares/LVGL/lvgl/src/draw/sw/../../misc/lv_event.h"
+ 746              		.file 30 "Middlewares/LVGL/lvgl/src/draw/sw/../../display/lv_display.h"
+ 747              		.file 31 "Middlewares/LVGL/lvgl/src/draw/sw/../lv_draw_rect.h"
+ 748              		.file 32 "Middlewares/LVGL/lvgl/src/draw/sw/../lv_draw_triangle.h"
+ 749              		.file 33 "Middlewares/LVGL/lvgl/src/draw/sw/../lv_draw_label.h"
+ 750              		.file 34 "Middlewares/LVGL/lvgl/src/draw/sw/../lv_draw_line.h"
+ 751              		.file 35 "Middlewares/LVGL/lvgl/src/draw/sw/../lv_draw_arc.h"
+ 752              		.file 36 "Middlewares/LVGL/lvgl/src/draw/sw/../lv_draw_blur.h"
+ 753              		.file 37 "Middlewares/LVGL/lvgl/src/draw/sw/blend/lv_draw_sw_blend.h"
+ 754              		.file 38 "Middlewares/LVGL/lvgl/src/draw/sw/../../osal/lv_os_none.h"
+ 755              		.file 39 "Middlewares/LVGL/lvgl/src/draw/sw/../../core/../stdlib/builtin/lv_tlsf.h"
+ 756              		.file 40 "Middlewares/LVGL/lvgl/src/draw/sw/../../core/../misc/lv_anim_private.h"
+ 757              		.file 41 "Middlewares/LVGL/lvgl/src/draw/sw/../../core/../tick/lv_tick_private.h"
+ 758              		.file 42 "Middlewares/LVGL/lvgl/src/draw/sw/../../core/../draw/sw/lv_draw_sw_mask_private.h"
+ 759              		.file 43 "Middlewares/LVGL/lvgl/src/draw/sw/../../core/../stdlib/builtin/lv_tlsf_private.h"
+ 760              		.file 44 "Middlewares/LVGL/lvgl/src/draw/sw/../../core/../layouts/lv_layout_private.h"
+ 761              		.file 45 "Middlewares/LVGL/lvgl/src/draw/sw/../../core/lv_global.h"
+ 762              		.file 46 "Middlewares/LVGL/lvgl/src/draw/sw/../../misc/../font/../draw/../misc/../stdlib/lv_mem.h"
+ 763              		.file 47 "Middlewares/LVGL/lvgl/src/draw/sw/../../misc/../font/../draw/../misc/../stdlib/lv_string
+ 764              		.file 48 "Middlewares/LVGL/lvgl/src/draw/sw/lv_draw_sw.h"
+ 765              		.file 49 "Middlewares/LVGL/lvgl/src/draw/sw/blend/../lv_draw_sw_mask.h"
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\cc1l5BWF.s 			page 25
+
+
+DEFINED SYMBOLS
+                            *ABS*:00000000 lv_draw_sw.c
+C:\Users\w1785\AppData\Local\Temp\cc1l5BWF.s:21     .text.evaluate:00000000 $t
+C:\Users\w1785\AppData\Local\Temp\cc1l5BWF.s:26     .text.evaluate:00000000 evaluate
+C:\Users\w1785\AppData\Local\Temp\cc1l5BWF.s:109    .text.execute_drawing:00000000 $t
+C:\Users\w1785\AppData\Local\Temp\cc1l5BWF.s:114    .text.execute_drawing:00000000 execute_drawing
+C:\Users\w1785\AppData\Local\Temp\cc1l5BWF.s:137    .text.execute_drawing:0000000e $d
+C:\Users\w1785\AppData\Local\Temp\cc1l5BWF.s:263    .text.execute_drawing:000000a4 $d
+C:\Users\w1785\AppData\Local\Temp\cc1l5BWF.s:268    .text.dispatch:00000000 $t
+C:\Users\w1785\AppData\Local\Temp\cc1l5BWF.s:273    .text.dispatch:00000000 dispatch
+C:\Users\w1785\AppData\Local\Temp\cc1l5BWF.s:383    .rodata.lv_draw_sw_init.str1.4:00000000 $d
+C:\Users\w1785\AppData\Local\Temp\cc1l5BWF.s:387    .text.lv_draw_sw_init:00000000 $t
+C:\Users\w1785\AppData\Local\Temp\cc1l5BWF.s:393    .text.lv_draw_sw_init:00000000 lv_draw_sw_init
+C:\Users\w1785\AppData\Local\Temp\cc1l5BWF.s:440    .text.lv_draw_sw_init:00000028 $d
+C:\Users\w1785\AppData\Local\Temp\cc1l5BWF.s:448    .text.lv_draw_sw_deinit:00000000 $t
+C:\Users\w1785\AppData\Local\Temp\cc1l5BWF.s:454    .text.lv_draw_sw_deinit:00000000 lv_draw_sw_deinit
+C:\Users\w1785\AppData\Local\Temp\cc1l5BWF.s:474    .text.lv_draw_sw_register_blend_handler:00000000 $t
+C:\Users\w1785\AppData\Local\Temp\cc1l5BWF.s:480    .text.lv_draw_sw_register_blend_handler:00000000 lv_draw_sw_register_blend_handler
+C:\Users\w1785\AppData\Local\Temp\cc1l5BWF.s:563    .text.lv_draw_sw_register_blend_handler:00000038 $d
+C:\Users\w1785\AppData\Local\Temp\cc1l5BWF.s:568    .text.lv_draw_sw_unregister_blend_handler:00000000 $t
+C:\Users\w1785\AppData\Local\Temp\cc1l5BWF.s:574    .text.lv_draw_sw_unregister_blend_handler:00000000 lv_draw_sw_unregister_blend_handler
+C:\Users\w1785\AppData\Local\Temp\cc1l5BWF.s:643    .text.lv_draw_sw_unregister_blend_handler:00000038 $d
+C:\Users\w1785\AppData\Local\Temp\cc1l5BWF.s:648    .text.lv_draw_sw_get_blend_handler:00000000 $t
+C:\Users\w1785\AppData\Local\Temp\cc1l5BWF.s:654    .text.lv_draw_sw_get_blend_handler:00000000 lv_draw_sw_get_blend_handler
+C:\Users\w1785\AppData\Local\Temp\cc1l5BWF.s:712    .text.lv_draw_sw_get_blend_handler:00000028 $d
+C:\Users\w1785\AppData\Local\Temp\cc1l5BWF.s:150    .text.execute_drawing:0000001b $d
+C:\Users\w1785\AppData\Local\Temp\cc1l5BWF.s:150    .text.execute_drawing:0000001c $t
+
+UNDEFINED SYMBOLS
+lv_draw_sw_fill
+lv_draw_sw_border
+lv_draw_sw_box_shadow
+lv_draw_sw_letter
+lv_draw_sw_label
+lv_draw_sw_image
+lv_draw_sw_arc
+lv_draw_line_iterate
+lv_draw_sw_blur
+lv_draw_sw_triangle
+lv_draw_sw_layer
+lv_draw_sw_mask_rect
+lv_draw_sw_line
+lv_draw_get_available_task
+lv_draw_layer_alloc_buf
+lv_draw_dispatch_request
+lv_draw_sw_mask_init
+lv_draw_create_unit
+lv_ll_init
+lv_global
+lv_draw_sw_mask_deinit
+lv_ll_get_head
+lv_ll_get_next
+lv_memcpy
+lv_ll_ins_head
+lv_ll_remove
+lv_free

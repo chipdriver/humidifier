@@ -1,0 +1,1064 @@
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccmt79e1.s 			page 1
+
+
+   1              		.cpu cortex-m4
+   2              		.arch armv7e-m
+   3              		.fpu fpv4-sp-d16
+   4              		.eabi_attribute 27, 1
+   5              		.eabi_attribute 28, 1
+   6              		.eabi_attribute 20, 1
+   7              		.eabi_attribute 21, 1
+   8              		.eabi_attribute 23, 3
+   9              		.eabi_attribute 24, 1
+  10              		.eabi_attribute 25, 1
+  11              		.eabi_attribute 26, 1
+  12              		.eabi_attribute 30, 1
+  13              		.eabi_attribute 34, 1
+  14              		.eabi_attribute 18, 4
+  15              		.file	"lv_draw_line.c"
+  16              		.text
+  17              	.Ltext0:
+  18              		.cfi_sections	.debug_frame
+  19              		.file 1 "Middlewares/LVGL/lvgl/src/draw/lv_draw_line.c"
+  20              		.section	.text.lv_draw_line_dsc_init,"ax",%progbits
+  21              		.align	1
+  22              		.global	lv_draw_line_dsc_init
+  23              		.syntax unified
+  24              		.thumb
+  25              		.thumb_func
+  27              	lv_draw_line_dsc_init:
+  28              	.LVL0:
+  29              	.LFB200:
+   1:Middlewares/LVGL/lvgl/src/draw/lv_draw_line.c **** /**
+   2:Middlewares/LVGL/lvgl/src/draw/lv_draw_line.c ****  * @file lv_draw_line.c
+   3:Middlewares/LVGL/lvgl/src/draw/lv_draw_line.c ****  *
+   4:Middlewares/LVGL/lvgl/src/draw/lv_draw_line.c ****  */
+   5:Middlewares/LVGL/lvgl/src/draw/lv_draw_line.c **** 
+   6:Middlewares/LVGL/lvgl/src/draw/lv_draw_line.c **** /*********************
+   7:Middlewares/LVGL/lvgl/src/draw/lv_draw_line.c ****  *      INCLUDES
+   8:Middlewares/LVGL/lvgl/src/draw/lv_draw_line.c ****  *********************/
+   9:Middlewares/LVGL/lvgl/src/draw/lv_draw_line.c **** #include "lv_draw_private.h"
+  10:Middlewares/LVGL/lvgl/src/draw/lv_draw_line.c **** #include "../core/lv_refr.h"
+  11:Middlewares/LVGL/lvgl/src/draw/lv_draw_line.c **** #include "../misc/lv_math.h"
+  12:Middlewares/LVGL/lvgl/src/draw/lv_draw_line.c **** #include "../misc/lv_types.h"
+  13:Middlewares/LVGL/lvgl/src/draw/lv_draw_line.c **** #include "../stdlib/lv_string.h"
+  14:Middlewares/LVGL/lvgl/src/draw/lv_draw_line.c **** 
+  15:Middlewares/LVGL/lvgl/src/draw/lv_draw_line.c **** /*********************
+  16:Middlewares/LVGL/lvgl/src/draw/lv_draw_line.c ****  *      DEFINES
+  17:Middlewares/LVGL/lvgl/src/draw/lv_draw_line.c ****  *********************/
+  18:Middlewares/LVGL/lvgl/src/draw/lv_draw_line.c **** 
+  19:Middlewares/LVGL/lvgl/src/draw/lv_draw_line.c **** /**********************
+  20:Middlewares/LVGL/lvgl/src/draw/lv_draw_line.c ****  *      TYPEDEFS
+  21:Middlewares/LVGL/lvgl/src/draw/lv_draw_line.c ****  **********************/
+  22:Middlewares/LVGL/lvgl/src/draw/lv_draw_line.c **** 
+  23:Middlewares/LVGL/lvgl/src/draw/lv_draw_line.c **** /**********************
+  24:Middlewares/LVGL/lvgl/src/draw/lv_draw_line.c ****  *  STATIC PROTOTYPES
+  25:Middlewares/LVGL/lvgl/src/draw/lv_draw_line.c ****  **********************/
+  26:Middlewares/LVGL/lvgl/src/draw/lv_draw_line.c **** 
+  27:Middlewares/LVGL/lvgl/src/draw/lv_draw_line.c **** /**********************
+  28:Middlewares/LVGL/lvgl/src/draw/lv_draw_line.c ****  *  STATIC VARIABLES
+  29:Middlewares/LVGL/lvgl/src/draw/lv_draw_line.c ****  **********************/
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccmt79e1.s 			page 2
+
+
+  30:Middlewares/LVGL/lvgl/src/draw/lv_draw_line.c **** 
+  31:Middlewares/LVGL/lvgl/src/draw/lv_draw_line.c **** /**********************
+  32:Middlewares/LVGL/lvgl/src/draw/lv_draw_line.c ****  *      MACROS
+  33:Middlewares/LVGL/lvgl/src/draw/lv_draw_line.c ****  **********************/
+  34:Middlewares/LVGL/lvgl/src/draw/lv_draw_line.c **** 
+  35:Middlewares/LVGL/lvgl/src/draw/lv_draw_line.c **** /**********************
+  36:Middlewares/LVGL/lvgl/src/draw/lv_draw_line.c ****  *   GLOBAL FUNCTIONS
+  37:Middlewares/LVGL/lvgl/src/draw/lv_draw_line.c ****  **********************/
+  38:Middlewares/LVGL/lvgl/src/draw/lv_draw_line.c **** 
+  39:Middlewares/LVGL/lvgl/src/draw/lv_draw_line.c **** void LV_ATTRIBUTE_FAST_MEM lv_draw_line_dsc_init(lv_draw_line_dsc_t * dsc)
+  40:Middlewares/LVGL/lvgl/src/draw/lv_draw_line.c **** {
+  30              		.loc 1 40 1 view -0
+  31              		.cfi_startproc
+  32              		@ args = 0, pretend = 0, frame = 0
+  33              		@ frame_needed = 0, uses_anonymous_args = 0
+  34              		.loc 1 40 1 is_stmt 0 view .LVU1
+  35 0000 10B5     		push	{r4, lr}
+  36              	.LCFI0:
+  37              		.cfi_def_cfa_offset 8
+  38              		.cfi_offset 4, -8
+  39              		.cfi_offset 14, -4
+  40 0002 0446     		mov	r4, r0
+  41:Middlewares/LVGL/lvgl/src/draw/lv_draw_line.c ****     lv_memzero(dsc, sizeof(lv_draw_line_dsc_t));
+  41              		.loc 1 41 5 is_stmt 1 view .LVU2
+  42              	.LVL1:
+  43              	.LBB4:
+  44              	.LBI4:
+  45              		.file 2 "Middlewares/LVGL/lvgl/src/draw/../misc/../font/../draw/../misc/../stdlib/lv_string.h"
+   1:Middlewares/LVGL/lvgl/src/draw/../misc/../font/../draw/../misc/../stdlib/lv_string.h **** /**
+   2:Middlewares/LVGL/lvgl/src/draw/../misc/../font/../draw/../misc/../stdlib/lv_string.h ****  * @file lv_string.h
+   3:Middlewares/LVGL/lvgl/src/draw/../misc/../font/../draw/../misc/../stdlib/lv_string.h ****  *
+   4:Middlewares/LVGL/lvgl/src/draw/../misc/../font/../draw/../misc/../stdlib/lv_string.h ****  */
+   5:Middlewares/LVGL/lvgl/src/draw/../misc/../font/../draw/../misc/../stdlib/lv_string.h **** 
+   6:Middlewares/LVGL/lvgl/src/draw/../misc/../font/../draw/../misc/../stdlib/lv_string.h **** #ifndef LV_STRING_H
+   7:Middlewares/LVGL/lvgl/src/draw/../misc/../font/../draw/../misc/../stdlib/lv_string.h **** #define LV_STRING_H
+   8:Middlewares/LVGL/lvgl/src/draw/../misc/../font/../draw/../misc/../stdlib/lv_string.h **** 
+   9:Middlewares/LVGL/lvgl/src/draw/../misc/../font/../draw/../misc/../stdlib/lv_string.h **** #ifdef __cplusplus
+  10:Middlewares/LVGL/lvgl/src/draw/../misc/../font/../draw/../misc/../stdlib/lv_string.h **** extern "C" {
+  11:Middlewares/LVGL/lvgl/src/draw/../misc/../font/../draw/../misc/../stdlib/lv_string.h **** #endif
+  12:Middlewares/LVGL/lvgl/src/draw/../misc/../font/../draw/../misc/../stdlib/lv_string.h **** 
+  13:Middlewares/LVGL/lvgl/src/draw/../misc/../font/../draw/../misc/../stdlib/lv_string.h **** /*********************
+  14:Middlewares/LVGL/lvgl/src/draw/../misc/../font/../draw/../misc/../stdlib/lv_string.h ****  *      INCLUDES
+  15:Middlewares/LVGL/lvgl/src/draw/../misc/../font/../draw/../misc/../stdlib/lv_string.h ****  *********************/
+  16:Middlewares/LVGL/lvgl/src/draw/../misc/../font/../draw/../misc/../stdlib/lv_string.h **** #include "../lv_conf_internal.h"
+  17:Middlewares/LVGL/lvgl/src/draw/../misc/../font/../draw/../misc/../stdlib/lv_string.h **** #include "../misc/lv_types.h"
+  18:Middlewares/LVGL/lvgl/src/draw/../misc/../font/../draw/../misc/../stdlib/lv_string.h **** 
+  19:Middlewares/LVGL/lvgl/src/draw/../misc/../font/../draw/../misc/../stdlib/lv_string.h **** /*********************
+  20:Middlewares/LVGL/lvgl/src/draw/../misc/../font/../draw/../misc/../stdlib/lv_string.h ****  *      DEFINES
+  21:Middlewares/LVGL/lvgl/src/draw/../misc/../font/../draw/../misc/../stdlib/lv_string.h ****  *********************/
+  22:Middlewares/LVGL/lvgl/src/draw/../misc/../font/../draw/../misc/../stdlib/lv_string.h **** 
+  23:Middlewares/LVGL/lvgl/src/draw/../misc/../font/../draw/../misc/../stdlib/lv_string.h **** /**********************
+  24:Middlewares/LVGL/lvgl/src/draw/../misc/../font/../draw/../misc/../stdlib/lv_string.h ****  *      TYPEDEFS
+  25:Middlewares/LVGL/lvgl/src/draw/../misc/../font/../draw/../misc/../stdlib/lv_string.h ****  **********************/
+  26:Middlewares/LVGL/lvgl/src/draw/../misc/../font/../draw/../misc/../stdlib/lv_string.h **** 
+  27:Middlewares/LVGL/lvgl/src/draw/../misc/../font/../draw/../misc/../stdlib/lv_string.h **** /**********************
+  28:Middlewares/LVGL/lvgl/src/draw/../misc/../font/../draw/../misc/../stdlib/lv_string.h ****  * GLOBAL PROTOTYPES
+  29:Middlewares/LVGL/lvgl/src/draw/../misc/../font/../draw/../misc/../stdlib/lv_string.h ****  **********************/
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccmt79e1.s 			page 3
+
+
+  30:Middlewares/LVGL/lvgl/src/draw/../misc/../font/../draw/../misc/../stdlib/lv_string.h **** 
+  31:Middlewares/LVGL/lvgl/src/draw/../misc/../font/../draw/../misc/../stdlib/lv_string.h **** /**
+  32:Middlewares/LVGL/lvgl/src/draw/../misc/../font/../draw/../misc/../stdlib/lv_string.h ****  * @brief Copies a block of memory from a source address to a destination address.
+  33:Middlewares/LVGL/lvgl/src/draw/../misc/../font/../draw/../misc/../stdlib/lv_string.h ****  * @param dst Pointer to the destination array where the content is to be copied.
+  34:Middlewares/LVGL/lvgl/src/draw/../misc/../font/../draw/../misc/../stdlib/lv_string.h ****  * @param src Pointer to the source of data to be copied.
+  35:Middlewares/LVGL/lvgl/src/draw/../misc/../font/../draw/../misc/../stdlib/lv_string.h ****  * @param len Number of bytes to copy.
+  36:Middlewares/LVGL/lvgl/src/draw/../misc/../font/../draw/../misc/../stdlib/lv_string.h ****  * @return Pointer to the destination array.
+  37:Middlewares/LVGL/lvgl/src/draw/../misc/../font/../draw/../misc/../stdlib/lv_string.h ****  * @note The function does not check for any overlapping of the source and destination memory block
+  38:Middlewares/LVGL/lvgl/src/draw/../misc/../font/../draw/../misc/../stdlib/lv_string.h ****  */
+  39:Middlewares/LVGL/lvgl/src/draw/../misc/../font/../draw/../misc/../stdlib/lv_string.h **** void * lv_memcpy(void * dst, const void * src, size_t len);
+  40:Middlewares/LVGL/lvgl/src/draw/../misc/../font/../draw/../misc/../stdlib/lv_string.h **** 
+  41:Middlewares/LVGL/lvgl/src/draw/../misc/../font/../draw/../misc/../stdlib/lv_string.h **** /**
+  42:Middlewares/LVGL/lvgl/src/draw/../misc/../font/../draw/../misc/../stdlib/lv_string.h ****  * @brief Fills a block of memory with a specified value.
+  43:Middlewares/LVGL/lvgl/src/draw/../misc/../font/../draw/../misc/../stdlib/lv_string.h ****  * @param dst Pointer to the destination array to fill with the specified value.
+  44:Middlewares/LVGL/lvgl/src/draw/../misc/../font/../draw/../misc/../stdlib/lv_string.h ****  * @param v Value to be set. The value is passed as an int, but the function fills
+  45:Middlewares/LVGL/lvgl/src/draw/../misc/../font/../draw/../misc/../stdlib/lv_string.h ****  *          the block of memory using the unsigned char conversion of this value.
+  46:Middlewares/LVGL/lvgl/src/draw/../misc/../font/../draw/../misc/../stdlib/lv_string.h ****  * @param len Number of bytes to be set to the value.
+  47:Middlewares/LVGL/lvgl/src/draw/../misc/../font/../draw/../misc/../stdlib/lv_string.h ****  */
+  48:Middlewares/LVGL/lvgl/src/draw/../misc/../font/../draw/../misc/../stdlib/lv_string.h **** void lv_memset(void * dst, uint8_t v, size_t len);
+  49:Middlewares/LVGL/lvgl/src/draw/../misc/../font/../draw/../misc/../stdlib/lv_string.h **** 
+  50:Middlewares/LVGL/lvgl/src/draw/../misc/../font/../draw/../misc/../stdlib/lv_string.h **** /**
+  51:Middlewares/LVGL/lvgl/src/draw/../misc/../font/../draw/../misc/../stdlib/lv_string.h ****  * @brief Move a block of memory from source to destination
+  52:Middlewares/LVGL/lvgl/src/draw/../misc/../font/../draw/../misc/../stdlib/lv_string.h ****  * @param dst Pointer to the destination array where the content is to be copied.
+  53:Middlewares/LVGL/lvgl/src/draw/../misc/../font/../draw/../misc/../stdlib/lv_string.h ****  * @param src Pointer to the source of data to be copied.
+  54:Middlewares/LVGL/lvgl/src/draw/../misc/../font/../draw/../misc/../stdlib/lv_string.h ****  * @param len Number of bytes to copy
+  55:Middlewares/LVGL/lvgl/src/draw/../misc/../font/../draw/../misc/../stdlib/lv_string.h ****  * @return Pointer to the destination array.
+  56:Middlewares/LVGL/lvgl/src/draw/../misc/../font/../draw/../misc/../stdlib/lv_string.h ****  */
+  57:Middlewares/LVGL/lvgl/src/draw/../misc/../font/../draw/../misc/../stdlib/lv_string.h **** void * lv_memmove(void * dst, const void * src, size_t len);
+  58:Middlewares/LVGL/lvgl/src/draw/../misc/../font/../draw/../misc/../stdlib/lv_string.h **** 
+  59:Middlewares/LVGL/lvgl/src/draw/../misc/../font/../draw/../misc/../stdlib/lv_string.h **** /**
+  60:Middlewares/LVGL/lvgl/src/draw/../misc/../font/../draw/../misc/../stdlib/lv_string.h ****  * @brief This function will compare two memory blocks
+  61:Middlewares/LVGL/lvgl/src/draw/../misc/../font/../draw/../misc/../stdlib/lv_string.h ****  * @param p1 Pointer to the first memory block
+  62:Middlewares/LVGL/lvgl/src/draw/../misc/../font/../draw/../misc/../stdlib/lv_string.h ****  * @param p2 Pointer to the second memory block
+  63:Middlewares/LVGL/lvgl/src/draw/../misc/../font/../draw/../misc/../stdlib/lv_string.h ****  * @param len Number of bytes to compare
+  64:Middlewares/LVGL/lvgl/src/draw/../misc/../font/../draw/../misc/../stdlib/lv_string.h ****  * @return The difference between the value of the first unmatching byte.
+  65:Middlewares/LVGL/lvgl/src/draw/../misc/../font/../draw/../misc/../stdlib/lv_string.h ****  */
+  66:Middlewares/LVGL/lvgl/src/draw/../misc/../font/../draw/../misc/../stdlib/lv_string.h **** int lv_memcmp(const void * p1, const void * p2, size_t len);
+  67:Middlewares/LVGL/lvgl/src/draw/../misc/../font/../draw/../misc/../stdlib/lv_string.h **** 
+  68:Middlewares/LVGL/lvgl/src/draw/../misc/../font/../draw/../misc/../stdlib/lv_string.h **** /**
+  69:Middlewares/LVGL/lvgl/src/draw/../misc/../font/../draw/../misc/../stdlib/lv_string.h ****  * Same as `memset(dst, 0x00, len)`.
+  70:Middlewares/LVGL/lvgl/src/draw/../misc/../font/../draw/../misc/../stdlib/lv_string.h ****  * @param dst pointer to the destination buffer
+  71:Middlewares/LVGL/lvgl/src/draw/../misc/../font/../draw/../misc/../stdlib/lv_string.h ****  * @param len number of byte to set
+  72:Middlewares/LVGL/lvgl/src/draw/../misc/../font/../draw/../misc/../stdlib/lv_string.h ****  */
+  73:Middlewares/LVGL/lvgl/src/draw/../misc/../font/../draw/../misc/../stdlib/lv_string.h **** static inline void lv_memzero(void * dst, size_t len)
+  46              		.loc 2 73 20 view .LVU3
+  47              	.LBB5:
+  74:Middlewares/LVGL/lvgl/src/draw/../misc/../font/../draw/../misc/../stdlib/lv_string.h **** {
+  75:Middlewares/LVGL/lvgl/src/draw/../misc/../font/../draw/../misc/../stdlib/lv_string.h ****     lv_memset(dst, 0x00, len);
+  48              		.loc 2 75 5 view .LVU4
+  49 0004 5422     		movs	r2, #84
+  50 0006 0021     		movs	r1, #0
+  51 0008 FFF7FEFF 		bl	lv_memset
+  52              	.LVL2:
+  53              		.loc 2 75 5 is_stmt 0 view .LVU5
+  54              	.LBE5:
+  55              	.LBE4:
+  42:Middlewares/LVGL/lvgl/src/draw/lv_draw_line.c ****     dsc->width = 1;
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccmt79e1.s 			page 4
+
+
+  56              		.loc 1 42 5 is_stmt 1 view .LVU6
+  57              		.loc 1 42 16 is_stmt 0 view .LVU7
+  58 000c 0123     		movs	r3, #1
+  59 000e 6364     		str	r3, [r4, #68]
+  43:Middlewares/LVGL/lvgl/src/draw/lv_draw_line.c ****     dsc->opa = LV_OPA_COVER;
+  60              		.loc 1 43 5 is_stmt 1 view .LVU8
+  61              		.loc 1 43 14 is_stmt 0 view .LVU9
+  62 0010 FF23     		movs	r3, #255
+  63 0012 84F85030 		strb	r3, [r4, #80]
+  44:Middlewares/LVGL/lvgl/src/draw/lv_draw_line.c ****     dsc->color = lv_color_black();
+  64              		.loc 1 44 5 is_stmt 1 view .LVU10
+  65              		.loc 1 44 18 is_stmt 0 view .LVU11
+  66 0016 FFF7FEFF 		bl	lv_color_black
+  67              	.LVL3:
+  68 001a 84F84000 		strb	r0, [r4, #64]
+  69 001e C0F30723 		ubfx	r3, r0, #8, #8
+  70 0022 84F84130 		strb	r3, [r4, #65]
+  71 0026 C0F30740 		ubfx	r0, r0, #16, #8
+  72 002a 84F84200 		strb	r0, [r4, #66]
+  45:Middlewares/LVGL/lvgl/src/draw/lv_draw_line.c ****     dsc->base.dsc_size = sizeof(lv_draw_line_dsc_t);
+  73              		.loc 1 45 5 is_stmt 1 view .LVU12
+  74              		.loc 1 45 24 is_stmt 0 view .LVU13
+  75 002e 5423     		movs	r3, #84
+  76 0030 2362     		str	r3, [r4, #32]
+  46:Middlewares/LVGL/lvgl/src/draw/lv_draw_line.c **** }
+  77              		.loc 1 46 1 view .LVU14
+  78 0032 10BD     		pop	{r4, pc}
+  79              		.loc 1 46 1 view .LVU15
+  80              		.cfi_endproc
+  81              	.LFE200:
+  83              		.section	.text.lv_draw_task_get_line_dsc,"ax",%progbits
+  84              		.align	1
+  85              		.global	lv_draw_task_get_line_dsc
+  86              		.syntax unified
+  87              		.thumb
+  88              		.thumb_func
+  90              	lv_draw_task_get_line_dsc:
+  91              	.LVL4:
+  92              	.LFB201:
+  47:Middlewares/LVGL/lvgl/src/draw/lv_draw_line.c **** 
+  48:Middlewares/LVGL/lvgl/src/draw/lv_draw_line.c **** lv_draw_line_dsc_t * lv_draw_task_get_line_dsc(lv_draw_task_t * task)
+  49:Middlewares/LVGL/lvgl/src/draw/lv_draw_line.c **** {
+  93              		.loc 1 49 1 is_stmt 1 view -0
+  94              		.cfi_startproc
+  95              		@ args = 0, pretend = 0, frame = 0
+  96              		@ frame_needed = 0, uses_anonymous_args = 0
+  97              		@ link register save eliminated.
+  50:Middlewares/LVGL/lvgl/src/draw/lv_draw_line.c ****     return task->type == LV_DRAW_TASK_TYPE_LINE ? (lv_draw_line_dsc_t *)task->draw_dsc : NULL;
+  98              		.loc 1 50 5 view .LVU17
+  99              		.loc 1 50 16 is_stmt 0 view .LVU18
+ 100 0000 0379     		ldrb	r3, [r0, #4]	@ zero_extendqisi2
+ 101              		.loc 1 50 88 view .LVU19
+ 102 0002 082B     		cmp	r3, #8
+ 103 0004 01D1     		bne	.L5
+ 104              		.loc 1 50 88 discriminator 1 view .LVU20
+ 105 0006 406D     		ldr	r0, [r0, #84]
+ 106              	.LVL5:
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccmt79e1.s 			page 5
+
+
+ 107              		.loc 1 50 88 discriminator 1 view .LVU21
+ 108 0008 7047     		bx	lr
+ 109              	.LVL6:
+ 110              	.L5:
+ 111              		.loc 1 50 88 discriminator 2 view .LVU22
+ 112 000a 0020     		movs	r0, #0
+ 113              	.LVL7:
+  51:Middlewares/LVGL/lvgl/src/draw/lv_draw_line.c **** }
+ 114              		.loc 1 51 1 view .LVU23
+ 115 000c 7047     		bx	lr
+ 116              		.cfi_endproc
+ 117              	.LFE201:
+ 119              		.section	.text.lv_draw_line,"ax",%progbits
+ 120              		.align	1
+ 121              		.global	lv_draw_line
+ 122              		.syntax unified
+ 123              		.thumb
+ 124              		.thumb_func
+ 126              	lv_draw_line:
+ 127              	.LVL8:
+ 128              	.LFB202:
+  52:Middlewares/LVGL/lvgl/src/draw/lv_draw_line.c **** 
+  53:Middlewares/LVGL/lvgl/src/draw/lv_draw_line.c **** void LV_ATTRIBUTE_FAST_MEM lv_draw_line(lv_layer_t * layer, const lv_draw_line_dsc_t * dsc)
+  54:Middlewares/LVGL/lvgl/src/draw/lv_draw_line.c **** {
+ 129              		.loc 1 54 1 is_stmt 1 view -0
+ 130              		.cfi_startproc
+ 131              		@ args = 0, pretend = 0, frame = 104
+ 132              		@ frame_needed = 0, uses_anonymous_args = 0
+  55:Middlewares/LVGL/lvgl/src/draw/lv_draw_line.c ****     if(dsc->width == 0) return;
+ 133              		.loc 1 55 5 view .LVU25
+ 134              		.loc 1 55 11 is_stmt 0 view .LVU26
+ 135 0000 4B6C     		ldr	r3, [r1, #68]
+ 136              		.loc 1 55 7 view .LVU27
+ 137 0002 002B     		cmp	r3, #0
+ 138 0004 00F0B980 		beq	.L21
+  54:Middlewares/LVGL/lvgl/src/draw/lv_draw_line.c ****     if(dsc->width == 0) return;
+ 139              		.loc 1 54 1 view .LVU28
+ 140 0008 2DE9F043 		push	{r4, r5, r6, r7, r8, r9, lr}
+ 141              	.LCFI1:
+ 142              		.cfi_def_cfa_offset 28
+ 143              		.cfi_offset 4, -28
+ 144              		.cfi_offset 5, -24
+ 145              		.cfi_offset 6, -20
+ 146              		.cfi_offset 7, -16
+ 147              		.cfi_offset 8, -12
+ 148              		.cfi_offset 9, -8
+ 149              		.cfi_offset 14, -4
+ 150 000c 9BB0     		sub	sp, sp, #108
+ 151              	.LCFI2:
+ 152              		.cfi_def_cfa_offset 136
+ 153 000e 8146     		mov	r9, r0
+ 154 0010 0C46     		mov	r4, r1
+  56:Middlewares/LVGL/lvgl/src/draw/lv_draw_line.c ****     if(dsc->opa <= LV_OPA_MIN) return;
+ 155              		.loc 1 56 5 is_stmt 1 view .LVU29
+ 156              		.loc 1 56 11 is_stmt 0 view .LVU30
+ 157 0012 91F85020 		ldrb	r2, [r1, #80]	@ zero_extendqisi2
+ 158              		.loc 1 56 7 view .LVU31
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccmt79e1.s 			page 6
+
+
+ 159 0016 022A     		cmp	r2, #2
+ 160 0018 5ED9     		bls	.L6
+  57:Middlewares/LVGL/lvgl/src/draw/lv_draw_line.c **** 
+  58:Middlewares/LVGL/lvgl/src/draw/lv_draw_line.c ****     LV_PROFILER_DRAW_BEGIN;
+ 161              		.loc 1 58 27 is_stmt 1 view .LVU32
+  59:Middlewares/LVGL/lvgl/src/draw/lv_draw_line.c **** 
+  60:Middlewares/LVGL/lvgl/src/draw/lv_draw_line.c ****     lv_area_t a;
+ 162              		.loc 1 60 5 view .LVU33
+  61:Middlewares/LVGL/lvgl/src/draw/lv_draw_line.c ****     lv_point_precise_t * new_points = NULL;
+ 163              		.loc 1 61 5 view .LVU34
+ 164              	.LVL9:
+  62:Middlewares/LVGL/lvgl/src/draw/lv_draw_line.c ****     if(dsc->points == NULL) {
+ 165              		.loc 1 62 5 view .LVU35
+ 166              		.loc 1 62 11 is_stmt 0 view .LVU36
+ 167 001a 8E6B     		ldr	r6, [r1, #56]
+ 168              		.loc 1 62 7 view .LVU37
+ 169 001c 8EB1     		cbz	r6, .L24
+ 170              	.LBB6:
+  63:Middlewares/LVGL/lvgl/src/draw/lv_draw_line.c ****         a.x1 = (int32_t)LV_MIN(dsc->p1.x, dsc->p2.x) - dsc->width;
+  64:Middlewares/LVGL/lvgl/src/draw/lv_draw_line.c ****         a.x2 = (int32_t)LV_MAX(dsc->p1.x, dsc->p2.x) + dsc->width;
+  65:Middlewares/LVGL/lvgl/src/draw/lv_draw_line.c ****         a.y1 = (int32_t)LV_MIN(dsc->p1.y, dsc->p2.y) - dsc->width;
+  66:Middlewares/LVGL/lvgl/src/draw/lv_draw_line.c ****         a.y2 = (int32_t)LV_MAX(dsc->p1.y, dsc->p2.y) + dsc->width;
+  67:Middlewares/LVGL/lvgl/src/draw/lv_draw_line.c ****     }
+  68:Middlewares/LVGL/lvgl/src/draw/lv_draw_line.c ****     else {
+  69:Middlewares/LVGL/lvgl/src/draw/lv_draw_line.c ****         if(dsc->point_cnt <= 1) {
+ 171              		.loc 1 69 9 is_stmt 1 view .LVU38
+ 172              		.loc 1 69 15 is_stmt 0 view .LVU39
+ 173 001e C86B     		ldr	r0, [r1, #60]
+ 174              	.LVL10:
+ 175              		.loc 1 69 11 view .LVU40
+ 176 0020 0128     		cmp	r0, #1
+ 177 0022 59DD     		ble	.L6
+  70:Middlewares/LVGL/lvgl/src/draw/lv_draw_line.c ****             LV_LOG_INFO("Skip line drawing as point_cnt was 1");
+  71:Middlewares/LVGL/lvgl/src/draw/lv_draw_line.c ****             LV_PROFILER_DRAW_END;
+  72:Middlewares/LVGL/lvgl/src/draw/lv_draw_line.c ****             return;
+  73:Middlewares/LVGL/lvgl/src/draw/lv_draw_line.c ****         }
+  74:Middlewares/LVGL/lvgl/src/draw/lv_draw_line.c **** 
+  75:Middlewares/LVGL/lvgl/src/draw/lv_draw_line.c ****         a.x1 = LV_COORD_MAX;
+ 178              		.loc 1 75 9 is_stmt 1 view .LVU41
+ 179              		.loc 1 75 14 is_stmt 0 view .LVU42
+ 180 0024 6FF06043 		mvn	r3, #-536870912
+ 181 0028 1693     		str	r3, [sp, #88]
+  76:Middlewares/LVGL/lvgl/src/draw/lv_draw_line.c ****         a.y1 = LV_COORD_MAX;
+ 182              		.loc 1 76 9 is_stmt 1 view .LVU43
+ 183              		.loc 1 76 14 is_stmt 0 view .LVU44
+ 184 002a 1793     		str	r3, [sp, #92]
+  77:Middlewares/LVGL/lvgl/src/draw/lv_draw_line.c ****         a.x2 = LV_COORD_MIN;
+ 185              		.loc 1 77 9 is_stmt 1 view .LVU45
+ 186              		.loc 1 77 14 is_stmt 0 view .LVU46
+ 187 002c 534B     		ldr	r3, .L27
+ 188 002e 1893     		str	r3, [sp, #96]
+  78:Middlewares/LVGL/lvgl/src/draw/lv_draw_line.c ****         a.y2 = LV_COORD_MIN;
+ 189              		.loc 1 78 9 is_stmt 1 view .LVU47
+ 190              		.loc 1 78 14 is_stmt 0 view .LVU48
+ 191 0030 1993     		str	r3, [sp, #100]
+  79:Middlewares/LVGL/lvgl/src/draw/lv_draw_line.c **** 
+  80:Middlewares/LVGL/lvgl/src/draw/lv_draw_line.c ****         const size_t array_size = dsc->point_cnt * sizeof(lv_point_precise_t);
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccmt79e1.s 			page 7
+
+
+ 192              		.loc 1 80 9 is_stmt 1 view .LVU49
+ 193              	.LVL11:
+  81:Middlewares/LVGL/lvgl/src/draw/lv_draw_line.c ****         new_points = lv_malloc(array_size);
+ 194              		.loc 1 81 9 view .LVU50
+ 195              		.loc 1 81 22 is_stmt 0 view .LVU51
+ 196 0032 C000     		lsls	r0, r0, #3
+ 197              	.LVL12:
+ 198              		.loc 1 81 22 view .LVU52
+ 199 0034 FFF7FEFF 		bl	lv_malloc
+ 200              	.LVL13:
+  82:Middlewares/LVGL/lvgl/src/draw/lv_draw_line.c ****         LV_ASSERT_MALLOC(new_points);
+ 201              		.loc 1 82 9 is_stmt 1 view .LVU53
+ 202              		.loc 1 82 9 view .LVU54
+ 203 0038 0646     		mov	r6, r0
+ 204 003a 0028     		cmp	r0, #0
+ 205 003c 4FD0     		beq	.L11
+  83:Middlewares/LVGL/lvgl/src/draw/lv_draw_line.c ****         if(!new_points) {
+  84:Middlewares/LVGL/lvgl/src/draw/lv_draw_line.c ****             LV_LOG_WARN("Couldn't allocate %" LV_PRId32 "points", dsc->point_cnt);
+  85:Middlewares/LVGL/lvgl/src/draw/lv_draw_line.c ****             LV_PROFILER_DRAW_END;
+  86:Middlewares/LVGL/lvgl/src/draw/lv_draw_line.c ****             return;
+  87:Middlewares/LVGL/lvgl/src/draw/lv_draw_line.c ****         }
+  88:Middlewares/LVGL/lvgl/src/draw/lv_draw_line.c **** 
+  89:Middlewares/LVGL/lvgl/src/draw/lv_draw_line.c ****         int32_t i;
+  90:Middlewares/LVGL/lvgl/src/draw/lv_draw_line.c ****         for(i = 0; i < dsc->point_cnt; i++) {
+ 206              		.loc 1 90 15 is_stmt 0 view .LVU55
+ 207 003e 0023     		movs	r3, #0
+ 208 0040 4FE0     		b	.L10
+ 209              	.LVL14:
+ 210              	.L24:
+ 211              		.loc 1 90 15 view .LVU56
+ 212              	.LBE6:
+  63:Middlewares/LVGL/lvgl/src/draw/lv_draw_line.c ****         a.x2 = (int32_t)LV_MAX(dsc->p1.x, dsc->p2.x) + dsc->width;
+ 213              		.loc 1 63 9 is_stmt 1 view .LVU57
+  63:Middlewares/LVGL/lvgl/src/draw/lv_draw_line.c ****         a.x2 = (int32_t)LV_MAX(dsc->p1.x, dsc->p2.x) + dsc->width;
+ 214              		.loc 1 63 25 is_stmt 0 view .LVU58
+ 215 0042 096B     		ldr	r1, [r1, #48]
+ 216              	.LVL15:
+  63:Middlewares/LVGL/lvgl/src/draw/lv_draw_line.c ****         a.x2 = (int32_t)LV_MAX(dsc->p1.x, dsc->p2.x) + dsc->width;
+ 217              		.loc 1 63 25 view .LVU59
+ 218 0044 A26A     		ldr	r2, [r4, #40]
+  63:Middlewares/LVGL/lvgl/src/draw/lv_draw_line.c ****         a.x2 = (int32_t)LV_MAX(dsc->p1.x, dsc->p2.x) + dsc->width;
+ 219              		.loc 1 63 54 view .LVU60
+ 220 0046 9142     		cmp	r1, r2
+ 221 0048 D4BF     		ite	le
+ 222 004a C3EB0100 		rsble	r0, r3, r1
+ 223 004e C3EB0200 		rsbgt	r0, r3, r2
+ 224              	.LVL16:
+  63:Middlewares/LVGL/lvgl/src/draw/lv_draw_line.c ****         a.x2 = (int32_t)LV_MAX(dsc->p1.x, dsc->p2.x) + dsc->width;
+ 225              		.loc 1 63 14 view .LVU61
+ 226 0052 1690     		str	r0, [sp, #88]
+  64:Middlewares/LVGL/lvgl/src/draw/lv_draw_line.c ****         a.y1 = (int32_t)LV_MIN(dsc->p1.y, dsc->p2.y) - dsc->width;
+ 227              		.loc 1 64 9 is_stmt 1 view .LVU62
+  64:Middlewares/LVGL/lvgl/src/draw/lv_draw_line.c ****         a.y1 = (int32_t)LV_MIN(dsc->p1.y, dsc->p2.y) - dsc->width;
+ 228              		.loc 1 64 54 is_stmt 0 view .LVU63
+ 229 0054 9142     		cmp	r1, r2
+ 230 0056 ACBF     		ite	ge
+ 231 0058 5818     		addge	r0, r3, r1
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccmt79e1.s 			page 8
+
+
+ 232 005a 9818     		addlt	r0, r3, r2
+  64:Middlewares/LVGL/lvgl/src/draw/lv_draw_line.c ****         a.y1 = (int32_t)LV_MIN(dsc->p1.y, dsc->p2.y) - dsc->width;
+ 233              		.loc 1 64 14 view .LVU64
+ 234 005c 1890     		str	r0, [sp, #96]
+  65:Middlewares/LVGL/lvgl/src/draw/lv_draw_line.c ****         a.y2 = (int32_t)LV_MAX(dsc->p1.y, dsc->p2.y) + dsc->width;
+ 235              		.loc 1 65 9 is_stmt 1 view .LVU65
+  65:Middlewares/LVGL/lvgl/src/draw/lv_draw_line.c ****         a.y2 = (int32_t)LV_MAX(dsc->p1.y, dsc->p2.y) + dsc->width;
+ 236              		.loc 1 65 25 is_stmt 0 view .LVU66
+ 237 005e 616B     		ldr	r1, [r4, #52]
+ 238 0060 E26A     		ldr	r2, [r4, #44]
+  65:Middlewares/LVGL/lvgl/src/draw/lv_draw_line.c ****         a.y2 = (int32_t)LV_MAX(dsc->p1.y, dsc->p2.y) + dsc->width;
+ 239              		.loc 1 65 54 view .LVU67
+ 240 0062 9142     		cmp	r1, r2
+ 241 0064 D4BF     		ite	le
+ 242 0066 C3EB0100 		rsble	r0, r3, r1
+ 243 006a C3EB0200 		rsbgt	r0, r3, r2
+  65:Middlewares/LVGL/lvgl/src/draw/lv_draw_line.c ****         a.y2 = (int32_t)LV_MAX(dsc->p1.y, dsc->p2.y) + dsc->width;
+ 244              		.loc 1 65 14 view .LVU68
+ 245 006e 1790     		str	r0, [sp, #92]
+  66:Middlewares/LVGL/lvgl/src/draw/lv_draw_line.c ****     }
+ 246              		.loc 1 66 9 is_stmt 1 view .LVU69
+  66:Middlewares/LVGL/lvgl/src/draw/lv_draw_line.c ****     }
+ 247              		.loc 1 66 54 is_stmt 0 view .LVU70
+ 248 0070 9142     		cmp	r1, r2
+ 249 0072 ACBF     		ite	ge
+ 250 0074 5B18     		addge	r3, r3, r1
+ 251 0076 9B18     		addlt	r3, r3, r2
+  66:Middlewares/LVGL/lvgl/src/draw/lv_draw_line.c ****     }
+ 252              		.loc 1 66 14 view .LVU71
+ 253 0078 1993     		str	r3, [sp, #100]
+ 254              	.LVL17:
+ 255              	.L9:
+  91:Middlewares/LVGL/lvgl/src/draw/lv_draw_line.c ****             new_points[i] = dsc->points[i];
+  92:Middlewares/LVGL/lvgl/src/draw/lv_draw_line.c ****             if(dsc->points[i].x == LV_DRAW_LINE_POINT_NONE ||
+  93:Middlewares/LVGL/lvgl/src/draw/lv_draw_line.c ****                dsc->points[i].y == LV_DRAW_LINE_POINT_NONE) {
+  94:Middlewares/LVGL/lvgl/src/draw/lv_draw_line.c ****                 continue;
+  95:Middlewares/LVGL/lvgl/src/draw/lv_draw_line.c ****             }
+  96:Middlewares/LVGL/lvgl/src/draw/lv_draw_line.c **** 
+  97:Middlewares/LVGL/lvgl/src/draw/lv_draw_line.c ****             a.x1 = (int32_t)LV_MIN(a.x1, dsc->points[i].x) - dsc->width;
+  98:Middlewares/LVGL/lvgl/src/draw/lv_draw_line.c ****             a.x2 = (int32_t)LV_MAX(a.x2, dsc->points[i].x) + dsc->width;
+  99:Middlewares/LVGL/lvgl/src/draw/lv_draw_line.c ****             a.y1 = (int32_t)LV_MIN(a.y1, dsc->points[i].y) - dsc->width;
+ 100:Middlewares/LVGL/lvgl/src/draw/lv_draw_line.c ****             a.y2 = (int32_t)LV_MAX(a.y2, dsc->points[i].y) + dsc->width;
+ 101:Middlewares/LVGL/lvgl/src/draw/lv_draw_line.c ****         }
+ 102:Middlewares/LVGL/lvgl/src/draw/lv_draw_line.c **** 
+ 103:Middlewares/LVGL/lvgl/src/draw/lv_draw_line.c ****         if(a.x1 == LV_COORD_MAX) {
+ 104:Middlewares/LVGL/lvgl/src/draw/lv_draw_line.c ****             lv_free(new_points);
+ 105:Middlewares/LVGL/lvgl/src/draw/lv_draw_line.c ****             LV_LOG_INFO("No valid point was found. Not adding the draw task.");
+ 106:Middlewares/LVGL/lvgl/src/draw/lv_draw_line.c ****             LV_PROFILER_DRAW_END;
+ 107:Middlewares/LVGL/lvgl/src/draw/lv_draw_line.c ****             return;
+ 108:Middlewares/LVGL/lvgl/src/draw/lv_draw_line.c ****         }
+ 109:Middlewares/LVGL/lvgl/src/draw/lv_draw_line.c ****         lv_area_increase(&a, dsc->width, dsc->width);
+ 110:Middlewares/LVGL/lvgl/src/draw/lv_draw_line.c ****     }
+ 111:Middlewares/LVGL/lvgl/src/draw/lv_draw_line.c **** 
+ 112:Middlewares/LVGL/lvgl/src/draw/lv_draw_line.c ****     if(dsc->base.drop_shadow_opa) {
+ 256              		.loc 1 112 5 is_stmt 1 view .LVU72
+ 257              		.loc 1 112 17 is_stmt 0 view .LVU73
+ 258 007a E37E     		ldrb	r3, [r4, #27]	@ zero_extendqisi2
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccmt79e1.s 			page 9
+
+
+ 259              		.loc 1 112 7 view .LVU74
+ 260 007c CBB1     		cbz	r3, .L15
+ 261              	.LBB7:
+ 113:Middlewares/LVGL/lvgl/src/draw/lv_draw_line.c ****         lv_layer_t * ds_layer = lv_draw_layer_create_drop_shadow(layer, &dsc->base, &a);
+ 262              		.loc 1 113 9 is_stmt 1 view .LVU75
+ 263              		.loc 1 113 33 is_stmt 0 view .LVU76
+ 264 007e 16AA     		add	r2, sp, #88
+ 265 0080 2146     		mov	r1, r4
+ 266 0082 4846     		mov	r0, r9
+ 267 0084 FFF7FEFF 		bl	lv_draw_layer_create_drop_shadow
+ 268              	.LVL18:
+ 114:Middlewares/LVGL/lvgl/src/draw/lv_draw_line.c ****         LV_ASSERT_NULL(ds_layer);
+ 269              		.loc 1 114 9 is_stmt 1 view .LVU77
+ 270              		.loc 1 114 9 view .LVU78
+ 271 0088 0746     		mov	r7, r0
+ 272 008a 0028     		cmp	r0, #0
+ 273 008c 74D0     		beq	.L17
+ 274              		.loc 1 114 9 view .LVU79
+ 275              		.loc 1 114 33 view .LVU80
+ 115:Middlewares/LVGL/lvgl/src/draw/lv_draw_line.c ****         lv_draw_line_dsc_t ds_dsc = *dsc;
+ 276              		.loc 1 115 9 view .LVU81
+ 277              		.loc 1 115 28 is_stmt 0 view .LVU82
+ 278 008e 0DF10408 		add	r8, sp, #4
+ 279 0092 5422     		movs	r2, #84
+ 280 0094 2146     		mov	r1, r4
+ 281 0096 4046     		mov	r0, r8
+ 282              	.LVL19:
+ 283              		.loc 1 115 28 view .LVU83
+ 284 0098 FFF7FEFF 		bl	memcpy
+ 285              	.LVL20:
+ 116:Middlewares/LVGL/lvgl/src/draw/lv_draw_line.c ****         ds_dsc.base.drop_shadow_opa = 0; /*Disable drop shadow so rendering below will render plain
+ 286              		.loc 1 116 9 is_stmt 1 view .LVU84
+ 287              		.loc 1 116 37 is_stmt 0 view .LVU85
+ 288 009c 0023     		movs	r3, #0
+ 289 009e 8DF81F30 		strb	r3, [sp, #31]
+ 117:Middlewares/LVGL/lvgl/src/draw/lv_draw_line.c ****         lv_draw_line(ds_layer, &ds_dsc);
+ 290              		.loc 1 117 9 is_stmt 1 view .LVU86
+ 291 00a2 4146     		mov	r1, r8
+ 292 00a4 3846     		mov	r0, r7
+ 293 00a6 FFF7FEFF 		bl	lv_draw_line
+ 294              	.LVL21:
+ 118:Middlewares/LVGL/lvgl/src/draw/lv_draw_line.c ****         lv_draw_layer_finish_drop_shadow(ds_layer, &dsc->base);
+ 295              		.loc 1 118 9 view .LVU87
+ 296 00aa 2146     		mov	r1, r4
+ 297 00ac 3846     		mov	r0, r7
+ 298 00ae FFF7FEFF 		bl	lv_draw_layer_finish_drop_shadow
+ 299              	.LVL22:
+ 300              	.L15:
+ 301              		.loc 1 118 9 is_stmt 0 view .LVU88
+ 302              	.LBE7:
+ 119:Middlewares/LVGL/lvgl/src/draw/lv_draw_line.c ****     }
+ 120:Middlewares/LVGL/lvgl/src/draw/lv_draw_line.c **** 
+ 121:Middlewares/LVGL/lvgl/src/draw/lv_draw_line.c ****     lv_draw_task_t * t = lv_draw_add_task(layer, &a, LV_DRAW_TASK_TYPE_LINE);
+ 303              		.loc 1 121 5 is_stmt 1 view .LVU89
+ 304              		.loc 1 121 26 is_stmt 0 view .LVU90
+ 305 00b2 0822     		movs	r2, #8
+ 306 00b4 16A9     		add	r1, sp, #88
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccmt79e1.s 			page 10
+
+
+ 307 00b6 4846     		mov	r0, r9
+ 308 00b8 FFF7FEFF 		bl	lv_draw_add_task
+ 309              	.LVL23:
+ 310 00bc 0746     		mov	r7, r0
+ 311              	.LVL24:
+ 122:Middlewares/LVGL/lvgl/src/draw/lv_draw_line.c ****     lv_draw_line_dsc_t * line_draw_dsc = t->draw_dsc;
+ 312              		.loc 1 122 5 is_stmt 1 view .LVU91
+ 313              		.loc 1 122 26 is_stmt 0 view .LVU92
+ 314 00be D0F85480 		ldr	r8, [r0, #84]
+ 315              	.LVL25:
+ 123:Middlewares/LVGL/lvgl/src/draw/lv_draw_line.c ****     lv_memcpy(line_draw_dsc, dsc, sizeof(*dsc));
+ 316              		.loc 1 123 5 is_stmt 1 view .LVU93
+ 317 00c2 5422     		movs	r2, #84
+ 318 00c4 2146     		mov	r1, r4
+ 319 00c6 4046     		mov	r0, r8
+ 320              	.LVL26:
+ 321              		.loc 1 123 5 is_stmt 0 view .LVU94
+ 322 00c8 FFF7FEFF 		bl	lv_memcpy
+ 323              	.LVL27:
+ 124:Middlewares/LVGL/lvgl/src/draw/lv_draw_line.c ****     line_draw_dsc->points = new_points;
+ 324              		.loc 1 124 5 is_stmt 1 view .LVU95
+ 325              		.loc 1 124 27 is_stmt 0 view .LVU96
+ 326 00cc C8F83860 		str	r6, [r8, #56]
+ 125:Middlewares/LVGL/lvgl/src/draw/lv_draw_line.c **** 
+ 126:Middlewares/LVGL/lvgl/src/draw/lv_draw_line.c ****     lv_draw_finalize_task_creation(layer, t);
+ 327              		.loc 1 126 5 is_stmt 1 view .LVU97
+ 328 00d0 3946     		mov	r1, r7
+ 329 00d2 4846     		mov	r0, r9
+ 330 00d4 FFF7FEFF 		bl	lv_draw_finalize_task_creation
+ 331              	.LVL28:
+ 127:Middlewares/LVGL/lvgl/src/draw/lv_draw_line.c ****     LV_PROFILER_DRAW_END;
+ 332              		.loc 1 127 25 view .LVU98
+ 333              	.L6:
+ 128:Middlewares/LVGL/lvgl/src/draw/lv_draw_line.c **** }
+ 334              		.loc 1 128 1 is_stmt 0 view .LVU99
+ 335 00d8 1BB0     		add	sp, sp, #108
+ 336              	.LCFI3:
+ 337              		.cfi_remember_state
+ 338              		.cfi_def_cfa_offset 28
+ 339              		@ sp needed
+ 340 00da BDE8F083 		pop	{r4, r5, r6, r7, r8, r9, pc}
+ 341              	.LVL29:
+ 342              	.L11:
+ 343              	.LCFI4:
+ 344              		.cfi_restore_state
+ 345              	.LBB8:
+  82:Middlewares/LVGL/lvgl/src/draw/lv_draw_line.c ****         if(!new_points) {
+ 346              		.loc 1 82 9 is_stmt 1 view .LVU100
+  82:Middlewares/LVGL/lvgl/src/draw/lv_draw_line.c ****         if(!new_points) {
+ 347              		.loc 1 82 9 view .LVU101
+  82:Middlewares/LVGL/lvgl/src/draw/lv_draw_line.c ****         if(!new_points) {
+ 348              		.loc 1 82 9 view .LVU102
+  82:Middlewares/LVGL/lvgl/src/draw/lv_draw_line.c ****         if(!new_points) {
+ 349              		.loc 1 82 9 view .LVU103
+  82:Middlewares/LVGL/lvgl/src/draw/lv_draw_line.c ****         if(!new_points) {
+ 350              		.loc 1 82 9 view .LVU104
+ 351 00de FEE7     		b	.L11
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccmt79e1.s 			page 11
+
+
+ 352              	.LVL30:
+ 353              	.L12:
+  90:Middlewares/LVGL/lvgl/src/draw/lv_draw_line.c ****             new_points[i] = dsc->points[i];
+ 354              		.loc 1 90 41 discriminator 2 view .LVU105
+ 355 00e0 0133     		adds	r3, r3, #1
+ 356              	.LVL31:
+ 357              	.L10:
+  90:Middlewares/LVGL/lvgl/src/draw/lv_draw_line.c ****             new_points[i] = dsc->points[i];
+ 358              		.loc 1 90 22 discriminator 1 view .LVU106
+  90:Middlewares/LVGL/lvgl/src/draw/lv_draw_line.c ****             new_points[i] = dsc->points[i];
+ 359              		.loc 1 90 27 is_stmt 0 discriminator 1 view .LVU107
+ 360 00e2 E26B     		ldr	r2, [r4, #60]
+  90:Middlewares/LVGL/lvgl/src/draw/lv_draw_line.c ****             new_points[i] = dsc->points[i];
+ 361              		.loc 1 90 22 discriminator 1 view .LVU108
+ 362 00e4 9A42     		cmp	r2, r3
+ 363 00e6 38DD     		ble	.L25
+  91:Middlewares/LVGL/lvgl/src/draw/lv_draw_line.c ****             if(dsc->points[i].x == LV_DRAW_LINE_POINT_NONE ||
+ 364              		.loc 1 91 13 is_stmt 1 view .LVU109
+  91:Middlewares/LVGL/lvgl/src/draw/lv_draw_line.c ****             if(dsc->points[i].x == LV_DRAW_LINE_POINT_NONE ||
+ 365              		.loc 1 91 32 is_stmt 0 view .LVU110
+ 366 00e8 A16B     		ldr	r1, [r4, #56]
+  91:Middlewares/LVGL/lvgl/src/draw/lv_draw_line.c ****             if(dsc->points[i].x == LV_DRAW_LINE_POINT_NONE ||
+ 367              		.loc 1 91 40 view .LVU111
+ 368 00ea 01EBC301 		add	r1, r1, r3, lsl #3
+  91:Middlewares/LVGL/lvgl/src/draw/lv_draw_line.c ****             if(dsc->points[i].x == LV_DRAW_LINE_POINT_NONE ||
+ 369              		.loc 1 91 23 view .LVU112
+ 370 00ee 06EBC302 		add	r2, r6, r3, lsl #3
+  91:Middlewares/LVGL/lvgl/src/draw/lv_draw_line.c ****             if(dsc->points[i].x == LV_DRAW_LINE_POINT_NONE ||
+ 371              		.loc 1 91 27 view .LVU113
+ 372 00f2 03C9     		ldm	r1, {r0, r1}
+ 373 00f4 82E80300 		stm	r2, {r0, r1}
+  92:Middlewares/LVGL/lvgl/src/draw/lv_draw_line.c ****                dsc->points[i].y == LV_DRAW_LINE_POINT_NONE) {
+ 374              		.loc 1 92 13 is_stmt 1 view .LVU114
+  92:Middlewares/LVGL/lvgl/src/draw/lv_draw_line.c ****                dsc->points[i].y == LV_DRAW_LINE_POINT_NONE) {
+ 375              		.loc 1 92 19 is_stmt 0 view .LVU115
+ 376 00f8 A16B     		ldr	r1, [r4, #56]
+  92:Middlewares/LVGL/lvgl/src/draw/lv_draw_line.c ****                dsc->points[i].y == LV_DRAW_LINE_POINT_NONE) {
+ 377              		.loc 1 92 27 view .LVU116
+ 378 00fa 01EBC300 		add	r0, r1, r3, lsl #3
+  92:Middlewares/LVGL/lvgl/src/draw/lv_draw_line.c ****                dsc->points[i].y == LV_DRAW_LINE_POINT_NONE) {
+ 379              		.loc 1 92 30 view .LVU117
+ 380 00fe 51F83370 		ldr	r7, [r1, r3, lsl #3]
+  92:Middlewares/LVGL/lvgl/src/draw/lv_draw_line.c ****                dsc->points[i].y == LV_DRAW_LINE_POINT_NONE) {
+ 381              		.loc 1 92 15 view .LVU118
+ 382 0102 6FF00042 		mvn	r2, #-2147483648
+ 383 0106 9742     		cmp	r7, r2
+ 384 0108 EAD0     		beq	.L12
+  93:Middlewares/LVGL/lvgl/src/draw/lv_draw_line.c ****                 continue;
+ 385              		.loc 1 93 30 view .LVU119
+ 386 010a 4268     		ldr	r2, [r0, #4]
+  92:Middlewares/LVGL/lvgl/src/draw/lv_draw_line.c ****                dsc->points[i].y == LV_DRAW_LINE_POINT_NONE) {
+ 387              		.loc 1 92 60 discriminator 2 view .LVU120
+ 388 010c 6FF0004C 		mvn	ip, #-2147483648
+ 389 0110 6245     		cmp	r2, ip
+ 390 0112 E5D0     		beq	.L12
+  97:Middlewares/LVGL/lvgl/src/draw/lv_draw_line.c ****             a.x2 = (int32_t)LV_MAX(a.x2, dsc->points[i].x) + dsc->width;
+ 391              		.loc 1 97 13 is_stmt 1 view .LVU121
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccmt79e1.s 			page 12
+
+
+  97:Middlewares/LVGL/lvgl/src/draw/lv_draw_line.c ****             a.x2 = (int32_t)LV_MAX(a.x2, dsc->points[i].x) + dsc->width;
+ 392              		.loc 1 97 65 is_stmt 0 view .LVU122
+ 393 0114 626C     		ldr	r2, [r4, #68]
+  97:Middlewares/LVGL/lvgl/src/draw/lv_draw_line.c ****             a.x2 = (int32_t)LV_MAX(a.x2, dsc->points[i].x) + dsc->width;
+ 394              		.loc 1 97 60 view .LVU123
+ 395 0116 169D     		ldr	r5, [sp, #88]
+ 396 0118 AF42     		cmp	r7, r5
+ 397 011a D4BF     		ite	le
+ 398 011c C2EB070C 		rsble	ip, r2, r7
+ 399 0120 C2EB050C 		rsbgt	ip, r2, r5
+  97:Middlewares/LVGL/lvgl/src/draw/lv_draw_line.c ****             a.x2 = (int32_t)LV_MAX(a.x2, dsc->points[i].x) + dsc->width;
+ 400              		.loc 1 97 18 view .LVU124
+ 401 0124 CDF858C0 		str	ip, [sp, #88]
+  98:Middlewares/LVGL/lvgl/src/draw/lv_draw_line.c ****             a.y1 = (int32_t)LV_MIN(a.y1, dsc->points[i].y) - dsc->width;
+ 402              		.loc 1 98 13 is_stmt 1 view .LVU125
+  98:Middlewares/LVGL/lvgl/src/draw/lv_draw_line.c ****             a.y1 = (int32_t)LV_MIN(a.y1, dsc->points[i].y) - dsc->width;
+ 403              		.loc 1 98 29 is_stmt 0 view .LVU126
+ 404 0128 51F83370 		ldr	r7, [r1, r3, lsl #3]
+  98:Middlewares/LVGL/lvgl/src/draw/lv_draw_line.c ****             a.y1 = (int32_t)LV_MIN(a.y1, dsc->points[i].y) - dsc->width;
+ 405              		.loc 1 98 60 view .LVU127
+ 406 012c 1899     		ldr	r1, [sp, #96]
+ 407 012e 8F42     		cmp	r7, r1
+ 408 0130 ACBF     		ite	ge
+ 409 0132 D119     		addge	r1, r2, r7
+ 410 0134 5118     		addlt	r1, r2, r1
+  98:Middlewares/LVGL/lvgl/src/draw/lv_draw_line.c ****             a.y1 = (int32_t)LV_MIN(a.y1, dsc->points[i].y) - dsc->width;
+ 411              		.loc 1 98 18 view .LVU128
+ 412 0136 1891     		str	r1, [sp, #96]
+  99:Middlewares/LVGL/lvgl/src/draw/lv_draw_line.c ****             a.y2 = (int32_t)LV_MAX(a.y2, dsc->points[i].y) + dsc->width;
+ 413              		.loc 1 99 13 is_stmt 1 view .LVU129
+  99:Middlewares/LVGL/lvgl/src/draw/lv_draw_line.c ****             a.y2 = (int32_t)LV_MAX(a.y2, dsc->points[i].y) + dsc->width;
+ 414              		.loc 1 99 29 is_stmt 0 view .LVU130
+ 415 0138 4768     		ldr	r7, [r0, #4]
+  99:Middlewares/LVGL/lvgl/src/draw/lv_draw_line.c ****             a.y2 = (int32_t)LV_MAX(a.y2, dsc->points[i].y) + dsc->width;
+ 416              		.loc 1 99 60 view .LVU131
+ 417 013a 1799     		ldr	r1, [sp, #92]
+ 418 013c 8F42     		cmp	r7, r1
+ 419 013e D4BF     		ite	le
+ 420 0140 C2EB0701 		rsble	r1, r2, r7
+ 421 0144 C2EB0101 		rsbgt	r1, r2, r1
+  99:Middlewares/LVGL/lvgl/src/draw/lv_draw_line.c ****             a.y2 = (int32_t)LV_MAX(a.y2, dsc->points[i].y) + dsc->width;
+ 422              		.loc 1 99 18 view .LVU132
+ 423 0148 1791     		str	r1, [sp, #92]
+ 100:Middlewares/LVGL/lvgl/src/draw/lv_draw_line.c ****         }
+ 424              		.loc 1 100 13 is_stmt 1 view .LVU133
+ 100:Middlewares/LVGL/lvgl/src/draw/lv_draw_line.c ****         }
+ 425              		.loc 1 100 29 is_stmt 0 view .LVU134
+ 426 014a 4068     		ldr	r0, [r0, #4]
+ 100:Middlewares/LVGL/lvgl/src/draw/lv_draw_line.c ****         }
+ 427              		.loc 1 100 60 view .LVU135
+ 428 014c 1999     		ldr	r1, [sp, #100]
+ 429 014e 8842     		cmp	r0, r1
+ 430 0150 ACBF     		ite	ge
+ 431 0152 1218     		addge	r2, r2, r0
+ 432 0154 5218     		addlt	r2, r2, r1
+ 100:Middlewares/LVGL/lvgl/src/draw/lv_draw_line.c ****         }
+ 433              		.loc 1 100 18 view .LVU136
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccmt79e1.s 			page 13
+
+
+ 434 0156 1992     		str	r2, [sp, #100]
+ 435 0158 C2E7     		b	.L12
+ 436              	.L25:
+ 103:Middlewares/LVGL/lvgl/src/draw/lv_draw_line.c ****             lv_free(new_points);
+ 437              		.loc 1 103 9 is_stmt 1 view .LVU137
+ 103:Middlewares/LVGL/lvgl/src/draw/lv_draw_line.c ****             lv_free(new_points);
+ 438              		.loc 1 103 11 is_stmt 0 view .LVU138
+ 439 015a 169A     		ldr	r2, [sp, #88]
+ 440 015c 6FF06043 		mvn	r3, #-536870912
+ 441              	.LVL32:
+ 103:Middlewares/LVGL/lvgl/src/draw/lv_draw_line.c ****             lv_free(new_points);
+ 442              		.loc 1 103 11 view .LVU139
+ 443 0160 9A42     		cmp	r2, r3
+ 444 0162 05D0     		beq	.L26
+ 109:Middlewares/LVGL/lvgl/src/draw/lv_draw_line.c ****     }
+ 445              		.loc 1 109 9 is_stmt 1 view .LVU140
+ 109:Middlewares/LVGL/lvgl/src/draw/lv_draw_line.c ****     }
+ 446              		.loc 1 109 33 is_stmt 0 view .LVU141
+ 447 0164 616C     		ldr	r1, [r4, #68]
+ 109:Middlewares/LVGL/lvgl/src/draw/lv_draw_line.c ****     }
+ 448              		.loc 1 109 9 view .LVU142
+ 449 0166 0A46     		mov	r2, r1
+ 450 0168 16A8     		add	r0, sp, #88
+ 451 016a FFF7FEFF 		bl	lv_area_increase
+ 452              	.LVL33:
+ 453 016e 84E7     		b	.L9
+ 454              	.L26:
+ 104:Middlewares/LVGL/lvgl/src/draw/lv_draw_line.c ****             LV_LOG_INFO("No valid point was found. Not adding the draw task.");
+ 455              		.loc 1 104 13 is_stmt 1 view .LVU143
+ 456 0170 3046     		mov	r0, r6
+ 457 0172 FFF7FEFF 		bl	lv_free
+ 458              	.LVL34:
+ 105:Middlewares/LVGL/lvgl/src/draw/lv_draw_line.c ****             LV_PROFILER_DRAW_END;
+ 459              		.loc 1 105 13 view .LVU144
+ 105:Middlewares/LVGL/lvgl/src/draw/lv_draw_line.c ****             LV_PROFILER_DRAW_END;
+ 460              		.loc 1 105 13 view .LVU145
+ 105:Middlewares/LVGL/lvgl/src/draw/lv_draw_line.c ****             LV_PROFILER_DRAW_END;
+ 461              		.loc 1 105 13 view .LVU146
+ 106:Middlewares/LVGL/lvgl/src/draw/lv_draw_line.c ****             return;
+ 462              		.loc 1 106 33 view .LVU147
+ 107:Middlewares/LVGL/lvgl/src/draw/lv_draw_line.c ****         }
+ 463              		.loc 1 107 13 view .LVU148
+ 464 0176 AFE7     		b	.L6
+ 465              	.LVL35:
+ 466              	.L17:
+ 107:Middlewares/LVGL/lvgl/src/draw/lv_draw_line.c ****         }
+ 467              		.loc 1 107 13 is_stmt 0 view .LVU149
+ 468              	.LBE8:
+ 469              	.LBB9:
+ 114:Middlewares/LVGL/lvgl/src/draw/lv_draw_line.c ****         lv_draw_line_dsc_t ds_dsc = *dsc;
+ 470              		.loc 1 114 9 is_stmt 1 view .LVU150
+ 114:Middlewares/LVGL/lvgl/src/draw/lv_draw_line.c ****         lv_draw_line_dsc_t ds_dsc = *dsc;
+ 471              		.loc 1 114 9 view .LVU151
+ 114:Middlewares/LVGL/lvgl/src/draw/lv_draw_line.c ****         lv_draw_line_dsc_t ds_dsc = *dsc;
+ 472              		.loc 1 114 9 view .LVU152
+ 114:Middlewares/LVGL/lvgl/src/draw/lv_draw_line.c ****         lv_draw_line_dsc_t ds_dsc = *dsc;
+ 473              		.loc 1 114 9 view .LVU153
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccmt79e1.s 			page 14
+
+
+ 114:Middlewares/LVGL/lvgl/src/draw/lv_draw_line.c ****         lv_draw_line_dsc_t ds_dsc = *dsc;
+ 474              		.loc 1 114 9 view .LVU154
+ 475 0178 FEE7     		b	.L17
+ 476              	.LVL36:
+ 477              	.L21:
+ 478              	.LCFI5:
+ 479              		.cfi_def_cfa_offset 0
+ 480              		.cfi_restore 4
+ 481              		.cfi_restore 5
+ 482              		.cfi_restore 6
+ 483              		.cfi_restore 7
+ 484              		.cfi_restore 8
+ 485              		.cfi_restore 9
+ 486              		.cfi_restore 14
+ 114:Middlewares/LVGL/lvgl/src/draw/lv_draw_line.c ****         lv_draw_line_dsc_t ds_dsc = *dsc;
+ 487              		.loc 1 114 9 is_stmt 0 view .LVU155
+ 488 017a 7047     		bx	lr
+ 489              	.L28:
+ 490              		.align	2
+ 491              	.L27:
+ 492 017c 010000E0 		.word	-536870911
+ 493              	.LBE9:
+ 494              		.cfi_endproc
+ 495              	.LFE202:
+ 497              		.section	.text.lv_draw_line_iterate,"ax",%progbits
+ 498              		.align	1
+ 499              		.global	lv_draw_line_iterate
+ 500              		.syntax unified
+ 501              		.thumb
+ 502              		.thumb_func
+ 504              	lv_draw_line_iterate:
+ 505              	.LVL37:
+ 506              	.LFB203:
+ 129:Middlewares/LVGL/lvgl/src/draw/lv_draw_line.c **** 
+ 130:Middlewares/LVGL/lvgl/src/draw/lv_draw_line.c **** 
+ 131:Middlewares/LVGL/lvgl/src/draw/lv_draw_line.c **** void lv_draw_line_iterate(lv_draw_task_t * t, lv_draw_line_dsc_t * dsc,
+ 132:Middlewares/LVGL/lvgl/src/draw/lv_draw_line.c ****                           void (*draw_line_cb)(lv_draw_task_t * t, const lv_draw_line_dsc_t * dsc))
+ 133:Middlewares/LVGL/lvgl/src/draw/lv_draw_line.c **** {
+ 507              		.loc 1 133 1 is_stmt 1 view -0
+ 508              		.cfi_startproc
+ 509              		@ args = 0, pretend = 0, frame = 88
+ 510              		@ frame_needed = 0, uses_anonymous_args = 0
+ 511              		.loc 1 133 1 is_stmt 0 view .LVU157
+ 512 0000 2DE9F041 		push	{r4, r5, r6, r7, r8, lr}
+ 513              	.LCFI6:
+ 514              		.cfi_def_cfa_offset 24
+ 515              		.cfi_offset 4, -24
+ 516              		.cfi_offset 5, -20
+ 517              		.cfi_offset 6, -16
+ 518              		.cfi_offset 7, -12
+ 519              		.cfi_offset 8, -8
+ 520              		.cfi_offset 14, -4
+ 521 0004 96B0     		sub	sp, sp, #88
+ 522              	.LCFI7:
+ 523              		.cfi_def_cfa_offset 112
+ 524 0006 0746     		mov	r7, r0
+ 525 0008 9046     		mov	r8, r2
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccmt79e1.s 			page 15
+
+
+ 134:Middlewares/LVGL/lvgl/src/draw/lv_draw_line.c ****     uint32_t i;
+ 526              		.loc 1 134 5 is_stmt 1 view .LVU158
+ 135:Middlewares/LVGL/lvgl/src/draw/lv_draw_line.c ****     lv_point_precise_t * points = dsc->points;
+ 527              		.loc 1 135 5 view .LVU159
+ 528              		.loc 1 135 26 is_stmt 0 view .LVU160
+ 529 000a 8D6B     		ldr	r5, [r1, #56]
+ 530              	.LVL38:
+ 136:Middlewares/LVGL/lvgl/src/draw/lv_draw_line.c ****     if(points == NULL) {
+ 531              		.loc 1 136 5 is_stmt 1 view .LVU161
+ 532              		.loc 1 136 7 is_stmt 0 view .LVU162
+ 533 000c 55B1     		cbz	r5, .L37
+ 534              	.LBB10:
+ 137:Middlewares/LVGL/lvgl/src/draw/lv_draw_line.c ****         draw_line_cb(t, dsc);
+ 138:Middlewares/LVGL/lvgl/src/draw/lv_draw_line.c ****     }
+ 139:Middlewares/LVGL/lvgl/src/draw/lv_draw_line.c ****     else {
+ 140:Middlewares/LVGL/lvgl/src/draw/lv_draw_line.c ****         /*Create a temporary dsc where the point array is replaced by 2 points*/
+ 141:Middlewares/LVGL/lvgl/src/draw/lv_draw_line.c ****         lv_draw_line_dsc_t dsc_tmp = *dsc;
+ 535              		.loc 1 141 9 is_stmt 1 view .LVU163
+ 536              		.loc 1 141 28 is_stmt 0 view .LVU164
+ 537 000e 5422     		movs	r2, #84
+ 538              	.LVL39:
+ 539              		.loc 1 141 28 view .LVU165
+ 540 0010 01A8     		add	r0, sp, #4
+ 541              	.LVL40:
+ 542              		.loc 1 141 28 view .LVU166
+ 543 0012 FFF7FEFF 		bl	memcpy
+ 544              	.LVL41:
+ 142:Middlewares/LVGL/lvgl/src/draw/lv_draw_line.c ****         size_t point_cnt = dsc_tmp.point_cnt;
+ 545              		.loc 1 142 9 is_stmt 1 view .LVU167
+ 546              		.loc 1 142 35 is_stmt 0 view .LVU168
+ 547 0016 109E     		ldr	r6, [sp, #64]
+ 548              	.LVL42:
+ 143:Middlewares/LVGL/lvgl/src/draw/lv_draw_line.c ****         if(point_cnt <= 1) return;
+ 549              		.loc 1 143 9 is_stmt 1 view .LVU169
+ 550              		.loc 1 143 11 is_stmt 0 view .LVU170
+ 551 0018 012E     		cmp	r6, #1
+ 552 001a 04D9     		bls	.L29
+ 144:Middlewares/LVGL/lvgl/src/draw/lv_draw_line.c **** 
+ 145:Middlewares/LVGL/lvgl/src/draw/lv_draw_line.c ****         dsc_tmp.points = NULL;
+ 553              		.loc 1 145 9 is_stmt 1 view .LVU171
+ 554              		.loc 1 145 24 is_stmt 0 view .LVU172
+ 555 001c 0024     		movs	r4, #0
+ 556 001e 0F94     		str	r4, [sp, #60]
+ 146:Middlewares/LVGL/lvgl/src/draw/lv_draw_line.c ****         dsc_tmp.point_cnt = 0;
+ 557              		.loc 1 146 9 is_stmt 1 view .LVU173
+ 558              		.loc 1 146 27 is_stmt 0 view .LVU174
+ 559 0020 1094     		str	r4, [sp, #64]
+ 147:Middlewares/LVGL/lvgl/src/draw/lv_draw_line.c ****         for(i = 0; i < point_cnt - 1; i++) {
+ 560              		.loc 1 147 9 is_stmt 1 view .LVU175
+ 561              	.LVL43:
+ 562              		.loc 1 147 9 is_stmt 0 view .LVU176
+ 563 0022 04E0     		b	.L33
+ 564              	.LVL44:
+ 565              	.L37:
+ 566              		.loc 1 147 9 view .LVU177
+ 567              	.LBE10:
+ 137:Middlewares/LVGL/lvgl/src/draw/lv_draw_line.c ****     }
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccmt79e1.s 			page 16
+
+
+ 568              		.loc 1 137 9 is_stmt 1 view .LVU178
+ 569 0024 9047     		blx	r2
+ 570              	.LVL45:
+ 571              	.L29:
+ 148:Middlewares/LVGL/lvgl/src/draw/lv_draw_line.c ****             if(points[i].x == LV_DRAW_LINE_POINT_NONE ||
+ 149:Middlewares/LVGL/lvgl/src/draw/lv_draw_line.c ****                points[i].y == LV_DRAW_LINE_POINT_NONE) {
+ 150:Middlewares/LVGL/lvgl/src/draw/lv_draw_line.c ****                 continue;
+ 151:Middlewares/LVGL/lvgl/src/draw/lv_draw_line.c ****             }
+ 152:Middlewares/LVGL/lvgl/src/draw/lv_draw_line.c ****             if(points[i + 1].x == LV_DRAW_LINE_POINT_NONE ||
+ 153:Middlewares/LVGL/lvgl/src/draw/lv_draw_line.c ****                points[i + 1].y == LV_DRAW_LINE_POINT_NONE) {
+ 154:Middlewares/LVGL/lvgl/src/draw/lv_draw_line.c ****                 continue;
+ 155:Middlewares/LVGL/lvgl/src/draw/lv_draw_line.c ****             }
+ 156:Middlewares/LVGL/lvgl/src/draw/lv_draw_line.c **** 
+ 157:Middlewares/LVGL/lvgl/src/draw/lv_draw_line.c ****             dsc_tmp.p1 = points[i];
+ 158:Middlewares/LVGL/lvgl/src/draw/lv_draw_line.c ****             dsc_tmp.p2 = points[i + 1];
+ 159:Middlewares/LVGL/lvgl/src/draw/lv_draw_line.c **** 
+ 160:Middlewares/LVGL/lvgl/src/draw/lv_draw_line.c ****             draw_line_cb(t, &dsc_tmp);
+ 161:Middlewares/LVGL/lvgl/src/draw/lv_draw_line.c ****         }
+ 162:Middlewares/LVGL/lvgl/src/draw/lv_draw_line.c ****     }
+ 163:Middlewares/LVGL/lvgl/src/draw/lv_draw_line.c **** }
+ 572              		.loc 1 163 1 is_stmt 0 view .LVU179
+ 573 0026 16B0     		add	sp, sp, #88
+ 574              	.LCFI8:
+ 575              		.cfi_remember_state
+ 576              		.cfi_def_cfa_offset 24
+ 577              		@ sp needed
+ 578 0028 BDE8F081 		pop	{r4, r5, r6, r7, r8, pc}
+ 579              	.LVL46:
+ 580              	.L34:
+ 581              	.LCFI9:
+ 582              		.cfi_restore_state
+ 583              	.LBB11:
+ 147:Middlewares/LVGL/lvgl/src/draw/lv_draw_line.c ****             if(points[i].x == LV_DRAW_LINE_POINT_NONE ||
+ 584              		.loc 1 147 40 is_stmt 1 discriminator 2 view .LVU180
+ 585 002c 0134     		adds	r4, r4, #1
+ 586              	.LVL47:
+ 587              	.L33:
+ 147:Middlewares/LVGL/lvgl/src/draw/lv_draw_line.c ****             if(points[i].x == LV_DRAW_LINE_POINT_NONE ||
+ 588              		.loc 1 147 22 discriminator 1 view .LVU181
+ 147:Middlewares/LVGL/lvgl/src/draw/lv_draw_line.c ****             if(points[i].x == LV_DRAW_LINE_POINT_NONE ||
+ 589              		.loc 1 147 34 is_stmt 0 discriminator 1 view .LVU182
+ 590 002e 731E     		subs	r3, r6, #1
+ 147:Middlewares/LVGL/lvgl/src/draw/lv_draw_line.c ****             if(points[i].x == LV_DRAW_LINE_POINT_NONE ||
+ 591              		.loc 1 147 22 discriminator 1 view .LVU183
+ 592 0030 A342     		cmp	r3, r4
+ 593 0032 F8D9     		bls	.L29
+ 148:Middlewares/LVGL/lvgl/src/draw/lv_draw_line.c ****             if(points[i].x == LV_DRAW_LINE_POINT_NONE ||
+ 594              		.loc 1 148 13 is_stmt 1 view .LVU184
+ 148:Middlewares/LVGL/lvgl/src/draw/lv_draw_line.c ****             if(points[i].x == LV_DRAW_LINE_POINT_NONE ||
+ 595              		.loc 1 148 22 is_stmt 0 view .LVU185
+ 596 0034 05EBC403 		add	r3, r5, r4, lsl #3
+ 148:Middlewares/LVGL/lvgl/src/draw/lv_draw_line.c ****             if(points[i].x == LV_DRAW_LINE_POINT_NONE ||
+ 597              		.loc 1 148 25 view .LVU186
+ 598 0038 55F83420 		ldr	r2, [r5, r4, lsl #3]
+ 148:Middlewares/LVGL/lvgl/src/draw/lv_draw_line.c ****             if(points[i].x == LV_DRAW_LINE_POINT_NONE ||
+ 599              		.loc 1 148 15 view .LVU187
+ 600 003c 6FF00041 		mvn	r1, #-2147483648
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccmt79e1.s 			page 17
+
+
+ 601 0040 8A42     		cmp	r2, r1
+ 602 0042 F3D0     		beq	.L34
+ 149:Middlewares/LVGL/lvgl/src/draw/lv_draw_line.c ****                 continue;
+ 603              		.loc 1 149 25 view .LVU188
+ 604 0044 5968     		ldr	r1, [r3, #4]
+ 148:Middlewares/LVGL/lvgl/src/draw/lv_draw_line.c ****             if(points[i].x == LV_DRAW_LINE_POINT_NONE ||
+ 605              		.loc 1 148 55 discriminator 2 view .LVU189
+ 606 0046 6FF00042 		mvn	r2, #-2147483648
+ 607 004a 9142     		cmp	r1, r2
+ 608 004c EED0     		beq	.L34
+ 152:Middlewares/LVGL/lvgl/src/draw/lv_draw_line.c ****                points[i + 1].y == LV_DRAW_LINE_POINT_NONE) {
+ 609              		.loc 1 152 13 is_stmt 1 view .LVU190
+ 152:Middlewares/LVGL/lvgl/src/draw/lv_draw_line.c ****                points[i + 1].y == LV_DRAW_LINE_POINT_NONE) {
+ 610              		.loc 1 152 22 is_stmt 0 view .LVU191
+ 611 004e 611C     		adds	r1, r4, #1
+ 612 0050 05EBC102 		add	r2, r5, r1, lsl #3
+ 152:Middlewares/LVGL/lvgl/src/draw/lv_draw_line.c ****                points[i + 1].y == LV_DRAW_LINE_POINT_NONE) {
+ 613              		.loc 1 152 29 view .LVU192
+ 614 0054 55F83100 		ldr	r0, [r5, r1, lsl #3]
+ 152:Middlewares/LVGL/lvgl/src/draw/lv_draw_line.c ****                points[i + 1].y == LV_DRAW_LINE_POINT_NONE) {
+ 615              		.loc 1 152 15 view .LVU193
+ 616 0058 6FF00041 		mvn	r1, #-2147483648
+ 617 005c 8842     		cmp	r0, r1
+ 618 005e E5D0     		beq	.L34
+ 153:Middlewares/LVGL/lvgl/src/draw/lv_draw_line.c ****                 continue;
+ 619              		.loc 1 153 29 view .LVU194
+ 620 0060 5068     		ldr	r0, [r2, #4]
+ 152:Middlewares/LVGL/lvgl/src/draw/lv_draw_line.c ****                points[i + 1].y == LV_DRAW_LINE_POINT_NONE) {
+ 621              		.loc 1 152 59 discriminator 2 view .LVU195
+ 622 0062 8842     		cmp	r0, r1
+ 623 0064 E2D0     		beq	.L34
+ 157:Middlewares/LVGL/lvgl/src/draw/lv_draw_line.c ****             dsc_tmp.p2 = points[i + 1];
+ 624              		.loc 1 157 13 is_stmt 1 view .LVU196
+ 157:Middlewares/LVGL/lvgl/src/draw/lv_draw_line.c ****             dsc_tmp.p2 = points[i + 1];
+ 625              		.loc 1 157 24 is_stmt 0 view .LVU197
+ 626 0066 0DF12C0C 		add	ip, sp, #44
+ 627 006a 93E80300 		ldm	r3, {r0, r1}
+ 628 006e 8CE80300 		stm	ip, {r0, r1}
+ 158:Middlewares/LVGL/lvgl/src/draw/lv_draw_line.c **** 
+ 629              		.loc 1 158 13 is_stmt 1 view .LVU198
+ 158:Middlewares/LVGL/lvgl/src/draw/lv_draw_line.c **** 
+ 630              		.loc 1 158 24 is_stmt 0 view .LVU199
+ 631 0072 0DAB     		add	r3, sp, #52
+ 632 0074 92E80300 		ldm	r2, {r0, r1}
+ 633 0078 83E80300 		stm	r3, {r0, r1}
+ 160:Middlewares/LVGL/lvgl/src/draw/lv_draw_line.c ****         }
+ 634              		.loc 1 160 13 is_stmt 1 view .LVU200
+ 635 007c 01A9     		add	r1, sp, #4
+ 636 007e 3846     		mov	r0, r7
+ 637 0080 C047     		blx	r8
+ 638              	.LVL48:
+ 639 0082 D3E7     		b	.L34
+ 640              	.LBE11:
+ 641              		.cfi_endproc
+ 642              	.LFE203:
+ 644              		.text
+ 645              	.Letext0:
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccmt79e1.s 			page 18
+
+
+ 646              		.file 3 "D:\\STM32CubeIDE\\STM32CubeIDE_2.1.1\\STM32CubeIDE\\plugins\\com.st.stm32cube.ide.mcu.ext
+ 647              		.file 4 "D:\\STM32CubeIDE\\STM32CubeIDE_2.1.1\\STM32CubeIDE\\plugins\\com.st.stm32cube.ide.mcu.ext
+ 648              		.file 5 "D:\\STM32CubeIDE\\STM32CubeIDE_2.1.1\\STM32CubeIDE\\plugins\\com.st.stm32cube.ide.mcu.ext
+ 649              		.file 6 "Middlewares/LVGL/lvgl/src/draw/../misc/lv_types.h"
+ 650              		.file 7 "Middlewares/LVGL/lvgl/src/draw/lv_draw.h"
+ 651              		.file 8 "Middlewares/LVGL/lvgl/src/draw/lv_draw_private.h"
+ 652              		.file 9 "Middlewares/LVGL/lvgl/src/draw/../misc/../font/../draw/lv_draw_buf.h"
+ 653              		.file 10 "Middlewares/LVGL/lvgl/src/draw/../misc/../font/../draw/../misc/lv_area.h"
+ 654              		.file 11 "Middlewares/LVGL/lvgl/src/draw/../misc/../font/../draw/../misc/lv_color.h"
+ 655              		.file 12 "Middlewares/LVGL/lvgl/src/draw/../misc/../font/../draw/lv_image_dsc.h"
+ 656              		.file 13 "Middlewares/LVGL/lvgl/src/draw/../misc/lv_style.h"
+ 657              		.file 14 "Middlewares/LVGL/lvgl/src/draw/../core/../draw/lv_draw_line.h"
+ 658              		.file 15 "Middlewares/LVGL/lvgl/src/draw/../misc/../font/../draw/../misc/../stdlib/lv_mem.h"
+ 659              		.file 16 "<built-in>"
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccmt79e1.s 			page 19
+
+
+DEFINED SYMBOLS
+                            *ABS*:00000000 lv_draw_line.c
+C:\Users\w1785\AppData\Local\Temp\ccmt79e1.s:21     .text.lv_draw_line_dsc_init:00000000 $t
+C:\Users\w1785\AppData\Local\Temp\ccmt79e1.s:27     .text.lv_draw_line_dsc_init:00000000 lv_draw_line_dsc_init
+C:\Users\w1785\AppData\Local\Temp\ccmt79e1.s:84     .text.lv_draw_task_get_line_dsc:00000000 $t
+C:\Users\w1785\AppData\Local\Temp\ccmt79e1.s:90     .text.lv_draw_task_get_line_dsc:00000000 lv_draw_task_get_line_dsc
+C:\Users\w1785\AppData\Local\Temp\ccmt79e1.s:120    .text.lv_draw_line:00000000 $t
+C:\Users\w1785\AppData\Local\Temp\ccmt79e1.s:126    .text.lv_draw_line:00000000 lv_draw_line
+C:\Users\w1785\AppData\Local\Temp\ccmt79e1.s:492    .text.lv_draw_line:0000017c $d
+C:\Users\w1785\AppData\Local\Temp\ccmt79e1.s:498    .text.lv_draw_line_iterate:00000000 $t
+C:\Users\w1785\AppData\Local\Temp\ccmt79e1.s:504    .text.lv_draw_line_iterate:00000000 lv_draw_line_iterate
+
+UNDEFINED SYMBOLS
+lv_memset
+lv_color_black
+lv_malloc
+lv_draw_layer_create_drop_shadow
+memcpy
+lv_draw_layer_finish_drop_shadow
+lv_draw_add_task
+lv_memcpy
+lv_draw_finalize_task_creation
+lv_area_increase
+lv_free
