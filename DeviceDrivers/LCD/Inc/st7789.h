@@ -31,6 +31,8 @@ void ST7789_WritePixels(uint16_t *colors, uint32_t len);
 void ST7789_DrawPixel(uint16_t x, uint16_t y, uint16_t color);
 void ST7789_FillRect(uint16_t x, uint16_t y, uint16_t w, uint16_t h, uint16_t color);
 void ST7789_FillScreen(uint16_t color);
+void ST7789_DrawChar(uint16_t x, uint16_t y, char ch, uint16_t color, uint16_t bg_color);
+void ST7789_DrawString(uint16_t x, uint16_t y, const char *str, uint16_t color, uint16_t bg_color);
 void ST7789_TestColorCycle(void);
 
 #ifdef __cplusplus

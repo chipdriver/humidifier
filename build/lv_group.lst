@@ -1,4 +1,4 @@
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccXF3fLi.s 			page 1
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccWFT3zy.s 			page 1
 
 
    1              		.cpu cortex-m4
@@ -58,7 +58,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccXF3fLi.s 			page 1
   28:Middlewares/LVGL/lvgl/src/core/lv_group.c **** static bool focus_next_core(lv_group_t * group, void * (*begin)(const lv_ll_t *),
   29:Middlewares/LVGL/lvgl/src/core/lv_group.c ****                             void * (*move)(const lv_ll_t *, const void *));
   30:Middlewares/LVGL/lvgl/src/core/lv_group.c **** static void lv_group_refocus(lv_group_t * g);
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccXF3fLi.s 			page 2
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccWFT3zy.s 			page 2
 
 
   31:Middlewares/LVGL/lvgl/src/core/lv_group.c **** static lv_indev_t * get_indev(const lv_group_t * g);
@@ -118,7 +118,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccXF3fLi.s 			page 1
   85:Middlewares/LVGL/lvgl/src/core/lv_group.c ****     }
   86:Middlewares/LVGL/lvgl/src/core/lv_group.c **** 
   87:Middlewares/LVGL/lvgl/src/core/lv_group.c ****     /*Remove the objects from the group*/
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccXF3fLi.s 			page 3
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccWFT3zy.s 			page 3
 
 
   88:Middlewares/LVGL/lvgl/src/core/lv_group.c ****     lv_obj_t ** obj;
@@ -178,7 +178,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccXF3fLi.s 			page 1
  142:Middlewares/LVGL/lvgl/src/core/lv_group.c **** 
  143:Middlewares/LVGL/lvgl/src/core/lv_group.c ****     /*If the head and the tail is equal then there is only one object in the linked list.
  144:Middlewares/LVGL/lvgl/src/core/lv_group.c ****      *In this case automatically activate it*/
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccXF3fLi.s 			page 4
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccWFT3zy.s 			page 4
 
 
  145:Middlewares/LVGL/lvgl/src/core/lv_group.c ****     if(lv_ll_get_head(&group->obj_ll) == next) {
@@ -238,7 +238,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccXF3fLi.s 			page 1
  199:Middlewares/LVGL/lvgl/src/core/lv_group.c **** 
  200:Middlewares/LVGL/lvgl/src/core/lv_group.c ****     /*Search the object and remove it from its group*/
  201:Middlewares/LVGL/lvgl/src/core/lv_group.c ****     lv_obj_t ** i;
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccXF3fLi.s 			page 5
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccWFT3zy.s 			page 5
 
 
  202:Middlewares/LVGL/lvgl/src/core/lv_group.c ****     LV_LL_READ(&g->obj_ll, i) {
@@ -298,7 +298,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccXF3fLi.s 			page 1
  256:Middlewares/LVGL/lvgl/src/core/lv_group.c ****                 if(g->focus_cb) g->focus_cb(g);
  257:Middlewares/LVGL/lvgl/src/core/lv_group.c ****                 lv_result_t res = lv_obj_send_event(*g->obj_focus, LV_EVENT_FOCUSED, get_indev(g));
  258:Middlewares/LVGL/lvgl/src/core/lv_group.c ****                 if(res != LV_RESULT_OK) return;
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccXF3fLi.s 			page 6
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccWFT3zy.s 			page 6
 
 
  259:Middlewares/LVGL/lvgl/src/core/lv_group.c ****                 lv_obj_invalidate(*g->obj_focus);
@@ -358,7 +358,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccXF3fLi.s 			page 1
  313:Middlewares/LVGL/lvgl/src/core/lv_group.c **** }
  314:Middlewares/LVGL/lvgl/src/core/lv_group.c **** 
  315:Middlewares/LVGL/lvgl/src/core/lv_group.c **** void lv_group_set_edge_cb(lv_group_t * group, lv_group_edge_cb_t edge_cb)
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccXF3fLi.s 			page 7
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccWFT3zy.s 			page 7
 
 
  316:Middlewares/LVGL/lvgl/src/core/lv_group.c **** {
@@ -418,7 +418,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccXF3fLi.s 			page 1
  370:Middlewares/LVGL/lvgl/src/core/lv_group.c **** }
  371:Middlewares/LVGL/lvgl/src/core/lv_group.c **** 
  372:Middlewares/LVGL/lvgl/src/core/lv_group.c **** bool lv_group_get_editing(const lv_group_t * group)
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccXF3fLi.s 			page 8
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccWFT3zy.s 			page 8
 
 
  373:Middlewares/LVGL/lvgl/src/core/lv_group.c **** {
@@ -478,7 +478,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccXF3fLi.s 			page 1
  427:Middlewares/LVGL/lvgl/src/core/lv_group.c ****     if(!group) {
  428:Middlewares/LVGL/lvgl/src/core/lv_group.c ****         LV_LOG_WARN("Can't attach external user data and destructor callback to a NULL group");
  429:Middlewares/LVGL/lvgl/src/core/lv_group.c ****         return;
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccXF3fLi.s 			page 9
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccWFT3zy.s 			page 9
 
 
  430:Middlewares/LVGL/lvgl/src/core/lv_group.c ****     }
@@ -538,7 +538,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccXF3fLi.s 			page 1
  484:Middlewares/LVGL/lvgl/src/core/lv_group.c ****                 can_begin = false;
  485:Middlewares/LVGL/lvgl/src/core/lv_group.c ****             }
  486:Middlewares/LVGL/lvgl/src/core/lv_group.c ****             else {
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccXF3fLi.s 			page 10
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccWFT3zy.s 			page 10
 
 
  487:Middlewares/LVGL/lvgl/src/core/lv_group.c ****                 /*Currently focused object is the last/first in the group, keep it that way*/
@@ -598,7 +598,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccXF3fLi.s 			page 1
  541:Middlewares/LVGL/lvgl/src/core/lv_group.c **** }
  542:Middlewares/LVGL/lvgl/src/core/lv_group.c **** 
  543:Middlewares/LVGL/lvgl/src/core/lv_group.c **** /**
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccXF3fLi.s 			page 11
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccWFT3zy.s 			page 11
 
 
  544:Middlewares/LVGL/lvgl/src/core/lv_group.c ****  * Find an indev preferably with POINTER type (because it's the most generic) that uses the given g
@@ -658,7 +658,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccXF3fLi.s 			page 1
   63 0010 2046     		mov	r0, r4
   64 0012 FFF7FEFF 		bl	lv_indev_get_next
   65              	.LVL6:
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccXF3fLi.s 			page 12
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccWFT3zy.s 			page 12
 
 
   66 0016 0446     		mov	r4, r0
@@ -718,7 +718,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccXF3fLi.s 			page 1
  564:Middlewares/LVGL/lvgl/src/core/lv_group.c **** 
  565:Middlewares/LVGL/lvgl/src/core/lv_group.c ****     return indev_guess;
  566:Middlewares/LVGL/lvgl/src/core/lv_group.c **** }
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccXF3fLi.s 			page 13
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccWFT3zy.s 			page 13
 
 
  106              		.loc 1 566 1 view .LVU25
@@ -778,7 +778,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccXF3fLi.s 			page 1
  153              		.loc 1 474 5 is_stmt 1 view .LVU35
  475:Middlewares/LVGL/lvgl/src/core/lv_group.c ****     bool can_begin           = true;
  154              		.loc 1 475 5 view .LVU36
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccXF3fLi.s 			page 14
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccWFT3zy.s 			page 14
 
 
  476:Middlewares/LVGL/lvgl/src/core/lv_group.c **** 
@@ -838,7 +838,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccXF3fLi.s 			page 1
  504:Middlewares/LVGL/lvgl/src/core/lv_group.c **** 
  193              		.loc 1 504 9 is_stmt 1 view .LVU53
  506:Middlewares/LVGL/lvgl/src/core/lv_group.c ****         if(lv_obj_get_state(*obj_next) & LV_STATE_DISABLED) continue;
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccXF3fLi.s 			page 15
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccWFT3zy.s 			page 15
 
 
  194              		.loc 1 506 9 view .LVU54
@@ -898,7 +898,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccXF3fLi.s 			page 1
  233              		.loc 1 480 13 is_stmt 1 view .LVU69
  480:Middlewares/LVGL/lvgl/src/core/lv_group.c ****                 if(!can_begin) return focus_changed;
  234              		.loc 1 480 16 is_stmt 0 view .LVU70
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccXF3fLi.s 			page 16
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccWFT3zy.s 			page 16
 
 
  235 0056 337F     		ldrb	r3, [r6, #28]	@ zero_extendqisi2
@@ -958,7 +958,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccXF3fLi.s 			page 1
  517:Middlewares/LVGL/lvgl/src/core/lv_group.c **** 
  274              		.loc 1 517 9 is_stmt 1 view .LVU86
  517:Middlewares/LVGL/lvgl/src/core/lv_group.c **** 
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccXF3fLi.s 			page 17
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccWFT3zy.s 			page 17
 
 
  275              		.loc 1 517 22 is_stmt 0 discriminator 1 view .LVU87
@@ -1018,7 +1018,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccXF3fLi.s 			page 1
  315 00a8 4FF00008 		mov	r8, #0
  316              	.LVL36:
  527:Middlewares/LVGL/lvgl/src/core/lv_group.c ****         lv_obj_invalidate(*group->obj_focus);
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccXF3fLi.s 			page 18
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccWFT3zy.s 			page 18
 
 
  317              		.loc 1 527 40 discriminator 1 view .LVU102
@@ -1078,7 +1078,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccXF3fLi.s 			page 1
  356              		.loc 1 534 36 discriminator 1 view .LVU117
  357 00d2 0CE0     		b	.L10
  358              	.LVL43:
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccXF3fLi.s 			page 19
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccWFT3zy.s 			page 19
 
 
  359              	.L35:
@@ -1138,7 +1138,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccXF3fLi.s 			page 1
  399 00f8 F9E7     		b	.L10
  400              	.LVL52:
  401              	.L25:
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccXF3fLi.s 			page 20
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccWFT3zy.s 			page 20
 
 
  494:Middlewares/LVGL/lvgl/src/core/lv_group.c ****         }
@@ -1198,7 +1198,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccXF3fLi.s 			page 1
  448              		.cfi_def_cfa_offset 8
  449              		.cfi_offset 3, -8
  450              		.cfi_offset 14, -4
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccXF3fLi.s 			page 21
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccWFT3zy.s 			page 21
 
 
   47:Middlewares/LVGL/lvgl/src/core/lv_group.c **** }
@@ -1258,7 +1258,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccXF3fLi.s 			page 1
  504              	.LFB202:
   56:Middlewares/LVGL/lvgl/src/core/lv_group.c ****     lv_group_t * group = lv_ll_ins_head(group_ll_p);
  505              		.loc 1 56 1 is_stmt 1 view -0
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccXF3fLi.s 			page 22
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccWFT3zy.s 			page 22
 
 
  506              		.cfi_startproc
@@ -1318,7 +1318,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccXF3fLi.s 			page 1
  544 0020 6361     		str	r3, [r4, #20]
   66:Middlewares/LVGL/lvgl/src/core/lv_group.c ****     group->refocus_policy = LV_GROUP_REFOCUS_POLICY_PREV;
  545              		.loc 1 66 5 is_stmt 1 view .LVU164
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccXF3fLi.s 			page 23
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccWFT3zy.s 			page 23
 
 
   66:Middlewares/LVGL/lvgl/src/core/lv_group.c ****     group->refocus_policy = LV_GROUP_REFOCUS_POLICY_PREV;
@@ -1378,7 +1378,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccXF3fLi.s 			page 1
  587              		.thumb_func
  589              	lv_group_set_default:
  590              	.LVL65:
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccXF3fLi.s 			page 24
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccWFT3zy.s 			page 24
 
 
  591              	.LFB204:
@@ -1438,7 +1438,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccXF3fLi.s 			page 1
  641              		.thumb_func
  643              	lv_group_delete:
  644              	.LVL66:
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccXF3fLi.s 			page 25
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccWFT3zy.s 			page 25
 
 
  645              	.LFB203:
@@ -1498,7 +1498,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccXF3fLi.s 			page 1
   84:Middlewares/LVGL/lvgl/src/core/lv_group.c ****     }
  684              		.loc 1 84 9 view .LVU201
  685 001c 1868     		ldr	r0, [r3]
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccXF3fLi.s 			page 26
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccWFT3zy.s 			page 26
 
 
  686 001e FFF7FEFF 		bl	lv_obj_invalidate
@@ -1558,7 +1558,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccXF3fLi.s 			page 1
  729 0036 31B1     		cbz	r1, .L69
   90:Middlewares/LVGL/lvgl/src/core/lv_group.c ****     }
  730              		.loc 1 90 9 view .LVU213
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccXF3fLi.s 			page 27
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccWFT3zy.s 			page 27
 
 
   90:Middlewares/LVGL/lvgl/src/core/lv_group.c ****     }
@@ -1618,7 +1618,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccXF3fLi.s 			page 1
  770 005c FFF7FEFF 		bl	lv_indev_get_group
  771              	.LVL81:
   96:Middlewares/LVGL/lvgl/src/core/lv_group.c ****             lv_indev_set_group(indev, NULL);
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccXF3fLi.s 			page 28
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccWFT3zy.s 			page 28
 
 
  772              		.loc 1 96 11 discriminator 1 view .LVU229
@@ -1678,7 +1678,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccXF3fLi.s 			page 1
  817              	.LFE203:
  819              		.section	.text.lv_group_remove_all_objs,"ax",%progbits
  820              		.align	1
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccXF3fLi.s 			page 29
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccWFT3zy.s 			page 29
 
 
  821              		.global	lv_group_remove_all_objs
@@ -1738,7 +1738,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccXF3fLi.s 			page 1
  863              	.LVL91:
  220:Middlewares/LVGL/lvgl/src/core/lv_group.c ****         group->obj_focus = NULL;
  864              		.loc 1 220 9 is_stmt 1 view .LVU252
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccXF3fLi.s 			page 30
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccWFT3zy.s 			page 30
 
 
  220:Middlewares/LVGL/lvgl/src/core/lv_group.c ****         group->obj_focus = NULL;
@@ -1798,7 +1798,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccXF3fLi.s 			page 1
  226:Middlewares/LVGL/lvgl/src/core/lv_group.c ****         if((*obj)->spec_attr)(*obj)->spec_attr->group_p = NULL;
  907              		.loc 1 226 5 discriminator 2 view .LVU265
  908 0032 2046     		mov	r0, r4
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccXF3fLi.s 			page 31
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccWFT3zy.s 			page 31
 
 
  909 0034 FFF7FEFF 		bl	lv_ll_get_next
@@ -1858,7 +1858,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccXF3fLi.s 			page 1
  953              		@ args = 0, pretend = 0, frame = 0
  954              		@ frame_needed = 0, uses_anonymous_args = 0
  268:Middlewares/LVGL/lvgl/src/core/lv_group.c **** 
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccXF3fLi.s 			page 32
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccWFT3zy.s 			page 32
 
 
  955              		.loc 1 268 5 view .LVU278
@@ -1918,7 +1918,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccXF3fLi.s 			page 1
  995              		.cfi_restore 4
  996              		.cfi_restore 14
  268:Middlewares/LVGL/lvgl/src/core/lv_group.c **** 
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccXF3fLi.s 			page 33
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccWFT3zy.s 			page 33
 
 
  997              		.loc 1 268 5 is_stmt 1 view .LVU293
@@ -1978,7 +1978,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccXF3fLi.s 			page 1
  1041 000a FFF7FEFF 		bl	focus_next_core
  1042              	.LVL106:
  282:Middlewares/LVGL/lvgl/src/core/lv_group.c ****         if(!focus_changed)
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccXF3fLi.s 			page 34
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccWFT3zy.s 			page 34
 
 
  1043              		.loc 1 282 5 is_stmt 1 view .LVU306
@@ -2038,7 +2038,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccXF3fLi.s 			page 1
  1087              	lv_group_refocus:
  1088              	.LVL110:
  1089              	.LFB231:
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccXF3fLi.s 			page 35
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccWFT3zy.s 			page 35
 
 
  454:Middlewares/LVGL/lvgl/src/core/lv_group.c ****     /*Refocus must temporarily allow wrapping to work correctly*/
@@ -2098,7 +2098,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccXF3fLi.s 			page 1
  1130              		.loc 1 465 1 view .LVU332
  1131 0024 38BD     		pop	{r3, r4, r5, pc}
  1132              	.LVL115:
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccXF3fLi.s 			page 36
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccWFT3zy.s 			page 36
 
 
  1133              	.L101:
@@ -2158,7 +2158,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccXF3fLi.s 			page 1
  1177              		.loc 1 177 5 view .LVU344
  180:Middlewares/LVGL/lvgl/src/core/lv_group.c ****         if(g->frozen) g->frozen = 0;
  1178              		.loc 1 180 5 view .LVU345
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccXF3fLi.s 			page 37
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccWFT3zy.s 			page 37
 
 
  180:Middlewares/LVGL/lvgl/src/core/lv_group.c ****         if(g->frozen) g->frozen = 0;
@@ -2218,7 +2218,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccXF3fLi.s 			page 1
  202:Middlewares/LVGL/lvgl/src/core/lv_group.c ****         if(*i == obj) {
  1218              		.loc 1 202 5 is_stmt 1 discriminator 2 view .LVU361
  1219 0034 2146     		mov	r1, r4
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccXF3fLi.s 			page 38
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccWFT3zy.s 			page 38
 
 
  1220 0036 2846     		mov	r0, r5
@@ -2278,7 +2278,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccXF3fLi.s 			page 1
  1261 0064 2846     		mov	r0, r5
  1262 0066 FFF7FEFF 		bl	lv_ll_get_tail
  1263              	.LVL128:
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccXF3fLi.s 			page 39
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccWFT3zy.s 			page 39
 
 
  184:Middlewares/LVGL/lvgl/src/core/lv_group.c ****             lv_obj_send_event(*g->obj_focus, LV_EVENT_DEFOCUSED, get_indev(g));
@@ -2338,7 +2338,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccXF3fLi.s 			page 1
  206:Middlewares/LVGL/lvgl/src/core/lv_group.c ****             break;
  1305              		.loc 1 206 32 is_stmt 1 discriminator 1 view .LVU388
  206:Middlewares/LVGL/lvgl/src/core/lv_group.c ****             break;
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccXF3fLi.s 			page 40
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccWFT3zy.s 			page 40
 
 
  1306              		.loc 1 206 56 is_stmt 0 discriminator 1 view .LVU389
@@ -2398,7 +2398,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccXF3fLi.s 			page 1
  1351 000a FFF7FEFF 		bl	lv_group_remove_obj
  1352              	.LVL137:
  135:Middlewares/LVGL/lvgl/src/core/lv_group.c ****     obj->spec_attr->group_p = group;
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccXF3fLi.s 			page 41
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccWFT3zy.s 			page 41
 
 
  1353              		.loc 1 135 5 is_stmt 1 view .LVU401
@@ -2458,7 +2458,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccXF3fLi.s 			page 1
  1389              	.L118:
  150:Middlewares/LVGL/lvgl/src/core/lv_group.c **** 
  1390              		.loc 1 150 1 view .LVU420
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccXF3fLi.s 			page 42
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccWFT3zy.s 			page 42
 
 
  1391 002c 70BD     		pop	{r4, r5, r6, pc}
@@ -2518,7 +2518,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccXF3fLi.s 			page 1
  1435              		.thumb_func
  1437              	lv_group_focus_freeze:
  1438              	.LVL147:
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccXF3fLi.s 			page 43
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccWFT3zy.s 			page 43
 
 
  1439              	.LFB213:
@@ -2578,7 +2578,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccXF3fLi.s 			page 1
  1477              		.section	.text.lv_group_set_focus_cb,"ax",%progbits
  1478              		.align	1
  1479              		.global	lv_group_set_focus_cb
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccXF3fLi.s 			page 44
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccWFT3zy.s 			page 44
 
 
  1480              		.syntax unified
@@ -2638,7 +2638,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccXF3fLi.s 			page 1
  319:Middlewares/LVGL/lvgl/src/core/lv_group.c **** }
  1525              		.loc 1 319 20 is_stmt 0 view .LVU461
  1526 0002 4161     		str	r1, [r0, #20]
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccXF3fLi.s 			page 45
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccWFT3zy.s 			page 45
 
 
  320:Middlewares/LVGL/lvgl/src/core/lv_group.c **** 
@@ -2698,7 +2698,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccXF3fLi.s 			page 1
  342:Middlewares/LVGL/lvgl/src/core/lv_group.c ****     group->refocus_policy = policy & 0x01;
  1568              		.loc 1 342 5 view .LVU477
  342:Middlewares/LVGL/lvgl/src/core/lv_group.c ****     group->refocus_policy = policy & 0x01;
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccXF3fLi.s 			page 46
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccWFT3zy.s 			page 46
 
 
  1569              		.loc 1 342 5 view .LVU478
@@ -2758,7 +2758,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccXF3fLi.s 			page 1
  1610              		.cfi_endproc
  1611              	.LFE219:
  1613              		.section	.text.lv_group_get_focused,"ax",%progbits
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccXF3fLi.s 			page 47
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccWFT3zy.s 			page 47
 
 
  1614              		.align	1
@@ -2818,7 +2818,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccXF3fLi.s 			page 1
  297:Middlewares/LVGL/lvgl/src/core/lv_group.c ****     LV_ASSERT_NULL(group);
  1661              		.loc 1 297 1 is_stmt 0 view .LVU504
  1662 0000 10B5     		push	{r4, lr}
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccXF3fLi.s 			page 48
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccWFT3zy.s 			page 48
 
 
  1663              	.LCFI19:
@@ -2878,7 +2878,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccXF3fLi.s 			page 1
  1704              		.cfi_restore_state
  298:Middlewares/LVGL/lvgl/src/core/lv_group.c **** 
  1705              		.loc 1 298 5 is_stmt 1 view .LVU518
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccXF3fLi.s 			page 49
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccWFT3zy.s 			page 49
 
 
  298:Middlewares/LVGL/lvgl/src/core/lv_group.c **** 
@@ -2938,7 +2938,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccXF3fLi.s 			page 1
  1750              	.LCFI23:
  1751              		.cfi_def_cfa_offset 16
  1752              		.cfi_offset 4, -16
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccXF3fLi.s 			page 50
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccWFT3zy.s 			page 50
 
 
  1753              		.cfi_offset 5, -12
@@ -2998,7 +2998,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccXF3fLi.s 			page 1
  1790              		.loc 1 333 82 view .LVU547
  1791 0026 FFF7FEFF 		bl	get_indev
  1792              	.LVL166:
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccXF3fLi.s 			page 51
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccWFT3zy.s 			page 51
 
 
  1793 002a 0246     		mov	r2, r0
@@ -3058,7 +3058,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccXF3fLi.s 			page 1
  1835              		.loc 1 336 9 is_stmt 0 view .LVU559
  1836 003e FFF7FEFF 		bl	lv_obj_invalidate
  1837              	.LVL172:
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccXF3fLi.s 			page 52
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccWFT3zy.s 			page 52
 
 
  1838 0042 F9E7     		b	.L156
@@ -3118,7 +3118,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccXF3fLi.s 			page 1
  1883              		.loc 1 239 7 view .LVU570
  1884 0012 13F0010F 		tst	r3, #1
  1885 0016 00D0     		beq	.L174
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccXF3fLi.s 			page 53
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccWFT3zy.s 			page 53
 
 
  1886              	.LVL175:
@@ -3178,7 +3178,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccXF3fLi.s 			page 1
  1927              		.loc 1 247 15 view .LVU583
  1928 0040 83B1     		cbz	r3, .L167
  247:Middlewares/LVGL/lvgl/src/core/lv_group.c ****                 lv_result_t res = lv_obj_send_event(*g->obj_focus, LV_EVENT_DEFOCUSED, get_indev(g)
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccXF3fLi.s 			page 54
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccWFT3zy.s 			page 54
 
 
  1929              		.loc 1 247 47 discriminator 1 view .LVU584
@@ -3238,7 +3238,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccXF3fLi.s 			page 1
  256:Middlewares/LVGL/lvgl/src/core/lv_group.c ****                 lv_result_t res = lv_obj_send_event(*g->obj_focus, LV_EVENT_FOCUSED, get_indev(g));
  1968              		.loc 1 256 21 is_stmt 0 view .LVU600
  1969 0066 3369     		ldr	r3, [r6, #16]
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccXF3fLi.s 			page 55
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccWFT3zy.s 			page 55
 
 
  256:Middlewares/LVGL/lvgl/src/core/lv_group.c ****                 lv_result_t res = lv_obj_send_event(*g->obj_focus, LV_EVENT_FOCUSED, get_indev(g));
@@ -3298,7 +3298,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccXF3fLi.s 			page 1
  2011              		.cfi_restore 3
  2012              		.cfi_restore 4
  2013              		.cfi_restore 5
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccXF3fLi.s 			page 56
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccWFT3zy.s 			page 56
 
 
  2014              		.cfi_restore 6
@@ -3358,7 +3358,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccXF3fLi.s 			page 1
  156:Middlewares/LVGL/lvgl/src/core/lv_group.c ****     if(g1 == NULL) return;
  2061              		.loc 1 156 5 is_stmt 1 view .LVU623
  156:Middlewares/LVGL/lvgl/src/core/lv_group.c ****     if(g1 == NULL) return;
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccXF3fLi.s 			page 57
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccWFT3zy.s 			page 57
 
 
  2062              		.loc 1 156 7 is_stmt 0 view .LVU624
@@ -3418,7 +3418,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccXF3fLi.s 			page 1
  162:Middlewares/LVGL/lvgl/src/core/lv_group.c ****         else if((*obj_i) == obj2)(*obj_i) = obj1;
  2103              		.loc 1 162 13 is_stmt 0 view .LVU638
  2104 0032 0B68     		ldr	r3, [r1]
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccXF3fLi.s 			page 58
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccWFT3zy.s 			page 58
 
 
  162:Middlewares/LVGL/lvgl/src/core/lv_group.c ****         else if((*obj_i) == obj2)(*obj_i) = obj1;
@@ -3478,7 +3478,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccXF3fLi.s 			page 1
  2144              	.LVL212:
  2145 005c DBE7     		b	.L176
  2146              		.cfi_endproc
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccXF3fLi.s 			page 59
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccWFT3zy.s 			page 59
 
 
  2147              	.LFE207:
@@ -3538,7 +3538,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccXF3fLi.s 			page 1
  2196              		@ frame_needed = 0, uses_anonymous_args = 0
  2197              		@ link register save eliminated.
  368:Middlewares/LVGL/lvgl/src/core/lv_group.c ****     return group->edge_cb;
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccXF3fLi.s 			page 60
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccWFT3zy.s 			page 60
 
 
  2198              		.loc 1 368 5 view .LVU663
@@ -3598,7 +3598,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccXF3fLi.s 			page 1
  2242              	.LVL223:
  2243              	.L196:
  374:Middlewares/LVGL/lvgl/src/core/lv_group.c ****     return group->editing;
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccXF3fLi.s 			page 61
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccWFT3zy.s 			page 61
 
 
  2244              		.loc 1 374 23 discriminator 1 view .LVU676
@@ -3658,7 +3658,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccXF3fLi.s 			page 1
  2292              		.thumb_func
  2294              	lv_group_get_obj_count:
  2295              	.LVL229:
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccXF3fLi.s 			page 62
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccWFT3zy.s 			page 62
 
 
  2296              	.LFB225:
@@ -3718,7 +3718,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccXF3fLi.s 			page 1
  2337              		.thumb
  2338              		.thumb_func
  2340              	lv_group_get_obj_by_index:
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccXF3fLi.s 			page 63
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccWFT3zy.s 			page 63
 
 
  2341              	.LVL232:
@@ -3778,7 +3778,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccXF3fLi.s 			page 1
  2383              	.L206:
  395:Middlewares/LVGL/lvgl/src/core/lv_group.c ****         if(len == index) {
  2384              		.loc 1 395 5 is_stmt 1 discriminator 1 view .LVU712
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccXF3fLi.s 			page 64
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccWFT3zy.s 			page 64
 
 
  2385 001a 11B1     		cbz	r1, .L205
@@ -3838,7 +3838,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccXF3fLi.s 			page 1
  2431              		.cfi_endproc
  2432              	.LFE227:
  2434              		.section	.text.lv_group_by_index,"ax",%progbits
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccXF3fLi.s 			page 65
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccWFT3zy.s 			page 65
 
 
  2435              		.align	1
@@ -3898,7 +3898,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccXF3fLi.s 			page 1
  2479 0012 0448     		ldr	r0, .L221
  2480 0014 FFF7FEFF 		bl	lv_ll_get_prev
  2481              	.LVL249:
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccXF3fLi.s 			page 66
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccWFT3zy.s 			page 66
 
 
  414:Middlewares/LVGL/lvgl/src/core/lv_group.c ****         if(len == index) {
@@ -3958,7 +3958,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccXF3fLi.s 			page 1
  441:Middlewares/LVGL/lvgl/src/core/lv_group.c **** 
  2527              		.loc 1 441 1 view .LVU745
  2528 0004 7047     		bx	lr
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccXF3fLi.s 			page 67
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccWFT3zy.s 			page 67
 
 
  2529              		.cfi_endproc
@@ -4018,7 +4018,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccXF3fLi.s 			page 1
  2579              		.file 16 "Middlewares/LVGL/lvgl/src/core/lv_group.h"
  2580              		.file 17 "Middlewares/LVGL/lvgl/src/core/../core/../misc/../font/../draw/../misc/lv_area.h"
  2581              		.file 18 "Middlewares/LVGL/lvgl/src/core/../core/../misc/../font/../draw/../misc/lv_color.h"
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccXF3fLi.s 			page 68
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccWFT3zy.s 			page 68
 
 
  2582              		.file 19 "Middlewares/LVGL/lvgl/src/core/../core/../misc/../font/../draw/lv_image_dsc.h"
@@ -4041,92 +4041,92 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccXF3fLi.s 			page 1
  2599              		.file 36 "Middlewares/LVGL/lvgl/src/core/../core/../misc/../font/../draw/../misc/../stdlib/lv_mem.
  2600              		.file 37 "Middlewares/LVGL/lvgl/src/core/../core/lv_obj_pos.h"
  2601              		.file 38 "Middlewares/LVGL/lvgl/src/core/../core/lv_obj_event.h"
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccXF3fLi.s 			page 69
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccWFT3zy.s 			page 69
 
 
 DEFINED SYMBOLS
                             *ABS*:00000000 lv_group.c
-C:\Users\w1785\AppData\Local\Temp\ccXF3fLi.s:21     .text.get_indev:00000000 $t
-C:\Users\w1785\AppData\Local\Temp\ccXF3fLi.s:26     .text.get_indev:00000000 get_indev
-C:\Users\w1785\AppData\Local\Temp\ccXF3fLi.s:114    .text.focus_next_core:00000000 $t
-C:\Users\w1785\AppData\Local\Temp\ccXF3fLi.s:119    .text.focus_next_core:00000000 focus_next_core
-C:\Users\w1785\AppData\Local\Temp\ccXF3fLi.s:434    .text.lv_group_init:00000000 $t
-C:\Users\w1785\AppData\Local\Temp\ccXF3fLi.s:440    .text.lv_group_init:00000000 lv_group_init
-C:\Users\w1785\AppData\Local\Temp\ccXF3fLi.s:461    .text.lv_group_init:0000000c $d
-C:\Users\w1785\AppData\Local\Temp\ccXF3fLi.s:466    .text.lv_group_deinit:00000000 $t
-C:\Users\w1785\AppData\Local\Temp\ccXF3fLi.s:472    .text.lv_group_deinit:00000000 lv_group_deinit
-C:\Users\w1785\AppData\Local\Temp\ccXF3fLi.s:492    .text.lv_group_deinit:0000000c $d
-C:\Users\w1785\AppData\Local\Temp\ccXF3fLi.s:497    .text.lv_group_create:00000000 $t
-C:\Users\w1785\AppData\Local\Temp\ccXF3fLi.s:503    .text.lv_group_create:00000000 lv_group_create
-C:\Users\w1785\AppData\Local\Temp\ccXF3fLi.s:578    .text.lv_group_create:00000044 $d
-C:\Users\w1785\AppData\Local\Temp\ccXF3fLi.s:583    .text.lv_group_set_default:00000000 $t
-C:\Users\w1785\AppData\Local\Temp\ccXF3fLi.s:589    .text.lv_group_set_default:00000000 lv_group_set_default
-C:\Users\w1785\AppData\Local\Temp\ccXF3fLi.s:606    .text.lv_group_set_default:00000008 $d
-C:\Users\w1785\AppData\Local\Temp\ccXF3fLi.s:611    .text.lv_group_get_default:00000000 $t
-C:\Users\w1785\AppData\Local\Temp\ccXF3fLi.s:617    .text.lv_group_get_default:00000000 lv_group_get_default
-C:\Users\w1785\AppData\Local\Temp\ccXF3fLi.s:632    .text.lv_group_get_default:00000008 $d
-C:\Users\w1785\AppData\Local\Temp\ccXF3fLi.s:637    .text.lv_group_delete:00000000 $t
-C:\Users\w1785\AppData\Local\Temp\ccXF3fLi.s:643    .text.lv_group_delete:00000000 lv_group_delete
-C:\Users\w1785\AppData\Local\Temp\ccXF3fLi.s:815    .text.lv_group_delete:00000094 $d
-C:\Users\w1785\AppData\Local\Temp\ccXF3fLi.s:820    .text.lv_group_remove_all_objs:00000000 $t
-C:\Users\w1785\AppData\Local\Temp\ccXF3fLi.s:826    .text.lv_group_remove_all_objs:00000000 lv_group_remove_all_objs
-C:\Users\w1785\AppData\Local\Temp\ccXF3fLi.s:942    .text.lv_group_focus_next:00000000 $t
-C:\Users\w1785\AppData\Local\Temp\ccXF3fLi.s:948    .text.lv_group_focus_next:00000000 lv_group_focus_next
-C:\Users\w1785\AppData\Local\Temp\ccXF3fLi.s:1006   .text.lv_group_focus_next:00000020 $d
-C:\Users\w1785\AppData\Local\Temp\ccXF3fLi.s:1012   .text.lv_group_focus_prev:00000000 $t
-C:\Users\w1785\AppData\Local\Temp\ccXF3fLi.s:1018   .text.lv_group_focus_prev:00000000 lv_group_focus_prev
-C:\Users\w1785\AppData\Local\Temp\ccXF3fLi.s:1076   .text.lv_group_focus_prev:00000020 $d
-C:\Users\w1785\AppData\Local\Temp\ccXF3fLi.s:1082   .text.lv_group_refocus:00000000 $t
-C:\Users\w1785\AppData\Local\Temp\ccXF3fLi.s:1087   .text.lv_group_refocus:00000000 lv_group_refocus
-C:\Users\w1785\AppData\Local\Temp\ccXF3fLi.s:1144   .text.lv_group_remove_obj:00000000 $t
-C:\Users\w1785\AppData\Local\Temp\ccXF3fLi.s:1150   .text.lv_group_remove_obj:00000000 lv_group_remove_obj
-C:\Users\w1785\AppData\Local\Temp\ccXF3fLi.s:1318   .text.lv_group_add_obj:00000000 $t
-C:\Users\w1785\AppData\Local\Temp\ccXF3fLi.s:1324   .text.lv_group_add_obj:00000000 lv_group_add_obj
-C:\Users\w1785\AppData\Local\Temp\ccXF3fLi.s:1431   .text.lv_group_focus_freeze:00000000 $t
-C:\Users\w1785\AppData\Local\Temp\ccXF3fLi.s:1437   .text.lv_group_focus_freeze:00000000 lv_group_focus_freeze
-C:\Users\w1785\AppData\Local\Temp\ccXF3fLi.s:1478   .text.lv_group_set_focus_cb:00000000 $t
-C:\Users\w1785\AppData\Local\Temp\ccXF3fLi.s:1484   .text.lv_group_set_focus_cb:00000000 lv_group_set_focus_cb
-C:\Users\w1785\AppData\Local\Temp\ccXF3fLi.s:1505   .text.lv_group_set_edge_cb:00000000 $t
-C:\Users\w1785\AppData\Local\Temp\ccXF3fLi.s:1511   .text.lv_group_set_edge_cb:00000000 lv_group_set_edge_cb
-C:\Users\w1785\AppData\Local\Temp\ccXF3fLi.s:1540   .text.lv_group_set_refocus_policy:00000000 $t
-C:\Users\w1785\AppData\Local\Temp\ccXF3fLi.s:1546   .text.lv_group_set_refocus_policy:00000000 lv_group_set_refocus_policy
-C:\Users\w1785\AppData\Local\Temp\ccXF3fLi.s:1577   .text.lv_group_set_wrap:00000000 $t
-C:\Users\w1785\AppData\Local\Temp\ccXF3fLi.s:1583   .text.lv_group_set_wrap:00000000 lv_group_set_wrap
-C:\Users\w1785\AppData\Local\Temp\ccXF3fLi.s:1614   .text.lv_group_get_focused:00000000 $t
-C:\Users\w1785\AppData\Local\Temp\ccXF3fLi.s:1620   .text.lv_group_get_focused:00000000 lv_group_get_focused
-C:\Users\w1785\AppData\Local\Temp\ccXF3fLi.s:1648   .text.lv_group_send_data:00000000 $t
-C:\Users\w1785\AppData\Local\Temp\ccXF3fLi.s:1654   .text.lv_group_send_data:00000000 lv_group_send_data
-C:\Users\w1785\AppData\Local\Temp\ccXF3fLi.s:1732   .text.lv_group_set_editing:00000000 $t
-C:\Users\w1785\AppData\Local\Temp\ccXF3fLi.s:1738   .text.lv_group_set_editing:00000000 lv_group_set_editing
-C:\Users\w1785\AppData\Local\Temp\ccXF3fLi.s:1844   .text.lv_group_focus_obj:00000000 $t
-C:\Users\w1785\AppData\Local\Temp\ccXF3fLi.s:1850   .text.lv_group_focus_obj:00000000 lv_group_focus_obj
-C:\Users\w1785\AppData\Local\Temp\ccXF3fLi.s:2024   .text.lv_group_swap_obj:00000000 $t
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccXF3fLi.s 			page 70
+C:\Users\w1785\AppData\Local\Temp\ccWFT3zy.s:21     .text.get_indev:00000000 $t
+C:\Users\w1785\AppData\Local\Temp\ccWFT3zy.s:26     .text.get_indev:00000000 get_indev
+C:\Users\w1785\AppData\Local\Temp\ccWFT3zy.s:114    .text.focus_next_core:00000000 $t
+C:\Users\w1785\AppData\Local\Temp\ccWFT3zy.s:119    .text.focus_next_core:00000000 focus_next_core
+C:\Users\w1785\AppData\Local\Temp\ccWFT3zy.s:434    .text.lv_group_init:00000000 $t
+C:\Users\w1785\AppData\Local\Temp\ccWFT3zy.s:440    .text.lv_group_init:00000000 lv_group_init
+C:\Users\w1785\AppData\Local\Temp\ccWFT3zy.s:461    .text.lv_group_init:0000000c $d
+C:\Users\w1785\AppData\Local\Temp\ccWFT3zy.s:466    .text.lv_group_deinit:00000000 $t
+C:\Users\w1785\AppData\Local\Temp\ccWFT3zy.s:472    .text.lv_group_deinit:00000000 lv_group_deinit
+C:\Users\w1785\AppData\Local\Temp\ccWFT3zy.s:492    .text.lv_group_deinit:0000000c $d
+C:\Users\w1785\AppData\Local\Temp\ccWFT3zy.s:497    .text.lv_group_create:00000000 $t
+C:\Users\w1785\AppData\Local\Temp\ccWFT3zy.s:503    .text.lv_group_create:00000000 lv_group_create
+C:\Users\w1785\AppData\Local\Temp\ccWFT3zy.s:578    .text.lv_group_create:00000044 $d
+C:\Users\w1785\AppData\Local\Temp\ccWFT3zy.s:583    .text.lv_group_set_default:00000000 $t
+C:\Users\w1785\AppData\Local\Temp\ccWFT3zy.s:589    .text.lv_group_set_default:00000000 lv_group_set_default
+C:\Users\w1785\AppData\Local\Temp\ccWFT3zy.s:606    .text.lv_group_set_default:00000008 $d
+C:\Users\w1785\AppData\Local\Temp\ccWFT3zy.s:611    .text.lv_group_get_default:00000000 $t
+C:\Users\w1785\AppData\Local\Temp\ccWFT3zy.s:617    .text.lv_group_get_default:00000000 lv_group_get_default
+C:\Users\w1785\AppData\Local\Temp\ccWFT3zy.s:632    .text.lv_group_get_default:00000008 $d
+C:\Users\w1785\AppData\Local\Temp\ccWFT3zy.s:637    .text.lv_group_delete:00000000 $t
+C:\Users\w1785\AppData\Local\Temp\ccWFT3zy.s:643    .text.lv_group_delete:00000000 lv_group_delete
+C:\Users\w1785\AppData\Local\Temp\ccWFT3zy.s:815    .text.lv_group_delete:00000094 $d
+C:\Users\w1785\AppData\Local\Temp\ccWFT3zy.s:820    .text.lv_group_remove_all_objs:00000000 $t
+C:\Users\w1785\AppData\Local\Temp\ccWFT3zy.s:826    .text.lv_group_remove_all_objs:00000000 lv_group_remove_all_objs
+C:\Users\w1785\AppData\Local\Temp\ccWFT3zy.s:942    .text.lv_group_focus_next:00000000 $t
+C:\Users\w1785\AppData\Local\Temp\ccWFT3zy.s:948    .text.lv_group_focus_next:00000000 lv_group_focus_next
+C:\Users\w1785\AppData\Local\Temp\ccWFT3zy.s:1006   .text.lv_group_focus_next:00000020 $d
+C:\Users\w1785\AppData\Local\Temp\ccWFT3zy.s:1012   .text.lv_group_focus_prev:00000000 $t
+C:\Users\w1785\AppData\Local\Temp\ccWFT3zy.s:1018   .text.lv_group_focus_prev:00000000 lv_group_focus_prev
+C:\Users\w1785\AppData\Local\Temp\ccWFT3zy.s:1076   .text.lv_group_focus_prev:00000020 $d
+C:\Users\w1785\AppData\Local\Temp\ccWFT3zy.s:1082   .text.lv_group_refocus:00000000 $t
+C:\Users\w1785\AppData\Local\Temp\ccWFT3zy.s:1087   .text.lv_group_refocus:00000000 lv_group_refocus
+C:\Users\w1785\AppData\Local\Temp\ccWFT3zy.s:1144   .text.lv_group_remove_obj:00000000 $t
+C:\Users\w1785\AppData\Local\Temp\ccWFT3zy.s:1150   .text.lv_group_remove_obj:00000000 lv_group_remove_obj
+C:\Users\w1785\AppData\Local\Temp\ccWFT3zy.s:1318   .text.lv_group_add_obj:00000000 $t
+C:\Users\w1785\AppData\Local\Temp\ccWFT3zy.s:1324   .text.lv_group_add_obj:00000000 lv_group_add_obj
+C:\Users\w1785\AppData\Local\Temp\ccWFT3zy.s:1431   .text.lv_group_focus_freeze:00000000 $t
+C:\Users\w1785\AppData\Local\Temp\ccWFT3zy.s:1437   .text.lv_group_focus_freeze:00000000 lv_group_focus_freeze
+C:\Users\w1785\AppData\Local\Temp\ccWFT3zy.s:1478   .text.lv_group_set_focus_cb:00000000 $t
+C:\Users\w1785\AppData\Local\Temp\ccWFT3zy.s:1484   .text.lv_group_set_focus_cb:00000000 lv_group_set_focus_cb
+C:\Users\w1785\AppData\Local\Temp\ccWFT3zy.s:1505   .text.lv_group_set_edge_cb:00000000 $t
+C:\Users\w1785\AppData\Local\Temp\ccWFT3zy.s:1511   .text.lv_group_set_edge_cb:00000000 lv_group_set_edge_cb
+C:\Users\w1785\AppData\Local\Temp\ccWFT3zy.s:1540   .text.lv_group_set_refocus_policy:00000000 $t
+C:\Users\w1785\AppData\Local\Temp\ccWFT3zy.s:1546   .text.lv_group_set_refocus_policy:00000000 lv_group_set_refocus_policy
+C:\Users\w1785\AppData\Local\Temp\ccWFT3zy.s:1577   .text.lv_group_set_wrap:00000000 $t
+C:\Users\w1785\AppData\Local\Temp\ccWFT3zy.s:1583   .text.lv_group_set_wrap:00000000 lv_group_set_wrap
+C:\Users\w1785\AppData\Local\Temp\ccWFT3zy.s:1614   .text.lv_group_get_focused:00000000 $t
+C:\Users\w1785\AppData\Local\Temp\ccWFT3zy.s:1620   .text.lv_group_get_focused:00000000 lv_group_get_focused
+C:\Users\w1785\AppData\Local\Temp\ccWFT3zy.s:1648   .text.lv_group_send_data:00000000 $t
+C:\Users\w1785\AppData\Local\Temp\ccWFT3zy.s:1654   .text.lv_group_send_data:00000000 lv_group_send_data
+C:\Users\w1785\AppData\Local\Temp\ccWFT3zy.s:1732   .text.lv_group_set_editing:00000000 $t
+C:\Users\w1785\AppData\Local\Temp\ccWFT3zy.s:1738   .text.lv_group_set_editing:00000000 lv_group_set_editing
+C:\Users\w1785\AppData\Local\Temp\ccWFT3zy.s:1844   .text.lv_group_focus_obj:00000000 $t
+C:\Users\w1785\AppData\Local\Temp\ccWFT3zy.s:1850   .text.lv_group_focus_obj:00000000 lv_group_focus_obj
+C:\Users\w1785\AppData\Local\Temp\ccWFT3zy.s:2024   .text.lv_group_swap_obj:00000000 $t
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccWFT3zy.s 			page 70
 
 
-C:\Users\w1785\AppData\Local\Temp\ccXF3fLi.s:2030   .text.lv_group_swap_obj:00000000 lv_group_swap_obj
-C:\Users\w1785\AppData\Local\Temp\ccXF3fLi.s:2150   .text.lv_group_get_focus_cb:00000000 $t
-C:\Users\w1785\AppData\Local\Temp\ccXF3fLi.s:2156   .text.lv_group_get_focus_cb:00000000 lv_group_get_focus_cb
-C:\Users\w1785\AppData\Local\Temp\ccXF3fLi.s:2184   .text.lv_group_get_edge_cb:00000000 $t
-C:\Users\w1785\AppData\Local\Temp\ccXF3fLi.s:2190   .text.lv_group_get_edge_cb:00000000 lv_group_get_edge_cb
-C:\Users\w1785\AppData\Local\Temp\ccXF3fLi.s:2218   .text.lv_group_get_editing:00000000 $t
-C:\Users\w1785\AppData\Local\Temp\ccXF3fLi.s:2224   .text.lv_group_get_editing:00000000 lv_group_get_editing
-C:\Users\w1785\AppData\Local\Temp\ccXF3fLi.s:2253   .text.lv_group_get_wrap:00000000 $t
-C:\Users\w1785\AppData\Local\Temp\ccXF3fLi.s:2259   .text.lv_group_get_wrap:00000000 lv_group_get_wrap
-C:\Users\w1785\AppData\Local\Temp\ccXF3fLi.s:2288   .text.lv_group_get_obj_count:00000000 $t
-C:\Users\w1785\AppData\Local\Temp\ccXF3fLi.s:2294   .text.lv_group_get_obj_count:00000000 lv_group_get_obj_count
-C:\Users\w1785\AppData\Local\Temp\ccXF3fLi.s:2334   .text.lv_group_get_obj_by_index:00000000 $t
-C:\Users\w1785\AppData\Local\Temp\ccXF3fLi.s:2340   .text.lv_group_get_obj_by_index:00000000 lv_group_get_obj_by_index
-C:\Users\w1785\AppData\Local\Temp\ccXF3fLi.s:2403   .text.lv_group_get_count:00000000 $t
-C:\Users\w1785\AppData\Local\Temp\ccXF3fLi.s:2409   .text.lv_group_get_count:00000000 lv_group_get_count
-C:\Users\w1785\AppData\Local\Temp\ccXF3fLi.s:2430   .text.lv_group_get_count:0000000c $d
-C:\Users\w1785\AppData\Local\Temp\ccXF3fLi.s:2435   .text.lv_group_by_index:00000000 $t
-C:\Users\w1785\AppData\Local\Temp\ccXF3fLi.s:2441   .text.lv_group_by_index:00000000 lv_group_by_index
-C:\Users\w1785\AppData\Local\Temp\ccXF3fLi.s:2501   .text.lv_group_by_index:00000024 $d
-C:\Users\w1785\AppData\Local\Temp\ccXF3fLi.s:2506   .text.lv_group_set_user_data:00000000 $t
-C:\Users\w1785\AppData\Local\Temp\ccXF3fLi.s:2512   .text.lv_group_set_user_data:00000000 lv_group_set_user_data
-C:\Users\w1785\AppData\Local\Temp\ccXF3fLi.s:2533   .text.lv_group_get_user_data:00000000 $t
-C:\Users\w1785\AppData\Local\Temp\ccXF3fLi.s:2539   .text.lv_group_get_user_data:00000000 lv_group_get_user_data
+C:\Users\w1785\AppData\Local\Temp\ccWFT3zy.s:2030   .text.lv_group_swap_obj:00000000 lv_group_swap_obj
+C:\Users\w1785\AppData\Local\Temp\ccWFT3zy.s:2150   .text.lv_group_get_focus_cb:00000000 $t
+C:\Users\w1785\AppData\Local\Temp\ccWFT3zy.s:2156   .text.lv_group_get_focus_cb:00000000 lv_group_get_focus_cb
+C:\Users\w1785\AppData\Local\Temp\ccWFT3zy.s:2184   .text.lv_group_get_edge_cb:00000000 $t
+C:\Users\w1785\AppData\Local\Temp\ccWFT3zy.s:2190   .text.lv_group_get_edge_cb:00000000 lv_group_get_edge_cb
+C:\Users\w1785\AppData\Local\Temp\ccWFT3zy.s:2218   .text.lv_group_get_editing:00000000 $t
+C:\Users\w1785\AppData\Local\Temp\ccWFT3zy.s:2224   .text.lv_group_get_editing:00000000 lv_group_get_editing
+C:\Users\w1785\AppData\Local\Temp\ccWFT3zy.s:2253   .text.lv_group_get_wrap:00000000 $t
+C:\Users\w1785\AppData\Local\Temp\ccWFT3zy.s:2259   .text.lv_group_get_wrap:00000000 lv_group_get_wrap
+C:\Users\w1785\AppData\Local\Temp\ccWFT3zy.s:2288   .text.lv_group_get_obj_count:00000000 $t
+C:\Users\w1785\AppData\Local\Temp\ccWFT3zy.s:2294   .text.lv_group_get_obj_count:00000000 lv_group_get_obj_count
+C:\Users\w1785\AppData\Local\Temp\ccWFT3zy.s:2334   .text.lv_group_get_obj_by_index:00000000 $t
+C:\Users\w1785\AppData\Local\Temp\ccWFT3zy.s:2340   .text.lv_group_get_obj_by_index:00000000 lv_group_get_obj_by_index
+C:\Users\w1785\AppData\Local\Temp\ccWFT3zy.s:2403   .text.lv_group_get_count:00000000 $t
+C:\Users\w1785\AppData\Local\Temp\ccWFT3zy.s:2409   .text.lv_group_get_count:00000000 lv_group_get_count
+C:\Users\w1785\AppData\Local\Temp\ccWFT3zy.s:2430   .text.lv_group_get_count:0000000c $d
+C:\Users\w1785\AppData\Local\Temp\ccWFT3zy.s:2435   .text.lv_group_by_index:00000000 $t
+C:\Users\w1785\AppData\Local\Temp\ccWFT3zy.s:2441   .text.lv_group_by_index:00000000 lv_group_by_index
+C:\Users\w1785\AppData\Local\Temp\ccWFT3zy.s:2501   .text.lv_group_by_index:00000024 $d
+C:\Users\w1785\AppData\Local\Temp\ccWFT3zy.s:2506   .text.lv_group_set_user_data:00000000 $t
+C:\Users\w1785\AppData\Local\Temp\ccWFT3zy.s:2512   .text.lv_group_set_user_data:00000000 lv_group_set_user_data
+C:\Users\w1785\AppData\Local\Temp\ccWFT3zy.s:2533   .text.lv_group_get_user_data:00000000 $t
+C:\Users\w1785\AppData\Local\Temp\ccWFT3zy.s:2539   .text.lv_group_get_user_data:00000000 lv_group_get_user_data
 
 UNDEFINED SYMBOLS
 lv_indev_get_next

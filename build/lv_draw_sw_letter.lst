@@ -1,4 +1,4 @@
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccQbUbK1.s 			page 1
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccLTATpr.s 			page 1
 
 
    1              		.cpu cortex-m4
@@ -58,7 +58,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccQbUbK1.s 			page 1
   28:Middlewares/LVGL/lvgl/src/draw/sw/lv_draw_sw_letter.c **** #include "../../font/lv_font.h"
   29:Middlewares/LVGL/lvgl/src/draw/sw/lv_draw_sw_letter.c **** #include "../../core/lv_refr_private.h"
   30:Middlewares/LVGL/lvgl/src/draw/sw/lv_draw_sw_letter.c **** #include "../../stdlib/lv_string.h"
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccQbUbK1.s 			page 2
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccLTATpr.s 			page 2
 
 
   31:Middlewares/LVGL/lvgl/src/draw/sw/lv_draw_sw_letter.c **** 
@@ -118,7 +118,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccQbUbK1.s 			page 1
   85:Middlewares/LVGL/lvgl/src/draw/sw/lv_draw_sw_letter.c **** 
   86:Middlewares/LVGL/lvgl/src/draw/sw/lv_draw_sw_letter.c ****     lv_draw_glyph_dsc_t glyph_dsc;
   87:Middlewares/LVGL/lvgl/src/draw/sw/lv_draw_sw_letter.c ****     lv_draw_glyph_dsc_init(&glyph_dsc);
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccQbUbK1.s 			page 3
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccLTATpr.s 			page 3
 
 
   88:Middlewares/LVGL/lvgl/src/draw/sw/lv_draw_sw_letter.c ****     glyph_dsc.opa = dsc->opa;
@@ -178,7 +178,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccQbUbK1.s 			page 1
   39              		.cfi_offset 6, -20
   40              		.cfi_offset 7, -16
   41              		.cfi_offset 8, -12
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccQbUbK1.s 			page 4
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccLTATpr.s 			page 4
 
 
   42              		.cfi_offset 9, -8
@@ -238,7 +238,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccQbUbK1.s 			page 1
  134:Middlewares/LVGL/lvgl/src/draw/sw/lv_draw_sw_letter.c ****             case LV_FONT_GLYPH_FORMAT_NONE: {
  135:Middlewares/LVGL/lvgl/src/draw/sw/lv_draw_sw_letter.c **** #if LV_USE_FONT_PLACEHOLDER
  136:Middlewares/LVGL/lvgl/src/draw/sw/lv_draw_sw_letter.c ****                     if(glyph_draw_dsc->bg_coords == NULL) break;
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccQbUbK1.s 			page 5
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccLTATpr.s 			page 5
 
 
   94              		.loc 1 136 21 is_stmt 1 view .LVU7
@@ -298,7 +298,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccQbUbK1.s 			page 1
  151:Middlewares/LVGL/lvgl/src/draw/sw/lv_draw_sw_letter.c ****             case LV_FONT_GLYPH_FORMAT_A8:
  152:Middlewares/LVGL/lvgl/src/draw/sw/lv_draw_sw_letter.c ****             case LV_FONT_GLYPH_FORMAT_IMAGE: {
  153:Middlewares/LVGL/lvgl/src/draw/sw/lv_draw_sw_letter.c ****                     if(glyph_draw_dsc->rotation % 3600 == 0 && glyph_draw_dsc->format != LV_FONT_GL
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccQbUbK1.s 			page 6
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccLTATpr.s 			page 6
 
 
  134              		.loc 1 153 21 view .LVU22
@@ -358,7 +358,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccQbUbK1.s 			page 1
  187:Middlewares/LVGL/lvgl/src/draw/sw/lv_draw_sw_letter.c ****                             blend_dsc.blend_area = glyph_draw_dsc->letter_coords;
  188:Middlewares/LVGL/lvgl/src/draw/sw/lv_draw_sw_letter.c ****                             blend_dsc.mask_res = LV_DRAW_SW_MASK_RES_CHANGED;
  189:Middlewares/LVGL/lvgl/src/draw/sw/lv_draw_sw_letter.c ****                             lv_draw_sw_blend(t, &blend_dsc);
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccQbUbK1.s 			page 7
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccLTATpr.s 			page 7
 
 
  190:Middlewares/LVGL/lvgl/src/draw/sw/lv_draw_sw_letter.c ****                         }
@@ -418,7 +418,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccQbUbK1.s 			page 1
  202:Middlewares/LVGL/lvgl/src/draw/sw/lv_draw_sw_letter.c ****                         img_dsc.pivot = (lv_point_t) {
  197              		.loc 1 202 25 is_stmt 1 view .LVU48
  203:Middlewares/LVGL/lvgl/src/draw/sw/lv_draw_sw_letter.c ****                             .x = glyph_draw_dsc->pivot.x,
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccQbUbK1.s 			page 8
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccLTATpr.s 			page 8
 
 
  198              		.loc 1 203 55 is_stmt 0 view .LVU49
@@ -478,7 +478,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccQbUbK1.s 			page 1
  231              	.L1:
  224:Middlewares/LVGL/lvgl/src/draw/sw/lv_draw_sw_letter.c ****     }
  225:Middlewares/LVGL/lvgl/src/draw/sw/lv_draw_sw_letter.c **** }
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccQbUbK1.s 			page 9
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccLTATpr.s 			page 9
 
 
  232              		.loc 1 225 1 is_stmt 0 view .LVU61
@@ -538,7 +538,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccQbUbK1.s 			page 1
  274              	.LVL15:
  172:Middlewares/LVGL/lvgl/src/draw/sw/lv_draw_sw_letter.c ****                             if(glyph_draw_dsc->glyph_data == NULL) {
  275              		.loc 1 172 56 discriminator 1 view .LVU74
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccQbUbK1.s 			page 10
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccLTATpr.s 			page 10
 
 
  276 0110 3060     		str	r0, [r6]
@@ -598,7 +598,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccQbUbK1.s 			page 1
   15:Middlewares/LVGL/lvgl/src/draw/sw/blend/../../../misc/../stdlib/lv_string.h ****  *********************/
   16:Middlewares/LVGL/lvgl/src/draw/sw/blend/../../../misc/../stdlib/lv_string.h **** #include "../lv_conf_internal.h"
   17:Middlewares/LVGL/lvgl/src/draw/sw/blend/../../../misc/../stdlib/lv_string.h **** #include "../misc/lv_types.h"
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccQbUbK1.s 			page 11
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccLTATpr.s 			page 11
 
 
   18:Middlewares/LVGL/lvgl/src/draw/sw/blend/../../../misc/../stdlib/lv_string.h **** 
@@ -658,7 +658,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccQbUbK1.s 			page 1
   72:Middlewares/LVGL/lvgl/src/draw/sw/blend/../../../misc/../stdlib/lv_string.h ****  */
   73:Middlewares/LVGL/lvgl/src/draw/sw/blend/../../../misc/../stdlib/lv_string.h **** static inline void lv_memzero(void * dst, size_t len)
  305              		.loc 2 73 20 view .LVU86
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccQbUbK1.s 			page 12
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccLTATpr.s 			page 12
 
 
  306              	.LBB16:
@@ -718,7 +718,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccQbUbK1.s 			page 1
  344 015c 1B89     		ldrh	r3, [r3, #8]
  345              	.LVL22:
  186:Middlewares/LVGL/lvgl/src/draw/sw/lv_draw_sw_letter.c ****                             blend_dsc.blend_area = glyph_draw_dsc->letter_coords;
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccQbUbK1.s 			page 13
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccLTATpr.s 			page 13
 
 
  346              		.loc 1 186 51 view .LVU104
@@ -778,7 +778,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccQbUbK1.s 			page 1
  386              		.loc 2 75 5 view .LVU119
  387 0184 0DF11409 		add	r9, sp, #20
  388              	.LVL27:
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccQbUbK1.s 			page 14
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccLTATpr.s 			page 14
 
 
  389              		.loc 2 75 5 is_stmt 0 view .LVU120
@@ -838,7 +838,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccQbUbK1.s 			page 1
  167:Middlewares/LVGL/lvgl/src/draw/sw/lv_draw_sw_letter.c ****                             blend_dsc.mask_res = LV_DRAW_SW_MASK_RES_CHANGED;
  428              		.loc 1 167 50 view .LVU138
  429 01b4 0593     		str	r3, [sp, #20]
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccQbUbK1.s 			page 15
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccLTATpr.s 			page 15
 
 
  168:Middlewares/LVGL/lvgl/src/draw/sw/lv_draw_sw_letter.c ****                             lv_draw_sw_blend(t, &blend_dsc);
@@ -898,7 +898,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccQbUbK1.s 			page 1
  477              		.cfi_offset 5, -16
  478              		.cfi_offset 6, -12
  479              		.cfi_offset 7, -8
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccQbUbK1.s 			page 16
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccLTATpr.s 			page 16
 
 
  480              		.cfi_offset 14, -4
@@ -958,7 +958,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccQbUbK1.s 			page 1
  518 0038 0BAB     		add	r3, sp, #44
  519 003a 04F14802 		add	r2, r4, #72
  520 003e 92E80300 		ldm	r2, {r0, r1}
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccQbUbK1.s 			page 17
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccLTATpr.s 			page 17
 
 
  521 0042 83E80300 		stm	r3, {r0, r1}
@@ -1018,7 +1018,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccQbUbK1.s 			page 1
  560              		.cfi_def_cfa_offset 20
  561              		@ sp needed
  562 0070 F0BD     		pop	{r4, r5, r6, r7, pc}
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccQbUbK1.s 			page 18
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccLTATpr.s 			page 18
 
 
  563              	.LVL36:
@@ -1078,7 +1078,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccQbUbK1.s 			page 1
  609              		.loc 1 122 25 view .LVU188
  610 0012 FAE7     		b	.L29
  611              	.L34:
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccQbUbK1.s 			page 19
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccLTATpr.s 			page 19
 
 
  612              		.align	2
@@ -1111,22 +1111,22 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccQbUbK1.s 			page 1
  640              		.file 23 "Middlewares/LVGL/lvgl/src/draw/sw/../lv_draw_label.h"
  641              		.file 24 "Middlewares/LVGL/lvgl/src/draw/sw/lv_draw_sw.h"
  642              		.file 25 "Middlewares/LVGL/lvgl/src/draw/sw/blend/lv_draw_sw_blend.h"
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccQbUbK1.s 			page 20
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccLTATpr.s 			page 20
 
 
 DEFINED SYMBOLS
                             *ABS*:00000000 lv_draw_sw_letter.c
-C:\Users\w1785\AppData\Local\Temp\ccQbUbK1.s:21     .text.draw_letter_cb:00000000 $t
-C:\Users\w1785\AppData\Local\Temp\ccQbUbK1.s:26     .text.draw_letter_cb:00000000 draw_letter_cb
-C:\Users\w1785\AppData\Local\Temp\ccQbUbK1.s:65     .text.draw_letter_cb:0000001c $d
-C:\Users\w1785\AppData\Local\Temp\ccQbUbK1.s:91     .text.draw_letter_cb:00000036 $t
-C:\Users\w1785\AppData\Local\Temp\ccQbUbK1.s:445    .text.draw_letter_cb:000001c8 $d
-C:\Users\w1785\AppData\Local\Temp\ccQbUbK1.s:451    .text.lv_draw_sw_letter:00000000 $t
-C:\Users\w1785\AppData\Local\Temp\ccQbUbK1.s:457    .text.lv_draw_sw_letter:00000000 lv_draw_sw_letter
-C:\Users\w1785\AppData\Local\Temp\ccQbUbK1.s:568    .text.lv_draw_sw_letter:00000074 $d
-C:\Users\w1785\AppData\Local\Temp\ccQbUbK1.s:573    .text.lv_draw_sw_label:00000000 $t
-C:\Users\w1785\AppData\Local\Temp\ccQbUbK1.s:579    .text.lv_draw_sw_label:00000000 lv_draw_sw_label
-C:\Users\w1785\AppData\Local\Temp\ccQbUbK1.s:614    .text.lv_draw_sw_label:00000014 $d
+C:\Users\w1785\AppData\Local\Temp\ccLTATpr.s:21     .text.draw_letter_cb:00000000 $t
+C:\Users\w1785\AppData\Local\Temp\ccLTATpr.s:26     .text.draw_letter_cb:00000000 draw_letter_cb
+C:\Users\w1785\AppData\Local\Temp\ccLTATpr.s:65     .text.draw_letter_cb:0000001c $d
+C:\Users\w1785\AppData\Local\Temp\ccLTATpr.s:91     .text.draw_letter_cb:00000036 $t
+C:\Users\w1785\AppData\Local\Temp\ccLTATpr.s:445    .text.draw_letter_cb:000001c8 $d
+C:\Users\w1785\AppData\Local\Temp\ccLTATpr.s:451    .text.lv_draw_sw_letter:00000000 $t
+C:\Users\w1785\AppData\Local\Temp\ccLTATpr.s:457    .text.lv_draw_sw_letter:00000000 lv_draw_sw_letter
+C:\Users\w1785\AppData\Local\Temp\ccLTATpr.s:568    .text.lv_draw_sw_letter:00000074 $d
+C:\Users\w1785\AppData\Local\Temp\ccLTATpr.s:573    .text.lv_draw_sw_label:00000000 $t
+C:\Users\w1785\AppData\Local\Temp\ccLTATpr.s:579    .text.lv_draw_sw_label:00000000 lv_draw_sw_label
+C:\Users\w1785\AppData\Local\Temp\ccLTATpr.s:614    .text.lv_draw_sw_label:00000014 $d
 
 UNDEFINED SYMBOLS
 lv_draw_border_dsc_init

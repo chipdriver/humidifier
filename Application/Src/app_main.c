@@ -1,7 +1,6 @@
 #include "app_main.h"
 #include "display_service.h"
-#include "lv_port_disp.h"
-#include "lvgl.h"
+#include "sensor_service.h"
 
 /**
  * @brief 应用层主流程入口。
@@ -12,17 +11,32 @@ void App_Main(void)
   /* 初始化显示相关业务服务。 */
   DisplayService_Init();
 
-  lv_init();
-  lv_tick_set_cb(HAL_GetTick);
-  LV_Port_Disp_Init();
+  /* 初始化温湿度传感器业务服务。 */
+  if (SensorService_Init() != SENSOR_SERVICE_OK)
+  {
+    /* 如果传感器初始化失败，就在屏幕上显示错误。 */
+    DisplayService_ShowSensorError();
 
-  lv_obj_t *label = lv_label_create(lv_screen_active());
-  lv_label_set_text(label, "Hello LVGL");
-  lv_obj_center(label);
+    /* 停在错误循环中，方便烧录后观察屏幕和调试。 */
+    while (1)
+    {
+      /* 每 1 秒延时一次，避免空转。 */
+      HAL_Delay(1000U);
+    }
+  }
+
+  /* 初始化成功后先尝试读取一次，避免上电后长时间没有有效显示数据。 */
+  (void)SensorService_Update();
 
   while (1)
   {
-    lv_timer_handler();
-    HAL_Delay(5U);
+    /* 按默认周期更新温湿度缓存。 */
+    (void)SensorService_UpdatePeriodic();
+
+    /* 把当前温湿度缓存显示到 LCD。 */
+    DisplayService_Update();
+
+    /* 应用主循环每 200 ms 执行一次。 */
+    HAL_Delay(200U);
   }
 }

@@ -23,7 +23,9 @@ build/display_service.o: Services/Src/display_service.c \
  Drivers/STM32G4xx_HAL_Driver/Inc/stm32g4xx_hal_flash_ramfunc.h \
  Drivers/STM32G4xx_HAL_Driver/Inc/stm32g4xx_hal_pwr.h \
  Drivers/STM32G4xx_HAL_Driver/Inc/stm32g4xx_hal_pwr_ex.h \
- DeviceDrivers/LCD/Inc/st7789.h HardwareDrivers/LCD/Inc/lcd_hw.h
+ Services/Inc/sensor_service.h DeviceDrivers/Sensor/Inc/aht20.h \
+ HardwareDrivers/I2C/Inc/i2c_sw.h DeviceDrivers/LCD/Inc/st7789.h \
+ HardwareDrivers/LCD/Inc/lcd_hw.h
 Services/Inc/display_service.h:
 Core/Inc/main.h:
 Drivers/STM32G4xx_HAL_Driver/Inc/stm32g4xx_hal.h:
@@ -51,5 +53,8 @@ Drivers/STM32G4xx_HAL_Driver/Inc/stm32g4xx_hal_flash_ex.h:
 Drivers/STM32G4xx_HAL_Driver/Inc/stm32g4xx_hal_flash_ramfunc.h:
 Drivers/STM32G4xx_HAL_Driver/Inc/stm32g4xx_hal_pwr.h:
 Drivers/STM32G4xx_HAL_Driver/Inc/stm32g4xx_hal_pwr_ex.h:
+Services/Inc/sensor_service.h:
+DeviceDrivers/Sensor/Inc/aht20.h:
+HardwareDrivers/I2C/Inc/i2c_sw.h:
 DeviceDrivers/LCD/Inc/st7789.h:
 HardwareDrivers/LCD/Inc/lcd_hw.h:

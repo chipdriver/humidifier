@@ -1,4 +1,4 @@
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccWrnjUF.s 			page 1
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccBO912E.s 			page 1
 
 
    1              		.cpu cortex-m4
@@ -58,7 +58,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccWrnjUF.s 			page 1
   27:Middlewares/LVGL/lvgl/src/misc/lv_text_private.h **** #define LV_TXT_ENC_UTF8 1
   28:Middlewares/LVGL/lvgl/src/misc/lv_text_private.h **** #define LV_TXT_ENC_ASCII 2
   29:Middlewares/LVGL/lvgl/src/misc/lv_text_private.h **** 
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccWrnjUF.s 			page 2
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccBO912E.s 			page 2
 
 
   30:Middlewares/LVGL/lvgl/src/misc/lv_text_private.h **** #define LV_TEXT_LEN_MAX UINT32_MAX
@@ -118,7 +118,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccWrnjUF.s 			page 1
   84:Middlewares/LVGL/lvgl/src/misc/lv_text_private.h ****  * @param state
   85:Middlewares/LVGL/lvgl/src/misc/lv_text_private.h ****  * @param c
   86:Middlewares/LVGL/lvgl/src/misc/lv_text_private.h ****  * @return True if c is state
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccWrnjUF.s 			page 3
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccBO912E.s 			page 3
 
 
   87:Middlewares/LVGL/lvgl/src/misc/lv_text_private.h ****  */
@@ -178,7 +178,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccWrnjUF.s 			page 1
  141:Middlewares/LVGL/lvgl/src/misc/lv_text_private.h **** /**
  142:Middlewares/LVGL/lvgl/src/misc/lv_text_private.h ****  * Test if char is break char or not (a text can broken here or not)
  143:Middlewares/LVGL/lvgl/src/misc/lv_text_private.h ****  * @param letter a letter
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccWrnjUF.s 			page 4
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccBO912E.s 			page 4
 
 
  144:Middlewares/LVGL/lvgl/src/misc/lv_text_private.h ****  * @return false: 'letter' is not break char
@@ -238,7 +238,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccWrnjUF.s 			page 1
   49 0014 5D2A     		cmp	r2, #93
   50 0016 1FD9     		bls	.L5
  179:Middlewares/LVGL/lvgl/src/misc/lv_text_private.h ****         return true;
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccWrnjUF.s 			page 5
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccBO912E.s 			page 5
 
 
  180:Middlewares/LVGL/lvgl/src/misc/lv_text_private.h ****     }
@@ -298,7 +298,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccWrnjUF.s 			page 1
   81 0040 14D9     		bls	.L10
  204:Middlewares/LVGL/lvgl/src/misc/lv_text_private.h ****         return true;
  205:Middlewares/LVGL/lvgl/src/misc/lv_text_private.h ****     }
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccWrnjUF.s 			page 6
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccBO912E.s 			page 6
 
 
  206:Middlewares/LVGL/lvgl/src/misc/lv_text_private.h **** 
@@ -358,7 +358,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccWrnjUF.s 			page 1
  121 005e 7047     		bx	lr
  122              	.LVL10:
  123              	.L7:
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccWrnjUF.s 			page 7
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccBO912E.s 			page 7
 
 
  189:Middlewares/LVGL/lvgl/src/misc/lv_text_private.h ****     }
@@ -418,7 +418,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccWrnjUF.s 			page 1
    2:Middlewares/LVGL/lvgl/src/misc/lv_text.c ****  * @file lv_text.c
    3:Middlewares/LVGL/lvgl/src/misc/lv_text.c ****  *
    4:Middlewares/LVGL/lvgl/src/misc/lv_text.c ****  */
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccWrnjUF.s 			page 8
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccBO912E.s 			page 8
 
 
    5:Middlewares/LVGL/lvgl/src/misc/lv_text.c **** 
@@ -478,7 +478,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccWrnjUF.s 			page 1
   59:Middlewares/LVGL/lvgl/src/misc/lv_text.c ****     uint32_t (*const lv_text_unicode_to_encoded)(uint32_t)                = lv_text_unicode_to_utf8
   60:Middlewares/LVGL/lvgl/src/misc/lv_text.c ****     uint32_t (*const lv_text_encoded_conv_wc)(uint32_t)                   = lv_text_utf8_conv_wc;
   61:Middlewares/LVGL/lvgl/src/misc/lv_text.c ****     uint32_t (*const lv_text_encoded_next)(const char *, uint32_t *)      = lv_text_utf8_next;
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccWrnjUF.s 			page 9
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccBO912E.s 			page 9
 
 
   62:Middlewares/LVGL/lvgl/src/misc/lv_text.c ****     uint32_t (*const lv_text_encoded_prev)(const char *, uint32_t *)      = lv_text_utf8_prev;
@@ -538,7 +538,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccWrnjUF.s 			page 1
  116:Middlewares/LVGL/lvgl/src/misc/lv_text.c **** 
  117:Middlewares/LVGL/lvgl/src/misc/lv_text.c ****     LV_ASSERT_NULL(attributes);
  118:Middlewares/LVGL/lvgl/src/misc/lv_text.c ****     LV_ASSERT_NULL(font);
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccWrnjUF.s 			page 10
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccBO912E.s 			page 10
 
 
  119:Middlewares/LVGL/lvgl/src/misc/lv_text.c ****     LV_ASSERT_NULL(text);
@@ -598,7 +598,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccWrnjUF.s 			page 1
  173:Middlewares/LVGL/lvgl/src/misc/lv_text.c ****             *state = LV_TEXT_CMD_STATE_WAIT;
  174:Middlewares/LVGL/lvgl/src/misc/lv_text.c ****         }
  175:Middlewares/LVGL/lvgl/src/misc/lv_text.c ****         /*Command end*/
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccWrnjUF.s 			page 11
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccBO912E.s 			page 11
 
 
  176:Middlewares/LVGL/lvgl/src/misc/lv_text.c ****         else if(*state == LV_TEXT_CMD_STATE_IN) {
@@ -658,7 +658,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccWrnjUF.s 			page 1
  230:Middlewares/LVGL/lvgl/src/misc/lv_text.c ****     if(font == NULL) return 0;
  231:Middlewares/LVGL/lvgl/src/misc/lv_text.c **** 
  232:Middlewares/LVGL/lvgl/src/misc/lv_text.c ****     if(flag & LV_TEXT_FLAG_EXPAND) max_width = LV_COORD_MAX;
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccWrnjUF.s 			page 12
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccBO912E.s 			page 12
 
 
  233:Middlewares/LVGL/lvgl/src/misc/lv_text.c **** 
@@ -718,7 +718,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccWrnjUF.s 			page 1
  287:Middlewares/LVGL/lvgl/src/misc/lv_text.c ****             /*Found a word for single letter, usually true for CJK*/
  288:Middlewares/LVGL/lvgl/src/misc/lv_text.c ****             *word_w_ptr = cur_w;
  289:Middlewares/LVGL/lvgl/src/misc/lv_text.c ****             i = i_next;
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccWrnjUF.s 			page 13
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccBO912E.s 			page 13
 
 
  290:Middlewares/LVGL/lvgl/src/misc/lv_text.c ****             break;
@@ -778,7 +778,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccWrnjUF.s 			page 1
  344:Middlewares/LVGL/lvgl/src/misc/lv_text.c **** uint32_t lv_text_get_next_line(const char * txt, uint32_t len,
  345:Middlewares/LVGL/lvgl/src/misc/lv_text.c ****                                const lv_font_t * font, int32_t * used_width, lv_text_attributes_t *
  346:Middlewares/LVGL/lvgl/src/misc/lv_text.c **** {
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccWrnjUF.s 			page 14
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccBO912E.s 			page 14
 
 
  347:Middlewares/LVGL/lvgl/src/misc/lv_text.c **** 
@@ -838,7 +838,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccWrnjUF.s 			page 1
  401:Middlewares/LVGL/lvgl/src/misc/lv_text.c ****         if(txt[i] == '\n' || txt[i] == '\r') {
  402:Middlewares/LVGL/lvgl/src/misc/lv_text.c ****             i++;  /*Include the following newline in the current line*/
  403:Middlewares/LVGL/lvgl/src/misc/lv_text.c ****             explicit_new_line = true;
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccWrnjUF.s 			page 15
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccBO912E.s 			page 15
 
 
  404:Middlewares/LVGL/lvgl/src/misc/lv_text.c ****             break;
@@ -898,7 +898,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccWrnjUF.s 			page 1
  458:Middlewares/LVGL/lvgl/src/misc/lv_text.c ****                 width += attributes->letter_space;
  459:Middlewares/LVGL/lvgl/src/misc/lv_text.c ****             }
  460:Middlewares/LVGL/lvgl/src/misc/lv_text.c ****         }
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccWrnjUF.s 			page 16
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccBO912E.s 			page 16
 
 
  461:Middlewares/LVGL/lvgl/src/misc/lv_text.c **** 
@@ -958,7 +958,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccWrnjUF.s 			page 1
  515:Middlewares/LVGL/lvgl/src/misc/lv_text.c **** 
  516:Middlewares/LVGL/lvgl/src/misc/lv_text.c ****     char * text = 0;
  517:Middlewares/LVGL/lvgl/src/misc/lv_text.c **** #if LV_USE_ARABIC_PERSIAN_CHARS
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccWrnjUF.s 			page 17
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccBO912E.s 			page 17
 
 
  518:Middlewares/LVGL/lvgl/src/misc/lv_text.c ****     /*Put together the text according to the format string*/
@@ -1018,7 +1018,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccWrnjUF.s 			page 1
  173              		@ link register save eliminated.
  568:Middlewares/LVGL/lvgl/src/misc/lv_text.c ****     if(LV_IS_ASCII(str[0]))
  174              		.loc 1 568 5 view .LVU48
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccWrnjUF.s 			page 18
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccBO912E.s 			page 18
 
 
  175              		.loc 1 568 8 is_stmt 0 view .LVU49
@@ -1078,7 +1078,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccWrnjUF.s 			page 1
  573:Middlewares/LVGL/lvgl/src/misc/lv_text.c ****     else if(LV_IS_4BYTES_UTF8_CODE(str[0]))
  217              		.loc 1 573 16 view .LVU63
  218 002e 0320     		movs	r0, #3
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccWrnjUF.s 			page 19
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccBO912E.s 			page 19
 
 
  219              	.LVL27:
@@ -1138,7 +1138,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccWrnjUF.s 			page 1
  590:Middlewares/LVGL/lvgl/src/misc/lv_text.c ****         bytes[0] = ((letter_uni >> 6) & 0x1F) | 0xC0;
  259              		.loc 1 590 9 is_stmt 1 view .LVU74
  260              		.loc 1 590 39 is_stmt 0 view .LVU75
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccWrnjUF.s 			page 20
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccBO912E.s 			page 20
 
 
  261 000c C0F38413 		ubfx	r3, r0, #6, #5
@@ -1198,7 +1198,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccWrnjUF.s 			page 1
  292              		.cfi_remember_state
  293              		.cfi_def_cfa_offset 0
  294              		@ sp needed
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccWrnjUF.s 			page 21
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccBO912E.s 			page 21
 
 
  295 0032 7047     		bx	lr
@@ -1258,7 +1258,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccWrnjUF.s 			page 1
  601:Middlewares/LVGL/lvgl/src/misc/lv_text.c ****         bytes[0] = ((letter_uni >> 18) & 0x07) | 0xF0;
  333              		.loc 1 601 10 is_stmt 1 view .LVU106
  601:Middlewares/LVGL/lvgl/src/misc/lv_text.c ****         bytes[0] = ((letter_uni >> 18) & 0x07) | 0xF0;
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccWrnjUF.s 			page 22
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccBO912E.s 			page 22
 
 
  334              		.loc 1 601 12 is_stmt 0 view .LVU107
@@ -1318,7 +1318,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccWrnjUF.s 			page 1
  371              	.LVL39:
  608:Middlewares/LVGL/lvgl/src/misc/lv_text.c ****     }
  372              		.loc 1 608 16 view .LVU125
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccWrnjUF.s 			page 23
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccBO912E.s 			page 23
 
 
  373 00a0 C6E7     		b	.L18
@@ -1378,7 +1378,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccWrnjUF.s 			page 1
  393              		.cfi_startproc
  394              		@ args = 0, pretend = 0, frame = 8
  395              		@ frame_needed = 0, uses_anonymous_args = 0
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccWrnjUF.s 			page 24
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccBO912E.s 			page 24
 
 
  396              		.loc 1 649 1 is_stmt 0 view .LVU128
@@ -1438,7 +1438,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccWrnjUF.s 			page 1
  429 001a 13F0800F 		tst	r3, #128
  430 001e 08D1     		bne	.L32
  671:Middlewares/LVGL/lvgl/src/misc/lv_text.c ****         result = txt[*i];
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccWrnjUF.s 			page 25
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccBO912E.s 			page 25
 
 
  431              		.loc 1 671 9 is_stmt 1 view .LVU141
@@ -1498,7 +1498,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccWrnjUF.s 			page 1
  716:Middlewares/LVGL/lvgl/src/misc/lv_text.c ****         }
  717:Middlewares/LVGL/lvgl/src/misc/lv_text.c ****     }
  718:Middlewares/LVGL/lvgl/src/misc/lv_text.c ****     return result;
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccWrnjUF.s 			page 26
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccBO912E.s 			page 26
 
 
  719:Middlewares/LVGL/lvgl/src/misc/lv_text.c **** }
@@ -1558,7 +1558,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccWrnjUF.s 			page 1
  678:Middlewares/LVGL/lvgl/src/misc/lv_text.c ****             (*i)++;
  483              		.loc 1 678 13 is_stmt 1 view .LVU157
  678:Middlewares/LVGL/lvgl/src/misc/lv_text.c ****             (*i)++;
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccWrnjUF.s 			page 27
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccBO912E.s 			page 27
 
 
  484              		.loc 1 678 49 is_stmt 0 view .LVU158
@@ -1618,7 +1618,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccWrnjUF.s 			page 1
  687:Middlewares/LVGL/lvgl/src/misc/lv_text.c **** 
  522              		.loc 1 687 17 is_stmt 0 view .LVU175
  523 007c 511C     		adds	r1, r2, #1
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccWrnjUF.s 			page 28
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccBO912E.s 			page 28
 
 
  524 007e CCF80010 		str	r1, [ip]
@@ -1678,7 +1678,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccWrnjUF.s 			page 1
  561 00ae CCF80020 		str	r2, [ip]
  562 00b2 B9E7     		b	.L29
  563              	.LVL58:
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccWrnjUF.s 			page 29
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccBO912E.s 			page 29
 
 
  564              	.L49:
@@ -1738,7 +1738,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccWrnjUF.s 			page 1
  707:Middlewares/LVGL/lvgl/src/misc/lv_text.c ****             (*i)++;
  601              		.loc 1 707 50 is_stmt 0 view .LVU210
  602 00e6 9B01     		lsls	r3, r3, #6
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccWrnjUF.s 			page 30
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccBO912E.s 			page 30
 
 
  603 00e8 03F47C63 		and	r3, r3, #4032
@@ -1798,7 +1798,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccWrnjUF.s 			page 1
  642              	.LVL67:
  666:Middlewares/LVGL/lvgl/src/misc/lv_text.c ****     }
  643              		.loc 1 666 16 view .LVU226
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccWrnjUF.s 			page 31
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccBO912E.s 			page 31
 
 
  644 0112 89E7     		b	.L29
@@ -1858,7 +1858,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccWrnjUF.s 			page 1
  689              		.thumb_func
  691              	lv_text_utf8_prev:
  692              	.LVL77:
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccWrnjUF.s 			page 32
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccBO912E.s 			page 32
 
 
  693              	.LFB49:
@@ -1918,7 +1918,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccWrnjUF.s 			page 1
  740:Middlewares/LVGL/lvgl/src/misc/lv_text.c ****             if(*i != 0)
  741:Middlewares/LVGL/lvgl/src/misc/lv_text.c ****                 (*i)--;
  726              		.loc 1 741 17 is_stmt 1 view .LVU245
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccWrnjUF.s 			page 33
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccBO912E.s 			page 33
 
 
  727              		.loc 1 741 21 is_stmt 0 view .LVU246
@@ -1978,7 +1978,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccWrnjUF.s 			page 1
  748:Middlewares/LVGL/lvgl/src/misc/lv_text.c ****     uint32_t i_tmp  = *i;
  765              		.loc 1 748 5 is_stmt 1 view .LVU261
  766              		.loc 1 748 23 is_stmt 0 view .LVU262
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccWrnjUF.s 			page 34
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccBO912E.s 			page 34
 
 
  767 0034 3368     		ldr	r3, [r6]
@@ -2038,7 +2038,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccWrnjUF.s 			page 1
  808              		.loc 1 762 1 is_stmt 1 view -0
  809              		.cfi_startproc
  810              		@ args = 0, pretend = 0, frame = 0
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccWrnjUF.s 			page 35
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccBO912E.s 			page 35
 
 
  811              		@ frame_needed = 0, uses_anonymous_args = 0
@@ -2098,7 +2098,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccWrnjUF.s 			page 1
  854              	.LBB7:
  766:Middlewares/LVGL/lvgl/src/misc/lv_text.c ****         uint8_t c_size = lv_text_encoded_size(&txt[byte_cnt]);
  855              		.loc 1 766 9 is_stmt 1 view .LVU286
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccWrnjUF.s 			page 36
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccBO912E.s 			page 36
 
 
  766:Middlewares/LVGL/lvgl/src/misc/lv_text.c ****         uint8_t c_size = lv_text_encoded_size(&txt[byte_cnt]);
@@ -2158,7 +2158,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccWrnjUF.s 			page 1
  897              		.cfi_offset 6, -8
  898              		.cfi_offset 14, -4
  899 0002 82B0     		sub	sp, sp, #8
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccWrnjUF.s 			page 37
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccBO912E.s 			page 37
 
 
  900              	.LCFI13:
@@ -2218,7 +2218,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccWrnjUF.s 			page 1
  944              		.thumb
  945              		.thumb_func
  947              	lv_text_utf8_get_length:
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccWrnjUF.s 			page 38
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccBO912E.s 			page 38
 
 
  948              	.LVL100:
@@ -2278,7 +2278,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccWrnjUF.s 			page 1
  986              		.loc 1 805 18 is_stmt 1 view .LVU318
  805:Middlewares/LVGL/lvgl/src/misc/lv_text.c ****         lv_text_encoded_next(txt, &i);
  987              		.loc 1 805 14 is_stmt 0 view .LVU319
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccWrnjUF.s 			page 39
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccBO912E.s 			page 39
 
 
  988 0016 019B     		ldr	r3, [sp, #4]
@@ -2338,7 +2338,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccWrnjUF.s 			page 1
  638:Middlewares/LVGL/lvgl/src/misc/lv_text.c **** 
  1034              		.loc 1 638 1 is_stmt 0 view .LVU329
  1035 000c 0198     		ldr	r0, [sp, #4]
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccWrnjUF.s 			page 40
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccBO912E.s 			page 40
 
 
  1036 000e 05B0     		add	sp, sp, #20
@@ -2398,7 +2398,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccWrnjUF.s 			page 1
  630:Middlewares/LVGL/lvgl/src/misc/lv_text.c ****             if((swapped & 0xFF) == 0)
  1076              		.loc 1 630 9 view .LVU344
  630:Middlewares/LVGL/lvgl/src/misc/lv_text.c ****             if((swapped & 0xFF) == 0)
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccWrnjUF.s 			page 41
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccBO912E.s 			page 41
 
 
  1077              		.loc 1 630 15 is_stmt 0 view .LVU345
@@ -2458,7 +2458,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccWrnjUF.s 			page 1
  1122              	.LFB34:
   92:Middlewares/LVGL/lvgl/src/misc/lv_text.c ****     lv_memzero(attributes, sizeof(lv_text_attributes_t));
  1123              		.loc 1 92 1 is_stmt 1 view -0
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccWrnjUF.s 			page 42
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccBO912E.s 			page 42
 
 
  1124              		.cfi_startproc
@@ -2518,7 +2518,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccWrnjUF.s 			page 1
   39:Middlewares/LVGL/lvgl/src/misc/../font/../draw/../misc/../stdlib/lv_string.h **** void * lv_memcpy(void * dst, const void * src, size_t len);
   40:Middlewares/LVGL/lvgl/src/misc/../font/../draw/../misc/../stdlib/lv_string.h **** 
   41:Middlewares/LVGL/lvgl/src/misc/../font/../draw/../misc/../stdlib/lv_string.h **** /**
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccWrnjUF.s 			page 43
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccBO912E.s 			page 43
 
 
   42:Middlewares/LVGL/lvgl/src/misc/../font/../draw/../misc/../stdlib/lv_string.h ****  * @brief Fills a block of memory with a specified value.
@@ -2578,7 +2578,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccWrnjUF.s 			page 1
  1158              		.thumb_func
  1160              	lv_text_is_cmd:
  1161              	.LVL119:
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccWrnjUF.s 			page 44
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccBO912E.s 			page 44
 
 
  1162              	.LFB37:
@@ -2638,7 +2638,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccWrnjUF.s 			page 1
  1200 0014 0120     		movs	r0, #1
  1201              	.LVL124:
  168:Middlewares/LVGL/lvgl/src/misc/lv_text.c ****             ret = true;
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccWrnjUF.s 			page 45
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccBO912E.s 			page 45
 
 
  1202              		.loc 1 168 20 view .LVU380
@@ -2698,7 +2698,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccWrnjUF.s 			page 1
  1241              	.LVL132:
  187:Middlewares/LVGL/lvgl/src/misc/lv_text.c ****     }
  1242              		.loc 1 187 13 view .LVU396
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccWrnjUF.s 			page 46
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccBO912E.s 			page 46
 
 
  1243 0030 EDE7     		b	.L86
@@ -2758,7 +2758,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccWrnjUF.s 			page 1
  1291 0006 0291     		str	r1, [sp, #8]
  1292 0008 0192     		str	r2, [sp, #4]
  1293 000a 0393     		str	r3, [sp, #12]
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccWrnjUF.s 			page 47
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccBO912E.s 			page 47
 
 
  1294 000c 9DF840B0 		ldrb	fp, [sp, #64]	@ zero_extendqisi2
@@ -2818,7 +2818,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccWrnjUF.s 			page 1
  240:Middlewares/LVGL/lvgl/src/misc/lv_text.c ****     uint32_t break_letter_count = 0; /*Number of characters up to the long word break point*/
  1331              		.loc 1 240 5 view .LVU420
  241:Middlewares/LVGL/lvgl/src/misc/lv_text.c **** 
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccWrnjUF.s 			page 48
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccBO912E.s 			page 48
 
 
  1332              		.loc 1 241 5 view .LVU421
@@ -2878,7 +2878,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccWrnjUF.s 			page 1
  1369 0054 049B     		ldr	r3, [sp, #16]
  1370 0056 0593     		str	r3, [sp, #20]
  256:Middlewares/LVGL/lvgl/src/misc/lv_text.c ****                 continue;   /*Skip the letter if it is part of a command*/
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccWrnjUF.s 			page 49
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccBO912E.s 			page 49
 
 
  1371              		.loc 1 256 17 is_stmt 1 view .LVU439
@@ -2938,7 +2938,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccWrnjUF.s 			page 1
  1411              		.loc 1 294 31 discriminator 1 view .LVU453
  1412 0078 BAF1FF3F 		cmp	r10, #-1
  1413 007c 59D0     		beq	.L125
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccWrnjUF.s 			page 50
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccBO912E.s 			page 50
 
 
  1414              	.L111:
@@ -2998,7 +2998,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccWrnjUF.s 			page 1
  1454              	.LVL156:
  252:Middlewares/LVGL/lvgl/src/misc/lv_text.c ****             if(lv_text_is_cmd(cmd_state, letter)) {
  1455              		.loc 1 252 9 is_stmt 1 view .LVU468
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccWrnjUF.s 			page 51
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccBO912E.s 			page 51
 
 
  252:Middlewares/LVGL/lvgl/src/misc/lv_text.c ****             if(lv_text_is_cmd(cmd_state, letter)) {
@@ -3058,7 +3058,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccWrnjUF.s 			page 1
  1495 00cc 08D1     		bne	.L101
  269:Middlewares/LVGL/lvgl/src/misc/lv_text.c ****             break_index = i;
  1496              		.loc 1 269 52 discriminator 1 view .LVU484
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccWrnjUF.s 			page 52
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccBO912E.s 			page 52
 
 
  1497 00ce 019B     		ldr	r3, [sp, #4]
@@ -3118,7 +3118,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccWrnjUF.s 			page 1
  1536 00f2 9442     		cmp	r4, r2
  1537 00f4 02D0     		beq	.L120
  152:Middlewares/LVGL/lvgl/src/misc/lv_text_private.h ****         if(letter == (uint32_t)LV_TXT_BREAK_CHARS[i]) {
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccWrnjUF.s 			page 53
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccBO912E.s 			page 53
 
 
  1538              		.loc 2 152 48 is_stmt 1 discriminator 2 view .LVU500
@@ -3178,7 +3178,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccWrnjUF.s 			page 1
  289:Middlewares/LVGL/lvgl/src/misc/lv_text.c ****             break;
  1578              		.loc 1 289 15 is_stmt 0 view .LVU515
  1579 0114 059F     		ldr	r7, [sp, #20]
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccWrnjUF.s 			page 54
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccBO912E.s 			page 54
 
 
  1580              	.LVL171:
@@ -3238,7 +3238,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccWrnjUF.s 			page 1
  1619              	.LVL176:
  249:Middlewares/LVGL/lvgl/src/misc/lv_text.c **** 
  1620              		.loc 1 249 17 view .LVU531
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccWrnjUF.s 			page 55
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccBO912E.s 			page 55
 
 
  1621 013c EDE7     		b	.L102
@@ -3298,7 +3298,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccWrnjUF.s 			page 1
  1663              	.L94:
  342:Middlewares/LVGL/lvgl/src/misc/lv_text.c **** 
  1664              		.loc 1 342 1 view .LVU544
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccWrnjUF.s 			page 56
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccBO912E.s 			page 56
 
 
  1665 0164 5046     		mov	r0, r10
@@ -3358,7 +3358,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccWrnjUF.s 			page 1
  1717 0004 88B0     		sub	sp, sp, #32
  1718              	.LCFI28:
  1719              		.cfi_def_cfa_offset 64
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccWrnjUF.s 			page 57
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccBO912E.s 			page 57
 
 
  1720 0006 0446     		mov	r4, r0
@@ -3418,7 +3418,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccWrnjUF.s 			page 1
  1757              		.loc 1 358 55 discriminator 1 view .LVU565
  1758 0038 13F0020F 		tst	r3, #2
  1759 003c 20D1     		bne	.L166
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccWrnjUF.s 			page 58
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccBO912E.s 			page 58
 
 
  370:Middlewares/LVGL/lvgl/src/misc/lv_text.c ****         attributes->max_width = LV_COORD_MAX;
@@ -3478,7 +3478,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccWrnjUF.s 			page 1
  362:Middlewares/LVGL/lvgl/src/misc/lv_text.c ****             /*Just find the new line chars or string ends by incrementing `i`*/
  1797              		.loc 1 362 64 discriminator 5 view .LVU583
  1798 005e 002B     		cmp	r3, #0
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccWrnjUF.s 			page 59
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccBO912E.s 			page 59
 
 
  1799 0060 F5D1     		bne	.L139
@@ -3538,7 +3538,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccWrnjUF.s 			page 1
  367:Middlewares/LVGL/lvgl/src/misc/lv_text.c ****     }
  1838              		.loc 1 367 16 view .LVU599
  1839 0082 E5E7     		b	.L137
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccWrnjUF.s 			page 60
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccBO912E.s 			page 60
 
 
  1840              	.LVL199:
@@ -3598,7 +3598,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccWrnjUF.s 			page 1
  396:Middlewares/LVGL/lvgl/src/misc/lv_text.c ****             explicit_new_line = true;
  1880              		.loc 1 396 15 is_stmt 0 view .LVU614
  1881 00b0 2278     		ldrb	r2, [r4]	@ zero_extendqisi2
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccWrnjUF.s 			page 61
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccBO912E.s 			page 61
 
 
  396:Middlewares/LVGL/lvgl/src/misc/lv_text.c ****             explicit_new_line = true;
@@ -3658,7 +3658,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccWrnjUF.s 			page 1
  382:Middlewares/LVGL/lvgl/src/misc/lv_text.c **** 
  1920              		.loc 1 382 11 is_stmt 0 view .LVU631
  1921 00d6 002B     		cmp	r3, #0
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccWrnjUF.s 			page 62
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccBO912E.s 			page 62
 
 
  1922 00d8 D4D1     		bne	.L143
@@ -3718,7 +3718,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccWrnjUF.s 			page 1
  421:Middlewares/LVGL/lvgl/src/misc/lv_text.c ****         while(i < len && txt[i] == ' ') {
  1960              		.loc 1 421 5 is_stmt 1 view .LVU648
  421:Middlewares/LVGL/lvgl/src/misc/lv_text.c ****         while(i < len && txt[i] == ' ') {
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccWrnjUF.s 			page 63
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccBO912E.s 			page 63
 
 
  1961              		.loc 1 421 7 is_stmt 0 view .LVU649
@@ -3778,7 +3778,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccWrnjUF.s 			page 1
  2003              	.LVL221:
  377:Middlewares/LVGL/lvgl/src/misc/lv_text.c **** 
  2004              		.loc 1 377 10 view .LVU662
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccWrnjUF.s 			page 64
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccBO912E.s 			page 64
 
 
  2005 010c EBE7     		b	.L147
@@ -3838,7 +3838,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccWrnjUF.s 			page 1
  2045 012e 069B     		ldr	r3, [sp, #24]
  422:Middlewares/LVGL/lvgl/src/misc/lv_text.c ****             i++;
  2046              		.loc 1 422 23 view .LVU677
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccWrnjUF.s 			page 65
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccBO912E.s 			page 65
 
 
  2047 0130 AB42     		cmp	r3, r5
@@ -3898,7 +3898,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccWrnjUF.s 			page 1
  2095              	.LVL235:
  2096              	.LFB41:
  472:Middlewares/LVGL/lvgl/src/misc/lv_text.c ****     if(txt_buf == NULL || ins_txt == NULL) return;
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccWrnjUF.s 			page 66
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccBO912E.s 			page 66
 
 
  2097              		.loc 1 472 1 is_stmt 1 view -0
@@ -3958,7 +3958,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccWrnjUF.s 			page 1
  479:Middlewares/LVGL/lvgl/src/misc/lv_text.c ****     pos              = lv_text_encoded_get_byte_id(txt_buf, pos); /*Convert to byte index instead o
  2138              		.loc 1 479 12 is_stmt 0 view .LVU700
  2139 001e 0444     		add	r4, r4, r0
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccWrnjUF.s 			page 67
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccBO912E.s 			page 67
 
 
  2140              	.LVL240:
@@ -4018,7 +4018,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccWrnjUF.s 			page 1
  2178 003e FFF7FEFF 		bl	lv_memcpy
  2179              	.LVL246:
  2180              	.L168:
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccWrnjUF.s 			page 68
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccBO912E.s 			page 68
 
 
  490:Middlewares/LVGL/lvgl/src/misc/lv_text.c **** 
@@ -4078,7 +4078,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccWrnjUF.s 			page 1
  2229              		.loc 1 496 22 is_stmt 0 view .LVU724
  2230 000a FFF7FEFF 		bl	lv_strlen
  2231              	.LVL249:
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccWrnjUF.s 			page 69
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccBO912E.s 			page 69
 
 
  496:Middlewares/LVGL/lvgl/src/misc/lv_text.c **** 
@@ -4138,7 +4138,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccWrnjUF.s 			page 1
  2270              		.loc 1 503 20 discriminator 1 view .LVU740
  503:Middlewares/LVGL/lvgl/src/misc/lv_text.c ****         txt[i] = txt[i + len];
  2271              		.loc 1 503 31 is_stmt 0 discriminator 1 view .LVU741
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccWrnjUF.s 			page 70
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccBO912E.s 			page 70
 
 
  2272 002c 331A     		subs	r3, r6, r0
@@ -4198,7 +4198,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccWrnjUF.s 			page 1
  2322              		.loc 1 511 5 is_stmt 1 view .LVU747
  512:Middlewares/LVGL/lvgl/src/misc/lv_text.c ****     uint32_t len = lv_vsnprintf(NULL, 0, fmt, ap_copy);
  2323              		.loc 1 512 5 view .LVU748
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccWrnjUF.s 			page 71
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccBO912E.s 			page 71
 
 
  512:Middlewares/LVGL/lvgl/src/misc/lv_text.c ****     uint32_t len = lv_vsnprintf(NULL, 0, fmt, ap_copy);
@@ -4258,7 +4258,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccWrnjUF.s 			page 1
  2360 0024 3246     		mov	r2, r6
  2361 0026 2946     		mov	r1, r5
  2362 0028 FFF7FEFF 		bl	lv_vsnprintf
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccWrnjUF.s 			page 72
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccBO912E.s 			page 72
 
 
  2363              	.LVL267:
@@ -4318,7 +4318,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccWrnjUF.s 			page 1
  2410 0002 0746     		mov	r7, r0
  2411 0004 0E46     		mov	r6, r1
  2412 0006 1546     		mov	r5, r2
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccWrnjUF.s 			page 73
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccBO912E.s 			page 73
 
 
  2413 0008 1C46     		mov	r4, r3
@@ -4378,7 +4378,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccWrnjUF.s 			page 1
  432:Middlewares/LVGL/lvgl/src/misc/lv_text.c ****     if(txt == NULL) return 0;
  2458              		.loc 1 432 1 is_stmt 0 view .LVU787
  2459 0000 2DE9F041 		push	{r4, r5, r6, r7, r8, lr}
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccWrnjUF.s 			page 74
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccBO912E.s 			page 74
 
 
  2460              	.LCFI40:
@@ -4438,7 +4438,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccWrnjUF.s 			page 1
  2500 0022 11BB     		cbnz	r1, .L204
  438:Middlewares/LVGL/lvgl/src/misc/lv_text.c ****     lv_text_cmd_state_t cmd_state = LV_TEXT_CMD_STATE_WAIT;
  2501              		.loc 1 438 13 view .LVU802
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccWrnjUF.s 			page 75
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccBO912E.s 			page 75
 
 
  2502 0024 1C46     		mov	r4, r3
@@ -4498,7 +4498,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccWrnjUF.s 			page 1
  2541              	.LBB23:
  444:Middlewares/LVGL/lvgl/src/misc/lv_text.c ****             uint32_t letter_next;
  2542              		.loc 1 444 13 is_stmt 1 view .LVU818
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccWrnjUF.s 			page 76
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccBO912E.s 			page 76
 
 
  445:Middlewares/LVGL/lvgl/src/misc/lv_text.c **** 
@@ -4558,7 +4558,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccWrnjUF.s 			page 1
  463:Middlewares/LVGL/lvgl/src/misc/lv_text.c ****                                       aligned*/
  2583              		.loc 1 463 19 view .LVU833
  2584 0074 E41A     		subs	r4, r4, r3
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccWrnjUF.s 			page 77
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccBO912E.s 			page 77
 
 
  2585              	.LVL285:
@@ -4618,7 +4618,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccWrnjUF.s 			page 1
  2634              		.cfi_offset 7, -20
  2635              		.cfi_offset 8, -16
  2636              		.cfi_offset 9, -12
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccWrnjUF.s 			page 78
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccBO912E.s 			page 78
 
 
  2637              		.cfi_offset 10, -8
@@ -4678,7 +4678,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccWrnjUF.s 			page 1
  2673 001e A9B3     		cbz	r1, .L212
  119:Middlewares/LVGL/lvgl/src/misc/lv_text.c **** 
  2674              		.loc 1 119 5 view .LVU859
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccWrnjUF.s 			page 79
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccBO912E.s 			page 79
 
 
  119:Middlewares/LVGL/lvgl/src/misc/lv_text.c **** 
@@ -4738,7 +4738,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccWrnjUF.s 			page 1
  2713 0046 4FF0FF31 		mov	r1, #-1
  2714 004a 4846     		mov	r0, r9
  2715 004c FFF7FEFF 		bl	lv_text_get_next_line
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccWrnjUF.s 			page 80
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccBO912E.s 			page 80
 
 
  2716              	.LVL296:
@@ -4798,7 +4798,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccWrnjUF.s 			page 1
  2755              	.LVL299:
  146:Middlewares/LVGL/lvgl/src/misc/lv_text.c ****         line_start  = new_line_start;
  2756              		.loc 1 146 21 view .LVU891
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccWrnjUF.s 			page 81
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccBO912E.s 			page 81
 
 
  2757 0084 2060     		str	r0, [r4]
@@ -4858,7 +4858,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccWrnjUF.s 			page 1
  151:Middlewares/LVGL/lvgl/src/misc/lv_text.c ****         size_res->y += letter_height + attributes->line_space;
  2791              		.loc 1 151 34 discriminator 1 view .LVU912
  2792 0090 19F8013C 		ldrb	r3, [r9, #-1]	@ zero_extendqisi2
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccWrnjUF.s 			page 82
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccBO912E.s 			page 82
 
 
  151:Middlewares/LVGL/lvgl/src/misc/lv_text.c ****         size_res->y += letter_height + attributes->line_space;
@@ -4918,7 +4918,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccWrnjUF.s 			page 1
  2833              		.loc 1 159 9 is_stmt 1 view .LVU926
  159:Middlewares/LVGL/lvgl/src/misc/lv_text.c **** }
  2834              		.loc 1 159 34 is_stmt 0 view .LVU927
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccWrnjUF.s 			page 83
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccBO912E.s 			page 83
 
 
  2835 00b8 6A68     		ldr	r2, [r5, #4]
@@ -4978,7 +4978,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccWrnjUF.s 			page 1
  2883 0014 0A9B     		ldr	r3, [sp, #40]
  2884 0016 0193     		str	r3, [sp, #4]
  102:Middlewares/LVGL/lvgl/src/misc/lv_text.c ****     attrs.text_flags = flag;
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccWrnjUF.s 			page 84
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccBO912E.s 			page 84
 
 
  2885              		.loc 1 102 5 is_stmt 1 view .LVU936
@@ -5038,7 +5038,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccWrnjUF.s 			page 1
  2940 0000 00000000 		.word	lv_text_utf8_prev
  2941              		.global	lv_text_encoded_next
  2942              		.section	.rodata.lv_text_encoded_next,"a"
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccWrnjUF.s 			page 85
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccBO912E.s 			page 85
 
 
  2943              		.align	2
@@ -5074,72 +5074,72 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccWrnjUF.s 			page 1
  2981              		.file 14 "Middlewares/LVGL/lvgl/src/misc/../font/../draw/../misc/../stdlib/lv_mem.h"
  2982              		.file 15 "Middlewares/LVGL/lvgl/src/misc/../stdlib/lv_sprintf.h"
  2983              		.file 16 "<built-in>"
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccWrnjUF.s 			page 86
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccBO912E.s 			page 86
 
 
 DEFINED SYMBOLS
                             *ABS*:00000000 lv_text.c
-C:\Users\w1785\AppData\Local\Temp\ccWrnjUF.s:21     .text.lv_text_is_a_word:00000000 $t
-C:\Users\w1785\AppData\Local\Temp\ccWrnjUF.s:26     .text.lv_text_is_a_word:00000000 lv_text_is_a_word
-C:\Users\w1785\AppData\Local\Temp\ccWrnjUF.s:161    .text.lv_text_utf8_size:00000000 $t
-C:\Users\w1785\AppData\Local\Temp\ccWrnjUF.s:166    .text.lv_text_utf8_size:00000000 lv_text_utf8_size
-C:\Users\w1785\AppData\Local\Temp\ccWrnjUF.s:233    .text.lv_text_unicode_to_utf8:00000000 $t
-C:\Users\w1785\AppData\Local\Temp\ccWrnjUF.s:238    .text.lv_text_unicode_to_utf8:00000000 lv_text_unicode_to_utf8
-C:\Users\w1785\AppData\Local\Temp\ccWrnjUF.s:384    .text.lv_text_utf8_next:00000000 $t
-C:\Users\w1785\AppData\Local\Temp\ccWrnjUF.s:389    .text.lv_text_utf8_next:00000000 lv_text_utf8_next
-C:\Users\w1785\AppData\Local\Temp\ccWrnjUF.s:686    .text.lv_text_utf8_prev:00000000 $t
-C:\Users\w1785\AppData\Local\Temp\ccWrnjUF.s:691    .text.lv_text_utf8_prev:00000000 lv_text_utf8_prev
-C:\Users\w1785\AppData\Local\Temp\ccWrnjUF.s:800    .text.lv_text_utf8_get_byte_id:00000000 $t
-C:\Users\w1785\AppData\Local\Temp\ccWrnjUF.s:805    .text.lv_text_utf8_get_byte_id:00000000 lv_text_utf8_get_byte_id
-C:\Users\w1785\AppData\Local\Temp\ccWrnjUF.s:879    .text.lv_text_utf8_get_char_id:00000000 $t
-C:\Users\w1785\AppData\Local\Temp\ccWrnjUF.s:884    .text.lv_text_utf8_get_char_id:00000000 lv_text_utf8_get_char_id
-C:\Users\w1785\AppData\Local\Temp\ccWrnjUF.s:942    .text.lv_text_utf8_get_length:00000000 $t
-C:\Users\w1785\AppData\Local\Temp\ccWrnjUF.s:947    .text.lv_text_utf8_get_length:00000000 lv_text_utf8_get_length
-C:\Users\w1785\AppData\Local\Temp\ccWrnjUF.s:1006   .text.lv_text_utf8_conv_wc:00000000 $t
-C:\Users\w1785\AppData\Local\Temp\ccWrnjUF.s:1011   .text.lv_text_utf8_conv_wc:00000000 lv_text_utf8_conv_wc
-C:\Users\w1785\AppData\Local\Temp\ccWrnjUF.s:1114   .text.lv_text_attributes_init:00000000 $t
-C:\Users\w1785\AppData\Local\Temp\ccWrnjUF.s:1120   .text.lv_text_attributes_init:00000000 lv_text_attributes_init
-C:\Users\w1785\AppData\Local\Temp\ccWrnjUF.s:1154   .text.lv_text_is_cmd:00000000 $t
-C:\Users\w1785\AppData\Local\Temp\ccWrnjUF.s:1160   .text.lv_text_is_cmd:00000000 lv_text_is_cmd
-C:\Users\w1785\AppData\Local\Temp\ccWrnjUF.s:1259   .rodata.lv_text_get_next_word.str1.4:00000000 $d
-C:\Users\w1785\AppData\Local\Temp\ccWrnjUF.s:1263   .text.lv_text_get_next_word:00000000 $t
-C:\Users\w1785\AppData\Local\Temp\ccWrnjUF.s:1268   .text.lv_text_get_next_word:00000000 lv_text_get_next_word
-C:\Users\w1785\AppData\Local\Temp\ccWrnjUF.s:1687   .text.lv_text_get_next_word:00000178 $d
-C:\Users\w1785\AppData\Local\Temp\ccWrnjUF.s:1692   .text.lv_text_get_next_line:00000000 $t
-C:\Users\w1785\AppData\Local\Temp\ccWrnjUF.s:1698   .text.lv_text_get_next_line:00000000 lv_text_get_next_line
-C:\Users\w1785\AppData\Local\Temp\ccWrnjUF.s:2088   .text.lv_text_ins:00000000 $t
-C:\Users\w1785\AppData\Local\Temp\ccWrnjUF.s:2094   .text.lv_text_ins:00000000 lv_text_ins
-C:\Users\w1785\AppData\Local\Temp\ccWrnjUF.s:2199   .text.lv_text_cut:00000000 $t
-C:\Users\w1785\AppData\Local\Temp\ccWrnjUF.s:2205   .text.lv_text_cut:00000000 lv_text_cut
-C:\Users\w1785\AppData\Local\Temp\ccWrnjUF.s:2294   .text.lv_text_set_text_vfmt:00000000 $t
-C:\Users\w1785\AppData\Local\Temp\ccWrnjUF.s:2300   .text.lv_text_set_text_vfmt:00000000 lv_text_set_text_vfmt
-C:\Users\w1785\AppData\Local\Temp\ccWrnjUF.s:2387   .text.lv_text_encoded_letter_next_2:00000000 $t
-C:\Users\w1785\AppData\Local\Temp\ccWrnjUF.s:2393   .text.lv_text_encoded_letter_next_2:00000000 lv_text_encoded_letter_next_2
-C:\Users\w1785\AppData\Local\Temp\ccWrnjUF.s:2445   .text.lv_text_get_width:00000000 $t
-C:\Users\w1785\AppData\Local\Temp\ccWrnjUF.s:2451   .text.lv_text_get_width:00000000 lv_text_get_width
-C:\Users\w1785\AppData\Local\Temp\ccWrnjUF.s:2614   .text.lv_text_get_size_attributes:00000000 $t
-C:\Users\w1785\AppData\Local\Temp\ccWrnjUF.s:2620   .text.lv_text_get_size_attributes:00000000 lv_text_get_size_attributes
-C:\Users\w1785\AppData\Local\Temp\ccWrnjUF.s:2844   .text.lv_text_get_size:00000000 $t
-C:\Users\w1785\AppData\Local\Temp\ccWrnjUF.s:2850   .text.lv_text_get_size:00000000 lv_text_get_size
-C:\Users\w1785\AppData\Local\Temp\ccWrnjUF.s:2918   .rodata.lv_text_get_encoded_length:00000000 lv_text_get_encoded_length
-C:\Users\w1785\AppData\Local\Temp\ccWrnjUF.s:2915   .rodata.lv_text_get_encoded_length:00000000 $d
-C:\Users\w1785\AppData\Local\Temp\ccWrnjUF.s:2925   .rodata.lv_text_encoded_get_char_id:00000000 lv_text_encoded_get_char_id
-C:\Users\w1785\AppData\Local\Temp\ccWrnjUF.s:2922   .rodata.lv_text_encoded_get_char_id:00000000 $d
-C:\Users\w1785\AppData\Local\Temp\ccWrnjUF.s:2932   .rodata.lv_text_encoded_get_byte_id:00000000 lv_text_encoded_get_byte_id
-C:\Users\w1785\AppData\Local\Temp\ccWrnjUF.s:2929   .rodata.lv_text_encoded_get_byte_id:00000000 $d
-C:\Users\w1785\AppData\Local\Temp\ccWrnjUF.s:2939   .rodata.lv_text_encoded_prev:00000000 lv_text_encoded_prev
-C:\Users\w1785\AppData\Local\Temp\ccWrnjUF.s:2936   .rodata.lv_text_encoded_prev:00000000 $d
-C:\Users\w1785\AppData\Local\Temp\ccWrnjUF.s:2946   .rodata.lv_text_encoded_next:00000000 lv_text_encoded_next
-C:\Users\w1785\AppData\Local\Temp\ccWrnjUF.s:2943   .rodata.lv_text_encoded_next:00000000 $d
-C:\Users\w1785\AppData\Local\Temp\ccWrnjUF.s:2953   .rodata.lv_text_encoded_conv_wc:00000000 lv_text_encoded_conv_wc
-C:\Users\w1785\AppData\Local\Temp\ccWrnjUF.s:2950   .rodata.lv_text_encoded_conv_wc:00000000 $d
-C:\Users\w1785\AppData\Local\Temp\ccWrnjUF.s:2960   .rodata.lv_text_unicode_to_encoded:00000000 lv_text_unicode_to_encoded
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccWrnjUF.s 			page 87
+C:\Users\w1785\AppData\Local\Temp\ccBO912E.s:21     .text.lv_text_is_a_word:00000000 $t
+C:\Users\w1785\AppData\Local\Temp\ccBO912E.s:26     .text.lv_text_is_a_word:00000000 lv_text_is_a_word
+C:\Users\w1785\AppData\Local\Temp\ccBO912E.s:161    .text.lv_text_utf8_size:00000000 $t
+C:\Users\w1785\AppData\Local\Temp\ccBO912E.s:166    .text.lv_text_utf8_size:00000000 lv_text_utf8_size
+C:\Users\w1785\AppData\Local\Temp\ccBO912E.s:233    .text.lv_text_unicode_to_utf8:00000000 $t
+C:\Users\w1785\AppData\Local\Temp\ccBO912E.s:238    .text.lv_text_unicode_to_utf8:00000000 lv_text_unicode_to_utf8
+C:\Users\w1785\AppData\Local\Temp\ccBO912E.s:384    .text.lv_text_utf8_next:00000000 $t
+C:\Users\w1785\AppData\Local\Temp\ccBO912E.s:389    .text.lv_text_utf8_next:00000000 lv_text_utf8_next
+C:\Users\w1785\AppData\Local\Temp\ccBO912E.s:686    .text.lv_text_utf8_prev:00000000 $t
+C:\Users\w1785\AppData\Local\Temp\ccBO912E.s:691    .text.lv_text_utf8_prev:00000000 lv_text_utf8_prev
+C:\Users\w1785\AppData\Local\Temp\ccBO912E.s:800    .text.lv_text_utf8_get_byte_id:00000000 $t
+C:\Users\w1785\AppData\Local\Temp\ccBO912E.s:805    .text.lv_text_utf8_get_byte_id:00000000 lv_text_utf8_get_byte_id
+C:\Users\w1785\AppData\Local\Temp\ccBO912E.s:879    .text.lv_text_utf8_get_char_id:00000000 $t
+C:\Users\w1785\AppData\Local\Temp\ccBO912E.s:884    .text.lv_text_utf8_get_char_id:00000000 lv_text_utf8_get_char_id
+C:\Users\w1785\AppData\Local\Temp\ccBO912E.s:942    .text.lv_text_utf8_get_length:00000000 $t
+C:\Users\w1785\AppData\Local\Temp\ccBO912E.s:947    .text.lv_text_utf8_get_length:00000000 lv_text_utf8_get_length
+C:\Users\w1785\AppData\Local\Temp\ccBO912E.s:1006   .text.lv_text_utf8_conv_wc:00000000 $t
+C:\Users\w1785\AppData\Local\Temp\ccBO912E.s:1011   .text.lv_text_utf8_conv_wc:00000000 lv_text_utf8_conv_wc
+C:\Users\w1785\AppData\Local\Temp\ccBO912E.s:1114   .text.lv_text_attributes_init:00000000 $t
+C:\Users\w1785\AppData\Local\Temp\ccBO912E.s:1120   .text.lv_text_attributes_init:00000000 lv_text_attributes_init
+C:\Users\w1785\AppData\Local\Temp\ccBO912E.s:1154   .text.lv_text_is_cmd:00000000 $t
+C:\Users\w1785\AppData\Local\Temp\ccBO912E.s:1160   .text.lv_text_is_cmd:00000000 lv_text_is_cmd
+C:\Users\w1785\AppData\Local\Temp\ccBO912E.s:1259   .rodata.lv_text_get_next_word.str1.4:00000000 $d
+C:\Users\w1785\AppData\Local\Temp\ccBO912E.s:1263   .text.lv_text_get_next_word:00000000 $t
+C:\Users\w1785\AppData\Local\Temp\ccBO912E.s:1268   .text.lv_text_get_next_word:00000000 lv_text_get_next_word
+C:\Users\w1785\AppData\Local\Temp\ccBO912E.s:1687   .text.lv_text_get_next_word:00000178 $d
+C:\Users\w1785\AppData\Local\Temp\ccBO912E.s:1692   .text.lv_text_get_next_line:00000000 $t
+C:\Users\w1785\AppData\Local\Temp\ccBO912E.s:1698   .text.lv_text_get_next_line:00000000 lv_text_get_next_line
+C:\Users\w1785\AppData\Local\Temp\ccBO912E.s:2088   .text.lv_text_ins:00000000 $t
+C:\Users\w1785\AppData\Local\Temp\ccBO912E.s:2094   .text.lv_text_ins:00000000 lv_text_ins
+C:\Users\w1785\AppData\Local\Temp\ccBO912E.s:2199   .text.lv_text_cut:00000000 $t
+C:\Users\w1785\AppData\Local\Temp\ccBO912E.s:2205   .text.lv_text_cut:00000000 lv_text_cut
+C:\Users\w1785\AppData\Local\Temp\ccBO912E.s:2294   .text.lv_text_set_text_vfmt:00000000 $t
+C:\Users\w1785\AppData\Local\Temp\ccBO912E.s:2300   .text.lv_text_set_text_vfmt:00000000 lv_text_set_text_vfmt
+C:\Users\w1785\AppData\Local\Temp\ccBO912E.s:2387   .text.lv_text_encoded_letter_next_2:00000000 $t
+C:\Users\w1785\AppData\Local\Temp\ccBO912E.s:2393   .text.lv_text_encoded_letter_next_2:00000000 lv_text_encoded_letter_next_2
+C:\Users\w1785\AppData\Local\Temp\ccBO912E.s:2445   .text.lv_text_get_width:00000000 $t
+C:\Users\w1785\AppData\Local\Temp\ccBO912E.s:2451   .text.lv_text_get_width:00000000 lv_text_get_width
+C:\Users\w1785\AppData\Local\Temp\ccBO912E.s:2614   .text.lv_text_get_size_attributes:00000000 $t
+C:\Users\w1785\AppData\Local\Temp\ccBO912E.s:2620   .text.lv_text_get_size_attributes:00000000 lv_text_get_size_attributes
+C:\Users\w1785\AppData\Local\Temp\ccBO912E.s:2844   .text.lv_text_get_size:00000000 $t
+C:\Users\w1785\AppData\Local\Temp\ccBO912E.s:2850   .text.lv_text_get_size:00000000 lv_text_get_size
+C:\Users\w1785\AppData\Local\Temp\ccBO912E.s:2918   .rodata.lv_text_get_encoded_length:00000000 lv_text_get_encoded_length
+C:\Users\w1785\AppData\Local\Temp\ccBO912E.s:2915   .rodata.lv_text_get_encoded_length:00000000 $d
+C:\Users\w1785\AppData\Local\Temp\ccBO912E.s:2925   .rodata.lv_text_encoded_get_char_id:00000000 lv_text_encoded_get_char_id
+C:\Users\w1785\AppData\Local\Temp\ccBO912E.s:2922   .rodata.lv_text_encoded_get_char_id:00000000 $d
+C:\Users\w1785\AppData\Local\Temp\ccBO912E.s:2932   .rodata.lv_text_encoded_get_byte_id:00000000 lv_text_encoded_get_byte_id
+C:\Users\w1785\AppData\Local\Temp\ccBO912E.s:2929   .rodata.lv_text_encoded_get_byte_id:00000000 $d
+C:\Users\w1785\AppData\Local\Temp\ccBO912E.s:2939   .rodata.lv_text_encoded_prev:00000000 lv_text_encoded_prev
+C:\Users\w1785\AppData\Local\Temp\ccBO912E.s:2936   .rodata.lv_text_encoded_prev:00000000 $d
+C:\Users\w1785\AppData\Local\Temp\ccBO912E.s:2946   .rodata.lv_text_encoded_next:00000000 lv_text_encoded_next
+C:\Users\w1785\AppData\Local\Temp\ccBO912E.s:2943   .rodata.lv_text_encoded_next:00000000 $d
+C:\Users\w1785\AppData\Local\Temp\ccBO912E.s:2953   .rodata.lv_text_encoded_conv_wc:00000000 lv_text_encoded_conv_wc
+C:\Users\w1785\AppData\Local\Temp\ccBO912E.s:2950   .rodata.lv_text_encoded_conv_wc:00000000 $d
+C:\Users\w1785\AppData\Local\Temp\ccBO912E.s:2960   .rodata.lv_text_unicode_to_encoded:00000000 lv_text_unicode_to_encoded
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccBO912E.s 			page 87
 
 
-C:\Users\w1785\AppData\Local\Temp\ccWrnjUF.s:2957   .rodata.lv_text_unicode_to_encoded:00000000 $d
-C:\Users\w1785\AppData\Local\Temp\ccWrnjUF.s:2967   .rodata.lv_text_encoded_size:00000000 lv_text_encoded_size
-C:\Users\w1785\AppData\Local\Temp\ccWrnjUF.s:2964   .rodata.lv_text_encoded_size:00000000 $d
+C:\Users\w1785\AppData\Local\Temp\ccBO912E.s:2957   .rodata.lv_text_unicode_to_encoded:00000000 $d
+C:\Users\w1785\AppData\Local\Temp\ccBO912E.s:2967   .rodata.lv_text_encoded_size:00000000 lv_text_encoded_size
+C:\Users\w1785\AppData\Local\Temp\ccBO912E.s:2964   .rodata.lv_text_encoded_size:00000000 $d
 
 UNDEFINED SYMBOLS
 lv_memcpy

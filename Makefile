@@ -41,7 +41,9 @@ Core/Src/gpio.c \
 Core/Src/lv_port_disp.c \
 Application/Src/app_main.c \
 Services/Src/display_service.c \
+Services/Src/sensor_service.c \
 DeviceDrivers/LCD/Src/st7789.c \
+DeviceDrivers/Sensor/Src/aht20.c \
 HardwareDrivers/LCD/Src/lcd_hw.c \
 HardwareDrivers/I2C/Src/i2c_sw.c \
 Core/Src/stm32g4xx_it.c \
@@ -139,6 +141,7 @@ C_INCLUDES =  \
 -IApplication/Inc \
 -IServices/Inc \
 -IDeviceDrivers/LCD/Inc \
+-IDeviceDrivers/Sensor/Inc \
 -IHardwareDrivers/LCD/Inc \
 -IHardwareDrivers/I2C/Inc \
 -IMiddlewares/LVGL \

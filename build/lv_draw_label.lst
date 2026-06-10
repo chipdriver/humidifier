@@ -1,4 +1,4 @@
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\cc9UZnJI.s 			page 1
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccbNkeUj.s 			page 1
 
 
    1              		.cpu cortex-m4
@@ -58,7 +58,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\cc9UZnJI.s 			page 1
   27:Middlewares/LVGL/lvgl/src/draw/../misc/lv_text_private.h **** #define LV_TXT_ENC_UTF8 1
   28:Middlewares/LVGL/lvgl/src/draw/../misc/lv_text_private.h **** #define LV_TXT_ENC_ASCII 2
   29:Middlewares/LVGL/lvgl/src/draw/../misc/lv_text_private.h **** 
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\cc9UZnJI.s 			page 2
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccbNkeUj.s 			page 2
 
 
   30:Middlewares/LVGL/lvgl/src/draw/../misc/lv_text_private.h **** #define LV_TEXT_LEN_MAX UINT32_MAX
@@ -118,7 +118,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\cc9UZnJI.s 			page 1
   84:Middlewares/LVGL/lvgl/src/draw/../misc/lv_text_private.h ****  * @param state
   85:Middlewares/LVGL/lvgl/src/draw/../misc/lv_text_private.h ****  * @param c
   86:Middlewares/LVGL/lvgl/src/draw/../misc/lv_text_private.h ****  * @return True if c is state
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\cc9UZnJI.s 			page 3
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccbNkeUj.s 			page 3
 
 
   87:Middlewares/LVGL/lvgl/src/draw/../misc/lv_text_private.h ****  */
@@ -178,7 +178,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\cc9UZnJI.s 			page 1
  141:Middlewares/LVGL/lvgl/src/draw/../misc/lv_text_private.h **** /**
  142:Middlewares/LVGL/lvgl/src/draw/../misc/lv_text_private.h ****  * Test if char is break char or not (a text can broken here or not)
  143:Middlewares/LVGL/lvgl/src/draw/../misc/lv_text_private.h ****  * @param letter a letter
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\cc9UZnJI.s 			page 4
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccbNkeUj.s 			page 4
 
 
  144:Middlewares/LVGL/lvgl/src/draw/../misc/lv_text_private.h ****  * @return false: 'letter' is not break char
@@ -238,7 +238,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\cc9UZnJI.s 			page 1
  198:Middlewares/LVGL/lvgl/src/draw/../misc/lv_text_private.h ****     if(letter >= 0x3040 && letter <= 0x30FF) {
  199:Middlewares/LVGL/lvgl/src/draw/../misc/lv_text_private.h ****         return true;
  200:Middlewares/LVGL/lvgl/src/draw/../misc/lv_text_private.h ****     }
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\cc9UZnJI.s 			page 5
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccbNkeUj.s 			page 5
 
 
  201:Middlewares/LVGL/lvgl/src/draw/../misc/lv_text_private.h **** 
@@ -298,7 +298,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\cc9UZnJI.s 			page 1
   52 0018 23D0     		beq	.L6
  233:Middlewares/LVGL/lvgl/src/draw/../misc/lv_text_private.h **** 
  234:Middlewares/LVGL/lvgl/src/draw/../misc/lv_text_private.h ****     /*See https://www.compart.com/en/unicode/block/U+1800*/
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\cc9UZnJI.s 			page 6
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccbNkeUj.s 			page 6
 
 
  235:Middlewares/LVGL/lvgl/src/draw/../misc/lv_text_private.h ****     if(letter >= 0x180B && letter <= 0x180E) return true;
@@ -358,7 +358,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\cc9UZnJI.s 			page 1
   94              		.loc 2 247 12 view .LVU26
   95 0054 7047     		bx	lr
   96              	.LVL2:
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\cc9UZnJI.s 			page 7
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccbNkeUj.s 			page 7
 
 
   97              	.L3:
@@ -418,7 +418,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\cc9UZnJI.s 			page 1
  139              	.L9:
  239:Middlewares/LVGL/lvgl/src/draw/../misc/lv_text_private.h ****     if(letter >= 0x205F && letter <= 0x206F) return true;
  140              		.loc 2 239 53 discriminator 1 view .LVU39
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\cc9UZnJI.s 			page 8
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccbNkeUj.s 			page 8
 
 
  141 006e 0120     		movs	r0, #1
@@ -478,7 +478,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\cc9UZnJI.s 			page 1
   13:Middlewares/LVGL/lvgl/src/draw/lv_draw_label.c **** #include "lv_draw_rect_private.h"
   14:Middlewares/LVGL/lvgl/src/draw/lv_draw_label.c **** #include "../core/lv_obj.h"
   15:Middlewares/LVGL/lvgl/src/draw/lv_draw_label.c **** #include "../misc/lv_math.h"
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\cc9UZnJI.s 			page 9
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccbNkeUj.s 			page 9
 
 
   16:Middlewares/LVGL/lvgl/src/draw/lv_draw_label.c **** #include "../core/lv_obj_event.h"
@@ -538,7 +538,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\cc9UZnJI.s 			page 1
   70:Middlewares/LVGL/lvgl/src/draw/lv_draw_label.c ****     dsc->scale_x = LV_SCALE_NONE;
   71:Middlewares/LVGL/lvgl/src/draw/lv_draw_label.c ****     dsc->scale_y = LV_SCALE_NONE;
   72:Middlewares/LVGL/lvgl/src/draw/lv_draw_label.c ****     dsc->base.dsc_size = sizeof(lv_draw_letter_dsc_t);
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\cc9UZnJI.s 			page 10
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccbNkeUj.s 			page 10
 
 
   73:Middlewares/LVGL/lvgl/src/draw/lv_draw_label.c **** }
@@ -598,7 +598,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\cc9UZnJI.s 			page 1
  127:Middlewares/LVGL/lvgl/src/draw/lv_draw_label.c ****     lv_memcpy(t->draw_dsc, dsc, sizeof(*dsc));
  128:Middlewares/LVGL/lvgl/src/draw/lv_draw_label.c **** 
  129:Middlewares/LVGL/lvgl/src/draw/lv_draw_label.c ****     /*The text is stored in a local variable so malloc memory for it*/
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\cc9UZnJI.s 			page 11
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccbNkeUj.s 			page 11
 
 
  130:Middlewares/LVGL/lvgl/src/draw/lv_draw_label.c ****     if(dsc->text_local) {
@@ -658,7 +658,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\cc9UZnJI.s 			page 1
  184:Middlewares/LVGL/lvgl/src/draw/lv_draw_label.c ****     if(dsc->font == NULL) {
  185:Middlewares/LVGL/lvgl/src/draw/lv_draw_label.c ****         LV_LOG_WARN("dsc->font == NULL");
  186:Middlewares/LVGL/lvgl/src/draw/lv_draw_label.c ****         return;
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\cc9UZnJI.s 			page 12
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccbNkeUj.s 			page 12
 
 
  187:Middlewares/LVGL/lvgl/src/draw/lv_draw_label.c ****     }
@@ -718,7 +718,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\cc9UZnJI.s 			page 1
  241:Middlewares/LVGL/lvgl/src/draw/lv_draw_label.c ****         else {
  242:Middlewares/LVGL/lvgl/src/draw/lv_draw_label.c ****             lv_text_attributes_t attributes = {0};
  243:Middlewares/LVGL/lvgl/src/draw/lv_draw_label.c **** 
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\cc9UZnJI.s 			page 13
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccbNkeUj.s 			page 13
 
 
  244:Middlewares/LVGL/lvgl/src/draw/lv_draw_label.c ****             attributes.letter_space = dsc->letter_space;
@@ -778,7 +778,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\cc9UZnJI.s 			page 1
  298:Middlewares/LVGL/lvgl/src/draw/lv_draw_label.c ****         remaining_len -= line_end - line_start;
  299:Middlewares/LVGL/lvgl/src/draw/lv_draw_label.c ****         line_start = line_end;
  300:Middlewares/LVGL/lvgl/src/draw/lv_draw_label.c ****         line_end += lv_text_get_next_line(&dsc->text[line_start], remaining_len, font, NULL, &attri
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\cc9UZnJI.s 			page 14
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccbNkeUj.s 			page 14
 
 
  301:Middlewares/LVGL/lvgl/src/draw/lv_draw_label.c ****         pos.y += line_height;
@@ -838,7 +838,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\cc9UZnJI.s 			page 1
  355:Middlewares/LVGL/lvgl/src/draw/lv_draw_label.c ****     int32_t letter_w;
  356:Middlewares/LVGL/lvgl/src/draw/lv_draw_label.c **** 
  357:Middlewares/LVGL/lvgl/src/draw/lv_draw_label.c ****     cmd_state_t recolor_cmd_state = RECOLOR_CMD_STATE_WAIT_FOR_PARAMETER;
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\cc9UZnJI.s 			page 15
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccbNkeUj.s 			page 15
 
 
  358:Middlewares/LVGL/lvgl/src/draw/lv_draw_label.c ****     lv_color_t recolor = lv_color_black(); /* Holds the selected color inside the recolor command *
@@ -898,7 +898,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\cc9UZnJI.s 			page 1
  412:Middlewares/LVGL/lvgl/src/draw/lv_draw_label.c ****                 if(letter == (uint32_t)LV_TXT_COLOR_CMD[0]) {
  413:Middlewares/LVGL/lvgl/src/draw/lv_draw_label.c ****                     /* Handle the recolor command marker depending of the current recolor state */
  414:Middlewares/LVGL/lvgl/src/draw/lv_draw_label.c **** 
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\cc9UZnJI.s 			page 16
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccbNkeUj.s 			page 16
 
 
  415:Middlewares/LVGL/lvgl/src/draw/lv_draw_label.c ****                     if(recolor_cmd_state == RECOLOR_CMD_STATE_WAIT_FOR_PARAMETER) {
@@ -958,7 +958,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\cc9UZnJI.s 			page 1
  469:Middlewares/LVGL/lvgl/src/draw/lv_draw_label.c ****                     recolor_cmd_state = RECOLOR_CMD_STATE_TEXT_INPUT;
  470:Middlewares/LVGL/lvgl/src/draw/lv_draw_label.c ****                 }
  471:Middlewares/LVGL/lvgl/src/draw/lv_draw_label.c **** 
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\cc9UZnJI.s 			page 17
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccbNkeUj.s 			page 17
 
 
  472:Middlewares/LVGL/lvgl/src/draw/lv_draw_label.c ****                 /* Don't draw the first space after the recolor command */
@@ -1018,7 +1018,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\cc9UZnJI.s 			page 1
  526:Middlewares/LVGL/lvgl/src/draw/lv_draw_label.c ****                 draw_letter_dsc.color = dsc->color;
  527:Middlewares/LVGL/lvgl/src/draw/lv_draw_label.c ****             }
  528:Middlewares/LVGL/lvgl/src/draw/lv_draw_label.c **** 
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\cc9UZnJI.s 			page 18
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccbNkeUj.s 			page 18
 
 
  529:Middlewares/LVGL/lvgl/src/draw/lv_draw_label.c ****             lv_draw_unit_draw_letter(t, &draw_letter_dsc, &pos, font, letter, cb);
@@ -1078,7 +1078,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\cc9UZnJI.s 			page 1
  583:Middlewares/LVGL/lvgl/src/draw/lv_draw_label.c **** /**
  584:Middlewares/LVGL/lvgl/src/draw/lv_draw_label.c ****  * Convert a hexadecimal characters to a number (0..15)
  585:Middlewares/LVGL/lvgl/src/draw/lv_draw_label.c ****  * @param hex Pointer to a hexadecimal character (0..9, A..F)
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\cc9UZnJI.s 			page 19
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccbNkeUj.s 			page 19
 
 
  586:Middlewares/LVGL/lvgl/src/draw/lv_draw_label.c ****  * @return the numerical value of `hex` or 0 on error
@@ -1138,7 +1138,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\cc9UZnJI.s 			page 1
  593:Middlewares/LVGL/lvgl/src/draw/lv_draw_label.c **** }
  225              		.loc 1 593 1 view .LVU64
  226 0024 7047     		bx	lr
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\cc9UZnJI.s 			page 20
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccbNkeUj.s 			page 20
 
 
  227              		.cfi_endproc
@@ -1198,7 +1198,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\cc9UZnJI.s 			page 1
   25:Middlewares/LVGL/lvgl/src/draw/../misc/../font/../draw/../misc/../stdlib/lv_string.h ****  **********************/
   26:Middlewares/LVGL/lvgl/src/draw/../misc/../font/../draw/../misc/../stdlib/lv_string.h **** 
   27:Middlewares/LVGL/lvgl/src/draw/../misc/../font/../draw/../misc/../stdlib/lv_string.h **** /**********************
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\cc9UZnJI.s 			page 21
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccbNkeUj.s 			page 21
 
 
   28:Middlewares/LVGL/lvgl/src/draw/../misc/../font/../draw/../misc/../stdlib/lv_string.h ****  * GLOBAL PROTOTYPES
@@ -1258,7 +1258,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\cc9UZnJI.s 			page 1
  262              	.LVL31:
  263              		.loc 3 75 5 is_stmt 0 view .LVU70
  264              	.LBE18:
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\cc9UZnJI.s 			page 22
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccbNkeUj.s 			page 22
 
 
  265              	.LBE17:
@@ -1318,7 +1318,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\cc9UZnJI.s 			page 1
  303              		.align	2
  304              	.L19:
  305 0040 00000000 		.word	lv_font_montserrat_14
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\cc9UZnJI.s 			page 23
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccbNkeUj.s 			page 23
 
 
  306              		.cfi_endproc
@@ -1378,7 +1378,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\cc9UZnJI.s 			page 1
  354 001e 84F83930 		strb	r3, [r4, #57]
  355 0022 C0F30740 		ubfx	r0, r0, #16, #8
  356 0026 84F83A00 		strb	r0, [r4, #58]
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\cc9UZnJI.s 			page 24
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccbNkeUj.s 			page 24
 
 
   80:Middlewares/LVGL/lvgl/src/draw/lv_draw_label.c ****     dsc->font = LV_FONT_DEFAULT;
@@ -1438,7 +1438,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\cc9UZnJI.s 			page 1
   87:Middlewares/LVGL/lvgl/src/draw/lv_draw_label.c **** }
  396              		.loc 1 87 24 is_stmt 0 view .LVU112
  397 0074 7823     		movs	r3, #120
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\cc9UZnJI.s 			page 25
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccbNkeUj.s 			page 25
 
 
  398 0076 2362     		str	r3, [r4, #32]
@@ -1498,7 +1498,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\cc9UZnJI.s 			page 1
  444              	.LFE205:
  446              		.section	.text.lv_draw_glyph_dsc_init,"ax",%progbits
  447              		.align	1
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\cc9UZnJI.s 			page 26
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccbNkeUj.s 			page 26
 
 
  448              		.global	lv_draw_glyph_dsc_init
@@ -1558,7 +1558,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\cc9UZnJI.s 			page 1
  103:Middlewares/LVGL/lvgl/src/draw/lv_draw_label.c ****     if(dsc->text == NULL || dsc->text[0] == '\0') return;
  499              		.loc 1 103 5 view .LVU131
  103:Middlewares/LVGL/lvgl/src/draw/lv_draw_label.c ****     if(dsc->text == NULL || dsc->text[0] == '\0') return;
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\cc9UZnJI.s 			page 27
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccbNkeUj.s 			page 27
 
 
  500              		.loc 1 103 11 is_stmt 0 view .LVU132
@@ -1618,7 +1618,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\cc9UZnJI.s 			page 1
  541              		.loc 1 109 27 view .LVU145
  542 0026 AB68     		ldr	r3, [r5, #8]
  109:Middlewares/LVGL/lvgl/src/draw/lv_draw_label.c ****         /* Attempting to draw a label too small (negative width), cancel to avoid error */
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\cc9UZnJI.s 			page 28
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccbNkeUj.s 			page 28
 
 
  543              		.loc 1 109 7 view .LVU146
@@ -1678,7 +1678,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\cc9UZnJI.s 			page 1
  581 0050 FFF7FEFF 		bl	lv_draw_label
  582              	.LVL53:
  121:Middlewares/LVGL/lvgl/src/draw/lv_draw_label.c ****     }
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\cc9UZnJI.s 			page 29
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccbNkeUj.s 			page 29
 
 
  583              		.loc 1 121 9 view .LVU163
@@ -1738,7 +1738,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\cc9UZnJI.s 			page 1
  132:Middlewares/LVGL/lvgl/src/draw/lv_draw_label.c ****         LV_ASSERT_MALLOC(new_dsc->text);
  625              		.loc 1 132 23 discriminator 1 view .LVU176
  626 0086 B862     		str	r0, [r7, #40]
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\cc9UZnJI.s 			page 30
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccbNkeUj.s 			page 30
 
 
  133:Middlewares/LVGL/lvgl/src/draw/lv_draw_label.c ****     }
@@ -1798,7 +1798,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\cc9UZnJI.s 			page 1
  666              		.loc 1 133 9 view .LVU191
  133:Middlewares/LVGL/lvgl/src/draw/lv_draw_label.c ****     }
  667              		.loc 1 133 9 view .LVU192
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\cc9UZnJI.s 			page 31
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccbNkeUj.s 			page 31
 
 
  133:Middlewares/LVGL/lvgl/src/draw/lv_draw_label.c ****     }
@@ -1858,7 +1858,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\cc9UZnJI.s 			page 1
  717 0008 91F86630 		ldrb	r3, [r1, #102]	@ zero_extendqisi2
  718              	.LVL67:
  143:Middlewares/LVGL/lvgl/src/draw/lv_draw_label.c ****     if(dsc->font == NULL) {
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\cc9UZnJI.s 			page 32
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccbNkeUj.s 			page 32
 
 
  719              		.loc 1 143 7 view .LVU200
@@ -1918,7 +1918,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\cc9UZnJI.s 			page 1
  157:Middlewares/LVGL/lvgl/src/draw/lv_draw_label.c ****     a.x1 = point->x;
  762              		.loc 1 157 5 view .LVU212
  158:Middlewares/LVGL/lvgl/src/draw/lv_draw_label.c ****     a.y1 = point->y;
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\cc9UZnJI.s 			page 33
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccbNkeUj.s 			page 33
 
 
  763              		.loc 1 158 5 view .LVU213
@@ -1978,7 +1978,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\cc9UZnJI.s 			page 1
  799 005a 2846     		mov	r0, r5
  800 005c 9847     		blx	r3
  801              	.LVL75:
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\cc9UZnJI.s 			page 34
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccbNkeUj.s 			page 34
 
 
  165:Middlewares/LVGL/lvgl/src/draw/lv_draw_label.c ****     letter_buf[1] = '\0';
@@ -2038,7 +2038,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\cc9UZnJI.s 			page 1
  847              	.LFB209:
  182:Middlewares/LVGL/lvgl/src/draw/lv_draw_label.c ****     if(dsc->opa <= LV_OPA_MIN) return;
  848              		.loc 1 182 1 is_stmt 1 view -0
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\cc9UZnJI.s 			page 35
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccbNkeUj.s 			page 35
 
 
  849              		.cfi_startproc
@@ -2098,7 +2098,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\cc9UZnJI.s 			page 1
  890              		.loc 1 194 5 view .LVU256
  891 001c FFF7FEFF 		bl	lv_font_get_glyph_dsc
  892              	.LVL84:
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\cc9UZnJI.s 			page 36
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccbNkeUj.s 			page 36
 
 
  196:Middlewares/LVGL/lvgl/src/draw/lv_draw_label.c **** 
@@ -2158,7 +2158,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\cc9UZnJI.s 			page 1
  928              		.loc 1 204 5 is_stmt 1 view .LVU275
  204:Middlewares/LVGL/lvgl/src/draw/lv_draw_label.c ****     dsc->pivot.y = font->line_height - font->base_line;
  929              		.loc 1 204 21 is_stmt 0 view .LVU276
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\cc9UZnJI.s 			page 37
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccbNkeUj.s 			page 37
 
 
  930 003e BDF81430 		ldrh	r3, [sp, #20]
@@ -2218,7 +2218,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\cc9UZnJI.s 			page 1
  970              	.LCFI14:
  971              		.cfi_remember_state
  972              		.cfi_def_cfa_offset 20
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\cc9UZnJI.s 			page 38
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccbNkeUj.s 			page 38
 
 
  973              		@ sp needed
@@ -2278,7 +2278,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\cc9UZnJI.s 			page 1
  1023 0006 8046     		mov	r8, r0
  1024 0008 0D46     		mov	r5, r1
  1025 000a 1746     		mov	r7, r2
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\cc9UZnJI.s 			page 39
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccbNkeUj.s 			page 39
 
 
  1026 000c 1E46     		mov	r6, r3
@@ -2338,7 +2338,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\cc9UZnJI.s 			page 1
  1058 0036 BDF81E10 		ldrh	r1, [sp, #30]
  1059              		.loc 1 619 23 discriminator 1 view .LVU310
  1060 003a 79B9     		cbnz	r1, .L79
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\cc9UZnJI.s 			page 40
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccbNkeUj.s 			page 40
 
 
  1061              	.LVL98:
@@ -2398,7 +2398,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\cc9UZnJI.s 			page 1
  672:Middlewares/LVGL/lvgl/src/draw/lv_draw_label.c ****     if(dsc->g == &g) {
  1063              		.loc 1 672 5 is_stmt 1 view .LVU311
  1064              		.loc 1 672 11 is_stmt 0 view .LVU312
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\cc9UZnJI.s 			page 41
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccbNkeUj.s 			page 41
 
 
  1065 003c 2A69     		ldr	r2, [r5, #16]
@@ -2458,7 +2458,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\cc9UZnJI.s 			page 1
  1103              		.loc 1 624 27 is_stmt 0 view .LVU325
  1104 005c 3A68     		ldr	r2, [r7]
  624:Middlewares/LVGL/lvgl/src/draw/lv_draw_label.c ****     letter_coords.x2 = letter_coords.x1 + g.box_w - 1;
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\cc9UZnJI.s 			page 42
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccbNkeUj.s 			page 42
 
 
  1105              		.loc 1 624 34 view .LVU326
@@ -2518,7 +2518,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\cc9UZnJI.s 			page 1
  1140              		.loc 1 627 51 view .LVU345
  1141 0082 013B     		subs	r3, r3, #1
  627:Middlewares/LVGL/lvgl/src/draw/lv_draw_label.c ****     lv_area_move(&letter_coords, -dsc->pivot.x, -dsc->pivot.y);
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\cc9UZnJI.s 			page 43
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccbNkeUj.s 			page 43
 
 
  1142              		.loc 1 627 22 view .LVU346
@@ -2578,7 +2578,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\cc9UZnJI.s 			page 1
  1182              		.loc 1 637 9 is_stmt 0 view .LVU360
  1183 00b6 069B     		ldr	r3, [sp, #24]
  637:Middlewares/LVGL/lvgl/src/draw/lv_draw_label.c ****         lv_draw_buf_t * draw_buf = NULL;
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\cc9UZnJI.s 			page 44
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccbNkeUj.s 			page 44
 
 
  1184              		.loc 1 637 7 view .LVU361
@@ -2638,7 +2638,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\cc9UZnJI.s 			page 1
  1223 00dc 2946     		mov	r1, r5
  1224 00de 4046     		mov	r0, r8
  1225 00e0 159C     		ldr	r4, [sp, #84]
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\cc9UZnJI.s 			page 45
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccbNkeUj.s 			page 45
 
 
  1226 00e2 A047     		blx	r4
@@ -2698,7 +2698,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\cc9UZnJI.s 			page 1
  646:Middlewares/LVGL/lvgl/src/draw/lv_draw_label.c ****                 LV_ASSERT_MALLOC(draw_buf);
  1268              		.loc 1 646 28 is_stmt 0 view .LVU389
  1269 0114 0023     		movs	r3, #0
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\cc9UZnJI.s 			page 46
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccbNkeUj.s 			page 46
 
 
  1270 0116 0093     		str	r3, [sp]
@@ -2758,7 +2758,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\cc9UZnJI.s 			page 1
  1306              		.loc 1 658 40 is_stmt 0 view .LVU407
  1307 0136 2869     		ldr	r0, [r5, #16]
  1308 0138 FFF7FEFF 		bl	lv_font_get_glyph_bitmap
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\cc9UZnJI.s 			page 47
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccbNkeUj.s 			page 47
 
 
  1309              	.LVL118:
@@ -2818,7 +2818,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\cc9UZnJI.s 			page 1
  1352              		.thumb
  1353              		.thumb_func
  1355              	lv_draw_label_iterate_characters:
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\cc9UZnJI.s 			page 48
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccbNkeUj.s 			page 48
 
 
  1356              	.LVL120:
@@ -2878,7 +2878,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\cc9UZnJI.s 			page 1
  224:Middlewares/LVGL/lvgl/src/draw/lv_draw_label.c ****     if(!clip_ok) return;
  1399              		.loc 1 224 20 view .LVU431
  1400 001a 54A8     		add	r0, sp, #336
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\cc9UZnJI.s 			page 49
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccbNkeUj.s 			page 49
 
 
  1401              	.LVL125:
@@ -2938,7 +2938,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\cc9UZnJI.s 			page 1
   30:Middlewares/LVGL/lvgl/src/draw/../misc/lv_bidi.h ****  **********************/
   31:Middlewares/LVGL/lvgl/src/draw/../misc/lv_bidi.h **** typedef enum {
   32:Middlewares/LVGL/lvgl/src/draw/../misc/lv_bidi.h ****     LV_BASE_DIR_LTR      = 0x00,
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\cc9UZnJI.s 			page 50
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccbNkeUj.s 			page 50
 
 
   33:Middlewares/LVGL/lvgl/src/draw/../misc/lv_bidi.h ****     LV_BASE_DIR_RTL      = 0x01,
@@ -2998,7 +2998,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\cc9UZnJI.s 			page 1
  1430 0030 0E93     		str	r3, [sp, #56]
  1431              	.LVL129:
  1432              	.L87:
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\cc9UZnJI.s 			page 51
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccbNkeUj.s 			page 51
 
 
  1433              		.loc 4 75 46 discriminator 1 view .LVU446
@@ -3058,7 +3058,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\cc9UZnJI.s 			page 1
  1472              	.LVL136:
  234:Middlewares/LVGL/lvgl/src/draw/lv_draw_label.c ****     }
  1473              		.loc 1 234 13 view .LVU462
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\cc9UZnJI.s 			page 52
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccbNkeUj.s 			page 52
 
 
  1474 0058 19E0     		b	.L89
@@ -3118,7 +3118,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\cc9UZnJI.s 			page 1
  1512 0082 A16A     		ldr	r1, [r4, #40]
  1513 0084 2846     		mov	r0, r5
  1514 0086 FFF7FEFF 		bl	lv_text_get_size_attributes
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\cc9UZnJI.s 			page 53
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccbNkeUj.s 			page 53
 
 
  1515              	.LVL139:
@@ -3178,7 +3178,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\cc9UZnJI.s 			page 1
  1553 00ac 1193     		str	r3, [sp, #68]
  1554              	.LVL146:
  266:Middlewares/LVGL/lvgl/src/draw/lv_draw_label.c ****     pos.y += y_ofs;
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\cc9UZnJI.s 			page 54
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccbNkeUj.s 			page 54
 
 
  1555              		.loc 1 266 5 is_stmt 1 view .LVU495
@@ -3238,7 +3238,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\cc9UZnJI.s 			page 1
  1593 00ce 002A     		cmp	r2, #0
  1594 00d0 B8BF     		it	lt
  1595 00d2 5242     		rsblt	r2, r2, #0
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\cc9UZnJI.s 			page 55
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccbNkeUj.s 			page 55
 
 
  275:Middlewares/LVGL/lvgl/src/draw/lv_draw_label.c ****             dsc->hint->line_start = -1;
@@ -3298,7 +3298,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\cc9UZnJI.s 			page 1
  1635 00fa 26DB     		blt	.L135
  283:Middlewares/LVGL/lvgl/src/draw/lv_draw_label.c ****         pos.y += dsc->hint->y;
  1636              		.loc 1 283 9 is_stmt 1 view .LVU527
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\cc9UZnJI.s 			page 56
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccbNkeUj.s 			page 56
 
 
  1637              	.LVL159:
@@ -3358,7 +3358,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\cc9UZnJI.s 			page 1
  293:Middlewares/LVGL/lvgl/src/draw/lv_draw_label.c **** 
  1675              		.loc 1 293 64 is_stmt 0 view .LVU544
  1676 0128 A06A     		ldr	r0, [r4, #40]
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\cc9UZnJI.s 			page 57
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccbNkeUj.s 			page 57
 
 
  293:Middlewares/LVGL/lvgl/src/draw/lv_draw_label.c **** 
@@ -3418,7 +3418,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\cc9UZnJI.s 			page 1
  1718              		.loc 1 299 20 view .LVU557
  1719 0154 5A46     		mov	r2, fp
  310:Middlewares/LVGL/lvgl/src/draw/lv_draw_label.c ****     }
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\cc9UZnJI.s 			page 58
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccbNkeUj.s 			page 58
 
 
  1720              		.loc 1 310 11 view .LVU558
@@ -3478,7 +3478,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\cc9UZnJI.s 			page 1
  1760              	.LVL176:
  301:Middlewares/LVGL/lvgl/src/draw/lv_draw_label.c **** 
  1761              		.loc 1 301 9 is_stmt 1 view .LVU573
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\cc9UZnJI.s 			page 59
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccbNkeUj.s 			page 59
 
 
  301:Middlewares/LVGL/lvgl/src/draw/lv_draw_label.c **** 
@@ -3538,7 +3538,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\cc9UZnJI.s 			page 1
  1798 01aa 7268     		ldr	r2, [r6, #4]
  307:Middlewares/LVGL/lvgl/src/draw/lv_draw_label.c ****         }
  1799              		.loc 1 307 35 view .LVU592
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\cc9UZnJI.s 			page 60
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccbNkeUj.s 			page 60
 
 
  1800 01ac 9A60     		str	r2, [r3, #8]
@@ -3598,7 +3598,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\cc9UZnJI.s 			page 1
  333:Middlewares/LVGL/lvgl/src/draw/lv_draw_label.c ****     lv_draw_glyph_dsc_t draw_letter_dsc;
  1841              		.loc 1 333 5 is_stmt 1 view .LVU606
  334:Middlewares/LVGL/lvgl/src/draw/lv_draw_label.c ****     lv_font_glyph_dsc_t glyph_dsc;
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\cc9UZnJI.s 			page 61
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccbNkeUj.s 			page 61
 
 
  1842              		.loc 1 334 5 view .LVU607
@@ -3658,7 +3658,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\cc9UZnJI.s 			page 1
  345:Middlewares/LVGL/lvgl/src/draw/lv_draw_label.c ****     draw_letter_dsc.outline_stroke_color = dsc->outline_stroke_color;
  1878              		.loc 1 345 45 is_stmt 0 view .LVU626
  1879 01fa 94F86730 		ldrb	r3, [r4, #103]	@ zero_extendqisi2
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\cc9UZnJI.s 			page 62
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccbNkeUj.s 			page 62
 
 
  345:Middlewares/LVGL/lvgl/src/draw/lv_draw_label.c ****     draw_letter_dsc.outline_stroke_color = dsc->outline_stroke_color;
@@ -3718,7 +3718,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\cc9UZnJI.s 			page 1
  1915 0226 FFF7FEFF 		bl	lv_color_black
  1916              	.LVL187:
  1917 022a 8DF87000 		strb	r0, [sp, #112]
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\cc9UZnJI.s 			page 63
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccbNkeUj.s 			page 63
 
 
  1918 022e C0F30723 		ubfx	r3, r0, #8, #8
@@ -3778,7 +3778,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\cc9UZnJI.s 			page 1
  316:Middlewares/LVGL/lvgl/src/draw/lv_draw_label.c **** 
  1960              		.loc 1 316 9 is_stmt 1 view .LVU658
  316:Middlewares/LVGL/lvgl/src/draw/lv_draw_label.c **** 
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\cc9UZnJI.s 			page 64
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccbNkeUj.s 			page 64
 
 
  1961              		.loc 1 316 19 is_stmt 0 view .LVU659
@@ -3838,7 +3838,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\cc9UZnJI.s 			page 1
  322:Middlewares/LVGL/lvgl/src/draw/lv_draw_label.c ****     }
  2002              		.loc 1 322 12 discriminator 1 view .LVU673
  2003 0298 529B     		ldr	r3, [sp, #328]
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\cc9UZnJI.s 			page 65
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccbNkeUj.s 			page 65
 
 
  322:Middlewares/LVGL/lvgl/src/draw/lv_draw_label.c ****     }
@@ -3898,7 +3898,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\cc9UZnJI.s 			page 1
  416:Middlewares/LVGL/lvgl/src/draw/lv_draw_label.c ****                         recolor_cmd_state = RECOLOR_CMD_STATE_PARAMETER;
  2047              		.loc 1 416 25 is_stmt 1 view .LVU685
  416:Middlewares/LVGL/lvgl/src/draw/lv_draw_label.c ****                         recolor_cmd_state = RECOLOR_CMD_STATE_PARAMETER;
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\cc9UZnJI.s 			page 66
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccbNkeUj.s 			page 66
 
 
  2048              		.loc 1 416 53 is_stmt 0 view .LVU686
@@ -3958,7 +3958,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\cc9UZnJI.s 			page 1
  463:Middlewares/LVGL/lvgl/src/draw/lv_draw_label.c ****                         recolor.blue = dsc->color.blue;
  2087              		.loc 1 463 37 view .LVU702
  2088 02fa 8DF87230 		strb	r3, [sp, #114]
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\cc9UZnJI.s 			page 67
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccbNkeUj.s 			page 67
 
 
  464:Middlewares/LVGL/lvgl/src/draw/lv_draw_label.c ****                         recolor.green = dsc->color.green;
@@ -4018,7 +4018,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\cc9UZnJI.s 			page 1
  2128              		.loc 1 436 46 view .LVU717
  2129 032c D7E7     		b	.L108
  2130              	.LVL219:
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\cc9UZnJI.s 			page 68
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccbNkeUj.s 			page 68
 
 
  2131              	.L154:
@@ -4078,7 +4078,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\cc9UZnJI.s 			page 1
  457:Middlewares/LVGL/lvgl/src/draw/lv_draw_label.c ****                         b = (hex_char_to_num(buf[4]) << 4) + hex_char_to_num(buf[5]);
  2172              		.loc 1 457 62 discriminator 1 view .LVU731
  2173 036a 9DF86300 		ldrb	r0, [sp, #99]	@ zero_extendqisi2
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\cc9UZnJI.s 			page 69
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccbNkeUj.s 			page 69
 
 
  2174 036e FFF7FEFF 		bl	hex_char_to_num
@@ -4138,7 +4138,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\cc9UZnJI.s 			page 1
  2216              		.loc 1 480 17 is_stmt 1 view .LVU743
  480:Middlewares/LVGL/lvgl/src/draw/lv_draw_label.c ****             }
  2217              		.loc 1 480 34 is_stmt 0 view .LVU744
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\cc9UZnJI.s 			page 70
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccbNkeUj.s 			page 70
 
 
  2218 03b2 049B     		ldr	r3, [sp, #16]
@@ -4198,7 +4198,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\cc9UZnJI.s 			page 1
  2260 03ea DA19     		adds	r2, r3, r7
  532:Middlewares/LVGL/lvgl/src/draw/lv_draw_label.c ****             }
  2261              		.loc 1 532 23 view .LVU757
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\cc9UZnJI.s 			page 71
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccbNkeUj.s 			page 71
 
 
  2262 03ec 529B     		ldr	r3, [sp, #328]
@@ -4258,7 +4258,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\cc9UZnJI.s 			page 1
  2304              	.LVL239:
  2305              	.L103:
  405:Middlewares/LVGL/lvgl/src/draw/lv_draw_label.c ****             uint32_t letter_next;
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\cc9UZnJI.s 			page 72
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccbNkeUj.s 			page 72
 
 
  2306              		.loc 1 405 13 is_stmt 1 view .LVU770
@@ -4318,7 +4318,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\cc9UZnJI.s 			page 1
  2345              		.loc 1 479 21 is_stmt 0 view .LVU785
  2346 0458 94F86830 		ldrb	r3, [r4, #104]	@ zero_extendqisi2
  479:Middlewares/LVGL/lvgl/src/draw/lv_draw_label.c ****                 logical_char_pos -= (LABEL_RECOLOR_PAR_LENGTH + 1);
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\cc9UZnJI.s 			page 73
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccbNkeUj.s 			page 73
 
 
  2347              		.loc 1 479 15 view .LVU786
@@ -4378,7 +4378,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\cc9UZnJI.s 			page 1
  2387 0490 5399     		ldr	r1, [sp, #332]
  488:Middlewares/LVGL/lvgl/src/draw/lv_draw_label.c ****             bg_coords.x2 = pos.x + letter_w - 1 + (dsc->letter_space + 1) / 2;
  2388              		.loc 1 488 26 view .LVU801
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\cc9UZnJI.s 			page 74
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccbNkeUj.s 			page 74
 
 
  2389 0492 4B91     		str	r1, [sp, #300]
@@ -4438,7 +4438,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\cc9UZnJI.s 			page 1
  495:Middlewares/LVGL/lvgl/src/draw/lv_draw_label.c ****                     fill_area.x2 = pos.x + letter_w - 1;
  2425              		.loc 1 495 21 view .LVU820
  495:Middlewares/LVGL/lvgl/src/draw/lv_draw_label.c ****                     fill_area.x2 = pos.x + letter_w - 1;
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\cc9UZnJI.s 			page 75
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccbNkeUj.s 			page 75
 
 
  2426              		.loc 1 495 34 is_stmt 0 view .LVU821
@@ -4498,7 +4498,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\cc9UZnJI.s 			page 1
  2463 04ee 1EAA     		add	r2, sp, #120
  2464 04f0 0021     		movs	r1, #0
  2465 04f2 0698     		ldr	r0, [sp, #24]
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\cc9UZnJI.s 			page 76
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccbNkeUj.s 			page 76
 
 
  2466 04f4 079D     		ldr	r5, [sp, #28]
@@ -4558,7 +4558,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\cc9UZnJI.s 			page 1
  507:Middlewares/LVGL/lvgl/src/draw/lv_draw_label.c ****                     fill_area.y2 = fill_area.y1 + underline_width - 1;
  2503              		.loc 1 507 86 view .LVU856
  2504 051c 5F49     		ldr	r1, .L162+4
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\cc9UZnJI.s 			page 77
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccbNkeUj.s 			page 77
 
 
  2505 051e 81FB0201 		smull	r0, r1, r1, r2
@@ -4618,7 +4618,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\cc9UZnJI.s 			page 1
  2544 0558 4FF6FF73 		movw	r3, #65535
  2545 055c 9E42     		cmp	r6, r3
  2546 055e 3FF42EAF 		beq	.L115
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\cc9UZnJI.s 			page 78
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccbNkeUj.s 			page 78
 
 
  516:Middlewares/LVGL/lvgl/src/draw/lv_draw_label.c ****                && logical_char_pos >= sel_start && logical_char_pos < sel_end) {
@@ -4678,7 +4678,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\cc9UZnJI.s 			page 1
  2590              	.LBE39:
  541:Middlewares/LVGL/lvgl/src/draw/lv_draw_label.c ****         text_attributes.letter_space = dsc->letter_space;
  2591              		.loc 1 541 30 view .LVU883
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\cc9UZnJI.s 			page 79
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccbNkeUj.s 			page 79
 
 
  2592 05b0 039D     		ldr	r5, [sp, #12]
@@ -4738,7 +4738,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\cc9UZnJI.s 			page 1
  553:Middlewares/LVGL/lvgl/src/draw/lv_draw_label.c ****         /*Align to middle*/
  2630              		.loc 1 553 9 is_stmt 1 view .LVU900
  553:Middlewares/LVGL/lvgl/src/draw/lv_draw_label.c ****         /*Align to middle*/
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\cc9UZnJI.s 			page 80
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccbNkeUj.s 			page 80
 
 
  2631              		.loc 1 553 23 is_stmt 0 view .LVU901
@@ -4798,7 +4798,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\cc9UZnJI.s 			page 1
  362:Middlewares/LVGL/lvgl/src/draw/lv_draw_label.c ****         pos.x += x_ofs;
  2671              		.loc 1 362 31 is_stmt 0 discriminator 1 view .LVU916
  2672 0608 A36A     		ldr	r3, [r4, #40]
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\cc9UZnJI.s 			page 81
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccbNkeUj.s 			page 81
 
 
  362:Middlewares/LVGL/lvgl/src/draw/lv_draw_label.c ****         pos.x += x_ofs;
@@ -4858,7 +4858,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\cc9UZnJI.s 			page 1
  2712 062e 5246     		mov	r2, r10
  2713 0630 5946     		mov	r1, fp
  2714 0632 059D     		ldr	r5, [sp, #20]
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\cc9UZnJI.s 			page 82
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccbNkeUj.s 			page 82
 
 
  2715 0634 2844     		add	r0, r0, r5
@@ -4918,7 +4918,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\cc9UZnJI.s 			page 1
  2756              		.loc 1 563 13 is_stmt 1 view .LVU944
  564:Middlewares/LVGL/lvgl/src/draw/lv_draw_label.c ****             pos.x += lv_area_get_width(coords) - line_width;
  2757              		.loc 1 564 39 is_stmt 0 view .LVU945
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\cc9UZnJI.s 			page 83
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccbNkeUj.s 			page 83
 
 
  2758 0666 A06A     		ldr	r0, [r4, #40]
@@ -4978,7 +4978,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\cc9UZnJI.s 			page 1
  2798              		.loc 1 577 1 is_stmt 0 view .LVU959
  2799 0690 59B0     		add	sp, sp, #356
  2800              	.LCFI23:
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\cc9UZnJI.s 			page 84
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccbNkeUj.s 			page 84
 
 
  2801              		.cfi_def_cfa_offset 36
@@ -5032,38 +5032,38 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\cc9UZnJI.s 			page 1
  2849              		.file 38 "Middlewares/LVGL/lvgl/src/draw/../core/lv_global.h"
  2850              		.file 39 "Middlewares/LVGL/lvgl/src/draw/../misc/lv_area_private.h"
  2851              		.file 40 "<built-in>"
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\cc9UZnJI.s 			page 85
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccbNkeUj.s 			page 85
 
 
 DEFINED SYMBOLS
                             *ABS*:00000000 lv_draw_label.c
-C:\Users\w1785\AppData\Local\Temp\cc9UZnJI.s:21     .text.lv_text_is_marker:00000000 $t
-C:\Users\w1785\AppData\Local\Temp\cc9UZnJI.s:26     .text.lv_text_is_marker:00000000 lv_text_is_marker
-C:\Users\w1785\AppData\Local\Temp\cc9UZnJI.s:170    .text.hex_char_to_num:00000000 $t
-C:\Users\w1785\AppData\Local\Temp\cc9UZnJI.s:175    .text.hex_char_to_num:00000000 hex_char_to_num
-C:\Users\w1785\AppData\Local\Temp\cc9UZnJI.s:231    .text.lv_draw_letter_dsc_init:00000000 $t
-C:\Users\w1785\AppData\Local\Temp\cc9UZnJI.s:237    .text.lv_draw_letter_dsc_init:00000000 lv_draw_letter_dsc_init
-C:\Users\w1785\AppData\Local\Temp\cc9UZnJI.s:305    .text.lv_draw_letter_dsc_init:00000040 $d
-C:\Users\w1785\AppData\Local\Temp\cc9UZnJI.s:310    .text.lv_draw_label_dsc_init:00000000 $t
-C:\Users\w1785\AppData\Local\Temp\cc9UZnJI.s:316    .text.lv_draw_label_dsc_init:00000000 lv_draw_label_dsc_init
-C:\Users\w1785\AppData\Local\Temp\cc9UZnJI.s:406    .text.lv_draw_label_dsc_init:0000007c $d
-C:\Users\w1785\AppData\Local\Temp\cc9UZnJI.s:411    .text.lv_draw_task_get_label_dsc:00000000 $t
-C:\Users\w1785\AppData\Local\Temp\cc9UZnJI.s:417    .text.lv_draw_task_get_label_dsc:00000000 lv_draw_task_get_label_dsc
-C:\Users\w1785\AppData\Local\Temp\cc9UZnJI.s:447    .text.lv_draw_glyph_dsc_init:00000000 $t
-C:\Users\w1785\AppData\Local\Temp\cc9UZnJI.s:453    .text.lv_draw_glyph_dsc_init:00000000 lv_draw_glyph_dsc_init
-C:\Users\w1785\AppData\Local\Temp\cc9UZnJI.s:486    .text.lv_draw_label:00000000 $t
-C:\Users\w1785\AppData\Local\Temp\cc9UZnJI.s:492    .text.lv_draw_label:00000000 lv_draw_label
-C:\Users\w1785\AppData\Local\Temp\cc9UZnJI.s:688    .text.lv_draw_character:00000000 $t
-C:\Users\w1785\AppData\Local\Temp\cc9UZnJI.s:694    .text.lv_draw_character:00000000 lv_draw_character
-C:\Users\w1785\AppData\Local\Temp\cc9UZnJI.s:834    .text.lv_draw_character:00000084 $d
-C:\Users\w1785\AppData\Local\Temp\cc9UZnJI.s:839    .text.lv_draw_letter:00000000 $t
-C:\Users\w1785\AppData\Local\Temp\cc9UZnJI.s:845    .text.lv_draw_letter:00000000 lv_draw_letter
-C:\Users\w1785\AppData\Local\Temp\cc9UZnJI.s:997    .text.lv_draw_unit_draw_letter:00000000 $t
-C:\Users\w1785\AppData\Local\Temp\cc9UZnJI.s:1003   .text.lv_draw_unit_draw_letter:00000000 lv_draw_unit_draw_letter
-C:\Users\w1785\AppData\Local\Temp\cc9UZnJI.s:1344   .text.lv_draw_unit_draw_letter:00000158 $d
-C:\Users\w1785\AppData\Local\Temp\cc9UZnJI.s:1349   .text.lv_draw_label_iterate_characters:00000000 $t
-C:\Users\w1785\AppData\Local\Temp\cc9UZnJI.s:1355   .text.lv_draw_label_iterate_characters:00000000 lv_draw_label_iterate_characters
-C:\Users\w1785\AppData\Local\Temp\cc9UZnJI.s:2809   .text.lv_draw_label_iterate_characters:00000698 $d
+C:\Users\w1785\AppData\Local\Temp\ccbNkeUj.s:21     .text.lv_text_is_marker:00000000 $t
+C:\Users\w1785\AppData\Local\Temp\ccbNkeUj.s:26     .text.lv_text_is_marker:00000000 lv_text_is_marker
+C:\Users\w1785\AppData\Local\Temp\ccbNkeUj.s:170    .text.hex_char_to_num:00000000 $t
+C:\Users\w1785\AppData\Local\Temp\ccbNkeUj.s:175    .text.hex_char_to_num:00000000 hex_char_to_num
+C:\Users\w1785\AppData\Local\Temp\ccbNkeUj.s:231    .text.lv_draw_letter_dsc_init:00000000 $t
+C:\Users\w1785\AppData\Local\Temp\ccbNkeUj.s:237    .text.lv_draw_letter_dsc_init:00000000 lv_draw_letter_dsc_init
+C:\Users\w1785\AppData\Local\Temp\ccbNkeUj.s:305    .text.lv_draw_letter_dsc_init:00000040 $d
+C:\Users\w1785\AppData\Local\Temp\ccbNkeUj.s:310    .text.lv_draw_label_dsc_init:00000000 $t
+C:\Users\w1785\AppData\Local\Temp\ccbNkeUj.s:316    .text.lv_draw_label_dsc_init:00000000 lv_draw_label_dsc_init
+C:\Users\w1785\AppData\Local\Temp\ccbNkeUj.s:406    .text.lv_draw_label_dsc_init:0000007c $d
+C:\Users\w1785\AppData\Local\Temp\ccbNkeUj.s:411    .text.lv_draw_task_get_label_dsc:00000000 $t
+C:\Users\w1785\AppData\Local\Temp\ccbNkeUj.s:417    .text.lv_draw_task_get_label_dsc:00000000 lv_draw_task_get_label_dsc
+C:\Users\w1785\AppData\Local\Temp\ccbNkeUj.s:447    .text.lv_draw_glyph_dsc_init:00000000 $t
+C:\Users\w1785\AppData\Local\Temp\ccbNkeUj.s:453    .text.lv_draw_glyph_dsc_init:00000000 lv_draw_glyph_dsc_init
+C:\Users\w1785\AppData\Local\Temp\ccbNkeUj.s:486    .text.lv_draw_label:00000000 $t
+C:\Users\w1785\AppData\Local\Temp\ccbNkeUj.s:492    .text.lv_draw_label:00000000 lv_draw_label
+C:\Users\w1785\AppData\Local\Temp\ccbNkeUj.s:688    .text.lv_draw_character:00000000 $t
+C:\Users\w1785\AppData\Local\Temp\ccbNkeUj.s:694    .text.lv_draw_character:00000000 lv_draw_character
+C:\Users\w1785\AppData\Local\Temp\ccbNkeUj.s:834    .text.lv_draw_character:00000084 $d
+C:\Users\w1785\AppData\Local\Temp\ccbNkeUj.s:839    .text.lv_draw_letter:00000000 $t
+C:\Users\w1785\AppData\Local\Temp\ccbNkeUj.s:845    .text.lv_draw_letter:00000000 lv_draw_letter
+C:\Users\w1785\AppData\Local\Temp\ccbNkeUj.s:997    .text.lv_draw_unit_draw_letter:00000000 $t
+C:\Users\w1785\AppData\Local\Temp\ccbNkeUj.s:1003   .text.lv_draw_unit_draw_letter:00000000 lv_draw_unit_draw_letter
+C:\Users\w1785\AppData\Local\Temp\ccbNkeUj.s:1344   .text.lv_draw_unit_draw_letter:00000158 $d
+C:\Users\w1785\AppData\Local\Temp\ccbNkeUj.s:1349   .text.lv_draw_label_iterate_characters:00000000 $t
+C:\Users\w1785\AppData\Local\Temp\ccbNkeUj.s:1355   .text.lv_draw_label_iterate_characters:00000000 lv_draw_label_iterate_characters
+C:\Users\w1785\AppData\Local\Temp\ccbNkeUj.s:2809   .text.lv_draw_label_iterate_characters:00000698 $d
 
 UNDEFINED SYMBOLS
 lv_memset
@@ -5092,7 +5092,7 @@ lv_area_intersect
 lv_obj_has_flag
 lv_area_get_width
 lv_text_get_size_attributes
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\cc9UZnJI.s 			page 86
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccbNkeUj.s 			page 86
 
 
 lv_point_set

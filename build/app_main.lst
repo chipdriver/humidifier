@@ -1,4 +1,4 @@
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccgjKn1s.s 			page 1
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\cc3WeM9g.s 			page 1
 
 
    1              		.cpu cortex-m4
@@ -20,143 +20,134 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccgjKn1s.s 			page 1
   17              	.Ltext0:
   18              		.cfi_sections	.debug_frame
   19              		.file 1 "Application/Src/app_main.c"
-  20              		.section	.rodata.App_Main.str1.4,"aMS",%progbits,1
-  21              		.align	2
-  22              	.LC0:
-  23 0000 48656C6C 		.ascii	"Hello LVGL\000"
-  23      6F204C56 
-  23      474C00
-  24              		.section	.text.App_Main,"ax",%progbits
-  25              		.align	1
-  26              		.global	App_Main
-  27              		.syntax unified
-  28              		.thumb
-  29              		.thumb_func
-  31              	App_Main:
-  32              	.LFB329:
+  20              		.section	.text.App_Main,"ax",%progbits
+  21              		.align	1
+  22              		.global	App_Main
+  23              		.syntax unified
+  24              		.thumb
+  25              		.thumb_func
+  27              	App_Main:
+  28              	.LFB132:
    1:Application/Src/app_main.c **** #include "app_main.h"
    2:Application/Src/app_main.c **** #include "display_service.h"
-   3:Application/Src/app_main.c **** #include "lv_port_disp.h"
-   4:Application/Src/app_main.c **** #include "lvgl.h"
-   5:Application/Src/app_main.c **** 
-   6:Application/Src/app_main.c **** /**
-   7:Application/Src/app_main.c ****  * @brief 应用层主流程入口。
-   8:Application/Src/app_main.c ****  * @retval 无
-   9:Application/Src/app_main.c ****  */
-  10:Application/Src/app_main.c **** void App_Main(void)
-  11:Application/Src/app_main.c **** {
-  33              		.loc 1 11 1 view -0
-  34              		.cfi_startproc
-  35              		@ args = 0, pretend = 0, frame = 0
-  36              		@ frame_needed = 0, uses_anonymous_args = 0
-  37 0000 10B5     		push	{r4, lr}
-  38              	.LCFI0:
-  39              		.cfi_def_cfa_offset 8
-  40              		.cfi_offset 4, -8
-  41              		.cfi_offset 14, -4
-  12:Application/Src/app_main.c ****   /* 初始化显示相关业务服务。 */
-  13:Application/Src/app_main.c ****   DisplayService_Init();
-  42              		.loc 1 13 3 view .LVU1
-  43 0002 FFF7FEFF 		bl	DisplayService_Init
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccgjKn1s.s 			page 2
+   3:Application/Src/app_main.c **** #include "sensor_service.h"
+   4:Application/Src/app_main.c **** 
+   5:Application/Src/app_main.c **** /**
+   6:Application/Src/app_main.c ****  * @brief 应用层主流程入口。
+   7:Application/Src/app_main.c ****  * @retval 无
+   8:Application/Src/app_main.c ****  */
+   9:Application/Src/app_main.c **** void App_Main(void)
+  10:Application/Src/app_main.c **** {
+  29              		.loc 1 10 1 view -0
+  30              		.cfi_startproc
+  31              		@ Volatile: function does not return.
+  32              		@ args = 0, pretend = 0, frame = 0
+  33              		@ frame_needed = 0, uses_anonymous_args = 0
+  34 0000 08B5     		push	{r3, lr}
+  35              	.LCFI0:
+  36              		.cfi_def_cfa_offset 8
+  37              		.cfi_offset 3, -8
+  38              		.cfi_offset 14, -4
+  11:Application/Src/app_main.c ****   /* 初始化显示相关业务服务。 */
+  12:Application/Src/app_main.c ****   DisplayService_Init();
+  39              		.loc 1 12 3 view .LVU1
+  40 0002 FFF7FEFF 		bl	DisplayService_Init
+  41              	.LVL0:
+  13:Application/Src/app_main.c **** 
+  14:Application/Src/app_main.c ****   /* 初始化温湿度传感器业务服务。 */
+  15:Application/Src/app_main.c ****   if (SensorService_Init() != SENSOR_SERVICE_OK)
+  42              		.loc 1 15 3 view .LVU2
+  43              		.loc 1 15 7 is_stmt 0 view .LVU3
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\cc3WeM9g.s 			page 2
 
 
-  44              	.LVL0:
-  14:Application/Src/app_main.c **** 
-  15:Application/Src/app_main.c ****   lv_init();
-  45              		.loc 1 15 3 view .LVU2
-  46 0006 FFF7FEFF 		bl	lv_init
-  47              	.LVL1:
-  16:Application/Src/app_main.c ****   lv_tick_set_cb(HAL_GetTick);
-  48              		.loc 1 16 3 view .LVU3
-  49 000a 0B48     		ldr	r0, .L4
-  50 000c FFF7FEFF 		bl	lv_tick_set_cb
-  51              	.LVL2:
-  17:Application/Src/app_main.c ****   LV_Port_Disp_Init();
-  52              		.loc 1 17 3 view .LVU4
-  53 0010 FFF7FEFF 		bl	LV_Port_Disp_Init
-  54              	.LVL3:
-  18:Application/Src/app_main.c **** 
-  19:Application/Src/app_main.c ****   lv_obj_t *label = lv_label_create(lv_screen_active());
-  55              		.loc 1 19 3 view .LVU5
-  56              		.loc 1 19 21 is_stmt 0 view .LVU6
-  57 0014 FFF7FEFF 		bl	lv_screen_active
-  58              	.LVL4:
-  59              		.loc 1 19 21 discriminator 1 view .LVU7
-  60 0018 FFF7FEFF 		bl	lv_label_create
-  61              	.LVL5:
-  62 001c 0446     		mov	r4, r0
-  63              	.LVL6:
-  20:Application/Src/app_main.c ****   lv_label_set_text(label, "Hello LVGL");
-  64              		.loc 1 20 3 is_stmt 1 view .LVU8
-  65 001e 0749     		ldr	r1, .L4+4
-  66 0020 FFF7FEFF 		bl	lv_label_set_text
-  67              	.LVL7:
-  21:Application/Src/app_main.c ****   lv_obj_center(label);
-  68              		.loc 1 21 3 view .LVU9
-  69 0024 2046     		mov	r0, r4
-  70 0026 FFF7FEFF 		bl	lv_obj_center
-  71              	.LVL8:
-  72              	.L2:
-  22:Application/Src/app_main.c **** 
-  23:Application/Src/app_main.c ****   while (1)
-  73              		.loc 1 23 3 view .LVU10
-  24:Application/Src/app_main.c ****   {
-  25:Application/Src/app_main.c ****     lv_timer_handler();
-  74              		.loc 1 25 5 view .LVU11
-  75 002a FFF7FEFF 		bl	lv_timer_handler
-  76              	.LVL9:
-  26:Application/Src/app_main.c ****     HAL_Delay(5U);
-  77              		.loc 1 26 5 discriminator 1 view .LVU12
-  78 002e 0520     		movs	r0, #5
-  79 0030 FFF7FEFF 		bl	HAL_Delay
-  80              	.LVL10:
-  23:Application/Src/app_main.c ****   {
-  81              		.loc 1 23 9 view .LVU13
-  82 0034 F9E7     		b	.L2
-  83              	.L5:
-  84 0036 00BF     		.align	2
-  85              	.L4:
-  86 0038 00000000 		.word	HAL_GetTick
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccgjKn1s.s 			page 3
+  44 0006 FFF7FEFF 		bl	SensorService_Init
+  45              	.LVL1:
+  46              		.loc 1 15 6 discriminator 1 view .LVU4
+  47 000a 30B1     		cbz	r0, .L2
+  16:Application/Src/app_main.c ****   {
+  17:Application/Src/app_main.c ****     /* 如果传感器初始化失败，就在屏幕上显示错误。 */
+  18:Application/Src/app_main.c ****     DisplayService_ShowSensorError();
+  48              		.loc 1 18 5 is_stmt 1 view .LVU5
+  49 000c FFF7FEFF 		bl	DisplayService_ShowSensorError
+  50              	.LVL2:
+  51              	.L3:
+  19:Application/Src/app_main.c **** 
+  20:Application/Src/app_main.c ****     /* 停在错误循环中，方便烧录后观察屏幕和调试。 */
+  21:Application/Src/app_main.c ****     while (1)
+  52              		.loc 1 21 5 view .LVU6
+  22:Application/Src/app_main.c ****     {
+  23:Application/Src/app_main.c ****       /* 每 1 秒延时一次，避免空转。 */
+  24:Application/Src/app_main.c ****       HAL_Delay(1000U);
+  53              		.loc 1 24 7 discriminator 1 view .LVU7
+  54 0010 4FF47A70 		mov	r0, #1000
+  55 0014 FFF7FEFF 		bl	HAL_Delay
+  56              	.LVL3:
+  21:Application/Src/app_main.c ****     {
+  57              		.loc 1 21 11 view .LVU8
+  58 0018 FAE7     		b	.L3
+  59              	.L2:
+  25:Application/Src/app_main.c ****     }
+  26:Application/Src/app_main.c ****   }
+  27:Application/Src/app_main.c **** 
+  28:Application/Src/app_main.c ****   /* 初始化成功后先尝试读取一次，避免上电后长时间没有有效显示数据。 
+  29:Application/Src/app_main.c ****   (void)SensorService_Update();
+  60              		.loc 1 29 3 view .LVU9
+  61              		.loc 1 29 9 is_stmt 0 view .LVU10
+  62 001a FFF7FEFF 		bl	SensorService_Update
+  63              	.LVL4:
+  64              	.L4:
+  30:Application/Src/app_main.c **** 
+  31:Application/Src/app_main.c ****   while (1)
+  65              		.loc 1 31 3 is_stmt 1 view .LVU11
+  32:Application/Src/app_main.c ****   {
+  33:Application/Src/app_main.c ****     /* 按默认周期更新温湿度缓存。 */
+  34:Application/Src/app_main.c ****     (void)SensorService_UpdatePeriodic();
+  66              		.loc 1 34 5 view .LVU12
+  67              		.loc 1 34 11 is_stmt 0 view .LVU13
+  68 001e FFF7FEFF 		bl	SensorService_UpdatePeriodic
+  69              	.LVL5:
+  35:Application/Src/app_main.c **** 
+  36:Application/Src/app_main.c ****     /* 把当前温湿度缓存显示到 LCD。 */
+  37:Application/Src/app_main.c ****     DisplayService_Update();
+  70              		.loc 1 37 5 is_stmt 1 view .LVU14
+  71 0022 FFF7FEFF 		bl	DisplayService_Update
+  72              	.LVL6:
+  38:Application/Src/app_main.c **** 
+  39:Application/Src/app_main.c ****     /* 应用主循环每 200 ms 执行一次。 */
+  40:Application/Src/app_main.c ****     HAL_Delay(200U);
+  73              		.loc 1 40 5 discriminator 1 view .LVU15
+  74 0026 C820     		movs	r0, #200
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\cc3WeM9g.s 			page 3
 
 
-  87 003c 00000000 		.word	.LC0
-  88              		.cfi_endproc
-  89              	.LFE329:
-  91              		.text
-  92              	.Letext0:
-  93              		.file 2 "D:\\STM32CubeIDE\\STM32CubeIDE_2.1.1\\STM32CubeIDE\\plugins\\com.st.stm32cube.ide.mcu.ext
-  94              		.file 3 "D:\\STM32CubeIDE\\STM32CubeIDE_2.1.1\\STM32CubeIDE\\plugins\\com.st.stm32cube.ide.mcu.ext
-  95              		.file 4 "Middlewares/LVGL/lvgl/src/misc/lv_types.h"
-  96              		.file 5 "Middlewares/LVGL/lvgl/src/misc/../tick/lv_tick.h"
-  97              		.file 6 "Drivers/STM32G4xx_HAL_Driver/Inc/stm32g4xx_hal.h"
-  98              		.file 7 "Middlewares/LVGL/lvgl/src/core/lv_obj_pos.h"
-  99              		.file 8 "Middlewares/LVGL/lvgl/src/widgets/bar/../label/lv_label.h"
- 100              		.file 9 "Middlewares/LVGL/lvgl/src/misc/lv_timer.h"
- 101              		.file 10 "Middlewares/LVGL/lvgl/src/core/../display/lv_display.h"
- 102              		.file 11 "Core/Inc/lv_port_disp.h"
- 103              		.file 12 "Middlewares/LVGL/lvgl/src/lv_init.h"
- 104              		.file 13 "Services/Inc/display_service.h"
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccgjKn1s.s 			page 4
+  75 0028 FFF7FEFF 		bl	HAL_Delay
+  76              	.LVL7:
+  31:Application/Src/app_main.c ****   {
+  77              		.loc 1 31 9 view .LVU16
+  78 002c F7E7     		b	.L4
+  79              		.cfi_endproc
+  80              	.LFE132:
+  82              		.text
+  83              	.Letext0:
+  84              		.file 2 "D:\\STM32CubeIDE\\STM32CubeIDE_2.1.1\\STM32CubeIDE\\plugins\\com.st.stm32cube.ide.mcu.ext
+  85              		.file 3 "D:\\STM32CubeIDE\\STM32CubeIDE_2.1.1\\STM32CubeIDE\\plugins\\com.st.stm32cube.ide.mcu.ext
+  86              		.file 4 "Services/Inc/sensor_service.h"
+  87              		.file 5 "Services/Inc/display_service.h"
+  88              		.file 6 "Drivers/STM32G4xx_HAL_Driver/Inc/stm32g4xx_hal.h"
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\cc3WeM9g.s 			page 4
 
 
 DEFINED SYMBOLS
                             *ABS*:00000000 app_main.c
-C:\Users\w1785\AppData\Local\Temp\ccgjKn1s.s:21     .rodata.App_Main.str1.4:00000000 $d
-C:\Users\w1785\AppData\Local\Temp\ccgjKn1s.s:25     .text.App_Main:00000000 $t
-C:\Users\w1785\AppData\Local\Temp\ccgjKn1s.s:31     .text.App_Main:00000000 App_Main
-C:\Users\w1785\AppData\Local\Temp\ccgjKn1s.s:86     .text.App_Main:00000038 $d
+C:\Users\w1785\AppData\Local\Temp\cc3WeM9g.s:21     .text.App_Main:00000000 $t
+C:\Users\w1785\AppData\Local\Temp\cc3WeM9g.s:27     .text.App_Main:00000000 App_Main
 
 UNDEFINED SYMBOLS
 DisplayService_Init
-lv_init
-lv_tick_set_cb
-LV_Port_Disp_Init
-lv_screen_active
-lv_label_create
-lv_label_set_text
-lv_obj_center
-lv_timer_handler
+SensorService_Init
+DisplayService_ShowSensorError
 HAL_Delay
-HAL_GetTick
+SensorService_Update
+SensorService_UpdatePeriodic
+DisplayService_Update

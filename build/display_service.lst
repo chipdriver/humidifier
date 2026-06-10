@@ -1,4 +1,4 @@
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccLUsRpa.s 			page 1
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccDhU1dv.s 			page 1
 
 
    1              		.cpu cortex-m4
@@ -20,92 +20,781 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccLUsRpa.s 			page 1
   17              	.Ltext0:
   18              		.cfi_sections	.debug_frame
   19              		.file 1 "Services/Src/display_service.c"
-  20              		.section	.text.DisplayService_Init,"ax",%progbits
+  20              		.section	.text.DisplayService_FloatToX10,"ax",%progbits
   21              		.align	1
-  22              		.global	DisplayService_Init
-  23              		.syntax unified
-  24              		.thumb
-  25              		.thumb_func
-  27              	DisplayService_Init:
-  28              	.LFB132:
+  22              		.syntax unified
+  23              		.thumb
+  24              		.thumb_func
+  26              	DisplayService_FloatToX10:
+  27              	.LVL0:
+  28              	.LFB135:
    1:Services/Src/display_service.c **** #include "display_service.h"
-   2:Services/Src/display_service.c **** #include "st7789.h"
-   3:Services/Src/display_service.c **** 
-   4:Services/Src/display_service.c **** /**
-   5:Services/Src/display_service.c ****  * @brief 初始化显示服务。
-   6:Services/Src/display_service.c ****  * @retval 无
-   7:Services/Src/display_service.c ****  */
-   8:Services/Src/display_service.c **** void DisplayService_Init(void)
-   9:Services/Src/display_service.c **** {
-  29              		.loc 1 9 1 view -0
+   2:Services/Src/display_service.c **** #include "sensor_service.h"
+   3:Services/Src/display_service.c **** #include "st7789.h"
+   4:Services/Src/display_service.c **** #include <stdio.h>
+   5:Services/Src/display_service.c **** 
+   6:Services/Src/display_service.c **** #define DISPLAY_TITLE_X        10U
+   7:Services/Src/display_service.c **** #define DISPLAY_TITLE_Y        20U
+   8:Services/Src/display_service.c **** #define DISPLAY_TEMP_X         10U
+   9:Services/Src/display_service.c **** #define DISPLAY_TEMP_Y         80U
+  10:Services/Src/display_service.c **** #define DISPLAY_HUMI_X         10U
+  11:Services/Src/display_service.c **** #define DISPLAY_HUMI_Y         110U
+  12:Services/Src/display_service.c **** #define DISPLAY_STATUS_X       10U
+  13:Services/Src/display_service.c **** #define DISPLAY_STATUS_Y       150U
+  14:Services/Src/display_service.c **** #define DISPLAY_TEXT_AREA_Y    60U
+  15:Services/Src/display_service.c **** #define DISPLAY_TEXT_AREA_H    120U
+  16:Services/Src/display_service.c **** 
+  17:Services/Src/display_service.c **** /**
+  18:Services/Src/display_service.c ****  * @brief 把浮点数放大 10 倍后转换为整数，便于不用 float printf 显示 1 位小�
+  19:Services/Src/display_service.c ****  * @param value 要转换的浮点数。
+  20:Services/Src/display_service.c ****  * @retval 放大 10 倍后的整数值。
+  21:Services/Src/display_service.c ****  */
+  22:Services/Src/display_service.c **** static int DisplayService_FloatToX10(float value)
+  23:Services/Src/display_service.c **** {
+  29              		.loc 1 23 1 view -0
   30              		.cfi_startproc
   31              		@ args = 0, pretend = 0, frame = 0
   32              		@ frame_needed = 0, uses_anonymous_args = 0
-  33 0000 08B5     		push	{r3, lr}
-  34              	.LCFI0:
-  35              		.cfi_def_cfa_offset 8
-  36              		.cfi_offset 3, -8
-  37              		.cfi_offset 14, -4
-  10:Services/Src/display_service.c ****   /* 显示服务通过设备驱动层初始化 ST7789 屏幕。 */
-  11:Services/Src/display_service.c ****   ST7789_Init();
-  38              		.loc 1 11 3 view .LVU1
-  39 0002 FFF7FEFF 		bl	ST7789_Init
-  40              	.LVL0:
-  12:Services/Src/display_service.c **** }
-  41              		.loc 1 12 1 is_stmt 0 view .LVU2
-  42 0006 08BD     		pop	{r3, pc}
-  43              		.cfi_endproc
-  44              	.LFE132:
-  46              		.section	.text.DisplayService_TestColorCycle,"ax",%progbits
-  47              		.align	1
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccLUsRpa.s 			page 2
+  33              		@ link register save eliminated.
+  24:Services/Src/display_service.c ****   /* 正数加 0.5，负数减 0.5，用来做简单四舍五入。 */
+  25:Services/Src/display_service.c ****   if (value >= 0.0f)
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccDhU1dv.s 			page 2
 
 
-  48              		.global	DisplayService_TestColorCycle
-  49              		.syntax unified
-  50              		.thumb
-  51              		.thumb_func
-  53              	DisplayService_TestColorCycle:
-  54              	.LFB133:
-  13:Services/Src/display_service.c **** 
-  14:Services/Src/display_service.c **** /**
-  15:Services/Src/display_service.c ****  * @brief 执行显示服务的颜色循环测试。
-  16:Services/Src/display_service.c ****  * @retval 无
-  17:Services/Src/display_service.c ****  */
-  18:Services/Src/display_service.c **** void DisplayService_TestColorCycle(void)
-  19:Services/Src/display_service.c **** {
-  55              		.loc 1 19 1 is_stmt 1 view -0
-  56              		.cfi_startproc
-  57              		@ args = 0, pretend = 0, frame = 0
-  58              		@ frame_needed = 0, uses_anonymous_args = 0
-  59 0000 08B5     		push	{r3, lr}
-  60              	.LCFI1:
-  61              		.cfi_def_cfa_offset 8
-  62              		.cfi_offset 3, -8
-  63              		.cfi_offset 14, -4
-  20:Services/Src/display_service.c ****   /* 显示服务通过设备驱动层执行 ST7789 颜色循环测试。 */
-  21:Services/Src/display_service.c ****   ST7789_TestColorCycle();
-  64              		.loc 1 21 3 view .LVU4
-  65 0002 FFF7FEFF 		bl	ST7789_TestColorCycle
-  66              	.LVL1:
-  22:Services/Src/display_service.c **** }
-  67              		.loc 1 22 1 is_stmt 0 view .LVU5
-  68 0006 08BD     		pop	{r3, pc}
-  69              		.cfi_endproc
-  70              	.LFE133:
-  72              		.text
-  73              	.Letext0:
-  74              		.file 2 "DeviceDrivers/LCD/Inc/st7789.h"
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccLUsRpa.s 			page 3
+  34              		.loc 1 25 3 view .LVU1
+  35              		.loc 1 25 6 is_stmt 0 view .LVU2
+  36 0000 B5EEC00A 		vcmpe.f32	s0, #0
+  37 0004 F1EE10FA 		vmrs	APSR_nzcv, FPSCR
+  38 0008 0CDA     		bge	.L7
+  26:Services/Src/display_service.c ****   {
+  27:Services/Src/display_service.c ****     return (int)((value * 10.0f) + 0.5f);
+  28:Services/Src/display_service.c ****   }
+  29:Services/Src/display_service.c **** 
+  30:Services/Src/display_service.c ****   /* 负数路径使用 -0.5f，避免 -1.26 直接截断成 -12。 */
+  31:Services/Src/display_service.c ****   return (int)((value * 10.0f) - 0.5f);
+  39              		.loc 1 31 3 is_stmt 1 view .LVU3
+  40              		.loc 1 31 23 is_stmt 0 view .LVU4
+  41 000a F2EE047A 		vmov.f32	s15, #1.0e+1
+  42 000e 20EE270A 		vmul.f32	s0, s0, s15
+  43              	.LVL1:
+  44              		.loc 1 31 32 view .LVU5
+  45 0012 F6EE007A 		vmov.f32	s15, #5.0e-1
+  46 0016 30EE670A 		vsub.f32	s0, s0, s15
+  47              		.loc 1 31 10 view .LVU6
+  48 001a BDEEC00A 		vcvt.s32.f32	s0, s0
+  49              	.L1:
+  32:Services/Src/display_service.c **** }
+  50              		.loc 1 32 1 view .LVU7
+  51 001e 10EE100A 		vmov	r0, s0	@ int
+  52 0022 7047     		bx	lr
+  53              	.LVL2:
+  54              	.L7:
+  27:Services/Src/display_service.c ****   }
+  55              		.loc 1 27 5 is_stmt 1 view .LVU8
+  27:Services/Src/display_service.c ****   }
+  56              		.loc 1 27 25 is_stmt 0 view .LVU9
+  57 0024 F2EE047A 		vmov.f32	s15, #1.0e+1
+  58 0028 20EE270A 		vmul.f32	s0, s0, s15
+  59              	.LVL3:
+  27:Services/Src/display_service.c ****   }
+  60              		.loc 1 27 34 view .LVU10
+  61 002c F6EE007A 		vmov.f32	s15, #5.0e-1
+  62 0030 30EE270A 		vadd.f32	s0, s0, s15
+  27:Services/Src/display_service.c ****   }
+  63              		.loc 1 27 12 view .LVU11
+  64 0034 BDEEC00A 		vcvt.s32.f32	s0, s0
+  65 0038 F1E7     		b	.L1
+  66              		.cfi_endproc
+  67              	.LFE135:
+  69              		.section	.rodata.DisplayService_FormatValue.str1.4,"aMS",%progbits,1
+  70              		.align	2
+  71              	.LC0:
+  72 0000 25733A20 		.ascii	"%s: %d.%d %s\000"
+  72      25642E25 
+  72      64202573 
+  72      00
+  73              		.section	.text.DisplayService_FormatValue,"ax",%progbits
+  74              		.align	1
+  75              		.syntax unified
+  76              		.thumb
+  77              		.thumb_func
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccDhU1dv.s 			page 3
+
+
+  79              	DisplayService_FormatValue:
+  80              	.LVL4:
+  81              	.LFB136:
+  33:Services/Src/display_service.c **** 
+  34:Services/Src/display_service.c **** /**
+  35:Services/Src/display_service.c ****  * @brief 生成带 1 位小数的整数格式字符串。
+  36:Services/Src/display_service.c ****  * @param buffer 字符串输出缓冲区。
+  37:Services/Src/display_service.c ****  * @param buffer_size 输出缓冲区大小。
+  38:Services/Src/display_service.c ****  * @param prefix 显示前缀，例如 "Temp"。
+  39:Services/Src/display_service.c ****  * @param value 要显示的浮点数。
+  40:Services/Src/display_service.c ****  * @param suffix 显示后缀，例如 "C" 或 "%"。
+  41:Services/Src/display_service.c ****  * @retval 无
+  42:Services/Src/display_service.c ****  */
+  43:Services/Src/display_service.c **** static void DisplayService_FormatValue(char *buffer, uint32_t buffer_size, const char *prefix, floa
+  44:Services/Src/display_service.c **** {
+  82              		.loc 1 44 1 is_stmt 1 view -0
+  83              		.cfi_startproc
+  84              		@ args = 0, pretend = 0, frame = 0
+  85              		@ frame_needed = 0, uses_anonymous_args = 0
+  86              		.loc 1 44 1 is_stmt 0 view .LVU13
+  87 0000 2DE9F041 		push	{r4, r5, r6, r7, r8, lr}
+  88              	.LCFI0:
+  89              		.cfi_def_cfa_offset 24
+  90              		.cfi_offset 4, -24
+  91              		.cfi_offset 5, -20
+  92              		.cfi_offset 6, -16
+  93              		.cfi_offset 7, -12
+  94              		.cfi_offset 8, -8
+  95              		.cfi_offset 14, -4
+  96 0004 84B0     		sub	sp, sp, #16
+  97              	.LCFI1:
+  98              		.cfi_def_cfa_offset 40
+  99 0006 0646     		mov	r6, r0
+ 100 0008 0F46     		mov	r7, r1
+ 101 000a 9046     		mov	r8, r2
+ 102 000c 1C46     		mov	r4, r3
+  45:Services/Src/display_service.c ****   /* 把浮点数转换为放大 10 倍后的整数。 */
+  46:Services/Src/display_service.c ****   int value_x10 = DisplayService_FloatToX10(value);
+ 103              		.loc 1 46 3 is_stmt 1 view .LVU14
+ 104              		.loc 1 46 19 is_stmt 0 view .LVU15
+ 105 000e FFF7FEFF 		bl	DisplayService_FloatToX10
+ 106              	.LVL5:
+  47:Services/Src/display_service.c **** 
+  48:Services/Src/display_service.c ****   /* 计算整数部分。 */
+  49:Services/Src/display_service.c ****   int value_int = value_x10 / 10;
+ 107              		.loc 1 49 3 is_stmt 1 view .LVU16
+ 108              		.loc 1 49 7 is_stmt 0 view .LVU17
+ 109 0012 0C4B     		ldr	r3, .L12
+ 110 0014 83FB0023 		smull	r2, r3, r3, r0
+ 111 0018 C517     		asrs	r5, r0, #31
+ 112 001a C5EBA305 		rsb	r5, r5, r3, asr #2
+ 113              	.LVL6:
+  50:Services/Src/display_service.c **** 
+  51:Services/Src/display_service.c ****   /* 计算小数部分。 */
+  52:Services/Src/display_service.c ****   int value_dec = value_x10 % 10;
+ 114              		.loc 1 52 3 is_stmt 1 view .LVU18
+ 115              		.loc 1 52 7 is_stmt 0 view .LVU19
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccDhU1dv.s 			page 4
+
+
+ 116 001e 05EB8503 		add	r3, r5, r5, lsl #2
+ 117              	.LVL7:
+  53:Services/Src/display_service.c **** 
+  54:Services/Src/display_service.c ****   /* 如果小数部分为负数，就取正，显示时只让整数部分带负号。 */
+  55:Services/Src/display_service.c ****   if (value_dec < 0)
+ 118              		.loc 1 55 3 is_stmt 1 view .LVU20
+ 119              		.loc 1 55 6 is_stmt 0 view .LVU21
+ 120 0022 B0EB4303 		subs	r3, r0, r3, lsl #1
+ 121              	.LVL8:
+ 122              		.loc 1 55 6 view .LVU22
+ 123 0026 0BD4     		bmi	.L11
+ 124              	.LVL9:
+ 125              	.L9:
+  56:Services/Src/display_service.c ****   {
+  57:Services/Src/display_service.c ****     value_dec = -value_dec;
+  58:Services/Src/display_service.c ****   }
+  59:Services/Src/display_service.c **** 
+  60:Services/Src/display_service.c ****   /* 使用整数 snprintf，避免依赖 printf 的 float 支持。 */
+  61:Services/Src/display_service.c ****   (void)snprintf(buffer, buffer_size, "%s: %d.%d %s", prefix, value_int, value_dec, suffix);
+ 126              		.loc 1 61 3 is_stmt 1 view .LVU23
+ 127              		.loc 1 61 9 is_stmt 0 view .LVU24
+ 128 0028 0294     		str	r4, [sp, #8]
+ 129 002a 0193     		str	r3, [sp, #4]
+ 130 002c 0095     		str	r5, [sp]
+ 131 002e 4346     		mov	r3, r8
+ 132              	.LVL10:
+ 133              		.loc 1 61 9 view .LVU25
+ 134 0030 054A     		ldr	r2, .L12+4
+ 135 0032 3946     		mov	r1, r7
+ 136 0034 3046     		mov	r0, r6
+ 137              	.LVL11:
+ 138              		.loc 1 61 9 view .LVU26
+ 139 0036 FFF7FEFF 		bl	snprintf
+ 140              	.LVL12:
+  62:Services/Src/display_service.c **** }
+ 141              		.loc 1 62 1 view .LVU27
+ 142 003a 04B0     		add	sp, sp, #16
+ 143              	.LCFI2:
+ 144              		.cfi_remember_state
+ 145              		.cfi_def_cfa_offset 24
+ 146              		@ sp needed
+ 147 003c BDE8F081 		pop	{r4, r5, r6, r7, r8, pc}
+ 148              	.LVL13:
+ 149              	.L11:
+ 150              	.LCFI3:
+ 151              		.cfi_restore_state
+  57:Services/Src/display_service.c ****   }
+ 152              		.loc 1 57 5 is_stmt 1 view .LVU28
+  57:Services/Src/display_service.c ****   }
+ 153              		.loc 1 57 15 is_stmt 0 view .LVU29
+ 154 0040 5B42     		rsbs	r3, r3, #0
+ 155              	.LVL14:
+  57:Services/Src/display_service.c ****   }
+ 156              		.loc 1 57 15 view .LVU30
+ 157 0042 F1E7     		b	.L9
+ 158              	.L13:
+ 159              		.align	2
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccDhU1dv.s 			page 5
+
+
+ 160              	.L12:
+ 161 0044 67666666 		.word	1717986919
+ 162 0048 00000000 		.word	.LC0
+ 163              		.cfi_endproc
+ 164              	.LFE136:
+ 166              		.section	.rodata.DisplayService_ShowBootScreen.str1.4,"aMS",%progbits,1
+ 167              		.align	2
+ 168              	.LC1:
+ 169 0000 41485432 		.ascii	"AHT20 LCD Test\000"
+ 169      30204C43 
+ 169      44205465 
+ 169      737400
+ 170 000f 00       		.align	2
+ 171              	.LC2:
+ 172 0010 53746172 		.ascii	"Starting...\000"
+ 172      74696E67 
+ 172      2E2E2E00 
+ 173              		.section	.text.DisplayService_ShowBootScreen,"ax",%progbits
+ 174              		.align	1
+ 175              		.global	DisplayService_ShowBootScreen
+ 176              		.syntax unified
+ 177              		.thumb
+ 178              		.thumb_func
+ 180              	DisplayService_ShowBootScreen:
+ 181              	.LFB138:
+  63:Services/Src/display_service.c **** 
+  64:Services/Src/display_service.c **** /**
+  65:Services/Src/display_service.c ****  * @brief 初始化显示服务。
+  66:Services/Src/display_service.c ****  * @retval 无
+  67:Services/Src/display_service.c ****  */
+  68:Services/Src/display_service.c **** void DisplayService_Init(void)
+  69:Services/Src/display_service.c **** {
+  70:Services/Src/display_service.c ****   /* 显示服务通过设备驱动层初始化 ST7789 屏幕。 */
+  71:Services/Src/display_service.c ****   ST7789_Init();
+  72:Services/Src/display_service.c **** 
+  73:Services/Src/display_service.c ****   /* 初始化完成后先清为黑色背景。 */
+  74:Services/Src/display_service.c ****   ST7789_FillScreen(ST7789_COLOR_BLACK);
+  75:Services/Src/display_service.c **** 
+  76:Services/Src/display_service.c ****   /* 显示简单启动页面。 */
+  77:Services/Src/display_service.c ****   DisplayService_ShowBootScreen();
+  78:Services/Src/display_service.c **** }
+  79:Services/Src/display_service.c **** 
+  80:Services/Src/display_service.c **** /**
+  81:Services/Src/display_service.c ****  * @brief 显示启动页面。
+  82:Services/Src/display_service.c ****  * @retval 无
+  83:Services/Src/display_service.c ****  */
+  84:Services/Src/display_service.c **** void DisplayService_ShowBootScreen(void)
+  85:Services/Src/display_service.c **** {
+ 182              		.loc 1 85 1 is_stmt 1 view -0
+ 183              		.cfi_startproc
+ 184              		@ args = 0, pretend = 0, frame = 0
+ 185              		@ frame_needed = 0, uses_anonymous_args = 0
+ 186 0000 10B5     		push	{r4, lr}
+ 187              	.LCFI4:
+ 188              		.cfi_def_cfa_offset 8
+ 189              		.cfi_offset 4, -8
+ 190              		.cfi_offset 14, -4
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccDhU1dv.s 			page 6
+
+
+ 191 0002 82B0     		sub	sp, sp, #8
+ 192              	.LCFI5:
+ 193              		.cfi_def_cfa_offset 16
+  86:Services/Src/display_service.c ****   /* 清屏为黑色。 */
+  87:Services/Src/display_service.c ****   ST7789_FillScreen(ST7789_COLOR_BLACK);
+ 194              		.loc 1 87 3 view .LVU32
+ 195 0004 0020     		movs	r0, #0
+ 196 0006 FFF7FEFF 		bl	ST7789_FillScreen
+ 197              	.LVL15:
+  88:Services/Src/display_service.c **** 
+  89:Services/Src/display_service.c ****   /* 显示测试标题。 */
+  90:Services/Src/display_service.c ****   ST7789_DrawString(DISPLAY_TITLE_X, DISPLAY_TITLE_Y, "AHT20 LCD Test", ST7789_COLOR_WHITE, ST7789_
+ 198              		.loc 1 90 3 view .LVU33
+ 199 000a 0024     		movs	r4, #0
+ 200 000c 0094     		str	r4, [sp]
+ 201 000e 4FF6FF73 		movw	r3, #65535
+ 202 0012 074A     		ldr	r2, .L16
+ 203 0014 1421     		movs	r1, #20
+ 204 0016 0A20     		movs	r0, #10
+ 205 0018 FFF7FEFF 		bl	ST7789_DrawString
+ 206              	.LVL16:
+  91:Services/Src/display_service.c **** 
+  92:Services/Src/display_service.c ****   /* 显示启动状态。 */
+  93:Services/Src/display_service.c ****   ST7789_DrawString(DISPLAY_TITLE_X, DISPLAY_TITLE_Y + 20U, "Starting...", ST7789_COLOR_CYAN, ST778
+ 207              		.loc 1 93 3 view .LVU34
+ 208 001c 0094     		str	r4, [sp]
+ 209 001e 40F2FF73 		movw	r3, #2047
+ 210 0022 044A     		ldr	r2, .L16+4
+ 211 0024 2821     		movs	r1, #40
+ 212 0026 0A20     		movs	r0, #10
+ 213 0028 FFF7FEFF 		bl	ST7789_DrawString
+ 214              	.LVL17:
+  94:Services/Src/display_service.c **** }
+ 215              		.loc 1 94 1 is_stmt 0 view .LVU35
+ 216 002c 02B0     		add	sp, sp, #8
+ 217              	.LCFI6:
+ 218              		.cfi_def_cfa_offset 8
+ 219              		@ sp needed
+ 220 002e 10BD     		pop	{r4, pc}
+ 221              	.L17:
+ 222              		.align	2
+ 223              	.L16:
+ 224 0030 00000000 		.word	.LC1
+ 225 0034 10000000 		.word	.LC2
+ 226              		.cfi_endproc
+ 227              	.LFE138:
+ 229              		.section	.text.DisplayService_Init,"ax",%progbits
+ 230              		.align	1
+ 231              		.global	DisplayService_Init
+ 232              		.syntax unified
+ 233              		.thumb
+ 234              		.thumb_func
+ 236              	DisplayService_Init:
+ 237              	.LFB137:
+  69:Services/Src/display_service.c ****   /* 显示服务通过设备驱动层初始化 ST7789 屏幕。 */
+ 238              		.loc 1 69 1 is_stmt 1 view -0
+ 239              		.cfi_startproc
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccDhU1dv.s 			page 7
+
+
+ 240              		@ args = 0, pretend = 0, frame = 0
+ 241              		@ frame_needed = 0, uses_anonymous_args = 0
+ 242 0000 08B5     		push	{r3, lr}
+ 243              	.LCFI7:
+ 244              		.cfi_def_cfa_offset 8
+ 245              		.cfi_offset 3, -8
+ 246              		.cfi_offset 14, -4
+  71:Services/Src/display_service.c **** 
+ 247              		.loc 1 71 3 view .LVU37
+ 248 0002 FFF7FEFF 		bl	ST7789_Init
+ 249              	.LVL18:
+  74:Services/Src/display_service.c **** 
+ 250              		.loc 1 74 3 view .LVU38
+ 251 0006 0020     		movs	r0, #0
+ 252 0008 FFF7FEFF 		bl	ST7789_FillScreen
+ 253              	.LVL19:
+  77:Services/Src/display_service.c **** }
+ 254              		.loc 1 77 3 view .LVU39
+ 255 000c FFF7FEFF 		bl	DisplayService_ShowBootScreen
+ 256              	.LVL20:
+  78:Services/Src/display_service.c **** 
+ 257              		.loc 1 78 1 is_stmt 0 view .LVU40
+ 258 0010 08BD     		pop	{r3, pc}
+ 259              		.cfi_endproc
+ 260              	.LFE137:
+ 262              		.section	.rodata.DisplayService_ShowSensorError.str1.4,"aMS",%progbits,1
+ 263              		.align	2
+ 264              	.LC3:
+ 265 0000 53656E73 		.ascii	"Sensor Error\000"
+ 265      6F722045 
+ 265      72726F72 
+ 265      00
+ 266              		.section	.text.DisplayService_ShowSensorError,"ax",%progbits
+ 267              		.align	1
+ 268              		.global	DisplayService_ShowSensorError
+ 269              		.syntax unified
+ 270              		.thumb
+ 271              		.thumb_func
+ 273              	DisplayService_ShowSensorError:
+ 274              	.LFB140:
+  95:Services/Src/display_service.c **** 
+  96:Services/Src/display_service.c **** /**
+  97:Services/Src/display_service.c ****  * @brief 显示当前 SensorService 缓存中的温湿度数据。
+  98:Services/Src/display_service.c ****  * @retval 无
+  99:Services/Src/display_service.c ****  */
+ 100:Services/Src/display_service.c **** void DisplayService_ShowSensorData(void)
+ 101:Services/Src/display_service.c **** {
+ 102:Services/Src/display_service.c ****   /* 定义变量保存从传感器服务层获取到的数据。 */
+ 103:Services/Src/display_service.c ****   SensorService_Data_t sensor_data = {0};
+ 104:Services/Src/display_service.c **** 
+ 105:Services/Src/display_service.c ****   /* 定义温度显示行缓冲区。 */
+ 106:Services/Src/display_service.c ****   char temp_line[20] = {0};
+ 107:Services/Src/display_service.c **** 
+ 108:Services/Src/display_service.c ****   /* 定义湿度显示行缓冲区。 */
+ 109:Services/Src/display_service.c ****   char humi_line[20] = {0};
+ 110:Services/Src/display_service.c **** 
+ 111:Services/Src/display_service.c ****   /* 必须通过 SensorService 获取数据，不直接读取 AHT20。 */
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccDhU1dv.s 			page 8
+
+
+ 112:Services/Src/display_service.c ****   if (SensorService_GetData(&sensor_data) != SENSOR_SERVICE_OK)
+ 113:Services/Src/display_service.c ****   {
+ 114:Services/Src/display_service.c ****     /* 如果当前没有有效数据，就显示错误页面。 */
+ 115:Services/Src/display_service.c ****     DisplayService_ShowSensorError();
+ 116:Services/Src/display_service.c **** 
+ 117:Services/Src/display_service.c ****     /* 错误页面已经处理完成。 */
+ 118:Services/Src/display_service.c ****     return;
+ 119:Services/Src/display_service.c ****   }
+ 120:Services/Src/display_service.c **** 
+ 121:Services/Src/display_service.c ****   /* 清除温湿度显示区域，减少旧字符残留。 */
+ 122:Services/Src/display_service.c ****   ST7789_FillRect(0U, DISPLAY_TEXT_AREA_Y, ST7789_WIDTH, DISPLAY_TEXT_AREA_H, ST7789_COLOR_BLACK);
+ 123:Services/Src/display_service.c **** 
+ 124:Services/Src/display_service.c ****   /* 显示固定标题。 */
+ 125:Services/Src/display_service.c ****   ST7789_DrawString(DISPLAY_TITLE_X, DISPLAY_TITLE_Y, "AHT20 LCD Test", ST7789_COLOR_WHITE, ST7789_
+ 126:Services/Src/display_service.c **** 
+ 127:Services/Src/display_service.c ****   /* 把温度格式化成 Temp: 25.6 C。 */
+ 128:Services/Src/display_service.c ****   DisplayService_FormatValue(temp_line, sizeof(temp_line), "Temp", sensor_data.temperature, "C");
+ 129:Services/Src/display_service.c **** 
+ 130:Services/Src/display_service.c ****   /* 把湿度格式化成 Humi: 63.2 %。 */
+ 131:Services/Src/display_service.c ****   DisplayService_FormatValue(humi_line, sizeof(humi_line), "Humi", sensor_data.humidity, "%");
+ 132:Services/Src/display_service.c **** 
+ 133:Services/Src/display_service.c ****   /* 绘制温度行。 */
+ 134:Services/Src/display_service.c ****   ST7789_DrawString(DISPLAY_TEMP_X, DISPLAY_TEMP_Y, temp_line, ST7789_COLOR_YELLOW, ST7789_COLOR_BL
+ 135:Services/Src/display_service.c **** 
+ 136:Services/Src/display_service.c ****   /* 绘制湿度行。 */
+ 137:Services/Src/display_service.c ****   ST7789_DrawString(DISPLAY_HUMI_X, DISPLAY_HUMI_Y, humi_line, ST7789_COLOR_CYAN, ST7789_COLOR_BLAC
+ 138:Services/Src/display_service.c **** }
+ 139:Services/Src/display_service.c **** 
+ 140:Services/Src/display_service.c **** /**
+ 141:Services/Src/display_service.c ****  * @brief 显示传感器错误页面。
+ 142:Services/Src/display_service.c ****  * @retval 无
+ 143:Services/Src/display_service.c ****  */
+ 144:Services/Src/display_service.c **** void DisplayService_ShowSensorError(void)
+ 145:Services/Src/display_service.c **** {
+ 275              		.loc 1 145 1 is_stmt 1 view -0
+ 276              		.cfi_startproc
+ 277              		@ args = 0, pretend = 0, frame = 0
+ 278              		@ frame_needed = 0, uses_anonymous_args = 0
+ 279 0000 10B5     		push	{r4, lr}
+ 280              	.LCFI8:
+ 281              		.cfi_def_cfa_offset 8
+ 282              		.cfi_offset 4, -8
+ 283              		.cfi_offset 14, -4
+ 284 0002 82B0     		sub	sp, sp, #8
+ 285              	.LCFI9:
+ 286              		.cfi_def_cfa_offset 16
+ 146:Services/Src/display_service.c ****   /* 清屏为黑色。 */
+ 147:Services/Src/display_service.c ****   ST7789_FillScreen(ST7789_COLOR_BLACK);
+ 287              		.loc 1 147 3 view .LVU42
+ 288 0004 0020     		movs	r0, #0
+ 289 0006 FFF7FEFF 		bl	ST7789_FillScreen
+ 290              	.LVL21:
+ 148:Services/Src/display_service.c **** 
+ 149:Services/Src/display_service.c ****   /* 显示固定标题。 */
+ 150:Services/Src/display_service.c ****   ST7789_DrawString(DISPLAY_TITLE_X, DISPLAY_TITLE_Y, "AHT20 LCD Test", ST7789_COLOR_WHITE, ST7789_
+ 291              		.loc 1 150 3 view .LVU43
+ 292 000a 0024     		movs	r4, #0
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccDhU1dv.s 			page 9
+
+
+ 293 000c 0094     		str	r4, [sp]
+ 294 000e 4FF6FF73 		movw	r3, #65535
+ 295 0012 074A     		ldr	r2, .L22
+ 296 0014 1421     		movs	r1, #20
+ 297 0016 0A20     		movs	r0, #10
+ 298 0018 FFF7FEFF 		bl	ST7789_DrawString
+ 299              	.LVL22:
+ 151:Services/Src/display_service.c **** 
+ 152:Services/Src/display_service.c ****   /* 显示传感器错误提示。 */
+ 153:Services/Src/display_service.c ****   ST7789_DrawString(DISPLAY_STATUS_X, DISPLAY_STATUS_Y, "Sensor Error", ST7789_COLOR_RED, ST7789_CO
+ 300              		.loc 1 153 3 view .LVU44
+ 301 001c 0094     		str	r4, [sp]
+ 302 001e 4FF47843 		mov	r3, #63488
+ 303 0022 044A     		ldr	r2, .L22+4
+ 304 0024 9621     		movs	r1, #150
+ 305 0026 0A20     		movs	r0, #10
+ 306 0028 FFF7FEFF 		bl	ST7789_DrawString
+ 307              	.LVL23:
+ 154:Services/Src/display_service.c **** }
+ 308              		.loc 1 154 1 is_stmt 0 view .LVU45
+ 309 002c 02B0     		add	sp, sp, #8
+ 310              	.LCFI10:
+ 311              		.cfi_def_cfa_offset 8
+ 312              		@ sp needed
+ 313 002e 10BD     		pop	{r4, pc}
+ 314              	.L23:
+ 315              		.align	2
+ 316              	.L22:
+ 317 0030 00000000 		.word	.LC1
+ 318 0034 00000000 		.word	.LC3
+ 319              		.cfi_endproc
+ 320              	.LFE140:
+ 322              		.section	.rodata.DisplayService_ShowSensorData.str1.4,"aMS",%progbits,1
+ 323              		.align	2
+ 324              	.LC4:
+ 325 0000 4300     		.ascii	"C\000"
+ 326 0002 0000     		.align	2
+ 327              	.LC5:
+ 328 0004 54656D70 		.ascii	"Temp\000"
+ 328      00
+ 329 0009 000000   		.align	2
+ 330              	.LC6:
+ 331 000c 2500     		.ascii	"%\000"
+ 332 000e 0000     		.align	2
+ 333              	.LC7:
+ 334 0010 48756D69 		.ascii	"Humi\000"
+ 334      00
+ 335              		.section	.text.DisplayService_ShowSensorData,"ax",%progbits
+ 336              		.align	1
+ 337              		.global	DisplayService_ShowSensorData
+ 338              		.syntax unified
+ 339              		.thumb
+ 340              		.thumb_func
+ 342              	DisplayService_ShowSensorData:
+ 343              	.LFB139:
+ 101:Services/Src/display_service.c ****   /* 定义变量保存从传感器服务层获取到的数据。 */
+ 344              		.loc 1 101 1 is_stmt 1 view -0
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccDhU1dv.s 			page 10
+
+
+ 345              		.cfi_startproc
+ 346              		@ args = 0, pretend = 0, frame = 56
+ 347              		@ frame_needed = 0, uses_anonymous_args = 0
+ 348 0000 70B5     		push	{r4, r5, r6, lr}
+ 349              	.LCFI11:
+ 350              		.cfi_def_cfa_offset 16
+ 351              		.cfi_offset 4, -16
+ 352              		.cfi_offset 5, -12
+ 353              		.cfi_offset 6, -8
+ 354              		.cfi_offset 14, -4
+ 355 0002 90B0     		sub	sp, sp, #64
+ 356              	.LCFI12:
+ 357              		.cfi_def_cfa_offset 80
+ 103:Services/Src/display_service.c **** 
+ 358              		.loc 1 103 3 view .LVU47
+ 103:Services/Src/display_service.c **** 
+ 359              		.loc 1 103 24 is_stmt 0 view .LVU48
+ 360 0004 0DA8     		add	r0, sp, #52
+ 361 0006 0023     		movs	r3, #0
+ 362 0008 0D93     		str	r3, [sp, #52]
+ 363 000a 4360     		str	r3, [r0, #4]
+ 364 000c 8360     		str	r3, [r0, #8]
+ 106:Services/Src/display_service.c **** 
+ 365              		.loc 1 106 3 is_stmt 1 view .LVU49
+ 106:Services/Src/display_service.c **** 
+ 366              		.loc 1 106 8 is_stmt 0 view .LVU50
+ 367 000e 0893     		str	r3, [sp, #32]
+ 368 0010 0993     		str	r3, [sp, #36]
+ 369 0012 0A93     		str	r3, [sp, #40]
+ 370 0014 0B93     		str	r3, [sp, #44]
+ 371 0016 0C93     		str	r3, [sp, #48]
+ 109:Services/Src/display_service.c **** 
+ 372              		.loc 1 109 3 is_stmt 1 view .LVU51
+ 109:Services/Src/display_service.c **** 
+ 373              		.loc 1 109 8 is_stmt 0 view .LVU52
+ 374 0018 0393     		str	r3, [sp, #12]
+ 375 001a 0493     		str	r3, [sp, #16]
+ 376 001c 0593     		str	r3, [sp, #20]
+ 377 001e 0693     		str	r3, [sp, #24]
+ 378 0020 0793     		str	r3, [sp, #28]
+ 112:Services/Src/display_service.c ****   {
+ 379              		.loc 1 112 3 is_stmt 1 view .LVU53
+ 112:Services/Src/display_service.c ****   {
+ 380              		.loc 1 112 7 is_stmt 0 view .LVU54
+ 381 0022 FFF7FEFF 		bl	SensorService_GetData
+ 382              	.LVL24:
+ 112:Services/Src/display_service.c ****   {
+ 383              		.loc 1 112 6 discriminator 1 view .LVU55
+ 384 0026 98BB     		cbnz	r0, .L28
+ 122:Services/Src/display_service.c **** 
+ 385              		.loc 1 122 3 is_stmt 1 view .LVU56
+ 386 0028 0024     		movs	r4, #0
+ 387 002a 0094     		str	r4, [sp]
+ 388 002c 7823     		movs	r3, #120
+ 389 002e AC22     		movs	r2, #172
+ 390 0030 3C21     		movs	r1, #60
+ 391 0032 2046     		mov	r0, r4
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccDhU1dv.s 			page 11
+
+
+ 392 0034 FFF7FEFF 		bl	ST7789_FillRect
+ 393              	.LVL25:
+ 125:Services/Src/display_service.c **** 
+ 394              		.loc 1 125 3 view .LVU57
+ 395 0038 0094     		str	r4, [sp]
+ 396 003a 4FF6FF73 		movw	r3, #65535
+ 397 003e 164A     		ldr	r2, .L29
+ 398 0040 1421     		movs	r1, #20
+ 399 0042 0A20     		movs	r0, #10
+ 400 0044 FFF7FEFF 		bl	ST7789_DrawString
+ 401              	.LVL26:
+ 128:Services/Src/display_service.c **** 
+ 402              		.loc 1 128 3 view .LVU58
+ 403 0048 08AE     		add	r6, sp, #32
+ 404 004a 144B     		ldr	r3, .L29+4
+ 405 004c 9DED0D0A 		vldr.32	s0, [sp, #52]
+ 406 0050 134A     		ldr	r2, .L29+8
+ 407 0052 1421     		movs	r1, #20
+ 408 0054 3046     		mov	r0, r6
+ 409 0056 FFF7FEFF 		bl	DisplayService_FormatValue
+ 410              	.LVL27:
+ 131:Services/Src/display_service.c **** 
+ 411              		.loc 1 131 3 view .LVU59
+ 412 005a 03AD     		add	r5, sp, #12
+ 413 005c 114B     		ldr	r3, .L29+12
+ 414 005e 9DED0E0A 		vldr.32	s0, [sp, #56]
+ 415 0062 114A     		ldr	r2, .L29+16
+ 416 0064 1421     		movs	r1, #20
+ 417 0066 2846     		mov	r0, r5
+ 418 0068 FFF7FEFF 		bl	DisplayService_FormatValue
+ 419              	.LVL28:
+ 134:Services/Src/display_service.c **** 
+ 420              		.loc 1 134 3 view .LVU60
+ 421 006c 0094     		str	r4, [sp]
+ 422 006e 4FF6E073 		movw	r3, #65504
+ 423 0072 3246     		mov	r2, r6
+ 424 0074 5021     		movs	r1, #80
+ 425 0076 0A20     		movs	r0, #10
+ 426 0078 FFF7FEFF 		bl	ST7789_DrawString
+ 427              	.LVL29:
+ 137:Services/Src/display_service.c **** }
+ 428              		.loc 1 137 3 view .LVU61
+ 429 007c 0094     		str	r4, [sp]
+ 430 007e 40F2FF73 		movw	r3, #2047
+ 431 0082 2A46     		mov	r2, r5
+ 432 0084 6E21     		movs	r1, #110
+ 433 0086 0A20     		movs	r0, #10
+ 434 0088 FFF7FEFF 		bl	ST7789_DrawString
+ 435              	.LVL30:
+ 436              	.L24:
+ 138:Services/Src/display_service.c **** 
+ 437              		.loc 1 138 1 is_stmt 0 view .LVU62
+ 438 008c 10B0     		add	sp, sp, #64
+ 439              	.LCFI13:
+ 440              		.cfi_remember_state
+ 441              		.cfi_def_cfa_offset 16
+ 442              		@ sp needed
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccDhU1dv.s 			page 12
+
+
+ 443 008e 70BD     		pop	{r4, r5, r6, pc}
+ 444              	.L28:
+ 445              	.LCFI14:
+ 446              		.cfi_restore_state
+ 115:Services/Src/display_service.c **** 
+ 447              		.loc 1 115 5 is_stmt 1 view .LVU63
+ 448 0090 FFF7FEFF 		bl	DisplayService_ShowSensorError
+ 449              	.LVL31:
+ 118:Services/Src/display_service.c ****   }
+ 450              		.loc 1 118 5 view .LVU64
+ 451 0094 FAE7     		b	.L24
+ 452              	.L30:
+ 453 0096 00BF     		.align	2
+ 454              	.L29:
+ 455 0098 00000000 		.word	.LC1
+ 456 009c 00000000 		.word	.LC4
+ 457 00a0 04000000 		.word	.LC5
+ 458 00a4 0C000000 		.word	.LC6
+ 459 00a8 10000000 		.word	.LC7
+ 460              		.cfi_endproc
+ 461              	.LFE139:
+ 463              		.section	.text.DisplayService_Update,"ax",%progbits
+ 464              		.align	1
+ 465              		.global	DisplayService_Update
+ 466              		.syntax unified
+ 467              		.thumb
+ 468              		.thumb_func
+ 470              	DisplayService_Update:
+ 471              	.LFB141:
+ 155:Services/Src/display_service.c **** 
+ 156:Services/Src/display_service.c **** /**
+ 157:Services/Src/display_service.c ****  * @brief 刷新显示服务内容。
+ 158:Services/Src/display_service.c ****  * @retval 无
+ 159:Services/Src/display_service.c ****  */
+ 160:Services/Src/display_service.c **** void DisplayService_Update(void)
+ 161:Services/Src/display_service.c **** {
+ 472              		.loc 1 161 1 view -0
+ 473              		.cfi_startproc
+ 474              		@ args = 0, pretend = 0, frame = 0
+ 475              		@ frame_needed = 0, uses_anonymous_args = 0
+ 476 0000 08B5     		push	{r3, lr}
+ 477              	.LCFI15:
+ 478              		.cfi_def_cfa_offset 8
+ 479              		.cfi_offset 3, -8
+ 480              		.cfi_offset 14, -4
+ 162:Services/Src/display_service.c ****   /* 第一版直接显示当前传感器缓存数据。 */
+ 163:Services/Src/display_service.c ****   DisplayService_ShowSensorData();
+ 481              		.loc 1 163 3 view .LVU66
+ 482 0002 FFF7FEFF 		bl	DisplayService_ShowSensorData
+ 483              	.LVL32:
+ 164:Services/Src/display_service.c **** }
+ 484              		.loc 1 164 1 is_stmt 0 view .LVU67
+ 485 0006 08BD     		pop	{r3, pc}
+ 486              		.cfi_endproc
+ 487              	.LFE141:
+ 489              		.section	.text.DisplayService_TestColorCycle,"ax",%progbits
+ 490              		.align	1
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccDhU1dv.s 			page 13
+
+
+ 491              		.global	DisplayService_TestColorCycle
+ 492              		.syntax unified
+ 493              		.thumb
+ 494              		.thumb_func
+ 496              	DisplayService_TestColorCycle:
+ 497              	.LFB142:
+ 165:Services/Src/display_service.c **** 
+ 166:Services/Src/display_service.c **** /**
+ 167:Services/Src/display_service.c ****  * @brief 执行显示服务的颜色循环测试。
+ 168:Services/Src/display_service.c ****  * @retval 无
+ 169:Services/Src/display_service.c ****  */
+ 170:Services/Src/display_service.c **** void DisplayService_TestColorCycle(void)
+ 171:Services/Src/display_service.c **** {
+ 498              		.loc 1 171 1 is_stmt 1 view -0
+ 499              		.cfi_startproc
+ 500              		@ args = 0, pretend = 0, frame = 0
+ 501              		@ frame_needed = 0, uses_anonymous_args = 0
+ 502 0000 08B5     		push	{r3, lr}
+ 503              	.LCFI16:
+ 504              		.cfi_def_cfa_offset 8
+ 505              		.cfi_offset 3, -8
+ 506              		.cfi_offset 14, -4
+ 172:Services/Src/display_service.c ****   /* 显示服务通过设备驱动层执行 ST7789 颜色循环测试。 */
+ 173:Services/Src/display_service.c ****   ST7789_TestColorCycle();
+ 507              		.loc 1 173 3 view .LVU69
+ 508 0002 FFF7FEFF 		bl	ST7789_TestColorCycle
+ 509              	.LVL33:
+ 174:Services/Src/display_service.c **** }
+ 510              		.loc 1 174 1 is_stmt 0 view .LVU70
+ 511 0006 08BD     		pop	{r3, pc}
+ 512              		.cfi_endproc
+ 513              	.LFE142:
+ 515              		.text
+ 516              	.Letext0:
+ 517              		.file 2 "D:\\STM32CubeIDE\\STM32CubeIDE_2.1.1\\STM32CubeIDE\\plugins\\com.st.stm32cube.ide.mcu.ext
+ 518              		.file 3 "D:\\STM32CubeIDE\\STM32CubeIDE_2.1.1\\STM32CubeIDE\\plugins\\com.st.stm32cube.ide.mcu.ext
+ 519              		.file 4 "Services/Inc/sensor_service.h"
+ 520              		.file 5 "D:\\STM32CubeIDE\\STM32CubeIDE_2.1.1\\STM32CubeIDE\\plugins\\com.st.stm32cube.ide.mcu.ext
+ 521              		.file 6 "DeviceDrivers/LCD/Inc/st7789.h"
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccDhU1dv.s 			page 14
 
 
 DEFINED SYMBOLS
                             *ABS*:00000000 display_service.c
-C:\Users\w1785\AppData\Local\Temp\ccLUsRpa.s:21     .text.DisplayService_Init:00000000 $t
-C:\Users\w1785\AppData\Local\Temp\ccLUsRpa.s:27     .text.DisplayService_Init:00000000 DisplayService_Init
-C:\Users\w1785\AppData\Local\Temp\ccLUsRpa.s:47     .text.DisplayService_TestColorCycle:00000000 $t
-C:\Users\w1785\AppData\Local\Temp\ccLUsRpa.s:53     .text.DisplayService_TestColorCycle:00000000 DisplayService_TestColorCycle
+C:\Users\w1785\AppData\Local\Temp\ccDhU1dv.s:21     .text.DisplayService_FloatToX10:00000000 $t
+C:\Users\w1785\AppData\Local\Temp\ccDhU1dv.s:26     .text.DisplayService_FloatToX10:00000000 DisplayService_FloatToX10
+C:\Users\w1785\AppData\Local\Temp\ccDhU1dv.s:70     .rodata.DisplayService_FormatValue.str1.4:00000000 $d
+C:\Users\w1785\AppData\Local\Temp\ccDhU1dv.s:74     .text.DisplayService_FormatValue:00000000 $t
+C:\Users\w1785\AppData\Local\Temp\ccDhU1dv.s:79     .text.DisplayService_FormatValue:00000000 DisplayService_FormatValue
+C:\Users\w1785\AppData\Local\Temp\ccDhU1dv.s:161    .text.DisplayService_FormatValue:00000044 $d
+C:\Users\w1785\AppData\Local\Temp\ccDhU1dv.s:167    .rodata.DisplayService_ShowBootScreen.str1.4:00000000 $d
+C:\Users\w1785\AppData\Local\Temp\ccDhU1dv.s:174    .text.DisplayService_ShowBootScreen:00000000 $t
+C:\Users\w1785\AppData\Local\Temp\ccDhU1dv.s:180    .text.DisplayService_ShowBootScreen:00000000 DisplayService_ShowBootScreen
+C:\Users\w1785\AppData\Local\Temp\ccDhU1dv.s:224    .text.DisplayService_ShowBootScreen:00000030 $d
+C:\Users\w1785\AppData\Local\Temp\ccDhU1dv.s:230    .text.DisplayService_Init:00000000 $t
+C:\Users\w1785\AppData\Local\Temp\ccDhU1dv.s:236    .text.DisplayService_Init:00000000 DisplayService_Init
+C:\Users\w1785\AppData\Local\Temp\ccDhU1dv.s:263    .rodata.DisplayService_ShowSensorError.str1.4:00000000 $d
+C:\Users\w1785\AppData\Local\Temp\ccDhU1dv.s:267    .text.DisplayService_ShowSensorError:00000000 $t
+C:\Users\w1785\AppData\Local\Temp\ccDhU1dv.s:273    .text.DisplayService_ShowSensorError:00000000 DisplayService_ShowSensorError
+C:\Users\w1785\AppData\Local\Temp\ccDhU1dv.s:317    .text.DisplayService_ShowSensorError:00000030 $d
+C:\Users\w1785\AppData\Local\Temp\ccDhU1dv.s:323    .rodata.DisplayService_ShowSensorData.str1.4:00000000 $d
+C:\Users\w1785\AppData\Local\Temp\ccDhU1dv.s:336    .text.DisplayService_ShowSensorData:00000000 $t
+C:\Users\w1785\AppData\Local\Temp\ccDhU1dv.s:342    .text.DisplayService_ShowSensorData:00000000 DisplayService_ShowSensorData
+C:\Users\w1785\AppData\Local\Temp\ccDhU1dv.s:455    .text.DisplayService_ShowSensorData:00000098 $d
+C:\Users\w1785\AppData\Local\Temp\ccDhU1dv.s:464    .text.DisplayService_Update:00000000 $t
+C:\Users\w1785\AppData\Local\Temp\ccDhU1dv.s:470    .text.DisplayService_Update:00000000 DisplayService_Update
+C:\Users\w1785\AppData\Local\Temp\ccDhU1dv.s:490    .text.DisplayService_TestColorCycle:00000000 $t
+C:\Users\w1785\AppData\Local\Temp\ccDhU1dv.s:496    .text.DisplayService_TestColorCycle:00000000 DisplayService_TestColorCycle
 
 UNDEFINED SYMBOLS
+snprintf
+ST7789_FillScreen
+ST7789_DrawString
 ST7789_Init
+SensorService_GetData
+ST7789_FillRect
 ST7789_TestColorCycle

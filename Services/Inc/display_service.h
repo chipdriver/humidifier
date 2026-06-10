@@ -8,6 +8,10 @@ extern "C" {
 #include "main.h"
 
 void DisplayService_Init(void);
+void DisplayService_ShowBootScreen(void);
+void DisplayService_ShowSensorData(void);
+void DisplayService_ShowSensorError(void);
+void DisplayService_Update(void);
 void DisplayService_TestColorCycle(void);
 
 #ifdef __cplusplus

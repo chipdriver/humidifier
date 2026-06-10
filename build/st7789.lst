@@ -1,4 +1,4 @@
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccZhMi8p.s 			page 1
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccJePjwJ.s 			page 1
 
 
    1              		.cpu cortex-m4
@@ -46,46 +46,150 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccZhMi8p.s 			page 1
   16:DeviceDrivers/LCD/Src/st7789.c **** #define ST7789_MADCTL_VALUE  0x00
   17:DeviceDrivers/LCD/Src/st7789.c **** #define ST7789_USE_INVERSION 1
   18:DeviceDrivers/LCD/Src/st7789.c **** 
-  19:DeviceDrivers/LCD/Src/st7789.c **** /**
-  20:DeviceDrivers/LCD/Src/st7789.c ****  * @brief 向 ST7789 写入 1 个 16 位数值，高字节在前。
-  21:DeviceDrivers/LCD/Src/st7789.c ****  * @param value 要写入的 16 位数值。
-  22:DeviceDrivers/LCD/Src/st7789.c ****  * @retval 无
-  23:DeviceDrivers/LCD/Src/st7789.c ****  */
-  24:DeviceDrivers/LCD/Src/st7789.c **** static void ST7789_WriteU16(uint16_t value)
-  25:DeviceDrivers/LCD/Src/st7789.c **** {
-  29              		.loc 1 25 1 view -0
+  19:DeviceDrivers/LCD/Src/st7789.c **** static const uint8_t s_font_5x7[][5] = {
+  20:DeviceDrivers/LCD/Src/st7789.c ****   {0x00, 0x00, 0x00, 0x00, 0x00}, /* space */
+  21:DeviceDrivers/LCD/Src/st7789.c ****   {0x00, 0x00, 0x5F, 0x00, 0x00}, /* ! */
+  22:DeviceDrivers/LCD/Src/st7789.c ****   {0x00, 0x07, 0x00, 0x07, 0x00}, /* " */
+  23:DeviceDrivers/LCD/Src/st7789.c ****   {0x14, 0x7F, 0x14, 0x7F, 0x14}, /* # */
+  24:DeviceDrivers/LCD/Src/st7789.c ****   {0x24, 0x2A, 0x7F, 0x2A, 0x12}, /* $ */
+  25:DeviceDrivers/LCD/Src/st7789.c ****   {0x23, 0x13, 0x08, 0x64, 0x62}, /* % */
+  26:DeviceDrivers/LCD/Src/st7789.c ****   {0x36, 0x49, 0x55, 0x22, 0x50}, /* & */
+  27:DeviceDrivers/LCD/Src/st7789.c ****   {0x00, 0x05, 0x03, 0x00, 0x00}, /* ' */
+  28:DeviceDrivers/LCD/Src/st7789.c ****   {0x00, 0x1C, 0x22, 0x41, 0x00}, /* ( */
+  29:DeviceDrivers/LCD/Src/st7789.c ****   {0x00, 0x41, 0x22, 0x1C, 0x00}, /* ) */
+  30:DeviceDrivers/LCD/Src/st7789.c ****   {0x14, 0x08, 0x3E, 0x08, 0x14}, /* * */
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccJePjwJ.s 			page 2
+
+
+  31:DeviceDrivers/LCD/Src/st7789.c ****   {0x08, 0x08, 0x3E, 0x08, 0x08}, /* + */
+  32:DeviceDrivers/LCD/Src/st7789.c ****   {0x00, 0x50, 0x30, 0x00, 0x00}, /* , */
+  33:DeviceDrivers/LCD/Src/st7789.c ****   {0x08, 0x08, 0x08, 0x08, 0x08}, /* - */
+  34:DeviceDrivers/LCD/Src/st7789.c ****   {0x00, 0x60, 0x60, 0x00, 0x00}, /* . */
+  35:DeviceDrivers/LCD/Src/st7789.c ****   {0x20, 0x10, 0x08, 0x04, 0x02}, /* / */
+  36:DeviceDrivers/LCD/Src/st7789.c ****   {0x3E, 0x51, 0x49, 0x45, 0x3E}, /* 0 */
+  37:DeviceDrivers/LCD/Src/st7789.c ****   {0x00, 0x42, 0x7F, 0x40, 0x00}, /* 1 */
+  38:DeviceDrivers/LCD/Src/st7789.c ****   {0x42, 0x61, 0x51, 0x49, 0x46}, /* 2 */
+  39:DeviceDrivers/LCD/Src/st7789.c ****   {0x21, 0x41, 0x45, 0x4B, 0x31}, /* 3 */
+  40:DeviceDrivers/LCD/Src/st7789.c ****   {0x18, 0x14, 0x12, 0x7F, 0x10}, /* 4 */
+  41:DeviceDrivers/LCD/Src/st7789.c ****   {0x27, 0x45, 0x45, 0x45, 0x39}, /* 5 */
+  42:DeviceDrivers/LCD/Src/st7789.c ****   {0x3C, 0x4A, 0x49, 0x49, 0x30}, /* 6 */
+  43:DeviceDrivers/LCD/Src/st7789.c ****   {0x01, 0x71, 0x09, 0x05, 0x03}, /* 7 */
+  44:DeviceDrivers/LCD/Src/st7789.c ****   {0x36, 0x49, 0x49, 0x49, 0x36}, /* 8 */
+  45:DeviceDrivers/LCD/Src/st7789.c ****   {0x06, 0x49, 0x49, 0x29, 0x1E}, /* 9 */
+  46:DeviceDrivers/LCD/Src/st7789.c ****   {0x00, 0x36, 0x36, 0x00, 0x00}, /* : */
+  47:DeviceDrivers/LCD/Src/st7789.c ****   {0x00, 0x56, 0x36, 0x00, 0x00}, /* ; */
+  48:DeviceDrivers/LCD/Src/st7789.c ****   {0x08, 0x14, 0x22, 0x41, 0x00}, /* < */
+  49:DeviceDrivers/LCD/Src/st7789.c ****   {0x14, 0x14, 0x14, 0x14, 0x14}, /* = */
+  50:DeviceDrivers/LCD/Src/st7789.c ****   {0x00, 0x41, 0x22, 0x14, 0x08}, /* > */
+  51:DeviceDrivers/LCD/Src/st7789.c ****   {0x02, 0x01, 0x51, 0x09, 0x06}, /* ? */
+  52:DeviceDrivers/LCD/Src/st7789.c ****   {0x32, 0x49, 0x79, 0x41, 0x3E}, /* @ */
+  53:DeviceDrivers/LCD/Src/st7789.c ****   {0x7E, 0x11, 0x11, 0x11, 0x7E}, /* A */
+  54:DeviceDrivers/LCD/Src/st7789.c ****   {0x7F, 0x49, 0x49, 0x49, 0x36}, /* B */
+  55:DeviceDrivers/LCD/Src/st7789.c ****   {0x3E, 0x41, 0x41, 0x41, 0x22}, /* C */
+  56:DeviceDrivers/LCD/Src/st7789.c ****   {0x7F, 0x41, 0x41, 0x22, 0x1C}, /* D */
+  57:DeviceDrivers/LCD/Src/st7789.c ****   {0x7F, 0x49, 0x49, 0x49, 0x41}, /* E */
+  58:DeviceDrivers/LCD/Src/st7789.c ****   {0x7F, 0x09, 0x09, 0x09, 0x01}, /* F */
+  59:DeviceDrivers/LCD/Src/st7789.c ****   {0x3E, 0x41, 0x49, 0x49, 0x7A}, /* G */
+  60:DeviceDrivers/LCD/Src/st7789.c ****   {0x7F, 0x08, 0x08, 0x08, 0x7F}, /* H */
+  61:DeviceDrivers/LCD/Src/st7789.c ****   {0x00, 0x41, 0x7F, 0x41, 0x00}, /* I */
+  62:DeviceDrivers/LCD/Src/st7789.c ****   {0x20, 0x40, 0x41, 0x3F, 0x01}, /* J */
+  63:DeviceDrivers/LCD/Src/st7789.c ****   {0x7F, 0x08, 0x14, 0x22, 0x41}, /* K */
+  64:DeviceDrivers/LCD/Src/st7789.c ****   {0x7F, 0x40, 0x40, 0x40, 0x40}, /* L */
+  65:DeviceDrivers/LCD/Src/st7789.c ****   {0x7F, 0x02, 0x0C, 0x02, 0x7F}, /* M */
+  66:DeviceDrivers/LCD/Src/st7789.c ****   {0x7F, 0x04, 0x08, 0x10, 0x7F}, /* N */
+  67:DeviceDrivers/LCD/Src/st7789.c ****   {0x3E, 0x41, 0x41, 0x41, 0x3E}, /* O */
+  68:DeviceDrivers/LCD/Src/st7789.c ****   {0x7F, 0x09, 0x09, 0x09, 0x06}, /* P */
+  69:DeviceDrivers/LCD/Src/st7789.c ****   {0x3E, 0x41, 0x51, 0x21, 0x5E}, /* Q */
+  70:DeviceDrivers/LCD/Src/st7789.c ****   {0x7F, 0x09, 0x19, 0x29, 0x46}, /* R */
+  71:DeviceDrivers/LCD/Src/st7789.c ****   {0x46, 0x49, 0x49, 0x49, 0x31}, /* S */
+  72:DeviceDrivers/LCD/Src/st7789.c ****   {0x01, 0x01, 0x7F, 0x01, 0x01}, /* T */
+  73:DeviceDrivers/LCD/Src/st7789.c ****   {0x3F, 0x40, 0x40, 0x40, 0x3F}, /* U */
+  74:DeviceDrivers/LCD/Src/st7789.c ****   {0x1F, 0x20, 0x40, 0x20, 0x1F}, /* V */
+  75:DeviceDrivers/LCD/Src/st7789.c ****   {0x3F, 0x40, 0x38, 0x40, 0x3F}, /* W */
+  76:DeviceDrivers/LCD/Src/st7789.c ****   {0x63, 0x14, 0x08, 0x14, 0x63}, /* X */
+  77:DeviceDrivers/LCD/Src/st7789.c ****   {0x07, 0x08, 0x70, 0x08, 0x07}, /* Y */
+  78:DeviceDrivers/LCD/Src/st7789.c ****   {0x61, 0x51, 0x49, 0x45, 0x43}, /* Z */
+  79:DeviceDrivers/LCD/Src/st7789.c ****   {0x00, 0x7F, 0x41, 0x41, 0x00}, /* [ */
+  80:DeviceDrivers/LCD/Src/st7789.c ****   {0x02, 0x04, 0x08, 0x10, 0x20}, /* \ */
+  81:DeviceDrivers/LCD/Src/st7789.c ****   {0x00, 0x41, 0x41, 0x7F, 0x00}, /* ] */
+  82:DeviceDrivers/LCD/Src/st7789.c ****   {0x04, 0x02, 0x01, 0x02, 0x04}, /* ^ */
+  83:DeviceDrivers/LCD/Src/st7789.c ****   {0x40, 0x40, 0x40, 0x40, 0x40}, /* _ */
+  84:DeviceDrivers/LCD/Src/st7789.c ****   {0x00, 0x01, 0x02, 0x04, 0x00}, /* ` */
+  85:DeviceDrivers/LCD/Src/st7789.c ****   {0x20, 0x54, 0x54, 0x54, 0x78}, /* a */
+  86:DeviceDrivers/LCD/Src/st7789.c ****   {0x7F, 0x48, 0x44, 0x44, 0x38}, /* b */
+  87:DeviceDrivers/LCD/Src/st7789.c ****   {0x38, 0x44, 0x44, 0x44, 0x20}, /* c */
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccJePjwJ.s 			page 3
+
+
+  88:DeviceDrivers/LCD/Src/st7789.c ****   {0x38, 0x44, 0x44, 0x48, 0x7F}, /* d */
+  89:DeviceDrivers/LCD/Src/st7789.c ****   {0x38, 0x54, 0x54, 0x54, 0x18}, /* e */
+  90:DeviceDrivers/LCD/Src/st7789.c ****   {0x08, 0x7E, 0x09, 0x01, 0x02}, /* f */
+  91:DeviceDrivers/LCD/Src/st7789.c ****   {0x0C, 0x52, 0x52, 0x52, 0x3E}, /* g */
+  92:DeviceDrivers/LCD/Src/st7789.c ****   {0x7F, 0x08, 0x04, 0x04, 0x78}, /* h */
+  93:DeviceDrivers/LCD/Src/st7789.c ****   {0x00, 0x44, 0x7D, 0x40, 0x00}, /* i */
+  94:DeviceDrivers/LCD/Src/st7789.c ****   {0x20, 0x40, 0x44, 0x3D, 0x00}, /* j */
+  95:DeviceDrivers/LCD/Src/st7789.c ****   {0x7F, 0x10, 0x28, 0x44, 0x00}, /* k */
+  96:DeviceDrivers/LCD/Src/st7789.c ****   {0x00, 0x41, 0x7F, 0x40, 0x00}, /* l */
+  97:DeviceDrivers/LCD/Src/st7789.c ****   {0x7C, 0x04, 0x18, 0x04, 0x78}, /* m */
+  98:DeviceDrivers/LCD/Src/st7789.c ****   {0x7C, 0x08, 0x04, 0x04, 0x78}, /* n */
+  99:DeviceDrivers/LCD/Src/st7789.c ****   {0x38, 0x44, 0x44, 0x44, 0x38}, /* o */
+ 100:DeviceDrivers/LCD/Src/st7789.c ****   {0x7C, 0x14, 0x14, 0x14, 0x08}, /* p */
+ 101:DeviceDrivers/LCD/Src/st7789.c ****   {0x08, 0x14, 0x14, 0x18, 0x7C}, /* q */
+ 102:DeviceDrivers/LCD/Src/st7789.c ****   {0x7C, 0x08, 0x04, 0x04, 0x08}, /* r */
+ 103:DeviceDrivers/LCD/Src/st7789.c ****   {0x48, 0x54, 0x54, 0x54, 0x20}, /* s */
+ 104:DeviceDrivers/LCD/Src/st7789.c ****   {0x04, 0x3F, 0x44, 0x40, 0x20}, /* t */
+ 105:DeviceDrivers/LCD/Src/st7789.c ****   {0x3C, 0x40, 0x40, 0x20, 0x7C}, /* u */
+ 106:DeviceDrivers/LCD/Src/st7789.c ****   {0x1C, 0x20, 0x40, 0x20, 0x1C}, /* v */
+ 107:DeviceDrivers/LCD/Src/st7789.c ****   {0x3C, 0x40, 0x30, 0x40, 0x3C}, /* w */
+ 108:DeviceDrivers/LCD/Src/st7789.c ****   {0x44, 0x28, 0x10, 0x28, 0x44}, /* x */
+ 109:DeviceDrivers/LCD/Src/st7789.c ****   {0x0C, 0x50, 0x50, 0x50, 0x3C}, /* y */
+ 110:DeviceDrivers/LCD/Src/st7789.c ****   {0x44, 0x64, 0x54, 0x4C, 0x44}, /* z */
+ 111:DeviceDrivers/LCD/Src/st7789.c ****   {0x00, 0x08, 0x36, 0x41, 0x00}, /* { */
+ 112:DeviceDrivers/LCD/Src/st7789.c ****   {0x00, 0x00, 0x7F, 0x00, 0x00}, /* | */
+ 113:DeviceDrivers/LCD/Src/st7789.c ****   {0x00, 0x41, 0x36, 0x08, 0x00}, /* } */
+ 114:DeviceDrivers/LCD/Src/st7789.c ****   {0x08, 0x08, 0x2A, 0x1C, 0x08}  /* ~ */
+ 115:DeviceDrivers/LCD/Src/st7789.c **** };
+ 116:DeviceDrivers/LCD/Src/st7789.c **** 
+ 117:DeviceDrivers/LCD/Src/st7789.c **** /**
+ 118:DeviceDrivers/LCD/Src/st7789.c ****  * @brief 向 ST7789 写入 1 个 16 位数值，高字节在前。
+ 119:DeviceDrivers/LCD/Src/st7789.c ****  * @param value 要写入的 16 位数值。
+ 120:DeviceDrivers/LCD/Src/st7789.c ****  * @retval 无
+ 121:DeviceDrivers/LCD/Src/st7789.c ****  */
+ 122:DeviceDrivers/LCD/Src/st7789.c **** static void ST7789_WriteU16(uint16_t value)
+ 123:DeviceDrivers/LCD/Src/st7789.c **** {
+  29              		.loc 1 123 1 view -0
   30              		.cfi_startproc
   31              		@ args = 0, pretend = 0, frame = 0
   32              		@ frame_needed = 0, uses_anonymous_args = 0
-  33              		.loc 1 25 1 is_stmt 0 view .LVU1
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccZhMi8p.s 			page 2
-
-
+  33              		.loc 1 123 1 is_stmt 0 view .LVU1
   34 0000 10B5     		push	{r4, lr}
   35              	.LCFI0:
   36              		.cfi_def_cfa_offset 8
   37              		.cfi_offset 4, -8
   38              		.cfi_offset 14, -4
   39 0002 0446     		mov	r4, r0
-  26:DeviceDrivers/LCD/Src/st7789.c ****   /* 先发送高 8 位。 */
-  27:DeviceDrivers/LCD/Src/st7789.c ****   LCD_WriteData((uint8_t)(value >> 8));
-  40              		.loc 1 27 3 is_stmt 1 view .LVU2
+ 124:DeviceDrivers/LCD/Src/st7789.c ****   /* 先发送高 8 位。 */
+ 125:DeviceDrivers/LCD/Src/st7789.c ****   LCD_WriteData((uint8_t)(value >> 8));
+  40              		.loc 1 125 3 is_stmt 1 view .LVU2
   41 0004 000A     		lsrs	r0, r0, #8
   42              	.LVL1:
-  43              		.loc 1 27 3 is_stmt 0 view .LVU3
+  43              		.loc 1 125 3 is_stmt 0 view .LVU3
   44 0006 FFF7FEFF 		bl	LCD_WriteData
   45              	.LVL2:
-  28:DeviceDrivers/LCD/Src/st7789.c **** 
-  29:DeviceDrivers/LCD/Src/st7789.c ****   /* 再发送低 8 位。 */
-  30:DeviceDrivers/LCD/Src/st7789.c ****   LCD_WriteData((uint8_t)(value & 0x00FFU));
-  46              		.loc 1 30 3 is_stmt 1 view .LVU4
+ 126:DeviceDrivers/LCD/Src/st7789.c **** 
+ 127:DeviceDrivers/LCD/Src/st7789.c ****   /* 再发送低 8 位。 */
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccJePjwJ.s 			page 4
+
+
+ 128:DeviceDrivers/LCD/Src/st7789.c ****   LCD_WriteData((uint8_t)(value & 0x00FFU));
+  46              		.loc 1 128 3 is_stmt 1 view .LVU4
   47 000a E0B2     		uxtb	r0, r4
   48 000c FFF7FEFF 		bl	LCD_WriteData
   49              	.LVL3:
-  31:DeviceDrivers/LCD/Src/st7789.c **** }
-  50              		.loc 1 31 1 is_stmt 0 view .LVU5
+ 129:DeviceDrivers/LCD/Src/st7789.c **** }
+  50              		.loc 1 129 1 is_stmt 0 view .LVU5
   51 0010 10BD     		pop	{r4, pc}
-  52              		.loc 1 31 1 view .LVU6
+  52              		.loc 1 129 1 view .LVU6
   53              		.cfi_endproc
   54              	.LFE132:
   56              		.section	.text.ST7789_SetAddressWindow,"ax",%progbits
@@ -97,77 +201,77 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccZhMi8p.s 			page 1
   63              	ST7789_SetAddressWindow:
   64              	.LVL4:
   65              	.LFB134:
-  32:DeviceDrivers/LCD/Src/st7789.c **** 
-  33:DeviceDrivers/LCD/Src/st7789.c **** /**
-  34:DeviceDrivers/LCD/Src/st7789.c ****  * @brief 初始化 ST7789 屏幕控制器。
-  35:DeviceDrivers/LCD/Src/st7789.c ****  * @retval 无
-  36:DeviceDrivers/LCD/Src/st7789.c ****  */
-  37:DeviceDrivers/LCD/Src/st7789.c **** void ST7789_Init(void)
-  38:DeviceDrivers/LCD/Src/st7789.c **** {
-  39:DeviceDrivers/LCD/Src/st7789.c ****   /* 初始化上一层硬件驱动使用的 GPIO 引脚。 */
-  40:DeviceDrivers/LCD/Src/st7789.c ****   LCD_HW_GPIO_Init();
-  41:DeviceDrivers/LCD/Src/st7789.c **** 
-  42:DeviceDrivers/LCD/Src/st7789.c ****   /* 通过 RESET 引脚复位屏幕。 */
-  43:DeviceDrivers/LCD/Src/st7789.c ****   LCD_Reset();
-  44:DeviceDrivers/LCD/Src/st7789.c **** 
-  45:DeviceDrivers/LCD/Src/st7789.c ****   /* 发送退出睡眠模式命令。 */
-  46:DeviceDrivers/LCD/Src/st7789.c ****   LCD_WriteCmd(ST7789_CMD_SLPOUT);
-  47:DeviceDrivers/LCD/Src/st7789.c **** 
-  48:DeviceDrivers/LCD/Src/st7789.c ****   /* 等待屏幕从睡眠模式中稳定退出。 */
-  49:DeviceDrivers/LCD/Src/st7789.c ****   HAL_Delay(120U);
-  50:DeviceDrivers/LCD/Src/st7789.c **** 
-  51:DeviceDrivers/LCD/Src/st7789.c ****   /* 发送正常显示模式开启命令。 */
-  52:DeviceDrivers/LCD/Src/st7789.c ****   LCD_WriteCmd(ST7789_CMD_NORON);
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccZhMi8p.s 			page 3
+ 130:DeviceDrivers/LCD/Src/st7789.c **** 
+ 131:DeviceDrivers/LCD/Src/st7789.c **** /**
+ 132:DeviceDrivers/LCD/Src/st7789.c ****  * @brief 初始化 ST7789 屏幕控制器。
+ 133:DeviceDrivers/LCD/Src/st7789.c ****  * @retval 无
+ 134:DeviceDrivers/LCD/Src/st7789.c ****  */
+ 135:DeviceDrivers/LCD/Src/st7789.c **** void ST7789_Init(void)
+ 136:DeviceDrivers/LCD/Src/st7789.c **** {
+ 137:DeviceDrivers/LCD/Src/st7789.c ****   /* 初始化上一层硬件驱动使用的 GPIO 引脚。 */
+ 138:DeviceDrivers/LCD/Src/st7789.c ****   LCD_HW_GPIO_Init();
+ 139:DeviceDrivers/LCD/Src/st7789.c **** 
+ 140:DeviceDrivers/LCD/Src/st7789.c ****   /* 通过 RESET 引脚复位屏幕。 */
+ 141:DeviceDrivers/LCD/Src/st7789.c ****   LCD_Reset();
+ 142:DeviceDrivers/LCD/Src/st7789.c **** 
+ 143:DeviceDrivers/LCD/Src/st7789.c ****   /* 发送退出睡眠模式命令。 */
+ 144:DeviceDrivers/LCD/Src/st7789.c ****   LCD_WriteCmd(ST7789_CMD_SLPOUT);
+ 145:DeviceDrivers/LCD/Src/st7789.c **** 
+ 146:DeviceDrivers/LCD/Src/st7789.c ****   /* 等待屏幕从睡眠模式中稳定退出。 */
+ 147:DeviceDrivers/LCD/Src/st7789.c ****   HAL_Delay(120U);
+ 148:DeviceDrivers/LCD/Src/st7789.c **** 
+ 149:DeviceDrivers/LCD/Src/st7789.c ****   /* 发送正常显示模式开启命令。 */
+ 150:DeviceDrivers/LCD/Src/st7789.c ****   LCD_WriteCmd(ST7789_CMD_NORON);
+ 151:DeviceDrivers/LCD/Src/st7789.c **** 
+ 152:DeviceDrivers/LCD/Src/st7789.c ****   /* 发送颜色格式设置命令。 */
+ 153:DeviceDrivers/LCD/Src/st7789.c ****   LCD_WriteCmd(ST7789_CMD_COLMOD);
+ 154:DeviceDrivers/LCD/Src/st7789.c **** 
+ 155:DeviceDrivers/LCD/Src/st7789.c ****   /* 设置为 RGB565 / 16-bit 颜色格式。 */
+ 156:DeviceDrivers/LCD/Src/st7789.c ****   LCD_WriteData(ST7789_COLMOD_16BIT);
+ 157:DeviceDrivers/LCD/Src/st7789.c **** 
+ 158:DeviceDrivers/LCD/Src/st7789.c ****   /* 发送扫描方向设置命令。 */
+ 159:DeviceDrivers/LCD/Src/st7789.c ****   LCD_WriteCmd(ST7789_CMD_MADCTL);
+ 160:DeviceDrivers/LCD/Src/st7789.c **** 
+ 161:DeviceDrivers/LCD/Src/st7789.c ****   /* 写入当前版本使用的扫描方向参数。 */
+ 162:DeviceDrivers/LCD/Src/st7789.c ****   LCD_WriteData(ST7789_MADCTL_VALUE);
+ 163:DeviceDrivers/LCD/Src/st7789.c **** 
+ 164:DeviceDrivers/LCD/Src/st7789.c ****   /* 判断是否启用显示反色模式。 */
+ 165:DeviceDrivers/LCD/Src/st7789.c **** #if ST7789_USE_INVERSION
+ 166:DeviceDrivers/LCD/Src/st7789.c ****   /* 发送显示反色开启命令。 */
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccJePjwJ.s 			page 5
 
 
-  53:DeviceDrivers/LCD/Src/st7789.c **** 
-  54:DeviceDrivers/LCD/Src/st7789.c ****   /* 发送颜色格式设置命令。 */
-  55:DeviceDrivers/LCD/Src/st7789.c ****   LCD_WriteCmd(ST7789_CMD_COLMOD);
-  56:DeviceDrivers/LCD/Src/st7789.c **** 
-  57:DeviceDrivers/LCD/Src/st7789.c ****   /* 设置为 RGB565 / 16-bit 颜色格式。 */
-  58:DeviceDrivers/LCD/Src/st7789.c ****   LCD_WriteData(ST7789_COLMOD_16BIT);
-  59:DeviceDrivers/LCD/Src/st7789.c **** 
-  60:DeviceDrivers/LCD/Src/st7789.c ****   /* 发送扫描方向设置命令。 */
-  61:DeviceDrivers/LCD/Src/st7789.c ****   LCD_WriteCmd(ST7789_CMD_MADCTL);
-  62:DeviceDrivers/LCD/Src/st7789.c **** 
-  63:DeviceDrivers/LCD/Src/st7789.c ****   /* 写入当前版本使用的扫描方向参数。 */
-  64:DeviceDrivers/LCD/Src/st7789.c ****   LCD_WriteData(ST7789_MADCTL_VALUE);
-  65:DeviceDrivers/LCD/Src/st7789.c **** 
-  66:DeviceDrivers/LCD/Src/st7789.c ****   /* 判断是否启用显示反色模式。 */
-  67:DeviceDrivers/LCD/Src/st7789.c **** #if ST7789_USE_INVERSION
-  68:DeviceDrivers/LCD/Src/st7789.c ****   /* 发送显示反色开启命令。 */
-  69:DeviceDrivers/LCD/Src/st7789.c ****   LCD_WriteCmd(ST7789_CMD_INVON);
-  70:DeviceDrivers/LCD/Src/st7789.c **** #else
-  71:DeviceDrivers/LCD/Src/st7789.c ****   /* 发送显示反色关闭命令。 */
-  72:DeviceDrivers/LCD/Src/st7789.c ****   LCD_WriteCmd(ST7789_CMD_INVOFF);
-  73:DeviceDrivers/LCD/Src/st7789.c **** #endif
-  74:DeviceDrivers/LCD/Src/st7789.c **** 
-  75:DeviceDrivers/LCD/Src/st7789.c ****   /* 发送开启显示命令。 */
-  76:DeviceDrivers/LCD/Src/st7789.c ****   LCD_WriteCmd(ST7789_CMD_DISPON);
-  77:DeviceDrivers/LCD/Src/st7789.c **** 
-  78:DeviceDrivers/LCD/Src/st7789.c ****   /* 等待显示开启后稳定。 */
-  79:DeviceDrivers/LCD/Src/st7789.c ****   HAL_Delay(20U);
-  80:DeviceDrivers/LCD/Src/st7789.c **** 
-  81:DeviceDrivers/LCD/Src/st7789.c ****   /* 初始化完成后，默认把整屏清为黑色。 */
-  82:DeviceDrivers/LCD/Src/st7789.c ****   ST7789_FillScreen(ST7789_COLOR_BLACK);
-  83:DeviceDrivers/LCD/Src/st7789.c **** }
-  84:DeviceDrivers/LCD/Src/st7789.c **** 
-  85:DeviceDrivers/LCD/Src/st7789.c **** /**
-  86:DeviceDrivers/LCD/Src/st7789.c ****  * @brief 设置 ST7789 接下来写入显存的窗口区域。
-  87:DeviceDrivers/LCD/Src/st7789.c ****  * @param x0 窗口左上角 X 坐标。
-  88:DeviceDrivers/LCD/Src/st7789.c ****  * @param y0 窗口左上角 Y 坐标。
-  89:DeviceDrivers/LCD/Src/st7789.c ****  * @param x1 窗口右下角 X 坐标。
-  90:DeviceDrivers/LCD/Src/st7789.c ****  * @param y1 窗口右下角 Y 坐标。
-  91:DeviceDrivers/LCD/Src/st7789.c ****  * @retval 无
-  92:DeviceDrivers/LCD/Src/st7789.c ****  */
-  93:DeviceDrivers/LCD/Src/st7789.c **** void ST7789_SetAddressWindow(uint16_t x0, uint16_t y0, uint16_t x1, uint16_t y1)
-  94:DeviceDrivers/LCD/Src/st7789.c **** {
-  66              		.loc 1 94 1 is_stmt 1 view -0
+ 167:DeviceDrivers/LCD/Src/st7789.c ****   LCD_WriteCmd(ST7789_CMD_INVON);
+ 168:DeviceDrivers/LCD/Src/st7789.c **** #else
+ 169:DeviceDrivers/LCD/Src/st7789.c ****   /* 发送显示反色关闭命令。 */
+ 170:DeviceDrivers/LCD/Src/st7789.c ****   LCD_WriteCmd(ST7789_CMD_INVOFF);
+ 171:DeviceDrivers/LCD/Src/st7789.c **** #endif
+ 172:DeviceDrivers/LCD/Src/st7789.c **** 
+ 173:DeviceDrivers/LCD/Src/st7789.c ****   /* 发送开启显示命令。 */
+ 174:DeviceDrivers/LCD/Src/st7789.c ****   LCD_WriteCmd(ST7789_CMD_DISPON);
+ 175:DeviceDrivers/LCD/Src/st7789.c **** 
+ 176:DeviceDrivers/LCD/Src/st7789.c ****   /* 等待显示开启后稳定。 */
+ 177:DeviceDrivers/LCD/Src/st7789.c ****   HAL_Delay(20U);
+ 178:DeviceDrivers/LCD/Src/st7789.c **** 
+ 179:DeviceDrivers/LCD/Src/st7789.c ****   /* 初始化完成后，默认把整屏清为黑色。 */
+ 180:DeviceDrivers/LCD/Src/st7789.c ****   ST7789_FillScreen(ST7789_COLOR_BLACK);
+ 181:DeviceDrivers/LCD/Src/st7789.c **** }
+ 182:DeviceDrivers/LCD/Src/st7789.c **** 
+ 183:DeviceDrivers/LCD/Src/st7789.c **** /**
+ 184:DeviceDrivers/LCD/Src/st7789.c ****  * @brief 设置 ST7789 接下来写入显存的窗口区域。
+ 185:DeviceDrivers/LCD/Src/st7789.c ****  * @param x0 窗口左上角 X 坐标。
+ 186:DeviceDrivers/LCD/Src/st7789.c ****  * @param y0 窗口左上角 Y 坐标。
+ 187:DeviceDrivers/LCD/Src/st7789.c ****  * @param x1 窗口右下角 X 坐标。
+ 188:DeviceDrivers/LCD/Src/st7789.c ****  * @param y1 窗口右下角 Y 坐标。
+ 189:DeviceDrivers/LCD/Src/st7789.c ****  * @retval 无
+ 190:DeviceDrivers/LCD/Src/st7789.c ****  */
+ 191:DeviceDrivers/LCD/Src/st7789.c **** void ST7789_SetAddressWindow(uint16_t x0, uint16_t y0, uint16_t x1, uint16_t y1)
+ 192:DeviceDrivers/LCD/Src/st7789.c **** {
+  66              		.loc 1 192 1 is_stmt 1 view -0
   67              		.cfi_startproc
   68              		@ args = 0, pretend = 0, frame = 0
   69              		@ frame_needed = 0, uses_anonymous_args = 0
-  70              		.loc 1 94 1 is_stmt 0 view .LVU8
+  70              		.loc 1 192 1 is_stmt 0 view .LVU8
   71 0000 F8B5     		push	{r3, r4, r5, r6, r7, lr}
   72              	.LCFI1:
   73              		.cfi_def_cfa_offset 24
@@ -178,193 +282,190 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccZhMi8p.s 			page 1
   78              		.cfi_offset 7, -8
   79              		.cfi_offset 14, -4
   80 0002 0E46     		mov	r6, r1
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccZhMi8p.s 			page 4
-
-
   81 0004 1F46     		mov	r7, r3
-  95:DeviceDrivers/LCD/Src/st7789.c ****   /* 如果起点 X 超出屏幕范围，就限制到屏幕最右侧像素。 */
-  96:DeviceDrivers/LCD/Src/st7789.c ****   if (x0 >= ST7789_WIDTH)
-  82              		.loc 1 96 3 is_stmt 1 view .LVU9
-  83              		.loc 1 96 6 is_stmt 0 view .LVU10
+ 193:DeviceDrivers/LCD/Src/st7789.c ****   /* 如果起点 X 超出屏幕范围，就限制到屏幕最右侧像素。 */
+ 194:DeviceDrivers/LCD/Src/st7789.c ****   if (x0 >= ST7789_WIDTH)
+  82              		.loc 1 194 3 is_stmt 1 view .LVU9
+  83              		.loc 1 194 6 is_stmt 0 view .LVU10
   84 0006 AB28     		cmp	r0, #171
   85 0008 00D9     		bls	.L4
-  97:DeviceDrivers/LCD/Src/st7789.c ****   {
-  98:DeviceDrivers/LCD/Src/st7789.c ****     x0 = ST7789_WIDTH - 1U;
-  86              		.loc 1 98 8 view .LVU11
+ 195:DeviceDrivers/LCD/Src/st7789.c ****   {
+ 196:DeviceDrivers/LCD/Src/st7789.c ****     x0 = ST7789_WIDTH - 1U;
+  86              		.loc 1 196 8 view .LVU11
   87 000a AB20     		movs	r0, #171
   88              	.LVL5:
   89              	.L4:
-  99:DeviceDrivers/LCD/Src/st7789.c ****   }
- 100:DeviceDrivers/LCD/Src/st7789.c **** 
- 101:DeviceDrivers/LCD/Src/st7789.c ****   /* 如果终点 X 超出屏幕范围，就限制到屏幕最右侧像素。 */
- 102:DeviceDrivers/LCD/Src/st7789.c ****   if (x1 >= ST7789_WIDTH)
-  90              		.loc 1 102 3 is_stmt 1 view .LVU12
-  91              		.loc 1 102 6 is_stmt 0 view .LVU13
+ 197:DeviceDrivers/LCD/Src/st7789.c ****   }
+ 198:DeviceDrivers/LCD/Src/st7789.c **** 
+ 199:DeviceDrivers/LCD/Src/st7789.c ****   /* 如果终点 X 超出屏幕范围，就限制到屏幕最右侧像素。 */
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccJePjwJ.s 			page 6
+
+
+ 200:DeviceDrivers/LCD/Src/st7789.c ****   if (x1 >= ST7789_WIDTH)
+  90              		.loc 1 200 3 is_stmt 1 view .LVU12
+  91              		.loc 1 200 6 is_stmt 0 view .LVU13
   92 000c AB2A     		cmp	r2, #171
   93 000e 00D9     		bls	.L5
- 103:DeviceDrivers/LCD/Src/st7789.c ****   {
- 104:DeviceDrivers/LCD/Src/st7789.c ****     x1 = ST7789_WIDTH - 1U;
-  94              		.loc 1 104 8 view .LVU14
+ 201:DeviceDrivers/LCD/Src/st7789.c ****   {
+ 202:DeviceDrivers/LCD/Src/st7789.c ****     x1 = ST7789_WIDTH - 1U;
+  94              		.loc 1 202 8 view .LVU14
   95 0010 AB22     		movs	r2, #171
   96              	.LVL6:
   97              	.L5:
- 105:DeviceDrivers/LCD/Src/st7789.c ****   }
- 106:DeviceDrivers/LCD/Src/st7789.c **** 
- 107:DeviceDrivers/LCD/Src/st7789.c ****   /* 如果起点 Y 超出屏幕范围，就限制到屏幕最底部像素。 */
- 108:DeviceDrivers/LCD/Src/st7789.c ****   if (y0 >= ST7789_HEIGHT)
-  98              		.loc 1 108 3 is_stmt 1 view .LVU15
-  99              		.loc 1 108 6 is_stmt 0 view .LVU16
+ 203:DeviceDrivers/LCD/Src/st7789.c ****   }
+ 204:DeviceDrivers/LCD/Src/st7789.c **** 
+ 205:DeviceDrivers/LCD/Src/st7789.c ****   /* 如果起点 Y 超出屏幕范围，就限制到屏幕最底部像素。 */
+ 206:DeviceDrivers/LCD/Src/st7789.c ****   if (y0 >= ST7789_HEIGHT)
+  98              		.loc 1 206 3 is_stmt 1 view .LVU15
+  99              		.loc 1 206 6 is_stmt 0 view .LVU16
  100 0012 B6F5A07F 		cmp	r6, #320
  101 0016 01D3     		bcc	.L6
- 109:DeviceDrivers/LCD/Src/st7789.c ****   {
- 110:DeviceDrivers/LCD/Src/st7789.c ****     y0 = ST7789_HEIGHT - 1U;
- 102              		.loc 1 110 8 view .LVU17
+ 207:DeviceDrivers/LCD/Src/st7789.c ****   {
+ 208:DeviceDrivers/LCD/Src/st7789.c ****     y0 = ST7789_HEIGHT - 1U;
+ 102              		.loc 1 208 8 view .LVU17
  103 0018 40F23F16 		movw	r6, #319
  104              	.L6:
  105              	.LVL7:
- 111:DeviceDrivers/LCD/Src/st7789.c ****   }
- 112:DeviceDrivers/LCD/Src/st7789.c **** 
- 113:DeviceDrivers/LCD/Src/st7789.c ****   /* 如果终点 Y 超出屏幕范围，就限制到屏幕最底部像素。 */
- 114:DeviceDrivers/LCD/Src/st7789.c ****   if (y1 >= ST7789_HEIGHT)
- 106              		.loc 1 114 3 is_stmt 1 view .LVU18
- 107              		.loc 1 114 6 is_stmt 0 view .LVU19
+ 209:DeviceDrivers/LCD/Src/st7789.c ****   }
+ 210:DeviceDrivers/LCD/Src/st7789.c **** 
+ 211:DeviceDrivers/LCD/Src/st7789.c ****   /* 如果终点 Y 超出屏幕范围，就限制到屏幕最底部像素。 */
+ 212:DeviceDrivers/LCD/Src/st7789.c ****   if (y1 >= ST7789_HEIGHT)
+ 106              		.loc 1 212 3 is_stmt 1 view .LVU18
+ 107              		.loc 1 212 6 is_stmt 0 view .LVU19
  108 001c B7F5A07F 		cmp	r7, #320
  109 0020 01D3     		bcc	.L7
- 115:DeviceDrivers/LCD/Src/st7789.c ****   {
- 116:DeviceDrivers/LCD/Src/st7789.c ****     y1 = ST7789_HEIGHT - 1U;
- 110              		.loc 1 116 8 view .LVU20
+ 213:DeviceDrivers/LCD/Src/st7789.c ****   {
+ 214:DeviceDrivers/LCD/Src/st7789.c ****     y1 = ST7789_HEIGHT - 1U;
+ 110              		.loc 1 214 8 view .LVU20
  111 0022 40F23F17 		movw	r7, #319
  112              	.L7:
  113              	.LVL8:
- 117:DeviceDrivers/LCD/Src/st7789.c ****   }
- 118:DeviceDrivers/LCD/Src/st7789.c **** 
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccZhMi8p.s 			page 5
-
-
- 119:DeviceDrivers/LCD/Src/st7789.c ****   /* 如果 X 起点大于 X 终点，就交换这两个坐标。 */
- 120:DeviceDrivers/LCD/Src/st7789.c ****   if (x0 > x1)
- 114              		.loc 1 120 3 is_stmt 1 view .LVU21
- 115              		.loc 1 120 6 is_stmt 0 view .LVU22
+ 215:DeviceDrivers/LCD/Src/st7789.c ****   }
+ 216:DeviceDrivers/LCD/Src/st7789.c **** 
+ 217:DeviceDrivers/LCD/Src/st7789.c ****   /* 如果 X 起点大于 X 终点，就交换这两个坐标。 */
+ 218:DeviceDrivers/LCD/Src/st7789.c ****   if (x0 > x1)
+ 114              		.loc 1 218 3 is_stmt 1 view .LVU21
+ 115              		.loc 1 218 6 is_stmt 0 view .LVU22
  116 0026 9042     		cmp	r0, r2
  117 0028 02D8     		bhi	.L8
  118 002a 1346     		mov	r3, r2
  119 002c 0246     		mov	r2, r0
  120              	.LVL9:
- 121              		.loc 1 120 6 view .LVU23
+ 121              		.loc 1 218 6 view .LVU23
  122 002e 1846     		mov	r0, r3
  123              	.LVL10:
  124              	.L8:
- 121:DeviceDrivers/LCD/Src/st7789.c ****   {
- 122:DeviceDrivers/LCD/Src/st7789.c ****     uint16_t temp = x0;
- 123:DeviceDrivers/LCD/Src/st7789.c ****     x0 = x1;
- 124:DeviceDrivers/LCD/Src/st7789.c ****     x1 = temp;
- 125:DeviceDrivers/LCD/Src/st7789.c ****   }
- 126:DeviceDrivers/LCD/Src/st7789.c **** 
- 127:DeviceDrivers/LCD/Src/st7789.c ****   /* 如果 Y 起点大于 Y 终点，就交换这两个坐标。 */
- 128:DeviceDrivers/LCD/Src/st7789.c ****   if (y0 > y1)
- 125              		.loc 1 128 3 is_stmt 1 view .LVU24
- 126              		.loc 1 128 6 is_stmt 0 view .LVU25
+ 219:DeviceDrivers/LCD/Src/st7789.c ****   {
+ 220:DeviceDrivers/LCD/Src/st7789.c ****     uint16_t temp = x0;
+ 221:DeviceDrivers/LCD/Src/st7789.c ****     x0 = x1;
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccJePjwJ.s 			page 7
+
+
+ 222:DeviceDrivers/LCD/Src/st7789.c ****     x1 = temp;
+ 223:DeviceDrivers/LCD/Src/st7789.c ****   }
+ 224:DeviceDrivers/LCD/Src/st7789.c **** 
+ 225:DeviceDrivers/LCD/Src/st7789.c ****   /* 如果 Y 起点大于 Y 终点，就交换这两个坐标。 */
+ 226:DeviceDrivers/LCD/Src/st7789.c ****   if (y0 > y1)
+ 125              		.loc 1 226 3 is_stmt 1 view .LVU24
+ 126              		.loc 1 226 6 is_stmt 0 view .LVU25
  127 0030 BE42     		cmp	r6, r7
  128 0032 02D8     		bhi	.L9
  129 0034 3B46     		mov	r3, r7
  130 0036 3746     		mov	r7, r6
  131              	.LVL11:
- 132              		.loc 1 128 6 view .LVU26
+ 132              		.loc 1 226 6 view .LVU26
  133 0038 1E46     		mov	r6, r3
  134              	.LVL12:
  135              	.L9:
- 129:DeviceDrivers/LCD/Src/st7789.c ****   {
- 130:DeviceDrivers/LCD/Src/st7789.c ****     uint16_t temp = y0;
- 131:DeviceDrivers/LCD/Src/st7789.c ****     y0 = y1;
- 132:DeviceDrivers/LCD/Src/st7789.c ****     y1 = temp;
- 133:DeviceDrivers/LCD/Src/st7789.c ****   }
- 134:DeviceDrivers/LCD/Src/st7789.c **** 
- 135:DeviceDrivers/LCD/Src/st7789.c ****   /* 计算加入屏幕 X 偏移后的列起点。 */
- 136:DeviceDrivers/LCD/Src/st7789.c ****   uint16_t x_start = x0 + ST7789_X_OFFSET;
- 136              		.loc 1 136 3 is_stmt 1 view .LVU27
- 137              		.loc 1 136 12 is_stmt 0 view .LVU28
+ 227:DeviceDrivers/LCD/Src/st7789.c ****   {
+ 228:DeviceDrivers/LCD/Src/st7789.c ****     uint16_t temp = y0;
+ 229:DeviceDrivers/LCD/Src/st7789.c ****     y0 = y1;
+ 230:DeviceDrivers/LCD/Src/st7789.c ****     y1 = temp;
+ 231:DeviceDrivers/LCD/Src/st7789.c ****   }
+ 232:DeviceDrivers/LCD/Src/st7789.c **** 
+ 233:DeviceDrivers/LCD/Src/st7789.c ****   /* 计算加入屏幕 X 偏移后的列起点。 */
+ 234:DeviceDrivers/LCD/Src/st7789.c ****   uint16_t x_start = x0 + ST7789_X_OFFSET;
+ 136              		.loc 1 234 3 is_stmt 1 view .LVU27
+ 137              		.loc 1 234 12 is_stmt 0 view .LVU28
  138 003a 2232     		adds	r2, r2, #34
  139              	.LVL13:
- 140              		.loc 1 136 12 view .LVU29
+ 140              		.loc 1 234 12 view .LVU29
  141 003c 95B2     		uxth	r5, r2
  142              	.LVL14:
- 137:DeviceDrivers/LCD/Src/st7789.c **** 
- 138:DeviceDrivers/LCD/Src/st7789.c ****   /* 计算加入屏幕 X 偏移后的列终点。 */
- 139:DeviceDrivers/LCD/Src/st7789.c ****   uint16_t x_end = x1 + ST7789_X_OFFSET;
- 143              		.loc 1 139 3 is_stmt 1 view .LVU30
- 144              		.loc 1 139 12 is_stmt 0 view .LVU31
+ 235:DeviceDrivers/LCD/Src/st7789.c **** 
+ 236:DeviceDrivers/LCD/Src/st7789.c ****   /* 计算加入屏幕 X 偏移后的列终点。 */
+ 237:DeviceDrivers/LCD/Src/st7789.c ****   uint16_t x_end = x1 + ST7789_X_OFFSET;
+ 143              		.loc 1 237 3 is_stmt 1 view .LVU30
+ 144              		.loc 1 237 12 is_stmt 0 view .LVU31
  145 003e 2230     		adds	r0, r0, #34
  146              	.LVL15:
- 147              		.loc 1 139 12 view .LVU32
+ 147              		.loc 1 237 12 view .LVU32
  148 0040 84B2     		uxth	r4, r0
  149              	.LVL16:
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccZhMi8p.s 			page 6
-
-
- 140:DeviceDrivers/LCD/Src/st7789.c **** 
- 141:DeviceDrivers/LCD/Src/st7789.c ****   /* 计算加入屏幕 Y 偏移后的行起点。 */
- 142:DeviceDrivers/LCD/Src/st7789.c ****   uint16_t y_start = y0 + ST7789_Y_OFFSET;
- 150              		.loc 1 142 3 is_stmt 1 view .LVU33
- 143:DeviceDrivers/LCD/Src/st7789.c **** 
- 144:DeviceDrivers/LCD/Src/st7789.c ****   /* 计算加入屏幕 Y 偏移后的行终点。 */
- 145:DeviceDrivers/LCD/Src/st7789.c ****   uint16_t y_end = y1 + ST7789_Y_OFFSET;
- 151              		.loc 1 145 3 view .LVU34
- 146:DeviceDrivers/LCD/Src/st7789.c **** 
- 147:DeviceDrivers/LCD/Src/st7789.c ****   /* 发送列地址设置命令。 */
- 148:DeviceDrivers/LCD/Src/st7789.c ****   LCD_WriteCmd(ST7789_CMD_CASET);
- 152              		.loc 1 148 3 view .LVU35
+ 238:DeviceDrivers/LCD/Src/st7789.c **** 
+ 239:DeviceDrivers/LCD/Src/st7789.c ****   /* 计算加入屏幕 Y 偏移后的行起点。 */
+ 240:DeviceDrivers/LCD/Src/st7789.c ****   uint16_t y_start = y0 + ST7789_Y_OFFSET;
+ 150              		.loc 1 240 3 is_stmt 1 view .LVU33
+ 241:DeviceDrivers/LCD/Src/st7789.c **** 
+ 242:DeviceDrivers/LCD/Src/st7789.c ****   /* 计算加入屏幕 Y 偏移后的行终点。 */
+ 243:DeviceDrivers/LCD/Src/st7789.c ****   uint16_t y_end = y1 + ST7789_Y_OFFSET;
+ 151              		.loc 1 243 3 view .LVU34
+ 244:DeviceDrivers/LCD/Src/st7789.c **** 
+ 245:DeviceDrivers/LCD/Src/st7789.c ****   /* 发送列地址设置命令。 */
+ 246:DeviceDrivers/LCD/Src/st7789.c ****   LCD_WriteCmd(ST7789_CMD_CASET);
+ 152              		.loc 1 246 3 view .LVU35
  153 0042 2A20     		movs	r0, #42
  154 0044 FFF7FEFF 		bl	LCD_WriteCmd
  155              	.LVL17:
- 149:DeviceDrivers/LCD/Src/st7789.c **** 
- 150:DeviceDrivers/LCD/Src/st7789.c ****   /* 发送列起点，高字节在前。 */
- 151:DeviceDrivers/LCD/Src/st7789.c ****   ST7789_WriteU16(x_start);
- 156              		.loc 1 151 3 view .LVU36
+ 247:DeviceDrivers/LCD/Src/st7789.c **** 
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccJePjwJ.s 			page 8
+
+
+ 248:DeviceDrivers/LCD/Src/st7789.c ****   /* 发送列起点，高字节在前。 */
+ 249:DeviceDrivers/LCD/Src/st7789.c ****   ST7789_WriteU16(x_start);
+ 156              		.loc 1 249 3 view .LVU36
  157 0048 2846     		mov	r0, r5
  158 004a FFF7FEFF 		bl	ST7789_WriteU16
  159              	.LVL18:
- 152:DeviceDrivers/LCD/Src/st7789.c **** 
- 153:DeviceDrivers/LCD/Src/st7789.c ****   /* 发送列终点，高字节在前。 */
- 154:DeviceDrivers/LCD/Src/st7789.c ****   ST7789_WriteU16(x_end);
- 160              		.loc 1 154 3 view .LVU37
+ 250:DeviceDrivers/LCD/Src/st7789.c **** 
+ 251:DeviceDrivers/LCD/Src/st7789.c ****   /* 发送列终点，高字节在前。 */
+ 252:DeviceDrivers/LCD/Src/st7789.c ****   ST7789_WriteU16(x_end);
+ 160              		.loc 1 252 3 view .LVU37
  161 004e 2046     		mov	r0, r4
  162 0050 FFF7FEFF 		bl	ST7789_WriteU16
  163              	.LVL19:
- 155:DeviceDrivers/LCD/Src/st7789.c **** 
- 156:DeviceDrivers/LCD/Src/st7789.c ****   /* 发送行地址设置命令。 */
- 157:DeviceDrivers/LCD/Src/st7789.c ****   LCD_WriteCmd(ST7789_CMD_RASET);
- 164              		.loc 1 157 3 view .LVU38
+ 253:DeviceDrivers/LCD/Src/st7789.c **** 
+ 254:DeviceDrivers/LCD/Src/st7789.c ****   /* 发送行地址设置命令。 */
+ 255:DeviceDrivers/LCD/Src/st7789.c ****   LCD_WriteCmd(ST7789_CMD_RASET);
+ 164              		.loc 1 255 3 view .LVU38
  165 0054 2B20     		movs	r0, #43
  166 0056 FFF7FEFF 		bl	LCD_WriteCmd
  167              	.LVL20:
- 158:DeviceDrivers/LCD/Src/st7789.c **** 
- 159:DeviceDrivers/LCD/Src/st7789.c ****   /* 发送行起点，高字节在前。 */
- 160:DeviceDrivers/LCD/Src/st7789.c ****   ST7789_WriteU16(y_start);
- 168              		.loc 1 160 3 view .LVU39
+ 256:DeviceDrivers/LCD/Src/st7789.c **** 
+ 257:DeviceDrivers/LCD/Src/st7789.c ****   /* 发送行起点，高字节在前。 */
+ 258:DeviceDrivers/LCD/Src/st7789.c ****   ST7789_WriteU16(y_start);
+ 168              		.loc 1 258 3 view .LVU39
  169 005a 3846     		mov	r0, r7
  170 005c FFF7FEFF 		bl	ST7789_WriteU16
  171              	.LVL21:
- 161:DeviceDrivers/LCD/Src/st7789.c **** 
- 162:DeviceDrivers/LCD/Src/st7789.c ****   /* 发送行终点，高字节在前。 */
- 163:DeviceDrivers/LCD/Src/st7789.c ****   ST7789_WriteU16(y_end);
- 172              		.loc 1 163 3 view .LVU40
+ 259:DeviceDrivers/LCD/Src/st7789.c **** 
+ 260:DeviceDrivers/LCD/Src/st7789.c ****   /* 发送行终点，高字节在前。 */
+ 261:DeviceDrivers/LCD/Src/st7789.c ****   ST7789_WriteU16(y_end);
+ 172              		.loc 1 261 3 view .LVU40
  173 0060 3046     		mov	r0, r6
  174 0062 FFF7FEFF 		bl	ST7789_WriteU16
  175              	.LVL22:
- 164:DeviceDrivers/LCD/Src/st7789.c **** 
- 165:DeviceDrivers/LCD/Src/st7789.c ****   /* 发送写显存命令，后续数据会写入这个窗口区域。 */
- 166:DeviceDrivers/LCD/Src/st7789.c ****   LCD_WriteCmd(ST7789_CMD_RAMWR);
- 176              		.loc 1 166 3 view .LVU41
+ 262:DeviceDrivers/LCD/Src/st7789.c **** 
+ 263:DeviceDrivers/LCD/Src/st7789.c ****   /* 发送写显存命令，后续数据会写入这个窗口区域。 */
+ 264:DeviceDrivers/LCD/Src/st7789.c ****   LCD_WriteCmd(ST7789_CMD_RAMWR);
+ 176              		.loc 1 264 3 view .LVU41
  177 0066 2C20     		movs	r0, #44
  178 0068 FFF7FEFF 		bl	LCD_WriteCmd
  179              	.LVL23:
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccZhMi8p.s 			page 7
-
-
- 167:DeviceDrivers/LCD/Src/st7789.c **** }
- 180              		.loc 1 167 1 is_stmt 0 view .LVU42
+ 265:DeviceDrivers/LCD/Src/st7789.c **** }
+ 180              		.loc 1 265 1 is_stmt 0 view .LVU42
  181 006c F8BD     		pop	{r3, r4, r5, r6, r7, pc}
- 182              		.loc 1 167 1 view .LVU43
+ 182              		.loc 1 265 1 view .LVU43
  183              		.cfi_endproc
  184              	.LFE134:
  186              		.section	.text.ST7789_SetWindow,"ax",%progbits
@@ -376,25 +477,28 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccZhMi8p.s 			page 1
  193              	ST7789_SetWindow:
  194              	.LVL24:
  195              	.LFB135:
- 168:DeviceDrivers/LCD/Src/st7789.c **** 
- 169:DeviceDrivers/LCD/Src/st7789.c **** void ST7789_SetWindow(uint16_t x0, uint16_t y0, uint16_t x1, uint16_t y1)
- 170:DeviceDrivers/LCD/Src/st7789.c **** {
- 196              		.loc 1 170 1 is_stmt 1 view -0
+ 266:DeviceDrivers/LCD/Src/st7789.c **** 
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccJePjwJ.s 			page 9
+
+
+ 267:DeviceDrivers/LCD/Src/st7789.c **** void ST7789_SetWindow(uint16_t x0, uint16_t y0, uint16_t x1, uint16_t y1)
+ 268:DeviceDrivers/LCD/Src/st7789.c **** {
+ 196              		.loc 1 268 1 is_stmt 1 view -0
  197              		.cfi_startproc
  198              		@ args = 0, pretend = 0, frame = 0
  199              		@ frame_needed = 0, uses_anonymous_args = 0
- 200              		.loc 1 170 1 is_stmt 0 view .LVU45
+ 200              		.loc 1 268 1 is_stmt 0 view .LVU45
  201 0000 08B5     		push	{r3, lr}
  202              	.LCFI2:
  203              		.cfi_def_cfa_offset 8
  204              		.cfi_offset 3, -8
  205              		.cfi_offset 14, -4
- 171:DeviceDrivers/LCD/Src/st7789.c ****   ST7789_SetAddressWindow(x0, y0, x1, y1);
- 206              		.loc 1 171 3 is_stmt 1 view .LVU46
+ 269:DeviceDrivers/LCD/Src/st7789.c ****   ST7789_SetAddressWindow(x0, y0, x1, y1);
+ 206              		.loc 1 269 3 is_stmt 1 view .LVU46
  207 0002 FFF7FEFF 		bl	ST7789_SetAddressWindow
  208              	.LVL25:
- 172:DeviceDrivers/LCD/Src/st7789.c **** }
- 209              		.loc 1 172 1 is_stmt 0 view .LVU47
+ 270:DeviceDrivers/LCD/Src/st7789.c **** }
+ 209              		.loc 1 270 1 is_stmt 0 view .LVU47
  210 0006 08BD     		pop	{r3, pc}
  211              		.cfi_endproc
  212              	.LFE135:
@@ -407,47 +511,47 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccZhMi8p.s 			page 1
  221              	ST7789_WriteColor:
  222              	.LVL26:
  223              	.LFB136:
- 173:DeviceDrivers/LCD/Src/st7789.c **** 
- 174:DeviceDrivers/LCD/Src/st7789.c **** /**
- 175:DeviceDrivers/LCD/Src/st7789.c ****  * @brief 向 ST7789 写入 1 个 RGB565 颜色。
- 176:DeviceDrivers/LCD/Src/st7789.c ****  * @param color 要写入的 RGB565 颜色值。
- 177:DeviceDrivers/LCD/Src/st7789.c ****  * @retval 无
- 178:DeviceDrivers/LCD/Src/st7789.c ****  */
- 179:DeviceDrivers/LCD/Src/st7789.c **** void ST7789_WriteColor(uint16_t color)
- 180:DeviceDrivers/LCD/Src/st7789.c **** {
- 224              		.loc 1 180 1 is_stmt 1 view -0
+ 271:DeviceDrivers/LCD/Src/st7789.c **** 
+ 272:DeviceDrivers/LCD/Src/st7789.c **** /**
+ 273:DeviceDrivers/LCD/Src/st7789.c ****  * @brief 向 ST7789 写入 1 个 RGB565 颜色。
+ 274:DeviceDrivers/LCD/Src/st7789.c ****  * @param color 要写入的 RGB565 颜色值。
+ 275:DeviceDrivers/LCD/Src/st7789.c ****  * @retval 无
+ 276:DeviceDrivers/LCD/Src/st7789.c ****  */
+ 277:DeviceDrivers/LCD/Src/st7789.c **** void ST7789_WriteColor(uint16_t color)
+ 278:DeviceDrivers/LCD/Src/st7789.c **** {
+ 224              		.loc 1 278 1 is_stmt 1 view -0
  225              		.cfi_startproc
  226              		@ args = 0, pretend = 0, frame = 0
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccZhMi8p.s 			page 8
-
-
  227              		@ frame_needed = 0, uses_anonymous_args = 0
- 228              		.loc 1 180 1 is_stmt 0 view .LVU49
+ 228              		.loc 1 278 1 is_stmt 0 view .LVU49
  229 0000 10B5     		push	{r4, lr}
  230              	.LCFI3:
  231              		.cfi_def_cfa_offset 8
  232              		.cfi_offset 4, -8
  233              		.cfi_offset 14, -4
  234 0002 0446     		mov	r4, r0
- 181:DeviceDrivers/LCD/Src/st7789.c ****   /* RGB565 颜色先发送高 8 位。 */
- 182:DeviceDrivers/LCD/Src/st7789.c ****   LCD_WriteData((uint8_t)(color >> 8));
- 235              		.loc 1 182 3 is_stmt 1 view .LVU50
+ 279:DeviceDrivers/LCD/Src/st7789.c ****   /* RGB565 颜色先发送高 8 位。 */
+ 280:DeviceDrivers/LCD/Src/st7789.c ****   LCD_WriteData((uint8_t)(color >> 8));
+ 235              		.loc 1 280 3 is_stmt 1 view .LVU50
  236 0004 000A     		lsrs	r0, r0, #8
  237              	.LVL27:
- 238              		.loc 1 182 3 is_stmt 0 view .LVU51
+ 238              		.loc 1 280 3 is_stmt 0 view .LVU51
  239 0006 FFF7FEFF 		bl	LCD_WriteData
  240              	.LVL28:
- 183:DeviceDrivers/LCD/Src/st7789.c **** 
- 184:DeviceDrivers/LCD/Src/st7789.c ****   /* RGB565 颜色再发送低 8 位。 */
- 185:DeviceDrivers/LCD/Src/st7789.c ****   LCD_WriteData((uint8_t)(color & 0x00FFU));
- 241              		.loc 1 185 3 is_stmt 1 view .LVU52
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccJePjwJ.s 			page 10
+
+
+ 281:DeviceDrivers/LCD/Src/st7789.c **** 
+ 282:DeviceDrivers/LCD/Src/st7789.c ****   /* RGB565 颜色再发送低 8 位。 */
+ 283:DeviceDrivers/LCD/Src/st7789.c ****   LCD_WriteData((uint8_t)(color & 0x00FFU));
+ 241              		.loc 1 283 3 is_stmt 1 view .LVU52
  242 000a E0B2     		uxtb	r0, r4
  243 000c FFF7FEFF 		bl	LCD_WriteData
  244              	.LVL29:
- 186:DeviceDrivers/LCD/Src/st7789.c **** }
- 245              		.loc 1 186 1 is_stmt 0 view .LVU53
+ 284:DeviceDrivers/LCD/Src/st7789.c **** }
+ 245              		.loc 1 284 1 is_stmt 0 view .LVU53
  246 0010 10BD     		pop	{r4, pc}
- 247              		.loc 1 186 1 view .LVU54
+ 247              		.loc 1 284 1 view .LVU54
  248              		.cfi_endproc
  249              	.LFE136:
  251              		.section	.text.ST7789_WritePixels,"ax",%progbits
@@ -459,14 +563,14 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccZhMi8p.s 			page 1
  258              	ST7789_WritePixels:
  259              	.LVL30:
  260              	.LFB137:
- 187:DeviceDrivers/LCD/Src/st7789.c **** 
- 188:DeviceDrivers/LCD/Src/st7789.c **** void ST7789_WritePixels(uint16_t *colors, uint32_t len)
- 189:DeviceDrivers/LCD/Src/st7789.c **** {
- 261              		.loc 1 189 1 is_stmt 1 view -0
+ 285:DeviceDrivers/LCD/Src/st7789.c **** 
+ 286:DeviceDrivers/LCD/Src/st7789.c **** void ST7789_WritePixels(uint16_t *colors, uint32_t len)
+ 287:DeviceDrivers/LCD/Src/st7789.c **** {
+ 261              		.loc 1 287 1 is_stmt 1 view -0
  262              		.cfi_startproc
  263              		@ args = 0, pretend = 0, frame = 0
  264              		@ frame_needed = 0, uses_anonymous_args = 0
- 265              		.loc 1 189 1 is_stmt 0 view .LVU56
+ 265              		.loc 1 287 1 is_stmt 0 view .LVU56
  266 0000 70B5     		push	{r4, r5, r6, lr}
  267              	.LCFI4:
  268              		.cfi_def_cfa_offset 16
@@ -476,41 +580,41 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccZhMi8p.s 			page 1
  272              		.cfi_offset 14, -4
  273 0002 0646     		mov	r6, r0
  274 0004 0D46     		mov	r5, r1
- 190:DeviceDrivers/LCD/Src/st7789.c ****   for (uint32_t index = 0U; index < len; index++)
- 275              		.loc 1 190 3 is_stmt 1 view .LVU57
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccZhMi8p.s 			page 9
-
-
+ 288:DeviceDrivers/LCD/Src/st7789.c ****   for (uint32_t index = 0U; index < len; index++)
+ 275              		.loc 1 288 3 is_stmt 1 view .LVU57
  276              	.LBB2:
- 277              		.loc 1 190 8 view .LVU58
+ 277              		.loc 1 288 8 view .LVU58
  278              	.LVL31:
- 279              		.loc 1 190 17 is_stmt 0 view .LVU59
+ 279              		.loc 1 288 17 is_stmt 0 view .LVU59
  280 0006 0024     		movs	r4, #0
- 281              		.loc 1 190 3 view .LVU60
+ 281              		.loc 1 288 3 view .LVU60
  282 0008 04E0     		b	.L20
  283              	.LVL32:
  284              	.L21:
- 191:DeviceDrivers/LCD/Src/st7789.c ****   {
- 192:DeviceDrivers/LCD/Src/st7789.c ****     ST7789_WriteColor(colors[index]);
- 285              		.loc 1 192 5 is_stmt 1 view .LVU61
+ 289:DeviceDrivers/LCD/Src/st7789.c ****   {
+ 290:DeviceDrivers/LCD/Src/st7789.c ****     ST7789_WriteColor(colors[index]);
+ 285              		.loc 1 290 5 is_stmt 1 view .LVU61
  286 000a 36F81400 		ldrh	r0, [r6, r4, lsl #1]
  287 000e FFF7FEFF 		bl	ST7789_WriteColor
  288              	.LVL33:
- 190:DeviceDrivers/LCD/Src/st7789.c ****   for (uint32_t index = 0U; index < len; index++)
- 289              		.loc 1 190 47 discriminator 3 view .LVU62
+ 288:DeviceDrivers/LCD/Src/st7789.c ****   for (uint32_t index = 0U; index < len; index++)
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccJePjwJ.s 			page 11
+
+
+ 289              		.loc 1 288 47 discriminator 3 view .LVU62
  290 0012 0134     		adds	r4, r4, #1
  291              	.LVL34:
  292              	.L20:
- 190:DeviceDrivers/LCD/Src/st7789.c ****   for (uint32_t index = 0U; index < len; index++)
- 293              		.loc 1 190 35 discriminator 1 view .LVU63
+ 288:DeviceDrivers/LCD/Src/st7789.c ****   for (uint32_t index = 0U; index < len; index++)
+ 293              		.loc 1 288 35 discriminator 1 view .LVU63
  294 0014 AC42     		cmp	r4, r5
  295 0016 F8D3     		bcc	.L21
  296              	.LBE2:
- 193:DeviceDrivers/LCD/Src/st7789.c ****   }
- 194:DeviceDrivers/LCD/Src/st7789.c **** }
- 297              		.loc 1 194 1 is_stmt 0 view .LVU64
+ 291:DeviceDrivers/LCD/Src/st7789.c ****   }
+ 292:DeviceDrivers/LCD/Src/st7789.c **** }
+ 297              		.loc 1 292 1 is_stmt 0 view .LVU64
  298 0018 70BD     		pop	{r4, r5, r6, pc}
- 299              		.loc 1 194 1 view .LVU65
+ 299              		.loc 1 292 1 view .LVU65
  300              		.cfi_endproc
  301              	.LFE137:
  303              		.section	.text.ST7789_DrawPixel,"ax",%progbits
@@ -522,74 +626,74 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccZhMi8p.s 			page 1
  310              	ST7789_DrawPixel:
  311              	.LVL35:
  312              	.LFB138:
- 195:DeviceDrivers/LCD/Src/st7789.c **** 
- 196:DeviceDrivers/LCD/Src/st7789.c **** /**
- 197:DeviceDrivers/LCD/Src/st7789.c ****  * @brief 在指定坐标画 1 个像素点。
- 198:DeviceDrivers/LCD/Src/st7789.c ****  * @param x 像素点 X 坐标。
- 199:DeviceDrivers/LCD/Src/st7789.c ****  * @param y 像素点 Y 坐标。
- 200:DeviceDrivers/LCD/Src/st7789.c ****  * @param color 像素点 RGB565 颜色值。
- 201:DeviceDrivers/LCD/Src/st7789.c ****  * @retval 无
- 202:DeviceDrivers/LCD/Src/st7789.c ****  */
- 203:DeviceDrivers/LCD/Src/st7789.c **** void ST7789_DrawPixel(uint16_t x, uint16_t y, uint16_t color)
- 204:DeviceDrivers/LCD/Src/st7789.c **** {
- 313              		.loc 1 204 1 is_stmt 1 view -0
+ 293:DeviceDrivers/LCD/Src/st7789.c **** 
+ 294:DeviceDrivers/LCD/Src/st7789.c **** /**
+ 295:DeviceDrivers/LCD/Src/st7789.c ****  * @brief 在指定坐标画 1 个像素点。
+ 296:DeviceDrivers/LCD/Src/st7789.c ****  * @param x 像素点 X 坐标。
+ 297:DeviceDrivers/LCD/Src/st7789.c ****  * @param y 像素点 Y 坐标。
+ 298:DeviceDrivers/LCD/Src/st7789.c ****  * @param color 像素点 RGB565 颜色值。
+ 299:DeviceDrivers/LCD/Src/st7789.c ****  * @retval 无
+ 300:DeviceDrivers/LCD/Src/st7789.c ****  */
+ 301:DeviceDrivers/LCD/Src/st7789.c **** void ST7789_DrawPixel(uint16_t x, uint16_t y, uint16_t color)
+ 302:DeviceDrivers/LCD/Src/st7789.c **** {
+ 313              		.loc 1 302 1 is_stmt 1 view -0
  314              		.cfi_startproc
  315              		@ args = 0, pretend = 0, frame = 0
  316              		@ frame_needed = 0, uses_anonymous_args = 0
- 205:DeviceDrivers/LCD/Src/st7789.c ****   /* 如果 X 坐标越界，直接返回。 */
- 206:DeviceDrivers/LCD/Src/st7789.c ****   if (x >= ST7789_WIDTH)
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccZhMi8p.s 			page 10
-
-
- 317              		.loc 1 206 3 view .LVU67
- 318              		.loc 1 206 6 is_stmt 0 view .LVU68
+ 303:DeviceDrivers/LCD/Src/st7789.c ****   /* 如果 X 坐标越界，直接返回。 */
+ 304:DeviceDrivers/LCD/Src/st7789.c ****   if (x >= ST7789_WIDTH)
+ 317              		.loc 1 304 3 view .LVU67
+ 318              		.loc 1 304 6 is_stmt 0 view .LVU68
  319 0000 AB28     		cmp	r0, #171
  320 0002 0DD8     		bhi	.L26
- 204:DeviceDrivers/LCD/Src/st7789.c ****   /* 如果 X 坐标越界，直接返回。 */
- 321              		.loc 1 204 1 view .LVU69
+ 302:DeviceDrivers/LCD/Src/st7789.c ****   /* 如果 X 坐标越界，直接返回。 */
+ 321              		.loc 1 302 1 view .LVU69
  322 0004 10B5     		push	{r4, lr}
  323              	.LCFI5:
  324              		.cfi_def_cfa_offset 8
  325              		.cfi_offset 4, -8
  326              		.cfi_offset 14, -4
  327 0006 1446     		mov	r4, r2
- 207:DeviceDrivers/LCD/Src/st7789.c ****   {
- 208:DeviceDrivers/LCD/Src/st7789.c ****     return;
- 209:DeviceDrivers/LCD/Src/st7789.c ****   }
- 210:DeviceDrivers/LCD/Src/st7789.c **** 
- 211:DeviceDrivers/LCD/Src/st7789.c ****   /* 如果 Y 坐标越界，直接返回。 */
- 212:DeviceDrivers/LCD/Src/st7789.c ****   if (y >= ST7789_HEIGHT)
- 328              		.loc 1 212 3 is_stmt 1 view .LVU70
- 329              		.loc 1 212 6 is_stmt 0 view .LVU71
+ 305:DeviceDrivers/LCD/Src/st7789.c ****   {
+ 306:DeviceDrivers/LCD/Src/st7789.c ****     return;
+ 307:DeviceDrivers/LCD/Src/st7789.c ****   }
+ 308:DeviceDrivers/LCD/Src/st7789.c **** 
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccJePjwJ.s 			page 12
+
+
+ 309:DeviceDrivers/LCD/Src/st7789.c ****   /* 如果 Y 坐标越界，直接返回。 */
+ 310:DeviceDrivers/LCD/Src/st7789.c ****   if (y >= ST7789_HEIGHT)
+ 328              		.loc 1 310 3 is_stmt 1 view .LVU70
+ 329              		.loc 1 310 6 is_stmt 0 view .LVU71
  330 0008 B1F5A07F 		cmp	r1, #320
  331 000c 00D3     		bcc	.L29
  332              	.LVL36:
  333              	.L23:
- 213:DeviceDrivers/LCD/Src/st7789.c ****   {
- 214:DeviceDrivers/LCD/Src/st7789.c ****     return;
- 215:DeviceDrivers/LCD/Src/st7789.c ****   }
- 216:DeviceDrivers/LCD/Src/st7789.c **** 
- 217:DeviceDrivers/LCD/Src/st7789.c ****   /* 设置写入窗口为当前这 1 个像素。 */
- 218:DeviceDrivers/LCD/Src/st7789.c ****   ST7789_SetAddressWindow(x, y, x, y);
- 219:DeviceDrivers/LCD/Src/st7789.c **** 
- 220:DeviceDrivers/LCD/Src/st7789.c ****   /* 写入这个像素的 RGB565 颜色。 */
- 221:DeviceDrivers/LCD/Src/st7789.c ****   ST7789_WriteColor(color);
- 222:DeviceDrivers/LCD/Src/st7789.c **** }
- 334              		.loc 1 222 1 view .LVU72
+ 311:DeviceDrivers/LCD/Src/st7789.c ****   {
+ 312:DeviceDrivers/LCD/Src/st7789.c ****     return;
+ 313:DeviceDrivers/LCD/Src/st7789.c ****   }
+ 314:DeviceDrivers/LCD/Src/st7789.c **** 
+ 315:DeviceDrivers/LCD/Src/st7789.c ****   /* 设置写入窗口为当前这 1 个像素。 */
+ 316:DeviceDrivers/LCD/Src/st7789.c ****   ST7789_SetAddressWindow(x, y, x, y);
+ 317:DeviceDrivers/LCD/Src/st7789.c **** 
+ 318:DeviceDrivers/LCD/Src/st7789.c ****   /* 写入这个像素的 RGB565 颜色。 */
+ 319:DeviceDrivers/LCD/Src/st7789.c ****   ST7789_WriteColor(color);
+ 320:DeviceDrivers/LCD/Src/st7789.c **** }
+ 334              		.loc 1 320 1 view .LVU72
  335 000e 10BD     		pop	{r4, pc}
  336              	.LVL37:
  337              	.L29:
- 218:DeviceDrivers/LCD/Src/st7789.c **** 
- 338              		.loc 1 218 3 is_stmt 1 view .LVU73
+ 316:DeviceDrivers/LCD/Src/st7789.c **** 
+ 338              		.loc 1 316 3 is_stmt 1 view .LVU73
  339 0010 0B46     		mov	r3, r1
  340 0012 0246     		mov	r2, r0
  341              	.LVL38:
- 218:DeviceDrivers/LCD/Src/st7789.c **** 
- 342              		.loc 1 218 3 is_stmt 0 view .LVU74
+ 316:DeviceDrivers/LCD/Src/st7789.c **** 
+ 342              		.loc 1 316 3 is_stmt 0 view .LVU74
  343 0014 FFF7FEFF 		bl	ST7789_SetAddressWindow
  344              	.LVL39:
- 221:DeviceDrivers/LCD/Src/st7789.c **** }
- 345              		.loc 1 221 3 is_stmt 1 view .LVU75
+ 319:DeviceDrivers/LCD/Src/st7789.c **** }
+ 345              		.loc 1 319 3 is_stmt 1 view .LVU75
  346 0018 2046     		mov	r0, r4
  347 001a FFF7FEFF 		bl	ST7789_WriteColor
  348              	.LVL40:
@@ -598,13 +702,10 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccZhMi8p.s 			page 1
  351              	.L26:
  352              	.LCFI6:
  353              		.cfi_def_cfa_offset 0
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccZhMi8p.s 			page 11
-
-
  354              		.cfi_restore 4
  355              		.cfi_restore 14
- 221:DeviceDrivers/LCD/Src/st7789.c **** }
- 356              		.loc 1 221 3 is_stmt 0 view .LVU76
+ 319:DeviceDrivers/LCD/Src/st7789.c **** }
+ 356              		.loc 1 319 3 is_stmt 0 view .LVU76
  357 0020 7047     		bx	lr
  358              		.cfi_endproc
  359              	.LFE138:
@@ -617,23 +718,26 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccZhMi8p.s 			page 1
  368              	ST7789_FillRect:
  369              	.LVL42:
  370              	.LFB139:
- 223:DeviceDrivers/LCD/Src/st7789.c **** 
- 224:DeviceDrivers/LCD/Src/st7789.c **** /**
- 225:DeviceDrivers/LCD/Src/st7789.c ****  * @brief 填充一个矩形区域。
- 226:DeviceDrivers/LCD/Src/st7789.c ****  * @param x 矩形左上角 X 坐标。
- 227:DeviceDrivers/LCD/Src/st7789.c ****  * @param y 矩形左上角 Y 坐标。
- 228:DeviceDrivers/LCD/Src/st7789.c ****  * @param w 矩形宽度。
- 229:DeviceDrivers/LCD/Src/st7789.c ****  * @param h 矩形高度。
- 230:DeviceDrivers/LCD/Src/st7789.c ****  * @param color 要填充的 RGB565 颜色值。
- 231:DeviceDrivers/LCD/Src/st7789.c ****  * @retval 无
- 232:DeviceDrivers/LCD/Src/st7789.c ****  */
- 233:DeviceDrivers/LCD/Src/st7789.c **** void ST7789_FillRect(uint16_t x, uint16_t y, uint16_t w, uint16_t h, uint16_t color)
- 234:DeviceDrivers/LCD/Src/st7789.c **** {
- 371              		.loc 1 234 1 is_stmt 1 view -0
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccJePjwJ.s 			page 13
+
+
+ 321:DeviceDrivers/LCD/Src/st7789.c **** 
+ 322:DeviceDrivers/LCD/Src/st7789.c **** /**
+ 323:DeviceDrivers/LCD/Src/st7789.c ****  * @brief 填充一个矩形区域。
+ 324:DeviceDrivers/LCD/Src/st7789.c ****  * @param x 矩形左上角 X 坐标。
+ 325:DeviceDrivers/LCD/Src/st7789.c ****  * @param y 矩形左上角 Y 坐标。
+ 326:DeviceDrivers/LCD/Src/st7789.c ****  * @param w 矩形宽度。
+ 327:DeviceDrivers/LCD/Src/st7789.c ****  * @param h 矩形高度。
+ 328:DeviceDrivers/LCD/Src/st7789.c ****  * @param color 要填充的 RGB565 颜色值。
+ 329:DeviceDrivers/LCD/Src/st7789.c ****  * @retval 无
+ 330:DeviceDrivers/LCD/Src/st7789.c ****  */
+ 331:DeviceDrivers/LCD/Src/st7789.c **** void ST7789_FillRect(uint16_t x, uint16_t y, uint16_t w, uint16_t h, uint16_t color)
+ 332:DeviceDrivers/LCD/Src/st7789.c **** {
+ 371              		.loc 1 332 1 is_stmt 1 view -0
  372              		.cfi_startproc
  373              		@ args = 4, pretend = 0, frame = 0
  374              		@ frame_needed = 0, uses_anonymous_args = 0
- 375              		.loc 1 234 1 is_stmt 0 view .LVU78
+ 375              		.loc 1 332 1 is_stmt 0 view .LVU78
  376 0000 70B5     		push	{r4, r5, r6, lr}
  377              	.LCFI7:
  378              		.cfi_def_cfa_offset 16
@@ -642,169 +746,169 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccZhMi8p.s 			page 1
  381              		.cfi_offset 6, -8
  382              		.cfi_offset 14, -4
  383 0002 BDF81060 		ldrh	r6, [sp, #16]
- 235:DeviceDrivers/LCD/Src/st7789.c ****   /* 如果矩形宽度为 0，直接返回。 */
- 236:DeviceDrivers/LCD/Src/st7789.c ****   if (w == 0U)
- 384              		.loc 1 236 3 is_stmt 1 view .LVU79
- 385              		.loc 1 236 6 is_stmt 0 view .LVU80
+ 333:DeviceDrivers/LCD/Src/st7789.c ****   /* 如果矩形宽度为 0，直接返回。 */
+ 334:DeviceDrivers/LCD/Src/st7789.c ****   if (w == 0U)
+ 384              		.loc 1 334 3 is_stmt 1 view .LVU79
+ 385              		.loc 1 334 6 is_stmt 0 view .LVU80
  386 0006 42B3     		cbz	r2, .L30
  387 0008 1C46     		mov	r4, r3
  388 000a 1546     		mov	r5, r2
- 237:DeviceDrivers/LCD/Src/st7789.c ****   {
- 238:DeviceDrivers/LCD/Src/st7789.c ****     return;
- 239:DeviceDrivers/LCD/Src/st7789.c ****   }
- 240:DeviceDrivers/LCD/Src/st7789.c **** 
- 241:DeviceDrivers/LCD/Src/st7789.c ****   /* 如果矩形高度为 0，直接返回。 */
- 242:DeviceDrivers/LCD/Src/st7789.c ****   if (h == 0U)
- 389              		.loc 1 242 3 is_stmt 1 view .LVU81
- 390              		.loc 1 242 6 is_stmt 0 view .LVU82
+ 335:DeviceDrivers/LCD/Src/st7789.c ****   {
+ 336:DeviceDrivers/LCD/Src/st7789.c ****     return;
+ 337:DeviceDrivers/LCD/Src/st7789.c ****   }
+ 338:DeviceDrivers/LCD/Src/st7789.c **** 
+ 339:DeviceDrivers/LCD/Src/st7789.c ****   /* 如果矩形高度为 0，直接返回。 */
+ 340:DeviceDrivers/LCD/Src/st7789.c ****   if (h == 0U)
+ 389              		.loc 1 340 3 is_stmt 1 view .LVU81
+ 390              		.loc 1 340 6 is_stmt 0 view .LVU82
  391 000c 2BB3     		cbz	r3, .L30
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccZhMi8p.s 			page 12
-
-
- 243:DeviceDrivers/LCD/Src/st7789.c ****   {
- 244:DeviceDrivers/LCD/Src/st7789.c ****     return;
- 245:DeviceDrivers/LCD/Src/st7789.c ****   }
- 246:DeviceDrivers/LCD/Src/st7789.c **** 
- 247:DeviceDrivers/LCD/Src/st7789.c ****   /* 如果矩形起点 X 已经在屏幕外，直接返回。 */
- 248:DeviceDrivers/LCD/Src/st7789.c ****   if (x >= ST7789_WIDTH)
- 392              		.loc 1 248 3 is_stmt 1 view .LVU83
- 393              		.loc 1 248 6 is_stmt 0 view .LVU84
+ 341:DeviceDrivers/LCD/Src/st7789.c ****   {
+ 342:DeviceDrivers/LCD/Src/st7789.c ****     return;
+ 343:DeviceDrivers/LCD/Src/st7789.c ****   }
+ 344:DeviceDrivers/LCD/Src/st7789.c **** 
+ 345:DeviceDrivers/LCD/Src/st7789.c ****   /* 如果矩形起点 X 已经在屏幕外，直接返回。 */
+ 346:DeviceDrivers/LCD/Src/st7789.c ****   if (x >= ST7789_WIDTH)
+ 392              		.loc 1 346 3 is_stmt 1 view .LVU83
+ 393              		.loc 1 346 6 is_stmt 0 view .LVU84
  394 000e AB28     		cmp	r0, #171
  395 0010 23D8     		bhi	.L30
- 249:DeviceDrivers/LCD/Src/st7789.c ****   {
- 250:DeviceDrivers/LCD/Src/st7789.c ****     return;
- 251:DeviceDrivers/LCD/Src/st7789.c ****   }
- 252:DeviceDrivers/LCD/Src/st7789.c **** 
- 253:DeviceDrivers/LCD/Src/st7789.c ****   /* 如果矩形起点 Y 已经在屏幕外，直接返回。 */
- 254:DeviceDrivers/LCD/Src/st7789.c ****   if (y >= ST7789_HEIGHT)
- 396              		.loc 1 254 3 is_stmt 1 view .LVU85
- 397              		.loc 1 254 6 is_stmt 0 view .LVU86
+ 347:DeviceDrivers/LCD/Src/st7789.c ****   {
+ 348:DeviceDrivers/LCD/Src/st7789.c ****     return;
+ 349:DeviceDrivers/LCD/Src/st7789.c ****   }
+ 350:DeviceDrivers/LCD/Src/st7789.c **** 
+ 351:DeviceDrivers/LCD/Src/st7789.c ****   /* 如果矩形起点 Y 已经在屏幕外，直接返回。 */
+ 352:DeviceDrivers/LCD/Src/st7789.c ****   if (y >= ST7789_HEIGHT)
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccJePjwJ.s 			page 14
+
+
+ 396              		.loc 1 352 3 is_stmt 1 view .LVU85
+ 397              		.loc 1 352 6 is_stmt 0 view .LVU86
  398 0012 B1F5A07F 		cmp	r1, #320
  399 0016 20D2     		bcs	.L30
- 255:DeviceDrivers/LCD/Src/st7789.c ****   {
- 256:DeviceDrivers/LCD/Src/st7789.c ****     return;
- 257:DeviceDrivers/LCD/Src/st7789.c ****   }
- 258:DeviceDrivers/LCD/Src/st7789.c **** 
- 259:DeviceDrivers/LCD/Src/st7789.c ****   /* 如果矩形宽度超过右边界，就裁剪到屏幕右边界。 */
- 260:DeviceDrivers/LCD/Src/st7789.c ****   if ((uint32_t)x + (uint32_t)w > ST7789_WIDTH)
- 400              		.loc 1 260 3 is_stmt 1 view .LVU87
- 401              		.loc 1 260 19 is_stmt 0 view .LVU88
+ 353:DeviceDrivers/LCD/Src/st7789.c ****   {
+ 354:DeviceDrivers/LCD/Src/st7789.c ****     return;
+ 355:DeviceDrivers/LCD/Src/st7789.c ****   }
+ 356:DeviceDrivers/LCD/Src/st7789.c **** 
+ 357:DeviceDrivers/LCD/Src/st7789.c ****   /* 如果矩形宽度超过右边界，就裁剪到屏幕右边界。 */
+ 358:DeviceDrivers/LCD/Src/st7789.c ****   if ((uint32_t)x + (uint32_t)w > ST7789_WIDTH)
+ 400              		.loc 1 358 3 is_stmt 1 view .LVU87
+ 401              		.loc 1 358 19 is_stmt 0 view .LVU88
  402 0018 8318     		adds	r3, r0, r2
  403              	.LVL43:
- 404              		.loc 1 260 6 view .LVU89
+ 404              		.loc 1 358 6 view .LVU89
  405 001a AC2B     		cmp	r3, #172
  406 001c 02D9     		bls	.L32
- 261:DeviceDrivers/LCD/Src/st7789.c ****   {
- 262:DeviceDrivers/LCD/Src/st7789.c ****     w = ST7789_WIDTH - x;
- 407              		.loc 1 262 5 is_stmt 1 view .LVU90
- 408              		.loc 1 262 7 is_stmt 0 view .LVU91
+ 359:DeviceDrivers/LCD/Src/st7789.c ****   {
+ 360:DeviceDrivers/LCD/Src/st7789.c ****     w = ST7789_WIDTH - x;
+ 407              		.loc 1 360 5 is_stmt 1 view .LVU90
+ 408              		.loc 1 360 7 is_stmt 0 view .LVU91
  409 001e C0F1AC05 		rsb	r5, r0, #172
  410 0022 ADB2     		uxth	r5, r5
  411              	.L32:
  412              	.LVL44:
- 263:DeviceDrivers/LCD/Src/st7789.c ****   }
- 264:DeviceDrivers/LCD/Src/st7789.c **** 
- 265:DeviceDrivers/LCD/Src/st7789.c ****   /* 如果矩形高度超过下边界，就裁剪到屏幕下边界。 */
- 266:DeviceDrivers/LCD/Src/st7789.c ****   if ((uint32_t)y + (uint32_t)h > ST7789_HEIGHT)
- 413              		.loc 1 266 3 is_stmt 1 view .LVU92
- 414              		.loc 1 266 19 is_stmt 0 view .LVU93
+ 361:DeviceDrivers/LCD/Src/st7789.c ****   }
+ 362:DeviceDrivers/LCD/Src/st7789.c **** 
+ 363:DeviceDrivers/LCD/Src/st7789.c ****   /* 如果矩形高度超过下边界，就裁剪到屏幕下边界。 */
+ 364:DeviceDrivers/LCD/Src/st7789.c ****   if ((uint32_t)y + (uint32_t)h > ST7789_HEIGHT)
+ 413              		.loc 1 364 3 is_stmt 1 view .LVU92
+ 414              		.loc 1 364 19 is_stmt 0 view .LVU93
  415 0024 0B19     		adds	r3, r1, r4
- 416              		.loc 1 266 6 view .LVU94
+ 416              		.loc 1 364 6 view .LVU94
  417 0026 B3F5A07F 		cmp	r3, #320
  418 002a 02D9     		bls	.L33
- 267:DeviceDrivers/LCD/Src/st7789.c ****   {
- 268:DeviceDrivers/LCD/Src/st7789.c ****     h = ST7789_HEIGHT - y;
- 419              		.loc 1 268 5 is_stmt 1 view .LVU95
- 420              		.loc 1 268 7 is_stmt 0 view .LVU96
+ 365:DeviceDrivers/LCD/Src/st7789.c ****   {
+ 366:DeviceDrivers/LCD/Src/st7789.c ****     h = ST7789_HEIGHT - y;
+ 419              		.loc 1 366 5 is_stmt 1 view .LVU95
+ 420              		.loc 1 366 7 is_stmt 0 view .LVU96
  421 002c C1F5A074 		rsb	r4, r1, #320
  422              	.LVL45:
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccZhMi8p.s 			page 13
-
-
- 423              		.loc 1 268 7 view .LVU97
+ 423              		.loc 1 366 7 view .LVU97
  424 0030 A4B2     		uxth	r4, r4
  425              	.L33:
  426              	.LVL46:
- 269:DeviceDrivers/LCD/Src/st7789.c ****   }
- 270:DeviceDrivers/LCD/Src/st7789.c **** 
- 271:DeviceDrivers/LCD/Src/st7789.c ****   /* 计算矩形右下角 X 坐标。 */
- 272:DeviceDrivers/LCD/Src/st7789.c ****   uint16_t x1 = x + w - 1U;
- 427              		.loc 1 272 3 is_stmt 1 view .LVU98
- 428              		.loc 1 272 19 is_stmt 0 view .LVU99
+ 367:DeviceDrivers/LCD/Src/st7789.c ****   }
+ 368:DeviceDrivers/LCD/Src/st7789.c **** 
+ 369:DeviceDrivers/LCD/Src/st7789.c ****   /* 计算矩形右下角 X 坐标。 */
+ 370:DeviceDrivers/LCD/Src/st7789.c ****   uint16_t x1 = x + w - 1U;
+ 427              		.loc 1 370 3 is_stmt 1 view .LVU98
+ 428              		.loc 1 370 19 is_stmt 0 view .LVU99
  429 0032 2A18     		adds	r2, r5, r0
  430 0034 92B2     		uxth	r2, r2
- 431              		.loc 1 272 12 view .LVU100
+ 431              		.loc 1 370 12 view .LVU100
  432 0036 013A     		subs	r2, r2, #1
  433              	.LVL47:
- 273:DeviceDrivers/LCD/Src/st7789.c **** 
- 274:DeviceDrivers/LCD/Src/st7789.c ****   /* 计算矩形右下角 Y 坐标。 */
- 275:DeviceDrivers/LCD/Src/st7789.c ****   uint16_t y1 = y + h - 1U;
- 434              		.loc 1 275 3 is_stmt 1 view .LVU101
- 435              		.loc 1 275 19 is_stmt 0 view .LVU102
+ 371:DeviceDrivers/LCD/Src/st7789.c **** 
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccJePjwJ.s 			page 15
+
+
+ 372:DeviceDrivers/LCD/Src/st7789.c ****   /* 计算矩形右下角 Y 坐标。 */
+ 373:DeviceDrivers/LCD/Src/st7789.c ****   uint16_t y1 = y + h - 1U;
+ 434              		.loc 1 373 3 is_stmt 1 view .LVU101
+ 435              		.loc 1 373 19 is_stmt 0 view .LVU102
  436 0038 6318     		adds	r3, r4, r1
  437 003a 9BB2     		uxth	r3, r3
- 438              		.loc 1 275 12 view .LVU103
+ 438              		.loc 1 373 12 view .LVU103
  439 003c 013B     		subs	r3, r3, #1
  440              	.LVL48:
- 276:DeviceDrivers/LCD/Src/st7789.c **** 
- 277:DeviceDrivers/LCD/Src/st7789.c ****   /* 设置接下来要写入的显存窗口。 */
- 278:DeviceDrivers/LCD/Src/st7789.c ****   ST7789_SetAddressWindow(x, y, x1, y1);
- 441              		.loc 1 278 3 is_stmt 1 view .LVU104
+ 374:DeviceDrivers/LCD/Src/st7789.c **** 
+ 375:DeviceDrivers/LCD/Src/st7789.c ****   /* 设置接下来要写入的显存窗口。 */
+ 376:DeviceDrivers/LCD/Src/st7789.c ****   ST7789_SetAddressWindow(x, y, x1, y1);
+ 441              		.loc 1 376 3 is_stmt 1 view .LVU104
  442 003e 9BB2     		uxth	r3, r3
- 443              		.loc 1 278 3 is_stmt 0 view .LVU105
+ 443              		.loc 1 376 3 is_stmt 0 view .LVU105
  444 0040 92B2     		uxth	r2, r2
- 445              		.loc 1 278 3 view .LVU106
+ 445              		.loc 1 376 3 view .LVU106
  446 0042 FFF7FEFF 		bl	ST7789_SetAddressWindow
  447              	.LVL49:
- 279:DeviceDrivers/LCD/Src/st7789.c **** 
- 280:DeviceDrivers/LCD/Src/st7789.c ****   /* 计算矩形区域内一共有多少个像素。 */
- 281:DeviceDrivers/LCD/Src/st7789.c ****   uint32_t pixel_count = (uint32_t)w * (uint32_t)h;
- 448              		.loc 1 281 3 is_stmt 1 view .LVU107
- 449              		.loc 1 281 12 is_stmt 0 view .LVU108
+ 377:DeviceDrivers/LCD/Src/st7789.c **** 
+ 378:DeviceDrivers/LCD/Src/st7789.c ****   /* 计算矩形区域内一共有多少个像素。 */
+ 379:DeviceDrivers/LCD/Src/st7789.c ****   uint32_t pixel_count = (uint32_t)w * (uint32_t)h;
+ 448              		.loc 1 379 3 is_stmt 1 view .LVU107
+ 449              		.loc 1 379 12 is_stmt 0 view .LVU108
  450 0046 04FB05F5 		mul	r5, r4, r5
  451              	.LVL50:
- 282:DeviceDrivers/LCD/Src/st7789.c **** 
- 283:DeviceDrivers/LCD/Src/st7789.c ****   /* 按像素数量循环写入同一个颜色。 */
- 284:DeviceDrivers/LCD/Src/st7789.c ****   for (uint32_t index = 0U; index < pixel_count; index++)
- 452              		.loc 1 284 3 is_stmt 1 view .LVU109
+ 380:DeviceDrivers/LCD/Src/st7789.c **** 
+ 381:DeviceDrivers/LCD/Src/st7789.c ****   /* 按像素数量循环写入同一个颜色。 */
+ 382:DeviceDrivers/LCD/Src/st7789.c ****   for (uint32_t index = 0U; index < pixel_count; index++)
+ 452              		.loc 1 382 3 is_stmt 1 view .LVU109
  453              	.LBB3:
- 454              		.loc 1 284 8 view .LVU110
- 455              		.loc 1 284 17 is_stmt 0 view .LVU111
+ 454              		.loc 1 382 8 view .LVU110
+ 455              		.loc 1 382 17 is_stmt 0 view .LVU111
  456 004a 0024     		movs	r4, #0
  457              	.LVL51:
- 458              		.loc 1 284 3 view .LVU112
+ 458              		.loc 1 382 3 view .LVU112
  459 004c 03E0     		b	.L34
  460              	.LVL52:
  461              	.L35:
- 285:DeviceDrivers/LCD/Src/st7789.c ****   {
- 286:DeviceDrivers/LCD/Src/st7789.c ****     /* 写入当前像素的 RGB565 颜色。 */
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccZhMi8p.s 			page 14
-
-
- 287:DeviceDrivers/LCD/Src/st7789.c ****     ST7789_WriteColor(color);
- 462              		.loc 1 287 5 is_stmt 1 view .LVU113
+ 383:DeviceDrivers/LCD/Src/st7789.c ****   {
+ 384:DeviceDrivers/LCD/Src/st7789.c ****     /* 写入当前像素的 RGB565 颜色。 */
+ 385:DeviceDrivers/LCD/Src/st7789.c ****     ST7789_WriteColor(color);
+ 462              		.loc 1 385 5 is_stmt 1 view .LVU113
  463 004e 3046     		mov	r0, r6
  464 0050 FFF7FEFF 		bl	ST7789_WriteColor
  465              	.LVL53:
- 284:DeviceDrivers/LCD/Src/st7789.c ****   {
- 466              		.loc 1 284 55 discriminator 3 view .LVU114
+ 382:DeviceDrivers/LCD/Src/st7789.c ****   {
+ 466              		.loc 1 382 55 discriminator 3 view .LVU114
  467 0054 0134     		adds	r4, r4, #1
  468              	.LVL54:
  469              	.L34:
- 284:DeviceDrivers/LCD/Src/st7789.c ****   {
- 470              		.loc 1 284 35 discriminator 1 view .LVU115
+ 382:DeviceDrivers/LCD/Src/st7789.c ****   {
+ 470              		.loc 1 382 35 discriminator 1 view .LVU115
  471 0056 AC42     		cmp	r4, r5
  472 0058 F9D3     		bcc	.L35
  473              	.LVL55:
  474              	.L30:
- 284:DeviceDrivers/LCD/Src/st7789.c ****   {
- 475              		.loc 1 284 35 is_stmt 0 discriminator 1 view .LVU116
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccJePjwJ.s 			page 16
+
+
+ 382:DeviceDrivers/LCD/Src/st7789.c ****   {
+ 475              		.loc 1 382 35 is_stmt 0 discriminator 1 view .LVU116
  476              	.LBE3:
- 288:DeviceDrivers/LCD/Src/st7789.c ****   }
- 289:DeviceDrivers/LCD/Src/st7789.c **** }
- 477              		.loc 1 289 1 view .LVU117
+ 386:DeviceDrivers/LCD/Src/st7789.c ****   }
+ 387:DeviceDrivers/LCD/Src/st7789.c **** }
+ 477              		.loc 1 387 1 view .LVU117
  478 005a 70BD     		pop	{r4, r5, r6, pc}
- 479              		.loc 1 289 1 view .LVU118
+ 479              		.loc 1 387 1 view .LVU118
  480              		.cfi_endproc
  481              	.LFE139:
  483              		.section	.text.ST7789_FillScreen,"ax",%progbits
@@ -816,19 +920,19 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccZhMi8p.s 			page 1
  490              	ST7789_FillScreen:
  491              	.LVL56:
  492              	.LFB140:
- 290:DeviceDrivers/LCD/Src/st7789.c **** 
- 291:DeviceDrivers/LCD/Src/st7789.c **** /**
- 292:DeviceDrivers/LCD/Src/st7789.c ****  * @brief 使用指定颜色填充整个屏幕。
- 293:DeviceDrivers/LCD/Src/st7789.c ****  * @param color 要填充的 RGB565 颜色值。
- 294:DeviceDrivers/LCD/Src/st7789.c ****  * @retval 无
- 295:DeviceDrivers/LCD/Src/st7789.c ****  */
- 296:DeviceDrivers/LCD/Src/st7789.c **** void ST7789_FillScreen(uint16_t color)
- 297:DeviceDrivers/LCD/Src/st7789.c **** {
- 493              		.loc 1 297 1 is_stmt 1 view -0
+ 388:DeviceDrivers/LCD/Src/st7789.c **** 
+ 389:DeviceDrivers/LCD/Src/st7789.c **** /**
+ 390:DeviceDrivers/LCD/Src/st7789.c ****  * @brief 使用指定颜色填充整个屏幕。
+ 391:DeviceDrivers/LCD/Src/st7789.c ****  * @param color 要填充的 RGB565 颜色值。
+ 392:DeviceDrivers/LCD/Src/st7789.c ****  * @retval 无
+ 393:DeviceDrivers/LCD/Src/st7789.c ****  */
+ 394:DeviceDrivers/LCD/Src/st7789.c **** void ST7789_FillScreen(uint16_t color)
+ 395:DeviceDrivers/LCD/Src/st7789.c **** {
+ 493              		.loc 1 395 1 is_stmt 1 view -0
  494              		.cfi_startproc
  495              		@ args = 0, pretend = 0, frame = 0
  496              		@ frame_needed = 0, uses_anonymous_args = 0
- 497              		.loc 1 297 1 is_stmt 0 view .LVU120
+ 497              		.loc 1 395 1 is_stmt 0 view .LVU120
  498 0000 00B5     		push	{lr}
  499              	.LCFI8:
  500              		.cfi_def_cfa_offset 4
@@ -836,27 +940,27 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccZhMi8p.s 			page 1
  502 0002 83B0     		sub	sp, sp, #12
  503              	.LCFI9:
  504              		.cfi_def_cfa_offset 16
- 298:DeviceDrivers/LCD/Src/st7789.c ****   /* 从屏幕左上角开始，按屏幕宽高填充整个区域。 */
- 299:DeviceDrivers/LCD/Src/st7789.c ****   ST7789_FillRect(0U, 0U, ST7789_WIDTH, ST7789_HEIGHT, color);
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccZhMi8p.s 			page 15
-
-
- 505              		.loc 1 299 3 is_stmt 1 view .LVU121
+ 396:DeviceDrivers/LCD/Src/st7789.c ****   /* 从屏幕左上角开始，按屏幕宽高填充整个区域。 */
+ 397:DeviceDrivers/LCD/Src/st7789.c ****   ST7789_FillRect(0U, 0U, ST7789_WIDTH, ST7789_HEIGHT, color);
+ 505              		.loc 1 397 3 is_stmt 1 view .LVU121
  506 0004 0090     		str	r0, [sp]
  507 0006 4FF4A073 		mov	r3, #320
  508 000a AC22     		movs	r2, #172
  509 000c 0021     		movs	r1, #0
  510 000e 0846     		mov	r0, r1
  511              	.LVL57:
- 512              		.loc 1 299 3 is_stmt 0 view .LVU122
+ 512              		.loc 1 397 3 is_stmt 0 view .LVU122
  513 0010 FFF7FEFF 		bl	ST7789_FillRect
  514              	.LVL58:
- 300:DeviceDrivers/LCD/Src/st7789.c **** }
- 515              		.loc 1 300 1 view .LVU123
+ 398:DeviceDrivers/LCD/Src/st7789.c **** }
+ 515              		.loc 1 398 1 view .LVU123
  516 0014 03B0     		add	sp, sp, #12
  517              	.LCFI10:
  518              		.cfi_def_cfa_offset 4
  519              		@ sp needed
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccJePjwJ.s 			page 17
+
+
  520 0016 00BD     		pop	{pc}
  521              		.cfi_endproc
  522              	.LFE140:
@@ -868,8 +972,8 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccZhMi8p.s 			page 1
  529              		.thumb_func
  531              	ST7789_Init:
  532              	.LFB133:
-  38:DeviceDrivers/LCD/Src/st7789.c ****   /* 初始化上一层硬件驱动使用的 GPIO 引脚。 */
- 533              		.loc 1 38 1 is_stmt 1 view -0
+ 136:DeviceDrivers/LCD/Src/st7789.c ****   /* 初始化上一层硬件驱动使用的 GPIO 引脚。 */
+ 533              		.loc 1 136 1 is_stmt 1 view -0
  534              		.cfi_startproc
  535              		@ args = 0, pretend = 0, frame = 0
  536              		@ frame_needed = 0, uses_anonymous_args = 0
@@ -878,212 +982,839 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccZhMi8p.s 			page 1
  539              		.cfi_def_cfa_offset 8
  540              		.cfi_offset 3, -8
  541              		.cfi_offset 14, -4
-  40:DeviceDrivers/LCD/Src/st7789.c **** 
- 542              		.loc 1 40 3 view .LVU125
+ 138:DeviceDrivers/LCD/Src/st7789.c **** 
+ 542              		.loc 1 138 3 view .LVU125
  543 0002 FFF7FEFF 		bl	LCD_HW_GPIO_Init
  544              	.LVL59:
-  43:DeviceDrivers/LCD/Src/st7789.c **** 
- 545              		.loc 1 43 3 view .LVU126
+ 141:DeviceDrivers/LCD/Src/st7789.c **** 
+ 545              		.loc 1 141 3 view .LVU126
  546 0006 FFF7FEFF 		bl	LCD_Reset
  547              	.LVL60:
-  46:DeviceDrivers/LCD/Src/st7789.c **** 
- 548              		.loc 1 46 3 view .LVU127
+ 144:DeviceDrivers/LCD/Src/st7789.c **** 
+ 548              		.loc 1 144 3 view .LVU127
  549 000a 1120     		movs	r0, #17
  550 000c FFF7FEFF 		bl	LCD_WriteCmd
  551              	.LVL61:
-  49:DeviceDrivers/LCD/Src/st7789.c **** 
- 552              		.loc 1 49 3 view .LVU128
+ 147:DeviceDrivers/LCD/Src/st7789.c **** 
+ 552              		.loc 1 147 3 view .LVU128
  553 0010 7820     		movs	r0, #120
  554 0012 FFF7FEFF 		bl	HAL_Delay
  555              	.LVL62:
-  52:DeviceDrivers/LCD/Src/st7789.c **** 
- 556              		.loc 1 52 3 view .LVU129
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccZhMi8p.s 			page 16
-
-
+ 150:DeviceDrivers/LCD/Src/st7789.c **** 
+ 556              		.loc 1 150 3 view .LVU129
  557 0016 1320     		movs	r0, #19
  558 0018 FFF7FEFF 		bl	LCD_WriteCmd
  559              	.LVL63:
-  55:DeviceDrivers/LCD/Src/st7789.c **** 
- 560              		.loc 1 55 3 view .LVU130
+ 153:DeviceDrivers/LCD/Src/st7789.c **** 
+ 560              		.loc 1 153 3 view .LVU130
  561 001c 3A20     		movs	r0, #58
  562 001e FFF7FEFF 		bl	LCD_WriteCmd
  563              	.LVL64:
-  58:DeviceDrivers/LCD/Src/st7789.c **** 
- 564              		.loc 1 58 3 view .LVU131
+ 156:DeviceDrivers/LCD/Src/st7789.c **** 
+ 564              		.loc 1 156 3 view .LVU131
  565 0022 5520     		movs	r0, #85
  566 0024 FFF7FEFF 		bl	LCD_WriteData
  567              	.LVL65:
-  61:DeviceDrivers/LCD/Src/st7789.c **** 
- 568              		.loc 1 61 3 view .LVU132
+ 159:DeviceDrivers/LCD/Src/st7789.c **** 
+ 568              		.loc 1 159 3 view .LVU132
  569 0028 3620     		movs	r0, #54
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccJePjwJ.s 			page 18
+
+
  570 002a FFF7FEFF 		bl	LCD_WriteCmd
  571              	.LVL66:
-  64:DeviceDrivers/LCD/Src/st7789.c **** 
- 572              		.loc 1 64 3 view .LVU133
+ 162:DeviceDrivers/LCD/Src/st7789.c **** 
+ 572              		.loc 1 162 3 view .LVU133
  573 002e 0020     		movs	r0, #0
  574 0030 FFF7FEFF 		bl	LCD_WriteData
  575              	.LVL67:
-  69:DeviceDrivers/LCD/Src/st7789.c **** #else
- 576              		.loc 1 69 3 view .LVU134
+ 167:DeviceDrivers/LCD/Src/st7789.c **** #else
+ 576              		.loc 1 167 3 view .LVU134
  577 0034 2120     		movs	r0, #33
  578 0036 FFF7FEFF 		bl	LCD_WriteCmd
  579              	.LVL68:
-  76:DeviceDrivers/LCD/Src/st7789.c **** 
- 580              		.loc 1 76 3 view .LVU135
+ 174:DeviceDrivers/LCD/Src/st7789.c **** 
+ 580              		.loc 1 174 3 view .LVU135
  581 003a 2920     		movs	r0, #41
  582 003c FFF7FEFF 		bl	LCD_WriteCmd
  583              	.LVL69:
-  79:DeviceDrivers/LCD/Src/st7789.c **** 
- 584              		.loc 1 79 3 view .LVU136
+ 177:DeviceDrivers/LCD/Src/st7789.c **** 
+ 584              		.loc 1 177 3 view .LVU136
  585 0040 1420     		movs	r0, #20
  586 0042 FFF7FEFF 		bl	HAL_Delay
  587              	.LVL70:
-  82:DeviceDrivers/LCD/Src/st7789.c **** }
- 588              		.loc 1 82 3 view .LVU137
+ 180:DeviceDrivers/LCD/Src/st7789.c **** }
+ 588              		.loc 1 180 3 view .LVU137
  589 0046 0020     		movs	r0, #0
  590 0048 FFF7FEFF 		bl	ST7789_FillScreen
  591              	.LVL71:
-  83:DeviceDrivers/LCD/Src/st7789.c **** 
- 592              		.loc 1 83 1 is_stmt 0 view .LVU138
+ 181:DeviceDrivers/LCD/Src/st7789.c **** 
+ 592              		.loc 1 181 1 is_stmt 0 view .LVU138
  593 004c 08BD     		pop	{r3, pc}
  594              		.cfi_endproc
  595              	.LFE133:
- 597              		.section	.text.ST7789_TestColorCycle,"ax",%progbits
+ 597              		.section	.text.ST7789_DrawChar,"ax",%progbits
  598              		.align	1
- 599              		.global	ST7789_TestColorCycle
+ 599              		.global	ST7789_DrawChar
  600              		.syntax unified
  601              		.thumb
  602              		.thumb_func
- 604              	ST7789_TestColorCycle:
- 605              	.LFB141:
- 301:DeviceDrivers/LCD/Src/st7789.c **** 
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccZhMi8p.s 			page 17
+ 604              	ST7789_DrawChar:
+ 605              	.LVL72:
+ 606              	.LFB141:
+ 399:DeviceDrivers/LCD/Src/st7789.c **** 
+ 400:DeviceDrivers/LCD/Src/st7789.c **** /**
+ 401:DeviceDrivers/LCD/Src/st7789.c ****  * @brief 在指定坐标绘制 1 个 5x7 ASCII 字符。
+ 402:DeviceDrivers/LCD/Src/st7789.c ****  * @param x 字符左上角 X 坐标。
+ 403:DeviceDrivers/LCD/Src/st7789.c ****  * @param y 字符左上角 Y 坐标。
+ 404:DeviceDrivers/LCD/Src/st7789.c ****  * @param ch 要绘制的 ASCII 字符。
+ 405:DeviceDrivers/LCD/Src/st7789.c ****  * @param color 字符前景色。
+ 406:DeviceDrivers/LCD/Src/st7789.c ****  * @param bg_color 字符背景色。
+ 407:DeviceDrivers/LCD/Src/st7789.c ****  * @retval 无
+ 408:DeviceDrivers/LCD/Src/st7789.c ****  */
+ 409:DeviceDrivers/LCD/Src/st7789.c **** void ST7789_DrawChar(uint16_t x, uint16_t y, char ch, uint16_t color, uint16_t bg_color)
+ 410:DeviceDrivers/LCD/Src/st7789.c **** {
+ 607              		.loc 1 410 1 is_stmt 1 view -0
+ 608              		.cfi_startproc
+ 609              		@ args = 4, pretend = 0, frame = 0
+ 610              		@ frame_needed = 0, uses_anonymous_args = 0
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccJePjwJ.s 			page 19
 
 
- 302:DeviceDrivers/LCD/Src/st7789.c **** /**
- 303:DeviceDrivers/LCD/Src/st7789.c ****  * @brief 循环显示几种纯色，用于烧录后肉眼验证屏幕。
- 304:DeviceDrivers/LCD/Src/st7789.c ****  * @retval 无
- 305:DeviceDrivers/LCD/Src/st7789.c ****  */
- 306:DeviceDrivers/LCD/Src/st7789.c **** void ST7789_TestColorCycle(void)
- 307:DeviceDrivers/LCD/Src/st7789.c **** {
- 606              		.loc 1 307 1 is_stmt 1 view -0
- 607              		.cfi_startproc
- 608              		@ args = 0, pretend = 0, frame = 0
- 609              		@ frame_needed = 0, uses_anonymous_args = 0
- 610 0000 08B5     		push	{r3, lr}
- 611              	.LCFI12:
- 612              		.cfi_def_cfa_offset 8
- 613              		.cfi_offset 3, -8
- 614              		.cfi_offset 14, -4
- 308:DeviceDrivers/LCD/Src/st7789.c ****   /* 全屏显示红色。 */
- 309:DeviceDrivers/LCD/Src/st7789.c ****   ST7789_FillScreen(ST7789_COLOR_RED);
- 615              		.loc 1 309 3 view .LVU140
- 616 0002 4FF47840 		mov	r0, #63488
- 617 0006 FFF7FEFF 		bl	ST7789_FillScreen
- 618              	.LVL72:
- 310:DeviceDrivers/LCD/Src/st7789.c **** 
- 311:DeviceDrivers/LCD/Src/st7789.c ****   /* 红色保持 500 ms。 */
- 312:DeviceDrivers/LCD/Src/st7789.c ****   HAL_Delay(500U);
- 619              		.loc 1 312 3 view .LVU141
- 620 000a 4FF4FA70 		mov	r0, #500
- 621 000e FFF7FEFF 		bl	HAL_Delay
- 622              	.LVL73:
- 313:DeviceDrivers/LCD/Src/st7789.c **** 
- 314:DeviceDrivers/LCD/Src/st7789.c ****   /* 全屏显示绿色。 */
- 315:DeviceDrivers/LCD/Src/st7789.c ****   ST7789_FillScreen(ST7789_COLOR_GREEN);
- 623              		.loc 1 315 3 view .LVU142
- 624 0012 4FF4FC60 		mov	r0, #2016
- 625 0016 FFF7FEFF 		bl	ST7789_FillScreen
- 626              	.LVL74:
- 316:DeviceDrivers/LCD/Src/st7789.c **** 
- 317:DeviceDrivers/LCD/Src/st7789.c ****   /* 绿色保持 500 ms。 */
- 318:DeviceDrivers/LCD/Src/st7789.c ****   HAL_Delay(500U);
- 627              		.loc 1 318 3 view .LVU143
- 628 001a 4FF4FA70 		mov	r0, #500
- 629 001e FFF7FEFF 		bl	HAL_Delay
- 630              	.LVL75:
- 319:DeviceDrivers/LCD/Src/st7789.c **** 
- 320:DeviceDrivers/LCD/Src/st7789.c ****   /* 全屏显示蓝色。 */
- 321:DeviceDrivers/LCD/Src/st7789.c ****   ST7789_FillScreen(ST7789_COLOR_BLUE);
- 631              		.loc 1 321 3 view .LVU144
- 632 0022 1F20     		movs	r0, #31
- 633 0024 FFF7FEFF 		bl	ST7789_FillScreen
- 634              	.LVL76:
- 322:DeviceDrivers/LCD/Src/st7789.c **** 
- 323:DeviceDrivers/LCD/Src/st7789.c ****   /* 蓝色保持 500 ms。 */
- 324:DeviceDrivers/LCD/Src/st7789.c ****   HAL_Delay(500U);
- 635              		.loc 1 324 3 view .LVU145
- 636 0028 4FF4FA70 		mov	r0, #500
- 637 002c FFF7FEFF 		bl	HAL_Delay
- 638              	.LVL77:
- 325:DeviceDrivers/LCD/Src/st7789.c **** 
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccZhMi8p.s 			page 18
+ 611              		.loc 1 410 1 is_stmt 0 view .LVU140
+ 612 0000 2DE9F84F 		push	{r3, r4, r5, r6, r7, r8, r9, r10, fp, lr}
+ 613              	.LCFI12:
+ 614              		.cfi_def_cfa_offset 40
+ 615              		.cfi_offset 3, -40
+ 616              		.cfi_offset 4, -36
+ 617              		.cfi_offset 5, -32
+ 618              		.cfi_offset 6, -28
+ 619              		.cfi_offset 7, -24
+ 620              		.cfi_offset 8, -20
+ 621              		.cfi_offset 9, -16
+ 622              		.cfi_offset 10, -12
+ 623              		.cfi_offset 11, -8
+ 624              		.cfi_offset 14, -4
+ 625 0004 BDF828A0 		ldrh	r10, [sp, #40]
+ 411:DeviceDrivers/LCD/Src/st7789.c ****   /* 字符宽度为 5 列，额外留 1 列空白作为字符间距。 */
+ 412:DeviceDrivers/LCD/Src/st7789.c ****   const uint16_t char_width = 6U;
+ 626              		.loc 1 412 3 is_stmt 1 view .LVU141
+ 627              	.LVL73:
+ 413:DeviceDrivers/LCD/Src/st7789.c **** 
+ 414:DeviceDrivers/LCD/Src/st7789.c ****   /* 字符高度为 7 行，额外留 1 行空白作为行间距。 */
+ 415:DeviceDrivers/LCD/Src/st7789.c ****   const uint16_t char_height = 8U;
+ 628              		.loc 1 415 3 view .LVU142
+ 416:DeviceDrivers/LCD/Src/st7789.c **** 
+ 417:DeviceDrivers/LCD/Src/st7789.c ****   /* 如果字符整体已经超出屏幕右边界，就直接返回。 */
+ 418:DeviceDrivers/LCD/Src/st7789.c ****   if (x >= ST7789_WIDTH)
+ 629              		.loc 1 418 3 view .LVU143
+ 630              		.loc 1 418 6 is_stmt 0 view .LVU144
+ 631 0008 AB28     		cmp	r0, #171
+ 632 000a 3BD8     		bhi	.L41
+ 633 000c 0646     		mov	r6, r0
+ 634 000e 0F46     		mov	r7, r1
+ 635 0010 9B46     		mov	fp, r3
+ 419:DeviceDrivers/LCD/Src/st7789.c ****   {
+ 420:DeviceDrivers/LCD/Src/st7789.c ****     return;
+ 421:DeviceDrivers/LCD/Src/st7789.c ****   }
+ 422:DeviceDrivers/LCD/Src/st7789.c **** 
+ 423:DeviceDrivers/LCD/Src/st7789.c ****   /* 如果字符整体已经超出屏幕下边界，就直接返回。 */
+ 424:DeviceDrivers/LCD/Src/st7789.c ****   if (y >= ST7789_HEIGHT)
+ 636              		.loc 1 424 3 is_stmt 1 view .LVU145
+ 637              		.loc 1 424 6 is_stmt 0 view .LVU146
+ 638 0012 B1F5A07F 		cmp	r1, #320
+ 639 0016 35D2     		bcs	.L41
+ 425:DeviceDrivers/LCD/Src/st7789.c ****   {
+ 426:DeviceDrivers/LCD/Src/st7789.c ****     return;
+ 427:DeviceDrivers/LCD/Src/st7789.c ****   }
+ 428:DeviceDrivers/LCD/Src/st7789.c **** 
+ 429:DeviceDrivers/LCD/Src/st7789.c ****   /* 非可打印 ASCII 字符统一按空格显示。 */
+ 430:DeviceDrivers/LCD/Src/st7789.c ****   if ((ch < ' ') || (ch > '~'))
+ 640              		.loc 1 430 3 is_stmt 1 view .LVU147
+ 641              		.loc 1 430 18 is_stmt 0 view .LVU148
+ 642 0018 A2F12003 		sub	r3, r2, #32
+ 643              	.LVL74:
+ 644              		.loc 1 430 18 view .LVU149
+ 645 001c DBB2     		uxtb	r3, r3
+ 646              		.loc 1 430 6 view .LVU150
+ 647 001e 5E2B     		cmp	r3, #94
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccJePjwJ.s 			page 20
 
 
- 326:DeviceDrivers/LCD/Src/st7789.c ****   /* 全屏显示白色。 */
- 327:DeviceDrivers/LCD/Src/st7789.c ****   ST7789_FillScreen(ST7789_COLOR_WHITE);
- 639              		.loc 1 327 3 view .LVU146
- 640 0030 4FF6FF70 		movw	r0, #65535
- 641 0034 FFF7FEFF 		bl	ST7789_FillScreen
- 642              	.LVL78:
- 328:DeviceDrivers/LCD/Src/st7789.c **** 
- 329:DeviceDrivers/LCD/Src/st7789.c ****   /* 白色保持 500 ms。 */
- 330:DeviceDrivers/LCD/Src/st7789.c ****   HAL_Delay(500U);
- 643              		.loc 1 330 3 view .LVU147
- 644 0038 4FF4FA70 		mov	r0, #500
- 645 003c FFF7FEFF 		bl	HAL_Delay
- 646              	.LVL79:
- 331:DeviceDrivers/LCD/Src/st7789.c **** 
- 332:DeviceDrivers/LCD/Src/st7789.c ****   /* 全屏显示黑色。 */
- 333:DeviceDrivers/LCD/Src/st7789.c ****   ST7789_FillScreen(ST7789_COLOR_BLACK);
- 647              		.loc 1 333 3 view .LVU148
- 648 0040 0020     		movs	r0, #0
- 649 0042 FFF7FEFF 		bl	ST7789_FillScreen
- 650              	.LVL80:
- 334:DeviceDrivers/LCD/Src/st7789.c **** 
- 335:DeviceDrivers/LCD/Src/st7789.c ****   /* 黑色保持 500 ms。 */
- 336:DeviceDrivers/LCD/Src/st7789.c ****   HAL_Delay(500U);
- 651              		.loc 1 336 3 view .LVU149
- 652 0046 4FF4FA70 		mov	r0, #500
- 653 004a FFF7FEFF 		bl	HAL_Delay
- 654              	.LVL81:
- 337:DeviceDrivers/LCD/Src/st7789.c **** }
- 655              		.loc 1 337 1 is_stmt 0 view .LVU150
- 656 004e 08BD     		pop	{r3, pc}
- 657              		.cfi_endproc
- 658              	.LFE141:
- 660              		.text
- 661              	.Letext0:
- 662              		.file 2 "D:\\STM32CubeIDE\\STM32CubeIDE_2.1.1\\STM32CubeIDE\\plugins\\com.st.stm32cube.ide.mcu.ext
- 663              		.file 3 "D:\\STM32CubeIDE\\STM32CubeIDE_2.1.1\\STM32CubeIDE\\plugins\\com.st.stm32cube.ide.mcu.ext
- 664              		.file 4 "HardwareDrivers/LCD/Inc/lcd_hw.h"
- 665              		.file 5 "Drivers/STM32G4xx_HAL_Driver/Inc/stm32g4xx_hal.h"
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccZhMi8p.s 			page 19
+ 648 0020 00D9     		bls	.L43
+ 431:DeviceDrivers/LCD/Src/st7789.c ****   {
+ 432:DeviceDrivers/LCD/Src/st7789.c ****     ch = ' ';
+ 649              		.loc 1 432 8 view .LVU151
+ 650 0022 2022     		movs	r2, #32
+ 651              	.LVL75:
+ 652              	.L43:
+ 433:DeviceDrivers/LCD/Src/st7789.c ****   }
+ 434:DeviceDrivers/LCD/Src/st7789.c **** 
+ 435:DeviceDrivers/LCD/Src/st7789.c ****   /* 计算当前字符在 5x7 字库表中的索引。 */
+ 436:DeviceDrivers/LCD/Src/st7789.c ****   const uint8_t *bitmap = s_font_5x7[(uint8_t)ch - (uint8_t)' '];
+ 653              		.loc 1 436 3 is_stmt 1 view .LVU152
+ 654              		.loc 1 436 50 is_stmt 0 view .LVU153
+ 655 0024 203A     		subs	r2, r2, #32
+ 656              	.LVL76:
+ 657              		.loc 1 436 18 view .LVU154
+ 658 0026 02EB8202 		add	r2, r2, r2, lsl #2
+ 659              	.LVL77:
+ 660              		.loc 1 436 18 view .LVU155
+ 661 002a 174B     		ldr	r3, .L55
+ 662 002c 02EB0309 		add	r9, r2, r3
+ 663              	.LVL78:
+ 437:DeviceDrivers/LCD/Src/st7789.c **** 
+ 438:DeviceDrivers/LCD/Src/st7789.c ****   /* 逐列绘制字符和背景。 */
+ 439:DeviceDrivers/LCD/Src/st7789.c ****   for (uint16_t col = 0U; col < char_width; col++)
+ 664              		.loc 1 439 3 is_stmt 1 view .LVU156
+ 665              	.LBB4:
+ 666              		.loc 1 439 8 view .LVU157
+ 667              		.loc 1 439 17 is_stmt 0 view .LVU158
+ 668 0030 0025     		movs	r5, #0
+ 669              		.loc 1 439 3 view .LVU159
+ 670 0032 1FE0     		b	.L44
+ 671              	.LVL79:
+ 672              	.L52:
+ 673              	.LBB5:
+ 440:DeviceDrivers/LCD/Src/st7789.c ****   {
+ 441:DeviceDrivers/LCD/Src/st7789.c ****     /* 字体表只有前 5 列，第 6 列固定作为空白间距。 */
+ 442:DeviceDrivers/LCD/Src/st7789.c ****     uint8_t column_bits = (col < 5U) ? bitmap[col] : 0U;
+ 674              		.loc 1 442 13 discriminator 2 view .LVU160
+ 675 0034 4FF00008 		mov	r8, #0
+ 676 0038 22E0     		b	.L45
+ 677              	.LVL80:
+ 678              	.L48:
+ 679              	.LBB6:
+ 680              	.LBB7:
+ 443:DeviceDrivers/LCD/Src/st7789.c **** 
+ 444:DeviceDrivers/LCD/Src/st7789.c ****     /* 逐行绘制当前列的每一个像素。 */
+ 445:DeviceDrivers/LCD/Src/st7789.c ****     for (uint16_t row = 0U; row < char_height; row++)
+ 446:DeviceDrivers/LCD/Src/st7789.c ****     {
+ 447:DeviceDrivers/LCD/Src/st7789.c ****       /* 计算当前像素的屏幕 X 坐标。 */
+ 448:DeviceDrivers/LCD/Src/st7789.c ****       uint16_t pixel_x = x + col;
+ 449:DeviceDrivers/LCD/Src/st7789.c **** 
+ 450:DeviceDrivers/LCD/Src/st7789.c ****       /* 计算当前像素的屏幕 Y 坐标。 */
+ 451:DeviceDrivers/LCD/Src/st7789.c ****       uint16_t pixel_y = y + row;
+ 452:DeviceDrivers/LCD/Src/st7789.c **** 
+ 453:DeviceDrivers/LCD/Src/st7789.c ****       /* 如果当前像素超出屏幕边界，就跳过。 */
+ 454:DeviceDrivers/LCD/Src/st7789.c ****       if ((pixel_x >= ST7789_WIDTH) || (pixel_y >= ST7789_HEIGHT))
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccJePjwJ.s 			page 21
+
+
+ 455:DeviceDrivers/LCD/Src/st7789.c ****       {
+ 456:DeviceDrivers/LCD/Src/st7789.c ****         continue;
+ 457:DeviceDrivers/LCD/Src/st7789.c ****       }
+ 458:DeviceDrivers/LCD/Src/st7789.c **** 
+ 459:DeviceDrivers/LCD/Src/st7789.c ****       /* 判断字库当前 bit 是否需要画前景色。 */
+ 460:DeviceDrivers/LCD/Src/st7789.c ****       if ((row < 7U) && ((column_bits & (uint8_t)(1U << row)) != 0U))
+ 461:DeviceDrivers/LCD/Src/st7789.c ****       {
+ 462:DeviceDrivers/LCD/Src/st7789.c ****         /* 当前 bit 为 1，画字符前景色。 */
+ 463:DeviceDrivers/LCD/Src/st7789.c ****         ST7789_DrawPixel(pixel_x, pixel_y, color);
+ 464:DeviceDrivers/LCD/Src/st7789.c ****       }
+ 465:DeviceDrivers/LCD/Src/st7789.c ****       else
+ 466:DeviceDrivers/LCD/Src/st7789.c ****       {
+ 467:DeviceDrivers/LCD/Src/st7789.c ****         /* 当前 bit 为 0，画背景色，避免旧字符残留。 */
+ 468:DeviceDrivers/LCD/Src/st7789.c ****         ST7789_DrawPixel(pixel_x, pixel_y, bg_color);
+ 681              		.loc 1 468 9 is_stmt 1 view .LVU161
+ 682 003a 5246     		mov	r2, r10
+ 683 003c FFF7FEFF 		bl	ST7789_DrawPixel
+ 684              	.LVL81:
+ 685              	.L47:
+ 686              		.loc 1 468 9 is_stmt 0 view .LVU162
+ 687              	.LBE7:
+ 445:DeviceDrivers/LCD/Src/st7789.c ****     {
+ 688              		.loc 1 445 51 is_stmt 1 discriminator 2 view .LVU163
+ 689 0040 0134     		adds	r4, r4, #1
+ 690              	.LVL82:
+ 445:DeviceDrivers/LCD/Src/st7789.c ****     {
+ 691              		.loc 1 445 51 is_stmt 0 discriminator 2 view .LVU164
+ 692 0042 A4B2     		uxth	r4, r4
+ 693              	.LVL83:
+ 694              	.L46:
+ 445:DeviceDrivers/LCD/Src/st7789.c ****     {
+ 695              		.loc 1 445 33 is_stmt 1 discriminator 1 view .LVU165
+ 696 0044 072C     		cmp	r4, #7
+ 697 0046 13D8     		bhi	.L54
+ 698              	.LBB8:
+ 448:DeviceDrivers/LCD/Src/st7789.c **** 
+ 699              		.loc 1 448 7 view .LVU166
+ 448:DeviceDrivers/LCD/Src/st7789.c **** 
+ 700              		.loc 1 448 16 is_stmt 0 view .LVU167
+ 701 0048 A819     		adds	r0, r5, r6
+ 702 004a 80B2     		uxth	r0, r0
+ 703              	.LVL84:
+ 451:DeviceDrivers/LCD/Src/st7789.c **** 
+ 704              		.loc 1 451 7 is_stmt 1 view .LVU168
+ 451:DeviceDrivers/LCD/Src/st7789.c **** 
+ 705              		.loc 1 451 16 is_stmt 0 view .LVU169
+ 706 004c E119     		adds	r1, r4, r7
+ 707 004e 89B2     		uxth	r1, r1
+ 708              	.LVL85:
+ 454:DeviceDrivers/LCD/Src/st7789.c ****       {
+ 709              		.loc 1 454 7 is_stmt 1 view .LVU170
+ 454:DeviceDrivers/LCD/Src/st7789.c ****       {
+ 710              		.loc 1 454 10 is_stmt 0 view .LVU171
+ 711 0050 AB28     		cmp	r0, #171
+ 712 0052 F5D8     		bhi	.L47
+ 454:DeviceDrivers/LCD/Src/st7789.c ****       {
+ 713              		.loc 1 454 37 discriminator 2 view .LVU172
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccJePjwJ.s 			page 22
+
+
+ 714 0054 B1F5A07F 		cmp	r1, #320
+ 715 0058 F2D2     		bcs	.L47
+ 460:DeviceDrivers/LCD/Src/st7789.c ****       {
+ 716              		.loc 1 460 7 is_stmt 1 view .LVU173
+ 460:DeviceDrivers/LCD/Src/st7789.c ****       {
+ 717              		.loc 1 460 10 is_stmt 0 view .LVU174
+ 718 005a 062C     		cmp	r4, #6
+ 719 005c EDD8     		bhi	.L48
+ 460:DeviceDrivers/LCD/Src/st7789.c ****       {
+ 720              		.loc 1 460 54 discriminator 1 view .LVU175
+ 721 005e 0123     		movs	r3, #1
+ 722 0060 A340     		lsls	r3, r3, r4
+ 460:DeviceDrivers/LCD/Src/st7789.c ****       {
+ 723              		.loc 1 460 22 discriminator 1 view .LVU176
+ 724 0062 13EA080F 		tst	r3, r8
+ 725 0066 E8D0     		beq	.L48
+ 463:DeviceDrivers/LCD/Src/st7789.c ****       }
+ 726              		.loc 1 463 9 is_stmt 1 view .LVU177
+ 727 0068 5A46     		mov	r2, fp
+ 728 006a FFF7FEFF 		bl	ST7789_DrawPixel
+ 729              	.LVL86:
+ 463:DeviceDrivers/LCD/Src/st7789.c ****       }
+ 730              		.loc 1 463 9 is_stmt 0 view .LVU178
+ 731 006e E7E7     		b	.L47
+ 732              	.LVL87:
+ 733              	.L54:
+ 463:DeviceDrivers/LCD/Src/st7789.c ****       }
+ 734              		.loc 1 463 9 view .LVU179
+ 735              	.LBE8:
+ 736              	.LBE6:
+ 737              	.LBE5:
+ 439:DeviceDrivers/LCD/Src/st7789.c ****   {
+ 738              		.loc 1 439 48 is_stmt 1 discriminator 2 view .LVU180
+ 739 0070 0135     		adds	r5, r5, #1
+ 740              	.LVL88:
+ 439:DeviceDrivers/LCD/Src/st7789.c ****   {
+ 741              		.loc 1 439 48 is_stmt 0 discriminator 2 view .LVU181
+ 742 0072 ADB2     		uxth	r5, r5
+ 743              	.LVL89:
+ 744              	.L44:
+ 439:DeviceDrivers/LCD/Src/st7789.c ****   {
+ 745              		.loc 1 439 31 is_stmt 1 discriminator 1 view .LVU182
+ 746 0074 052D     		cmp	r5, #5
+ 747 0076 05D8     		bhi	.L41
+ 748              	.LBB10:
+ 442:DeviceDrivers/LCD/Src/st7789.c **** 
+ 749              		.loc 1 442 5 view .LVU183
+ 442:DeviceDrivers/LCD/Src/st7789.c **** 
+ 750              		.loc 1 442 13 is_stmt 0 view .LVU184
+ 751 0078 042D     		cmp	r5, #4
+ 752 007a DBD8     		bhi	.L52
+ 442:DeviceDrivers/LCD/Src/st7789.c **** 
+ 753              		.loc 1 442 13 discriminator 1 view .LVU185
+ 754 007c 19F80580 		ldrb	r8, [r9, r5]	@ zero_extendqisi2
+ 755              	.L45:
+ 756              	.LVL90:
+ 445:DeviceDrivers/LCD/Src/st7789.c ****     {
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccJePjwJ.s 			page 23
+
+
+ 757              		.loc 1 445 5 is_stmt 1 view .LVU186
+ 758              	.LBB9:
+ 445:DeviceDrivers/LCD/Src/st7789.c ****     {
+ 759              		.loc 1 445 10 view .LVU187
+ 445:DeviceDrivers/LCD/Src/st7789.c ****     {
+ 760              		.loc 1 445 19 is_stmt 0 view .LVU188
+ 761 0080 0024     		movs	r4, #0
+ 445:DeviceDrivers/LCD/Src/st7789.c ****     {
+ 762              		.loc 1 445 5 view .LVU189
+ 763 0082 DFE7     		b	.L46
+ 764              	.LVL91:
+ 765              	.L41:
+ 445:DeviceDrivers/LCD/Src/st7789.c ****     {
+ 766              		.loc 1 445 5 view .LVU190
+ 767              	.LBE9:
+ 768              	.LBE10:
+ 769              	.LBE4:
+ 469:DeviceDrivers/LCD/Src/st7789.c ****       }
+ 470:DeviceDrivers/LCD/Src/st7789.c ****     }
+ 471:DeviceDrivers/LCD/Src/st7789.c ****   }
+ 472:DeviceDrivers/LCD/Src/st7789.c **** }
+ 770              		.loc 1 472 1 view .LVU191
+ 771 0084 BDE8F88F 		pop	{r3, r4, r5, r6, r7, r8, r9, r10, fp, pc}
+ 772              	.LVL92:
+ 773              	.L56:
+ 774              		.loc 1 472 1 view .LVU192
+ 775              		.align	2
+ 776              	.L55:
+ 777 0088 00000000 		.word	s_font_5x7
+ 778              		.cfi_endproc
+ 779              	.LFE141:
+ 781              		.section	.text.ST7789_DrawString,"ax",%progbits
+ 782              		.align	1
+ 783              		.global	ST7789_DrawString
+ 784              		.syntax unified
+ 785              		.thumb
+ 786              		.thumb_func
+ 788              	ST7789_DrawString:
+ 789              	.LVL93:
+ 790              	.LFB142:
+ 473:DeviceDrivers/LCD/Src/st7789.c **** 
+ 474:DeviceDrivers/LCD/Src/st7789.c **** /**
+ 475:DeviceDrivers/LCD/Src/st7789.c ****  * @brief 在指定坐标绘制一个 ASCII 字符串。
+ 476:DeviceDrivers/LCD/Src/st7789.c ****  * @param x 字符串左上角 X 坐标。
+ 477:DeviceDrivers/LCD/Src/st7789.c ****  * @param y 字符串左上角 Y 坐标。
+ 478:DeviceDrivers/LCD/Src/st7789.c ****  * @param str 指向以 '\0' 结尾的 ASCII 字符串。
+ 479:DeviceDrivers/LCD/Src/st7789.c ****  * @param color 字符前景色。
+ 480:DeviceDrivers/LCD/Src/st7789.c ****  * @param bg_color 字符背景色。
+ 481:DeviceDrivers/LCD/Src/st7789.c ****  * @retval 无
+ 482:DeviceDrivers/LCD/Src/st7789.c ****  */
+ 483:DeviceDrivers/LCD/Src/st7789.c **** void ST7789_DrawString(uint16_t x, uint16_t y, const char *str, uint16_t color, uint16_t bg_color)
+ 484:DeviceDrivers/LCD/Src/st7789.c **** {
+ 791              		.loc 1 484 1 is_stmt 1 view -0
+ 792              		.cfi_startproc
+ 793              		@ args = 4, pretend = 0, frame = 0
+ 794              		@ frame_needed = 0, uses_anonymous_args = 0
+ 795              		.loc 1 484 1 is_stmt 0 view .LVU194
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccJePjwJ.s 			page 24
+
+
+ 796 0000 2DE9F041 		push	{r4, r5, r6, r7, r8, lr}
+ 797              	.LCFI13:
+ 798              		.cfi_def_cfa_offset 24
+ 799              		.cfi_offset 4, -24
+ 800              		.cfi_offset 5, -20
+ 801              		.cfi_offset 6, -16
+ 802              		.cfi_offset 7, -12
+ 803              		.cfi_offset 8, -8
+ 804              		.cfi_offset 14, -4
+ 805 0004 82B0     		sub	sp, sp, #8
+ 806              	.LCFI14:
+ 807              		.cfi_def_cfa_offset 32
+ 808 0006 0446     		mov	r4, r0
+ 809 0008 0F46     		mov	r7, r1
+ 810 000a 1E46     		mov	r6, r3
+ 811 000c BDF82080 		ldrh	r8, [sp, #32]
+ 485:DeviceDrivers/LCD/Src/st7789.c ****   /* 参数指针不能为空。 */
+ 486:DeviceDrivers/LCD/Src/st7789.c ****   if (str == (const char *)0)
+ 812              		.loc 1 486 3 is_stmt 1 view .LVU195
+ 813              		.loc 1 486 6 is_stmt 0 view .LVU196
+ 814 0010 1546     		mov	r5, r2
+ 815 0012 72B1     		cbz	r2, .L57
+ 816              	.LVL94:
+ 817              	.L59:
+ 487:DeviceDrivers/LCD/Src/st7789.c ****   {
+ 488:DeviceDrivers/LCD/Src/st7789.c ****     return;
+ 489:DeviceDrivers/LCD/Src/st7789.c ****   }
+ 490:DeviceDrivers/LCD/Src/st7789.c **** 
+ 491:DeviceDrivers/LCD/Src/st7789.c ****   /* 按 6 像素宽度逐字符绘制。 */
+ 492:DeviceDrivers/LCD/Src/st7789.c ****   while (*str != '\0')
+ 818              		.loc 1 492 15 is_stmt 1 view .LVU197
+ 819              		.loc 1 492 10 is_stmt 0 view .LVU198
+ 820 0014 2A78     		ldrb	r2, [r5]	@ zero_extendqisi2
+ 821              		.loc 1 492 15 view .LVU199
+ 822 0016 62B1     		cbz	r2, .L57
+ 493:DeviceDrivers/LCD/Src/st7789.c ****   {
+ 494:DeviceDrivers/LCD/Src/st7789.c ****     /* 如果下一个字符已经超出屏幕右侧，就停止绘制。 */
+ 495:DeviceDrivers/LCD/Src/st7789.c ****     if (x >= ST7789_WIDTH)
+ 823              		.loc 1 495 5 is_stmt 1 view .LVU200
+ 824              		.loc 1 495 8 is_stmt 0 view .LVU201
+ 825 0018 AB2C     		cmp	r4, #171
+ 826 001a 0AD8     		bhi	.L57
+ 496:DeviceDrivers/LCD/Src/st7789.c ****     {
+ 497:DeviceDrivers/LCD/Src/st7789.c ****       return;
+ 498:DeviceDrivers/LCD/Src/st7789.c ****     }
+ 499:DeviceDrivers/LCD/Src/st7789.c **** 
+ 500:DeviceDrivers/LCD/Src/st7789.c ****     /* 绘制当前字符。 */
+ 501:DeviceDrivers/LCD/Src/st7789.c ****     ST7789_DrawChar(x, y, *str, color, bg_color);
+ 827              		.loc 1 501 5 is_stmt 1 view .LVU202
+ 828 001c CDF80080 		str	r8, [sp]
+ 829 0020 3346     		mov	r3, r6
+ 830 0022 3946     		mov	r1, r7
+ 831 0024 2046     		mov	r0, r4
+ 832 0026 FFF7FEFF 		bl	ST7789_DrawChar
+ 833              	.LVL95:
+ 502:DeviceDrivers/LCD/Src/st7789.c **** 
+ 503:DeviceDrivers/LCD/Src/st7789.c ****     /* X 坐标右移 6 像素，准备绘制下一个字符。 */
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccJePjwJ.s 			page 25
+
+
+ 504:DeviceDrivers/LCD/Src/st7789.c ****     x = (uint16_t)(x + 6U);
+ 834              		.loc 1 504 5 view .LVU203
+ 835              		.loc 1 504 7 is_stmt 0 view .LVU204
+ 836 002a 0634     		adds	r4, r4, #6
+ 837              	.LVL96:
+ 838              		.loc 1 504 7 view .LVU205
+ 839 002c A4B2     		uxth	r4, r4
+ 840              	.LVL97:
+ 505:DeviceDrivers/LCD/Src/st7789.c **** 
+ 506:DeviceDrivers/LCD/Src/st7789.c ****     /* 指向下一个字符。 */
+ 507:DeviceDrivers/LCD/Src/st7789.c ****     str++;
+ 841              		.loc 1 507 5 is_stmt 1 view .LVU206
+ 842              		.loc 1 507 8 is_stmt 0 view .LVU207
+ 843 002e 0135     		adds	r5, r5, #1
+ 844              	.LVL98:
+ 845              		.loc 1 507 8 view .LVU208
+ 846 0030 F0E7     		b	.L59
+ 847              	.LVL99:
+ 848              	.L57:
+ 508:DeviceDrivers/LCD/Src/st7789.c ****   }
+ 509:DeviceDrivers/LCD/Src/st7789.c **** }
+ 849              		.loc 1 509 1 view .LVU209
+ 850 0032 02B0     		add	sp, sp, #8
+ 851              	.LCFI15:
+ 852              		.cfi_def_cfa_offset 24
+ 853              		@ sp needed
+ 854 0034 BDE8F081 		pop	{r4, r5, r6, r7, r8, pc}
+ 855              		.loc 1 509 1 view .LVU210
+ 856              		.cfi_endproc
+ 857              	.LFE142:
+ 859              		.section	.text.ST7789_TestColorCycle,"ax",%progbits
+ 860              		.align	1
+ 861              		.global	ST7789_TestColorCycle
+ 862              		.syntax unified
+ 863              		.thumb
+ 864              		.thumb_func
+ 866              	ST7789_TestColorCycle:
+ 867              	.LFB143:
+ 510:DeviceDrivers/LCD/Src/st7789.c **** 
+ 511:DeviceDrivers/LCD/Src/st7789.c **** /**
+ 512:DeviceDrivers/LCD/Src/st7789.c ****  * @brief 循环显示几种纯色，用于烧录后肉眼验证屏幕。
+ 513:DeviceDrivers/LCD/Src/st7789.c ****  * @retval 无
+ 514:DeviceDrivers/LCD/Src/st7789.c ****  */
+ 515:DeviceDrivers/LCD/Src/st7789.c **** void ST7789_TestColorCycle(void)
+ 516:DeviceDrivers/LCD/Src/st7789.c **** {
+ 868              		.loc 1 516 1 is_stmt 1 view -0
+ 869              		.cfi_startproc
+ 870              		@ args = 0, pretend = 0, frame = 0
+ 871              		@ frame_needed = 0, uses_anonymous_args = 0
+ 872 0000 08B5     		push	{r3, lr}
+ 873              	.LCFI16:
+ 874              		.cfi_def_cfa_offset 8
+ 875              		.cfi_offset 3, -8
+ 876              		.cfi_offset 14, -4
+ 517:DeviceDrivers/LCD/Src/st7789.c ****   /* 全屏显示红色。 */
+ 518:DeviceDrivers/LCD/Src/st7789.c ****   ST7789_FillScreen(ST7789_COLOR_RED);
+ 877              		.loc 1 518 3 view .LVU212
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccJePjwJ.s 			page 26
+
+
+ 878 0002 4FF47840 		mov	r0, #63488
+ 879 0006 FFF7FEFF 		bl	ST7789_FillScreen
+ 880              	.LVL100:
+ 519:DeviceDrivers/LCD/Src/st7789.c **** 
+ 520:DeviceDrivers/LCD/Src/st7789.c ****   /* 红色保持 500 ms。 */
+ 521:DeviceDrivers/LCD/Src/st7789.c ****   HAL_Delay(500U);
+ 881              		.loc 1 521 3 view .LVU213
+ 882 000a 4FF4FA70 		mov	r0, #500
+ 883 000e FFF7FEFF 		bl	HAL_Delay
+ 884              	.LVL101:
+ 522:DeviceDrivers/LCD/Src/st7789.c **** 
+ 523:DeviceDrivers/LCD/Src/st7789.c ****   /* 全屏显示绿色。 */
+ 524:DeviceDrivers/LCD/Src/st7789.c ****   ST7789_FillScreen(ST7789_COLOR_GREEN);
+ 885              		.loc 1 524 3 view .LVU214
+ 886 0012 4FF4FC60 		mov	r0, #2016
+ 887 0016 FFF7FEFF 		bl	ST7789_FillScreen
+ 888              	.LVL102:
+ 525:DeviceDrivers/LCD/Src/st7789.c **** 
+ 526:DeviceDrivers/LCD/Src/st7789.c ****   /* 绿色保持 500 ms。 */
+ 527:DeviceDrivers/LCD/Src/st7789.c ****   HAL_Delay(500U);
+ 889              		.loc 1 527 3 view .LVU215
+ 890 001a 4FF4FA70 		mov	r0, #500
+ 891 001e FFF7FEFF 		bl	HAL_Delay
+ 892              	.LVL103:
+ 528:DeviceDrivers/LCD/Src/st7789.c **** 
+ 529:DeviceDrivers/LCD/Src/st7789.c ****   /* 全屏显示蓝色。 */
+ 530:DeviceDrivers/LCD/Src/st7789.c ****   ST7789_FillScreen(ST7789_COLOR_BLUE);
+ 893              		.loc 1 530 3 view .LVU216
+ 894 0022 1F20     		movs	r0, #31
+ 895 0024 FFF7FEFF 		bl	ST7789_FillScreen
+ 896              	.LVL104:
+ 531:DeviceDrivers/LCD/Src/st7789.c **** 
+ 532:DeviceDrivers/LCD/Src/st7789.c ****   /* 蓝色保持 500 ms。 */
+ 533:DeviceDrivers/LCD/Src/st7789.c ****   HAL_Delay(500U);
+ 897              		.loc 1 533 3 view .LVU217
+ 898 0028 4FF4FA70 		mov	r0, #500
+ 899 002c FFF7FEFF 		bl	HAL_Delay
+ 900              	.LVL105:
+ 534:DeviceDrivers/LCD/Src/st7789.c **** 
+ 535:DeviceDrivers/LCD/Src/st7789.c ****   /* 全屏显示白色。 */
+ 536:DeviceDrivers/LCD/Src/st7789.c ****   ST7789_FillScreen(ST7789_COLOR_WHITE);
+ 901              		.loc 1 536 3 view .LVU218
+ 902 0030 4FF6FF70 		movw	r0, #65535
+ 903 0034 FFF7FEFF 		bl	ST7789_FillScreen
+ 904              	.LVL106:
+ 537:DeviceDrivers/LCD/Src/st7789.c **** 
+ 538:DeviceDrivers/LCD/Src/st7789.c ****   /* 白色保持 500 ms。 */
+ 539:DeviceDrivers/LCD/Src/st7789.c ****   HAL_Delay(500U);
+ 905              		.loc 1 539 3 view .LVU219
+ 906 0038 4FF4FA70 		mov	r0, #500
+ 907 003c FFF7FEFF 		bl	HAL_Delay
+ 908              	.LVL107:
+ 540:DeviceDrivers/LCD/Src/st7789.c **** 
+ 541:DeviceDrivers/LCD/Src/st7789.c ****   /* 全屏显示黑色。 */
+ 542:DeviceDrivers/LCD/Src/st7789.c ****   ST7789_FillScreen(ST7789_COLOR_BLACK);
+ 909              		.loc 1 542 3 view .LVU220
+ 910 0040 0020     		movs	r0, #0
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccJePjwJ.s 			page 27
+
+
+ 911 0042 FFF7FEFF 		bl	ST7789_FillScreen
+ 912              	.LVL108:
+ 543:DeviceDrivers/LCD/Src/st7789.c **** 
+ 544:DeviceDrivers/LCD/Src/st7789.c ****   /* 黑色保持 500 ms。 */
+ 545:DeviceDrivers/LCD/Src/st7789.c ****   HAL_Delay(500U);
+ 913              		.loc 1 545 3 view .LVU221
+ 914 0046 4FF4FA70 		mov	r0, #500
+ 915 004a FFF7FEFF 		bl	HAL_Delay
+ 916              	.LVL109:
+ 546:DeviceDrivers/LCD/Src/st7789.c **** }
+ 917              		.loc 1 546 1 is_stmt 0 view .LVU222
+ 918 004e 08BD     		pop	{r3, pc}
+ 919              		.cfi_endproc
+ 920              	.LFE143:
+ 922              		.section	.rodata.s_font_5x7,"a"
+ 923              		.align	2
+ 926              	s_font_5x7:
+ 927 0000 00000000 		.ascii	"\000\000\000\000\000"
+ 927      00
+ 928 0005 00005F00 		.ascii	"\000\000_\000\000"
+ 928      00
+ 929 000a 00070007 		.ascii	"\000\007\000\007\000"
+ 929      00
+ 930 000f 147F147F 		.ascii	"\024\177\024\177\024"
+ 930      14
+ 931 0014 242A7F2A 		.ascii	"$*\177*\022"
+ 931      12
+ 932 0019 23130864 		.ascii	"#\023\010db"
+ 932      62
+ 933 001e 36495522 		.ascii	"6IU\"P"
+ 933      50
+ 934 0023 00050300 		.ascii	"\000\005\003\000\000"
+ 934      00
+ 935 0028 001C2241 		.ascii	"\000\034\"A\000"
+ 935      00
+ 936 002d 0041221C 		.ascii	"\000A\"\034\000"
+ 936      00
+ 937 0032 14083E08 		.ascii	"\024\010>\010\024"
+ 937      14
+ 938 0037 08083E08 		.ascii	"\010\010>\010\010"
+ 938      08
+ 939 003c 00503000 		.ascii	"\000P0\000\000"
+ 939      00
+ 940 0041 08080808 		.ascii	"\010\010\010\010\010"
+ 940      08
+ 941 0046 00606000 		.ascii	"\000``\000\000"
+ 941      00
+ 942 004b 20100804 		.ascii	" \020\010\004\002"
+ 942      02
+ 943 0050 3E514945 		.ascii	">QIE>"
+ 943      3E
+ 944 0055 00427F40 		.ascii	"\000B\177@\000"
+ 944      00
+ 945 005a 42615149 		.ascii	"BaQIF"
+ 945      46
+ 946 005f 2141454B 		.ascii	"!AEK1"
+ 946      31
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccJePjwJ.s 			page 28
+
+
+ 947 0064 1814127F 		.ascii	"\030\024\022\177\020"
+ 947      10
+ 948 0069 27454545 		.ascii	"'EEE9"
+ 948      39
+ 949 006e 3C4A4949 		.ascii	"<JII0"
+ 949      30
+ 950 0073 01710905 		.ascii	"\001q\011\005\003"
+ 950      03
+ 951 0078 36494949 		.ascii	"6III6"
+ 951      36
+ 952 007d 06494929 		.ascii	"\006II)\036"
+ 952      1E
+ 953 0082 00363600 		.ascii	"\00066\000\000"
+ 953      00
+ 954 0087 00563600 		.ascii	"\000V6\000\000"
+ 954      00
+ 955 008c 08142241 		.ascii	"\010\024\"A\000"
+ 955      00
+ 956 0091 14141414 		.ascii	"\024\024\024\024\024"
+ 956      14
+ 957 0096 00412214 		.ascii	"\000A\"\024\010"
+ 957      08
+ 958 009b 02015109 		.ascii	"\002\001Q\011\006"
+ 958      06
+ 959 00a0 32497941 		.ascii	"2IyA>"
+ 959      3E
+ 960 00a5 7E111111 		.ascii	"~\021\021\021~"
+ 960      7E
+ 961 00aa 7F494949 		.ascii	"\177III6"
+ 961      36
+ 962 00af 3E414141 		.ascii	">AAA\""
+ 962      22
+ 963 00b4 7F414122 		.ascii	"\177AA\"\034"
+ 963      1C
+ 964 00b9 7F494949 		.ascii	"\177IIIA"
+ 964      41
+ 965 00be 7F090909 		.ascii	"\177\011\011\011\001"
+ 965      01
+ 966 00c3 3E414949 		.ascii	">AIIz"
+ 966      7A
+ 967 00c8 7F080808 		.ascii	"\177\010\010\010\177"
+ 967      7F
+ 968 00cd 00417F41 		.ascii	"\000A\177A\000"
+ 968      00
+ 969 00d2 2040413F 		.ascii	" @A?\001"
+ 969      01
+ 970 00d7 7F081422 		.ascii	"\177\010\024\"A"
+ 970      41
+ 971 00dc 7F404040 		.ascii	"\177@@@@"
+ 971      40
+ 972 00e1 7F020C02 		.ascii	"\177\002\014\002\177"
+ 972      7F
+ 973 00e6 7F040810 		.ascii	"\177\004\010\020\177"
+ 973      7F
+ 974 00eb 3E414141 		.ascii	">AAA>"
+ 974      3E
+ 975 00f0 7F090909 		.ascii	"\177\011\011\011\006"
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccJePjwJ.s 			page 29
+
+
+ 975      06
+ 976 00f5 3E415121 		.ascii	">AQ!^"
+ 976      5E
+ 977 00fa 7F091929 		.ascii	"\177\011\031)F"
+ 977      46
+ 978 00ff 46494949 		.ascii	"FIII1"
+ 978      31
+ 979 0104 01017F01 		.ascii	"\001\001\177\001\001"
+ 979      01
+ 980 0109 3F404040 		.ascii	"?@@@?"
+ 980      3F
+ 981 010e 1F204020 		.ascii	"\037 @ \037"
+ 981      1F
+ 982 0113 3F403840 		.ascii	"?@8@?"
+ 982      3F
+ 983 0118 63140814 		.ascii	"c\024\010\024c"
+ 983      63
+ 984 011d 07087008 		.ascii	"\007\010p\010\007"
+ 984      07
+ 985 0122 61514945 		.ascii	"aQIEC"
+ 985      43
+ 986 0127 007F4141 		.ascii	"\000\177AA\000"
+ 986      00
+ 987 012c 02040810 		.ascii	"\002\004\010\020 "
+ 987      20
+ 988 0131 0041417F 		.ascii	"\000AA\177\000"
+ 988      00
+ 989 0136 04020102 		.ascii	"\004\002\001\002\004"
+ 989      04
+ 990 013b 40404040 		.ascii	"@@@@@"
+ 990      40
+ 991 0140 00010204 		.ascii	"\000\001\002\004\000"
+ 991      00
+ 992 0145 20545454 		.ascii	" TTTx"
+ 992      78
+ 993 014a 7F484444 		.ascii	"\177HDD8"
+ 993      38
+ 994 014f 38444444 		.ascii	"8DDD "
+ 994      20
+ 995 0154 38444448 		.ascii	"8DDH\177"
+ 995      7F
+ 996 0159 38545454 		.ascii	"8TTT\030"
+ 996      18
+ 997 015e 087E0901 		.ascii	"\010~\011\001\002"
+ 997      02
+ 998 0163 0C525252 		.ascii	"\014RRR>"
+ 998      3E
+ 999 0168 7F080404 		.ascii	"\177\010\004\004x"
+ 999      78
+ 1000 016d 00447D40 		.ascii	"\000D}@\000"
+ 1000      00
+ 1001 0172 2040443D 		.ascii	" @D=\000"
+ 1001      00
+ 1002 0177 7F102844 		.ascii	"\177\020(D\000"
+ 1002      00
+ 1003 017c 00417F40 		.ascii	"\000A\177@\000"
+ 1003      00
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccJePjwJ.s 			page 30
+
+
+ 1004 0181 7C041804 		.ascii	"|\004\030\004x"
+ 1004      78
+ 1005 0186 7C080404 		.ascii	"|\010\004\004x"
+ 1005      78
+ 1006 018b 38444444 		.ascii	"8DDD8"
+ 1006      38
+ 1007 0190 7C141414 		.ascii	"|\024\024\024\010"
+ 1007      08
+ 1008 0195 08141418 		.ascii	"\010\024\024\030|"
+ 1008      7C
+ 1009 019a 7C080404 		.ascii	"|\010\004\004\010"
+ 1009      08
+ 1010 019f 48545454 		.ascii	"HTTT "
+ 1010      20
+ 1011 01a4 043F4440 		.ascii	"\004?D@ "
+ 1011      20
+ 1012 01a9 3C404020 		.ascii	"<@@ |"
+ 1012      7C
+ 1013 01ae 1C204020 		.ascii	"\034 @ \034"
+ 1013      1C
+ 1014 01b3 3C403040 		.ascii	"<@0@<"
+ 1014      3C
+ 1015 01b8 44281028 		.ascii	"D(\020(D"
+ 1015      44
+ 1016 01bd 0C505050 		.ascii	"\014PPP<"
+ 1016      3C
+ 1017 01c2 4464544C 		.ascii	"DdTLD"
+ 1017      44
+ 1018 01c7 00083641 		.ascii	"\000\0106A\000"
+ 1018      00
+ 1019 01cc 00007F00 		.ascii	"\000\000\177\000\000"
+ 1019      00
+ 1020 01d1 00413608 		.ascii	"\000A6\010\000"
+ 1020      00
+ 1021 01d6 08082A1C 		.ascii	"\010\010*\034\010"
+ 1021      08
+ 1022              		.text
+ 1023              	.Letext0:
+ 1024              		.file 2 "D:\\STM32CubeIDE\\STM32CubeIDE_2.1.1\\STM32CubeIDE\\plugins\\com.st.stm32cube.ide.mcu.ext
+ 1025              		.file 3 "D:\\STM32CubeIDE\\STM32CubeIDE_2.1.1\\STM32CubeIDE\\plugins\\com.st.stm32cube.ide.mcu.ext
+ 1026              		.file 4 "HardwareDrivers/LCD/Inc/lcd_hw.h"
+ 1027              		.file 5 "Drivers/STM32G4xx_HAL_Driver/Inc/stm32g4xx_hal.h"
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccJePjwJ.s 			page 31
 
 
 DEFINED SYMBOLS
                             *ABS*:00000000 st7789.c
-C:\Users\w1785\AppData\Local\Temp\ccZhMi8p.s:21     .text.ST7789_WriteU16:00000000 $t
-C:\Users\w1785\AppData\Local\Temp\ccZhMi8p.s:26     .text.ST7789_WriteU16:00000000 ST7789_WriteU16
-C:\Users\w1785\AppData\Local\Temp\ccZhMi8p.s:57     .text.ST7789_SetAddressWindow:00000000 $t
-C:\Users\w1785\AppData\Local\Temp\ccZhMi8p.s:63     .text.ST7789_SetAddressWindow:00000000 ST7789_SetAddressWindow
-C:\Users\w1785\AppData\Local\Temp\ccZhMi8p.s:187    .text.ST7789_SetWindow:00000000 $t
-C:\Users\w1785\AppData\Local\Temp\ccZhMi8p.s:193    .text.ST7789_SetWindow:00000000 ST7789_SetWindow
-C:\Users\w1785\AppData\Local\Temp\ccZhMi8p.s:215    .text.ST7789_WriteColor:00000000 $t
-C:\Users\w1785\AppData\Local\Temp\ccZhMi8p.s:221    .text.ST7789_WriteColor:00000000 ST7789_WriteColor
-C:\Users\w1785\AppData\Local\Temp\ccZhMi8p.s:252    .text.ST7789_WritePixels:00000000 $t
-C:\Users\w1785\AppData\Local\Temp\ccZhMi8p.s:258    .text.ST7789_WritePixels:00000000 ST7789_WritePixels
-C:\Users\w1785\AppData\Local\Temp\ccZhMi8p.s:304    .text.ST7789_DrawPixel:00000000 $t
-C:\Users\w1785\AppData\Local\Temp\ccZhMi8p.s:310    .text.ST7789_DrawPixel:00000000 ST7789_DrawPixel
-C:\Users\w1785\AppData\Local\Temp\ccZhMi8p.s:362    .text.ST7789_FillRect:00000000 $t
-C:\Users\w1785\AppData\Local\Temp\ccZhMi8p.s:368    .text.ST7789_FillRect:00000000 ST7789_FillRect
-C:\Users\w1785\AppData\Local\Temp\ccZhMi8p.s:484    .text.ST7789_FillScreen:00000000 $t
-C:\Users\w1785\AppData\Local\Temp\ccZhMi8p.s:490    .text.ST7789_FillScreen:00000000 ST7789_FillScreen
-C:\Users\w1785\AppData\Local\Temp\ccZhMi8p.s:525    .text.ST7789_Init:00000000 $t
-C:\Users\w1785\AppData\Local\Temp\ccZhMi8p.s:531    .text.ST7789_Init:00000000 ST7789_Init
-C:\Users\w1785\AppData\Local\Temp\ccZhMi8p.s:598    .text.ST7789_TestColorCycle:00000000 $t
-C:\Users\w1785\AppData\Local\Temp\ccZhMi8p.s:604    .text.ST7789_TestColorCycle:00000000 ST7789_TestColorCycle
+C:\Users\w1785\AppData\Local\Temp\ccJePjwJ.s:21     .text.ST7789_WriteU16:00000000 $t
+C:\Users\w1785\AppData\Local\Temp\ccJePjwJ.s:26     .text.ST7789_WriteU16:00000000 ST7789_WriteU16
+C:\Users\w1785\AppData\Local\Temp\ccJePjwJ.s:57     .text.ST7789_SetAddressWindow:00000000 $t
+C:\Users\w1785\AppData\Local\Temp\ccJePjwJ.s:63     .text.ST7789_SetAddressWindow:00000000 ST7789_SetAddressWindow
+C:\Users\w1785\AppData\Local\Temp\ccJePjwJ.s:187    .text.ST7789_SetWindow:00000000 $t
+C:\Users\w1785\AppData\Local\Temp\ccJePjwJ.s:193    .text.ST7789_SetWindow:00000000 ST7789_SetWindow
+C:\Users\w1785\AppData\Local\Temp\ccJePjwJ.s:215    .text.ST7789_WriteColor:00000000 $t
+C:\Users\w1785\AppData\Local\Temp\ccJePjwJ.s:221    .text.ST7789_WriteColor:00000000 ST7789_WriteColor
+C:\Users\w1785\AppData\Local\Temp\ccJePjwJ.s:252    .text.ST7789_WritePixels:00000000 $t
+C:\Users\w1785\AppData\Local\Temp\ccJePjwJ.s:258    .text.ST7789_WritePixels:00000000 ST7789_WritePixels
+C:\Users\w1785\AppData\Local\Temp\ccJePjwJ.s:304    .text.ST7789_DrawPixel:00000000 $t
+C:\Users\w1785\AppData\Local\Temp\ccJePjwJ.s:310    .text.ST7789_DrawPixel:00000000 ST7789_DrawPixel
+C:\Users\w1785\AppData\Local\Temp\ccJePjwJ.s:362    .text.ST7789_FillRect:00000000 $t
+C:\Users\w1785\AppData\Local\Temp\ccJePjwJ.s:368    .text.ST7789_FillRect:00000000 ST7789_FillRect
+C:\Users\w1785\AppData\Local\Temp\ccJePjwJ.s:484    .text.ST7789_FillScreen:00000000 $t
+C:\Users\w1785\AppData\Local\Temp\ccJePjwJ.s:490    .text.ST7789_FillScreen:00000000 ST7789_FillScreen
+C:\Users\w1785\AppData\Local\Temp\ccJePjwJ.s:525    .text.ST7789_Init:00000000 $t
+C:\Users\w1785\AppData\Local\Temp\ccJePjwJ.s:531    .text.ST7789_Init:00000000 ST7789_Init
+C:\Users\w1785\AppData\Local\Temp\ccJePjwJ.s:598    .text.ST7789_DrawChar:00000000 $t
+C:\Users\w1785\AppData\Local\Temp\ccJePjwJ.s:604    .text.ST7789_DrawChar:00000000 ST7789_DrawChar
+C:\Users\w1785\AppData\Local\Temp\ccJePjwJ.s:777    .text.ST7789_DrawChar:00000088 $d
+C:\Users\w1785\AppData\Local\Temp\ccJePjwJ.s:926    .rodata.s_font_5x7:00000000 s_font_5x7
+C:\Users\w1785\AppData\Local\Temp\ccJePjwJ.s:782    .text.ST7789_DrawString:00000000 $t
+C:\Users\w1785\AppData\Local\Temp\ccJePjwJ.s:788    .text.ST7789_DrawString:00000000 ST7789_DrawString
+C:\Users\w1785\AppData\Local\Temp\ccJePjwJ.s:860    .text.ST7789_TestColorCycle:00000000 $t
+C:\Users\w1785\AppData\Local\Temp\ccJePjwJ.s:866    .text.ST7789_TestColorCycle:00000000 ST7789_TestColorCycle
+C:\Users\w1785\AppData\Local\Temp\ccJePjwJ.s:923    .rodata.s_font_5x7:00000000 $d
 
 UNDEFINED SYMBOLS
 LCD_WriteData

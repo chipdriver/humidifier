@@ -1,4 +1,4 @@
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccohcVts.s 			page 1
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccaBXXR2.s 			page 1
 
 
    1              		.cpu cortex-m4
@@ -58,7 +58,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccohcVts.s 			page 1
   28:Middlewares/LVGL/lvgl/src/widgets/chart/lv_chart.c **** #define LV_CHART_LABEL_MAX_TEXT_LENGTH 16
   29:Middlewares/LVGL/lvgl/src/widgets/chart/lv_chart.c **** 
   30:Middlewares/LVGL/lvgl/src/widgets/chart/lv_chart.c **** /**********************
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccohcVts.s 			page 2
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccaBXXR2.s 			page 2
 
 
   31:Middlewares/LVGL/lvgl/src/widgets/chart/lv_chart.c ****  *      TYPEDEFS
@@ -118,7 +118,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccohcVts.s 			page 1
   85:Middlewares/LVGL/lvgl/src/widgets/chart/lv_chart.c **** #endif
   86:Middlewares/LVGL/lvgl/src/widgets/chart/lv_chart.c **** 
   87:Middlewares/LVGL/lvgl/src/widgets/chart/lv_chart.c **** const lv_obj_class_t lv_chart_class = {
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccohcVts.s 			page 3
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccaBXXR2.s 			page 3
 
 
   88:Middlewares/LVGL/lvgl/src/widgets/chart/lv_chart.c ****     .constructor_cb = lv_chart_constructor,
@@ -178,7 +178,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccohcVts.s 			page 1
  142:Middlewares/LVGL/lvgl/src/widgets/chart/lv_chart.c **** }
  143:Middlewares/LVGL/lvgl/src/widgets/chart/lv_chart.c **** 
  144:Middlewares/LVGL/lvgl/src/widgets/chart/lv_chart.c **** void lv_chart_set_point_count(lv_obj_t * obj, uint32_t cnt)
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccohcVts.s 			page 4
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccaBXXR2.s 			page 4
 
 
  145:Middlewares/LVGL/lvgl/src/widgets/chart/lv_chart.c **** {
@@ -238,7 +238,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccohcVts.s 			page 1
  199:Middlewares/LVGL/lvgl/src/widgets/chart/lv_chart.c **** void lv_chart_set_axis_max_value(lv_obj_t * obj, lv_chart_axis_t axis, int32_t max)
  200:Middlewares/LVGL/lvgl/src/widgets/chart/lv_chart.c **** {
  201:Middlewares/LVGL/lvgl/src/widgets/chart/lv_chart.c ****     LV_ASSERT_OBJ(obj, MY_CLASS);
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccohcVts.s 			page 5
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccaBXXR2.s 			page 5
 
 
  202:Middlewares/LVGL/lvgl/src/widgets/chart/lv_chart.c **** 
@@ -298,7 +298,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccohcVts.s 			page 1
  256:Middlewares/LVGL/lvgl/src/widgets/chart/lv_chart.c ****     chart->vdiv_cnt = vdiv;
  257:Middlewares/LVGL/lvgl/src/widgets/chart/lv_chart.c **** 
  258:Middlewares/LVGL/lvgl/src/widgets/chart/lv_chart.c ****     lv_obj_invalidate(obj);
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccohcVts.s 			page 6
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccaBXXR2.s 			page 6
 
 
  259:Middlewares/LVGL/lvgl/src/widgets/chart/lv_chart.c **** }
@@ -358,7 +358,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccohcVts.s 			page 1
  313:Middlewares/LVGL/lvgl/src/widgets/chart/lv_chart.c **** uint32_t lv_chart_get_ver_div_line_count(const lv_obj_t * obj)
  314:Middlewares/LVGL/lvgl/src/widgets/chart/lv_chart.c **** {
  315:Middlewares/LVGL/lvgl/src/widgets/chart/lv_chart.c ****     LV_ASSERT_OBJ(obj, MY_CLASS);
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccohcVts.s 			page 7
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccaBXXR2.s 			page 7
 
 
  316:Middlewares/LVGL/lvgl/src/widgets/chart/lv_chart.c **** 
@@ -418,7 +418,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccohcVts.s 			page 1
  370:Middlewares/LVGL/lvgl/src/widgets/chart/lv_chart.c ****         if(chart->point_cnt > 1) {
  371:Middlewares/LVGL/lvgl/src/widgets/chart/lv_chart.c ****             p_out->x = (int32_t)((int32_t)(w - block_w) * id) / (chart->point_cnt - 1);
  372:Middlewares/LVGL/lvgl/src/widgets/chart/lv_chart.c ****         }
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccohcVts.s 			page 8
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccaBXXR2.s 			page 8
 
 
  373:Middlewares/LVGL/lvgl/src/widgets/chart/lv_chart.c ****         else {
@@ -478,7 +478,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccohcVts.s 			page 1
  427:Middlewares/LVGL/lvgl/src/widgets/chart/lv_chart.c ****             }
  428:Middlewares/LVGL/lvgl/src/widgets/chart/lv_chart.c ****             v_sum += v_act;
  429:Middlewares/LVGL/lvgl/src/widgets/chart/lv_chart.c ****             if(s == ser) break;
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccohcVts.s 			page 9
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccaBXXR2.s 			page 9
 
 
  430:Middlewares/LVGL/lvgl/src/widgets/chart/lv_chart.c ****         }
@@ -538,7 +538,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccohcVts.s 			page 1
  484:Middlewares/LVGL/lvgl/src/widgets/chart/lv_chart.c ****         if(NULL == ser->x_points) {
  485:Middlewares/LVGL/lvgl/src/widgets/chart/lv_chart.c ****             lv_free(ser->y_points);
  486:Middlewares/LVGL/lvgl/src/widgets/chart/lv_chart.c ****             lv_ll_remove(&chart->series_ll, ser);
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccohcVts.s 			page 10
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccaBXXR2.s 			page 10
 
 
  487:Middlewares/LVGL/lvgl/src/widgets/chart/lv_chart.c ****             lv_free(ser);
@@ -598,7 +598,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccohcVts.s 			page 1
  541:Middlewares/LVGL/lvgl/src/widgets/chart/lv_chart.c **** {
  542:Middlewares/LVGL/lvgl/src/widgets/chart/lv_chart.c ****     LV_ASSERT_OBJ(chart, MY_CLASS);
  543:Middlewares/LVGL/lvgl/src/widgets/chart/lv_chart.c ****     LV_ASSERT_NULL(series);
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccohcVts.s 			page 11
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccaBXXR2.s 			page 11
 
 
  544:Middlewares/LVGL/lvgl/src/widgets/chart/lv_chart.c **** 
@@ -658,7 +658,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccohcVts.s 			page 1
  598:Middlewares/LVGL/lvgl/src/widgets/chart/lv_chart.c **** 
  599:Middlewares/LVGL/lvgl/src/widgets/chart/lv_chart.c ****     lv_point_set(&cursor->pos, LV_CHART_POINT_NONE, LV_CHART_POINT_NONE);
  600:Middlewares/LVGL/lvgl/src/widgets/chart/lv_chart.c ****     cursor->point_id = LV_CHART_POINT_NONE;
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccohcVts.s 			page 12
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccaBXXR2.s 			page 12
 
 
  601:Middlewares/LVGL/lvgl/src/widgets/chart/lv_chart.c ****     cursor->pos_set = 0;
@@ -718,7 +718,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccohcVts.s 			page 1
  655:Middlewares/LVGL/lvgl/src/widgets/chart/lv_chart.c ****     if(ser == NULL) ser = lv_chart_get_series_next(chart, NULL);
  656:Middlewares/LVGL/lvgl/src/widgets/chart/lv_chart.c ****     cursor->ser = ser;
  657:Middlewares/LVGL/lvgl/src/widgets/chart/lv_chart.c ****     lv_chart_refresh(chart);
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccohcVts.s 			page 13
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccaBXXR2.s 			page 13
 
 
  658:Middlewares/LVGL/lvgl/src/widgets/chart/lv_chart.c **** }
@@ -778,7 +778,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccohcVts.s 			page 1
  712:Middlewares/LVGL/lvgl/src/widgets/chart/lv_chart.c ****     ser->y_points[ser->start_point] = y_value;
  713:Middlewares/LVGL/lvgl/src/widgets/chart/lv_chart.c ****     ser->start_point = (ser->start_point + 1) % chart->point_cnt;
  714:Middlewares/LVGL/lvgl/src/widgets/chart/lv_chart.c ****     invalidate_point(obj, ser->start_point);
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccohcVts.s 			page 14
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccaBXXR2.s 			page 14
 
 
  715:Middlewares/LVGL/lvgl/src/widgets/chart/lv_chart.c **** }
@@ -838,7 +838,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccohcVts.s 			page 1
  769:Middlewares/LVGL/lvgl/src/widgets/chart/lv_chart.c ****     if(!ser->y_ext_buf_assigned && ser->y_points) lv_free(ser->y_points);
  770:Middlewares/LVGL/lvgl/src/widgets/chart/lv_chart.c ****     ser->y_ext_buf_assigned = true;
  771:Middlewares/LVGL/lvgl/src/widgets/chart/lv_chart.c ****     ser->y_points = array;
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccohcVts.s 			page 15
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccaBXXR2.s 			page 15
 
 
  772:Middlewares/LVGL/lvgl/src/widgets/chart/lv_chart.c ****     lv_obj_invalidate(obj);
@@ -898,7 +898,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccohcVts.s 			page 1
  826:Middlewares/LVGL/lvgl/src/widgets/chart/lv_chart.c **** /**********************
  827:Middlewares/LVGL/lvgl/src/widgets/chart/lv_chart.c ****  *   STATIC FUNCTIONS
  828:Middlewares/LVGL/lvgl/src/widgets/chart/lv_chart.c ****  **********************/
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccohcVts.s 			page 16
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccaBXXR2.s 			page 16
 
 
  829:Middlewares/LVGL/lvgl/src/widgets/chart/lv_chart.c **** 
@@ -958,7 +958,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccohcVts.s 			page 1
  883:Middlewares/LVGL/lvgl/src/widgets/chart/lv_chart.c ****     }
  884:Middlewares/LVGL/lvgl/src/widgets/chart/lv_chart.c ****     lv_ll_clear(&chart->cursor_ll);
  885:Middlewares/LVGL/lvgl/src/widgets/chart/lv_chart.c **** 
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccohcVts.s 			page 17
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccaBXXR2.s 			page 17
 
 
  886:Middlewares/LVGL/lvgl/src/widgets/chart/lv_chart.c ****     LV_TRACE_OBJ_CREATE("finished");
@@ -1018,7 +1018,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccohcVts.s 			page 1
  940:Middlewares/LVGL/lvgl/src/widgets/chart/lv_chart.c ****                 else if(chart->type == LV_CHART_TYPE_STACKED) draw_series_stacked(obj, layer);
  941:Middlewares/LVGL/lvgl/src/widgets/chart/lv_chart.c ****                 else if(chart->type == LV_CHART_TYPE_SCATTER) draw_series_scatter(obj, layer);
  942:Middlewares/LVGL/lvgl/src/widgets/chart/lv_chart.c ****             }
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccohcVts.s 			page 18
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccaBXXR2.s 			page 18
 
 
  943:Middlewares/LVGL/lvgl/src/widgets/chart/lv_chart.c **** 
@@ -1078,7 +1078,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccohcVts.s 			page 1
  997:Middlewares/LVGL/lvgl/src/widgets/chart/lv_chart.c ****     if(chart->vdiv_cnt > 1) {
  998:Middlewares/LVGL/lvgl/src/widgets/chart/lv_chart.c ****         int32_t x_ofs = obj->coords.x1 + pad_left - scroll_left;
  999:Middlewares/LVGL/lvgl/src/widgets/chart/lv_chart.c ****         line_dsc.p1.y = obj->coords.y1;
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccohcVts.s 			page 19
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccaBXXR2.s 			page 19
 
 
 1000:Middlewares/LVGL/lvgl/src/widgets/chart/lv_chart.c ****         line_dsc.p2.y = obj->coords.y2;
@@ -1138,7 +1138,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccohcVts.s 			page 1
 1054:Middlewares/LVGL/lvgl/src/widgets/chart/lv_chart.c ****         lv_obj_init_draw_rect_dsc(obj, LV_PART_INDICATOR, &point_draw_dsc);
 1055:Middlewares/LVGL/lvgl/src/widgets/chart/lv_chart.c ****         point_draw_dsc.base.id1 = line_dsc.base.id1;
 1056:Middlewares/LVGL/lvgl/src/widgets/chart/lv_chart.c ****     }
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccohcVts.s 			page 20
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccaBXXR2.s 			page 20
 
 
 1057:Middlewares/LVGL/lvgl/src/widgets/chart/lv_chart.c **** 
@@ -1198,7 +1198,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccohcVts.s 			page 1
 1111:Middlewares/LVGL/lvgl/src/widgets/chart/lv_chart.c ****                 int32_t min_v = chart->ymin[ser->y_axis_sec];
 1112:Middlewares/LVGL/lvgl/src/widgets/chart/lv_chart.c ****                 int32_t max_v = chart->ymax[ser->y_axis_sec];
 1113:Middlewares/LVGL/lvgl/src/widgets/chart/lv_chart.c ****                 p_y = (int32_t)lv_map(v, min_v, max_v, y_ofs + h, y_ofs);
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccohcVts.s 			page 21
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccaBXXR2.s 			page 21
 
 
 1114:Middlewares/LVGL/lvgl/src/widgets/chart/lv_chart.c ****             }
@@ -1258,7 +1258,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccohcVts.s 			page 1
 1168:Middlewares/LVGL/lvgl/src/widgets/chart/lv_chart.c **** 
 1169:Middlewares/LVGL/lvgl/src/widgets/chart/lv_chart.c ****                     lv_draw_rect(layer, &point_draw_dsc, &point_area);
 1170:Middlewares/LVGL/lvgl/src/widgets/chart/lv_chart.c ****                     point_draw_dsc.base.id2--;
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccohcVts.s 			page 22
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccaBXXR2.s 			page 22
 
 
 1171:Middlewares/LVGL/lvgl/src/widgets/chart/lv_chart.c ****                 }
@@ -1318,7 +1318,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccohcVts.s 			page 1
 1225:Middlewares/LVGL/lvgl/src/widgets/chart/lv_chart.c ****                 point_dsc_default.base.id1--;
 1226:Middlewares/LVGL/lvgl/src/widgets/chart/lv_chart.c ****             }
 1227:Middlewares/LVGL/lvgl/src/widgets/chart/lv_chart.c ****             continue;
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccohcVts.s 			page 23
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccaBXXR2.s 			page 23
 
 
 1228:Middlewares/LVGL/lvgl/src/widgets/chart/lv_chart.c ****         }
@@ -1378,7 +1378,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccohcVts.s 			page 1
 1282:Middlewares/LVGL/lvgl/src/widgets/chart/lv_chart.c ****                 else {
 1283:Middlewares/LVGL/lvgl/src/widgets/chart/lv_chart.c ****                     scaled_points[2].x = p_x;
 1284:Middlewares/LVGL/lvgl/src/widgets/chart/lv_chart.c ****                     scaled_points[2].y = (int32_t)lv_map(ser->y_points[p_next], min_v, max_v, y_ofs
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccohcVts.s 			page 24
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccaBXXR2.s 			page 24
 
 
 1285:Middlewares/LVGL/lvgl/src/widgets/chart/lv_chart.c ****                     if(i == 0) {
@@ -1438,7 +1438,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccohcVts.s 			page 1
 1339:Middlewares/LVGL/lvgl/src/widgets/chart/lv_chart.c ****     lv_vector_path_delete(path);
 1340:Middlewares/LVGL/lvgl/src/widgets/chart/lv_chart.c ****     lv_draw_vector_dsc_delete(dsc);
 1341:Middlewares/LVGL/lvgl/src/widgets/chart/lv_chart.c **** #else
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccohcVts.s 			page 25
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccaBXXR2.s 			page 25
 
 
 1342:Middlewares/LVGL/lvgl/src/widgets/chart/lv_chart.c ****     LV_LOG_WARN("LV_USE_VECTOR_GRAPHIC is not enabled for LV_CHART_TYPE_CURVE. Falling back to LV_C
@@ -1498,7 +1498,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccohcVts.s 			page 1
 1396:Middlewares/LVGL/lvgl/src/widgets/chart/lv_chart.c **** 
 1397:Middlewares/LVGL/lvgl/src/widgets/chart/lv_chart.c ****             line_dsc.p2.y = lv_map(ser->y_points[p_act], chart->ymin[ser->y_axis_sec], chart->ymax[
 1398:Middlewares/LVGL/lvgl/src/widgets/chart/lv_chart.c ****             line_dsc.p2.y = h - line_dsc.p2.y;
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccohcVts.s 			page 26
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccaBXXR2.s 			page 26
 
 
 1399:Middlewares/LVGL/lvgl/src/widgets/chart/lv_chart.c ****             line_dsc.p2.y += y_ofs;
@@ -1558,7 +1558,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccohcVts.s 			page 1
 1453:Middlewares/LVGL/lvgl/src/widgets/chart/lv_chart.c ****                     point_dsc_default.base.id2 = i;
 1454:Middlewares/LVGL/lvgl/src/widgets/chart/lv_chart.c ****                     lv_draw_rect(layer, &point_dsc_default, &point_area);
 1455:Middlewares/LVGL/lvgl/src/widgets/chart/lv_chart.c ****                 }
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccohcVts.s 			page 27
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccaBXXR2.s 			page 27
 
 
 1456:Middlewares/LVGL/lvgl/src/widgets/chart/lv_chart.c ****             }
@@ -1618,7 +1618,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccohcVts.s 			page 1
 1510:Middlewares/LVGL/lvgl/src/widgets/chart/lv_chart.c ****         col_dsc.base.id1 = 0;
 1511:Middlewares/LVGL/lvgl/src/widgets/chart/lv_chart.c **** 
 1512:Middlewares/LVGL/lvgl/src/widgets/chart/lv_chart.c ****         /*Draw the current point of all data line*/
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccohcVts.s 			page 28
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccaBXXR2.s 			page 28
 
 
 1513:Middlewares/LVGL/lvgl/src/widgets/chart/lv_chart.c ****         LV_LL_READ(&chart->series_ll, ser) {
@@ -1678,7 +1678,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccohcVts.s 			page 1
 1567:Middlewares/LVGL/lvgl/src/widgets/chart/lv_chart.c ****     col_dsc.base.layer = layer;
 1568:Middlewares/LVGL/lvgl/src/widgets/chart/lv_chart.c ****     lv_obj_init_draw_rect_dsc(obj, LV_PART_ITEMS, &col_dsc);
 1569:Middlewares/LVGL/lvgl/src/widgets/chart/lv_chart.c ****     col_dsc.bg_grad.dir = LV_GRAD_DIR_NONE;
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccohcVts.s 			page 29
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccaBXXR2.s 			page 29
 
 
 1570:Middlewares/LVGL/lvgl/src/widgets/chart/lv_chart.c ****     col_dsc.bg_opa = LV_OPA_COVER;
@@ -1738,7 +1738,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccohcVts.s 			page 1
 1624:Middlewares/LVGL/lvgl/src/widgets/chart/lv_chart.c ****         LV_LL_READ(&chart->series_ll, ser) {
 1625:Middlewares/LVGL/lvgl/src/widgets/chart/lv_chart.c ****             int32_t start_point = chart->update_mode == LV_CHART_UPDATE_MODE_SHIFT ? ser->start_poi
 1626:Middlewares/LVGL/lvgl/src/widgets/chart/lv_chart.c **** 
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccohcVts.s 			page 30
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccaBXXR2.s 			page 30
 
 
 1627:Middlewares/LVGL/lvgl/src/widgets/chart/lv_chart.c ****             col_dsc.bg_color = ser->color;
@@ -1798,7 +1798,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccohcVts.s 			page 1
 1681:Middlewares/LVGL/lvgl/src/widgets/chart/lv_chart.c ****     LV_LL_READ_BACK(&chart->cursor_ll, cursor) {
 1682:Middlewares/LVGL/lvgl/src/widgets/chart/lv_chart.c ****         lv_memcpy(&line_dsc, &line_dsc_ori, sizeof(lv_draw_line_dsc_t));
 1683:Middlewares/LVGL/lvgl/src/widgets/chart/lv_chart.c ****         lv_memcpy(&point_dsc_tmp, &point_dsc_ori, sizeof(lv_draw_rect_dsc_t));
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccohcVts.s 			page 31
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccaBXXR2.s 			page 31
 
 
 1684:Middlewares/LVGL/lvgl/src/widgets/chart/lv_chart.c ****         line_dsc.color = cursor->color;
@@ -1858,7 +1858,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccohcVts.s 			page 1
 1738:Middlewares/LVGL/lvgl/src/widgets/chart/lv_chart.c ****             if(draw_point) {
 1739:Middlewares/LVGL/lvgl/src/widgets/chart/lv_chart.c ****                 lv_draw_rect(layer, &point_dsc_tmp, &point_area);
 1740:Middlewares/LVGL/lvgl/src/widgets/chart/lv_chart.c ****             }
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccohcVts.s 			page 32
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccaBXXR2.s 			page 32
 
 
 1741:Middlewares/LVGL/lvgl/src/widgets/chart/lv_chart.c ****         }
@@ -1918,7 +1918,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccohcVts.s 			page 1
 1795:Middlewares/LVGL/lvgl/src/widgets/chart/lv_chart.c ****     }
 1796:Middlewares/LVGL/lvgl/src/widgets/chart/lv_chart.c ****     int32_t w  = lv_obj_get_content_width(obj);
 1797:Middlewares/LVGL/lvgl/src/widgets/chart/lv_chart.c ****     int32_t scroll_left = lv_obj_get_scroll_left(obj);
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccohcVts.s 			page 33
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccaBXXR2.s 			page 33
 
 
 1798:Middlewares/LVGL/lvgl/src/widgets/chart/lv_chart.c ****     int32_t bwidth = lv_obj_get_style_border_width(obj, LV_PART_MAIN);
@@ -1978,7 +1978,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccohcVts.s 			page 1
 1852:Middlewares/LVGL/lvgl/src/widgets/chart/lv_chart.c ****     if((*a) == NULL) return;
 1853:Middlewares/LVGL/lvgl/src/widgets/chart/lv_chart.c **** 
 1854:Middlewares/LVGL/lvgl/src/widgets/chart/lv_chart.c ****     lv_chart_t * chart = (lv_chart_t *) obj;
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccohcVts.s 			page 34
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccaBXXR2.s 			page 34
 
 
 1855:Middlewares/LVGL/lvgl/src/widgets/chart/lv_chart.c ****     uint32_t point_cnt_old = chart->point_cnt;
@@ -2038,7 +2038,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccohcVts.s 			page 1
   32              		@ frame_needed = 0, uses_anonymous_args = 0
   33              		.loc 1 1905 1 is_stmt 0 view .LVU1
   34 0000 00B5     		push	{lr}
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccohcVts.s 			page 35
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccaBXXR2.s 			page 35
 
 
   35              	.LCFI0:
@@ -2098,7 +2098,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccohcVts.s 			page 1
 1787:Middlewares/LVGL/lvgl/src/widgets/chart/lv_chart.c ****     if(i >= chart->point_cnt) return;
   86              		.loc 1 1787 5 view .LVU11
 1788:Middlewares/LVGL/lvgl/src/widgets/chart/lv_chart.c **** 
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccohcVts.s 			page 36
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccaBXXR2.s 			page 36
 
 
   87              		.loc 1 1788 5 view .LVU12
@@ -2158,7 +2158,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccohcVts.s 			page 1
  129 0028 8046     		mov	r8, r0
  130              	.LVL11:
 1798:Middlewares/LVGL/lvgl/src/widgets/chart/lv_chart.c ****     int32_t pleft = lv_obj_get_style_pad_left(obj, LV_PART_MAIN);
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccohcVts.s 			page 37
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccaBXXR2.s 			page 37
 
 
  131              		.loc 1 1798 5 is_stmt 1 view .LVU25
@@ -2218,7 +2218,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccohcVts.s 			page 1
   51:Middlewares/LVGL/lvgl/src/widgets/chart/../../core/lv_obj_style_gen.h ****  * are relative to the width of the parent's content area.
   52:Middlewares/LVGL/lvgl/src/widgets/chart/../../core/lv_obj_style_gen.h ****  * Default: LV_COORD_MAX, inherited: No, layout: Yes, ext. draw: No.
   53:Middlewares/LVGL/lvgl/src/widgets/chart/../../core/lv_obj_style_gen.h ****  * @param  obj    Pointer to Widget
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccohcVts.s 			page 38
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccaBXXR2.s 			page 38
 
 
   54:Middlewares/LVGL/lvgl/src/widgets/chart/../../core/lv_obj_style_gen.h ****  * @param  part   One of the `LV_PART_...` enum values
@@ -2278,7 +2278,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccohcVts.s 			page 1
  108:Middlewares/LVGL/lvgl/src/widgets/chart/../../core/lv_obj_style_gen.h **** static inline int32_t lv_obj_get_style_length(const lv_obj_t * obj, lv_part_t part)
  109:Middlewares/LVGL/lvgl/src/widgets/chart/../../core/lv_obj_style_gen.h **** {
  110:Middlewares/LVGL/lvgl/src/widgets/chart/../../core/lv_obj_style_gen.h ****     lv_style_value_t v = lv_obj_get_style_prop(obj, part, LV_STYLE_LENGTH);
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccohcVts.s 			page 39
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccaBXXR2.s 			page 39
 
 
  111:Middlewares/LVGL/lvgl/src/widgets/chart/../../core/lv_obj_style_gen.h ****     return (int32_t)v.num;
@@ -2338,7 +2338,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccohcVts.s 			page 1
  165:Middlewares/LVGL/lvgl/src/widgets/chart/../../core/lv_obj_style_gen.h ****  */
  166:Middlewares/LVGL/lvgl/src/widgets/chart/../../core/lv_obj_style_gen.h **** static inline int32_t lv_obj_get_style_transform_width(const lv_obj_t * obj, lv_part_t part)
  167:Middlewares/LVGL/lvgl/src/widgets/chart/../../core/lv_obj_style_gen.h **** {
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccohcVts.s 			page 40
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccaBXXR2.s 			page 40
 
 
  168:Middlewares/LVGL/lvgl/src/widgets/chart/../../core/lv_obj_style_gen.h ****     lv_style_value_t v = lv_obj_get_style_prop(obj, part, LV_STYLE_TRANSFORM_WIDTH);
@@ -2398,7 +2398,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccohcVts.s 			page 1
  222:Middlewares/LVGL/lvgl/src/widgets/chart/../../core/lv_obj_style_gen.h ****     lv_style_value_t v = lv_obj_get_style_prop(obj, part, LV_STYLE_TRANSLATE_RADIAL);
  223:Middlewares/LVGL/lvgl/src/widgets/chart/../../core/lv_obj_style_gen.h ****     return (int32_t)v.num;
  224:Middlewares/LVGL/lvgl/src/widgets/chart/../../core/lv_obj_style_gen.h **** }
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccohcVts.s 			page 41
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccaBXXR2.s 			page 41
 
 
  225:Middlewares/LVGL/lvgl/src/widgets/chart/../../core/lv_obj_style_gen.h **** 
@@ -2458,7 +2458,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccohcVts.s 			page 1
  279:Middlewares/LVGL/lvgl/src/widgets/chart/../../core/lv_obj_style_gen.h ****  * @param  obj    Pointer to Widget
  280:Middlewares/LVGL/lvgl/src/widgets/chart/../../core/lv_obj_style_gen.h ****  * @param  part   One of the `LV_PART_...` enum values
  281:Middlewares/LVGL/lvgl/src/widgets/chart/../../core/lv_obj_style_gen.h ****  */
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccohcVts.s 			page 42
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccaBXXR2.s 			page 42
 
 
  282:Middlewares/LVGL/lvgl/src/widgets/chart/../../core/lv_obj_style_gen.h **** static inline int32_t lv_obj_get_style_transform_pivot_y(const lv_obj_t * obj, lv_part_t part)
@@ -2518,7 +2518,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccohcVts.s 			page 1
  336:Middlewares/LVGL/lvgl/src/widgets/chart/../../core/lv_obj_style_gen.h **** }
  337:Middlewares/LVGL/lvgl/src/widgets/chart/../../core/lv_obj_style_gen.h **** 
  338:Middlewares/LVGL/lvgl/src/widgets/chart/../../core/lv_obj_style_gen.h **** /**
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccohcVts.s 			page 43
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccaBXXR2.s 			page 43
 
 
  339:Middlewares/LVGL/lvgl/src/widgets/chart/../../core/lv_obj_style_gen.h ****  * Gets the padding on the left. It makes the content area smaller in this direction.
@@ -2578,7 +2578,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccohcVts.s 			page 1
  393:Middlewares/LVGL/lvgl/src/widgets/chart/../../core/lv_obj_style_gen.h **** {
  394:Middlewares/LVGL/lvgl/src/widgets/chart/../../core/lv_obj_style_gen.h ****     lv_style_value_t v = lv_obj_get_style_prop(obj, part, LV_STYLE_PAD_RADIAL);
  395:Middlewares/LVGL/lvgl/src/widgets/chart/../../core/lv_obj_style_gen.h ****     return (int32_t)v.num;
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccohcVts.s 			page 44
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccaBXXR2.s 			page 44
 
 
  396:Middlewares/LVGL/lvgl/src/widgets/chart/../../core/lv_obj_style_gen.h **** }
@@ -2638,7 +2638,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccohcVts.s 			page 1
  450:Middlewares/LVGL/lvgl/src/widgets/chart/../../core/lv_obj_style_gen.h ****  * @param  part   One of the `LV_PART_...` enum values
  451:Middlewares/LVGL/lvgl/src/widgets/chart/../../core/lv_obj_style_gen.h ****  */
  452:Middlewares/LVGL/lvgl/src/widgets/chart/../../core/lv_obj_style_gen.h **** static inline lv_color_t lv_obj_get_style_bg_color(const lv_obj_t * obj, lv_part_t part)
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccohcVts.s 			page 45
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccaBXXR2.s 			page 45
 
 
  453:Middlewares/LVGL/lvgl/src/widgets/chart/../../core/lv_obj_style_gen.h **** {
@@ -2698,7 +2698,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccohcVts.s 			page 1
  507:Middlewares/LVGL/lvgl/src/widgets/chart/../../core/lv_obj_style_gen.h **** 
  508:Middlewares/LVGL/lvgl/src/widgets/chart/../../core/lv_obj_style_gen.h **** /**
  509:Middlewares/LVGL/lvgl/src/widgets/chart/../../core/lv_obj_style_gen.h ****  * Get direction of the gradient of the background. Possible values are
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccohcVts.s 			page 46
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccaBXXR2.s 			page 46
 
 
  510:Middlewares/LVGL/lvgl/src/widgets/chart/../../core/lv_obj_style_gen.h ****  * `LV_GRAD_DIR_NONE/HOR/VER`.
@@ -2758,7 +2758,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccohcVts.s 			page 1
  564:Middlewares/LVGL/lvgl/src/widgets/chart/../../core/lv_obj_style_gen.h ****  */
  565:Middlewares/LVGL/lvgl/src/widgets/chart/../../core/lv_obj_style_gen.h **** static inline lv_opa_t lv_obj_get_style_bg_grad_opa(const lv_obj_t * obj, lv_part_t part)
  566:Middlewares/LVGL/lvgl/src/widgets/chart/../../core/lv_obj_style_gen.h **** {
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccohcVts.s 			page 47
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccaBXXR2.s 			page 47
 
 
  567:Middlewares/LVGL/lvgl/src/widgets/chart/../../core/lv_obj_style_gen.h ****     lv_style_value_t v = lv_obj_get_style_prop(obj, part, LV_STYLE_BG_GRAD_OPA);
@@ -2818,7 +2818,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccohcVts.s 			page 1
  621:Middlewares/LVGL/lvgl/src/widgets/chart/../../core/lv_obj_style_gen.h ****     lv_style_value_t v = lv_obj_get_style_prop(obj, part, LV_STYLE_BG_IMAGE_RECOLOR);
  622:Middlewares/LVGL/lvgl/src/widgets/chart/../../core/lv_obj_style_gen.h ****     return v.color;
  623:Middlewares/LVGL/lvgl/src/widgets/chart/../../core/lv_obj_style_gen.h **** }
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccohcVts.s 			page 48
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccaBXXR2.s 			page 48
 
 
  624:Middlewares/LVGL/lvgl/src/widgets/chart/../../core/lv_obj_style_gen.h **** 
@@ -2878,7 +2878,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccohcVts.s 			page 1
  678:Middlewares/LVGL/lvgl/src/widgets/chart/../../core/lv_obj_style_gen.h ****  * Default: `0x000000`, inherited: No, layout: No, ext. draw: No.
  679:Middlewares/LVGL/lvgl/src/widgets/chart/../../core/lv_obj_style_gen.h ****  * @param  obj    Pointer to Widget
  680:Middlewares/LVGL/lvgl/src/widgets/chart/../../core/lv_obj_style_gen.h ****  * @param  part   One of the `LV_PART_...` enum values
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccohcVts.s 			page 49
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccaBXXR2.s 			page 49
 
 
  681:Middlewares/LVGL/lvgl/src/widgets/chart/../../core/lv_obj_style_gen.h ****  */
@@ -2938,7 +2938,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccohcVts.s 			page 1
  156              		.loc 2 344 23 view .LVU33
  157              	.LBB129:
  346:Middlewares/LVGL/lvgl/src/widgets/chart/../../core/lv_obj_style_gen.h ****     return (int32_t)v.num;
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccohcVts.s 			page 50
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccaBXXR2.s 			page 50
 
 
  158              		.loc 2 346 5 view .LVU34
@@ -2998,7 +2998,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccohcVts.s 			page 1
 1824:Middlewares/LVGL/lvgl/src/widgets/chart/lv_chart.c ****         lv_area_t col_a;
  197              		.loc 1 1824 12 view .LVU50
  198 0062 012B     		cmp	r3, #1
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccohcVts.s 			page 51
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccaBXXR2.s 			page 51
 
 
  199 0064 5DD9     		bls	.L18
@@ -3058,7 +3058,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccohcVts.s 			page 1
  728:Middlewares/LVGL/lvgl/src/widgets/chart/../../core/lv_obj_style_gen.h **** /**
  729:Middlewares/LVGL/lvgl/src/widgets/chart/../../core/lv_obj_style_gen.h ****  * Gets whether the border should be drawn before or after the children are drawn.
  730:Middlewares/LVGL/lvgl/src/widgets/chart/../../core/lv_obj_style_gen.h ****  * `true`: after children, `false`: before children.
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccohcVts.s 			page 52
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccaBXXR2.s 			page 52
 
 
  731:Middlewares/LVGL/lvgl/src/widgets/chart/../../core/lv_obj_style_gen.h ****  * Default: 0, inherited: No, layout: No, ext. draw: No.
@@ -3118,7 +3118,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccohcVts.s 			page 1
  785:Middlewares/LVGL/lvgl/src/widgets/chart/../../core/lv_obj_style_gen.h **** static inline lv_opa_t lv_obj_get_style_outline_opa(const lv_obj_t * obj, lv_part_t part)
  786:Middlewares/LVGL/lvgl/src/widgets/chart/../../core/lv_obj_style_gen.h **** {
  787:Middlewares/LVGL/lvgl/src/widgets/chart/../../core/lv_obj_style_gen.h ****     lv_style_value_t v = lv_obj_get_style_prop(obj, part, LV_STYLE_OUTLINE_OPA);
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccohcVts.s 			page 53
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccaBXXR2.s 			page 53
 
 
  788:Middlewares/LVGL/lvgl/src/widgets/chart/../../core/lv_obj_style_gen.h ****     return (lv_opa_t)v.num;
@@ -3178,7 +3178,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccohcVts.s 			page 1
  842:Middlewares/LVGL/lvgl/src/widgets/chart/../../core/lv_obj_style_gen.h ****  * Default: 0, inherited: No, layout: No, ext. draw: Yes.
  843:Middlewares/LVGL/lvgl/src/widgets/chart/../../core/lv_obj_style_gen.h ****  * @param  obj    Pointer to Widget
  844:Middlewares/LVGL/lvgl/src/widgets/chart/../../core/lv_obj_style_gen.h ****  * @param  part   One of the `LV_PART_...` enum values
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccohcVts.s 			page 54
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccaBXXR2.s 			page 54
 
 
  845:Middlewares/LVGL/lvgl/src/widgets/chart/../../core/lv_obj_style_gen.h ****  */
@@ -3238,7 +3238,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccohcVts.s 			page 1
  899:Middlewares/LVGL/lvgl/src/widgets/chart/../../core/lv_obj_style_gen.h **** {
  900:Middlewares/LVGL/lvgl/src/widgets/chart/../../core/lv_obj_style_gen.h ****     lv_style_value_t v = lv_obj_get_style_prop(obj, part, LV_STYLE_IMAGE_OPA);
  901:Middlewares/LVGL/lvgl/src/widgets/chart/../../core/lv_obj_style_gen.h ****     return (lv_opa_t)v.num;
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccohcVts.s 			page 55
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccaBXXR2.s 			page 55
 
 
  902:Middlewares/LVGL/lvgl/src/widgets/chart/../../core/lv_obj_style_gen.h **** }
@@ -3298,7 +3298,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccohcVts.s 			page 1
  956:Middlewares/LVGL/lvgl/src/widgets/chart/../../core/lv_obj_style_gen.h **** /**
  957:Middlewares/LVGL/lvgl/src/widgets/chart/../../core/lv_obj_style_gen.h ****  * Get width of lines in pixels.
  958:Middlewares/LVGL/lvgl/src/widgets/chart/../../core/lv_obj_style_gen.h ****  * Default: 0, inherited: No, layout: No, ext. draw: Yes.
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccohcVts.s 			page 56
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccaBXXR2.s 			page 56
 
 
  959:Middlewares/LVGL/lvgl/src/widgets/chart/../../core/lv_obj_style_gen.h ****  * @param  obj    Pointer to Widget
@@ -3358,7 +3358,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccohcVts.s 			page 1
  269              		.loc 2 33 5 is_stmt 0 view .LVU72
  270              	.LBE134:
  271              	.LBE133:
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccohcVts.s 			page 57
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccaBXXR2.s 			page 57
 
 
 1806:Middlewares/LVGL/lvgl/src/widgets/chart/lv_chart.c ****         lv_area_copy(&coords, &obj->coords);
@@ -3418,7 +3418,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccohcVts.s 			page 1
   48:Middlewares/LVGL/lvgl/src/widgets/chart/../../core/../misc/../font/../draw/../misc/lv_area.h **** 
   49:Middlewares/LVGL/lvgl/src/widgets/chart/../../core/../misc/../font/../draw/../misc/lv_area.h **** /** Alignments*/
   50:Middlewares/LVGL/lvgl/src/widgets/chart/../../core/../misc/../font/../draw/../misc/lv_area.h **** 
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccohcVts.s 			page 58
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccaBXXR2.s 			page 58
 
 
   51:Middlewares/LVGL/lvgl/src/widgets/chart/../../core/../misc/../font/../draw/../misc/lv_area.h **** typedef enum {
@@ -3478,7 +3478,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccohcVts.s 			page 1
  105:Middlewares/LVGL/lvgl/src/widgets/chart/../../core/../misc/../font/../draw/../misc/lv_area.h ****  * @param src pointer to the source area
  106:Middlewares/LVGL/lvgl/src/widgets/chart/../../core/../misc/../font/../draw/../misc/lv_area.h ****  */
  107:Middlewares/LVGL/lvgl/src/widgets/chart/../../core/../misc/../font/../draw/../misc/lv_area.h **** inline static void lv_area_copy(lv_area_t * dest, const lv_area_t * src)
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccohcVts.s 			page 59
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccaBXXR2.s 			page 59
 
 
  277              		.loc 3 107 20 view .LVU75
@@ -3538,7 +3538,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccohcVts.s 			page 1
 1812:Middlewares/LVGL/lvgl/src/widgets/chart/lv_chart.c ****             coords.x1 = ((w * i) / (chart->point_cnt - 1)) + x_ofs - line_width - point_w;
  318              		.loc 1 1812 11 view .LVU97
  319 00b8 AB42     		cmp	r3, r5
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccohcVts.s 			page 60
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccaBXXR2.s 			page 60
 
 
  320 00ba 1CD8     		bhi	.L19
@@ -3598,7 +3598,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccohcVts.s 			page 1
  356              		.loc 1 1820 81 view .LVU115
  357 00e6 08EB0903 		add	r3, r8, r9
 1820:Middlewares/LVGL/lvgl/src/widgets/chart/lv_chart.c ****             lv_obj_invalidate_area(obj, &coords);
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccohcVts.s 			page 61
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccaBXXR2.s 			page 61
 
 
  358              		.loc 1 1820 23 view .LVU116
@@ -3658,7 +3658,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccohcVts.s 			page 1
  396 011a 2046     		mov	r0, r4
  397              	.LVL36:
 1815:Middlewares/LVGL/lvgl/src/widgets/chart/lv_chart.c ****         }
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccohcVts.s 			page 62
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccaBXXR2.s 			page 62
 
 
  398              		.loc 1 1815 13 is_stmt 0 view .LVU133
@@ -3718,7 +3718,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccohcVts.s 			page 1
 1828:Middlewares/LVGL/lvgl/src/widgets/chart/lv_chart.c **** 
  438              		.loc 1 1828 70 view .LVU148
  439 0138 B8FBF3F8 		udiv	r8, r8, r3
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccohcVts.s 			page 63
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccaBXXR2.s 			page 63
 
 
  440              	.LVL43:
@@ -3778,7 +3778,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccohcVts.s 			page 1
 1841:Middlewares/LVGL/lvgl/src/widgets/chart/lv_chart.c **** 
  477              		.loc 1 1841 18 is_stmt 0 view .LVU166
  478 0160 A3EB0903 		sub	r3, r3, r9
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccohcVts.s 			page 64
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccaBXXR2.s 			page 64
 
 
  479 0164 0093     		str	r3, [sp]
@@ -3838,7 +3838,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccohcVts.s 			page 1
  529              		.cfi_offset 4, -36
  530              		.cfi_offset 5, -32
  531              		.cfi_offset 6, -28
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccohcVts.s 			page 65
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccaBXXR2.s 			page 65
 
 
  532              		.cfi_offset 7, -24
@@ -3898,7 +3898,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccohcVts.s 			page 1
  572              		.loc 2 344 23 view .LVU186
  573              	.LBB144:
  346:Middlewares/LVGL/lvgl/src/widgets/chart/../../core/lv_obj_style_gen.h ****     return (int32_t)v.num;
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccohcVts.s 			page 66
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccaBXXR2.s 			page 66
 
 
  574              		.loc 2 346 5 view .LVU187
@@ -3958,7 +3958,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccohcVts.s 			page 1
  961:Middlewares/LVGL/lvgl/src/widgets/chart/lv_chart.c ****     int32_t h = lv_obj_get_content_height(obj);
  615              		.loc 1 961 5 is_stmt 1 view .LVU201
  961:Middlewares/LVGL/lvgl/src/widgets/chart/lv_chart.c ****     int32_t h = lv_obj_get_content_height(obj);
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccohcVts.s 			page 67
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccaBXXR2.s 			page 67
 
 
  616              		.loc 1 961 17 is_stmt 0 view .LVU202
@@ -4018,7 +4018,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccohcVts.s 			page 1
  657 005e 2846     		mov	r0, r5
  658 0060 FFF7FEFF 		bl	lv_obj_get_style_prop
  659              	.LVL73:
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccohcVts.s 			page 68
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccaBXXR2.s 			page 68
 
 
  660 0064 0690     		str	r0, [sp, #24]
@@ -4078,7 +4078,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccohcVts.s 			page 1
  700              	.LVL78:
  724:Middlewares/LVGL/lvgl/src/widgets/chart/../../core/lv_obj_style_gen.h ****     return (lv_border_side_t)v.num;
  701              		.loc 2 724 26 view .LVU230
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccohcVts.s 			page 69
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccaBXXR2.s 			page 69
 
 
  702 0082 0190     		str	r0, [sp, #4]
@@ -4138,7 +4138,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccohcVts.s 			page 1
  740              		.loc 1 977 36 is_stmt 0 view .LVU246
  741 00a4 6B69     		ldr	r3, [r5, #20]
  977:Middlewares/LVGL/lvgl/src/widgets/chart/lv_chart.c ****         line_dsc.p2.x = obj->coords.x2;
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccohcVts.s 			page 70
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccaBXXR2.s 			page 70
 
 
  742              		.loc 1 977 23 view .LVU247
@@ -4198,7 +4198,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccohcVts.s 			page 1
  781              	.LBB155:
  334:Middlewares/LVGL/lvgl/src/widgets/chart/../../core/lv_obj_style_gen.h ****     return (int32_t)v.num;
  782              		.loc 2 334 5 view .LVU263
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccohcVts.s 			page 71
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccaBXXR2.s 			page 71
 
 
  334:Middlewares/LVGL/lvgl/src/widgets/chart/../../core/lv_obj_style_gen.h ****     return (int32_t)v.num;
@@ -4258,7 +4258,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccohcVts.s 			page 1
  824              	.LBE157:
  825              	.LBE156:
  983:Middlewares/LVGL/lvgl/src/widgets/chart/lv_chart.c ****             if((border_side & LV_BORDER_SIDE_BOTTOM) && (lv_obj_get_style_pad_bottom(obj, LV_PART_M
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccohcVts.s 			page 72
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccaBXXR2.s 			page 72
 
 
  826              		.loc 1 983 51 discriminator 1 view .LVU277
@@ -4318,7 +4318,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccohcVts.s 			page 1
  988:Middlewares/LVGL/lvgl/src/widgets/chart/lv_chart.c ****             line_dsc.p1.y += y_ofs;
  866              		.loc 1 988 27 view .LVU292
  867 0110 1293     		str	r3, [sp, #72]
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccohcVts.s 			page 73
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccaBXXR2.s 			page 73
 
 
  989:Middlewares/LVGL/lvgl/src/widgets/chart/lv_chart.c ****             line_dsc.p2.y = line_dsc.p1.y;
@@ -4378,7 +4378,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccohcVts.s 			page 1
  906 0134 6C69     		ldr	r4, [r5, #20]
  998:Middlewares/LVGL/lvgl/src/widgets/chart/lv_chart.c ****         line_dsc.p1.y = obj->coords.y1;
  907              		.loc 1 998 40 view .LVU309
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccohcVts.s 			page 74
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccaBXXR2.s 			page 74
 
 
  908 0136 039B     		ldr	r3, [sp, #12]
@@ -4438,7 +4438,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccohcVts.s 			page 1
  946              	.LVL111:
 1005:Middlewares/LVGL/lvgl/src/widgets/chart/lv_chart.c ****         }
  947              		.loc 1 1005 13 is_stmt 1 view .LVU326
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccohcVts.s 			page 75
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccaBXXR2.s 			page 75
 
 
 1005:Middlewares/LVGL/lvgl/src/widgets/chart/lv_chart.c ****         }
@@ -4498,7 +4498,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccohcVts.s 			page 1
  358:Middlewares/LVGL/lvgl/src/widgets/chart/../../core/lv_obj_style_gen.h ****     return (int32_t)v.num;
  991              		.loc 2 358 5 view .LVU338
  358:Middlewares/LVGL/lvgl/src/widgets/chart/../../core/lv_obj_style_gen.h ****     return (int32_t)v.num;
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccohcVts.s 			page 76
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccaBXXR2.s 			page 76
 
 
  992              		.loc 2 358 26 is_stmt 0 view .LVU339
@@ -4558,7 +4558,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccohcVts.s 			page 1
  1034 01b6 5446     		mov	r4, r10
  1035              	.LVL125:
 1008:Middlewares/LVGL/lvgl/src/widgets/chart/lv_chart.c ****             line_dsc.p1.x = (int32_t)((int32_t)w * i) / (chart->vdiv_cnt - 1);
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccohcVts.s 			page 77
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccaBXXR2.s 			page 77
 
 
  1036              		.loc 1 1008 9 view .LVU352
@@ -4618,7 +4618,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccohcVts.s 			page 1
  1074 01dc 4445     		cmp	r4, r8
  1075 01de ECDB     		blt	.L30
  1076              	.LVL130:
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccohcVts.s 			page 78
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccaBXXR2.s 			page 78
 
 
  1077              	.L20:
@@ -4678,7 +4678,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccohcVts.s 			page 1
  1127              	.LCFI13:
  1128              		.cfi_def_cfa_offset 336
  1129 0006 0746     		mov	r7, r0
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccohcVts.s 			page 79
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccaBXXR2.s 			page 79
 
 
  1130 0008 8A46     		mov	r10, r1
@@ -4738,7 +4738,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccohcVts.s 			page 1
  1169              	.LVL139:
  1170 0022 8146     		mov	r9, r0
  1171 0024 0990     		str	r0, [sp, #36]
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccohcVts.s 			page 80
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccaBXXR2.s 			page 80
 
 
  347:Middlewares/LVGL/lvgl/src/widgets/chart/../../core/lv_obj_style_gen.h **** }
@@ -4798,7 +4798,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccohcVts.s 			page 1
  1211              		.loc 1 1358 21 view .LVU404
  1212 003e FFF7FEFF 		bl	lv_obj_get_content_height
  1213              	.LVL148:
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccohcVts.s 			page 81
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccaBXXR2.s 			page 81
 
 
  1214 0042 8046     		mov	r8, r0
@@ -4858,7 +4858,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccohcVts.s 			page 1
 1364:Middlewares/LVGL/lvgl/src/widgets/chart/lv_chart.c ****     line_dsc.base.layer = layer;
  1253              		.loc 1 1364 5 view .LVU420
  1254 0068 35AD     		add	r5, sp, #212
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccohcVts.s 			page 82
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccaBXXR2.s 			page 82
 
 
  1255 006a 2846     		mov	r0, r5
@@ -4918,7 +4918,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccohcVts.s 			page 1
  1296              	.LVL163:
   33:Middlewares/LVGL/lvgl/src/widgets/chart/../../core/lv_obj_style_gen.h **** }
  1297              		.loc 2 33 5 is_stmt 0 view .LVU434
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccohcVts.s 			page 83
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccaBXXR2.s 			page 83
 
 
  1298              	.LBE170:
@@ -4978,7 +4978,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccohcVts.s 			page 1
 1377:Middlewares/LVGL/lvgl/src/widgets/chart/lv_chart.c ****     if(line_dsc.width == 1) line_dsc.raw_end = 1;
  1339              		.loc 1 1377 55 is_stmt 1 discriminator 1 view .LVU448
 1377:Middlewares/LVGL/lvgl/src/widgets/chart/lv_chart.c ****     if(line_dsc.width == 1) line_dsc.raw_end = 1;
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccohcVts.s 			page 84
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccaBXXR2.s 			page 84
 
 
  1340              		.loc 1 1377 72 is_stmt 0 discriminator 1 view .LVU449
@@ -5038,7 +5038,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccohcVts.s 			page 1
  1383              		.loc 1 1394 29 view .LVU460
  1384 0114 03F11802 		add	r2, r3, #24
  1385              	.LVL173:
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccohcVts.s 			page 85
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccaBXXR2.s 			page 85
 
 
 1394:Middlewares/LVGL/lvgl/src/widgets/chart/lv_chart.c ****             line_dsc.p2.x += x_ofs;
@@ -5098,7 +5098,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccohcVts.s 			page 1
 1399:Middlewares/LVGL/lvgl/src/widgets/chart/lv_chart.c ****         }
  1427              		.loc 1 1399 27 is_stmt 0 view .LVU474
  1428 0164 059A     		ldr	r2, [sp, #20]
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccohcVts.s 			page 86
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccaBXXR2.s 			page 86
 
 
  1429 0166 1344     		add	r3, r3, r2
@@ -5158,7 +5158,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccohcVts.s 			page 1
 1408:Middlewares/LVGL/lvgl/src/widgets/chart/lv_chart.c **** 
  1468              		.loc 1 1408 40 is_stmt 0 view .LVU490
  1469 0184 429B     		ldr	r3, [sp, #264]
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccohcVts.s 			page 87
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccaBXXR2.s 			page 87
 
 
 1408:Middlewares/LVGL/lvgl/src/widgets/chart/lv_chart.c **** 
@@ -5218,7 +5218,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccohcVts.s 			page 1
  1508              		.loc 1 1414 17 is_stmt 1 view .LVU506
 1414:Middlewares/LVGL/lvgl/src/widgets/chart/lv_chart.c **** 
  1509              		.loc 1 1414 31 is_stmt 0 view .LVU507
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccohcVts.s 			page 88
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccaBXXR2.s 			page 88
 
 
  1510 01c8 059B     		ldr	r3, [sp, #20]
@@ -5278,7 +5278,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccohcVts.s 			page 1
 1427:Middlewares/LVGL/lvgl/src/widgets/chart/lv_chart.c ****                 point_area.y1 = (int32_t)line_dsc.p1.y - point_h;
  1550              		.loc 1 1427 17 is_stmt 1 view .LVU522
 1427:Middlewares/LVGL/lvgl/src/widgets/chart/lv_chart.c ****                 point_area.y1 = (int32_t)line_dsc.p1.y - point_h;
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccohcVts.s 			page 89
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccaBXXR2.s 			page 89
 
 
  1551              		.loc 1 1427 56 is_stmt 0 view .LVU523
@@ -5338,7 +5338,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccohcVts.s 			page 1
  1588              		.loc 1 1432 39 view .LVU540
  1589 0236 3893     		str	r3, [sp, #224]
 1433:Middlewares/LVGL/lvgl/src/widgets/chart/lv_chart.c ****                     if(point_w && point_h) {
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccohcVts.s 			page 90
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccaBXXR2.s 			page 90
 
 
  1590              		.loc 1 1433 21 is_stmt 1 view .LVU541
@@ -5398,7 +5398,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccohcVts.s 			page 1
  1630 026a 419B     		ldr	r3, [sp, #260]
 1448:Middlewares/LVGL/lvgl/src/widgets/chart/lv_chart.c ****                     point_area.x2 = (int32_t)line_dsc.p2.x + point_w;
  1631              		.loc 1 1448 60 view .LVU556
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccohcVts.s 			page 91
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccaBXXR2.s 			page 91
 
 
  1632 026c A3EB0A01 		sub	r1, r3, r10
@@ -5458,7 +5458,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccohcVts.s 			page 1
  1669 0292 70E7     		b	.L55
  1670              	.LVL189:
  1671              	.L66:
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccohcVts.s 			page 92
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccaBXXR2.s 			page 92
 
 
 1458:Middlewares/LVGL/lvgl/src/widgets/chart/lv_chart.c ****         point_dsc_default.base.id1++;
@@ -5518,7 +5518,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccohcVts.s 			page 1
  1711 02bc 1B0C     		lsrs	r3, r3, #16
  1712 02be 8DF81631 		strb	r3, [sp, #278]
 1384:Middlewares/LVGL/lvgl/src/widgets/chart/lv_chart.c **** 
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccohcVts.s 			page 93
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccaBXXR2.s 			page 93
 
 
  1713              		.loc 1 1384 9 is_stmt 1 view .LVU589
@@ -5578,7 +5578,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccohcVts.s 			page 1
 1402:Middlewares/LVGL/lvgl/src/widgets/chart/lv_chart.c ****             line_dsc.p2.y = (lv_value_precise_t)LV_COORD_MIN;
  1751              		.loc 1 1402 27 is_stmt 0 view .LVU606
  1752 02f4 044B     		ldr	r3, .L69
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccohcVts.s 			page 94
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccaBXXR2.s 			page 94
 
 
  1753 02f6 4193     		str	r3, [sp, #260]
@@ -5638,7 +5638,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccohcVts.s 			page 1
 1022:Middlewares/LVGL/lvgl/src/widgets/chart/lv_chart.c **** 
  1799              		.loc 1 1022 7 view .LVU617
  1800 0002 012B     		cmp	r3, #1
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccohcVts.s 			page 95
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccaBXXR2.s 			page 95
 
 
  1801 0004 40F2BE81 		bls	.L99
@@ -5698,7 +5698,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccohcVts.s 			page 1
 1027:Middlewares/LVGL/lvgl/src/widgets/chart/lv_chart.c ****     int32_t pad_left = lv_obj_get_style_pad_left(obj, LV_PART_MAIN) + border_width;
  1847              		.loc 1 1027 5 is_stmt 1 view .LVU626
  1848              	.LBB178:
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccohcVts.s 			page 96
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccaBXXR2.s 			page 96
 
 
  1849              	.LBI178:
@@ -5758,7 +5758,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccohcVts.s 			page 1
  1889 0042 00EB0608 		add	r8, r0, r6
  1890              	.LVL209:
 1029:Middlewares/LVGL/lvgl/src/widgets/chart/lv_chart.c ****     int32_t w     = lv_obj_get_content_width(obj);
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccohcVts.s 			page 97
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccaBXXR2.s 			page 97
 
 
  1891              		.loc 1 1029 5 is_stmt 1 view .LVU641
@@ -5818,7 +5818,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccohcVts.s 			page 1
  1931              		.loc 1 1032 36 view .LVU655
  1932 0068 9844     		add	r8, r8, r3
  1933              	.LVL218:
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccohcVts.s 			page 98
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccaBXXR2.s 			page 98
 
 
 1032:Middlewares/LVGL/lvgl/src/widgets/chart/lv_chart.c ****     int32_t y_ofs = obj->coords.y1 + pad_top - lv_obj_get_scroll_top(obj);
@@ -5878,7 +5878,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccohcVts.s 			page 1
  1974              	.LVL227:
 1040:Middlewares/LVGL/lvgl/src/widgets/chart/lv_chart.c **** 
  1975              		.loc 1 1040 5 view .LVU670
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccohcVts.s 			page 99
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccaBXXR2.s 			page 99
 
 
 1040:Middlewares/LVGL/lvgl/src/widgets/chart/lv_chart.c **** 
@@ -5938,7 +5938,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccohcVts.s 			page 1
   69:Middlewares/LVGL/lvgl/src/widgets/chart/../../core/lv_obj_style_gen.h **** {
  2016              		.loc 2 69 23 view .LVU685
  2017              	.LBB187:
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccohcVts.s 			page 100
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccaBXXR2.s 			page 100
 
 
   71:Middlewares/LVGL/lvgl/src/widgets/chart/../../core/lv_obj_style_gen.h ****     return (int32_t)v.num;
@@ -5998,7 +5998,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccohcVts.s 			page 1
  2057              	.L73:
 1051:Middlewares/LVGL/lvgl/src/widgets/chart/lv_chart.c ****     if(crowded_mode == false) {
  2058              		.loc 1 1051 5 is_stmt 1 view .LVU701
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccohcVts.s 			page 101
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccaBXXR2.s 			page 101
 
 
 1052:Middlewares/LVGL/lvgl/src/widgets/chart/lv_chart.c ****         lv_draw_rect_dsc_init(&point_draw_dsc);
@@ -6058,7 +6058,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccohcVts.s 			page 1
  2098 0118 0746     		mov	r7, r0
  2099              	.LVL243:
 1074:Middlewares/LVGL/lvgl/src/widgets/chart/lv_chart.c ****         if(ser->hidden) {
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccohcVts.s 			page 102
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccaBXXR2.s 			page 102
 
 
  2100              		.loc 1 1074 5 view .LVU717
@@ -6118,7 +6118,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccohcVts.s 			page 1
  2143 014c BB68     		ldr	r3, [r7, #8]
  2144 014e ADF83C31 		strh	r3, [sp, #316]	@ movhi
  2145 0152 1B0C     		lsrs	r3, r3, #16
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccohcVts.s 			page 103
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccaBXXR2.s 			page 103
 
 
  2146 0154 8DF83E31 		strb	r3, [sp, #318]
@@ -6178,7 +6178,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccohcVts.s 			page 1
  2183              		.loc 1 1091 23 view .LVU745
  2184 0180 4993     		str	r3, [sp, #292]
  2185              	.LVL256:
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccohcVts.s 			page 104
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccaBXXR2.s 			page 104
 
 
 1092:Middlewares/LVGL/lvgl/src/widgets/chart/lv_chart.c ****         line_dsc.point_cnt = 0;
@@ -6238,7 +6238,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccohcVts.s 			page 1
  2224              		.loc 1 1112 25 is_stmt 0 view .LVU761
  2225 01a6 1433     		adds	r3, r3, #20
  2226 01a8 59F823C0 		ldr	ip, [r9, r3, lsl #2]
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccohcVts.s 			page 105
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccaBXXR2.s 			page 105
 
 
  2227              	.LVL261:
@@ -6298,7 +6298,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccohcVts.s 			page 1
  2268              		.loc 1 1127 21 is_stmt 1 view .LVU774
 1127:Middlewares/LVGL/lvgl/src/widgets/chart/lv_chart.c ****                     if(x_prev != p_x) {
  2269              		.loc 1 1127 27 is_stmt 0 view .LVU775
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccohcVts.s 			page 106
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccaBXXR2.s 			page 106
 
 
  2270 01e2 079B     		ldr	r3, [sp, #28]
@@ -6358,7 +6358,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccohcVts.s 			page 1
  2309 0214 0133     		adds	r3, r3, #1
 1132:Middlewares/LVGL/lvgl/src/widgets/chart/lv_chart.c ****                         line_dsc.points[line_dsc.point_cnt + 2].y = LV_DRAW_LINE_POINT_NONE;
  2310              		.loc 1 1132 67 view .LVU791
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccohcVts.s 			page 107
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccaBXXR2.s 			page 107
 
 
  2311 0216 4D9A     		ldr	r2, [sp, #308]
@@ -6418,7 +6418,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccohcVts.s 			page 1
  2349              	.L87:
 1140:Middlewares/LVGL/lvgl/src/widgets/chart/lv_chart.c ****                         y_max = p_y;
  2350              		.loc 1 1140 25 is_stmt 1 view .LVU808
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccohcVts.s 			page 108
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccaBXXR2.s 			page 108
 
 
  2351              	.LVL268:
@@ -6478,7 +6478,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccohcVts.s 			page 1
  2388 0268 531E     		subs	r3, r2, #1
 1097:Middlewares/LVGL/lvgl/src/widgets/chart/lv_chart.c ****             if(p_x > layer->_clip_area.x2 + extra_space_x + 1) break;
  2389              		.loc 1 1097 56 view .LVU826
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccohcVts.s 			page 109
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccaBXXR2.s 			page 109
 
 
  2390 026a B4FBF3F4 		udiv	r4, r4, r3
@@ -6538,7 +6538,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccohcVts.s 			page 1
  2427 0298 7B68     		ldr	r3, [r7, #4]
 1106:Middlewares/LVGL/lvgl/src/widgets/chart/lv_chart.c ****                 p_y = LV_DRAW_LINE_POINT_NONE;
  2428              		.loc 1 1106 29 view .LVU844
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccohcVts.s 			page 110
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccaBXXR2.s 			page 110
 
 
  2429 029a B200     		lsls	r2, r6, #2
@@ -6598,7 +6598,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccohcVts.s 			page 1
  2469              	.L83:
 1138:Middlewares/LVGL/lvgl/src/widgets/chart/lv_chart.c ****                         }
  2470              		.loc 1 1138 70 view .LVU859
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccohcVts.s 			page 111
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccaBXXR2.s 			page 111
 
 
  2471              	.LBE191:
@@ -6658,7 +6658,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccohcVts.s 			page 1
  2511              	.L80:
 1174:Middlewares/LVGL/lvgl/src/widgets/chart/lv_chart.c ****     }
  2512              		.loc 1 1174 26 view .LVU874
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccohcVts.s 			page 112
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccaBXXR2.s 			page 112
 
 
  2513              	.LBE188:
@@ -6718,7 +6718,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccohcVts.s 			page 1
 1159:Middlewares/LVGL/lvgl/src/widgets/chart/lv_chart.c ****                 for(j = line_dsc.point_cnt - 1; j >= 0; j--) {
  2553              		.loc 1 1159 17 is_stmt 1 view .LVU889
 1160:Middlewares/LVGL/lvgl/src/widgets/chart/lv_chart.c ****                     if(points[j].y == LV_DRAW_LINE_POINT_NONE) continue;
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccohcVts.s 			page 113
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccaBXXR2.s 			page 113
 
 
  2554              		.loc 1 1160 17 view .LVU890
@@ -6778,7 +6778,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccohcVts.s 			page 1
 1164:Middlewares/LVGL/lvgl/src/widgets/chart/lv_chart.c ****                     point_area.x2 = (int32_t)points[j].x + bullet_w;
  2594              		.loc 1 1164 21 view .LVU905
 1164:Middlewares/LVGL/lvgl/src/widgets/chart/lv_chart.c ****                     point_area.x2 = (int32_t)points[j].x + bullet_w;
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccohcVts.s 			page 114
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccaBXXR2.s 			page 114
 
 
  2595              		.loc 1 1164 55 is_stmt 0 view .LVU906
@@ -6838,7 +6838,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccohcVts.s 			page 1
  2631              		.loc 1 1170 44 view .LVU924
  2632 0372 013B     		subs	r3, r3, #1
  2633 0374 1A93     		str	r3, [sp, #104]
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccohcVts.s 			page 115
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccaBXXR2.s 			page 115
 
 
  2634 0376 DEE7     		b	.L92
@@ -6898,7 +6898,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccohcVts.s 			page 1
  2684              		@ args = 0, pretend = 0, frame = 0
  2685              		@ frame_needed = 0, uses_anonymous_args = 0
 1181:Middlewares/LVGL/lvgl/src/widgets/chart/lv_chart.c **** #if LV_USE_VECTOR_GRAPHIC
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccohcVts.s 			page 116
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccaBXXR2.s 			page 116
 
 
  2686              		.loc 1 1181 1 is_stmt 0 view .LVU931
@@ -6958,7 +6958,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccohcVts.s 			page 1
  2734              		.loc 1 1465 5 is_stmt 1 view .LVU939
  2735              	.LVL298:
 1467:Middlewares/LVGL/lvgl/src/widgets/chart/lv_chart.c ****     lv_area_t col_a;
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccohcVts.s 			page 117
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccaBXXR2.s 			page 117
 
 
  2736              		.loc 1 1467 5 view .LVU940
@@ -7018,7 +7018,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccohcVts.s 			page 1
  2775              		.loc 2 323 5 is_stmt 1 view .LVU955
  2776              	.LVL304:
  323:Middlewares/LVGL/lvgl/src/widgets/chart/../../core/lv_obj_style_gen.h **** }
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccohcVts.s 			page 118
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccaBXXR2.s 			page 118
 
 
  2777              		.loc 2 323 5 is_stmt 0 view .LVU956
@@ -7078,7 +7078,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccohcVts.s 			page 1
  2816 0042 35B0     		add	sp, sp, #212
  2817              	.LCFI23:
  2818              		.cfi_remember_state
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccohcVts.s 			page 119
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccaBXXR2.s 			page 119
 
 
  2819              		.cfi_def_cfa_offset 36
@@ -7138,7 +7138,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccohcVts.s 			page 1
  2860              	.LVL320:
 1481:Middlewares/LVGL/lvgl/src/widgets/chart/lv_chart.c ****     int32_t col_w = (block_w - (ser_cnt - 1) * ser_gap) / ser_cnt;
  2861              		.loc 1 1481 5 is_stmt 1 view .LVU985
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccohcVts.s 			page 120
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccaBXXR2.s 			page 120
 
 
  2862              	.LBB201:
@@ -7198,7 +7198,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccohcVts.s 			page 1
  710:Middlewares/LVGL/lvgl/src/widgets/chart/../../core/lv_obj_style_gen.h ****     return (int32_t)v.num;
  2902              		.loc 2 710 5 view .LVU1000
  710:Middlewares/LVGL/lvgl/src/widgets/chart/../../core/lv_obj_style_gen.h ****     return (int32_t)v.num;
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccohcVts.s 			page 121
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccaBXXR2.s 			page 121
 
 
  2903              		.loc 2 710 26 is_stmt 0 view .LVU1001
@@ -7258,7 +7258,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccohcVts.s 			page 1
  2943              		.loc 1 1487 13 discriminator 1 view .LVU1015
  2944 00aa E319     		adds	r3, r4, r7
  2945 00ac 0293     		str	r3, [sp, #8]
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccohcVts.s 			page 122
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccaBXXR2.s 			page 122
 
 
  2946              	.LVL336:
@@ -7318,7 +7318,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccohcVts.s 			page 1
  2984 00e2 0093     		str	r3, [sp]
 1500:Middlewares/LVGL/lvgl/src/widgets/chart/lv_chart.c ****         int32_t x_act;
  2985              		.loc 1 1500 5 view .LVU1032
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccohcVts.s 			page 123
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccaBXXR2.s 			page 123
 
 
  2986 00e4 6AE0     		b	.L117
@@ -7378,7 +7378,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccohcVts.s 			page 1
 1536:Middlewares/LVGL/lvgl/src/widgets/chart/lv_chart.c ****             }
  3027              		.loc 1 1536 17 is_stmt 1 view .LVU1046
  3028 0102 30AA     		add	r2, sp, #192
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccohcVts.s 			page 124
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccaBXXR2.s 			page 124
 
 
  3029 0104 08A9     		add	r1, sp, #32
@@ -7438,7 +7438,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccohcVts.s 			page 1
 1516:Middlewares/LVGL/lvgl/src/widgets/chart/lv_chart.c **** 
  3070              		.loc 1 1516 89 discriminator 1 view .LVU1060
  3071 0134 E268     		ldr	r2, [r4, #12]
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccohcVts.s 			page 125
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccaBXXR2.s 			page 125
 
 
  3072              	.L122:
@@ -7498,7 +7498,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccohcVts.s 			page 1
 1530:Middlewares/LVGL/lvgl/src/widgets/chart/lv_chart.c ****             y_tmp            = (int32_t)((int32_t)ser->y_points[p_act] - chart->ymin[ser->y_axis_se
  3109              		.loc 1 1530 13 is_stmt 1 view .LVU1078
 1530:Middlewares/LVGL/lvgl/src/widgets/chart/lv_chart.c ****             y_tmp            = (int32_t)((int32_t)ser->y_points[p_act] - chart->ymin[ser->y_axis_se
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccohcVts.s 			page 126
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccaBXXR2.s 			page 126
 
 
  3110              		.loc 1 1530 42 is_stmt 0 view .LVU1079
@@ -7558,7 +7558,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccohcVts.s 			page 1
 1533:Middlewares/LVGL/lvgl/src/widgets/chart/lv_chart.c **** 
  3149              		.loc 1 1533 55 view .LVU1095
  3150 019c B169     		ldr	r1, [r6, #24]
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccohcVts.s 			page 127
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccaBXXR2.s 			page 127
 
 
  3151              	.LVL358:
@@ -7618,7 +7618,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccohcVts.s 			page 1
  3191              		.loc 1 1502 9 view .LVU1109
 1502:Middlewares/LVGL/lvgl/src/widgets/chart/lv_chart.c ****             x_act = obj->coords.x1 + x_ofs;
  3192              		.loc 1 1502 11 is_stmt 0 view .LVU1110
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccohcVts.s 			page 128
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccaBXXR2.s 			page 128
 
 
  3193 01c6 012B     		cmp	r3, #1
@@ -7678,7 +7678,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccohcVts.s 			page 1
  3233              		.cfi_endproc
  3234              	.LFE252:
  3236              		.section	.text.draw_series_stacked,"ax",%progbits
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccohcVts.s 			page 129
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccaBXXR2.s 			page 129
 
 
  3237              		.align	1
@@ -7738,7 +7738,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccohcVts.s 			page 1
  3283              	.LVL369:
  346:Middlewares/LVGL/lvgl/src/widgets/chart/../../core/lv_obj_style_gen.h ****     return (int32_t)v.num;
  3284              		.loc 2 346 26 view .LVU1134
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccohcVts.s 			page 130
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccaBXXR2.s 			page 130
 
 
  3285 0014 8046     		mov	r8, r0
@@ -7798,7 +7798,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccohcVts.s 			page 1
  3325 0030 2846     		mov	r0, r5
  3326              	.LVL377:
 1551:Middlewares/LVGL/lvgl/src/widgets/chart/lv_chart.c ****     lv_chart_series_t * ser;
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccohcVts.s 			page 131
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccaBXXR2.s 			page 131
 
 
  3327              		.loc 1 1551 18 view .LVU1149
@@ -7858,7 +7858,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccohcVts.s 			page 1
  3368 004c 0021     		movs	r1, #0
  3369 004e 2846     		mov	r0, r5
  3370              	.LVL385:
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccohcVts.s 			page 132
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccaBXXR2.s 			page 132
 
 
  382:Middlewares/LVGL/lvgl/src/widgets/chart/../../core/lv_obj_style_gen.h ****     return (int32_t)v.num;
@@ -7918,7 +7918,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccohcVts.s 			page 1
  711:Middlewares/LVGL/lvgl/src/widgets/chart/../../core/lv_obj_style_gen.h **** }
  3410              		.loc 2 711 5 is_stmt 0 view .LVU1178
  3411              	.LBE216:
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccohcVts.s 			page 133
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccaBXXR2.s 			page 133
 
 
  3412              	.LBE215:
@@ -7978,7 +7978,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccohcVts.s 			page 1
  3452 00a0 FFF7FEFF 		bl	lv_obj_init_draw_rect_dsc
  3453              	.LVL401:
 1569:Middlewares/LVGL/lvgl/src/widgets/chart/lv_chart.c ****     col_dsc.bg_opa = LV_OPA_COVER;
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccohcVts.s 			page 134
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccaBXXR2.s 			page 134
 
 
  3454              		.loc 1 1569 5 view .LVU1193
@@ -8038,7 +8038,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccohcVts.s 			page 1
  3494              	.LVL407:
 1586:Middlewares/LVGL/lvgl/src/widgets/chart/lv_chart.c ****             if(ser->y_points[p_act] == LV_CHART_POINT_NONE) continue;
  3495              		.loc 1 1586 13 is_stmt 1 view .LVU1208
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccohcVts.s 			page 135
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccaBXXR2.s 			page 135
 
 
 1586:Middlewares/LVGL/lvgl/src/widgets/chart/lv_chart.c ****             if(ser->y_points[p_act] == LV_CHART_POINT_NONE) continue;
@@ -8098,7 +8098,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccohcVts.s 			page 1
  3534              		.loc 1 1584 13 is_stmt 1 view .LVU1224
 1584:Middlewares/LVGL/lvgl/src/widgets/chart/lv_chart.c ****             int32_t p_act = (start_point + i) % chart->point_cnt;
  3535              		.loc 1 1584 54 is_stmt 0 view .LVU1225
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccohcVts.s 			page 136
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccaBXXR2.s 			page 136
 
 
  3536 00fa 95F87830 		ldrb	r3, [r5, #120]	@ zero_extendqisi2
@@ -8158,7 +8158,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccohcVts.s 			page 1
  3574              		.loc 1 1605 65 view .LVU1241
  3575 012a 07FB03F3 		mul	r3, r7, r3
 1605:Middlewares/LVGL/lvgl/src/widgets/chart/lv_chart.c ****         }
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccohcVts.s 			page 137
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccaBXXR2.s 			page 137
 
 
  3576              		.loc 1 1605 90 view .LVU1242
@@ -8218,7 +8218,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccohcVts.s 			page 1
 1576:Middlewares/LVGL/lvgl/src/widgets/chart/lv_chart.c ****         col_dsc.base.id2 = i;
  3614              		.loc 1 1576 25 is_stmt 0 discriminator 1 view .LVU1259
  3615 0150 6B6F     		ldr	r3, [r5, #116]
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccohcVts.s 			page 138
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccaBXXR2.s 			page 138
 
 
 1576:Middlewares/LVGL/lvgl/src/widgets/chart/lv_chart.c ****         col_dsc.base.id2 = i;
@@ -8278,7 +8278,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccohcVts.s 			page 1
 1616:Middlewares/LVGL/lvgl/src/widgets/chart/lv_chart.c ****         bar_full_area.y1 = obj->coords.y2 - y_ofs - total_bar_height + 1;
  3655              		.loc 1 1616 9 is_stmt 1 view .LVU1275
 1616:Middlewares/LVGL/lvgl/src/widgets/chart/lv_chart.c ****         bar_full_area.y1 = obj->coords.y2 - y_ofs - total_bar_height + 1;
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccohcVts.s 			page 139
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccaBXXR2.s 			page 139
 
 
  3656              		.loc 1 1616 39 is_stmt 0 view .LVU1276
@@ -8338,7 +8338,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccohcVts.s 			page 1
  3694              		.loc 1 1623 17 is_stmt 0 view .LVU1292
  3695 01a0 4FF00009 		mov	r9, #0
 1624:Middlewares/LVGL/lvgl/src/widgets/chart/lv_chart.c ****             int32_t start_point = chart->update_mode == LV_CHART_UPDATE_MODE_SHIFT ? ser->start_poi
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccohcVts.s 			page 140
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccaBXXR2.s 			page 140
 
 
  3696              		.loc 1 1624 9 view .LVU1293
@@ -8398,7 +8398,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccohcVts.s 			page 1
  3738              	.LVL430:
 1627:Middlewares/LVGL/lvgl/src/widgets/chart/lv_chart.c **** 
  3739              		.loc 1 1627 13 is_stmt 1 view .LVU1306
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccohcVts.s 			page 141
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccaBXXR2.s 			page 141
 
 
 1627:Middlewares/LVGL/lvgl/src/widgets/chart/lv_chart.c **** 
@@ -8458,7 +8458,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccohcVts.s 			page 1
  3778              		.loc 1 1641 33 is_stmt 0 view .LVU1322
  3779 01fe 5346     		mov	r3, r10
  3780              	.LVL435:
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccohcVts.s 			page 142
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccaBXXR2.s 			page 142
 
 
 1641:Middlewares/LVGL/lvgl/src/widgets/chart/lv_chart.c ****             bar_clip_area.y2 = y_prev - 1;
@@ -8518,7 +8518,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccohcVts.s 			page 1
 1648:Middlewares/LVGL/lvgl/src/widgets/chart/lv_chart.c ****         }
  3820              		.loc 1 1648 13 is_stmt 1 view .LVU1338
 1648:Middlewares/LVGL/lvgl/src/widgets/chart/lv_chart.c ****         }
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccohcVts.s 			page 143
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccaBXXR2.s 			page 143
 
 
  3821              		.loc 1 1648 25 is_stmt 0 view .LVU1339
@@ -8578,7 +8578,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccohcVts.s 			page 1
  3870              		.cfi_offset 6, -8
  3871              		.cfi_offset 14, -4
  3872 0002 0D46     		mov	r5, r1
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccohcVts.s 			page 144
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccaBXXR2.s 			page 144
 
 
  861:Middlewares/LVGL/lvgl/src/widgets/chart/lv_chart.c ****     LV_TRACE_OBJ_CREATE("begin");
@@ -8638,7 +8638,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccohcVts.s 			page 1
  3910 0026 FFF7FEFF 		bl	lv_ll_get_head
  3911              	.LVL448:
  868:Middlewares/LVGL/lvgl/src/widgets/chart/lv_chart.c **** 
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccohcVts.s 			page 145
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccaBXXR2.s 			page 145
 
 
  3912              		.loc 1 868 9 is_stmt 1 view .LVU1364
@@ -8698,7 +8698,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccohcVts.s 			page 1
  3952 0058 FFF7FEFF 		bl	lv_ll_get_head
  3953              	.LVL454:
  3954 005c 0446     		mov	r4, r0
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccohcVts.s 			page 146
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccaBXXR2.s 			page 146
 
 
  3955              	.LVL455:
@@ -8758,7 +8758,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccohcVts.s 			page 1
  3999 0000 10B5     		push	{r4, lr}
  4000              	.LCFI30:
  4001              		.cfi_def_cfa_offset 8
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccohcVts.s 			page 147
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccaBXXR2.s 			page 147
 
 
  4002              		.cfi_offset 4, -8
@@ -8818,7 +8818,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccohcVts.s 			page 1
  4039 0024 2265     		str	r2, [r4, #80]
  845:Middlewares/LVGL/lvgl/src/widgets/chart/lv_chart.c ****     chart->ymax[1] = 100;
  4040              		.loc 1 845 5 is_stmt 1 view .LVU1408
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccohcVts.s 			page 148
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccaBXXR2.s 			page 148
 
 
  845:Middlewares/LVGL/lvgl/src/widgets/chart/lv_chart.c ****     chart->ymax[1] = 100;
@@ -8878,7 +8878,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccohcVts.s 			page 1
  857:Middlewares/LVGL/lvgl/src/widgets/chart/lv_chart.c **** 
  4077              		.loc 1 857 1 is_stmt 0 view .LVU1427
  4078 0056 10BD     		pop	{r4, pc}
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccohcVts.s 			page 149
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccaBXXR2.s 			page 149
 
 
  857:Middlewares/LVGL/lvgl/src/widgets/chart/lv_chart.c **** 
@@ -8938,7 +8938,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccohcVts.s 			page 1
  4123              		.loc 1 1858 11 is_stmt 0 view .LVU1439
  4124 0010 CA68     		ldr	r2, [r1, #12]
  4125              	.LVL470:
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccohcVts.s 			page 150
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccaBXXR2.s 			page 150
 
 
 1858:Middlewares/LVGL/lvgl/src/widgets/chart/lv_chart.c ****         int32_t * new_points = lv_malloc(sizeof(int32_t) * cnt);
@@ -8998,7 +8998,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccohcVts.s 			page 1
  4161 0028 2968     		ldr	r1, [r5]
 1866:Middlewares/LVGL/lvgl/src/widgets/chart/lv_chart.c ****             }
  4162              		.loc 1 1866 34 view .LVU1459
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccohcVts.s 			page 151
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccaBXXR2.s 			page 151
 
 
  4163 002a FB68     		ldr	r3, [r7, #12]
@@ -9058,7 +9058,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccohcVts.s 			page 1
 1881:Middlewares/LVGL/lvgl/src/widgets/chart/lv_chart.c ****     }
  4205              		.loc 1 1881 9 view .LVU1472
 1881:Middlewares/LVGL/lvgl/src/widgets/chart/lv_chart.c ****     }
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccohcVts.s 			page 152
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccaBXXR2.s 			page 152
 
 
  4206              		.loc 1 1881 14 is_stmt 0 view .LVU1473
@@ -9118,7 +9118,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccohcVts.s 			page 1
  4246              	.LVL484:
 1884:Middlewares/LVGL/lvgl/src/widgets/chart/lv_chart.c ****         LV_ASSERT_MALLOC((*a));
  4247              		.loc 1 1884 16 view .LVU1488
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccohcVts.s 			page 153
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccaBXXR2.s 			page 153
 
 
  4248 0086 1846     		mov	r0, r3
@@ -9178,7 +9178,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccohcVts.s 			page 1
  4283 009a 2B68     		ldr	r3, [r5]
 1890:Middlewares/LVGL/lvgl/src/widgets/chart/lv_chart.c ****             }
  4284              		.loc 1 1890 25 view .LVU1508
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccohcVts.s 			page 154
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccaBXXR2.s 			page 154
 
 
  4285 009c 6FF00042 		mvn	r2, #-2147483648
@@ -9238,7 +9238,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccohcVts.s 			page 1
  4330 000a 0446     		mov	r4, r0
  4331              	.LVL494:
  111:Middlewares/LVGL/lvgl/src/widgets/chart/lv_chart.c ****     return obj;
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccohcVts.s 			page 155
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccaBXXR2.s 			page 155
 
 
  4332              		.loc 1 111 5 is_stmt 1 view .LVU1520
@@ -9298,7 +9298,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccohcVts.s 			page 1
  4376              		.loc 1 242 13 is_stmt 0 view .LVU1532
  4377 0004 90F87820 		ldrb	r2, [r0, #120]	@ zero_extendqisi2
  4378 0008 C2F30112 		ubfx	r2, r2, #4, #2
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccohcVts.s 			page 156
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccaBXXR2.s 			page 156
 
 
  242:Middlewares/LVGL/lvgl/src/widgets/chart/lv_chart.c **** 
@@ -9358,7 +9358,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccohcVts.s 			page 1
  250:Middlewares/LVGL/lvgl/src/widgets/chart/lv_chart.c **** 
  4423              		.loc 1 250 5 view .LVU1545
  4424 0000 68B1     		cbz	r0, .L209
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccohcVts.s 			page 157
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccaBXXR2.s 			page 157
 
 
  249:Middlewares/LVGL/lvgl/src/widgets/chart/lv_chart.c ****     LV_ASSERT_OBJ(obj, MY_CLASS);
@@ -9418,7 +9418,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccohcVts.s 			page 1
  4464              	.LCFI36:
  4465              		.cfi_def_cfa_offset 0
  4466              		.cfi_restore 3
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccohcVts.s 			page 158
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccaBXXR2.s 			page 158
 
 
  4467              		.cfi_restore 14
@@ -9478,7 +9478,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccohcVts.s 			page 1
  4508 0006 8A42     		cmp	r2, r1
  4509 0008 02D0     		beq	.L214
  267:Middlewares/LVGL/lvgl/src/widgets/chart/lv_chart.c ****     lv_obj_invalidate(obj);
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccohcVts.s 			page 159
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccaBXXR2.s 			page 159
 
 
  4510              		.loc 1 267 5 is_stmt 1 view .LVU1576
@@ -9538,7 +9538,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccohcVts.s 			page 1
  4554              		.cfi_def_cfa_offset 8
  4555              		.cfi_offset 3, -8
  4556              		.cfi_offset 14, -4
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccohcVts.s 			page 160
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccaBXXR2.s 			page 160
 
 
  273:Middlewares/LVGL/lvgl/src/widgets/chart/lv_chart.c **** 
@@ -9598,7 +9598,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccohcVts.s 			page 1
  4598              	lv_chart_get_type:
  4599              	.LVL514:
  4600              	.LFB210:
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccohcVts.s 			page 161
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccaBXXR2.s 			page 161
 
 
  282:Middlewares/LVGL/lvgl/src/widgets/chart/lv_chart.c ****     LV_ASSERT_OBJ(obj, MY_CLASS);
@@ -9658,7 +9658,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccohcVts.s 			page 1
  4642              		.cfi_startproc
  4643              		@ args = 0, pretend = 0, frame = 0
  4644              		@ frame_needed = 0, uses_anonymous_args = 0
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccohcVts.s 			page 162
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccaBXXR2.s 			page 162
 
 
  4645              		@ link register save eliminated.
@@ -9718,7 +9718,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccohcVts.s 			page 1
  299:Middlewares/LVGL/lvgl/src/widgets/chart/lv_chart.c **** 
  4686              		.loc 1 299 5 view .LVU1634
  4687 0000 20B1     		cbz	r0, .L234
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccohcVts.s 			page 163
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccaBXXR2.s 			page 163
 
 
  299:Middlewares/LVGL/lvgl/src/widgets/chart/lv_chart.c **** 
@@ -9778,7 +9778,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccohcVts.s 			page 1
  307:Middlewares/LVGL/lvgl/src/widgets/chart/lv_chart.c **** 
  4729              		.loc 1 307 33 view .LVU1650
  309:Middlewares/LVGL/lvgl/src/widgets/chart/lv_chart.c ****     return chart->hdiv_cnt;
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccohcVts.s 			page 164
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccaBXXR2.s 			page 164
 
 
  4730              		.loc 1 309 5 view .LVU1651
@@ -9838,7 +9838,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccohcVts.s 			page 1
  4771              		.loc 1 318 5 view .LVU1666
  319:Middlewares/LVGL/lvgl/src/widgets/chart/lv_chart.c **** 
  4772              		.loc 1 319 1 is_stmt 0 view .LVU1667
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccohcVts.s 			page 165
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccaBXXR2.s 			page 165
 
 
  4773 0002 006F     		ldr	r0, [r0, #112]
@@ -9898,7 +9898,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccohcVts.s 			page 1
  4814 0004 7047     		bx	lr
  4815              	.LVL536:
  4816              	.L243:
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccohcVts.s 			page 166
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccaBXXR2.s 			page 166
 
 
  323:Middlewares/LVGL/lvgl/src/widgets/chart/lv_chart.c ****     LV_UNUSED(obj);
@@ -9958,7 +9958,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccohcVts.s 			page 1
  4863              		.loc 1 331 5 is_stmt 1 view .LVU1692
  331:Middlewares/LVGL/lvgl/src/widgets/chart/lv_chart.c ****     LV_ASSERT_NULL(ser);
  4864              		.loc 1 331 24 view .LVU1693
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccohcVts.s 			page 167
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccaBXXR2.s 			page 167
 
 
  332:Middlewares/LVGL/lvgl/src/widgets/chart/lv_chart.c ****     LV_ASSERT_OBJ(obj, MY_CLASS);
@@ -10018,7 +10018,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccohcVts.s 			page 1
  4898              	.LCFI43:
  4899              		.cfi_def_cfa_offset 36
  4900              		@ sp needed
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccohcVts.s 			page 168
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccaBXXR2.s 			page 168
 
 
  4901 0020 BDE8F08F 		pop	{r4, r5, r6, r7, r8, r9, r10, fp, pc}
@@ -10078,7 +10078,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccohcVts.s 			page 1
  4943 0028 FFF7FEFF 		bl	lv_obj_get_content_width
  4944              	.LVL543:
  343:Middlewares/LVGL/lvgl/src/widgets/chart/lv_chart.c ****     int32_t h = lv_obj_get_content_height(obj);
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccohcVts.s 			page 169
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccaBXXR2.s 			page 169
 
 
  4945              		.loc 1 343 17 view .LVU1727
@@ -10138,7 +10138,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccohcVts.s 			page 1
  348:Middlewares/LVGL/lvgl/src/widgets/chart/lv_chart.c ****         }
  4987              		.loc 1 348 33 view .LVU1740
  4988 005c B8FBF3F3 		udiv	r3, r8, r3
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccohcVts.s 			page 170
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccaBXXR2.s 			page 170
 
 
  348:Middlewares/LVGL/lvgl/src/widgets/chart/lv_chart.c ****         }
@@ -10198,7 +10198,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccohcVts.s 			page 1
  5029 0084 0790     		str	r0, [sp, #28]
  711:Middlewares/LVGL/lvgl/src/widgets/chart/../../core/lv_obj_style_gen.h **** }
  5030              		.loc 2 711 5 is_stmt 1 view .LVU1755
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccohcVts.s 			page 171
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccaBXXR2.s 			page 171
 
 
  5031              	.LVL555:
@@ -10258,7 +10258,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccohcVts.s 			page 1
  5070 00a2 1B1A     		subs	r3, r3, r0
  5071 00a4 2360     		str	r3, [r4]
  445:Middlewares/LVGL/lvgl/src/widgets/chart/lv_chart.c ****     id = ((int32_t)start_point + id) % chart->point_cnt;
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccohcVts.s 			page 172
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccaBXXR2.s 			page 172
 
 
  5072              		.loc 1 445 5 is_stmt 1 view .LVU1771
@@ -10318,7 +10318,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccohcVts.s 			page 1
  5112              	.L257:
  5113              	.LBB232:
  351:Middlewares/LVGL/lvgl/src/widgets/chart/lv_chart.c ****         }
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccohcVts.s 			page 173
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccaBXXR2.s 			page 173
 
 
  5114              		.loc 1 351 13 is_stmt 1 view .LVU1786
@@ -10378,7 +10378,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccohcVts.s 			page 1
  359:Middlewares/LVGL/lvgl/src/widgets/chart/lv_chart.c ****     }
  5156              		.loc 1 359 18 view .LVU1799
  5157 0108 6060     		str	r0, [r4, #4]
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccohcVts.s 			page 174
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccaBXXR2.s 			page 174
 
 
  5158              	.LBE233:
@@ -10438,7 +10438,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccohcVts.s 			page 1
  5199              	.LBB238:
  382:Middlewares/LVGL/lvgl/src/widgets/chart/../../core/lv_obj_style_gen.h ****     return (int32_t)v.num;
  5200              		.loc 2 382 5 view .LVU1813
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccohcVts.s 			page 175
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccaBXXR2.s 			page 175
 
 
  382:Middlewares/LVGL/lvgl/src/widgets/chart/../../core/lv_obj_style_gen.h ****     return (int32_t)v.num;
@@ -10498,7 +10498,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccohcVts.s 			page 1
  371:Middlewares/LVGL/lvgl/src/widgets/chart/lv_chart.c ****         }
  5239              		.loc 1 371 22 view .LVU1830
  5240 0154 2360     		str	r3, [r4]
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccohcVts.s 			page 176
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccaBXXR2.s 			page 176
 
 
  5241              	.L261:
@@ -10558,7 +10558,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccohcVts.s 			page 1
  5280 0178 2360     		str	r3, [r4]
  5281 017a ECE7     		b	.L261
  5282              	.LVL588:
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccohcVts.s 			page 177
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccaBXXR2.s 			page 177
 
 
  5283              	.L263:
@@ -10618,7 +10618,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccohcVts.s 			page 1
  5320              	.LVL590:
  389:Middlewares/LVGL/lvgl/src/widgets/chart/lv_chart.c ****         }
  5321              		.loc 1 389 13 is_stmt 1 view .LVU1863
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccohcVts.s 			page 178
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccaBXXR2.s 			page 178
 
 
  389:Middlewares/LVGL/lvgl/src/widgets/chart/lv_chart.c ****         }
@@ -10678,7 +10678,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccohcVts.s 			page 1
  5361              		.loc 2 380 23 view .LVU1878
  5362              	.LBB242:
  382:Middlewares/LVGL/lvgl/src/widgets/chart/../../core/lv_obj_style_gen.h ****     return (int32_t)v.num;
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccohcVts.s 			page 179
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccaBXXR2.s 			page 179
 
 
  5363              		.loc 2 382 5 view .LVU1879
@@ -10738,7 +10738,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccohcVts.s 			page 1
  405:Middlewares/LVGL/lvgl/src/widgets/chart/lv_chart.c ****         }
  5402              		.loc 1 405 22 view .LVU1895
  5403 01fa 2360     		str	r3, [r4]
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccohcVts.s 			page 180
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccaBXXR2.s 			page 180
 
 
  5404              	.LVL603:
@@ -10798,7 +10798,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccohcVts.s 			page 1
  5444 0220 0023     		movs	r3, #0
  5445              	.L270:
  5446              	.LVL612:
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccohcVts.s 			page 181
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccaBXXR2.s 			page 181
 
 
  418:Middlewares/LVGL/lvgl/src/widgets/chart/lv_chart.c ****             int32_t v_act = s->y_points[p_act];
@@ -10858,7 +10858,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccohcVts.s 			page 1
  5484              		.loc 1 415 9 is_stmt 1 discriminator 2 view .LVU1926
  5485 0246 4046     		mov	r0, r8
  5486 0248 FFF7FEFF 		bl	lv_ll_get_next
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccohcVts.s 			page 182
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccaBXXR2.s 			page 182
 
 
  5487              	.LVL618:
@@ -10918,7 +10918,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccohcVts.s 			page 1
  5526              	.LVL622:
  433:Middlewares/LVGL/lvgl/src/widgets/chart/lv_chart.c ****     }
  5527              		.loc 1 433 18 view .LVU1942
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccohcVts.s 			page 183
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccaBXXR2.s 			page 183
 
 
  5528 0276 6060     		str	r0, [r4, #4]
@@ -10978,7 +10978,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccohcVts.s 			page 1
  5576 000a 8A46     		mov	r10, r1
  5577 000c 0746     		mov	r7, r0
 1657:Middlewares/LVGL/lvgl/src/widgets/chart/lv_chart.c **** 
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccohcVts.s 			page 184
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccaBXXR2.s 			page 184
 
 
  5578              		.loc 1 1657 5 is_stmt 1 view .LVU1951
@@ -11038,7 +11038,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccohcVts.s 			page 1
  5620              	.LCFI50:
  5621              		.cfi_def_cfa_offset 552
  5622              		.cfi_offset 4, -36
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccohcVts.s 			page 185
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccaBXXR2.s 			page 185
 
 
  5623              		.cfi_offset 5, -32
@@ -11098,7 +11098,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccohcVts.s 			page 1
 1677:Middlewares/LVGL/lvgl/src/widgets/chart/lv_chart.c ****     int32_t point_h = lv_obj_get_style_width(obj, LV_PART_CURSOR) / 2;
  5664              		.loc 1 1677 5 view .LVU1977
  5665              	.LBB245:
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccohcVts.s 			page 186
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccaBXXR2.s 			page 186
 
 
  5666              	.LBI245:
@@ -11158,7 +11158,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccohcVts.s 			page 1
  5707              	.LVL639:
 1681:Middlewares/LVGL/lvgl/src/widgets/chart/lv_chart.c ****         lv_memcpy(&line_dsc, &line_dsc_ori, sizeof(lv_draw_line_dsc_t));
  5708              		.loc 1 1681 5 is_stmt 1 view .LVU1991
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccohcVts.s 			page 187
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccaBXXR2.s 			page 187
 
 
  5709 0080 5846     		mov	r0, fp
@@ -11218,7 +11218,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccohcVts.s 			page 1
  5750              		.loc 1 1705 14 discriminator 6 view .LVU2004
  5751 00a8 0193     		str	r3, [sp, #4]
  5752              	.LVL646:
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccohcVts.s 			page 188
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccaBXXR2.s 			page 188
 
 
 1706:Middlewares/LVGL/lvgl/src/widgets/chart/lv_chart.c ****         point_area.x2 = cx + point_w;
@@ -11278,7 +11278,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccohcVts.s 			page 1
 1713:Middlewares/LVGL/lvgl/src/widgets/chart/lv_chart.c ****             line_dsc.p2.x = cursor->dir & LV_DIR_RIGHT ? obj->coords.x2 : cx;
  5788              		.loc 1 1713 13 is_stmt 1 view .LVU2024
 1713:Middlewares/LVGL/lvgl/src/widgets/chart/lv_chart.c ****             line_dsc.p2.x = cursor->dir & LV_DIR_RIGHT ? obj->coords.x2 : cx;
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccohcVts.s 			page 189
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccaBXXR2.s 			page 189
 
 
  5789              		.loc 1 1713 27 is_stmt 0 view .LVU2025
@@ -11338,7 +11338,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccohcVts.s 			page 1
  5826              		.loc 1 1727 11 view .LVU2042
  5827 00fa 13F00C0F 		tst	r3, #12
  5828 00fe 17D0     		beq	.L290
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccohcVts.s 			page 190
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccaBXXR2.s 			page 190
 
 
 1728:Middlewares/LVGL/lvgl/src/widgets/chart/lv_chart.c ****             line_dsc.p1.y = cursor->dir & LV_DIR_TOP ? obj->coords.y1 : cy;
@@ -11398,7 +11398,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccohcVts.s 			page 1
  5865 0122 0993     		str	r3, [sp, #36]
 1736:Middlewares/LVGL/lvgl/src/widgets/chart/lv_chart.c **** 
  5866              		.loc 1 1736 13 is_stmt 1 view .LVU2061
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccohcVts.s 			page 191
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccaBXXR2.s 			page 191
 
 
  5867 0124 5046     		mov	r0, r10
@@ -11458,7 +11458,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccohcVts.s 			page 1
  5909              	.LVL653:
 1683:Middlewares/LVGL/lvgl/src/widgets/chart/lv_chart.c ****         line_dsc.color = cursor->color;
  5910              		.loc 1 1683 9 view .LVU2074
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccohcVts.s 			page 192
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccaBXXR2.s 			page 192
 
 
  5911 0156 A022     		movs	r2, #160
@@ -11518,7 +11518,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccohcVts.s 			page 1
  5949 0186 0E44     		add	r6, r6, r1
  5950              	.LVL657:
 1702:Middlewares/LVGL/lvgl/src/widgets/chart/lv_chart.c **** 
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccohcVts.s 			page 193
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccaBXXR2.s 			page 193
 
 
  5951              		.loc 1 1702 9 is_stmt 1 view .LVU2091
@@ -11578,7 +11578,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccohcVts.s 			page 1
  5993 01b6 06A9     		add	r1, sp, #24
  5994 01b8 5046     		mov	r0, r10
  5995 01ba FFF7FEFF 		bl	lv_draw_rect
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccohcVts.s 			page 194
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccaBXXR2.s 			page 194
 
 
  5996              	.LVL662:
@@ -11638,7 +11638,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccohcVts.s 			page 1
  454:Middlewares/LVGL/lvgl/src/widgets/chart/lv_chart.c **** 
  6041              		.loc 1 454 5 view .LVU2115
  454:Middlewares/LVGL/lvgl/src/widgets/chart/lv_chart.c **** 
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccohcVts.s 			page 195
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccaBXXR2.s 			page 195
 
 
  6042              		.loc 1 454 5 view .LVU2116
@@ -11698,7 +11698,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccohcVts.s 			page 1
  6087              		.loc 1 122 5 is_stmt 1 view .LVU2127
  122:Middlewares/LVGL/lvgl/src/widgets/chart/lv_chart.c ****         lv_chart_series_t * ser;
  6088              		.loc 1 122 20 is_stmt 0 view .LVU2128
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccohcVts.s 			page 196
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccaBXXR2.s 			page 196
 
 
  6089 0014 90F87830 		ldrb	r3, [r0, #120]	@ zero_extendqisi2
@@ -11758,7 +11758,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccohcVts.s 			page 1
  6131              	.LCFI55:
  6132              		.cfi_def_cfa_offset 24
  6133              		.cfi_offset 3, -24
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccohcVts.s 			page 197
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccaBXXR2.s 			page 197
 
 
  6134              		.cfi_offset 4, -20
@@ -11818,7 +11818,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccohcVts.s 			page 1
  131:Middlewares/LVGL/lvgl/src/widgets/chart/lv_chart.c ****         LV_LL_READ_BACK(&chart->series_ll, ser) {
  6177              		.loc 1 131 9 is_stmt 1 view .LVU2152
  132:Middlewares/LVGL/lvgl/src/widgets/chart/lv_chart.c ****             ser->x_points = lv_malloc(sizeof(int32_t) * chart->point_cnt);
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccohcVts.s 			page 198
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccaBXXR2.s 			page 198
 
 
  6178              		.loc 1 132 9 view .LVU2153
@@ -11878,7 +11878,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccohcVts.s 			page 1
  6217              		.loc 1 134 13 view .LVU2168
  134:Middlewares/LVGL/lvgl/src/widgets/chart/lv_chart.c ****             if(ser->x_points == NULL) return;
  6218              		.loc 1 134 13 view .LVU2169
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccohcVts.s 			page 199
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccaBXXR2.s 			page 199
 
 
  134:Middlewares/LVGL/lvgl/src/widgets/chart/lv_chart.c ****             if(ser->x_points == NULL) return;
@@ -11938,7 +11938,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccohcVts.s 			page 1
  151:Middlewares/LVGL/lvgl/src/widgets/chart/lv_chart.c **** 
  6264              		.loc 1 151 5 is_stmt 1 view .LVU2181
  153:Middlewares/LVGL/lvgl/src/widgets/chart/lv_chart.c **** 
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccohcVts.s 			page 200
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccaBXXR2.s 			page 200
 
 
  6265              		.loc 1 153 5 view .LVU2182
@@ -11998,7 +11998,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccohcVts.s 			page 1
  159:Middlewares/LVGL/lvgl/src/widgets/chart/lv_chart.c ****         ser->start_point = 0;
  6309              		.loc 1 159 9 view .LVU2193
  159:Middlewares/LVGL/lvgl/src/widgets/chart/lv_chart.c ****         ser->start_point = 0;
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccohcVts.s 			page 201
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccaBXXR2.s 			page 201
 
 
  6310              		.loc 1 159 12 is_stmt 0 view .LVU2194
@@ -12058,7 +12058,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccohcVts.s 			page 1
  159:Middlewares/LVGL/lvgl/src/widgets/chart/lv_chart.c ****         ser->start_point = 0;
  6352              		.loc 1 159 38 discriminator 1 view .LVU2207
  6353 005c 231D     		adds	r3, r4, #4
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccohcVts.s 			page 202
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccaBXXR2.s 			page 202
 
 
  6354 005e 3246     		mov	r2, r6
@@ -12118,7 +12118,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccohcVts.s 			page 1
  170:Middlewares/LVGL/lvgl/src/widgets/chart/lv_chart.c **** 
  6400              		.loc 1 170 33 view .LVU2218
  172:Middlewares/LVGL/lvgl/src/widgets/chart/lv_chart.c **** 
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccohcVts.s 			page 203
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccaBXXR2.s 			page 203
 
 
  6401              		.loc 1 172 5 view .LVU2219
@@ -12178,7 +12178,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccohcVts.s 			page 1
  6443              	.L347:
  196:Middlewares/LVGL/lvgl/src/widgets/chart/lv_chart.c **** }
  6444              		.loc 1 196 5 view .LVU2232
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccohcVts.s 			page 204
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccaBXXR2.s 			page 204
 
 
  6445 001e 1846     		mov	r0, r3
@@ -12238,7 +12238,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccohcVts.s 			page 1
  6484              	.LVL709:
  188:Middlewares/LVGL/lvgl/src/widgets/chart/lv_chart.c ****             chart->xmin[1] = min;
  6485              		.loc 1 188 15 view .LVU2248
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccohcVts.s 			page 205
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccaBXXR2.s 			page 205
 
 
  6486 003c 9142     		cmp	r1, r2
@@ -12298,7 +12298,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccohcVts.s 			page 1
  6531 000f 0C       		.byte	(.L358-.L356)/2
  6532 0010 11       		.byte	(.L357-.L356)/2
  6533 0011 0B       		.byte	(.L351-.L356)/2
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccohcVts.s 			page 206
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccaBXXR2.s 			page 206
 
 
  6534 0012 16       		.byte	(.L355-.L356)/2
@@ -12358,7 +12358,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccohcVts.s 			page 1
  6574              		.loc 1 210 13 is_stmt 1 view .LVU2273
  210:Middlewares/LVGL/lvgl/src/widgets/chart/lv_chart.c ****             chart->ymax[1] = max;
  6575              		.loc 1 210 27 is_stmt 0 view .LVU2274
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccohcVts.s 			page 207
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccaBXXR2.s 			page 207
 
 
  6576 0026 596D     		ldr	r1, [r3, #84]
@@ -12418,7 +12418,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccohcVts.s 			page 1
  6614              		.cfi_endproc
  6615              	.LFE204:
  6617              		.section	.text.lv_chart_set_axis_range,"ax",%progbits
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccohcVts.s 			page 208
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccaBXXR2.s 			page 208
 
 
  6618              		.align	1
@@ -12478,7 +12478,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccohcVts.s 			page 1
  6664              		.cfi_restore 6
  6665              		.cfi_restore 14
  231:Middlewares/LVGL/lvgl/src/widgets/chart/lv_chart.c **** 
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccohcVts.s 			page 209
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccaBXXR2.s 			page 209
 
 
  6666              		.loc 1 231 5 is_stmt 1 view .LVU2300
@@ -12538,7 +12538,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccohcVts.s 			page 1
  6711 000e 0446     		mov	r4, r0
  467:Middlewares/LVGL/lvgl/src/widgets/chart/lv_chart.c **** 
  6712              		.loc 1 467 5 view .LVU2312
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccohcVts.s 			page 210
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccaBXXR2.s 			page 210
 
 
  467:Middlewares/LVGL/lvgl/src/widgets/chart/lv_chart.c **** 
@@ -12598,7 +12598,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccohcVts.s 			page 1
   20:Middlewares/LVGL/lvgl/src/widgets/chart/../../core/../misc/../font/../draw/../misc/../stdlib/lv_string.h ****  *      DEFINES
   21:Middlewares/LVGL/lvgl/src/widgets/chart/../../core/../misc/../font/../draw/../misc/../stdlib/lv_string.h ****  *********************/
   22:Middlewares/LVGL/lvgl/src/widgets/chart/../../core/../misc/../font/../draw/../misc/../stdlib/lv_string.h **** 
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccohcVts.s 			page 211
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccaBXXR2.s 			page 211
 
 
   23:Middlewares/LVGL/lvgl/src/widgets/chart/../../core/../misc/../font/../draw/../misc/../stdlib/lv_string.h **** /**********************
@@ -12658,7 +12658,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccohcVts.s 			page 1
   75:Middlewares/LVGL/lvgl/src/widgets/chart/../../core/../misc/../font/../draw/../misc/../stdlib/lv_string.h ****     lv_memset(dst, 0x00, len);
  6739              		.loc 4 75 5 view .LVU2325
  6740 0020 1422     		movs	r2, #20
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccohcVts.s 			page 212
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccaBXXR2.s 			page 212
 
 
  6741 0022 0021     		movs	r1, #0
@@ -12718,7 +12718,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccohcVts.s 			page 1
  6778              		.loc 1 507 5 is_stmt 1 view .LVU2343
  507:Middlewares/LVGL/lvgl/src/widgets/chart/lv_chart.c ****     ser->start_point = 0;
  6779              		.loc 1 507 16 is_stmt 0 view .LVU2344
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccohcVts.s 			page 213
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccaBXXR2.s 			page 213
 
 
  6780 0048 019B     		ldr	r3, [sp, #4]
@@ -12778,7 +12778,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccohcVts.s 			page 1
  6817              		.loc 1 517 25 is_stmt 0 discriminator 1 view .LVU2361
  6818 0078 626F     		ldr	r2, [r4, #116]
  517:Middlewares/LVGL/lvgl/src/widgets/chart/lv_chart.c ****         *p_tmp = def;
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccohcVts.s 			page 214
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccaBXXR2.s 			page 214
 
 
  6819              		.loc 1 517 18 discriminator 1 view .LVU2362
@@ -12838,7 +12838,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccohcVts.s 			page 1
  6854              		.loc 1 479 5 view .LVU2381
  479:Middlewares/LVGL/lvgl/src/widgets/chart/lv_chart.c **** 
  6855              		.loc 1 479 5 view .LVU2382
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccohcVts.s 			page 215
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccaBXXR2.s 			page 215
 
 
  6856 008e FEE7     		b	.L375
@@ -12898,7 +12898,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccohcVts.s 			page 1
  6892              		.loc 1 501 9 is_stmt 1 view .LVU2400
  6893 00ac 2946     		mov	r1, r5
  6894 00ae 4046     		mov	r0, r8
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccohcVts.s 			page 216
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccaBXXR2.s 			page 216
 
 
  6895 00b0 FFF7FEFF 		bl	lv_ll_remove
@@ -12958,7 +12958,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccohcVts.s 			page 1
  6942 0004 0C46     		mov	r4, r1
  6943 0006 0546     		mov	r5, r0
  527:Middlewares/LVGL/lvgl/src/widgets/chart/lv_chart.c ****     LV_ASSERT_NULL(series);
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccohcVts.s 			page 217
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccaBXXR2.s 			page 217
 
 
  6944              		.loc 1 527 5 is_stmt 1 view .LVU2410
@@ -13018,7 +13018,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccohcVts.s 			page 1
  6980              	.LVL748:
  6981              	.L393:
  534:Middlewares/LVGL/lvgl/src/widgets/chart/lv_chart.c ****     lv_free(series);
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccohcVts.s 			page 218
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccaBXXR2.s 			page 218
 
 
  6982              		.loc 1 534 5 view .LVU2429
@@ -13078,7 +13078,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccohcVts.s 			page 1
  7024              		.section	.text.lv_chart_hide_series,"ax",%progbits
  7025              		.align	1
  7026              		.global	lv_chart_hide_series
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccohcVts.s 			page 219
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccaBXXR2.s 			page 219
 
 
  7027              		.syntax unified
@@ -13138,7 +13138,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccohcVts.s 			page 1
  7067 0016 08BD     		pop	{r3, pc}
  7068              	.LVL755:
  7069              	.L398:
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccohcVts.s 			page 220
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccaBXXR2.s 			page 220
 
 
  7070              	.LCFI74:
@@ -13198,7 +13198,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccohcVts.s 			page 1
  7114              	.LCFI77:
  7115              		.cfi_def_cfa_offset 16
  7116 0004 0192     		str	r2, [sp, #4]
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccohcVts.s 			page 221
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccaBXXR2.s 			page 221
 
 
  551:Middlewares/LVGL/lvgl/src/widgets/chart/lv_chart.c ****     LV_ASSERT_NULL(series);
@@ -13258,7 +13258,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccohcVts.s 			page 1
  552:Middlewares/LVGL/lvgl/src/widgets/chart/lv_chart.c **** 
  7154              		.loc 1 552 5 view .LVU2487
  552:Middlewares/LVGL/lvgl/src/widgets/chart/lv_chart.c **** 
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccohcVts.s 			page 222
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccaBXXR2.s 			page 222
 
 
  7155              		.loc 1 552 5 view .LVU2488
@@ -13318,7 +13318,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccohcVts.s 			page 1
  7195 0006 8B68     		ldr	r3, [r1, #8]
  7196 0008 ADF80430 		strh	r3, [sp, #4]	@ movhi
  7197 000c 1B0C     		lsrs	r3, r3, #16
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccohcVts.s 			page 223
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccaBXXR2.s 			page 223
 
 
  7198 000e 8DF80630 		strb	r3, [sp, #6]
@@ -13378,7 +13378,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccohcVts.s 			page 1
  7241              	.LVL762:
  7242              	.LFB223:
  568:Middlewares/LVGL/lvgl/src/widgets/chart/lv_chart.c ****     LV_ASSERT_OBJ(obj, MY_CLASS);
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccohcVts.s 			page 224
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccaBXXR2.s 			page 224
 
 
  7243              		.loc 1 568 1 view -0
@@ -13438,7 +13438,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccohcVts.s 			page 1
  569:Middlewares/LVGL/lvgl/src/widgets/chart/lv_chart.c ****     LV_ASSERT_NULL(ser);
  7278              		.loc 1 569 5 view .LVU2538
  7279 000e FEE7     		b	.L418
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccohcVts.s 			page 225
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccaBXXR2.s 			page 225
 
 
  7280              	.L420:
@@ -13498,7 +13498,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccohcVts.s 			page 1
  583:Middlewares/LVGL/lvgl/src/widgets/chart/lv_chart.c **** }
  7321              		.loc 1 583 17 is_stmt 0 view .LVU2554
  7322 0006 3030     		adds	r0, r0, #48
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccohcVts.s 			page 226
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccaBXXR2.s 			page 226
 
 
  7323              	.LVL767:
@@ -13558,7 +13558,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccohcVts.s 			page 1
  7368              	.LFB255:
 1754:Middlewares/LVGL/lvgl/src/widgets/chart/lv_chart.c ****     lv_chart_t * chart  = (lv_chart_t *)obj;
  7369              		.loc 1 1754 1 is_stmt 1 view -0
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccohcVts.s 			page 227
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccaBXXR2.s 			page 227
 
 
  7370              		.cfi_startproc
@@ -13618,7 +13618,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccohcVts.s 			page 1
  347:Middlewares/LVGL/lvgl/src/widgets/chart/../../core/lv_obj_style_gen.h **** }
  7414              		.loc 2 347 5 is_stmt 1 view .LVU2577
  7415              	.LVL779:
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccohcVts.s 			page 228
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccaBXXR2.s 			page 228
 
 
  347:Middlewares/LVGL/lvgl/src/widgets/chart/../../core/lv_obj_style_gen.h **** }
@@ -13678,7 +13678,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccohcVts.s 			page 1
  7453 0042 6AE0     		b	.L430
  7454              	.L445:
 1761:Middlewares/LVGL/lvgl/src/widgets/chart/lv_chart.c ****     if(chart->type == LV_CHART_TYPE_LINE ||
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccohcVts.s 			page 229
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccaBXXR2.s 			page 229
 
 
  7455              		.loc 1 1761 15 is_stmt 1 discriminator 1 view .LVU2595
@@ -13738,7 +13738,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccohcVts.s 			page 1
 1767:Middlewares/LVGL/lvgl/src/widgets/chart/lv_chart.c ****         if(ser) {
  7493              		.loc 1 1767 35 view .LVU2612
  7494 006e FFF7FEFF 		bl	lv_chart_get_series_next
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccohcVts.s 			page 230
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccaBXXR2.s 			page 230
 
 
  7495              	.LVL782:
@@ -13798,7 +13798,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccohcVts.s 			page 1
  7540              		.loc 1 1772 32 discriminator 1 view .LVU2621
  7541              	.LBE261:
 1771:Middlewares/LVGL/lvgl/src/widgets/chart/lv_chart.c ****                 int32_t dist = LV_ABS(x - lv_map(ser->x_points[i], chart->xmin[ser->x_axis_sec], ch
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccohcVts.s 			page 231
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccaBXXR2.s 			page 231
 
 
  7542              		.loc 1 1771 56 is_stmt 1 discriminator 2 view .LVU2622
@@ -13858,7 +13858,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccohcVts.s 			page 1
  7588 010e 8245     		cmp	r10, r0
  7589 0110 CEDD     		ble	.L438
 1775:Middlewares/LVGL/lvgl/src/widgets/chart/lv_chart.c ****                 }
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccohcVts.s 			page 232
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccaBXXR2.s 			page 232
 
 
  7590              		.loc 1 1775 32 view .LVU2631
@@ -13918,7 +13918,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccohcVts.s 			page 1
  7638              		.cfi_offset 5, -12
  7639              		.cfi_offset 6, -8
  7640              		.cfi_offset 14, -4
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccohcVts.s 			page 233
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccaBXXR2.s 			page 233
 
 
  7641 0002 8CB0     		sub	sp, sp, #48
@@ -13978,7 +13978,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccohcVts.s 			page 1
  7682 001c 2046     		mov	r0, r4
  7683              	.LVL802:
  900:Middlewares/LVGL/lvgl/src/widgets/chart/lv_chart.c **** 
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccohcVts.s 			page 234
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccaBXXR2.s 			page 234
 
 
  7684              		.loc 1 900 22 view .LVU2653
@@ -14038,7 +14038,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccohcVts.s 			page 1
  7723 0042 FFF7FEFF 		bl	lv_obj_get_ext_draw_size
  7724              	.LVL810:
  7725 0046 0146     		mov	r1, r0
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccohcVts.s 			page 235
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccaBXXR2.s 			page 235
 
 
  7726              	.LVL811:
@@ -14098,7 +14098,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccohcVts.s 			page 1
  7766 0080 06F13000 		add	r0, r6, #48
  7767 0084 FFF7FEFF 		bl	lv_ll_is_empty
  7768              	.LVL817:
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccohcVts.s 			page 236
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccaBXXR2.s 			page 236
 
 
  936:Middlewares/LVGL/lvgl/src/widgets/chart/lv_chart.c ****                 if(chart->type == LV_CHART_TYPE_LINE) draw_series_line(obj, layer);
@@ -14158,7 +14158,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccohcVts.s 			page 1
  909:Middlewares/LVGL/lvgl/src/widgets/chart/lv_chart.c ****         if(id != (uint32_t)chart->pressed_point_id) {
  7811              		.loc 1 909 9 is_stmt 1 view .LVU2695
  909:Middlewares/LVGL/lvgl/src/widgets/chart/lv_chart.c ****         if(id != (uint32_t)chart->pressed_point_id) {
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccohcVts.s 			page 237
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccaBXXR2.s 			page 237
 
 
  7812              		.loc 1 909 51 is_stmt 0 view .LVU2696
@@ -14218,7 +14218,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccohcVts.s 			page 1
  918:Middlewares/LVGL/lvgl/src/widgets/chart/lv_chart.c ****         chart->pressed_point_id = LV_CHART_POINT_NONE;
  7855              		.loc 1 918 9 is_stmt 1 view .LVU2708
  7856 00ea 816E     		ldr	r1, [r0, #104]
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccohcVts.s 			page 238
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccaBXXR2.s 			page 238
 
 
  7857 00ec FFF7FEFF 		bl	invalidate_point
@@ -14278,7 +14278,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccohcVts.s 			page 1
  7902 0128 EAE7     		b	.L456
  7903              	.L459:
  940:Middlewares/LVGL/lvgl/src/widgets/chart/lv_chart.c ****                 else if(chart->type == LV_CHART_TYPE_SCATTER) draw_series_scatter(obj, layer);
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccohcVts.s 			page 239
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccaBXXR2.s 			page 239
 
 
  7904              		.loc 1 940 63 discriminator 1 view .LVU2718
@@ -14338,7 +14338,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccohcVts.s 			page 1
  592:Middlewares/LVGL/lvgl/src/widgets/chart/lv_chart.c **** 
  7955              		.loc 1 592 5 view .LVU2724
  592:Middlewares/LVGL/lvgl/src/widgets/chart/lv_chart.c **** 
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccohcVts.s 			page 240
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccaBXXR2.s 			page 240
 
 
  7956              		.loc 1 592 33 view .LVU2725
@@ -14398,7 +14398,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccohcVts.s 			page 1
  7993              		.loc 1 603 5 is_stmt 1 view .LVU2742
  603:Middlewares/LVGL/lvgl/src/widgets/chart/lv_chart.c **** 
  7994              		.loc 1 603 17 is_stmt 0 view .LVU2743
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccohcVts.s 			page 241
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccaBXXR2.s 			page 241
 
 
  7995 0034 2575     		strb	r5, [r4, #20]
@@ -14458,7 +14458,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccohcVts.s 			page 1
  8038              		@ args = 0, pretend = 0, frame = 0
  8039              		@ frame_needed = 0, uses_anonymous_args = 0
  610:Middlewares/LVGL/lvgl/src/widgets/chart/lv_chart.c ****     LV_ASSERT_NULL(cursor);
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccohcVts.s 			page 242
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccaBXXR2.s 			page 242
 
 
  8040              		.loc 1 610 5 view .LVU2757
@@ -14518,7 +14518,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccohcVts.s 			page 1
  610:Middlewares/LVGL/lvgl/src/widgets/chart/lv_chart.c ****     LV_ASSERT_NULL(cursor);
  8079              		.loc 1 610 5 view .LVU2773
  610:Middlewares/LVGL/lvgl/src/widgets/chart/lv_chart.c ****     LV_ASSERT_NULL(cursor);
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccohcVts.s 			page 243
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccaBXXR2.s 			page 243
 
 
  8080              		.loc 1 610 5 view .LVU2774
@@ -14578,7 +14578,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccohcVts.s 			page 1
  621:Middlewares/LVGL/lvgl/src/widgets/chart/lv_chart.c **** 
  8124              		.loc 1 621 5 view .LVU2787
  623:Middlewares/LVGL/lvgl/src/widgets/chart/lv_chart.c ****     cursor->pos_set = 1;
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccohcVts.s 			page 244
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccaBXXR2.s 			page 244
 
 
  8125              		.loc 1 623 5 view .LVU2788
@@ -14638,7 +14638,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccohcVts.s 			page 1
  629:Middlewares/LVGL/lvgl/src/widgets/chart/lv_chart.c ****     LV_ASSERT_NULL(cursor);
  8169              		.loc 1 629 1 view -0
  8170              		.cfi_startproc
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccohcVts.s 			page 245
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccaBXXR2.s 			page 245
 
 
  8171              		@ args = 0, pretend = 0, frame = 0
@@ -14698,7 +14698,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccohcVts.s 			page 1
  630:Middlewares/LVGL/lvgl/src/widgets/chart/lv_chart.c ****     LV_UNUSED(chart);
  8209              		.loc 1 630 5 view .LVU2818
  630:Middlewares/LVGL/lvgl/src/widgets/chart/lv_chart.c ****     LV_UNUSED(chart);
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccohcVts.s 			page 246
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccaBXXR2.s 			page 246
 
 
  8210              		.loc 1 630 5 view .LVU2819
@@ -14758,7 +14758,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccohcVts.s 			page 1
  8253              	.LVL864:
  646:Middlewares/LVGL/lvgl/src/widgets/chart/lv_chart.c **** 
  8254              		.loc 1 646 1 is_stmt 0 view .LVU2833
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccohcVts.s 			page 247
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccaBXXR2.s 			page 247
 
 
  8255 0012 08BD     		pop	{r3, pc}
@@ -14818,7 +14818,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccohcVts.s 			page 1
  651:Middlewares/LVGL/lvgl/src/widgets/chart/lv_chart.c **** 
  8300              		.loc 1 651 5 view .LVU2845
  653:Middlewares/LVGL/lvgl/src/widgets/chart/lv_chart.c ****     cursor->pos_set = 0;
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccohcVts.s 			page 248
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccaBXXR2.s 			page 248
 
 
  8301              		.loc 1 653 5 view .LVU2846
@@ -14878,7 +14878,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccohcVts.s 			page 1
  8340              	.L504:
  8341              	.LCFI107:
  8342              		.cfi_def_cfa_offset 16
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccohcVts.s 			page 249
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccaBXXR2.s 			page 249
 
 
  8343              		.cfi_offset 3, -16
@@ -14938,7 +14938,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccohcVts.s 			page 1
  8386              	.LVL875:
  665:Middlewares/LVGL/lvgl/src/widgets/chart/lv_chart.c **** }
  8387              		.loc 1 665 18 view .LVU2875
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccohcVts.s 			page 250
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccaBXXR2.s 			page 250
 
 
  8388 0008 83E80300 		stm	r3, {r0, r1}
@@ -14998,7 +14998,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccohcVts.s 			page 1
  8430              		.cfi_offset 3, -8
  8431              		.cfi_offset 14, -4
  679:Middlewares/LVGL/lvgl/src/widgets/chart/lv_chart.c ****         ser->y_points[i] = value;
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccohcVts.s 			page 251
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccaBXXR2.s 			page 251
 
 
  8432              		.loc 1 679 11 view .LVU2890
@@ -15058,7 +15058,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccohcVts.s 			page 1
  8471              		.cfi_def_cfa_offset 8
  8472              		.cfi_offset 3, -8
  8473              		.cfi_offset 14, -4
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccohcVts.s 			page 252
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccaBXXR2.s 			page 252
 
 
  682:Middlewares/LVGL/lvgl/src/widgets/chart/lv_chart.c ****     lv_chart_refresh(obj);
@@ -15118,7 +15118,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccohcVts.s 			page 1
  8518              		.loc 1 690 5 view .LVU2917
  690:Middlewares/LVGL/lvgl/src/widgets/chart/lv_chart.c **** 
  8519              		.loc 1 690 5 view .LVU2918
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccohcVts.s 			page 253
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccaBXXR2.s 			page 253
 
 
  8520 0008 81B1     		cbz	r1, .L522
@@ -15178,7 +15178,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccohcVts.s 			page 1
  689:Middlewares/LVGL/lvgl/src/widgets/chart/lv_chart.c ****     LV_ASSERT_NULL(ser);
  8559              		.loc 1 689 5 is_stmt 1 view .LVU2934
  689:Middlewares/LVGL/lvgl/src/widgets/chart/lv_chart.c ****     LV_ASSERT_NULL(ser);
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccohcVts.s 			page 254
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccaBXXR2.s 			page 254
 
 
  8560              		.loc 1 689 5 view .LVU2935
@@ -15238,7 +15238,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccohcVts.s 			page 1
  8604 0004 8646     		mov	lr, r0
  701:Middlewares/LVGL/lvgl/src/widgets/chart/lv_chart.c ****     LV_ASSERT_NULL(ser);
  8605              		.loc 1 701 5 is_stmt 1 view .LVU2948
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccohcVts.s 			page 255
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccaBXXR2.s 			page 255
 
 
  701:Middlewares/LVGL/lvgl/src/widgets/chart/lv_chart.c ****     LV_ASSERT_NULL(ser);
@@ -15298,7 +15298,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccohcVts.s 			page 1
  8643              		.loc 1 702 5 view .LVU2965
  702:Middlewares/LVGL/lvgl/src/widgets/chart/lv_chart.c **** 
  8644              		.loc 1 702 5 view .LVU2966
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccohcVts.s 			page 256
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccaBXXR2.s 			page 256
 
 
  702:Middlewares/LVGL/lvgl/src/widgets/chart/lv_chart.c **** 
@@ -15358,7 +15358,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccohcVts.s 			page 1
  714:Middlewares/LVGL/lvgl/src/widgets/chart/lv_chart.c **** }
  8683              		.loc 1 714 5 is_stmt 0 view .LVU2983
  8684 0040 7046     		mov	r0, lr
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccohcVts.s 			page 257
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccaBXXR2.s 			page 257
 
 
  8685 0042 FFF7FEFF 		bl	invalidate_point
@@ -15418,7 +15418,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccohcVts.s 			page 1
  8733 0018 FFF7FEFF 		bl	lv_chart_set_next_value
  8734              	.LVL904:
  720:Middlewares/LVGL/lvgl/src/widgets/chart/lv_chart.c ****         lv_chart_set_next_value(obj, ser, values[i]);
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccohcVts.s 			page 258
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccaBXXR2.s 			page 258
 
 
  8735              		.loc 1 720 33 discriminator 3 view .LVU2992
@@ -15478,7 +15478,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccohcVts.s 			page 1
  8783 0010 0024     		movs	r4, #0
  729:Middlewares/LVGL/lvgl/src/widgets/chart/lv_chart.c ****         lv_chart_set_next_value2(obj, ser, x_values[i], y_values[i]);
  8784              		.loc 1 729 5 view .LVU3001
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccohcVts.s 			page 259
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccaBXXR2.s 			page 259
 
 
  8785 0012 08E0     		b	.L539
@@ -15538,7 +15538,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccohcVts.s 			page 1
  8829              		.loc 1 738 5 view .LVU3013
  8830 0004 21B1     		cbz	r1, .L546
  738:Middlewares/LVGL/lvgl/src/widgets/chart/lv_chart.c ****     lv_chart_t * chart  = (lv_chart_t *)obj;
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccohcVts.s 			page 260
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccaBXXR2.s 			page 260
 
 
  8831              		.loc 1 738 5 view .LVU3014
@@ -15598,7 +15598,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccohcVts.s 			page 1
  8867              		.loc 1 742 8 is_stmt 0 view .LVU3032
  8868 0014 4968     		ldr	r1, [r1, #4]
  8869              	.LVL916:
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccohcVts.s 			page 261
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccaBXXR2.s 			page 261
 
 
  742:Middlewares/LVGL/lvgl/src/widgets/chart/lv_chart.c ****     invalidate_point(obj, id);
@@ -15658,7 +15658,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccohcVts.s 			page 1
  751:Middlewares/LVGL/lvgl/src/widgets/chart/lv_chart.c **** 
  8913              		.loc 1 751 5 view .LVU3046
  8914              	.LVL919:
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccohcVts.s 			page 262
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccaBXXR2.s 			page 262
 
 
  753:Middlewares/LVGL/lvgl/src/widgets/chart/lv_chart.c ****         LV_LOG_WARN("Type must be LV_CHART_TYPE_SCATTER");
@@ -15718,7 +15718,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccohcVts.s 			page 1
  8953              		.loc 1 750 5 view .LVU3062
  750:Middlewares/LVGL/lvgl/src/widgets/chart/lv_chart.c ****     lv_chart_t * chart  = (lv_chart_t *)obj;
  8954              		.loc 1 750 5 view .LVU3063
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccohcVts.s 			page 263
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccaBXXR2.s 			page 263
 
 
  8955 0020 FEE7     		b	.L557
@@ -15778,7 +15778,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccohcVts.s 			page 1
  8999 0000 A8B1     		cbz	r0, .L564
  765:Middlewares/LVGL/lvgl/src/widgets/chart/lv_chart.c ****     LV_ASSERT_OBJ(obj, MY_CLASS);
  9000              		.loc 1 765 1 is_stmt 0 view .LVU3076
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccohcVts.s 			page 264
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccaBXXR2.s 			page 264
 
 
  9001 0002 70B5     		push	{r4, r5, r6, lr}
@@ -15838,7 +15838,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccohcVts.s 			page 1
  9039              		.loc 1 771 19 is_stmt 0 view .LVU3092
  9040 0024 6560     		str	r5, [r4, #4]
  772:Middlewares/LVGL/lvgl/src/widgets/chart/lv_chart.c **** }
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccohcVts.s 			page 265
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccaBXXR2.s 			page 265
 
 
  9041              		.loc 1 772 5 is_stmt 1 view .LVU3093
@@ -15898,7 +15898,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccohcVts.s 			page 1
  9086              	.LFB240:
  776:Middlewares/LVGL/lvgl/src/widgets/chart/lv_chart.c ****     LV_ASSERT_OBJ(obj, MY_CLASS);
  9087              		.loc 1 776 1 view -0
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccohcVts.s 			page 266
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccaBXXR2.s 			page 266
 
 
  9088              		.cfi_startproc
@@ -15958,7 +15958,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccohcVts.s 			page 1
  781:Middlewares/LVGL/lvgl/src/widgets/chart/lv_chart.c ****     ser->x_points = array;
  9127              		.loc 1 781 5 view .LVU3121
  781:Middlewares/LVGL/lvgl/src/widgets/chart/lv_chart.c ****     ser->x_points = array;
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccohcVts.s 			page 267
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccaBXXR2.s 			page 267
 
 
  9128              		.loc 1 781 29 is_stmt 0 view .LVU3122
@@ -16018,7 +16018,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccohcVts.s 			page 1
  9168              		.cfi_endproc
  9169              	.LFE240:
  9171              		.section	.text.lv_chart_get_series_y_array,"ax",%progbits
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccohcVts.s 			page 268
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccaBXXR2.s 			page 268
 
 
  9172              		.align	1
@@ -16078,7 +16078,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccohcVts.s 			page 1
  9209              		.loc 1 789 5 view .LVU3154
  9210 0008 FEE7     		b	.L580
  9211              	.L582:
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccohcVts.s 			page 269
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccaBXXR2.s 			page 269
 
 
  790:Middlewares/LVGL/lvgl/src/widgets/chart/lv_chart.c ****     return ser->y_points;
@@ -16138,7 +16138,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccohcVts.s 			page 1
  800:Middlewares/LVGL/lvgl/src/widgets/chart/lv_chart.c **** 
  9251              		.loc 1 800 1 view .LVU3172
  9252 0006 7047     		bx	lr
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccohcVts.s 			page 270
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccaBXXR2.s 			page 270
 
 
  9253              	.LVL943:
@@ -16198,7 +16198,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccohcVts.s 			page 1
  9294              	.LFE243:
  9296              		.section	.text.lv_chart_get_first_point_center_offset,"ax",%progbits
  9297              		.align	1
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccohcVts.s 			page 271
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccaBXXR2.s 			page 271
 
 
  9298              		.global	lv_chart_get_first_point_center_offset
@@ -16258,7 +16258,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccohcVts.s 			page 1
  9342              		.loc 1 813 5 is_stmt 1 view .LVU3198
  813:Middlewares/LVGL/lvgl/src/widgets/chart/lv_chart.c ****         lv_obj_update_layout(obj);
  9343              		.loc 1 813 20 is_stmt 0 view .LVU3199
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccohcVts.s 			page 272
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccaBXXR2.s 			page 272
 
 
  9344 0010 95F87830 		ldrb	r3, [r5, #120]	@ zero_extendqisi2
@@ -16318,7 +16318,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccohcVts.s 			page 1
  383:Middlewares/LVGL/lvgl/src/widgets/chart/../../core/lv_obj_style_gen.h **** }
  9388              		.loc 2 383 5 is_stmt 1 view .LVU3210
  9389              	.LVL955:
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccohcVts.s 			page 273
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccaBXXR2.s 			page 273
 
 
  383:Middlewares/LVGL/lvgl/src/widgets/chart/../../core/lv_obj_style_gen.h **** }
@@ -16378,7 +16378,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccohcVts.s 			page 1
  9429      68617274 
  9429      00
  9430              		.section	.rodata.lv_chart_class,"a"
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccohcVts.s 			page 274
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccaBXXR2.s 			page 274
 
 
  9431              		.align	2
@@ -16429,154 +16429,154 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccohcVts.s 			page 1
  9478              		.file 34 "Middlewares/LVGL/lvgl/src/widgets/chart/../../misc/lv_area_private.h"
  9479              		.file 35 "Middlewares/LVGL/lvgl/src/widgets/chart/../../core/lv_obj_draw_private.h"
  9480              		.file 36 "Middlewares/LVGL/lvgl/src/widgets/chart/../../core/lv_obj_event.h"
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccohcVts.s 			page 275
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccaBXXR2.s 			page 275
 
 
 DEFINED SYMBOLS
                             *ABS*:00000000 lv_chart.c
-C:\Users\w1785\AppData\Local\Temp\ccohcVts.s:21     .text.value_to_y:00000000 $t
-C:\Users\w1785\AppData\Local\Temp\ccohcVts.s:26     .text.value_to_y:00000000 value_to_y
-C:\Users\w1785\AppData\Local\Temp\ccohcVts.s:74     .text.invalidate_point:00000000 $t
-C:\Users\w1785\AppData\Local\Temp\ccohcVts.s:79     .text.invalidate_point:00000000 invalidate_point
-C:\Users\w1785\AppData\Local\Temp\ccohcVts.s:513    .text.draw_div_lines:00000000 $t
-C:\Users\w1785\AppData\Local\Temp\ccohcVts.s:518    .text.draw_div_lines:00000000 draw_div_lines
-C:\Users\w1785\AppData\Local\Temp\ccohcVts.s:1101   .text.draw_series_scatter:00000000 $t
-C:\Users\w1785\AppData\Local\Temp\ccohcVts.s:1106   .text.draw_series_scatter:00000000 draw_series_scatter
-C:\Users\w1785\AppData\Local\Temp\ccohcVts.s:1778   .text.draw_series_scatter:00000308 $d
-C:\Users\w1785\AppData\Local\Temp\ccohcVts.s:1783   .text.draw_series_line:00000000 $t
-C:\Users\w1785\AppData\Local\Temp\ccohcVts.s:1788   .text.draw_series_line:00000000 draw_series_line
-C:\Users\w1785\AppData\Local\Temp\ccohcVts.s:2669   .text.draw_series_line:00000388 $d
-C:\Users\w1785\AppData\Local\Temp\ccohcVts.s:2674   .text.draw_series_curve:00000000 $t
-C:\Users\w1785\AppData\Local\Temp\ccohcVts.s:2679   .text.draw_series_curve:00000000 draw_series_curve
-C:\Users\w1785\AppData\Local\Temp\ccohcVts.s:2704   .text.draw_series_bar:00000000 $t
-C:\Users\w1785\AppData\Local\Temp\ccohcVts.s:2709   .text.draw_series_bar:00000000 draw_series_bar
-C:\Users\w1785\AppData\Local\Temp\ccohcVts.s:3237   .text.draw_series_stacked:00000000 $t
-C:\Users\w1785\AppData\Local\Temp\ccohcVts.s:3242   .text.draw_series_stacked:00000000 draw_series_stacked
-C:\Users\w1785\AppData\Local\Temp\ccohcVts.s:3852   .text.lv_chart_destructor:00000000 $t
-C:\Users\w1785\AppData\Local\Temp\ccohcVts.s:3857   .text.lv_chart_destructor:00000000 lv_chart_destructor
-C:\Users\w1785\AppData\Local\Temp\ccohcVts.s:3986   .text.lv_chart_constructor:00000000 $t
-C:\Users\w1785\AppData\Local\Temp\ccohcVts.s:3991   .text.lv_chart_constructor:00000000 lv_chart_constructor
-C:\Users\w1785\AppData\Local\Temp\ccohcVts.s:4084   .text.new_points_alloc:00000000 $t
-C:\Users\w1785\AppData\Local\Temp\ccohcVts.s:4089   .text.new_points_alloc:00000000 new_points_alloc
-C:\Users\w1785\AppData\Local\Temp\ccohcVts.s:4299   .text.lv_chart_create:00000000 $t
-C:\Users\w1785\AppData\Local\Temp\ccohcVts.s:4305   .text.lv_chart_create:00000000 lv_chart_create
-C:\Users\w1785\AppData\Local\Temp\ccohcVts.s:4344   .text.lv_chart_create:00000014 $d
-C:\Users\w1785\AppData\Local\Temp\ccohcVts.s:9434   .rodata.lv_chart_class:00000000 lv_chart_class
-C:\Users\w1785\AppData\Local\Temp\ccohcVts.s:4349   .text.lv_chart_set_update_mode:00000000 $t
-C:\Users\w1785\AppData\Local\Temp\ccohcVts.s:4355   .text.lv_chart_set_update_mode:00000000 lv_chart_set_update_mode
-C:\Users\w1785\AppData\Local\Temp\ccohcVts.s:4409   .text.lv_chart_set_div_line_count:00000000 $t
-C:\Users\w1785\AppData\Local\Temp\ccohcVts.s:4415   .text.lv_chart_set_div_line_count:00000000 lv_chart_set_div_line_count
-C:\Users\w1785\AppData\Local\Temp\ccohcVts.s:4478   .text.lv_chart_set_hor_div_line_count:00000000 $t
-C:\Users\w1785\AppData\Local\Temp\ccohcVts.s:4484   .text.lv_chart_set_hor_div_line_count:00000000 lv_chart_set_hor_div_line_count
-C:\Users\w1785\AppData\Local\Temp\ccohcVts.s:4535   .text.lv_chart_set_ver_div_line_count:00000000 $t
-C:\Users\w1785\AppData\Local\Temp\ccohcVts.s:4541   .text.lv_chart_set_ver_div_line_count:00000000 lv_chart_set_ver_div_line_count
-C:\Users\w1785\AppData\Local\Temp\ccohcVts.s:4592   .text.lv_chart_get_type:00000000 $t
-C:\Users\w1785\AppData\Local\Temp\ccohcVts.s:4598   .text.lv_chart_get_type:00000000 lv_chart_get_type
-C:\Users\w1785\AppData\Local\Temp\ccohcVts.s:4632   .text.lv_chart_get_point_count:00000000 $t
-C:\Users\w1785\AppData\Local\Temp\ccohcVts.s:4638   .text.lv_chart_get_point_count:00000000 lv_chart_get_point_count
-C:\Users\w1785\AppData\Local\Temp\ccohcVts.s:4671   .text.lv_chart_get_update_mode:00000000 $t
-C:\Users\w1785\AppData\Local\Temp\ccohcVts.s:4677   .text.lv_chart_get_update_mode:00000000 lv_chart_get_update_mode
-C:\Users\w1785\AppData\Local\Temp\ccohcVts.s:4711   .text.lv_chart_get_hor_div_line_count:00000000 $t
-C:\Users\w1785\AppData\Local\Temp\ccohcVts.s:4717   .text.lv_chart_get_hor_div_line_count:00000000 lv_chart_get_hor_div_line_count
-C:\Users\w1785\AppData\Local\Temp\ccohcVts.s:4750   .text.lv_chart_get_ver_div_line_count:00000000 $t
-C:\Users\w1785\AppData\Local\Temp\ccohcVts.s:4756   .text.lv_chart_get_ver_div_line_count:00000000 lv_chart_get_ver_div_line_count
-C:\Users\w1785\AppData\Local\Temp\ccohcVts.s:4789   .text.lv_chart_get_x_start_point:00000000 $t
-C:\Users\w1785\AppData\Local\Temp\ccohcVts.s:4795   .text.lv_chart_get_x_start_point:00000000 lv_chart_get_x_start_point
-C:\Users\w1785\AppData\Local\Temp\ccohcVts.s:4827   .text.lv_chart_get_point_pos_by_id:00000000 $t
-C:\Users\w1785\AppData\Local\Temp\ccohcVts.s:4833   .text.lv_chart_get_point_pos_by_id:00000000 lv_chart_get_point_pos_by_id
-C:\Users\w1785\AppData\Local\Temp\ccohcVts.s:4967   .text.lv_chart_get_point_pos_by_id:0000004a $d
-C:\Users\w1785\AppData\Local\Temp\ccohcVts.s:5545   .text.draw_cursors:00000000 $t
-C:\Users\w1785\AppData\Local\Temp\ccohcVts.s:5550   .text.draw_cursors:00000000 draw_cursors
-C:\Users\w1785\AppData\Local\Temp\ccohcVts.s:6003   .text.lv_chart_refresh:00000000 $t
-C:\Users\w1785\AppData\Local\Temp\ccohcVts.s:6009   .text.lv_chart_refresh:00000000 lv_chart_refresh
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccohcVts.s 			page 276
+C:\Users\w1785\AppData\Local\Temp\ccaBXXR2.s:21     .text.value_to_y:00000000 $t
+C:\Users\w1785\AppData\Local\Temp\ccaBXXR2.s:26     .text.value_to_y:00000000 value_to_y
+C:\Users\w1785\AppData\Local\Temp\ccaBXXR2.s:74     .text.invalidate_point:00000000 $t
+C:\Users\w1785\AppData\Local\Temp\ccaBXXR2.s:79     .text.invalidate_point:00000000 invalidate_point
+C:\Users\w1785\AppData\Local\Temp\ccaBXXR2.s:513    .text.draw_div_lines:00000000 $t
+C:\Users\w1785\AppData\Local\Temp\ccaBXXR2.s:518    .text.draw_div_lines:00000000 draw_div_lines
+C:\Users\w1785\AppData\Local\Temp\ccaBXXR2.s:1101   .text.draw_series_scatter:00000000 $t
+C:\Users\w1785\AppData\Local\Temp\ccaBXXR2.s:1106   .text.draw_series_scatter:00000000 draw_series_scatter
+C:\Users\w1785\AppData\Local\Temp\ccaBXXR2.s:1778   .text.draw_series_scatter:00000308 $d
+C:\Users\w1785\AppData\Local\Temp\ccaBXXR2.s:1783   .text.draw_series_line:00000000 $t
+C:\Users\w1785\AppData\Local\Temp\ccaBXXR2.s:1788   .text.draw_series_line:00000000 draw_series_line
+C:\Users\w1785\AppData\Local\Temp\ccaBXXR2.s:2669   .text.draw_series_line:00000388 $d
+C:\Users\w1785\AppData\Local\Temp\ccaBXXR2.s:2674   .text.draw_series_curve:00000000 $t
+C:\Users\w1785\AppData\Local\Temp\ccaBXXR2.s:2679   .text.draw_series_curve:00000000 draw_series_curve
+C:\Users\w1785\AppData\Local\Temp\ccaBXXR2.s:2704   .text.draw_series_bar:00000000 $t
+C:\Users\w1785\AppData\Local\Temp\ccaBXXR2.s:2709   .text.draw_series_bar:00000000 draw_series_bar
+C:\Users\w1785\AppData\Local\Temp\ccaBXXR2.s:3237   .text.draw_series_stacked:00000000 $t
+C:\Users\w1785\AppData\Local\Temp\ccaBXXR2.s:3242   .text.draw_series_stacked:00000000 draw_series_stacked
+C:\Users\w1785\AppData\Local\Temp\ccaBXXR2.s:3852   .text.lv_chart_destructor:00000000 $t
+C:\Users\w1785\AppData\Local\Temp\ccaBXXR2.s:3857   .text.lv_chart_destructor:00000000 lv_chart_destructor
+C:\Users\w1785\AppData\Local\Temp\ccaBXXR2.s:3986   .text.lv_chart_constructor:00000000 $t
+C:\Users\w1785\AppData\Local\Temp\ccaBXXR2.s:3991   .text.lv_chart_constructor:00000000 lv_chart_constructor
+C:\Users\w1785\AppData\Local\Temp\ccaBXXR2.s:4084   .text.new_points_alloc:00000000 $t
+C:\Users\w1785\AppData\Local\Temp\ccaBXXR2.s:4089   .text.new_points_alloc:00000000 new_points_alloc
+C:\Users\w1785\AppData\Local\Temp\ccaBXXR2.s:4299   .text.lv_chart_create:00000000 $t
+C:\Users\w1785\AppData\Local\Temp\ccaBXXR2.s:4305   .text.lv_chart_create:00000000 lv_chart_create
+C:\Users\w1785\AppData\Local\Temp\ccaBXXR2.s:4344   .text.lv_chart_create:00000014 $d
+C:\Users\w1785\AppData\Local\Temp\ccaBXXR2.s:9434   .rodata.lv_chart_class:00000000 lv_chart_class
+C:\Users\w1785\AppData\Local\Temp\ccaBXXR2.s:4349   .text.lv_chart_set_update_mode:00000000 $t
+C:\Users\w1785\AppData\Local\Temp\ccaBXXR2.s:4355   .text.lv_chart_set_update_mode:00000000 lv_chart_set_update_mode
+C:\Users\w1785\AppData\Local\Temp\ccaBXXR2.s:4409   .text.lv_chart_set_div_line_count:00000000 $t
+C:\Users\w1785\AppData\Local\Temp\ccaBXXR2.s:4415   .text.lv_chart_set_div_line_count:00000000 lv_chart_set_div_line_count
+C:\Users\w1785\AppData\Local\Temp\ccaBXXR2.s:4478   .text.lv_chart_set_hor_div_line_count:00000000 $t
+C:\Users\w1785\AppData\Local\Temp\ccaBXXR2.s:4484   .text.lv_chart_set_hor_div_line_count:00000000 lv_chart_set_hor_div_line_count
+C:\Users\w1785\AppData\Local\Temp\ccaBXXR2.s:4535   .text.lv_chart_set_ver_div_line_count:00000000 $t
+C:\Users\w1785\AppData\Local\Temp\ccaBXXR2.s:4541   .text.lv_chart_set_ver_div_line_count:00000000 lv_chart_set_ver_div_line_count
+C:\Users\w1785\AppData\Local\Temp\ccaBXXR2.s:4592   .text.lv_chart_get_type:00000000 $t
+C:\Users\w1785\AppData\Local\Temp\ccaBXXR2.s:4598   .text.lv_chart_get_type:00000000 lv_chart_get_type
+C:\Users\w1785\AppData\Local\Temp\ccaBXXR2.s:4632   .text.lv_chart_get_point_count:00000000 $t
+C:\Users\w1785\AppData\Local\Temp\ccaBXXR2.s:4638   .text.lv_chart_get_point_count:00000000 lv_chart_get_point_count
+C:\Users\w1785\AppData\Local\Temp\ccaBXXR2.s:4671   .text.lv_chart_get_update_mode:00000000 $t
+C:\Users\w1785\AppData\Local\Temp\ccaBXXR2.s:4677   .text.lv_chart_get_update_mode:00000000 lv_chart_get_update_mode
+C:\Users\w1785\AppData\Local\Temp\ccaBXXR2.s:4711   .text.lv_chart_get_hor_div_line_count:00000000 $t
+C:\Users\w1785\AppData\Local\Temp\ccaBXXR2.s:4717   .text.lv_chart_get_hor_div_line_count:00000000 lv_chart_get_hor_div_line_count
+C:\Users\w1785\AppData\Local\Temp\ccaBXXR2.s:4750   .text.lv_chart_get_ver_div_line_count:00000000 $t
+C:\Users\w1785\AppData\Local\Temp\ccaBXXR2.s:4756   .text.lv_chart_get_ver_div_line_count:00000000 lv_chart_get_ver_div_line_count
+C:\Users\w1785\AppData\Local\Temp\ccaBXXR2.s:4789   .text.lv_chart_get_x_start_point:00000000 $t
+C:\Users\w1785\AppData\Local\Temp\ccaBXXR2.s:4795   .text.lv_chart_get_x_start_point:00000000 lv_chart_get_x_start_point
+C:\Users\w1785\AppData\Local\Temp\ccaBXXR2.s:4827   .text.lv_chart_get_point_pos_by_id:00000000 $t
+C:\Users\w1785\AppData\Local\Temp\ccaBXXR2.s:4833   .text.lv_chart_get_point_pos_by_id:00000000 lv_chart_get_point_pos_by_id
+C:\Users\w1785\AppData\Local\Temp\ccaBXXR2.s:4967   .text.lv_chart_get_point_pos_by_id:0000004a $d
+C:\Users\w1785\AppData\Local\Temp\ccaBXXR2.s:5545   .text.draw_cursors:00000000 $t
+C:\Users\w1785\AppData\Local\Temp\ccaBXXR2.s:5550   .text.draw_cursors:00000000 draw_cursors
+C:\Users\w1785\AppData\Local\Temp\ccaBXXR2.s:6003   .text.lv_chart_refresh:00000000 $t
+C:\Users\w1785\AppData\Local\Temp\ccaBXXR2.s:6009   .text.lv_chart_refresh:00000000 lv_chart_refresh
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccaBXXR2.s 			page 276
 
 
-C:\Users\w1785\AppData\Local\Temp\ccohcVts.s:6048   .text.lv_chart_set_type:00000000 $t
-C:\Users\w1785\AppData\Local\Temp\ccohcVts.s:6054   .text.lv_chart_set_type:00000000 lv_chart_set_type
-C:\Users\w1785\AppData\Local\Temp\ccohcVts.s:6226   .text.lv_chart_set_point_count:00000000 $t
-C:\Users\w1785\AppData\Local\Temp\ccohcVts.s:6232   .text.lv_chart_set_point_count:00000000 lv_chart_set_point_count
-C:\Users\w1785\AppData\Local\Temp\ccohcVts.s:6376   .text.lv_chart_set_axis_min_value:00000000 $t
-C:\Users\w1785\AppData\Local\Temp\ccohcVts.s:6382   .text.lv_chart_set_axis_min_value:00000000 lv_chart_set_axis_min_value
-C:\Users\w1785\AppData\Local\Temp\ccohcVts.s:6409   .text.lv_chart_set_axis_min_value:0000000e $d
-C:\Users\w1785\AppData\Local\Temp\ccohcVts.s:6497   .text.lv_chart_set_axis_max_value:00000000 $t
-C:\Users\w1785\AppData\Local\Temp\ccohcVts.s:6503   .text.lv_chart_set_axis_max_value:00000000 lv_chart_set_axis_max_value
-C:\Users\w1785\AppData\Local\Temp\ccohcVts.s:6530   .text.lv_chart_set_axis_max_value:0000000e $d
-C:\Users\w1785\AppData\Local\Temp\ccohcVts.s:6618   .text.lv_chart_set_axis_range:00000000 $t
-C:\Users\w1785\AppData\Local\Temp\ccohcVts.s:6624   .text.lv_chart_set_axis_range:00000000 lv_chart_set_axis_range
-C:\Users\w1785\AppData\Local\Temp\ccohcVts.s:6676   .text.lv_chart_add_series:00000000 $t
-C:\Users\w1785\AppData\Local\Temp\ccohcVts.s:6682   .text.lv_chart_add_series:00000000 lv_chart_add_series
-C:\Users\w1785\AppData\Local\Temp\ccohcVts.s:6918   .text.lv_chart_remove_series:00000000 $t
-C:\Users\w1785\AppData\Local\Temp\ccohcVts.s:6924   .text.lv_chart_remove_series:00000000 lv_chart_remove_series
-C:\Users\w1785\AppData\Local\Temp\ccohcVts.s:7025   .text.lv_chart_hide_series:00000000 $t
-C:\Users\w1785\AppData\Local\Temp\ccohcVts.s:7031   .text.lv_chart_hide_series:00000000 lv_chart_hide_series
-C:\Users\w1785\AppData\Local\Temp\ccohcVts.s:7095   .text.lv_chart_set_series_color:00000000 $t
-C:\Users\w1785\AppData\Local\Temp\ccohcVts.s:7101   .text.lv_chart_set_series_color:00000000 lv_chart_set_series_color
-C:\Users\w1785\AppData\Local\Temp\ccohcVts.s:7164   .text.lv_chart_get_series_color:00000000 $t
-C:\Users\w1785\AppData\Local\Temp\ccohcVts.s:7170   .text.lv_chart_get_series_color:00000000 lv_chart_get_series_color
-C:\Users\w1785\AppData\Local\Temp\ccohcVts.s:7234   .text.lv_chart_set_x_start_point:00000000 $t
-C:\Users\w1785\AppData\Local\Temp\ccohcVts.s:7240   .text.lv_chart_set_x_start_point:00000000 lv_chart_set_x_start_point
-C:\Users\w1785\AppData\Local\Temp\ccohcVts.s:7291   .text.lv_chart_get_series_next:00000000 $t
-C:\Users\w1785\AppData\Local\Temp\ccohcVts.s:7297   .text.lv_chart_get_series_next:00000000 lv_chart_get_series_next
-C:\Users\w1785\AppData\Local\Temp\ccohcVts.s:7361   .text.get_index_from_x:00000000 $t
-C:\Users\w1785\AppData\Local\Temp\ccohcVts.s:7366   .text.get_index_from_x:00000000 get_index_from_x
-C:\Users\w1785\AppData\Local\Temp\ccohcVts.s:7621   .text.lv_chart_event:00000000 $t
-C:\Users\w1785\AppData\Local\Temp\ccohcVts.s:7626   .text.lv_chart_event:00000000 lv_chart_event
-C:\Users\w1785\AppData\Local\Temp\ccohcVts.s:7781   .text.lv_chart_event:0000009e $d
-C:\Users\w1785\AppData\Local\Temp\ccohcVts.s:7920   .text.lv_chart_event:00000140 $d
-C:\Users\w1785\AppData\Local\Temp\ccohcVts.s:7927   .text.lv_chart_add_cursor:00000000 $t
-C:\Users\w1785\AppData\Local\Temp\ccohcVts.s:7933   .text.lv_chart_add_cursor:00000000 lv_chart_add_cursor
-C:\Users\w1785\AppData\Local\Temp\ccohcVts.s:8027   .text.lv_chart_remove_cursor:00000000 $t
-C:\Users\w1785\AppData\Local\Temp\ccohcVts.s:8033   .text.lv_chart_remove_cursor:00000000 lv_chart_remove_cursor
-C:\Users\w1785\AppData\Local\Temp\ccohcVts.s:8098   .text.lv_chart_set_cursor_pos:00000000 $t
-C:\Users\w1785\AppData\Local\Temp\ccohcVts.s:8104   .text.lv_chart_set_cursor_pos:00000000 lv_chart_set_cursor_pos
-C:\Users\w1785\AppData\Local\Temp\ccohcVts.s:8160   .text.lv_chart_set_cursor_pos_x:00000000 $t
-C:\Users\w1785\AppData\Local\Temp\ccohcVts.s:8166   .text.lv_chart_set_cursor_pos_x:00000000 lv_chart_set_cursor_pos_x
-C:\Users\w1785\AppData\Local\Temp\ccohcVts.s:8216   .text.lv_chart_set_cursor_pos_y:00000000 $t
-C:\Users\w1785\AppData\Local\Temp\ccohcVts.s:8222   .text.lv_chart_set_cursor_pos_y:00000000 lv_chart_set_cursor_pos_y
-C:\Users\w1785\AppData\Local\Temp\ccohcVts.s:8272   .text.lv_chart_set_cursor_point:00000000 $t
-C:\Users\w1785\AppData\Local\Temp\ccohcVts.s:8278   .text.lv_chart_set_cursor_point:00000000 lv_chart_set_cursor_point
-C:\Users\w1785\AppData\Local\Temp\ccohcVts.s:8361   .text.lv_chart_get_cursor_point:00000000 $t
-C:\Users\w1785\AppData\Local\Temp\ccohcVts.s:8367   .text.lv_chart_get_cursor_point:00000000 lv_chart_get_cursor_point
-C:\Users\w1785\AppData\Local\Temp\ccohcVts.s:8404   .text.lv_chart_set_all_values:00000000 $t
-C:\Users\w1785\AppData\Local\Temp\ccohcVts.s:8410   .text.lv_chart_set_all_values:00000000 lv_chart_set_all_values
-C:\Users\w1785\AppData\Local\Temp\ccohcVts.s:8490   .text.lv_chart_set_next_value:00000000 $t
-C:\Users\w1785\AppData\Local\Temp\ccohcVts.s:8496   .text.lv_chart_set_next_value:00000000 lv_chart_set_next_value
-C:\Users\w1785\AppData\Local\Temp\ccohcVts.s:8582   .text.lv_chart_set_next_value2:00000000 $t
-C:\Users\w1785\AppData\Local\Temp\ccohcVts.s:8588   .text.lv_chart_set_next_value2:00000000 lv_chart_set_next_value2
-C:\Users\w1785\AppData\Local\Temp\ccohcVts.s:8693   .text.lv_chart_set_series_values:00000000 $t
-C:\Users\w1785\AppData\Local\Temp\ccohcVts.s:8699   .text.lv_chart_set_series_values:00000000 lv_chart_set_series_values
-C:\Users\w1785\AppData\Local\Temp\ccohcVts.s:8749   .text.lv_chart_set_series_values2:00000000 $t
-C:\Users\w1785\AppData\Local\Temp\ccohcVts.s:8755   .text.lv_chart_set_series_values2:00000000 lv_chart_set_series_values2
-C:\Users\w1785\AppData\Local\Temp\ccohcVts.s:8809   .text.lv_chart_set_series_value_by_id:00000000 $t
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccohcVts.s 			page 277
+C:\Users\w1785\AppData\Local\Temp\ccaBXXR2.s:6048   .text.lv_chart_set_type:00000000 $t
+C:\Users\w1785\AppData\Local\Temp\ccaBXXR2.s:6054   .text.lv_chart_set_type:00000000 lv_chart_set_type
+C:\Users\w1785\AppData\Local\Temp\ccaBXXR2.s:6226   .text.lv_chart_set_point_count:00000000 $t
+C:\Users\w1785\AppData\Local\Temp\ccaBXXR2.s:6232   .text.lv_chart_set_point_count:00000000 lv_chart_set_point_count
+C:\Users\w1785\AppData\Local\Temp\ccaBXXR2.s:6376   .text.lv_chart_set_axis_min_value:00000000 $t
+C:\Users\w1785\AppData\Local\Temp\ccaBXXR2.s:6382   .text.lv_chart_set_axis_min_value:00000000 lv_chart_set_axis_min_value
+C:\Users\w1785\AppData\Local\Temp\ccaBXXR2.s:6409   .text.lv_chart_set_axis_min_value:0000000e $d
+C:\Users\w1785\AppData\Local\Temp\ccaBXXR2.s:6497   .text.lv_chart_set_axis_max_value:00000000 $t
+C:\Users\w1785\AppData\Local\Temp\ccaBXXR2.s:6503   .text.lv_chart_set_axis_max_value:00000000 lv_chart_set_axis_max_value
+C:\Users\w1785\AppData\Local\Temp\ccaBXXR2.s:6530   .text.lv_chart_set_axis_max_value:0000000e $d
+C:\Users\w1785\AppData\Local\Temp\ccaBXXR2.s:6618   .text.lv_chart_set_axis_range:00000000 $t
+C:\Users\w1785\AppData\Local\Temp\ccaBXXR2.s:6624   .text.lv_chart_set_axis_range:00000000 lv_chart_set_axis_range
+C:\Users\w1785\AppData\Local\Temp\ccaBXXR2.s:6676   .text.lv_chart_add_series:00000000 $t
+C:\Users\w1785\AppData\Local\Temp\ccaBXXR2.s:6682   .text.lv_chart_add_series:00000000 lv_chart_add_series
+C:\Users\w1785\AppData\Local\Temp\ccaBXXR2.s:6918   .text.lv_chart_remove_series:00000000 $t
+C:\Users\w1785\AppData\Local\Temp\ccaBXXR2.s:6924   .text.lv_chart_remove_series:00000000 lv_chart_remove_series
+C:\Users\w1785\AppData\Local\Temp\ccaBXXR2.s:7025   .text.lv_chart_hide_series:00000000 $t
+C:\Users\w1785\AppData\Local\Temp\ccaBXXR2.s:7031   .text.lv_chart_hide_series:00000000 lv_chart_hide_series
+C:\Users\w1785\AppData\Local\Temp\ccaBXXR2.s:7095   .text.lv_chart_set_series_color:00000000 $t
+C:\Users\w1785\AppData\Local\Temp\ccaBXXR2.s:7101   .text.lv_chart_set_series_color:00000000 lv_chart_set_series_color
+C:\Users\w1785\AppData\Local\Temp\ccaBXXR2.s:7164   .text.lv_chart_get_series_color:00000000 $t
+C:\Users\w1785\AppData\Local\Temp\ccaBXXR2.s:7170   .text.lv_chart_get_series_color:00000000 lv_chart_get_series_color
+C:\Users\w1785\AppData\Local\Temp\ccaBXXR2.s:7234   .text.lv_chart_set_x_start_point:00000000 $t
+C:\Users\w1785\AppData\Local\Temp\ccaBXXR2.s:7240   .text.lv_chart_set_x_start_point:00000000 lv_chart_set_x_start_point
+C:\Users\w1785\AppData\Local\Temp\ccaBXXR2.s:7291   .text.lv_chart_get_series_next:00000000 $t
+C:\Users\w1785\AppData\Local\Temp\ccaBXXR2.s:7297   .text.lv_chart_get_series_next:00000000 lv_chart_get_series_next
+C:\Users\w1785\AppData\Local\Temp\ccaBXXR2.s:7361   .text.get_index_from_x:00000000 $t
+C:\Users\w1785\AppData\Local\Temp\ccaBXXR2.s:7366   .text.get_index_from_x:00000000 get_index_from_x
+C:\Users\w1785\AppData\Local\Temp\ccaBXXR2.s:7621   .text.lv_chart_event:00000000 $t
+C:\Users\w1785\AppData\Local\Temp\ccaBXXR2.s:7626   .text.lv_chart_event:00000000 lv_chart_event
+C:\Users\w1785\AppData\Local\Temp\ccaBXXR2.s:7781   .text.lv_chart_event:0000009e $d
+C:\Users\w1785\AppData\Local\Temp\ccaBXXR2.s:7920   .text.lv_chart_event:00000140 $d
+C:\Users\w1785\AppData\Local\Temp\ccaBXXR2.s:7927   .text.lv_chart_add_cursor:00000000 $t
+C:\Users\w1785\AppData\Local\Temp\ccaBXXR2.s:7933   .text.lv_chart_add_cursor:00000000 lv_chart_add_cursor
+C:\Users\w1785\AppData\Local\Temp\ccaBXXR2.s:8027   .text.lv_chart_remove_cursor:00000000 $t
+C:\Users\w1785\AppData\Local\Temp\ccaBXXR2.s:8033   .text.lv_chart_remove_cursor:00000000 lv_chart_remove_cursor
+C:\Users\w1785\AppData\Local\Temp\ccaBXXR2.s:8098   .text.lv_chart_set_cursor_pos:00000000 $t
+C:\Users\w1785\AppData\Local\Temp\ccaBXXR2.s:8104   .text.lv_chart_set_cursor_pos:00000000 lv_chart_set_cursor_pos
+C:\Users\w1785\AppData\Local\Temp\ccaBXXR2.s:8160   .text.lv_chart_set_cursor_pos_x:00000000 $t
+C:\Users\w1785\AppData\Local\Temp\ccaBXXR2.s:8166   .text.lv_chart_set_cursor_pos_x:00000000 lv_chart_set_cursor_pos_x
+C:\Users\w1785\AppData\Local\Temp\ccaBXXR2.s:8216   .text.lv_chart_set_cursor_pos_y:00000000 $t
+C:\Users\w1785\AppData\Local\Temp\ccaBXXR2.s:8222   .text.lv_chart_set_cursor_pos_y:00000000 lv_chart_set_cursor_pos_y
+C:\Users\w1785\AppData\Local\Temp\ccaBXXR2.s:8272   .text.lv_chart_set_cursor_point:00000000 $t
+C:\Users\w1785\AppData\Local\Temp\ccaBXXR2.s:8278   .text.lv_chart_set_cursor_point:00000000 lv_chart_set_cursor_point
+C:\Users\w1785\AppData\Local\Temp\ccaBXXR2.s:8361   .text.lv_chart_get_cursor_point:00000000 $t
+C:\Users\w1785\AppData\Local\Temp\ccaBXXR2.s:8367   .text.lv_chart_get_cursor_point:00000000 lv_chart_get_cursor_point
+C:\Users\w1785\AppData\Local\Temp\ccaBXXR2.s:8404   .text.lv_chart_set_all_values:00000000 $t
+C:\Users\w1785\AppData\Local\Temp\ccaBXXR2.s:8410   .text.lv_chart_set_all_values:00000000 lv_chart_set_all_values
+C:\Users\w1785\AppData\Local\Temp\ccaBXXR2.s:8490   .text.lv_chart_set_next_value:00000000 $t
+C:\Users\w1785\AppData\Local\Temp\ccaBXXR2.s:8496   .text.lv_chart_set_next_value:00000000 lv_chart_set_next_value
+C:\Users\w1785\AppData\Local\Temp\ccaBXXR2.s:8582   .text.lv_chart_set_next_value2:00000000 $t
+C:\Users\w1785\AppData\Local\Temp\ccaBXXR2.s:8588   .text.lv_chart_set_next_value2:00000000 lv_chart_set_next_value2
+C:\Users\w1785\AppData\Local\Temp\ccaBXXR2.s:8693   .text.lv_chart_set_series_values:00000000 $t
+C:\Users\w1785\AppData\Local\Temp\ccaBXXR2.s:8699   .text.lv_chart_set_series_values:00000000 lv_chart_set_series_values
+C:\Users\w1785\AppData\Local\Temp\ccaBXXR2.s:8749   .text.lv_chart_set_series_values2:00000000 $t
+C:\Users\w1785\AppData\Local\Temp\ccaBXXR2.s:8755   .text.lv_chart_set_series_values2:00000000 lv_chart_set_series_values2
+C:\Users\w1785\AppData\Local\Temp\ccaBXXR2.s:8809   .text.lv_chart_set_series_value_by_id:00000000 $t
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccaBXXR2.s 			page 277
 
 
-C:\Users\w1785\AppData\Local\Temp\ccohcVts.s:8815   .text.lv_chart_set_series_value_by_id:00000000 lv_chart_set_series_value_by_id
-C:\Users\w1785\AppData\Local\Temp\ccohcVts.s:8883   .text.lv_chart_set_series_value_by_id2:00000000 $t
-C:\Users\w1785\AppData\Local\Temp\ccohcVts.s:8889   .text.lv_chart_set_series_value_by_id2:00000000 lv_chart_set_series_value_by_id2
-C:\Users\w1785\AppData\Local\Temp\ccohcVts.s:8984   .text.lv_chart_set_series_ext_y_array:00000000 $t
-C:\Users\w1785\AppData\Local\Temp\ccohcVts.s:8990   .text.lv_chart_set_series_ext_y_array:00000000 lv_chart_set_series_ext_y_array
-C:\Users\w1785\AppData\Local\Temp\ccohcVts.s:9078   .text.lv_chart_set_series_ext_x_array:00000000 $t
-C:\Users\w1785\AppData\Local\Temp\ccohcVts.s:9084   .text.lv_chart_set_series_ext_x_array:00000000 lv_chart_set_series_ext_x_array
-C:\Users\w1785\AppData\Local\Temp\ccohcVts.s:9172   .text.lv_chart_get_series_y_array:00000000 $t
-C:\Users\w1785\AppData\Local\Temp\ccohcVts.s:9178   .text.lv_chart_get_series_y_array:00000000 lv_chart_get_series_y_array
-C:\Users\w1785\AppData\Local\Temp\ccohcVts.s:9222   .text.lv_chart_get_series_x_array:00000000 $t
-C:\Users\w1785\AppData\Local\Temp\ccohcVts.s:9228   .text.lv_chart_get_series_x_array:00000000 lv_chart_get_series_x_array
-C:\Users\w1785\AppData\Local\Temp\ccohcVts.s:9272   .text.lv_chart_get_pressed_point:00000000 $t
-C:\Users\w1785\AppData\Local\Temp\ccohcVts.s:9278   .text.lv_chart_get_pressed_point:00000000 lv_chart_get_pressed_point
-C:\Users\w1785\AppData\Local\Temp\ccohcVts.s:9297   .text.lv_chart_get_first_point_center_offset:00000000 $t
-C:\Users\w1785\AppData\Local\Temp\ccohcVts.s:9303   .text.lv_chart_get_first_point_center_offset:00000000 lv_chart_get_first_point_center_offset
-C:\Users\w1785\AppData\Local\Temp\ccohcVts.s:9427   .rodata.str1.4:00000000 $d
-C:\Users\w1785\AppData\Local\Temp\ccohcVts.s:9431   .rodata.lv_chart_class:00000000 $d
-C:\Users\w1785\AppData\Local\Temp\ccohcVts.s:4972   .text.lv_chart_get_point_pos_by_id:0000004f $d
-C:\Users\w1785\AppData\Local\Temp\ccohcVts.s:4972   .text.lv_chart_get_point_pos_by_id:00000050 $t
-C:\Users\w1785\AppData\Local\Temp\ccohcVts.s:6414   .text.lv_chart_set_axis_min_value:00000013 $d
-C:\Users\w1785\AppData\Local\Temp\ccohcVts.s:6414   .text.lv_chart_set_axis_min_value:00000014 $t
-C:\Users\w1785\AppData\Local\Temp\ccohcVts.s:6535   .text.lv_chart_set_axis_max_value:00000013 $d
-C:\Users\w1785\AppData\Local\Temp\ccohcVts.s:6535   .text.lv_chart_set_axis_max_value:00000014 $t
-C:\Users\w1785\AppData\Local\Temp\ccohcVts.s:7787   .text.lv_chart_event:000000a3 $d
-C:\Users\w1785\AppData\Local\Temp\ccohcVts.s:7787   .text.lv_chart_event:000000a4 $t
+C:\Users\w1785\AppData\Local\Temp\ccaBXXR2.s:8815   .text.lv_chart_set_series_value_by_id:00000000 lv_chart_set_series_value_by_id
+C:\Users\w1785\AppData\Local\Temp\ccaBXXR2.s:8883   .text.lv_chart_set_series_value_by_id2:00000000 $t
+C:\Users\w1785\AppData\Local\Temp\ccaBXXR2.s:8889   .text.lv_chart_set_series_value_by_id2:00000000 lv_chart_set_series_value_by_id2
+C:\Users\w1785\AppData\Local\Temp\ccaBXXR2.s:8984   .text.lv_chart_set_series_ext_y_array:00000000 $t
+C:\Users\w1785\AppData\Local\Temp\ccaBXXR2.s:8990   .text.lv_chart_set_series_ext_y_array:00000000 lv_chart_set_series_ext_y_array
+C:\Users\w1785\AppData\Local\Temp\ccaBXXR2.s:9078   .text.lv_chart_set_series_ext_x_array:00000000 $t
+C:\Users\w1785\AppData\Local\Temp\ccaBXXR2.s:9084   .text.lv_chart_set_series_ext_x_array:00000000 lv_chart_set_series_ext_x_array
+C:\Users\w1785\AppData\Local\Temp\ccaBXXR2.s:9172   .text.lv_chart_get_series_y_array:00000000 $t
+C:\Users\w1785\AppData\Local\Temp\ccaBXXR2.s:9178   .text.lv_chart_get_series_y_array:00000000 lv_chart_get_series_y_array
+C:\Users\w1785\AppData\Local\Temp\ccaBXXR2.s:9222   .text.lv_chart_get_series_x_array:00000000 $t
+C:\Users\w1785\AppData\Local\Temp\ccaBXXR2.s:9228   .text.lv_chart_get_series_x_array:00000000 lv_chart_get_series_x_array
+C:\Users\w1785\AppData\Local\Temp\ccaBXXR2.s:9272   .text.lv_chart_get_pressed_point:00000000 $t
+C:\Users\w1785\AppData\Local\Temp\ccaBXXR2.s:9278   .text.lv_chart_get_pressed_point:00000000 lv_chart_get_pressed_point
+C:\Users\w1785\AppData\Local\Temp\ccaBXXR2.s:9297   .text.lv_chart_get_first_point_center_offset:00000000 $t
+C:\Users\w1785\AppData\Local\Temp\ccaBXXR2.s:9303   .text.lv_chart_get_first_point_center_offset:00000000 lv_chart_get_first_point_center_offset
+C:\Users\w1785\AppData\Local\Temp\ccaBXXR2.s:9427   .rodata.str1.4:00000000 $d
+C:\Users\w1785\AppData\Local\Temp\ccaBXXR2.s:9431   .rodata.lv_chart_class:00000000 $d
+C:\Users\w1785\AppData\Local\Temp\ccaBXXR2.s:4972   .text.lv_chart_get_point_pos_by_id:0000004f $d
+C:\Users\w1785\AppData\Local\Temp\ccaBXXR2.s:4972   .text.lv_chart_get_point_pos_by_id:00000050 $t
+C:\Users\w1785\AppData\Local\Temp\ccaBXXR2.s:6414   .text.lv_chart_set_axis_min_value:00000013 $d
+C:\Users\w1785\AppData\Local\Temp\ccaBXXR2.s:6414   .text.lv_chart_set_axis_min_value:00000014 $t
+C:\Users\w1785\AppData\Local\Temp\ccaBXXR2.s:6535   .text.lv_chart_set_axis_max_value:00000013 $d
+C:\Users\w1785\AppData\Local\Temp\ccaBXXR2.s:6535   .text.lv_chart_set_axis_max_value:00000014 $t
+C:\Users\w1785\AppData\Local\Temp\ccaBXXR2.s:7787   .text.lv_chart_event:000000a3 $d
+C:\Users\w1785\AppData\Local\Temp\ccaBXXR2.s:7787   .text.lv_chart_event:000000a4 $t
 
 UNDEFINED SYMBOLS
 lv_map
@@ -16609,7 +16609,7 @@ lv_realloc
 lv_obj_class_create_obj
 lv_obj_class_init_obj
 lv_ll_is_empty
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccohcVts.s 			page 278
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccaBXXR2.s 			page 278
 
 
 lv_memcpy
