@@ -1,4 +1,4 @@
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccvARgmt.s 			page 1
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccqEJOVN.s 			page 1
 
 
    1              		.cpu cortex-m4
@@ -58,7 +58,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccvARgmt.s 			page 1
   28:Middlewares/LVGL/lvgl/src/widgets/arc/lv_arc.c **** #define VALUE_UNSET INT16_MIN
   29:Middlewares/LVGL/lvgl/src/widgets/arc/lv_arc.c **** #define CLICK_OUTSIDE_BG_ANGLES ((uint32_t) 0x00U)
   30:Middlewares/LVGL/lvgl/src/widgets/arc/lv_arc.c **** #define CLICK_INSIDE_BG_ANGLES  ((uint32_t) 0x01U)
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccvARgmt.s 			page 2
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccqEJOVN.s 			page 2
 
 
   31:Middlewares/LVGL/lvgl/src/widgets/arc/lv_arc.c **** #define CLICK_CLOSER_TO_MAX_END ((uint32_t) 0x00U)
@@ -118,7 +118,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccvARgmt.s 			page 1
   85:Middlewares/LVGL/lvgl/src/widgets/arc/lv_arc.c ****     },
   86:Middlewares/LVGL/lvgl/src/widgets/arc/lv_arc.c ****     {
   87:Middlewares/LVGL/lvgl/src/widgets/arc/lv_arc.c ****         .id = LV_PROPERTY_ARC_ROTATION,
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccvARgmt.s 			page 3
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccqEJOVN.s 			page 3
 
 
   88:Middlewares/LVGL/lvgl/src/widgets/arc/lv_arc.c ****         .setter = lv_arc_set_rotation,
@@ -178,7 +178,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccvARgmt.s 			page 1
  142:Middlewares/LVGL/lvgl/src/widgets/arc/lv_arc.c **** lv_obj_t * lv_arc_create(lv_obj_t * parent)
  143:Middlewares/LVGL/lvgl/src/widgets/arc/lv_arc.c **** {
  144:Middlewares/LVGL/lvgl/src/widgets/arc/lv_arc.c ****     LV_LOG_INFO("begin");
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccvARgmt.s 			page 4
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccqEJOVN.s 			page 4
 
 
  145:Middlewares/LVGL/lvgl/src/widgets/arc/lv_arc.c ****     lv_obj_t * obj = lv_obj_class_create_obj(MY_CLASS, parent);
@@ -238,7 +238,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccvARgmt.s 			page 1
  199:Middlewares/LVGL/lvgl/src/widgets/arc/lv_arc.c ****     else if(new_delta < old_delta) inv_arc_area(obj, end, arc->indic_angle_end, LV_PART_INDICATOR);
  200:Middlewares/LVGL/lvgl/src/widgets/arc/lv_arc.c ****     else if(old_delta < new_delta) inv_arc_area(obj, arc->indic_angle_end, end, LV_PART_INDICATOR);
  201:Middlewares/LVGL/lvgl/src/widgets/arc/lv_arc.c **** 
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccvARgmt.s 			page 5
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccqEJOVN.s 			page 5
 
 
  202:Middlewares/LVGL/lvgl/src/widgets/arc/lv_arc.c ****     inv_knob_area(obj);
@@ -298,7 +298,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccvARgmt.s 			page 1
  256:Middlewares/LVGL/lvgl/src/widgets/arc/lv_arc.c ****     value_update(obj);
  257:Middlewares/LVGL/lvgl/src/widgets/arc/lv_arc.c **** }
  258:Middlewares/LVGL/lvgl/src/widgets/arc/lv_arc.c **** 
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccvARgmt.s 			page 6
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccqEJOVN.s 			page 6
 
 
  259:Middlewares/LVGL/lvgl/src/widgets/arc/lv_arc.c **** void lv_arc_set_bg_angles(lv_obj_t * obj, lv_value_precise_t start, lv_value_precise_t end)
@@ -358,7 +358,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccvARgmt.s 			page 1
  313:Middlewares/LVGL/lvgl/src/widgets/arc/lv_arc.c **** 
  314:Middlewares/LVGL/lvgl/src/widgets/arc/lv_arc.c ****     int32_t new_value;
  315:Middlewares/LVGL/lvgl/src/widgets/arc/lv_arc.c ****     new_value = value > arc->max_value ? arc->max_value : value;
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccvARgmt.s 			page 7
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccqEJOVN.s 			page 7
 
 
  316:Middlewares/LVGL/lvgl/src/widgets/arc/lv_arc.c ****     new_value = new_value < arc->min_value ? arc->min_value : new_value;
@@ -418,7 +418,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccvARgmt.s 			page 1
  370:Middlewares/LVGL/lvgl/src/widgets/arc/lv_arc.c **** /*=====================
  371:Middlewares/LVGL/lvgl/src/widgets/arc/lv_arc.c ****  * Getter functions
  372:Middlewares/LVGL/lvgl/src/widgets/arc/lv_arc.c ****  *====================*/
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccvARgmt.s 			page 8
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccqEJOVN.s 			page 8
 
 
  373:Middlewares/LVGL/lvgl/src/widgets/arc/lv_arc.c **** 
@@ -478,7 +478,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccvARgmt.s 			page 1
  427:Middlewares/LVGL/lvgl/src/widgets/arc/lv_arc.c **** 
  428:Middlewares/LVGL/lvgl/src/widgets/arc/lv_arc.c **** int32_t lv_arc_get_knob_offset(const lv_obj_t * obj)
  429:Middlewares/LVGL/lvgl/src/widgets/arc/lv_arc.c **** {
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccvARgmt.s 			page 9
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccqEJOVN.s 			page 9
 
 
  430:Middlewares/LVGL/lvgl/src/widgets/arc/lv_arc.c ****     LV_ASSERT_OBJ(obj, MY_CLASS);
@@ -538,7 +538,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccvARgmt.s 			page 1
  484:Middlewares/LVGL/lvgl/src/widgets/arc/lv_arc.c **** void lv_arc_rotate_obj_to_angle(const lv_obj_t * obj, lv_obj_t * obj_to_rotate, int32_t r_offset)
  485:Middlewares/LVGL/lvgl/src/widgets/arc/lv_arc.c **** {
  486:Middlewares/LVGL/lvgl/src/widgets/arc/lv_arc.c ****     LV_ASSERT_OBJ(obj, MY_CLASS);
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccvARgmt.s 			page 10
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccqEJOVN.s 			page 10
 
 
  487:Middlewares/LVGL/lvgl/src/widgets/arc/lv_arc.c ****     LV_ASSERT_NULL(obj_to_rotate);
@@ -598,7 +598,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccvARgmt.s 			page 1
  541:Middlewares/LVGL/lvgl/src/widgets/arc/lv_arc.c ****     lv_obj_set_ext_click_area(obj, LV_DPI_DEF / 10);
  542:Middlewares/LVGL/lvgl/src/widgets/arc/lv_arc.c **** 
  543:Middlewares/LVGL/lvgl/src/widgets/arc/lv_arc.c ****     LV_TRACE_OBJ_CREATE("finished");
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccvARgmt.s 			page 11
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccqEJOVN.s 			page 11
 
 
  544:Middlewares/LVGL/lvgl/src/widgets/arc/lv_arc.c **** }
@@ -658,7 +658,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccvARgmt.s 			page 1
  598:Middlewares/LVGL/lvgl/src/widgets/arc/lv_arc.c ****         /*It must be in "dragging" mode to turn the arc*/
  599:Middlewares/LVGL/lvgl/src/widgets/arc/lv_arc.c ****         if(arc->dragging == false) return;
  600:Middlewares/LVGL/lvgl/src/widgets/arc/lv_arc.c **** 
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccvARgmt.s 			page 12
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccqEJOVN.s 			page 12
 
 
  601:Middlewares/LVGL/lvgl/src/widgets/arc/lv_arc.c ****         /*No angle can be determined if exactly the middle of the arc is being pressed*/
@@ -718,7 +718,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccvARgmt.s 			page 1
  655:Middlewares/LVGL/lvgl/src/widgets/arc/lv_arc.c ****         else if(((min_close_prev == CLICK_CLOSER_TO_MAX_END) && (arc->min_close == CLICK_CLOSER_TO_
  656:Middlewares/LVGL/lvgl/src/widgets/arc/lv_arc.c ****                 && (CLICK_OUTSIDE_BG_ANGLES == arc->in_out) && (360 - LV_ABS(delta_angle) > 280)) {
  657:Middlewares/LVGL/lvgl/src/widgets/arc/lv_arc.c ****             angle = deg_range;
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccvARgmt.s 			page 13
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccqEJOVN.s 			page 13
 
 
  658:Middlewares/LVGL/lvgl/src/widgets/arc/lv_arc.c ****             arc->min_close = min_close_prev;
@@ -778,7 +778,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccvARgmt.s 			page 1
  712:Middlewares/LVGL/lvgl/src/widgets/arc/lv_arc.c ****         lv_group_t * g             = lv_obj_get_group(obj);
  713:Middlewares/LVGL/lvgl/src/widgets/arc/lv_arc.c ****         bool editing               = lv_group_get_editing(g);
  714:Middlewares/LVGL/lvgl/src/widgets/arc/lv_arc.c ****         lv_indev_type_t indev_type = lv_indev_get_type(lv_indev_active());
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccvARgmt.s 			page 14
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccqEJOVN.s 			page 14
 
 
  715:Middlewares/LVGL/lvgl/src/widgets/arc/lv_arc.c ****         if(indev_type == LV_INDEV_TYPE_ENCODER) {
@@ -838,7 +838,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccvARgmt.s 			page 1
  769:Middlewares/LVGL/lvgl/src/widgets/arc/lv_arc.c ****         angle -= arc->rotation;
  770:Middlewares/LVGL/lvgl/src/widgets/arc/lv_arc.c ****         angle -= arc->bg_angle_start;  /*Make the angle relative to the start angle*/
  771:Middlewares/LVGL/lvgl/src/widgets/arc/lv_arc.c **** 
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccvARgmt.s 			page 15
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccqEJOVN.s 			page 15
 
 
  772:Middlewares/LVGL/lvgl/src/widgets/arc/lv_arc.c ****         /* ensure the angle is in the range [0, 360) */
@@ -898,7 +898,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccvARgmt.s 			page 1
  826:Middlewares/LVGL/lvgl/src/widgets/arc/lv_arc.c **** 
  827:Middlewares/LVGL/lvgl/src/widgets/arc/lv_arc.c ****     /*Draw the background arc*/
  828:Middlewares/LVGL/lvgl/src/widgets/arc/lv_arc.c ****     lv_draw_arc_dsc_t arc_dsc;
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccvARgmt.s 			page 16
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccqEJOVN.s 			page 16
 
 
  829:Middlewares/LVGL/lvgl/src/widgets/arc/lv_arc.c ****     if(arc_r > 0) {
@@ -958,7 +958,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccvARgmt.s 			page 1
  883:Middlewares/LVGL/lvgl/src/widgets/arc/lv_arc.c ****     if(start_angle > 360) start_angle -= 360;
  884:Middlewares/LVGL/lvgl/src/widgets/arc/lv_arc.c ****     if(end_angle > 360) end_angle -= 360;
  885:Middlewares/LVGL/lvgl/src/widgets/arc/lv_arc.c **** 
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccvARgmt.s 			page 17
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccqEJOVN.s 			page 17
 
 
  886:Middlewares/LVGL/lvgl/src/widgets/arc/lv_arc.c ****     int32_t r;
@@ -1018,7 +1018,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccvARgmt.s 			page 1
   30              		.cfi_startproc
   31              		@ args = 0, pretend = 0, frame = 0
   32              		@ frame_needed = 0, uses_anonymous_args = 0
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccvARgmt.s 			page 18
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccqEJOVN.s 			page 18
 
 
   33              		@ link register save eliminated.
@@ -1078,7 +1078,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccvARgmt.s 			page 1
  959:Middlewares/LVGL/lvgl/src/widgets/arc/lv_arc.c ****     return angle;
  960:Middlewares/LVGL/lvgl/src/widgets/arc/lv_arc.c **** }
   67              		.loc 1 960 1 view .LVU16
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccvARgmt.s 			page 19
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccqEJOVN.s 			page 19
 
 
   68 001c 7047     		bx	lr
@@ -1138,7 +1138,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccvARgmt.s 			page 1
  107              		.loc 1 951 9 is_stmt 1 view .LVU31
  951:Middlewares/LVGL/lvgl/src/widgets/arc/lv_arc.c **** 
  108              		.loc 1 951 38 is_stmt 0 view .LVU32
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccvARgmt.s 			page 20
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccqEJOVN.s 			page 20
 
 
  109 0034 5C6B     		ldr	r4, [r3, #52]
@@ -1198,7 +1198,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccvARgmt.s 			page 1
  151 0052 AC46     		mov	ip, r5
  152 0054 F3E7     		b	.L6
  153              	.LVL17:
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccvARgmt.s 			page 21
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccqEJOVN.s 			page 21
 
 
  154              	.L7:
@@ -1258,7 +1258,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccvARgmt.s 			page 1
  974:Middlewares/LVGL/lvgl/src/widgets/arc/lv_arc.c **** 
  975:Middlewares/LVGL/lvgl/src/widgets/arc/lv_arc.c ****     int32_t left_knob = lv_obj_get_style_pad_left(obj, LV_PART_KNOB);
  976:Middlewares/LVGL/lvgl/src/widgets/arc/lv_arc.c ****     int32_t right_knob = lv_obj_get_style_pad_right(obj, LV_PART_KNOB);
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccvARgmt.s 			page 22
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccqEJOVN.s 			page 22
 
 
  977:Middlewares/LVGL/lvgl/src/widgets/arc/lv_arc.c ****     int32_t top_knob = lv_obj_get_style_pad_top(obj, LV_PART_KNOB);
@@ -1318,7 +1318,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccvARgmt.s 			page 1
 1031:Middlewares/LVGL/lvgl/src/widgets/arc/lv_arc.c ****     }
 1032:Middlewares/LVGL/lvgl/src/widgets/arc/lv_arc.c ****     arc->last_angle = angle; /*Cache angle for slew rate limiting*/
 1033:Middlewares/LVGL/lvgl/src/widgets/arc/lv_arc.c **** }
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccvARgmt.s 			page 23
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccqEJOVN.s 			page 23
 
 
 1034:Middlewares/LVGL/lvgl/src/widgets/arc/lv_arc.c **** 
@@ -1378,7 +1378,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccvARgmt.s 			page 1
  198              		.cfi_def_cfa_offset 4
  199              		.cfi_offset 4, -4
  200 0004 8446     		mov	ip, r0
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccvARgmt.s 			page 24
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccqEJOVN.s 			page 24
 
 
  201              		.loc 1 1075 5 is_stmt 1 view .LVU60
@@ -1438,7 +1438,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccvARgmt.s 			page 1
  243 001a 002B     		cmp	r3, #0
  244 001c FBDB     		blt	.L21
  245 001e 01E0     		b	.L22
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccvARgmt.s 			page 25
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccqEJOVN.s 			page 25
 
 
  246              	.L23:
@@ -1498,7 +1498,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccvARgmt.s 			page 1
  273              		.loc 1 1109 12 is_stmt 0 view .LVU90
  274 003c C1F5B470 		rsb	r0, r1, #360
  275              		.loc 1 1109 7 view .LVU91
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccvARgmt.s 			page 26
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccqEJOVN.s 			page 26
 
 
  276 0040 9042     		cmp	r0, r2
@@ -1558,7 +1558,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccvARgmt.s 			page 1
 1097:Middlewares/LVGL/lvgl/src/widgets/arc/lv_arc.c ****     }
  309              		.loc 1 1097 16 is_stmt 0 view .LVU104
  310 0070 0120     		movs	r0, #1
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccvARgmt.s 			page 27
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccqEJOVN.s 			page 27
 
 
  311              	.LVL32:
@@ -1618,7 +1618,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccvARgmt.s 			page 1
  351              		.loc 1 1111 9 is_stmt 1 view .LVU118
 1111:Middlewares/LVGL/lvgl/src/widgets/arc/lv_arc.c ****         return true;
  352              		.loc 1 1111 21 is_stmt 0 view .LVU119
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccvARgmt.s 			page 28
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccqEJOVN.s 			page 28
 
 
  353 00ac DBB2     		uxtb	r3, r3
@@ -1678,7 +1678,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccvARgmt.s 			page 1
  399              		.cfi_offset 8, -20
  400              		.cfi_offset 9, -16
  401              		.cfi_offset 10, -12
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccvARgmt.s 			page 29
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccqEJOVN.s 			page 29
 
 
  402              		.cfi_offset 11, -8
@@ -1738,7 +1738,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccvARgmt.s 			page 1
   41:Middlewares/LVGL/lvgl/src/widgets/arc/../../core/lv_obj_style_gen.h ****  * @param  part   One of the `LV_PART_...` enum values
   42:Middlewares/LVGL/lvgl/src/widgets/arc/../../core/lv_obj_style_gen.h ****  */
   43:Middlewares/LVGL/lvgl/src/widgets/arc/../../core/lv_obj_style_gen.h **** static inline int32_t lv_obj_get_style_min_width(const lv_obj_t * obj, lv_part_t part)
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccvARgmt.s 			page 30
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccqEJOVN.s 			page 30
 
 
   44:Middlewares/LVGL/lvgl/src/widgets/arc/../../core/lv_obj_style_gen.h **** {
@@ -1798,7 +1798,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccvARgmt.s 			page 1
   98:Middlewares/LVGL/lvgl/src/widgets/arc/../../core/lv_obj_style_gen.h ****     return (int32_t)v.num;
   99:Middlewares/LVGL/lvgl/src/widgets/arc/../../core/lv_obj_style_gen.h **** }
  100:Middlewares/LVGL/lvgl/src/widgets/arc/../../core/lv_obj_style_gen.h **** 
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccvARgmt.s 			page 31
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccqEJOVN.s 			page 31
 
 
  101:Middlewares/LVGL/lvgl/src/widgets/arc/../../core/lv_obj_style_gen.h **** /**
@@ -1858,7 +1858,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccvARgmt.s 			page 1
  155:Middlewares/LVGL/lvgl/src/widgets/arc/../../core/lv_obj_style_gen.h ****     lv_style_value_t v = lv_obj_get_style_prop(obj, part, LV_STYLE_ALIGN);
  156:Middlewares/LVGL/lvgl/src/widgets/arc/../../core/lv_obj_style_gen.h ****     return (lv_align_t)v.num;
  157:Middlewares/LVGL/lvgl/src/widgets/arc/../../core/lv_obj_style_gen.h **** }
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccvARgmt.s 			page 32
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccqEJOVN.s 			page 32
 
 
  158:Middlewares/LVGL/lvgl/src/widgets/arc/../../core/lv_obj_style_gen.h **** 
@@ -1918,7 +1918,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccvARgmt.s 			page 1
  212:Middlewares/LVGL/lvgl/src/widgets/arc/../../core/lv_obj_style_gen.h **** 
  213:Middlewares/LVGL/lvgl/src/widgets/arc/../../core/lv_obj_style_gen.h **** /**
  214:Middlewares/LVGL/lvgl/src/widgets/arc/../../core/lv_obj_style_gen.h ****  * Move object around the centre of the parent object (e.g. around the circumference
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccvARgmt.s 			page 33
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccqEJOVN.s 			page 33
 
 
  215:Middlewares/LVGL/lvgl/src/widgets/arc/../../core/lv_obj_style_gen.h ****  * of a scale).
@@ -1978,7 +1978,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccvARgmt.s 			page 1
  269:Middlewares/LVGL/lvgl/src/widgets/arc/../../core/lv_obj_style_gen.h ****  */
  270:Middlewares/LVGL/lvgl/src/widgets/arc/../../core/lv_obj_style_gen.h **** static inline int32_t lv_obj_get_style_transform_pivot_x(const lv_obj_t * obj, lv_part_t part)
  271:Middlewares/LVGL/lvgl/src/widgets/arc/../../core/lv_obj_style_gen.h **** {
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccvARgmt.s 			page 34
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccqEJOVN.s 			page 34
 
 
  272:Middlewares/LVGL/lvgl/src/widgets/arc/../../core/lv_obj_style_gen.h ****     lv_style_value_t v = lv_obj_get_style_prop(obj, part, LV_STYLE_TRANSFORM_PIVOT_X);
@@ -2038,7 +2038,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccvARgmt.s 			page 1
  326:Middlewares/LVGL/lvgl/src/widgets/arc/../../core/lv_obj_style_gen.h **** /**
  327:Middlewares/LVGL/lvgl/src/widgets/arc/../../core/lv_obj_style_gen.h ****  * Gets the padding on the bottom. It makes the content area smaller in this direction.
  328:Middlewares/LVGL/lvgl/src/widgets/arc/../../core/lv_obj_style_gen.h ****  * Default: 0, inherited: No, layout: Yes, ext. draw: No.
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccvARgmt.s 			page 35
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccqEJOVN.s 			page 35
 
 
  329:Middlewares/LVGL/lvgl/src/widgets/arc/../../core/lv_obj_style_gen.h ****  * @param  obj    Pointer to Widget
@@ -2098,7 +2098,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccvARgmt.s 			page 1
  357:Middlewares/LVGL/lvgl/src/widgets/arc/../../core/lv_obj_style_gen.h **** {
  358:Middlewares/LVGL/lvgl/src/widgets/arc/../../core/lv_obj_style_gen.h ****     lv_style_value_t v = lv_obj_get_style_prop(obj, part, LV_STYLE_PAD_RIGHT);
  440              		.loc 2 358 5 view .LVU141
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccvARgmt.s 			page 36
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccqEJOVN.s 			page 36
 
 
  441              		.loc 2 358 26 is_stmt 0 view .LVU142
@@ -2158,7 +2158,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccvARgmt.s 			page 1
  483              		.loc 2 334 26 is_stmt 0 view .LVU156
  484 0034 1922     		movs	r2, #25
  485 0036 0021     		movs	r1, #0
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccvARgmt.s 			page 37
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccqEJOVN.s 			page 37
 
 
  486 0038 2046     		mov	r0, r4
@@ -2218,7 +2218,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccvARgmt.s 			page 1
  528              	.LVL57:
  931:Middlewares/LVGL/lvgl/src/widgets/arc/lv_arc.c ****     center->y = obj->coords.y1 + r + top_bg;
  529              		.loc 1 931 5 is_stmt 1 view .LVU169
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccvARgmt.s 			page 38
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccqEJOVN.s 			page 38
 
 
  931:Middlewares/LVGL/lvgl/src/widgets/arc/lv_arc.c ****     center->y = obj->coords.y1 + r + top_bg;
@@ -2278,7 +2278,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccvARgmt.s 			page 1
  569              	.LVL59:
  928:Middlewares/LVGL/lvgl/src/widgets/arc/lv_arc.c ****                         lv_obj_get_height(obj) - top_bg - bottom_bg)) / 2;
  570              		.loc 1 928 18 discriminator 1 view .LVU185
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccvARgmt.s 			page 39
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccqEJOVN.s 			page 39
 
 
  571 0098 431B     		subs	r3, r0, r5
@@ -2338,7 +2338,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccvARgmt.s 			page 1
  618              		.loc 2 346 26 view .LVU193
  619 0010 0646     		mov	r6, r0
  620 0012 0190     		str	r0, [sp, #4]
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccvARgmt.s 			page 40
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccqEJOVN.s 			page 40
 
 
  347:Middlewares/LVGL/lvgl/src/widgets/arc/../../core/lv_obj_style_gen.h **** }
@@ -2398,7 +2398,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccvARgmt.s 			page 1
  323:Middlewares/LVGL/lvgl/src/widgets/arc/../../core/lv_obj_style_gen.h **** }
  663              		.loc 2 323 5 is_stmt 1 view .LVU208
  664              	.LVL69:
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccvARgmt.s 			page 41
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccqEJOVN.s 			page 41
 
 
  323:Middlewares/LVGL/lvgl/src/widgets/arc/../../core/lv_obj_style_gen.h **** }
@@ -2458,7 +2458,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccvARgmt.s 			page 1
  709              		.cfi_endproc
  710              	.LFE228:
  712              		.section	.text.knob_get_extra_size,"ax",%progbits
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccvARgmt.s 			page 42
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccqEJOVN.s 			page 42
 
 
  713              		.align	1
@@ -2518,7 +2518,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccvARgmt.s 			page 1
  382:Middlewares/LVGL/lvgl/src/widgets/arc/../../core/lv_obj_style_gen.h ****     lv_style_value_t v = lv_obj_get_style_prop(obj, part, LV_STYLE_PAD_COLUMN);
  383:Middlewares/LVGL/lvgl/src/widgets/arc/../../core/lv_obj_style_gen.h ****     return (int32_t)v.num;
  384:Middlewares/LVGL/lvgl/src/widgets/arc/../../core/lv_obj_style_gen.h **** }
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccvARgmt.s 			page 43
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccqEJOVN.s 			page 43
 
 
  385:Middlewares/LVGL/lvgl/src/widgets/arc/../../core/lv_obj_style_gen.h **** 
@@ -2578,7 +2578,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccvARgmt.s 			page 1
  439:Middlewares/LVGL/lvgl/src/widgets/arc/../../core/lv_obj_style_gen.h ****  */
  440:Middlewares/LVGL/lvgl/src/widgets/arc/../../core/lv_obj_style_gen.h **** static inline int32_t lv_obj_get_style_margin_right(const lv_obj_t * obj, lv_part_t part)
  441:Middlewares/LVGL/lvgl/src/widgets/arc/../../core/lv_obj_style_gen.h **** {
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccvARgmt.s 			page 44
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccqEJOVN.s 			page 44
 
 
  442:Middlewares/LVGL/lvgl/src/widgets/arc/../../core/lv_obj_style_gen.h ****     lv_style_value_t v = lv_obj_get_style_prop(obj, part, LV_STYLE_MARGIN_RIGHT);
@@ -2638,7 +2638,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccvARgmt.s 			page 1
  496:Middlewares/LVGL/lvgl/src/widgets/arc/../../core/lv_obj_style_gen.h **** /**
  497:Middlewares/LVGL/lvgl/src/widgets/arc/../../core/lv_obj_style_gen.h ****  * Get gradient color of the background. Used only if `grad_dir` is not `LV_GRAD_DIR_NONE`.
  498:Middlewares/LVGL/lvgl/src/widgets/arc/../../core/lv_obj_style_gen.h ****  * Default: `0x000000`, inherited: No, layout: No, ext. draw: No.
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccvARgmt.s 			page 45
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccqEJOVN.s 			page 45
 
 
  499:Middlewares/LVGL/lvgl/src/widgets/arc/../../core/lv_obj_style_gen.h ****  * @param  obj    Pointer to Widget
@@ -2698,7 +2698,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccvARgmt.s 			page 1
  553:Middlewares/LVGL/lvgl/src/widgets/arc/../../core/lv_obj_style_gen.h **** static inline lv_opa_t lv_obj_get_style_bg_main_opa(const lv_obj_t * obj, lv_part_t part)
  554:Middlewares/LVGL/lvgl/src/widgets/arc/../../core/lv_obj_style_gen.h **** {
  555:Middlewares/LVGL/lvgl/src/widgets/arc/../../core/lv_obj_style_gen.h ****     lv_style_value_t v = lv_obj_get_style_prop(obj, part, LV_STYLE_BG_MAIN_OPA);
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccvARgmt.s 			page 46
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccqEJOVN.s 			page 46
 
 
  556:Middlewares/LVGL/lvgl/src/widgets/arc/../../core/lv_obj_style_gen.h ****     return (lv_opa_t)v.num;
@@ -2758,7 +2758,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccvARgmt.s 			page 1
  610:Middlewares/LVGL/lvgl/src/widgets/arc/../../core/lv_obj_style_gen.h ****     return (lv_opa_t)v.num;
  611:Middlewares/LVGL/lvgl/src/widgets/arc/../../core/lv_obj_style_gen.h **** }
  612:Middlewares/LVGL/lvgl/src/widgets/arc/../../core/lv_obj_style_gen.h **** 
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccvARgmt.s 			page 47
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccqEJOVN.s 			page 47
 
 
  613:Middlewares/LVGL/lvgl/src/widgets/arc/../../core/lv_obj_style_gen.h **** /**
@@ -2818,7 +2818,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccvARgmt.s 			page 1
  667:Middlewares/LVGL/lvgl/src/widgets/arc/../../core/lv_obj_style_gen.h ****  * @param  obj    Pointer to Widget
  668:Middlewares/LVGL/lvgl/src/widgets/arc/../../core/lv_obj_style_gen.h ****  * @param  part   One of the `LV_PART_...` enum values
  669:Middlewares/LVGL/lvgl/src/widgets/arc/../../core/lv_obj_style_gen.h ****  */
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccvARgmt.s 			page 48
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccqEJOVN.s 			page 48
 
 
  670:Middlewares/LVGL/lvgl/src/widgets/arc/../../core/lv_obj_style_gen.h **** static inline lv_color_t lv_obj_get_style_border_color(const lv_obj_t * obj, lv_part_t part)
@@ -2878,7 +2878,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccvARgmt.s 			page 1
  724:Middlewares/LVGL/lvgl/src/widgets/arc/../../core/lv_obj_style_gen.h ****     lv_style_value_t v = lv_obj_get_style_prop(obj, part, LV_STYLE_BORDER_SIDE);
  725:Middlewares/LVGL/lvgl/src/widgets/arc/../../core/lv_obj_style_gen.h ****     return (lv_border_side_t)v.num;
  726:Middlewares/LVGL/lvgl/src/widgets/arc/../../core/lv_obj_style_gen.h **** }
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccvARgmt.s 			page 49
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccqEJOVN.s 			page 49
 
 
  727:Middlewares/LVGL/lvgl/src/widgets/arc/../../core/lv_obj_style_gen.h **** 
@@ -2938,7 +2938,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccvARgmt.s 			page 1
  781:Middlewares/LVGL/lvgl/src/widgets/arc/../../core/lv_obj_style_gen.h ****  * Default: `LV_OPA_COVER`, inherited: No, layout: No, ext. draw: Yes.
  782:Middlewares/LVGL/lvgl/src/widgets/arc/../../core/lv_obj_style_gen.h ****  * @param  obj    Pointer to Widget
  783:Middlewares/LVGL/lvgl/src/widgets/arc/../../core/lv_obj_style_gen.h ****  * @param  part   One of the `LV_PART_...` enum values
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccvARgmt.s 			page 50
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccqEJOVN.s 			page 50
 
 
  784:Middlewares/LVGL/lvgl/src/widgets/arc/../../core/lv_obj_style_gen.h ****  */
@@ -2998,7 +2998,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccvARgmt.s 			page 1
  818:Middlewares/LVGL/lvgl/src/widgets/arc/../../core/lv_obj_style_gen.h ****  * @param  obj    Pointer to Widget
  819:Middlewares/LVGL/lvgl/src/widgets/arc/../../core/lv_obj_style_gen.h ****  * @param  part   One of the `LV_PART_...` enum values
  820:Middlewares/LVGL/lvgl/src/widgets/arc/../../core/lv_obj_style_gen.h ****  */
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccvARgmt.s 			page 51
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccqEJOVN.s 			page 51
 
 
  821:Middlewares/LVGL/lvgl/src/widgets/arc/../../core/lv_obj_style_gen.h **** static inline int32_t lv_obj_get_style_shadow_offset_x(const lv_obj_t * obj, lv_part_t part)
@@ -3058,7 +3058,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccvARgmt.s 			page 1
  821:Middlewares/LVGL/lvgl/src/widgets/arc/../../core/lv_obj_style_gen.h **** {
  784              		.loc 2 821 23 view .LVU241
  785              	.LBB106:
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccvARgmt.s 			page 52
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccqEJOVN.s 			page 52
 
 
  823:Middlewares/LVGL/lvgl/src/widgets/arc/../../core/lv_obj_style_gen.h ****     return (int32_t)v.num;
@@ -3118,7 +3118,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccvARgmt.s 			page 1
  833:Middlewares/LVGL/lvgl/src/widgets/arc/../../core/lv_obj_style_gen.h **** {
  828              		.loc 2 833 23 view .LVU254
  829              	.LBB110:
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccvARgmt.s 			page 53
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccqEJOVN.s 			page 53
 
 
  835:Middlewares/LVGL/lvgl/src/widgets/arc/../../core/lv_obj_style_gen.h ****     return (int32_t)v.num;
@@ -3178,7 +3178,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccvARgmt.s 			page 1
  871              	.LBB113:
  872              	.LBI113:
  747:Middlewares/LVGL/lvgl/src/widgets/arc/../../core/lv_obj_style_gen.h **** {
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccvARgmt.s 			page 54
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccqEJOVN.s 			page 54
 
 
  873              		.loc 2 747 23 view .LVU268
@@ -3238,7 +3238,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccvARgmt.s 			page 1
  913              		.loc 1 1048 1 is_stmt 0 view .LVU282
  914 008c A842     		cmp	r0, r5
  915 008e B8BF     		it	lt
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccvARgmt.s 			page 55
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccqEJOVN.s 			page 55
 
 
  916 0090 2846     		movlt	r0, r5
@@ -3298,7 +3298,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccvARgmt.s 			page 1
  960 00b0 FFF7FEFF 		bl	lv_obj_get_style_prop
  961              	.LVL106:
  962 00b4 0190     		str	r0, [sp, #4]
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccvARgmt.s 			page 56
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccqEJOVN.s 			page 56
 
 
  836:Middlewares/LVGL/lvgl/src/widgets/arc/../../core/lv_obj_style_gen.h **** }
@@ -3358,7 +3358,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccvARgmt.s 			page 1
  1007 000a CB63     		str	r3, [r1, #60]
  525:Middlewares/LVGL/lvgl/src/widgets/arc/lv_arc.c ****     arc->indic_angle_start = 135;
  1008              		.loc 1 525 5 is_stmt 1 view .LVU305
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccvARgmt.s 			page 57
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccqEJOVN.s 			page 57
 
 
  525:Middlewares/LVGL/lvgl/src/widgets/arc/lv_arc.c ****     arc->indic_angle_start = 135;
@@ -3418,7 +3418,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccvARgmt.s 			page 1
  1045              		.loc 1 534 5 is_stmt 1 view .LVU323
  534:Middlewares/LVGL/lvgl/src/widgets/arc/lv_arc.c ****     arc->last_tick = lv_tick_get();
  1046              		.loc 1 534 19 is_stmt 0 view .LVU324
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccvARgmt.s 			page 58
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccqEJOVN.s 			page 58
 
 
  1047 0046 4FF43473 		mov	r3, #720
@@ -3478,7 +3478,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccvARgmt.s 			page 1
  1087              	.L54:
  1088 0080 0080FFFF 		.word	-32768
  1089              		.cfi_endproc
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccvARgmt.s 			page 59
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccqEJOVN.s 			page 59
 
 
  1090              	.LFE217:
@@ -3538,7 +3538,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccvARgmt.s 			page 1
  1136              	.LVL117:
  875:Middlewares/LVGL/lvgl/src/widgets/arc/lv_arc.c **** 
  1137              		.loc 1 875 5 view .LVU349
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccvARgmt.s 			page 60
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccqEJOVN.s 			page 60
 
 
  875:Middlewares/LVGL/lvgl/src/widgets/arc/lv_arc.c **** 
@@ -3598,7 +3598,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccvARgmt.s 			page 1
  1174              		.loc 1 883 39 is_stmt 0 discriminator 1 view .LVU367
  1175 003e A5F5B475 		sub	r5, r5, #360
  1176              	.LVL122:
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccvARgmt.s 			page 61
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccqEJOVN.s 			page 61
 
 
  1177              	.L62:
@@ -3658,7 +3658,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccvARgmt.s 			page 1
  867:Middlewares/LVGL/lvgl/src/widgets/arc/../../core/lv_obj_style_gen.h ****  * @param  obj    Pointer to Widget
  868:Middlewares/LVGL/lvgl/src/widgets/arc/../../core/lv_obj_style_gen.h ****  * @param  part   One of the `LV_PART_...` enum values
  869:Middlewares/LVGL/lvgl/src/widgets/arc/../../core/lv_obj_style_gen.h ****  */
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccvARgmt.s 			page 62
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccqEJOVN.s 			page 62
 
 
  870:Middlewares/LVGL/lvgl/src/widgets/arc/../../core/lv_obj_style_gen.h **** static inline lv_color_t lv_obj_get_style_shadow_color_filtered(const lv_obj_t * obj, lv_part_t par
@@ -3718,7 +3718,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccvARgmt.s 			page 1
  924:Middlewares/LVGL/lvgl/src/widgets/arc/../../core/lv_obj_style_gen.h ****     lv_style_value_t v = lv_obj_style_apply_color_filter(obj, part, lv_obj_get_style_prop(obj, part
  925:Middlewares/LVGL/lvgl/src/widgets/arc/../../core/lv_obj_style_gen.h ****     return v.color;
  926:Middlewares/LVGL/lvgl/src/widgets/arc/../../core/lv_obj_style_gen.h **** }
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccvARgmt.s 			page 63
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccqEJOVN.s 			page 63
 
 
  927:Middlewares/LVGL/lvgl/src/widgets/arc/../../core/lv_obj_style_gen.h **** 
@@ -3778,7 +3778,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccvARgmt.s 			page 1
  981:Middlewares/LVGL/lvgl/src/widgets/arc/../../core/lv_obj_style_gen.h ****  * Get gap between dashes in pixels. Note that dash works only on horizontal and
  982:Middlewares/LVGL/lvgl/src/widgets/arc/../../core/lv_obj_style_gen.h ****  * vertical lines.
  983:Middlewares/LVGL/lvgl/src/widgets/arc/../../core/lv_obj_style_gen.h ****  * Default: 0, inherited: No, layout: No, ext. draw: No.
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccvARgmt.s 			page 64
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccqEJOVN.s 			page 64
 
 
  984:Middlewares/LVGL/lvgl/src/widgets/arc/../../core/lv_obj_style_gen.h ****  * @param  obj    Pointer to Widget
@@ -3838,7 +3838,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccvARgmt.s 			page 1
 1038:Middlewares/LVGL/lvgl/src/widgets/arc/../../core/lv_obj_style_gen.h ****     return (lv_opa_t)v.num;
 1039:Middlewares/LVGL/lvgl/src/widgets/arc/../../core/lv_obj_style_gen.h **** }
 1040:Middlewares/LVGL/lvgl/src/widgets/arc/../../core/lv_obj_style_gen.h **** 
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccvARgmt.s 			page 65
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccqEJOVN.s 			page 65
 
 
 1041:Middlewares/LVGL/lvgl/src/widgets/arc/../../core/lv_obj_style_gen.h **** /**
@@ -3898,7 +3898,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccvARgmt.s 			page 1
  1235              		.loc 2 1062 5 is_stmt 1 view .LVU388
  1236              		.loc 2 1062 12 is_stmt 0 view .LVU389
  1237 0076 0038     		subs	r0, r0, #0
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccvARgmt.s 			page 66
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccqEJOVN.s 			page 66
 
 
  1238 0078 18BF     		it	ne
@@ -3958,7 +3958,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccvARgmt.s 			page 1
  1284              		.loc 1 868 5 view .LVU398
  868:Middlewares/LVGL/lvgl/src/widgets/arc/lv_arc.c **** 
  1285              		.loc 1 868 5 view .LVU399
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccvARgmt.s 			page 67
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccqEJOVN.s 			page 67
 
 
  868:Middlewares/LVGL/lvgl/src/widgets/arc/lv_arc.c **** 
@@ -4018,7 +4018,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccvARgmt.s 			page 1
  144:Middlewares/LVGL/lvgl/src/widgets/arc/lv_arc.c ****     lv_obj_t * obj = lv_obj_class_create_obj(MY_CLASS, parent);
  1334              		.loc 1 144 5 view .LVU408
  144:Middlewares/LVGL/lvgl/src/widgets/arc/lv_arc.c ****     lv_obj_t * obj = lv_obj_class_create_obj(MY_CLASS, parent);
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccvARgmt.s 			page 68
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccqEJOVN.s 			page 68
 
 
  1335              		.loc 1 144 5 view .LVU409
@@ -4078,7 +4078,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccvARgmt.s 			page 1
  1381              		.cfi_offset 14, -4
  267:Middlewares/LVGL/lvgl/src/widgets/arc/lv_arc.c ****     lv_arc_t * arc = (lv_arc_t *)obj;
  1382              		.loc 1 267 5 is_stmt 1 view .LVU420
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccvARgmt.s 			page 69
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccqEJOVN.s 			page 69
 
 
  267:Middlewares/LVGL/lvgl/src/widgets/arc/lv_arc.c ****     lv_arc_t * arc = (lv_arc_t *)obj;
@@ -4138,7 +4138,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccvARgmt.s 			page 1
  276:Middlewares/LVGL/lvgl/src/widgets/arc/lv_arc.c **** 
  1421              		.loc 1 276 1 view .LVU437
  1422 0024 08BD     		pop	{r3, pc}
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccvARgmt.s 			page 70
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccqEJOVN.s 			page 70
 
 
  1423              		.cfi_endproc
@@ -4198,7 +4198,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccvARgmt.s 			page 1
  1466              		.global	lv_arc_set_knob_offset
  1467              		.syntax unified
  1468              		.thumb
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccvARgmt.s 			page 71
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccqEJOVN.s 			page 71
 
 
  1469              		.thumb_func
@@ -4258,7 +4258,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccvARgmt.s 			page 1
  375:Middlewares/LVGL/lvgl/src/widgets/arc/lv_arc.c ****     LV_ASSERT_OBJ(obj, MY_CLASS);
  1512              		.loc 1 375 1 view -0
  1513              		.cfi_startproc
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccvARgmt.s 			page 72
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccqEJOVN.s 			page 72
 
 
  1514              		@ args = 0, pretend = 0, frame = 0
@@ -4318,7 +4318,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccvARgmt.s 			page 1
  1555              		.loc 1 382 5 view .LVU481
  1556 0000 08B1     		cbz	r0, .L91
  382:Middlewares/LVGL/lvgl/src/widgets/arc/lv_arc.c ****     return ((lv_arc_t *) obj)->indic_angle_end;
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccvARgmt.s 			page 73
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccqEJOVN.s 			page 73
 
 
  1557              		.loc 1 382 5 view .LVU482
@@ -4378,7 +4378,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccvARgmt.s 			page 1
  1597              		.loc 1 390 1 is_stmt 0 view .LVU498
  1598 0002 C06B     		ldr	r0, [r0, #60]
  1599              	.LVL162:
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccvARgmt.s 			page 74
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccqEJOVN.s 			page 74
 
 
  390:Middlewares/LVGL/lvgl/src/widgets/arc/lv_arc.c **** 
@@ -4438,7 +4438,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccvARgmt.s 			page 1
  1641              		.loc 1 394 5 is_stmt 1 view .LVU513
  394:Middlewares/LVGL/lvgl/src/widgets/arc/lv_arc.c ****     return ((lv_arc_t *) obj)->bg_angle_end;
  1642              		.loc 1 394 5 view .LVU514
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccvARgmt.s 			page 75
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccqEJOVN.s 			page 75
 
 
  394:Middlewares/LVGL/lvgl/src/widgets/arc/lv_arc.c ****     return ((lv_arc_t *) obj)->bg_angle_end;
@@ -4498,7 +4498,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccvARgmt.s 			page 1
  1683 0006 FEE7     		b	.L100
  1684              		.cfi_endproc
  1685              	.LFE207:
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccvARgmt.s 			page 76
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccqEJOVN.s 			page 76
 
 
  1687              		.section	.text.arc_value_changed_event_cb,"ax",%progbits
@@ -4558,7 +4558,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccvARgmt.s 			page 1
 1143:Middlewares/LVGL/lvgl/src/widgets/arc/lv_arc.c ****     }
 1144:Middlewares/LVGL/lvgl/src/widgets/arc/lv_arc.c **** #if LV_USE_FLOAT
 1145:Middlewares/LVGL/lvgl/src/widgets/arc/lv_arc.c ****     else {
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccvARgmt.s 			page 77
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccqEJOVN.s 			page 77
 
 
 1146:Middlewares/LVGL/lvgl/src/widgets/arc/lv_arc.c ****         lv_subject_set_float(subject, (float)lv_arc_get_value(arc));
@@ -4618,7 +4618,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccvARgmt.s 			page 1
  1775              		.loc 1 407 5 view .LVU553
  408:Middlewares/LVGL/lvgl/src/widgets/arc/lv_arc.c **** 
  1776              		.loc 1 408 1 is_stmt 0 view .LVU554
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccvARgmt.s 			page 78
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccqEJOVN.s 			page 78
 
 
  1777 0002 806C     		ldr	r0, [r0, #72]
@@ -4678,7 +4678,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccvARgmt.s 			page 1
  1819              	.L110:
  412:Middlewares/LVGL/lvgl/src/widgets/arc/lv_arc.c ****     return ((lv_arc_t *) obj)->max_value;
  1820              		.loc 1 412 5 is_stmt 1 view .LVU569
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccvARgmt.s 			page 79
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccqEJOVN.s 			page 79
 
 
  412:Middlewares/LVGL/lvgl/src/widgets/arc/lv_arc.c ****     return ((lv_arc_t *) obj)->max_value;
@@ -4738,7 +4738,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccvARgmt.s 			page 1
  1861              		.loc 1 418 5 view .LVU585
  418:Middlewares/LVGL/lvgl/src/widgets/arc/lv_arc.c ****     return ((lv_arc_t *) obj)->type;
  1862              		.loc 1 418 5 view .LVU586
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccvARgmt.s 			page 80
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccqEJOVN.s 			page 80
 
 
  1863 000c FEE7     		b	.L113
@@ -4798,7 +4798,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccvARgmt.s 			page 1
  1907              		.syntax unified
  1908              		.thumb
  1909              		.thumb_func
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccvARgmt.s 			page 81
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccqEJOVN.s 			page 81
 
 
  1911              	lv_arc_get_knob_offset:
@@ -4858,7 +4858,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccvARgmt.s 			page 1
  1953              		@ frame_needed = 0, uses_anonymous_args = 0
  963:Middlewares/LVGL/lvgl/src/widgets/arc/lv_arc.c ****     int32_t indic_width = lv_obj_get_style_arc_width(obj, LV_PART_INDICATOR);
  1954              		.loc 1 963 1 is_stmt 0 view .LVU614
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccvARgmt.s 			page 82
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccqEJOVN.s 			page 82
 
 
  1955 0000 2DE9F04F 		push	{r4, r5, r6, r7, r8, r9, r10, fp, lr}
@@ -4918,7 +4918,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccvARgmt.s 			page 1
  1998              		.loc 1 965 13 is_stmt 0 view .LVU625
  1999 001a 00EBD070 		add	r0, r0, r0, lsr #31
  2000              	.LVL202:
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccvARgmt.s 			page 83
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccqEJOVN.s 			page 83
 
 
  965:Middlewares/LVGL/lvgl/src/widgets/arc/lv_arc.c ****     r -= indic_width_half;
@@ -4978,7 +4978,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccvARgmt.s 			page 1
  2039              		.loc 1 972 27 view .LVU641
  2040 0046 00B2     		sxth	r0, r0
  2041 0048 FFF7FEFF 		bl	lv_trigo_sin
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccvARgmt.s 			page 84
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccqEJOVN.s 			page 84
 
 
  2042              	.LVL213:
@@ -5038,7 +5038,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccvARgmt.s 			page 1
  358:Middlewares/LVGL/lvgl/src/widgets/arc/../../core/lv_obj_style_gen.h ****     return (int32_t)v.num;
  2082              		.loc 2 358 5 view .LVU656
  358:Middlewares/LVGL/lvgl/src/widgets/arc/../../core/lv_obj_style_gen.h ****     return (int32_t)v.num;
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccvARgmt.s 			page 85
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccqEJOVN.s 			page 85
 
 
  2083              		.loc 2 358 26 is_stmt 0 view .LVU657
@@ -5098,7 +5098,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccvARgmt.s 			page 1
  2124              		.loc 2 332 23 view .LVU670
  2125              	.LBB134:
  334:Middlewares/LVGL/lvgl/src/widgets/arc/../../core/lv_obj_style_gen.h ****     return (int32_t)v.num;
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccvARgmt.s 			page 86
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccqEJOVN.s 			page 86
 
 
  2126              		.loc 2 334 5 view .LVU671
@@ -5158,7 +5158,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccvARgmt.s 			page 1
  2163              		.loc 1 981 19 view .LVU688
  2164 00b6 AB60     		str	r3, [r5, #8]
  982:Middlewares/LVGL/lvgl/src/widgets/arc/lv_arc.c ****     knob_area->y2 = center->y + knob_y + bottom_knob + indic_width_half;
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccvARgmt.s 			page 87
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccqEJOVN.s 			page 87
 
 
  2165              		.loc 1 982 5 is_stmt 1 view .LVU689
@@ -5218,7 +5218,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccvARgmt.s 			page 1
  817:Middlewares/LVGL/lvgl/src/widgets/arc/lv_arc.c ****     lv_obj_t * obj = lv_event_get_current_target(e);
  2208              		.loc 1 817 1 is_stmt 1 view -0
  2209              		.cfi_startproc
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccvARgmt.s 			page 88
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccqEJOVN.s 			page 88
 
 
  2210              		@ args = 0, pretend = 0, frame = 264
@@ -5278,7 +5278,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccvARgmt.s 			page 1
  828:Middlewares/LVGL/lvgl/src/widgets/arc/lv_arc.c ****     if(arc_r > 0) {
  2252              		.loc 1 828 5 is_stmt 1 view .LVU716
  829:Middlewares/LVGL/lvgl/src/widgets/arc/lv_arc.c ****         lv_draw_arc_dsc_init(&arc_dsc);
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccvARgmt.s 			page 89
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccqEJOVN.s 			page 89
 
 
  2253              		.loc 1 829 5 view .LVU717
@@ -5338,7 +5338,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccvARgmt.s 			page 1
  861:Middlewares/LVGL/lvgl/src/widgets/arc/lv_arc.c ****     lv_obj_init_draw_rect_dsc(obj, LV_PART_KNOB, &knob_rect_dsc);
  2293              		.loc 1 861 30 is_stmt 0 view .LVU732
  2294 0048 0595     		str	r5, [sp, #20]
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccvARgmt.s 			page 90
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccqEJOVN.s 			page 90
 
 
  862:Middlewares/LVGL/lvgl/src/widgets/arc/lv_arc.c ****     lv_draw_rect(layer, &knob_rect_dsc, &knob_area);
@@ -5398,7 +5398,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccvARgmt.s 			page 1
  834:Middlewares/LVGL/lvgl/src/widgets/arc/lv_arc.c ****         arc_dsc.end_angle = arc->bg_angle_end + arc->rotation;
  2339              		.loc 1 834 34 is_stmt 0 view .LVU743
  2340 0084 E36B     		ldr	r3, [r4, #60]
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccvARgmt.s 			page 91
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccqEJOVN.s 			page 91
 
 
  834:Middlewares/LVGL/lvgl/src/widgets/arc/lv_arc.c ****         arc_dsc.end_angle = arc->bg_angle_end + arc->rotation;
@@ -5458,7 +5458,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccvARgmt.s 			page 1
  2380 00b6 FFF7FEFF 		bl	lv_obj_init_draw_arc_dsc
  2381              	.LVL251:
  847:Middlewares/LVGL/lvgl/src/widgets/arc/lv_arc.c ****         arc_dsc.start_angle = arc->indic_angle_start + arc->rotation;
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccvARgmt.s 			page 92
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccqEJOVN.s 			page 92
 
 
  2382              		.loc 1 847 9 view .LVU759
@@ -5518,7 +5518,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccvARgmt.s 			page 1
  2424              	inv_knob_area:
  2425              	.LVL253:
  2426              	.LFB221:
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccvARgmt.s 			page 93
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccqEJOVN.s 			page 93
 
 
  904:Middlewares/LVGL/lvgl/src/widgets/arc/lv_arc.c ****     lv_point_t c;
@@ -5578,7 +5578,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccvARgmt.s 			page 1
  2469              		.loc 1 918 5 is_stmt 1 view .LVU785
  2470 0026 01A9     		add	r1, sp, #4
  2471 0028 2046     		mov	r0, r4
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccvARgmt.s 			page 94
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccqEJOVN.s 			page 94
 
 
  2472 002a FFF7FEFF 		bl	lv_obj_invalidate_area
@@ -5638,7 +5638,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccvARgmt.s 			page 1
  2520              		.cfi_offset 5, -8
  2521              		.cfi_offset 14, -4
  2522 0004 0C46     		mov	r4, r1
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccvARgmt.s 			page 95
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccqEJOVN.s 			page 95
 
 
  2523 0006 0546     		mov	r5, r0
@@ -5698,7 +5698,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccvARgmt.s 			page 1
  2560              	.L137:
  175:Middlewares/LVGL/lvgl/src/widgets/arc/lv_arc.c ****     else if(new_delta < old_delta) inv_arc_area(obj, arc->indic_angle_start, start, LV_PART_INDICAT
  2561              		.loc 1 175 5 is_stmt 1 view .LVU811
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccvARgmt.s 			page 96
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccqEJOVN.s 			page 96
 
 
  175:Middlewares/LVGL/lvgl/src/widgets/arc/lv_arc.c ****     else if(new_delta < old_delta) inv_arc_area(obj, arc->indic_angle_start, start, LV_PART_INDICAT
@@ -5758,7 +5758,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccvARgmt.s 			page 1
  164:Middlewares/LVGL/lvgl/src/widgets/arc/lv_arc.c ****     lv_arc_t * arc = (lv_arc_t *)obj;
  2603              		.loc 1 164 5 view .LVU825
  164:Middlewares/LVGL/lvgl/src/widgets/arc/lv_arc.c ****     lv_arc_t * arc = (lv_arc_t *)obj;
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccvARgmt.s 			page 97
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccqEJOVN.s 			page 97
 
 
  2604              		.loc 1 164 5 view .LVU826
@@ -5818,7 +5818,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccvARgmt.s 			page 1
  2646              		.loc 1 184 1 is_stmt 0 view .LVU838
  2647 0066 38BD     		pop	{r3, r4, r5, pc}
  2648              	.LVL283:
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccvARgmt.s 			page 98
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccqEJOVN.s 			page 98
 
 
  2649              	.L146:
@@ -5878,7 +5878,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccvARgmt.s 			page 1
  190:Middlewares/LVGL/lvgl/src/widgets/arc/lv_arc.c **** 
  2695              		.loc 1 190 5 view .LVU849
  190:Middlewares/LVGL/lvgl/src/widgets/arc/lv_arc.c **** 
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccvARgmt.s 			page 99
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccqEJOVN.s 			page 99
 
 
  2696              		.loc 1 190 7 is_stmt 0 view .LVU850
@@ -5938,7 +5938,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccvARgmt.s 			page 1
  2735 0026 4042     		rsblt	r0, r0, #0
  198:Middlewares/LVGL/lvgl/src/widgets/arc/lv_arc.c ****     else if(new_delta < old_delta) inv_arc_area(obj, end, arc->indic_angle_end, LV_PART_INDICATOR);
  2736              		.loc 1 198 7 view .LVU866
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccvARgmt.s 			page 100
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccqEJOVN.s 			page 100
 
 
  2737 0028 B428     		cmp	r0, #180
@@ -5998,7 +5998,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccvARgmt.s 			page 1
  2779              		.cfi_offset 14, -4
  195:Middlewares/LVGL/lvgl/src/widgets/arc/lv_arc.c ****     if(new_delta < 0) new_delta = 360 + new_delta;
  2780              		.loc 1 195 23 discriminator 1 view .LVU879
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccvARgmt.s 			page 101
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccqEJOVN.s 			page 101
 
 
  195:Middlewares/LVGL/lvgl/src/widgets/arc/lv_arc.c ****     if(new_delta < 0) new_delta = 360 + new_delta;
@@ -6058,7 +6058,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccvARgmt.s 			page 1
  199:Middlewares/LVGL/lvgl/src/widgets/arc/lv_arc.c ****     else if(old_delta < new_delta) inv_arc_area(obj, arc->indic_angle_end, end, LV_PART_INDICATOR);
  2822              		.loc 1 199 36 discriminator 1 view .LVU893
  2823 006c 2146     		mov	r1, r4
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccvARgmt.s 			page 102
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccqEJOVN.s 			page 102
 
 
  2824 006e 2846     		mov	r0, r5
@@ -6118,7 +6118,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccvARgmt.s 			page 1
  2874              		.syntax unified
  2875              		.thumb
  2876              		.thumb_func
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccvARgmt.s 			page 103
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccqEJOVN.s 			page 103
 
 
  2878              	value_update:
@@ -6178,7 +6178,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccvARgmt.s 			page 1
  2917              		.loc 1 1000 31 is_stmt 0 view .LVU915
  2918 0012 E56B     		ldr	r5, [r4, #60]
 1000:Middlewares/LVGL/lvgl/src/widgets/arc/lv_arc.c **** 
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccvARgmt.s 			page 104
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccqEJOVN.s 			page 104
 
 
  2919              		.loc 1 1000 7 view .LVU916
@@ -6238,7 +6238,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccvARgmt.s 			page 1
  2960              		.loc 1 1027 13 is_stmt 1 view .LVU929
  2961 0048 38E0     		b	.L173
  2962              	.LVL326:
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccvARgmt.s 			page 105
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccqEJOVN.s 			page 105
 
 
  2963              	.L166:
@@ -6298,7 +6298,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccvARgmt.s 			page 1
 1008:Middlewares/LVGL/lvgl/src/widgets/arc/lv_arc.c ****                 angle = lv_map(arc->value, arc->min_value, range_midpoint, (int32_t)arc->bg_angle_s
  3003              		.loc 1 1008 15 is_stmt 0 view .LVU944
  3004 0064 B0EB6C0F 		cmp	r0, ip, asr #1
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccvARgmt.s 			page 106
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccqEJOVN.s 			page 106
 
 
  3005 0068 0EDA     		bge	.L172
@@ -6358,7 +6358,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccvARgmt.s 			page 1
  3047 0096 2046     		mov	r0, r4
  3048              	.LVL340:
 1015:Middlewares/LVGL/lvgl/src/widgets/arc/lv_arc.c ****                 lv_arc_set_end_angle(obj, angle);
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccvARgmt.s 			page 107
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccqEJOVN.s 			page 107
 
 
  3049              		.loc 1 1015 17 is_stmt 0 view .LVU957
@@ -6418,7 +6418,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccvARgmt.s 			page 1
  3092              		.cfi_endproc
  3093              	.LFE225:
  3095              		.section	.text.lv_arc_set_bg_start_angle,"ax",%progbits
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccvARgmt.s 			page 108
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccqEJOVN.s 			page 108
 
 
  3096              		.align	1
@@ -6478,7 +6478,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccvARgmt.s 			page 1
  222:Middlewares/LVGL/lvgl/src/widgets/arc/lv_arc.c ****     lv_value_precise_t new_delta = arc->bg_angle_end - start;
  3138              		.loc 1 222 59 view .LVU982
  3139 0014 E96B     		ldr	r1, [r5, #60]
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccvARgmt.s 			page 109
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccqEJOVN.s 			page 109
 
 
  3140              	.LVL352:
@@ -6538,7 +6538,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccvARgmt.s 			page 1
  3178              		.loc 1 230 36 is_stmt 1 discriminator 1 view .LVU998
  3179 0034 0023     		movs	r3, #0
  3180              	.LVL358:
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccvARgmt.s 			page 110
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccqEJOVN.s 			page 110
 
 
  230:Middlewares/LVGL/lvgl/src/widgets/arc/lv_arc.c **** 
@@ -6598,7 +6598,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccvARgmt.s 			page 1
  3223              	.LVL365:
  226:Middlewares/LVGL/lvgl/src/widgets/arc/lv_arc.c **** 
  3224              		.loc 1 226 33 discriminator 1 view .LVU1011
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccvARgmt.s 			page 111
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccqEJOVN.s 			page 111
 
 
  3225 004e E7E7     		b	.L181
@@ -6658,7 +6658,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccvARgmt.s 			page 1
  239:Middlewares/LVGL/lvgl/src/widgets/arc/lv_arc.c ****     lv_arc_t * arc = (lv_arc_t *)obj;
  3272              		.loc 1 239 5 view .LVU1021
  239:Middlewares/LVGL/lvgl/src/widgets/arc/lv_arc.c ****     lv_arc_t * arc = (lv_arc_t *)obj;
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccvARgmt.s 			page 112
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccqEJOVN.s 			page 112
 
 
  3273              		.loc 1 239 5 view .LVU1022
@@ -6718,7 +6718,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccvARgmt.s 			page 1
  247:Middlewares/LVGL/lvgl/src/widgets/arc/lv_arc.c ****     if(new_delta < 0) new_delta = 360 + new_delta;
  3312              		.loc 1 247 7 view .LVU1038
  3313 001a 12D4     		bmi	.L202
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccvARgmt.s 			page 113
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccqEJOVN.s 			page 113
 
 
  3314              	.LVL379:
@@ -6778,7 +6778,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccvARgmt.s 			page 1
  3355              		.cfi_def_cfa_offset 0
  3356              		.cfi_restore 3
  3357              		.cfi_restore 4
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccvARgmt.s 			page 114
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccqEJOVN.s 			page 114
 
 
  3358              		.cfi_restore 5
@@ -6838,7 +6838,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccvARgmt.s 			page 1
  256:Middlewares/LVGL/lvgl/src/widgets/arc/lv_arc.c **** }
  3398              		.loc 1 256 5 is_stmt 1 view .LVU1066
  3399 0056 2846     		mov	r0, r5
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccvARgmt.s 			page 115
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccqEJOVN.s 			page 115
 
 
  3400 0058 FFF7FEFF 		bl	value_update
@@ -6898,7 +6898,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccvARgmt.s 			page 1
  3448              		.loc 1 261 5 is_stmt 0 view .LVU1074
  3449 0008 FFF7FEFF 		bl	lv_arc_set_bg_end_angle
  3450              	.LVL399:
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccvARgmt.s 			page 116
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccqEJOVN.s 			page 116
 
 
  262:Middlewares/LVGL/lvgl/src/widgets/arc/lv_arc.c **** }
@@ -6958,7 +6958,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccvARgmt.s 			page 1
  3494 0008 8A42     		cmp	r2, r1
  3495 000a 0DD0     		beq	.L208
  314:Middlewares/LVGL/lvgl/src/widgets/arc/lv_arc.c ****     new_value = value > arc->max_value ? arc->max_value : value;
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccvARgmt.s 			page 117
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccqEJOVN.s 			page 117
 
 
  3496              		.loc 1 314 5 is_stmt 1 view .LVU1088
@@ -7018,7 +7018,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccvARgmt.s 			page 1
  309:Middlewares/LVGL/lvgl/src/widgets/arc/lv_arc.c ****     lv_arc_t * arc = (lv_arc_t *)obj;
  3536              		.loc 1 309 5 view .LVU1103
  309:Middlewares/LVGL/lvgl/src/widgets/arc/lv_arc.c ****     lv_arc_t * arc = (lv_arc_t *)obj;
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccvARgmt.s 			page 118
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccqEJOVN.s 			page 118
 
 
  3537              		.loc 1 309 5 view .LVU1104
@@ -7078,7 +7078,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccvARgmt.s 			page 1
  3583 0010 02D0     		beq	.L266
  3584              	.LVL411:
  3585              	.L214:
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccvARgmt.s 			page 119
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccqEJOVN.s 			page 119
 
 
  814:Middlewares/LVGL/lvgl/src/widgets/arc/lv_arc.c **** 
@@ -7138,7 +7138,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccvARgmt.s 			page 1
  3631 0050 13000000 		.word	.L214+1
  3632 0054 13000000 		.word	.L214+1
  3633 0058 25030000 		.word	.L222+1
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccvARgmt.s 			page 120
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccqEJOVN.s 			page 120
 
 
  3634 005c 13000000 		.word	.L214+1
@@ -7198,7 +7198,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccvARgmt.s 			page 1
  3677 00b8 2046     		mov	r0, r4
  3678              	.LVL422:
  568:Middlewares/LVGL/lvgl/src/widgets/arc/lv_arc.c **** 
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccvARgmt.s 			page 121
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccqEJOVN.s 			page 121
 
 
  3679              		.loc 1 568 9 is_stmt 0 view .LVU1135
@@ -7258,7 +7258,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccvARgmt.s 			page 1
  3718 00ec 0499     		ldr	r1, [sp, #16]
  602:Middlewares/LVGL/lvgl/src/widgets/arc/lv_arc.c **** 
  3719              		.loc 1 602 11 view .LVU1151
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccvARgmt.s 			page 122
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccqEJOVN.s 			page 122
 
 
  3720 00ee 11B9     		cbnz	r1, .L230
@@ -7318,7 +7318,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccvARgmt.s 			page 1
  613:Middlewares/LVGL/lvgl/src/widgets/arc/lv_arc.c **** 
  3757              		.loc 1 613 15 view .LVU1169
  3758 010e E41A     		subs	r4, r4, r3
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccvARgmt.s 			page 123
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccqEJOVN.s 			page 123
 
 
  3759              	.LVL430:
@@ -7378,7 +7378,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccvARgmt.s 			page 1
  3799 012e 0293     		str	r3, [sp, #8]
  584:Middlewares/LVGL/lvgl/src/widgets/arc/lv_arc.c ****                 r -= indic_width;
  3800              		.loc 1 584 13 is_stmt 1 view .LVU1184
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccvARgmt.s 			page 124
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccqEJOVN.s 			page 124
 
 
  584:Middlewares/LVGL/lvgl/src/widgets/arc/lv_arc.c ****                 r -= indic_width;
@@ -7438,7 +7438,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccvARgmt.s 			page 1
  593:Middlewares/LVGL/lvgl/src/widgets/arc/lv_arc.c ****                 arc->last_tick = lv_tick_get(); /*Capture timestamp at dragging start*/
  3839              		.loc 1 593 31 is_stmt 0 view .LVU1201
  3840 015e 96F85030 		ldrb	r3, [r6, #80]	@ zero_extendqisi2
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccvARgmt.s 			page 125
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccqEJOVN.s 			page 125
 
 
  3841 0162 43F00103 		orr	r3, r3, #1
@@ -7498,7 +7498,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccvARgmt.s 			page 1
  3883 0196 02DB     		blt	.L270
  618:Middlewares/LVGL/lvgl/src/widgets/arc/lv_arc.c **** 
  3884              		.loc 1 618 29 discriminator 2 view .LVU1214
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccvARgmt.s 			page 126
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccqEJOVN.s 			page 126
 
 
  618:Middlewares/LVGL/lvgl/src/widgets/arc/lv_arc.c **** 
@@ -7558,7 +7558,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccvARgmt.s 			page 1
  3925              		.loc 1 626 9 is_stmt 1 view .LVU1228
  626:Middlewares/LVGL/lvgl/src/widgets/arc/lv_arc.c ****             return;
  3926              		.loc 1 626 11 is_stmt 0 view .LVU1229
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccvARgmt.s 			page 127
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccqEJOVN.s 			page 127
 
 
  3927 01d2 0028     		cmp	r0, #0
@@ -7618,7 +7618,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccvARgmt.s 			page 1
  3965              		.loc 1 646 43 is_stmt 1 view .LVU1245
  650:Middlewares/LVGL/lvgl/src/widgets/arc/lv_arc.c ****            && ((CLICK_OUTSIDE_BG_ANGLES == arc->in_out) && (LV_ABS(delta_angle) > 280))) {
  3966              		.loc 1 650 9 view .LVU1246
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccvARgmt.s 			page 128
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccqEJOVN.s 			page 128
 
 
  650:Middlewares/LVGL/lvgl/src/widgets/arc/lv_arc.c ****            && ((CLICK_OUTSIDE_BG_ANGLES == arc->in_out) && (LV_ABS(delta_angle) > 280))) {
@@ -7678,7 +7678,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccvARgmt.s 			page 1
  4005              		.loc 1 672 14 is_stmt 1 view .LVU1262
  672:Middlewares/LVGL/lvgl/src/widgets/arc/lv_arc.c ****             delta_angle = -delta_angle_max;
  4006              		.loc 1 672 31 is_stmt 0 view .LVU1263
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccvARgmt.s 			page 129
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccqEJOVN.s 			page 129
 
 
  4007 022c 5B42     		rsbs	r3, r3, #0
@@ -7738,7 +7738,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccvARgmt.s 			page 1
  4045              	.LVL465:
  4046              	.L241:
  682:Middlewares/LVGL/lvgl/src/widgets/arc/lv_arc.c **** 
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccvARgmt.s 			page 130
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccqEJOVN.s 			page 130
 
 
  4047              		.loc 1 682 9 is_stmt 1 view .LVU1280
@@ -7798,7 +7798,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccvARgmt.s 			page 1
  704:Middlewares/LVGL/lvgl/src/widgets/arc/lv_arc.c ****             arc->last_tick = lv_tick_get(); /*Cache timestamp for the next iteration*/
  4087              		.loc 1 704 9 is_stmt 1 view .LVU1295
  704:Middlewares/LVGL/lvgl/src/widgets/arc/lv_arc.c ****             arc->last_tick = lv_tick_get(); /*Cache timestamp for the next iteration*/
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccvARgmt.s 			page 131
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccqEJOVN.s 			page 131
 
 
  4088              		.loc 1 704 28 is_stmt 0 view .LVU1296
@@ -7858,7 +7858,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccvARgmt.s 			page 1
  4127              		.loc 1 639 24 view .LVU1311
  4128 02a2 1446     		mov	r4, r2
  4129              	.LVL479:
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccvARgmt.s 			page 132
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccqEJOVN.s 			page 132
 
 
  639:Middlewares/LVGL/lvgl/src/widgets/arc/lv_arc.c ****         }
@@ -7918,7 +7918,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccvARgmt.s 			page 1
  657:Middlewares/LVGL/lvgl/src/widgets/arc/lv_arc.c ****             arc->min_close = min_close_prev;
  4170              		.loc 1 657 13 is_stmt 1 view .LVU1326
  4171              	.LVL485:
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccvARgmt.s 			page 133
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccqEJOVN.s 			page 133
 
 
  658:Middlewares/LVGL/lvgl/src/widgets/arc/lv_arc.c ****         }
@@ -7978,7 +7978,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccvARgmt.s 			page 1
  4212              		.loc 1 696 13 is_stmt 1 view .LVU1340
  4213 0306 2146     		mov	r1, r4
  4214 0308 3046     		mov	r0, r6
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccvARgmt.s 			page 134
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccqEJOVN.s 			page 134
 
 
  4215 030a FFF7FEFF 		bl	lv_arc_set_value
@@ -8038,7 +8038,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccvARgmt.s 			page 1
  4254              		.loc 1 713 38 view .LVU1355
  4255 033a 0446     		mov	r4, r0
  4256              	.LVL497:
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccvARgmt.s 			page 135
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccqEJOVN.s 			page 135
 
 
  714:Middlewares/LVGL/lvgl/src/widgets/arc/lv_arc.c ****         if(indev_type == LV_INDEV_TYPE_ENCODER) {
@@ -8098,7 +8098,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccvARgmt.s 			page 1
  724:Middlewares/LVGL/lvgl/src/widgets/arc/lv_arc.c ****             lv_arc_set_value(obj, lv_arc_get_value(obj) + 1);
  4296              		.loc 1 724 9 is_stmt 1 view .LVU1371
  4297 0362 A0F11103 		sub	r3, r0, #17
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccvARgmt.s 			page 136
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccqEJOVN.s 			page 136
 
 
  4298 0366 032B     		cmp	r3, #3
@@ -8158,7 +8158,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccvARgmt.s 			page 1
  728:Middlewares/LVGL/lvgl/src/widgets/arc/lv_arc.c ****         }
  4340              		.loc 1 728 35 is_stmt 0 view .LVU1384
  4341 0394 3046     		mov	r0, r6
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccvARgmt.s 			page 137
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccqEJOVN.s 			page 137
 
 
  4342              	.LVL511:
@@ -8218,7 +8218,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccvARgmt.s 			page 1
  741:Middlewares/LVGL/lvgl/src/widgets/arc/lv_arc.c ****             res = lv_obj_send_event(obj, LV_EVENT_VALUE_CHANGED, NULL);
  4383              		.loc 1 741 28 is_stmt 0 view .LVU1398
  4384 03bc 736C     		ldr	r3, [r6, #68]
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccvARgmt.s 			page 138
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccqEJOVN.s 			page 138
 
 
  741:Middlewares/LVGL/lvgl/src/widgets/arc/lv_arc.c ****             res = lv_obj_send_event(obj, LV_EVENT_VALUE_CHANGED, NULL);
@@ -8278,7 +8278,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccvARgmt.s 			page 1
  754:Middlewares/LVGL/lvgl/src/widgets/arc/lv_arc.c **** 
  4424              		.loc 1 754 15 is_stmt 0 view .LVU1414
  4425 03e2 B368     		ldr	r3, [r6, #8]
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccvARgmt.s 			page 139
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccqEJOVN.s 			page 139
 
 
  754:Middlewares/LVGL/lvgl/src/widgets/arc/lv_arc.c **** 
@@ -8338,7 +8338,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccvARgmt.s 			page 1
  4464 0402 0498     		ldr	r0, [sp, #16]
  4465              	.LVL533:
  761:Middlewares/LVGL/lvgl/src/widgets/arc/lv_arc.c ****         if(lv_area_is_point_on(&a, info->point, LV_RADIUS_CIRCLE)) {
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccvARgmt.s 			page 140
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccqEJOVN.s 			page 140
 
 
  4466              		.loc 1 761 35 view .LVU1431
@@ -8398,7 +8398,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccvARgmt.s 			page 1
  4507              		.loc 1 768 78 view .LVU1444
  4508 0436 1968     		ldr	r1, [r3]
  768:Middlewares/LVGL/lvgl/src/widgets/arc/lv_arc.c ****         angle -= arc->rotation;
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccvARgmt.s 			page 141
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccqEJOVN.s 			page 141
 
 
  4509              		.loc 1 768 36 view .LVU1445
@@ -8458,7 +8458,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccvARgmt.s 			page 1
  4549 0460 FADA     		bge	.L256
  776:Middlewares/LVGL/lvgl/src/widgets/arc/lv_arc.c ****         const lv_value_precise_t tolerance_deg = (360 * lv_dpx(20U)) / circumference;
  4550              		.loc 1 776 9 view .LVU1460
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccvARgmt.s 			page 142
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccqEJOVN.s 			page 142
 
 
  776:Middlewares/LVGL/lvgl/src/widgets/arc/lv_arc.c ****         const lv_value_precise_t tolerance_deg = (360 * lv_dpx(20U)) / circumference;
@@ -8518,7 +8518,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccvARgmt.s 			page 1
  4590 0498 05EB4901 		add	r1, r5, r9, lsl #1
  787:Middlewares/LVGL/lvgl/src/widgets/arc/lv_arc.c ****         info->res = lv_area_is_point_on(&a, info->point, LV_RADIUS_CIRCLE);
  4591              		.loc 1 787 9 view .LVU1476
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccvARgmt.s 			page 143
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccqEJOVN.s 			page 143
 
 
  4592 049c 06AC     		add	r4, sp, #24
@@ -8578,7 +8578,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccvARgmt.s 			page 1
  792:Middlewares/LVGL/lvgl/src/widgets/arc/lv_arc.c ****         int32_t bg_top = lv_obj_get_style_pad_top(obj, LV_PART_MAIN);
  4634              		.loc 1 792 9 is_stmt 1 view .LVU1489
  4635              	.LBB148:
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccvARgmt.s 			page 144
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccqEJOVN.s 			page 144
 
 
  4636              	.LBI148:
@@ -8638,7 +8638,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccvARgmt.s 			page 1
  4676              	.LBE151:
  4677              	.LBE150:
  794:Middlewares/LVGL/lvgl/src/widgets/arc/lv_arc.c ****         int32_t bg_pad = LV_MAX4(bg_left, bg_right, bg_top, bg_bottom);
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccvARgmt.s 			page 145
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccqEJOVN.s 			page 145
 
 
  4678              		.loc 1 794 9 is_stmt 1 view .LVU1504
@@ -8698,7 +8698,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccvARgmt.s 			page 1
  4719              		.loc 2 346 5 view .LVU1517
  346:Middlewares/LVGL/lvgl/src/widgets/arc/../../core/lv_obj_style_gen.h ****     return (int32_t)v.num;
  4720              		.loc 2 346 26 is_stmt 0 view .LVU1518
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccvARgmt.s 			page 146
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccqEJOVN.s 			page 146
 
 
  4721 04fc 1A22     		movs	r2, #26
@@ -8758,7 +8758,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccvARgmt.s 			page 1
  320:Middlewares/LVGL/lvgl/src/widgets/arc/../../core/lv_obj_style_gen.h **** {
  4762              		.loc 2 320 23 view .LVU1532
  4763              	.LBB159:
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccvARgmt.s 			page 147
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccqEJOVN.s 			page 147
 
 
  322:Middlewares/LVGL/lvgl/src/widgets/arc/../../core/lv_obj_style_gen.h ****     return (int32_t)v.num;
@@ -8818,7 +8818,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccvARgmt.s 			page 1
  4804 053e 0446     		movlt	r4, r0
  4805              	.LVL582:
  801:Middlewares/LVGL/lvgl/src/widgets/arc/lv_arc.c **** 
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccvARgmt.s 			page 148
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccqEJOVN.s 			page 148
 
 
  4806              		.loc 1 801 28 view .LVU1547
@@ -8878,7 +8878,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccvARgmt.s 			page 1
  4847              		.loc 1 807 12 view .LVU1560
  4848 056a 0460     		str	r4, [r0]
  808:Middlewares/LVGL/lvgl/src/widgets/arc/lv_arc.c **** 
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccvARgmt.s 			page 149
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccqEJOVN.s 			page 149
 
 
  4849              		.loc 1 808 9 is_stmt 1 view .LVU1561
@@ -8938,7 +8938,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccvARgmt.s 			page 1
  4896              		.thumb_func
  4898              	arc_value_observer_cb:
  4899              	.LVL598:
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccvARgmt.s 			page 150
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccqEJOVN.s 			page 150
 
 
  4900              	.LFB230:
@@ -8998,7 +8998,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccvARgmt.s 			page 1
  4940              		.global	lv_arc_set_range
  4941              		.syntax unified
  4942              		.thumb
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccvARgmt.s 			page 151
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccqEJOVN.s 			page 151
 
 
  4943              		.thumb_func
@@ -9058,7 +9058,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccvARgmt.s 			page 1
  4982 0010 586C     		ldr	r0, [r3, #68]
  334:Middlewares/LVGL/lvgl/src/widgets/arc/lv_arc.c ****         arc->value = min;
  4983              		.loc 1 334 7 view .LVU1596
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccvARgmt.s 			page 152
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccqEJOVN.s 			page 152
 
 
  4984 0012 8842     		cmp	r0, r1
@@ -9118,7 +9118,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccvARgmt.s 			page 1
  5024              		.cfi_offset 3, -8
  5025              		.cfi_offset 14, -4
  329:Middlewares/LVGL/lvgl/src/widgets/arc/lv_arc.c **** 
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccvARgmt.s 			page 153
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccqEJOVN.s 			page 153
 
 
  5026              		.loc 1 329 36 is_stmt 0 discriminator 1 view .LVU1611
@@ -9178,7 +9178,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccvARgmt.s 			page 1
  5075              		.section	.text.lv_arc_set_max_value,"ax",%progbits
  5076              		.align	1
  5077              		.global	lv_arc_set_max_value
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccvARgmt.s 			page 154
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccqEJOVN.s 			page 154
 
 
  5078              		.syntax unified
@@ -9238,7 +9238,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccvARgmt.s 			page 1
  5127              		@ args = 0, pretend = 0, frame = 0
  5128              		@ frame_needed = 0, uses_anonymous_args = 0
  280:Middlewares/LVGL/lvgl/src/widgets/arc/lv_arc.c ****     lv_arc_t * arc = (lv_arc_t *)obj;
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccvARgmt.s 			page 155
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccqEJOVN.s 			page 155
 
 
  5129              		.loc 1 280 5 view .LVU1628
@@ -9298,7 +9298,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccvARgmt.s 			page 1
  5167 0022 8A42     		cmp	r2, r1
  5168 0024 0BDD     		ble	.L306
  289:Middlewares/LVGL/lvgl/src/widgets/arc/lv_arc.c **** 
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccvARgmt.s 			page 156
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccqEJOVN.s 			page 156
 
 
  5169              		.loc 1 289 49 is_stmt 1 discriminator 1 view .LVU1645
@@ -9358,7 +9358,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccvARgmt.s 			page 1
  5212              	.LVL626:
  288:Middlewares/LVGL/lvgl/src/widgets/arc/lv_arc.c ****     if(arc->bg_angle_end < arc->bg_angle_start) bg_end = arc->bg_angle_end + 360;
  5213              		.loc 1 288 37 view .LVU1657
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccvARgmt.s 			page 157
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccqEJOVN.s 			page 157
 
 
  5214 0040 F3E7     		b	.L301
@@ -9418,7 +9418,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccvARgmt.s 			page 1
  5256              	.LFE196:
  5258              		.section	.text.lv_arc_get_change_rate,"ax",%progbits
  5259              		.align	1
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccvARgmt.s 			page 158
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccqEJOVN.s 			page 158
 
 
  5260              		.global	lv_arc_get_change_rate
@@ -9478,7 +9478,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccvARgmt.s 			page 1
  5304              	.LFB214:
  446:Middlewares/LVGL/lvgl/src/widgets/arc/lv_arc.c ****     LV_ASSERT_NULL(subject);
  5305              		.loc 1 446 1 view -0
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccvARgmt.s 			page 159
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccqEJOVN.s 			page 159
 
 
  5306              		.cfi_startproc
@@ -9538,7 +9538,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccvARgmt.s 			page 1
  457:Middlewares/LVGL/lvgl/src/widgets/arc/lv_arc.c ****     return observer;
  5345              		.loc 1 457 5 is_stmt 1 view .LVU1699
  457:Middlewares/LVGL/lvgl/src/widgets/arc/lv_arc.c ****     return observer;
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccvARgmt.s 			page 160
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccqEJOVN.s 			page 160
 
 
  5346              		.loc 1 457 32 is_stmt 0 view .LVU1700
@@ -9598,7 +9598,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccvARgmt.s 			page 1
  5387              	.LVL644:
  452:Middlewares/LVGL/lvgl/src/widgets/arc/lv_arc.c ****     }
  5388              		.loc 1 452 16 view .LVU1714
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccvARgmt.s 			page 161
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccqEJOVN.s 			page 161
 
 
  5389 0034 FAE7     		b	.L313
@@ -9658,7 +9658,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccvARgmt.s 			page 1
  5436              		.loc 1 466 5 view .LVU1723
  466:Middlewares/LVGL/lvgl/src/widgets/arc/lv_arc.c **** 
  5437              		.loc 1 466 33 view .LVU1724
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccvARgmt.s 			page 162
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccqEJOVN.s 			page 162
 
 
  468:Middlewares/LVGL/lvgl/src/widgets/arc/lv_arc.c **** 
@@ -9718,7 +9718,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccvARgmt.s 			page 1
  476:Middlewares/LVGL/lvgl/src/widgets/arc/lv_arc.c **** 
  5477              		.loc 1 476 11 is_stmt 0 view .LVU1740
  5478 0038 2B44     		add	r3, r3, r5
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccvARgmt.s 			page 163
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccqEJOVN.s 			page 163
 
 
  5479 003a 0393     		str	r3, [sp, #12]
@@ -9778,7 +9778,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccvARgmt.s 			page 1
  5519              		.loc 1 481 5 is_stmt 0 view .LVU1754
  5520 0066 0922     		movs	r2, #9
  5521 0068 3146     		mov	r1, r6
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccvARgmt.s 			page 164
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccqEJOVN.s 			page 164
 
 
  5522 006a 2046     		mov	r0, r4
@@ -9838,7 +9838,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccvARgmt.s 			page 1
  5566              		.syntax unified
  5567              		.thumb
  5568              		.thumb_func
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccvARgmt.s 			page 165
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccqEJOVN.s 			page 165
 
 
  5570              	lv_arc_rotate_obj_to_angle:
@@ -9898,7 +9898,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccvARgmt.s 			page 1
  5610 0016 03AA     		add	r2, sp, #12
  5611 0018 04A9     		add	r1, sp, #16
  5612 001a 3046     		mov	r0, r6
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccvARgmt.s 			page 166
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccqEJOVN.s 			page 166
 
 
  5613 001c FFF7FEFF 		bl	get_center
@@ -9958,7 +9958,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccvARgmt.s 			page 1
  499:Middlewares/LVGL/lvgl/src/widgets/arc/lv_arc.c **** 
  5654              		.loc 1 499 5 is_stmt 0 view .LVU1793
  5655 004a FFF7FEFF 		bl	lv_obj_align_to
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccvARgmt.s 			page 167
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccqEJOVN.s 			page 167
 
 
  5656              	.LVL670:
@@ -10018,7 +10018,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccvARgmt.s 			page 1
  5697              	.LVL680:
  508:Middlewares/LVGL/lvgl/src/widgets/arc/lv_arc.c **** }
  5698              		.loc 1 508 62 view .LVU1807
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccvARgmt.s 			page 168
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccqEJOVN.s 			page 168
 
 
  5699 007c 6900     		lsls	r1, r5, #1
@@ -10078,7 +10078,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccvARgmt.s 			page 1
  5741              		.cfi_endproc
  5742              	.LFE216:
  5744              		.global	lv_arc_class
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccvARgmt.s 			page 169
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccqEJOVN.s 			page 169
 
 
  5745              		.section	.rodata.str1.4,"aMS",%progbits,1
@@ -10138,116 +10138,116 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccvARgmt.s 			page 1
  5799              		.file 35 "Middlewares/LVGL/lvgl/src/widgets/arc/../../misc/lv_area_private.h"
  5800              		.file 36 "Middlewares/LVGL/lvgl/src/widgets/arc/../../core/../misc/../tick/lv_tick.h"
  5801              		.file 37 "Middlewares/LVGL/lvgl/src/widgets/arc/../../core/../display/lv_display.h"
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccvARgmt.s 			page 170
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccqEJOVN.s 			page 170
 
 
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccvARgmt.s 			page 171
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccqEJOVN.s 			page 171
 
 
 DEFINED SYMBOLS
                             *ABS*:00000000 lv_arc.c
-C:\Users\w1785\AppData\Local\Temp\ccvARgmt.s:21     .text.get_angle:00000000 $t
-C:\Users\w1785\AppData\Local\Temp\ccvARgmt.s:26     .text.get_angle:00000000 get_angle
-C:\Users\w1785\AppData\Local\Temp\ccvARgmt.s:179    .text.lv_arc_angle_within_bg_bounds:00000000 $t
-C:\Users\w1785\AppData\Local\Temp\ccvARgmt.s:184    .text.lv_arc_angle_within_bg_bounds:00000000 lv_arc_angle_within_bg_bounds
-C:\Users\w1785\AppData\Local\Temp\ccvARgmt.s:379    .text.get_center:00000000 $t
-C:\Users\w1785\AppData\Local\Temp\ccvARgmt.s:384    .text.get_center:00000000 get_center
-C:\Users\w1785\AppData\Local\Temp\ccvARgmt.s:581    .text.get_indicator_max_pad:00000000 $t
-C:\Users\w1785\AppData\Local\Temp\ccvARgmt.s:586    .text.get_indicator_max_pad:00000000 get_indicator_max_pad
-C:\Users\w1785\AppData\Local\Temp\ccvARgmt.s:713    .text.knob_get_extra_size:00000000 $t
-C:\Users\w1785\AppData\Local\Temp\ccvARgmt.s:718    .text.knob_get_extra_size:00000000 knob_get_extra_size
-C:\Users\w1785\AppData\Local\Temp\ccvARgmt.s:975    .text.lv_arc_constructor:00000000 $t
-C:\Users\w1785\AppData\Local\Temp\ccvARgmt.s:980    .text.lv_arc_constructor:00000000 lv_arc_constructor
-C:\Users\w1785\AppData\Local\Temp\ccvARgmt.s:1088   .text.lv_arc_constructor:00000080 $d
-C:\Users\w1785\AppData\Local\Temp\ccvARgmt.s:1093   .text.inv_arc_area:00000000 $t
-C:\Users\w1785\AppData\Local\Temp\ccvARgmt.s:1098   .text.inv_arc_area:00000000 inv_arc_area
-C:\Users\w1785\AppData\Local\Temp\ccvARgmt.s:1313   .text.lv_arc_create:00000000 $t
-C:\Users\w1785\AppData\Local\Temp\ccvARgmt.s:1319   .text.lv_arc_create:00000000 lv_arc_create
-C:\Users\w1785\AppData\Local\Temp\ccvARgmt.s:1358   .text.lv_arc_create:00000014 $d
-C:\Users\w1785\AppData\Local\Temp\ccvARgmt.s:5753   .rodata.lv_arc_class:00000000 lv_arc_class
-C:\Users\w1785\AppData\Local\Temp\ccvARgmt.s:1363   .text.lv_arc_set_rotation:00000000 $t
-C:\Users\w1785\AppData\Local\Temp\ccvARgmt.s:1369   .text.lv_arc_set_rotation:00000000 lv_arc_set_rotation
-C:\Users\w1785\AppData\Local\Temp\ccvARgmt.s:1427   .text.lv_arc_set_change_rate:00000000 $t
-C:\Users\w1785\AppData\Local\Temp\ccvARgmt.s:1433   .text.lv_arc_set_change_rate:00000000 lv_arc_set_change_rate
-C:\Users\w1785\AppData\Local\Temp\ccvARgmt.s:1465   .text.lv_arc_set_knob_offset:00000000 $t
-C:\Users\w1785\AppData\Local\Temp\ccvARgmt.s:1471   .text.lv_arc_set_knob_offset:00000000 lv_arc_set_knob_offset
-C:\Users\w1785\AppData\Local\Temp\ccvARgmt.s:1503   .text.lv_arc_get_angle_start:00000000 $t
-C:\Users\w1785\AppData\Local\Temp\ccvARgmt.s:1509   .text.lv_arc_get_angle_start:00000000 lv_arc_get_angle_start
-C:\Users\w1785\AppData\Local\Temp\ccvARgmt.s:1540   .text.lv_arc_get_angle_end:00000000 $t
-C:\Users\w1785\AppData\Local\Temp\ccvARgmt.s:1546   .text.lv_arc_get_angle_end:00000000 lv_arc_get_angle_end
-C:\Users\w1785\AppData\Local\Temp\ccvARgmt.s:1577   .text.lv_arc_get_bg_angle_start:00000000 $t
-C:\Users\w1785\AppData\Local\Temp\ccvARgmt.s:1583   .text.lv_arc_get_bg_angle_start:00000000 lv_arc_get_bg_angle_start
-C:\Users\w1785\AppData\Local\Temp\ccvARgmt.s:1614   .text.lv_arc_get_bg_angle_end:00000000 $t
-C:\Users\w1785\AppData\Local\Temp\ccvARgmt.s:1620   .text.lv_arc_get_bg_angle_end:00000000 lv_arc_get_bg_angle_end
-C:\Users\w1785\AppData\Local\Temp\ccvARgmt.s:1651   .text.lv_arc_get_value:00000000 $t
-C:\Users\w1785\AppData\Local\Temp\ccvARgmt.s:1657   .text.lv_arc_get_value:00000000 lv_arc_get_value
-C:\Users\w1785\AppData\Local\Temp\ccvARgmt.s:1688   .text.arc_value_changed_event_cb:00000000 $t
-C:\Users\w1785\AppData\Local\Temp\ccvARgmt.s:1693   .text.arc_value_changed_event_cb:00000000 arc_value_changed_event_cb
-C:\Users\w1785\AppData\Local\Temp\ccvARgmt.s:1756   .text.lv_arc_get_min_value:00000000 $t
-C:\Users\w1785\AppData\Local\Temp\ccvARgmt.s:1762   .text.lv_arc_get_min_value:00000000 lv_arc_get_min_value
-C:\Users\w1785\AppData\Local\Temp\ccvARgmt.s:1793   .text.lv_arc_get_max_value:00000000 $t
-C:\Users\w1785\AppData\Local\Temp\ccvARgmt.s:1799   .text.lv_arc_get_max_value:00000000 lv_arc_get_max_value
-C:\Users\w1785\AppData\Local\Temp\ccvARgmt.s:1830   .text.lv_arc_get_mode:00000000 $t
-C:\Users\w1785\AppData\Local\Temp\ccvARgmt.s:1836   .text.lv_arc_get_mode:00000000 lv_arc_get_mode
-C:\Users\w1785\AppData\Local\Temp\ccvARgmt.s:1868   .text.lv_arc_get_rotation:00000000 $t
-C:\Users\w1785\AppData\Local\Temp\ccvARgmt.s:1874   .text.lv_arc_get_rotation:00000000 lv_arc_get_rotation
-C:\Users\w1785\AppData\Local\Temp\ccvARgmt.s:1905   .text.lv_arc_get_knob_offset:00000000 $t
-C:\Users\w1785\AppData\Local\Temp\ccvARgmt.s:1911   .text.lv_arc_get_knob_offset:00000000 lv_arc_get_knob_offset
-C:\Users\w1785\AppData\Local\Temp\ccvARgmt.s:1942   .text.get_knob_area:00000000 $t
-C:\Users\w1785\AppData\Local\Temp\ccvARgmt.s:1947   .text.get_knob_area:00000000 get_knob_area
-C:\Users\w1785\AppData\Local\Temp\ccvARgmt.s:2200   .text.lv_arc_draw:00000000 $t
-C:\Users\w1785\AppData\Local\Temp\ccvARgmt.s:2205   .text.lv_arc_draw:00000000 lv_arc_draw
-C:\Users\w1785\AppData\Local\Temp\ccvARgmt.s:2419   .text.inv_knob_area:00000000 $t
-C:\Users\w1785\AppData\Local\Temp\ccvARgmt.s:2424   .text.inv_knob_area:00000000 inv_knob_area
-C:\Users\w1785\AppData\Local\Temp\ccvARgmt.s:2498   .text.lv_arc_set_start_angle:00000000 $t
-C:\Users\w1785\AppData\Local\Temp\ccvARgmt.s:2504   .text.lv_arc_set_start_angle:00000000 lv_arc_set_start_angle
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccvARgmt.s 			page 172
+C:\Users\w1785\AppData\Local\Temp\ccqEJOVN.s:21     .text.get_angle:00000000 $t
+C:\Users\w1785\AppData\Local\Temp\ccqEJOVN.s:26     .text.get_angle:00000000 get_angle
+C:\Users\w1785\AppData\Local\Temp\ccqEJOVN.s:179    .text.lv_arc_angle_within_bg_bounds:00000000 $t
+C:\Users\w1785\AppData\Local\Temp\ccqEJOVN.s:184    .text.lv_arc_angle_within_bg_bounds:00000000 lv_arc_angle_within_bg_bounds
+C:\Users\w1785\AppData\Local\Temp\ccqEJOVN.s:379    .text.get_center:00000000 $t
+C:\Users\w1785\AppData\Local\Temp\ccqEJOVN.s:384    .text.get_center:00000000 get_center
+C:\Users\w1785\AppData\Local\Temp\ccqEJOVN.s:581    .text.get_indicator_max_pad:00000000 $t
+C:\Users\w1785\AppData\Local\Temp\ccqEJOVN.s:586    .text.get_indicator_max_pad:00000000 get_indicator_max_pad
+C:\Users\w1785\AppData\Local\Temp\ccqEJOVN.s:713    .text.knob_get_extra_size:00000000 $t
+C:\Users\w1785\AppData\Local\Temp\ccqEJOVN.s:718    .text.knob_get_extra_size:00000000 knob_get_extra_size
+C:\Users\w1785\AppData\Local\Temp\ccqEJOVN.s:975    .text.lv_arc_constructor:00000000 $t
+C:\Users\w1785\AppData\Local\Temp\ccqEJOVN.s:980    .text.lv_arc_constructor:00000000 lv_arc_constructor
+C:\Users\w1785\AppData\Local\Temp\ccqEJOVN.s:1088   .text.lv_arc_constructor:00000080 $d
+C:\Users\w1785\AppData\Local\Temp\ccqEJOVN.s:1093   .text.inv_arc_area:00000000 $t
+C:\Users\w1785\AppData\Local\Temp\ccqEJOVN.s:1098   .text.inv_arc_area:00000000 inv_arc_area
+C:\Users\w1785\AppData\Local\Temp\ccqEJOVN.s:1313   .text.lv_arc_create:00000000 $t
+C:\Users\w1785\AppData\Local\Temp\ccqEJOVN.s:1319   .text.lv_arc_create:00000000 lv_arc_create
+C:\Users\w1785\AppData\Local\Temp\ccqEJOVN.s:1358   .text.lv_arc_create:00000014 $d
+C:\Users\w1785\AppData\Local\Temp\ccqEJOVN.s:5753   .rodata.lv_arc_class:00000000 lv_arc_class
+C:\Users\w1785\AppData\Local\Temp\ccqEJOVN.s:1363   .text.lv_arc_set_rotation:00000000 $t
+C:\Users\w1785\AppData\Local\Temp\ccqEJOVN.s:1369   .text.lv_arc_set_rotation:00000000 lv_arc_set_rotation
+C:\Users\w1785\AppData\Local\Temp\ccqEJOVN.s:1427   .text.lv_arc_set_change_rate:00000000 $t
+C:\Users\w1785\AppData\Local\Temp\ccqEJOVN.s:1433   .text.lv_arc_set_change_rate:00000000 lv_arc_set_change_rate
+C:\Users\w1785\AppData\Local\Temp\ccqEJOVN.s:1465   .text.lv_arc_set_knob_offset:00000000 $t
+C:\Users\w1785\AppData\Local\Temp\ccqEJOVN.s:1471   .text.lv_arc_set_knob_offset:00000000 lv_arc_set_knob_offset
+C:\Users\w1785\AppData\Local\Temp\ccqEJOVN.s:1503   .text.lv_arc_get_angle_start:00000000 $t
+C:\Users\w1785\AppData\Local\Temp\ccqEJOVN.s:1509   .text.lv_arc_get_angle_start:00000000 lv_arc_get_angle_start
+C:\Users\w1785\AppData\Local\Temp\ccqEJOVN.s:1540   .text.lv_arc_get_angle_end:00000000 $t
+C:\Users\w1785\AppData\Local\Temp\ccqEJOVN.s:1546   .text.lv_arc_get_angle_end:00000000 lv_arc_get_angle_end
+C:\Users\w1785\AppData\Local\Temp\ccqEJOVN.s:1577   .text.lv_arc_get_bg_angle_start:00000000 $t
+C:\Users\w1785\AppData\Local\Temp\ccqEJOVN.s:1583   .text.lv_arc_get_bg_angle_start:00000000 lv_arc_get_bg_angle_start
+C:\Users\w1785\AppData\Local\Temp\ccqEJOVN.s:1614   .text.lv_arc_get_bg_angle_end:00000000 $t
+C:\Users\w1785\AppData\Local\Temp\ccqEJOVN.s:1620   .text.lv_arc_get_bg_angle_end:00000000 lv_arc_get_bg_angle_end
+C:\Users\w1785\AppData\Local\Temp\ccqEJOVN.s:1651   .text.lv_arc_get_value:00000000 $t
+C:\Users\w1785\AppData\Local\Temp\ccqEJOVN.s:1657   .text.lv_arc_get_value:00000000 lv_arc_get_value
+C:\Users\w1785\AppData\Local\Temp\ccqEJOVN.s:1688   .text.arc_value_changed_event_cb:00000000 $t
+C:\Users\w1785\AppData\Local\Temp\ccqEJOVN.s:1693   .text.arc_value_changed_event_cb:00000000 arc_value_changed_event_cb
+C:\Users\w1785\AppData\Local\Temp\ccqEJOVN.s:1756   .text.lv_arc_get_min_value:00000000 $t
+C:\Users\w1785\AppData\Local\Temp\ccqEJOVN.s:1762   .text.lv_arc_get_min_value:00000000 lv_arc_get_min_value
+C:\Users\w1785\AppData\Local\Temp\ccqEJOVN.s:1793   .text.lv_arc_get_max_value:00000000 $t
+C:\Users\w1785\AppData\Local\Temp\ccqEJOVN.s:1799   .text.lv_arc_get_max_value:00000000 lv_arc_get_max_value
+C:\Users\w1785\AppData\Local\Temp\ccqEJOVN.s:1830   .text.lv_arc_get_mode:00000000 $t
+C:\Users\w1785\AppData\Local\Temp\ccqEJOVN.s:1836   .text.lv_arc_get_mode:00000000 lv_arc_get_mode
+C:\Users\w1785\AppData\Local\Temp\ccqEJOVN.s:1868   .text.lv_arc_get_rotation:00000000 $t
+C:\Users\w1785\AppData\Local\Temp\ccqEJOVN.s:1874   .text.lv_arc_get_rotation:00000000 lv_arc_get_rotation
+C:\Users\w1785\AppData\Local\Temp\ccqEJOVN.s:1905   .text.lv_arc_get_knob_offset:00000000 $t
+C:\Users\w1785\AppData\Local\Temp\ccqEJOVN.s:1911   .text.lv_arc_get_knob_offset:00000000 lv_arc_get_knob_offset
+C:\Users\w1785\AppData\Local\Temp\ccqEJOVN.s:1942   .text.get_knob_area:00000000 $t
+C:\Users\w1785\AppData\Local\Temp\ccqEJOVN.s:1947   .text.get_knob_area:00000000 get_knob_area
+C:\Users\w1785\AppData\Local\Temp\ccqEJOVN.s:2200   .text.lv_arc_draw:00000000 $t
+C:\Users\w1785\AppData\Local\Temp\ccqEJOVN.s:2205   .text.lv_arc_draw:00000000 lv_arc_draw
+C:\Users\w1785\AppData\Local\Temp\ccqEJOVN.s:2419   .text.inv_knob_area:00000000 $t
+C:\Users\w1785\AppData\Local\Temp\ccqEJOVN.s:2424   .text.inv_knob_area:00000000 inv_knob_area
+C:\Users\w1785\AppData\Local\Temp\ccqEJOVN.s:2498   .text.lv_arc_set_start_angle:00000000 $t
+C:\Users\w1785\AppData\Local\Temp\ccqEJOVN.s:2504   .text.lv_arc_set_start_angle:00000000 lv_arc_set_start_angle
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccqEJOVN.s 			page 172
 
 
-C:\Users\w1785\AppData\Local\Temp\ccvARgmt.s:2665   .text.lv_arc_set_end_angle:00000000 $t
-C:\Users\w1785\AppData\Local\Temp\ccvARgmt.s:2671   .text.lv_arc_set_end_angle:00000000 lv_arc_set_end_angle
-C:\Users\w1785\AppData\Local\Temp\ccvARgmt.s:2832   .text.lv_arc_set_angles:00000000 $t
-C:\Users\w1785\AppData\Local\Temp\ccvARgmt.s:2838   .text.lv_arc_set_angles:00000000 lv_arc_set_angles
-C:\Users\w1785\AppData\Local\Temp\ccvARgmt.s:2873   .text.value_update:00000000 $t
-C:\Users\w1785\AppData\Local\Temp\ccvARgmt.s:2878   .text.value_update:00000000 value_update
-C:\Users\w1785\AppData\Local\Temp\ccvARgmt.s:3096   .text.lv_arc_set_bg_start_angle:00000000 $t
-C:\Users\w1785\AppData\Local\Temp\ccvARgmt.s:3102   .text.lv_arc_set_bg_start_angle:00000000 lv_arc_set_bg_start_angle
-C:\Users\w1785\AppData\Local\Temp\ccvARgmt.s:3259   .text.lv_arc_set_bg_end_angle:00000000 $t
-C:\Users\w1785\AppData\Local\Temp\ccvARgmt.s:3265   .text.lv_arc_set_bg_end_angle:00000000 lv_arc_set_bg_end_angle
-C:\Users\w1785\AppData\Local\Temp\ccvARgmt.s:3422   .text.lv_arc_set_bg_angles:00000000 $t
-C:\Users\w1785\AppData\Local\Temp\ccvARgmt.s:3428   .text.lv_arc_set_bg_angles:00000000 lv_arc_set_bg_angles
-C:\Users\w1785\AppData\Local\Temp\ccvARgmt.s:3463   .text.lv_arc_set_value:00000000 $t
-C:\Users\w1785\AppData\Local\Temp\ccvARgmt.s:3469   .text.lv_arc_set_value:00000000 lv_arc_set_value
-C:\Users\w1785\AppData\Local\Temp\ccvARgmt.s:3544   .text.lv_arc_event:00000000 $t
-C:\Users\w1785\AppData\Local\Temp\ccvARgmt.s:3549   .text.lv_arc_event:00000000 lv_arc_event
-C:\Users\w1785\AppData\Local\Temp\ccvARgmt.s:3624   .text.lv_arc_event:00000034 $d
-C:\Users\w1785\AppData\Local\Temp\ccvARgmt.s:3652   .text.lv_arc_event:000000a4 $t
-C:\Users\w1785\AppData\Local\Temp\ccvARgmt.s:4202   .text.lv_arc_event:000002f8 $d
-C:\Users\w1785\AppData\Local\Temp\ccvARgmt.s:4208   .text.lv_arc_event:00000300 $t
-C:\Users\w1785\AppData\Local\Temp\ccvARgmt.s:4302   .text.lv_arc_event:0000036e $d
-C:\Users\w1785\AppData\Local\Temp\ccvARgmt.s:4306   .text.lv_arc_event:00000372 $t
-C:\Users\w1785\AppData\Local\Temp\ccvARgmt.s:4888   .text.lv_arc_event:00000594 $d
-C:\Users\w1785\AppData\Local\Temp\ccvARgmt.s:4893   .text.arc_value_observer_cb:00000000 $t
-C:\Users\w1785\AppData\Local\Temp\ccvARgmt.s:4898   .text.arc_value_observer_cb:00000000 arc_value_observer_cb
-C:\Users\w1785\AppData\Local\Temp\ccvARgmt.s:4939   .text.lv_arc_set_range:00000000 $t
-C:\Users\w1785\AppData\Local\Temp\ccvARgmt.s:4945   .text.lv_arc_set_range:00000000 lv_arc_set_range
-C:\Users\w1785\AppData\Local\Temp\ccvARgmt.s:5036   .text.lv_arc_set_min_value:00000000 $t
-C:\Users\w1785\AppData\Local\Temp\ccvARgmt.s:5042   .text.lv_arc_set_min_value:00000000 lv_arc_set_min_value
-C:\Users\w1785\AppData\Local\Temp\ccvARgmt.s:5076   .text.lv_arc_set_max_value:00000000 $t
-C:\Users\w1785\AppData\Local\Temp\ccvARgmt.s:5082   .text.lv_arc_set_max_value:00000000 lv_arc_set_max_value
-C:\Users\w1785\AppData\Local\Temp\ccvARgmt.s:5116   .text.lv_arc_set_mode:00000000 $t
-C:\Users\w1785\AppData\Local\Temp\ccvARgmt.s:5122   .text.lv_arc_set_mode:00000000 lv_arc_set_mode
-C:\Users\w1785\AppData\Local\Temp\ccvARgmt.s:5259   .text.lv_arc_get_change_rate:00000000 $t
-C:\Users\w1785\AppData\Local\Temp\ccvARgmt.s:5265   .text.lv_arc_get_change_rate:00000000 lv_arc_get_change_rate
-C:\Users\w1785\AppData\Local\Temp\ccvARgmt.s:5296   .text.lv_arc_bind_value:00000000 $t
-C:\Users\w1785\AppData\Local\Temp\ccvARgmt.s:5302   .text.lv_arc_bind_value:00000000 lv_arc_bind_value
-C:\Users\w1785\AppData\Local\Temp\ccvARgmt.s:5393   .text.lv_arc_bind_value:00000038 $d
-C:\Users\w1785\AppData\Local\Temp\ccvARgmt.s:5399   .text.lv_arc_align_obj_to_angle:00000000 $t
-C:\Users\w1785\AppData\Local\Temp\ccvARgmt.s:5405   .text.lv_arc_align_obj_to_angle:00000000 lv_arc_align_obj_to_angle
-C:\Users\w1785\AppData\Local\Temp\ccvARgmt.s:5564   .text.lv_arc_rotate_obj_to_angle:00000000 $t
-C:\Users\w1785\AppData\Local\Temp\ccvARgmt.s:5570   .text.lv_arc_rotate_obj_to_angle:00000000 lv_arc_rotate_obj_to_angle
-C:\Users\w1785\AppData\Local\Temp\ccvARgmt.s:5746   .rodata.str1.4:00000000 $d
-C:\Users\w1785\AppData\Local\Temp\ccvARgmt.s:5750   .rodata.lv_arc_class:00000000 $d
+C:\Users\w1785\AppData\Local\Temp\ccqEJOVN.s:2665   .text.lv_arc_set_end_angle:00000000 $t
+C:\Users\w1785\AppData\Local\Temp\ccqEJOVN.s:2671   .text.lv_arc_set_end_angle:00000000 lv_arc_set_end_angle
+C:\Users\w1785\AppData\Local\Temp\ccqEJOVN.s:2832   .text.lv_arc_set_angles:00000000 $t
+C:\Users\w1785\AppData\Local\Temp\ccqEJOVN.s:2838   .text.lv_arc_set_angles:00000000 lv_arc_set_angles
+C:\Users\w1785\AppData\Local\Temp\ccqEJOVN.s:2873   .text.value_update:00000000 $t
+C:\Users\w1785\AppData\Local\Temp\ccqEJOVN.s:2878   .text.value_update:00000000 value_update
+C:\Users\w1785\AppData\Local\Temp\ccqEJOVN.s:3096   .text.lv_arc_set_bg_start_angle:00000000 $t
+C:\Users\w1785\AppData\Local\Temp\ccqEJOVN.s:3102   .text.lv_arc_set_bg_start_angle:00000000 lv_arc_set_bg_start_angle
+C:\Users\w1785\AppData\Local\Temp\ccqEJOVN.s:3259   .text.lv_arc_set_bg_end_angle:00000000 $t
+C:\Users\w1785\AppData\Local\Temp\ccqEJOVN.s:3265   .text.lv_arc_set_bg_end_angle:00000000 lv_arc_set_bg_end_angle
+C:\Users\w1785\AppData\Local\Temp\ccqEJOVN.s:3422   .text.lv_arc_set_bg_angles:00000000 $t
+C:\Users\w1785\AppData\Local\Temp\ccqEJOVN.s:3428   .text.lv_arc_set_bg_angles:00000000 lv_arc_set_bg_angles
+C:\Users\w1785\AppData\Local\Temp\ccqEJOVN.s:3463   .text.lv_arc_set_value:00000000 $t
+C:\Users\w1785\AppData\Local\Temp\ccqEJOVN.s:3469   .text.lv_arc_set_value:00000000 lv_arc_set_value
+C:\Users\w1785\AppData\Local\Temp\ccqEJOVN.s:3544   .text.lv_arc_event:00000000 $t
+C:\Users\w1785\AppData\Local\Temp\ccqEJOVN.s:3549   .text.lv_arc_event:00000000 lv_arc_event
+C:\Users\w1785\AppData\Local\Temp\ccqEJOVN.s:3624   .text.lv_arc_event:00000034 $d
+C:\Users\w1785\AppData\Local\Temp\ccqEJOVN.s:3652   .text.lv_arc_event:000000a4 $t
+C:\Users\w1785\AppData\Local\Temp\ccqEJOVN.s:4202   .text.lv_arc_event:000002f8 $d
+C:\Users\w1785\AppData\Local\Temp\ccqEJOVN.s:4208   .text.lv_arc_event:00000300 $t
+C:\Users\w1785\AppData\Local\Temp\ccqEJOVN.s:4302   .text.lv_arc_event:0000036e $d
+C:\Users\w1785\AppData\Local\Temp\ccqEJOVN.s:4306   .text.lv_arc_event:00000372 $t
+C:\Users\w1785\AppData\Local\Temp\ccqEJOVN.s:4888   .text.lv_arc_event:00000594 $d
+C:\Users\w1785\AppData\Local\Temp\ccqEJOVN.s:4893   .text.arc_value_observer_cb:00000000 $t
+C:\Users\w1785\AppData\Local\Temp\ccqEJOVN.s:4898   .text.arc_value_observer_cb:00000000 arc_value_observer_cb
+C:\Users\w1785\AppData\Local\Temp\ccqEJOVN.s:4939   .text.lv_arc_set_range:00000000 $t
+C:\Users\w1785\AppData\Local\Temp\ccqEJOVN.s:4945   .text.lv_arc_set_range:00000000 lv_arc_set_range
+C:\Users\w1785\AppData\Local\Temp\ccqEJOVN.s:5036   .text.lv_arc_set_min_value:00000000 $t
+C:\Users\w1785\AppData\Local\Temp\ccqEJOVN.s:5042   .text.lv_arc_set_min_value:00000000 lv_arc_set_min_value
+C:\Users\w1785\AppData\Local\Temp\ccqEJOVN.s:5076   .text.lv_arc_set_max_value:00000000 $t
+C:\Users\w1785\AppData\Local\Temp\ccqEJOVN.s:5082   .text.lv_arc_set_max_value:00000000 lv_arc_set_max_value
+C:\Users\w1785\AppData\Local\Temp\ccqEJOVN.s:5116   .text.lv_arc_set_mode:00000000 $t
+C:\Users\w1785\AppData\Local\Temp\ccqEJOVN.s:5122   .text.lv_arc_set_mode:00000000 lv_arc_set_mode
+C:\Users\w1785\AppData\Local\Temp\ccqEJOVN.s:5259   .text.lv_arc_get_change_rate:00000000 $t
+C:\Users\w1785\AppData\Local\Temp\ccqEJOVN.s:5265   .text.lv_arc_get_change_rate:00000000 lv_arc_get_change_rate
+C:\Users\w1785\AppData\Local\Temp\ccqEJOVN.s:5296   .text.lv_arc_bind_value:00000000 $t
+C:\Users\w1785\AppData\Local\Temp\ccqEJOVN.s:5302   .text.lv_arc_bind_value:00000000 lv_arc_bind_value
+C:\Users\w1785\AppData\Local\Temp\ccqEJOVN.s:5393   .text.lv_arc_bind_value:00000038 $d
+C:\Users\w1785\AppData\Local\Temp\ccqEJOVN.s:5399   .text.lv_arc_align_obj_to_angle:00000000 $t
+C:\Users\w1785\AppData\Local\Temp\ccqEJOVN.s:5405   .text.lv_arc_align_obj_to_angle:00000000 lv_arc_align_obj_to_angle
+C:\Users\w1785\AppData\Local\Temp\ccqEJOVN.s:5564   .text.lv_arc_rotate_obj_to_angle:00000000 $t
+C:\Users\w1785\AppData\Local\Temp\ccqEJOVN.s:5570   .text.lv_arc_rotate_obj_to_angle:00000000 lv_arc_rotate_obj_to_angle
+C:\Users\w1785\AppData\Local\Temp\ccqEJOVN.s:5746   .rodata.str1.4:00000000 $d
+C:\Users\w1785\AppData\Local\Temp\ccqEJOVN.s:5750   .rodata.lv_arc_class:00000000 $d
 
 UNDEFINED SYMBOLS
 lv_obj_get_style_prop
@@ -10261,7 +10261,7 @@ lv_obj_is_visible
 lv_draw_arc_get_area
 lv_obj_invalidate_area
 lv_obj_class_create_obj
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccvARgmt.s 			page 173
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccqEJOVN.s 			page 173
 
 
 lv_obj_class_init_obj

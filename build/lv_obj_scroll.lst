@@ -1,4 +1,4 @@
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccFdpUWY.s 			page 1
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccMDqzFP.s 			page 1
 
 
    1              		.cpu cortex-m4
@@ -58,7 +58,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccFdpUWY.s 			page 1
   27:Middlewares/LVGL/lvgl/src/core/lv_obj_style.h **** 
   28:Middlewares/LVGL/lvgl/src/core/lv_obj_style.h **** /**
   29:Middlewares/LVGL/lvgl/src/core/lv_obj_style.h ****  * Possible states of a widget.
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccFdpUWY.s 			page 2
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccMDqzFP.s 			page 2
 
 
   30:Middlewares/LVGL/lvgl/src/core/lv_obj_style.h ****  * OR-ed values are possible
@@ -118,7 +118,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccFdpUWY.s 			page 1
   84:Middlewares/LVGL/lvgl/src/core/lv_obj_style.h ****  * - `LV_STATE_PRSSED`
   85:Middlewares/LVGL/lvgl/src/core/lv_obj_style.h ****  * - `LV_PART_KNOB`
   86:Middlewares/LVGL/lvgl/src/core/lv_obj_style.h ****  * - `LV_PART_KNOB | LV_STATE_PRESSED | LV_STATE_CHECKED`
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccFdpUWY.s 			page 3
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccMDqzFP.s 			page 3
 
 
   87:Middlewares/LVGL/lvgl/src/core/lv_obj_style.h ****  */
@@ -178,7 +178,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccFdpUWY.s 			page 1
  141:Middlewares/LVGL/lvgl/src/core/lv_obj_style.h **** void lv_obj_remove_style(lv_obj_t * obj, const lv_style_t * style, lv_style_selector_t selector);
  142:Middlewares/LVGL/lvgl/src/core/lv_obj_style.h **** 
  143:Middlewares/LVGL/lvgl/src/core/lv_obj_style.h **** 
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccFdpUWY.s 			page 4
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccMDqzFP.s 			page 4
 
 
  144:Middlewares/LVGL/lvgl/src/core/lv_obj_style.h **** /**
@@ -238,7 +238,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccFdpUWY.s 			page 1
  198:Middlewares/LVGL/lvgl/src/core/lv_obj_style.h **** void lv_obj_enable_style_refresh(bool en);
  199:Middlewares/LVGL/lvgl/src/core/lv_obj_style.h **** 
  200:Middlewares/LVGL/lvgl/src/core/lv_obj_style.h **** /**
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccFdpUWY.s 			page 5
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccMDqzFP.s 			page 5
 
 
  201:Middlewares/LVGL/lvgl/src/core/lv_obj_style.h ****  * Get the value of a style property. The current state of the object will be considered.
@@ -298,7 +298,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccFdpUWY.s 			page 1
  255:Middlewares/LVGL/lvgl/src/core/lv_obj_style.h **** 
  256:Middlewares/LVGL/lvgl/src/core/lv_obj_style.h **** /**
  257:Middlewares/LVGL/lvgl/src/core/lv_obj_style.h ****  * Fade out an an object and all its children.
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccFdpUWY.s 			page 6
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccMDqzFP.s 			page 6
 
 
  258:Middlewares/LVGL/lvgl/src/core/lv_obj_style.h ****  * @param obj       the object to fade out
@@ -358,7 +358,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccFdpUWY.s 			page 1
  312:Middlewares/LVGL/lvgl/src/core/lv_obj_style.h ****     lv_obj_set_style_margin_top(obj, value, selector);
  313:Middlewares/LVGL/lvgl/src/core/lv_obj_style.h ****     lv_obj_set_style_margin_bottom(obj, value, selector);
  314:Middlewares/LVGL/lvgl/src/core/lv_obj_style.h **** }
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccFdpUWY.s 			page 7
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccMDqzFP.s 			page 7
 
 
  315:Middlewares/LVGL/lvgl/src/core/lv_obj_style.h **** 
@@ -418,7 +418,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccFdpUWY.s 			page 1
   45              	.LCFI1:
   46              		.cfi_def_cfa_offset 32
   47 0006 0546     		mov	r5, r0
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccFdpUWY.s 			page 8
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccMDqzFP.s 			page 8
 
 
   48 0008 0E46     		mov	r6, r1
@@ -478,7 +478,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccFdpUWY.s 			page 1
   48:Middlewares/LVGL/lvgl/src/core/lv_obj_style_gen.h **** 
   49:Middlewares/LVGL/lvgl/src/core/lv_obj_style_gen.h **** /**
   50:Middlewares/LVGL/lvgl/src/core/lv_obj_style_gen.h ****  * Gets a maximal width. Pixel and percentage values can be used. Percentage values
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccFdpUWY.s 			page 9
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccMDqzFP.s 			page 9
 
 
   51:Middlewares/LVGL/lvgl/src/core/lv_obj_style_gen.h ****  * are relative to the width of the parent's content area.
@@ -538,7 +538,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccFdpUWY.s 			page 1
  105:Middlewares/LVGL/lvgl/src/core/lv_obj_style_gen.h ****  * @param  obj    Pointer to Widget
  106:Middlewares/LVGL/lvgl/src/core/lv_obj_style_gen.h ****  * @param  part   One of the `LV_PART_...` enum values
  107:Middlewares/LVGL/lvgl/src/core/lv_obj_style_gen.h ****  */
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccFdpUWY.s 			page 10
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccMDqzFP.s 			page 10
 
 
  108:Middlewares/LVGL/lvgl/src/core/lv_obj_style_gen.h **** static inline int32_t lv_obj_get_style_length(const lv_obj_t * obj, lv_part_t part)
@@ -598,7 +598,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccFdpUWY.s 			page 1
  162:Middlewares/LVGL/lvgl/src/core/lv_obj_style_gen.h ****  * Default: 0, inherited: No, layout: No, ext. draw: Yes.
  163:Middlewares/LVGL/lvgl/src/core/lv_obj_style_gen.h ****  * @param  obj    Pointer to Widget
  164:Middlewares/LVGL/lvgl/src/core/lv_obj_style_gen.h ****  * @param  part   One of the `LV_PART_...` enum values
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccFdpUWY.s 			page 11
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccMDqzFP.s 			page 11
 
 
  165:Middlewares/LVGL/lvgl/src/core/lv_obj_style_gen.h ****  */
@@ -658,7 +658,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccFdpUWY.s 			page 1
  219:Middlewares/LVGL/lvgl/src/core/lv_obj_style_gen.h ****  */
  220:Middlewares/LVGL/lvgl/src/core/lv_obj_style_gen.h **** static inline int32_t lv_obj_get_style_translate_radial(const lv_obj_t * obj, lv_part_t part)
  221:Middlewares/LVGL/lvgl/src/core/lv_obj_style_gen.h **** {
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccFdpUWY.s 			page 12
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccMDqzFP.s 			page 12
 
 
  222:Middlewares/LVGL/lvgl/src/core/lv_obj_style_gen.h ****     lv_style_value_t v = lv_obj_get_style_prop(obj, part, LV_STYLE_TRANSLATE_RADIAL);
@@ -718,7 +718,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccFdpUWY.s 			page 1
  276:Middlewares/LVGL/lvgl/src/core/lv_obj_style_gen.h **** /**
  277:Middlewares/LVGL/lvgl/src/core/lv_obj_style_gen.h ****  * Get pivot point's Y coordinate for transformations. Relative to Widget's top left corner.
  278:Middlewares/LVGL/lvgl/src/core/lv_obj_style_gen.h ****  * Default: 0, inherited: No, layout: No, ext. draw: No.
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccFdpUWY.s 			page 13
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccMDqzFP.s 			page 13
 
 
  279:Middlewares/LVGL/lvgl/src/core/lv_obj_style_gen.h ****  * @param  obj    Pointer to Widget
@@ -778,7 +778,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccFdpUWY.s 			page 1
  323:Middlewares/LVGL/lvgl/src/core/lv_obj_style_gen.h ****     return (int32_t)v.num;
   64              		.loc 3 323 5 is_stmt 1 view .LVU7
   65              		.loc 3 323 12 is_stmt 0 view .LVU8
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccFdpUWY.s 			page 14
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccMDqzFP.s 			page 14
 
 
   66 0014 8046     		mov	r8, r0
@@ -838,7 +838,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccFdpUWY.s 			page 1
  369:Middlewares/LVGL/lvgl/src/core/lv_obj_style_gen.h **** {
  370:Middlewares/LVGL/lvgl/src/core/lv_obj_style_gen.h ****     lv_style_value_t v = lv_obj_get_style_prop(obj, part, LV_STYLE_PAD_ROW);
  371:Middlewares/LVGL/lvgl/src/core/lv_obj_style_gen.h ****     return (int32_t)v.num;
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccFdpUWY.s 			page 15
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccMDqzFP.s 			page 15
 
 
  372:Middlewares/LVGL/lvgl/src/core/lv_obj_style_gen.h **** }
@@ -898,7 +898,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccFdpUWY.s 			page 1
  426:Middlewares/LVGL/lvgl/src/core/lv_obj_style_gen.h ****  * @param  part   One of the `LV_PART_...` enum values
  427:Middlewares/LVGL/lvgl/src/core/lv_obj_style_gen.h ****  */
  428:Middlewares/LVGL/lvgl/src/core/lv_obj_style_gen.h **** static inline int32_t lv_obj_get_style_margin_left(const lv_obj_t * obj, lv_part_t part)
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccFdpUWY.s 			page 16
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccMDqzFP.s 			page 16
 
 
  429:Middlewares/LVGL/lvgl/src/core/lv_obj_style_gen.h **** {
@@ -958,7 +958,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccFdpUWY.s 			page 1
  483:Middlewares/LVGL/lvgl/src/core/lv_obj_style_gen.h **** 
  484:Middlewares/LVGL/lvgl/src/core/lv_obj_style_gen.h **** /**
  485:Middlewares/LVGL/lvgl/src/core/lv_obj_style_gen.h ****  * Get gradient color of the background. Used only if `grad_dir` is not `LV_GRAD_DIR_NONE`.
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccFdpUWY.s 			page 17
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccMDqzFP.s 			page 17
 
 
  486:Middlewares/LVGL/lvgl/src/core/lv_obj_style_gen.h ****  * Default: `0x000000`, inherited: No, layout: No, ext. draw: No.
@@ -1018,7 +1018,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccFdpUWY.s 			page 1
  540:Middlewares/LVGL/lvgl/src/core/lv_obj_style_gen.h ****  */
  541:Middlewares/LVGL/lvgl/src/core/lv_obj_style_gen.h **** static inline int32_t lv_obj_get_style_bg_grad_stop(const lv_obj_t * obj, lv_part_t part)
  542:Middlewares/LVGL/lvgl/src/core/lv_obj_style_gen.h **** {
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccFdpUWY.s 			page 18
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccMDqzFP.s 			page 18
 
 
  543:Middlewares/LVGL/lvgl/src/core/lv_obj_style_gen.h ****     lv_style_value_t v = lv_obj_get_style_prop(obj, part, LV_STYLE_BG_GRAD_STOP);
@@ -1078,7 +1078,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccFdpUWY.s 			page 1
  597:Middlewares/LVGL/lvgl/src/core/lv_obj_style_gen.h **** }
  598:Middlewares/LVGL/lvgl/src/core/lv_obj_style_gen.h **** 
  599:Middlewares/LVGL/lvgl/src/core/lv_obj_style_gen.h **** /**
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccFdpUWY.s 			page 19
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccMDqzFP.s 			page 19
 
 
  600:Middlewares/LVGL/lvgl/src/core/lv_obj_style_gen.h ****  * Get opacity of the background image. Value 0, `LV_OPA_0` or `LV_OPA_TRANSP` means
@@ -1138,7 +1138,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccFdpUWY.s 			page 1
  654:Middlewares/LVGL/lvgl/src/core/lv_obj_style_gen.h ****  * Default: 0, inherited: No, layout: No, ext. draw: No.
  655:Middlewares/LVGL/lvgl/src/core/lv_obj_style_gen.h ****  * @param  obj    Pointer to Widget
  656:Middlewares/LVGL/lvgl/src/core/lv_obj_style_gen.h ****  * @param  part   One of the `LV_PART_...` enum values
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccFdpUWY.s 			page 20
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccMDqzFP.s 			page 20
 
 
  657:Middlewares/LVGL/lvgl/src/core/lv_obj_style_gen.h ****  */
@@ -1198,7 +1198,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccFdpUWY.s 			page 1
  709:Middlewares/LVGL/lvgl/src/core/lv_obj_style_gen.h **** {
  710:Middlewares/LVGL/lvgl/src/core/lv_obj_style_gen.h ****     lv_style_value_t v = lv_obj_get_style_prop(obj, part, LV_STYLE_BORDER_WIDTH);
   76              		.loc 3 710 5 view .LVU12
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccFdpUWY.s 			page 21
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccMDqzFP.s 			page 21
 
 
   77              		.loc 3 710 26 is_stmt 0 view .LVU13
@@ -1258,7 +1258,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccFdpUWY.s 			page 1
  114 0030 10F0020F 		tst	r0, #2
  115 0034 01D0     		beq	.L1
  116              		.loc 2 357 72 discriminator 1 view .LVU26
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccFdpUWY.s 			page 22
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccMDqzFP.s 			page 22
 
 
  117 0036 04EB0708 		add	r8, r4, r7
@@ -1318,7 +1318,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccFdpUWY.s 			page 1
  334:Middlewares/LVGL/lvgl/src/core/lv_obj_style_gen.h ****     return (int32_t)v.num;
  166              		.loc 3 334 26 is_stmt 0 view .LVU35
  167 0008 1922     		movs	r2, #25
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccFdpUWY.s 			page 23
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccMDqzFP.s 			page 23
 
 
  168 000a FFF7FEFF 		bl	lv_obj_get_style_prop
@@ -1378,7 +1378,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccFdpUWY.s 			page 1
  208 0024 3046     		mov	r0, r6
  209              	.LVL18:
  724:Middlewares/LVGL/lvgl/src/core/lv_obj_style_gen.h ****     return (lv_border_side_t)v.num;
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccFdpUWY.s 			page 24
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccMDqzFP.s 			page 24
 
 
  210              		.loc 3 724 26 view .LVU50
@@ -1438,7 +1438,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccFdpUWY.s 			page 1
  346:Middlewares/LVGL/lvgl/src/core/lv_obj_style.h ****     int32_t border_width = lv_obj_get_style_border_width(obj, part);
  262              		.loc 2 346 5 is_stmt 1 view .LVU59
  263              	.LVL23:
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccFdpUWY.s 			page 25
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccMDqzFP.s 			page 25
 
 
  264              	.LBB82:
@@ -1498,7 +1498,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccFdpUWY.s 			page 1
  348:Middlewares/LVGL/lvgl/src/core/lv_obj_style.h ****     return (border_side & LV_BORDER_SIDE_RIGHT) ? padding + border_width : padding;
  304              		.loc 2 348 5 is_stmt 1 view .LVU74
  305              	.LBB86:
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccFdpUWY.s 			page 26
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccMDqzFP.s 			page 26
 
 
  306              	.LBI86:
@@ -1558,7 +1558,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccFdpUWY.s 			page 1
  352              	.LFB182:
  337:Middlewares/LVGL/lvgl/src/core/lv_obj_style.h ****     int32_t padding = lv_obj_get_style_pad_left(obj, part);
  353              		.loc 2 337 1 is_stmt 1 view -0
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccFdpUWY.s 			page 27
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccMDqzFP.s 			page 27
 
 
  354              		.cfi_startproc
@@ -1618,7 +1618,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccFdpUWY.s 			page 1
  397              	.LBB91:
  710:Middlewares/LVGL/lvgl/src/core/lv_obj_style_gen.h ****     return (int32_t)v.num;
  398              		.loc 3 710 5 view .LVU99
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccFdpUWY.s 			page 28
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccMDqzFP.s 			page 28
 
 
  710:Middlewares/LVGL/lvgl/src/core/lv_obj_style_gen.h ****     return (int32_t)v.num;
@@ -1678,7 +1678,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccFdpUWY.s 			page 1
  342:Middlewares/LVGL/lvgl/src/core/lv_obj_style.h **** 
  441              		.loc 2 342 1 view .LVU114
  442 003a 4046     		mov	r0, r8
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccFdpUWY.s 			page 29
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccMDqzFP.s 			page 29
 
 
  443              	.LVL43:
@@ -1738,7 +1738,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccFdpUWY.s 			page 1
   35:Middlewares/LVGL/lvgl/src/core/lv_obj_scroll.c ****  **********************/
   36:Middlewares/LVGL/lvgl/src/core/lv_obj_scroll.c **** 
   37:Middlewares/LVGL/lvgl/src/core/lv_obj_scroll.c **** /**********************
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccFdpUWY.s 			page 30
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccMDqzFP.s 			page 30
 
 
   38:Middlewares/LVGL/lvgl/src/core/lv_obj_scroll.c ****  *  STATIC PROTOTYPES
@@ -1798,7 +1798,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccFdpUWY.s 			page 1
   92:Middlewares/LVGL/lvgl/src/core/lv_obj_scroll.c **** }
   93:Middlewares/LVGL/lvgl/src/core/lv_obj_scroll.c **** 
   94:Middlewares/LVGL/lvgl/src/core/lv_obj_scroll.c **** /*=====================
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccFdpUWY.s 			page 31
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccMDqzFP.s 			page 31
 
 
   95:Middlewares/LVGL/lvgl/src/core/lv_obj_scroll.c ****  * Getter functions
@@ -1858,7 +1858,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccFdpUWY.s 			page 1
  149:Middlewares/LVGL/lvgl/src/core/lv_obj_scroll.c ****         if(lv_obj_has_flag_any(child,  LV_OBJ_FLAG_HIDDEN | LV_OBJ_FLAG_FLOATING)) continue;
  150:Middlewares/LVGL/lvgl/src/core/lv_obj_scroll.c **** 
  151:Middlewares/LVGL/lvgl/src/core/lv_obj_scroll.c ****         int32_t tmp_y = child->coords.y2 + lv_obj_get_style_margin_bottom(child, LV_PART_MAIN);
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccFdpUWY.s 			page 32
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccMDqzFP.s 			page 32
 
 
  152:Middlewares/LVGL/lvgl/src/core/lv_obj_scroll.c ****         child_res = LV_MAX(child_res, tmp_y);
@@ -1918,7 +1918,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccFdpUWY.s 			page 1
  206:Middlewares/LVGL/lvgl/src/core/lv_obj_scroll.c ****     self_w += lv_obj_get_scroll_x(obj);
  207:Middlewares/LVGL/lvgl/src/core/lv_obj_scroll.c **** 
  208:Middlewares/LVGL/lvgl/src/core/lv_obj_scroll.c ****     return LV_MAX(child_res, self_w);
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccFdpUWY.s 			page 33
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccMDqzFP.s 			page 33
 
 
  209:Middlewares/LVGL/lvgl/src/core/lv_obj_scroll.c **** }
@@ -1978,7 +1978,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccFdpUWY.s 			page 1
  263:Middlewares/LVGL/lvgl/src/core/lv_obj_scroll.c **** {
  264:Middlewares/LVGL/lvgl/src/core/lv_obj_scroll.c ****     if(dx == 0 && dy == 0) return;
  265:Middlewares/LVGL/lvgl/src/core/lv_obj_scroll.c **** 
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccFdpUWY.s 			page 34
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccMDqzFP.s 			page 34
 
 
  266:Middlewares/LVGL/lvgl/src/core/lv_obj_scroll.c ****     /*We need to know the final sizes for bound check*/
@@ -2038,7 +2038,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccFdpUWY.s 			page 1
  320:Middlewares/LVGL/lvgl/src/core/lv_obj_scroll.c ****         if(dx) {
  321:Middlewares/LVGL/lvgl/src/core/lv_obj_scroll.c ****             uint32_t t = lv_anim_speed_clamped((lv_display_get_horizontal_resolution(d)) >> 1, SCRO
  322:Middlewares/LVGL/lvgl/src/core/lv_obj_scroll.c ****                                                SCROLL_ANIM_TIME_MAX);
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccFdpUWY.s 			page 35
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccMDqzFP.s 			page 35
 
 
  323:Middlewares/LVGL/lvgl/src/core/lv_obj_scroll.c ****             lv_anim_set_duration(&a, t);
@@ -2098,7 +2098,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccFdpUWY.s 			page 1
  377:Middlewares/LVGL/lvgl/src/core/lv_obj_scroll.c ****     int32_t scroll_x = lv_obj_get_scroll_x(obj);
  378:Middlewares/LVGL/lvgl/src/core/lv_obj_scroll.c ****     int32_t diff = -x + scroll_x;
  379:Middlewares/LVGL/lvgl/src/core/lv_obj_scroll.c **** 
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccFdpUWY.s 			page 36
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccMDqzFP.s 			page 36
 
 
  380:Middlewares/LVGL/lvgl/src/core/lv_obj_scroll.c ****     lv_obj_scroll_by_bounded(obj, diff, 0, anim_en);
@@ -2158,7 +2158,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccFdpUWY.s 			page 1
  434:Middlewares/LVGL/lvgl/src/core/lv_obj_scroll.c **** {
  435:Middlewares/LVGL/lvgl/src/core/lv_obj_scroll.c ****     lv_indev_t * indev = lv_indev_get_next(NULL);
  436:Middlewares/LVGL/lvgl/src/core/lv_obj_scroll.c ****     while(indev) {
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccFdpUWY.s 			page 37
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccMDqzFP.s 			page 37
 
 
  437:Middlewares/LVGL/lvgl/src/core/lv_obj_scroll.c ****         if(lv_indev_get_scroll_obj(indev) == obj) return true;
@@ -2218,7 +2218,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccFdpUWY.s 			page 1
  491:Middlewares/LVGL/lvgl/src/core/lv_obj_scroll.c **** 
  492:Middlewares/LVGL/lvgl/src/core/lv_obj_scroll.c ****     bool ver_draw = false;
  493:Middlewares/LVGL/lvgl/src/core/lv_obj_scroll.c ****     if((dir & LV_DIR_VER) &&
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccFdpUWY.s 			page 38
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccMDqzFP.s 			page 38
 
 
  494:Middlewares/LVGL/lvgl/src/core/lv_obj_scroll.c ****        ((sm == LV_SCROLLBAR_MODE_ON) ||
@@ -2278,7 +2278,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccFdpUWY.s 			page 1
  548:Middlewares/LVGL/lvgl/src/core/lv_obj_scroll.c ****         sb_h = LV_MIN(sb_h, obj_h); /*Limit scrollbar length to parent height*/
  549:Middlewares/LVGL/lvgl/src/core/lv_obj_scroll.c ****         rem = (obj_h - top_space - bottom_space - hor_req_space) -
  550:Middlewares/LVGL/lvgl/src/core/lv_obj_scroll.c ****               sb_h;  /*Remaining size from the scrollbar track that is not the scrollbar itself*/
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccFdpUWY.s 			page 39
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccMDqzFP.s 			page 39
 
 
  551:Middlewares/LVGL/lvgl/src/core/lv_obj_scroll.c ****         int32_t scroll_h = content_h - obj_h; /*The size of the content which can be really scrolle
@@ -2338,7 +2338,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccFdpUWY.s 			page 1
  605:Middlewares/LVGL/lvgl/src/core/lv_obj_scroll.c ****             if(rtl) {
  606:Middlewares/LVGL/lvgl/src/core/lv_obj_scroll.c ****                 hor_area->x1 = obj->coords.x1 + sb_x + left_space + ver_reg_space;
  607:Middlewares/LVGL/lvgl/src/core/lv_obj_scroll.c ****                 hor_area->x2 = hor_area->x1 + sb_w - 1;
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccFdpUWY.s 			page 40
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccMDqzFP.s 			page 40
 
 
  608:Middlewares/LVGL/lvgl/src/core/lv_obj_scroll.c ****                 if(hor_area->x1 < obj->coords.x1 + left_space + ver_reg_space) {
@@ -2398,7 +2398,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccFdpUWY.s 			page 1
  662:Middlewares/LVGL/lvgl/src/core/lv_obj_scroll.c ****             lv_obj_scroll_by(obj, 0, sb, anim_en);
  663:Middlewares/LVGL/lvgl/src/core/lv_obj_scroll.c ****         }
  664:Middlewares/LVGL/lvgl/src/core/lv_obj_scroll.c ****     }
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccFdpUWY.s 			page 41
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccMDqzFP.s 			page 41
 
 
  665:Middlewares/LVGL/lvgl/src/core/lv_obj_scroll.c **** 
@@ -2458,7 +2458,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccFdpUWY.s 			page 1
  478 000a 00D1     		bne	.L15
  479              	.LVL45:
  480              	.L12:
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccFdpUWY.s 			page 42
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccMDqzFP.s 			page 42
 
 
  704:Middlewares/LVGL/lvgl/src/core/lv_obj_scroll.c **** }
@@ -2518,7 +2518,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccFdpUWY.s 			page 1
  527              		.loc 1 66 5 view .LVU132
  528 0008 FFF7FEFF 		bl	lv_obj_allocate_spec_attr
  529              	.LVL50:
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccFdpUWY.s 			page 43
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccMDqzFP.s 			page 43
 
 
   68:Middlewares/LVGL/lvgl/src/core/lv_obj_scroll.c ****     obj->spec_attr->scrollbar_mode = mode;
@@ -2578,7 +2578,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccFdpUWY.s 			page 1
  572              		.thumb
  573              		.thumb_func
  575              	lv_obj_set_scroll_dir:
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccFdpUWY.s 			page 44
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccMDqzFP.s 			page 44
 
 
  576              	.LVL53:
@@ -2638,7 +2638,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccFdpUWY.s 			page 1
  619              		.align	1
  620              		.global	lv_obj_set_scroll_snap_x
  621              		.syntax unified
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccFdpUWY.s 			page 45
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccMDqzFP.s 			page 45
 
 
  622              		.thumb
@@ -2698,7 +2698,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccFdpUWY.s 			page 1
  670              		@ args = 0, pretend = 0, frame = 0
  671              		@ frame_needed = 0, uses_anonymous_args = 0
   89:Middlewares/LVGL/lvgl/src/core/lv_obj_scroll.c ****     lv_obj_allocate_spec_attr(obj);
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccFdpUWY.s 			page 46
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccMDqzFP.s 			page 46
 
 
  672              		.loc 1 89 1 is_stmt 0 view .LVU167
@@ -2758,7 +2758,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccFdpUWY.s 			page 1
  100:Middlewares/LVGL/lvgl/src/core/lv_obj_scroll.c ****     else return LV_SCROLLBAR_MODE_AUTO;
  718              		.loc 1 100 24 is_stmt 1 discriminator 1 view .LVU178
  100:Middlewares/LVGL/lvgl/src/core/lv_obj_scroll.c ****     else return LV_SCROLLBAR_MODE_AUTO;
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccFdpUWY.s 			page 47
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccMDqzFP.s 			page 47
 
 
  719              		.loc 1 100 67 is_stmt 0 discriminator 1 view .LVU179
@@ -2818,7 +2818,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccFdpUWY.s 			page 1
  763 000a 7047     		bx	lr
  764              	.LVL66:
  765              	.L34:
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccFdpUWY.s 			page 48
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccMDqzFP.s 			page 48
 
 
  107:Middlewares/LVGL/lvgl/src/core/lv_obj_scroll.c **** }
@@ -2878,7 +2878,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccFdpUWY.s 			page 1
  810              	.LFE194:
  812              		.section	.text.lv_obj_get_scroll_snap_y,"ax",%progbits
  813              		.align	1
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccFdpUWY.s 			page 49
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccMDqzFP.s 			page 49
 
 
  814              		.global	lv_obj_get_scroll_snap_y
@@ -2938,7 +2938,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccFdpUWY.s 			page 1
  860              		.loc 1 123 1 is_stmt 1 view -0
  861              		.cfi_startproc
  862              		@ args = 0, pretend = 0, frame = 0
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccFdpUWY.s 			page 50
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccMDqzFP.s 			page 50
 
 
  863              		@ frame_needed = 0, uses_anonymous_args = 0
@@ -2998,7 +2998,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccFdpUWY.s 			page 1
  131:Middlewares/LVGL/lvgl/src/core/lv_obj_scroll.c **** }
  907              		.loc 1 131 5 is_stmt 1 view .LVU227
  131:Middlewares/LVGL/lvgl/src/core/lv_obj_scroll.c **** }
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccFdpUWY.s 			page 51
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccMDqzFP.s 			page 51
 
 
  908              		.loc 1 131 35 is_stmt 0 view .LVU228
@@ -3058,7 +3058,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccFdpUWY.s 			page 1
  953              		.loc 1 136 39 discriminator 1 view .LVU239
  954 000a 0020     		movs	r0, #0
  955              	.LVL87:
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccFdpUWY.s 			page 52
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccMDqzFP.s 			page 52
 
 
  138:Middlewares/LVGL/lvgl/src/core/lv_obj_scroll.c **** 
@@ -3118,7 +3118,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccFdpUWY.s 			page 1
  1001              	.LVL90:
  146:Middlewares/LVGL/lvgl/src/core/lv_obj_scroll.c ****     for(i = 0; i < child_cnt; i++) {
  1002              		.loc 1 146 26 view .LVU251
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccFdpUWY.s 			page 53
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccMDqzFP.s 			page 53
 
 
  1003 000e 8146     		mov	r9, r0
@@ -3178,7 +3178,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccFdpUWY.s 			page 1
  1046 001e 15D2     		bcs	.L59
  1047              	.LBB94:
  148:Middlewares/LVGL/lvgl/src/core/lv_obj_scroll.c ****         if(lv_obj_has_flag_any(child,  LV_OBJ_FLAG_HIDDEN | LV_OBJ_FLAG_FLOATING)) continue;
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccFdpUWY.s 			page 54
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccMDqzFP.s 			page 54
 
 
  1048              		.loc 1 148 9 view .LVU263
@@ -3238,7 +3238,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccFdpUWY.s 			page 1
  1088              	.LVL100:
  152:Middlewares/LVGL/lvgl/src/core/lv_obj_scroll.c ****     }
  1089              		.loc 1 152 9 is_stmt 1 view .LVU278
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccFdpUWY.s 			page 55
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccMDqzFP.s 			page 55
 
 
  152:Middlewares/LVGL/lvgl/src/core/lv_obj_scroll.c ****     }
@@ -3298,7 +3298,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccFdpUWY.s 			page 1
  1130 006a A8EB0308 		sub	r8, r8, r3
  1131              	.LVL108:
  1132              	.L56:
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccFdpUWY.s 			page 56
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccMDqzFP.s 			page 56
 
 
  162:Middlewares/LVGL/lvgl/src/core/lv_obj_scroll.c ****     self_h = self_h - (lv_obj_get_height(obj) - space_top - space_bottom);
@@ -3358,7 +3358,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccFdpUWY.s 			page 1
  1172              	.LCFI22:
  1173              		.cfi_def_cfa_offset 28
  1174              		@ sp needed
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccFdpUWY.s 			page 57
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccMDqzFP.s 			page 57
 
 
  1175 0092 BDE8F083 		pop	{r4, r5, r6, r7, r8, r9, pc}
@@ -3418,7 +3418,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccFdpUWY.s 			page 1
  1223              	.LVL120:
  1224              	.LBB97:
  1225              	.LBI97:
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccFdpUWY.s 			page 58
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccMDqzFP.s 			page 58
 
 
  726:Middlewares/LVGL/lvgl/src/core/lv_obj_style_gen.h **** }
@@ -3478,7 +3478,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccFdpUWY.s 			page 1
  780:Middlewares/LVGL/lvgl/src/core/lv_obj_style_gen.h ****  * or LV_OPA_10, LV_OPA_20, etc means semi transparency.
  781:Middlewares/LVGL/lvgl/src/core/lv_obj_style_gen.h ****  * Default: `LV_OPA_COVER`, inherited: No, layout: No, ext. draw: Yes.
  782:Middlewares/LVGL/lvgl/src/core/lv_obj_style_gen.h ****  * @param  obj    Pointer to Widget
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccFdpUWY.s 			page 59
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccMDqzFP.s 			page 59
 
 
  783:Middlewares/LVGL/lvgl/src/core/lv_obj_style_gen.h ****  * @param  part   One of the `LV_PART_...` enum values
@@ -3538,7 +3538,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccFdpUWY.s 			page 1
  837:Middlewares/LVGL/lvgl/src/core/lv_obj_style_gen.h **** }
  838:Middlewares/LVGL/lvgl/src/core/lv_obj_style_gen.h **** 
  839:Middlewares/LVGL/lvgl/src/core/lv_obj_style_gen.h **** /**
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccFdpUWY.s 			page 60
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccMDqzFP.s 			page 60
 
 
  840:Middlewares/LVGL/lvgl/src/core/lv_obj_style_gen.h ****  * Make shadow calculation to use a larger or smaller rectangle as base. The value can
@@ -3598,7 +3598,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccFdpUWY.s 			page 1
  894:Middlewares/LVGL/lvgl/src/core/lv_obj_style_gen.h ****  * Default: `LV_OPA_COVER`, inherited: No, layout: No, ext. draw: No.
  895:Middlewares/LVGL/lvgl/src/core/lv_obj_style_gen.h ****  * @param  obj    Pointer to Widget
  896:Middlewares/LVGL/lvgl/src/core/lv_obj_style_gen.h ****  * @param  part   One of the `LV_PART_...` enum values
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccFdpUWY.s 			page 61
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccMDqzFP.s 			page 61
 
 
  897:Middlewares/LVGL/lvgl/src/core/lv_obj_style_gen.h ****  */
@@ -3658,7 +3658,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccFdpUWY.s 			page 1
  951:Middlewares/LVGL/lvgl/src/core/lv_obj_style_gen.h **** {
  952:Middlewares/LVGL/lvgl/src/core/lv_obj_style_gen.h ****     lv_style_value_t v = lv_obj_get_style_prop(obj, part, LV_STYLE_IMAGE_COLORKEY);
  953:Middlewares/LVGL/lvgl/src/core/lv_obj_style_gen.h ****     return (const lv_image_colorkey_t *)v.ptr;
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccFdpUWY.s 			page 62
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccMDqzFP.s 			page 62
 
 
  954:Middlewares/LVGL/lvgl/src/core/lv_obj_style_gen.h **** }
@@ -3718,7 +3718,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccFdpUWY.s 			page 1
 1008:Middlewares/LVGL/lvgl/src/core/lv_obj_style_gen.h ****  * @param  obj    Pointer to Widget
 1009:Middlewares/LVGL/lvgl/src/core/lv_obj_style_gen.h ****  * @param  part   One of the `LV_PART_...` enum values
 1010:Middlewares/LVGL/lvgl/src/core/lv_obj_style_gen.h ****  */
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccFdpUWY.s 			page 63
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccMDqzFP.s 			page 63
 
 
 1011:Middlewares/LVGL/lvgl/src/core/lv_obj_style_gen.h **** static inline lv_color_t lv_obj_get_style_line_color(const lv_obj_t * obj, lv_part_t part)
@@ -3778,7 +3778,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccFdpUWY.s 			page 1
 1065:Middlewares/LVGL/lvgl/src/core/lv_obj_style_gen.h **** /**
 1066:Middlewares/LVGL/lvgl/src/core/lv_obj_style_gen.h ****  * Get color of arc.
 1067:Middlewares/LVGL/lvgl/src/core/lv_obj_style_gen.h ****  * Default: `0x000000`, inherited: No, layout: No, ext. draw: No.
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccFdpUWY.s 			page 64
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccMDqzFP.s 			page 64
 
 
 1068:Middlewares/LVGL/lvgl/src/core/lv_obj_style_gen.h ****  * @param  obj    Pointer to Widget
@@ -3838,7 +3838,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccFdpUWY.s 			page 1
 1122:Middlewares/LVGL/lvgl/src/core/lv_obj_style_gen.h ****     lv_style_value_t v = lv_obj_get_style_prop(obj, part, LV_STYLE_TEXT_COLOR);
 1123:Middlewares/LVGL/lvgl/src/core/lv_obj_style_gen.h ****     return v.color;
 1124:Middlewares/LVGL/lvgl/src/core/lv_obj_style_gen.h **** }
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccFdpUWY.s 			page 65
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccMDqzFP.s 			page 65
 
 
 1125:Middlewares/LVGL/lvgl/src/core/lv_obj_style_gen.h **** 
@@ -3898,7 +3898,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccFdpUWY.s 			page 1
 1179:Middlewares/LVGL/lvgl/src/core/lv_obj_style_gen.h ****  * @param  obj    Pointer to Widget
 1180:Middlewares/LVGL/lvgl/src/core/lv_obj_style_gen.h ****  * @param  part   One of the `LV_PART_...` enum values
 1181:Middlewares/LVGL/lvgl/src/core/lv_obj_style_gen.h ****  */
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccFdpUWY.s 			page 66
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccMDqzFP.s 			page 66
 
 
 1182:Middlewares/LVGL/lvgl/src/core/lv_obj_style_gen.h **** static inline int32_t lv_obj_get_style_text_line_space(const lv_obj_t * obj, lv_part_t part)
@@ -3958,7 +3958,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccFdpUWY.s 			page 1
 1236:Middlewares/LVGL/lvgl/src/core/lv_obj_style_gen.h ****     lv_style_value_t v = lv_obj_style_apply_color_filter(obj, part, lv_obj_get_style_prop(obj, part
 1237:Middlewares/LVGL/lvgl/src/core/lv_obj_style_gen.h ****     return v.color;
 1238:Middlewares/LVGL/lvgl/src/core/lv_obj_style_gen.h **** }
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccFdpUWY.s 			page 67
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccMDqzFP.s 			page 67
 
 
 1239:Middlewares/LVGL/lvgl/src/core/lv_obj_style_gen.h **** 
@@ -4018,7 +4018,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccFdpUWY.s 			page 1
 1293:Middlewares/LVGL/lvgl/src/core/lv_obj_style_gen.h **** /**
 1294:Middlewares/LVGL/lvgl/src/core/lv_obj_style_gen.h ****  * Setting to `LV_BLUR_QUALITY_SPEED` the blurring algorithm will prefer speed over
 1295:Middlewares/LVGL/lvgl/src/core/lv_obj_style_gen.h ****  * quality. `LV_BLUR_QUALITY_PRECISION` will force using higher quality but slower
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccFdpUWY.s 			page 68
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccMDqzFP.s 			page 68
 
 
 1296:Middlewares/LVGL/lvgl/src/core/lv_obj_style_gen.h ****  * blur. With `LV_BLUR_QUALITY_AUTO` the quality will be selected automatically.
@@ -4078,7 +4078,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccFdpUWY.s 			page 1
 1350:Middlewares/LVGL/lvgl/src/core/lv_obj_style_gen.h **** static inline lv_color_t lv_obj_get_style_drop_shadow_color(const lv_obj_t * obj, lv_part_t part)
 1351:Middlewares/LVGL/lvgl/src/core/lv_obj_style_gen.h **** {
 1352:Middlewares/LVGL/lvgl/src/core/lv_obj_style_gen.h ****     lv_style_value_t v = lv_obj_get_style_prop(obj, part, LV_STYLE_DROP_SHADOW_COLOR);
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccFdpUWY.s 			page 69
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccMDqzFP.s 			page 69
 
 
 1353:Middlewares/LVGL/lvgl/src/core/lv_obj_style_gen.h ****     return v.color;
@@ -4138,7 +4138,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccFdpUWY.s 			page 1
 1407:Middlewares/LVGL/lvgl/src/core/lv_obj_style_gen.h **** /**
 1408:Middlewares/LVGL/lvgl/src/core/lv_obj_style_gen.h ****  * Move start point of object (e.g. scale tick) radially.
 1409:Middlewares/LVGL/lvgl/src/core/lv_obj_style_gen.h ****  * Default: 0, inherited: No, layout: No, ext. draw: No.
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccFdpUWY.s 			page 70
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccMDqzFP.s 			page 70
 
 
 1410:Middlewares/LVGL/lvgl/src/core/lv_obj_style_gen.h ****  * @param  obj    Pointer to Widget
@@ -4198,7 +4198,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccFdpUWY.s 			page 1
 1464:Middlewares/LVGL/lvgl/src/core/lv_obj_style_gen.h ****  * @param  obj    Pointer to Widget
 1465:Middlewares/LVGL/lvgl/src/core/lv_obj_style_gen.h ****  * @param  part   One of the `LV_PART_...` enum values
 1466:Middlewares/LVGL/lvgl/src/core/lv_obj_style_gen.h ****  */
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccFdpUWY.s 			page 71
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccMDqzFP.s 			page 71
 
 
 1467:Middlewares/LVGL/lvgl/src/core/lv_obj_style_gen.h **** static inline const lv_color_filter_dsc_t * lv_obj_get_style_color_filter_dsc(const lv_obj_t * obj,
@@ -4258,7 +4258,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccFdpUWY.s 			page 1
 1521:Middlewares/LVGL/lvgl/src/core/lv_obj_style_gen.h **** static inline const lv_anim_t * lv_obj_get_style_anim(const lv_obj_t * obj, lv_part_t part)
 1522:Middlewares/LVGL/lvgl/src/core/lv_obj_style_gen.h **** {
 1523:Middlewares/LVGL/lvgl/src/core/lv_obj_style_gen.h ****     lv_style_value_t v = lv_obj_get_style_prop(obj, part, LV_STYLE_ANIM);
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccFdpUWY.s 			page 72
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccMDqzFP.s 			page 72
 
 
 1524:Middlewares/LVGL/lvgl/src/core/lv_obj_style_gen.h ****     return (const lv_anim_t *)v.ptr;
@@ -4318,7 +4318,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccFdpUWY.s 			page 1
 1578:Middlewares/LVGL/lvgl/src/core/lv_obj_style_gen.h **** 
 1579:Middlewares/LVGL/lvgl/src/core/lv_obj_style_gen.h **** /**
 1580:Middlewares/LVGL/lvgl/src/core/lv_obj_style_gen.h ****  * Get base direction of Widget. Possible values are `LV_BIDI_DIR_LTR/RTL/AUTO`.
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccFdpUWY.s 			page 73
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccMDqzFP.s 			page 73
 
 
 1581:Middlewares/LVGL/lvgl/src/core/lv_obj_style_gen.h ****  * Default: `LV_BASE_DIR_AUTO`, inherited: Yes, layout: Yes, ext. draw: No.
@@ -4378,7 +4378,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccFdpUWY.s 			page 1
  1264              	.LVL123:
  1265              	.L64:
  1266              	.LCFI26:
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccFdpUWY.s 			page 74
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccMDqzFP.s 			page 74
 
 
  1267              		.cfi_def_cfa_offset 0
@@ -4438,7 +4438,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccFdpUWY.s 			page 1
  1311              	.LVL128:
  1312 003e 8046     		mov	r8, r0
  1313              	.LVL129:
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccFdpUWY.s 			page 75
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccMDqzFP.s 			page 75
 
 
  183:Middlewares/LVGL/lvgl/src/core/lv_obj_scroll.c **** 
@@ -4498,7 +4498,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccFdpUWY.s 			page 1
  1351              		.loc 1 190 9 is_stmt 1 view .LVU357
  190:Middlewares/LVGL/lvgl/src/core/lv_obj_scroll.c **** 
  1352              		.loc 1 190 12 is_stmt 0 view .LVU358
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccFdpUWY.s 			page 76
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccMDqzFP.s 			page 76
 
 
  1353 005e 1949     		ldr	r1, .L76
@@ -4558,7 +4558,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccFdpUWY.s 			page 1
  1394              		.loc 1 193 12 view .LVU371
  1395              	.LBE99:
  196:Middlewares/LVGL/lvgl/src/core/lv_obj_scroll.c ****         child_res = x1;
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccFdpUWY.s 			page 77
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccMDqzFP.s 			page 77
 
 
  1396              		.loc 1 196 5 is_stmt 1 view .LVU372
@@ -4618,7 +4618,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccFdpUWY.s 			page 1
  1434              		.loc 1 206 15 is_stmt 0 view .LVU388
  1435 00aa 2846     		mov	r0, r5
  1436 00ac FFF7FEFF 		bl	lv_obj_get_scroll_x
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccFdpUWY.s 			page 78
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccMDqzFP.s 			page 78
 
 
  1437              	.LVL150:
@@ -4678,7 +4678,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccFdpUWY.s 			page 1
  212:Middlewares/LVGL/lvgl/src/core/lv_obj_scroll.c ****     LV_ASSERT_OBJ(obj, MY_CLASS);
  1484              		.loc 1 212 1 is_stmt 0 view .LVU398
  1485 0002 2DE9F043 		push	{r4, r5, r6, r7, r8, r9, lr}
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccFdpUWY.s 			page 79
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccMDqzFP.s 			page 79
 
 
  1486              	.LCFI28:
@@ -4738,7 +4738,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccFdpUWY.s 			page 1
  1529 001c 002B     		cmp	r3, #0
  1530 001e 48D0     		beq	.L87
  219:Middlewares/LVGL/lvgl/src/core/lv_obj_scroll.c ****     }
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccFdpUWY.s 			page 80
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccMDqzFP.s 			page 80
 
 
  1531              		.loc 1 219 9 is_stmt 1 view .LVU413
@@ -4798,7 +4798,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccFdpUWY.s 			page 1
  1573              		.loc 1 226 11 is_stmt 0 view .LVU425
  1574 002e 0024     		movs	r4, #0
  223:Middlewares/LVGL/lvgl/src/core/lv_obj_scroll.c ****     uint32_t i;
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccFdpUWY.s 			page 81
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccMDqzFP.s 			page 81
 
 
  1575              		.loc 1 223 13 view .LVU426
@@ -4858,7 +4858,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccFdpUWY.s 			page 1
  442:Middlewares/LVGL/lvgl/src/core/lv_obj_style_gen.h ****     return (int32_t)v.num;
  1615              		.loc 3 442 26 is_stmt 0 view .LVU441
  1616 0052 2322     		movs	r2, #35
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccFdpUWY.s 			page 82
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccMDqzFP.s 			page 82
 
 
  1617 0054 0021     		movs	r1, #0
@@ -4918,7 +4918,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccFdpUWY.s 			page 1
  1659              	.LVL177:
  237:Middlewares/LVGL/lvgl/src/core/lv_obj_scroll.c ****         child_res -= (obj->coords.x2 - space_right);
  1660              		.loc 1 237 5 is_stmt 1 view .LVU454
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccFdpUWY.s 			page 83
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccMDqzFP.s 			page 83
 
 
  237:Middlewares/LVGL/lvgl/src/core/lv_obj_scroll.c ****         child_res -= (obj->coords.x2 - space_right);
@@ -4978,7 +4978,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccFdpUWY.s 			page 1
  244:Middlewares/LVGL/lvgl/src/core/lv_obj_scroll.c ****     return LV_MAX(child_res, self_w);
  1699              		.loc 1 244 15 is_stmt 0 view .LVU471
  1700 009e 3046     		mov	r0, r6
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccFdpUWY.s 			page 84
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccMDqzFP.s 			page 84
 
 
  1701 00a0 FFF7FEFF 		bl	lv_obj_get_scroll_x
@@ -5038,7 +5038,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccFdpUWY.s 			page 1
  1750 0000 38B5     		push	{r3, r4, r5, lr}
  1751              	.LCFI34:
  1752              		.cfi_def_cfa_offset 16
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccFdpUWY.s 			page 85
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccMDqzFP.s 			page 85
 
 
  1753              		.cfi_offset 3, -16
@@ -5098,7 +5098,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccFdpUWY.s 			page 1
  1792              	.L97:
  255:Middlewares/LVGL/lvgl/src/core/lv_obj_scroll.c **** }
  1793              		.loc 1 255 12 discriminator 4 view .LVU494
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccFdpUWY.s 			page 86
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccMDqzFP.s 			page 86
 
 
  1794 0022 6060     		str	r0, [r4, #4]
@@ -5158,7 +5158,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccFdpUWY.s 			page 1
  1843              		.cfi_offset 6, -8
  1844              		.cfi_offset 14, -4
  1845 0002 0446     		mov	r4, r0
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccFdpUWY.s 			page 87
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccMDqzFP.s 			page 87
 
 
  1846 0004 1546     		mov	r5, r2
@@ -5218,7 +5218,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccFdpUWY.s 			page 1
  1884              		.loc 1 427 23 is_stmt 0 view .LVU517
  1885 002e 0022     		movs	r2, #0
  1886 0030 0F21     		movs	r1, #15
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccFdpUWY.s 			page 88
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccMDqzFP.s 			page 88
 
 
  1887 0032 2046     		mov	r0, r4
@@ -5278,7 +5278,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccFdpUWY.s 			page 1
  1933              		.loc 1 696 1 is_stmt 0 view .LVU527
  1934 0000 38B5     		push	{r3, r4, r5, lr}
  1935              	.LCFI36:
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccFdpUWY.s 			page 89
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccMDqzFP.s 			page 89
 
 
  1936              		.cfi_def_cfa_offset 16
@@ -5338,7 +5338,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccFdpUWY.s 			page 1
  1983              		.loc 1 692 35 is_stmt 0 view .LVU536
  1984 0006 FFF7FEFF 		bl	lv_obj_get_scroll_x
  1985              	.LVL216:
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccFdpUWY.s 			page 90
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccMDqzFP.s 			page 90
 
 
  692:Middlewares/LVGL/lvgl/src/core/lv_obj_scroll.c **** }
@@ -5398,7 +5398,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccFdpUWY.s 			page 1
  2034              	.L112:
  313:Middlewares/LVGL/lvgl/src/core/lv_obj_scroll.c ****         lv_display_t * d = lv_obj_get_display(obj);
  2035              		.loc 1 313 5 is_stmt 1 view .LVU545
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccFdpUWY.s 			page 91
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccMDqzFP.s 			page 91
 
 
  313:Middlewares/LVGL/lvgl/src/core/lv_obj_scroll.c ****         lv_display_t * d = lv_obj_get_display(obj);
@@ -5458,7 +5458,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccFdpUWY.s 			page 1
  336:Middlewares/LVGL/lvgl/src/core/lv_obj_scroll.c ****                                                SCROLL_ANIM_TIME_MAX);
  2076              		.loc 1 336 13 is_stmt 1 view .LVU560
  336:Middlewares/LVGL/lvgl/src/core/lv_obj_scroll.c ****                                                SCROLL_ANIM_TIME_MAX);
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccFdpUWY.s 			page 92
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccMDqzFP.s 			page 92
 
 
  2077              		.loc 1 336 49 is_stmt 0 view .LVU561
@@ -5518,7 +5518,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccFdpUWY.s 			page 1
  345:Middlewares/LVGL/lvgl/src/core/lv_obj_scroll.c ****             if(res != LV_RESULT_OK) return;
  2120              		.loc 1 345 19 is_stmt 0 view .LVU573
  2121 0074 6A46     		mov	r2, sp
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccFdpUWY.s 			page 93
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccMDqzFP.s 			page 93
 
 
  2122 0076 0C21     		movs	r1, #12
@@ -5578,7 +5578,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccFdpUWY.s 			page 1
  2164 00a6 FFF7FEFF 		bl	lv_obj_get_scroll_x
  2165              	.LVL245:
  325:Middlewares/LVGL/lvgl/src/core/lv_obj_scroll.c ****             lv_anim_set_exec_cb(&a, scroll_x_anim);
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccFdpUWY.s 			page 94
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccMDqzFP.s 			page 94
 
 
  2166              		.loc 1 325 13 is_stmt 1 view .LVU586
@@ -5638,7 +5638,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccFdpUWY.s 			page 1
  352:Middlewares/LVGL/lvgl/src/core/lv_obj_scroll.c ****         lv_anim_delete(obj, scroll_x_anim);
  2209              		.loc 1 352 9 is_stmt 1 view .LVU598
  2210 00da 1049     		ldr	r1, .L121+4
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccFdpUWY.s 			page 95
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccMDqzFP.s 			page 95
 
 
  2211              	.LVL254:
@@ -5698,7 +5698,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccFdpUWY.s 			page 1
  2253 00fe 2A46     		mov	r2, r5
  2254 0100 3146     		mov	r1, r6
  2255 0102 2046     		mov	r0, r4
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccFdpUWY.s 			page 96
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccMDqzFP.s 			page 96
 
 
  2256              	.LVL261:
@@ -5758,7 +5758,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccFdpUWY.s 			page 1
  2302 0000 2DE9F047 		push	{r4, r5, r6, r7, r8, r9, r10, lr}
  2303              	.LCFI42:
  2304              		.cfi_def_cfa_offset 32
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccFdpUWY.s 			page 97
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccMDqzFP.s 			page 97
 
 
  2305              		.cfi_offset 4, -32
@@ -5818,7 +5818,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccFdpUWY.s 			page 1
 1587:Middlewares/LVGL/lvgl/src/core/lv_obj_style_gen.h ****     return (lv_base_dir_t)v.num;
  2348              		.loc 3 1587 26 is_stmt 0 view .LVU632
  2349 0022 8122     		movs	r2, #129
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccFdpUWY.s 			page 98
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccMDqzFP.s 			page 98
 
 
  2350 0024 0021     		movs	r1, #0
@@ -5878,7 +5878,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccFdpUWY.s 			page 1
  303:Middlewares/LVGL/lvgl/src/core/lv_obj_scroll.c ****     dy = y_bounded - y_current;
  2393              		.loc 1 303 5 is_stmt 1 view .LVU647
  304:Middlewares/LVGL/lvgl/src/core/lv_obj_scroll.c ****     if(dx || dy) {
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccFdpUWY.s 			page 99
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccMDqzFP.s 			page 99
 
 
  2394              		.loc 1 304 5 view .LVU648
@@ -5938,7 +5938,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccFdpUWY.s 			page 1
  2436 006e FFF7FEFF 		bl	lv_obj_get_scroll_right
  2437              	.LVL284:
  277:Middlewares/LVGL/lvgl/src/core/lv_obj_scroll.c **** 
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccFdpUWY.s 			page 100
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccMDqzFP.s 			page 100
 
 
  2438              		.loc 1 277 13 is_stmt 1 view .LVU661
@@ -5998,7 +5998,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccFdpUWY.s 			page 1
  2477              		.loc 1 285 13 is_stmt 1 view .LVU676
  285:Middlewares/LVGL/lvgl/src/core/lv_obj_scroll.c ****             if(scroll_max < 0) scroll_max = 0;
  2478              		.loc 1 285 35 is_stmt 0 view .LVU677
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccFdpUWY.s 			page 101
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccMDqzFP.s 			page 101
 
 
  2479 0090 2846     		mov	r0, r5
@@ -6058,7 +6058,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccFdpUWY.s 			page 1
  2520              	.LVL301:
  2521              	.L144:
  297:Middlewares/LVGL/lvgl/src/core/lv_obj_scroll.c ****         int32_t  scroll_max = lv_obj_get_scroll_top(obj) + lv_obj_get_scroll_bottom(obj);
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccFdpUWY.s 			page 102
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccMDqzFP.s 			page 102
 
 
  2522              		.loc 1 297 5 is_stmt 1 view .LVU691
@@ -6118,7 +6118,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccFdpUWY.s 			page 1
  2562              	.LVL310:
  299:Middlewares/LVGL/lvgl/src/core/lv_obj_scroll.c ****         if(y_bounded < -scroll_max) y_bounded = -scroll_max;
  2563              		.loc 1 299 39 discriminator 1 view .LVU706
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccFdpUWY.s 			page 103
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccMDqzFP.s 			page 103
 
 
  2564 00dc F6E7     		b	.L131
@@ -6178,7 +6178,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccFdpUWY.s 			page 1
  2611              		.loc 1 380 5 is_stmt 0 view .LVU715
  2612 001a 2046     		mov	r0, r4
  2613              	.LVL316:
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccFdpUWY.s 			page 104
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccMDqzFP.s 			page 104
 
 
  380:Middlewares/LVGL/lvgl/src/core/lv_obj_scroll.c **** }
@@ -6238,7 +6238,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccFdpUWY.s 			page 1
  2661 000e 2046     		mov	r0, r4
  2662 0010 FFF7FEFF 		bl	lv_obj_get_scroll_y
  2663              	.LVL322:
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccFdpUWY.s 			page 105
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccMDqzFP.s 			page 105
 
 
  388:Middlewares/LVGL/lvgl/src/core/lv_obj_scroll.c **** 
@@ -6298,7 +6298,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccFdpUWY.s 			page 1
  369:Middlewares/LVGL/lvgl/src/core/lv_obj_scroll.c ****     lv_obj_scroll_to_y(obj, y, anim_en);
  2712              		.loc 1 369 5 is_stmt 1 view .LVU733
  2713 0008 1A46     		mov	r2, r3
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccFdpUWY.s 			page 106
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccMDqzFP.s 			page 106
 
 
  2714              	.LVL328:
@@ -6358,7 +6358,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccFdpUWY.s 			page 1
  2762 000c 1746     		mov	r7, r2
  2763 000e 0293     		str	r3, [sp, #8]
  709:Middlewares/LVGL/lvgl/src/core/lv_obj_scroll.c ****     lv_obj_t * parent = lv_obj_get_parent(child);
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccFdpUWY.s 			page 107
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccMDqzFP.s 			page 107
 
 
  2764              		.loc 1 709 5 is_stmt 1 view .LVU740
@@ -6418,7 +6418,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccFdpUWY.s 			page 1
  720:Middlewares/LVGL/lvgl/src/core/lv_obj_scroll.c ****     else area_tmp = area;
  721:Middlewares/LVGL/lvgl/src/core/lv_obj_scroll.c **** 
  722:Middlewares/LVGL/lvgl/src/core/lv_obj_scroll.c ****     int32_t stop = lv_obj_get_style_space_top(parent, LV_PART_MAIN);
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccFdpUWY.s 			page 108
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccMDqzFP.s 			page 108
 
 
  2808              		.loc 1 722 5 is_stmt 1 view .LVU759
@@ -6478,7 +6478,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccFdpUWY.s 			page 1
  2858 0070 2046     		mov	r0, r4
  2859              	.LVL348:
  2860              		.loc 1 726 24 view .LVU780
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccFdpUWY.s 			page 109
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccMDqzFP.s 			page 109
 
 
  2861 0072 FFF7FEFF 		bl	lv_obj_get_height
@@ -6538,7 +6538,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccFdpUWY.s 			page 1
  2897 00a6 6A68     		ldr	r2, [r5, #4]
  2898              		.loc 1 744 17 view .LVU793
  2899 00a8 3244     		add	r2, r2, r6
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccFdpUWY.s 			page 110
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccMDqzFP.s 			page 110
 
 
  2900              	.LVL353:
@@ -6598,7 +6598,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccFdpUWY.s 			page 1
  2932              	.LVL359:
  2933              		.loc 1 766 21 view .LVU808
  2934 00c2 FFF7FEFF 		bl	lv_obj_get_style_space_left
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccFdpUWY.s 			page 111
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccMDqzFP.s 			page 111
 
 
  2935              	.LVL360:
@@ -6658,7 +6658,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccFdpUWY.s 			page 1
  771:Middlewares/LVGL/lvgl/src/core/lv_obj_scroll.c ****     else if(left_diff > 0) {
  772:Middlewares/LVGL/lvgl/src/core/lv_obj_scroll.c ****         x_scroll = left_diff;
  773:Middlewares/LVGL/lvgl/src/core/lv_obj_scroll.c ****         /*Do not let scrolling in*/
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccFdpUWY.s 			page 112
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccMDqzFP.s 			page 112
 
 
  774:Middlewares/LVGL/lvgl/src/core/lv_obj_scroll.c ****         int32_t sl = lv_obj_get_scroll_left(parent);
@@ -6718,7 +6718,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccFdpUWY.s 			page 1
  3022              	.L171:
  791:Middlewares/LVGL/lvgl/src/core/lv_obj_scroll.c ****         case LV_SCROLL_SNAP_END:
  792:Middlewares/LVGL/lvgl/src/core/lv_obj_scroll.c ****             snap_goal = parent->coords.x2 - sright;
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccFdpUWY.s 			page 113
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccMDqzFP.s 			page 113
 
 
  793:Middlewares/LVGL/lvgl/src/core/lv_obj_scroll.c ****             act = area_tmp->x2 + x_scroll;
@@ -6778,7 +6778,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccFdpUWY.s 			page 1
  3058 0158 13F0040F 		tst	r3, #4
  3059 015c 02D1     		bne	.L174
  3060              		.loc 1 811 39 discriminator 1 view .LVU855
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccFdpUWY.s 			page 114
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccMDqzFP.s 			page 114
 
 
  3061 015e 002E     		cmp	r6, #0
@@ -6838,7 +6838,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccFdpUWY.s 			page 1
  3110              	.L158:
  817:Middlewares/LVGL/lvgl/src/core/lv_obj_scroll.c **** }
  3111              		.loc 1 817 1 is_stmt 0 view .LVU871
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccFdpUWY.s 			page 115
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccMDqzFP.s 			page 115
 
 
  3112 019e 09B0     		add	sp, sp, #36
@@ -6898,7 +6898,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccFdpUWY.s 			page 1
  3154              	.L161:
  732:Middlewares/LVGL/lvgl/src/core/lv_obj_scroll.c ****     }
  3155              		.loc 1 732 40 discriminator 1 view .LVU884
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccFdpUWY.s 			page 116
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccMDqzFP.s 			page 116
 
 
  3156              	.LBE117:
@@ -6958,7 +6958,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccFdpUWY.s 			page 1
  3195 01de 236A     		ldr	r3, [r4, #32]
  748:Middlewares/LVGL/lvgl/src/core/lv_obj_scroll.c ****             act = area_tmp->y2 + y_scroll;
  3196              		.loc 1 748 23 view .LVU900
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccFdpUWY.s 			page 117
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccMDqzFP.s 			page 117
 
 
  3197 01e0 A3EB0B03 		sub	r3, r3, fp
@@ -7018,7 +7018,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccFdpUWY.s 			page 1
  3235 0208 6B68     		ldr	r3, [r5, #4]
  754:Middlewares/LVGL/lvgl/src/core/lv_obj_scroll.c ****             y_scroll += snap_goal - act;
  3236              		.loc 1 754 52 discriminator 1 view .LVU917
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccFdpUWY.s 			page 118
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccMDqzFP.s 			page 118
 
 
  3237 020a 03EB6003 		add	r3, r3, r0, asr #1
@@ -7078,7 +7078,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccFdpUWY.s 			page 1
  3276              	.LVL410:
  775:Middlewares/LVGL/lvgl/src/core/lv_obj_scroll.c ****     }
  3277              		.loc 1 775 9 is_stmt 1 view .LVU933
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccFdpUWY.s 			page 119
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccMDqzFP.s 			page 119
 
 
  775:Middlewares/LVGL/lvgl/src/core/lv_obj_scroll.c ****     }
@@ -7138,7 +7138,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccFdpUWY.s 			page 1
  3317              	.LBE120:
  792:Middlewares/LVGL/lvgl/src/core/lv_obj_scroll.c ****             act = area_tmp->x2 + x_scroll;
  3318              		.loc 1 792 13 is_stmt 1 view .LVU949
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccFdpUWY.s 			page 120
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccMDqzFP.s 			page 120
 
 
  792:Middlewares/LVGL/lvgl/src/core/lv_obj_scroll.c ****             act = area_tmp->x2 + x_scroll;
@@ -7198,7 +7198,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccFdpUWY.s 			page 1
  798:Middlewares/LVGL/lvgl/src/core/lv_obj_scroll.c ****             x_scroll += snap_goal - act;
  3357              		.loc 1 798 47 discriminator 1 view .LVU966
  3358 026c 00EBD070 		add	r0, r0, r0, lsr #31
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccFdpUWY.s 			page 121
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccMDqzFP.s 			page 121
 
 
  798:Middlewares/LVGL/lvgl/src/core/lv_obj_scroll.c ****             x_scroll += snap_goal - act;
@@ -7258,7 +7258,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccFdpUWY.s 			page 1
  3400              	.L201:
  3401 0294 00000000 		.word	scroll_y_anim
  3402 0298 00000000 		.word	scroll_x_anim
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccFdpUWY.s 			page 122
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccMDqzFP.s 			page 122
 
 
  3403              		.cfi_endproc
@@ -7318,7 +7318,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccFdpUWY.s 			page 1
  3452 0022 30BD     		pop	{r4, r5, pc}
  400:Middlewares/LVGL/lvgl/src/core/lv_obj_scroll.c **** 
  3453              		.loc 1 400 1 view .LVU987
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccFdpUWY.s 			page 123
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccMDqzFP.s 			page 123
 
 
  3454              		.cfi_endproc
@@ -7378,7 +7378,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccFdpUWY.s 			page 1
  3501              		.loc 1 410 5 is_stmt 1 view .LVU996
  408:Middlewares/LVGL/lvgl/src/core/lv_obj_scroll.c ****     lv_obj_t * parent = lv_obj_get_parent(child);
  3502              		.loc 1 408 16 is_stmt 0 view .LVU997
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccFdpUWY.s 			page 124
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccMDqzFP.s 			page 124
 
 
  3503 001a 2946     		mov	r1, r5
@@ -7438,7 +7438,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccFdpUWY.s 			page 1
  3548              	lv_obj_is_scrolling:
  3549              	.LVL448:
  3550              	.LFB211:
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccFdpUWY.s 			page 125
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccMDqzFP.s 			page 125
 
 
  434:Middlewares/LVGL/lvgl/src/core/lv_obj_scroll.c ****     lv_indev_t * indev = lv_indev_get_next(NULL);
@@ -7498,7 +7498,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccFdpUWY.s 			page 1
  437:Middlewares/LVGL/lvgl/src/core/lv_obj_scroll.c ****         indev = lv_indev_get_next(indev);
  3593              		.loc 1 437 11 discriminator 1 view .LVU1021
  3594 001e 8542     		cmp	r5, r0
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccFdpUWY.s 			page 126
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccMDqzFP.s 			page 126
 
 
  3595 0020 F5D1     		bne	.L218
@@ -7558,7 +7558,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccFdpUWY.s 			page 1
  3640              		.thumb
  3641              		.thumb_func
  3643              	lv_obj_stop_scroll_anim:
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccFdpUWY.s 			page 127
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccMDqzFP.s 			page 127
 
 
  3644              	.LVL459:
@@ -7618,7 +7618,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccFdpUWY.s 			page 1
  3692              		.loc 1 456 1 is_stmt 0 view .LVU1039
  3693 0000 30B5     		push	{r4, r5, lr}
  3694              	.LCFI61:
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccFdpUWY.s 			page 128
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccMDqzFP.s 			page 128
 
 
  3695              		.cfi_def_cfa_offset 12
@@ -7678,7 +7678,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccFdpUWY.s 			page 1
  461:Middlewares/LVGL/lvgl/src/core/lv_obj_scroll.c ****     lv_obj_scroll_by(obj, p.x, p.y, anim_en);
  3737              		.loc 1 461 28 discriminator 2 view .LVU1052
  3738 0032 064A     		ldr	r2, .L232
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccFdpUWY.s 			page 129
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccMDqzFP.s 			page 129
 
 
  3739 0034 9342     		cmp	r3, r2
@@ -7738,7 +7738,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccFdpUWY.s 			page 1
  3788              		.cfi_offset 5, -32
  3789              		.cfi_offset 6, -28
  3790              		.cfi_offset 7, -24
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccFdpUWY.s 			page 130
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccMDqzFP.s 			page 130
 
 
  3791              		.cfi_offset 8, -20
@@ -7798,7 +7798,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccFdpUWY.s 			page 1
  3835              		.loc 1 472 30 is_stmt 0 view .LVU1069
  3836 0038 2046     		mov	r0, r4
  3837 003a FFF7FEFF 		bl	lv_obj_get_scrollbar_mode
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccFdpUWY.s 			page 131
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccMDqzFP.s 			page 131
 
 
  3838              	.LVL475:
@@ -7858,7 +7858,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccFdpUWY.s 			page 1
  3880 0060 04D0     		beq	.L238
  480:Middlewares/LVGL/lvgl/src/core/lv_obj_scroll.c ****         }
  3881              		.loc 1 480 13 is_stmt 1 view .LVU1082
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccFdpUWY.s 			page 132
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccMDqzFP.s 			page 132
 
 
  480:Middlewares/LVGL/lvgl/src/core/lv_obj_scroll.c ****         }
@@ -7918,7 +7918,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccFdpUWY.s 			page 1
  488:Middlewares/LVGL/lvgl/src/core/lv_obj_scroll.c **** 
  3923              		.loc 1 488 18 is_stmt 0 view .LVU1096
  3924 0088 2046     		mov	r0, r4
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccFdpUWY.s 			page 133
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccMDqzFP.s 			page 133
 
 
  3925              	.LVL494:
@@ -7978,7 +7978,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccFdpUWY.s 			page 1
  495:Middlewares/LVGL/lvgl/src/core/lv_obj_scroll.c ****         (sm == LV_SCROLLBAR_MODE_ACTIVE && lv_indev_get_scroll_dir(indev) == LV_DIR_VER))) {
  3966              		.loc 1 495 50 discriminator 1 view .LVU1110
  3967 00c4 049B     		ldr	r3, [sp, #16]
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccFdpUWY.s 			page 134
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccMDqzFP.s 			page 134
 
 
  3968 00c6 002B     		cmp	r3, #0
@@ -8038,7 +8038,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccFdpUWY.s 			page 1
  4009              		.loc 1 508 18 discriminator 1 view .LVU1123
  4010 0102 BBF1000F 		cmp	fp, #0
  4011 0106 9CD0     		beq	.L234
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccFdpUWY.s 			page 135
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccMDqzFP.s 			page 135
 
 
  4012 0108 0023     		movs	r3, #0
@@ -8098,7 +8098,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccFdpUWY.s 			page 1
  513:Middlewares/LVGL/lvgl/src/core/lv_obj_scroll.c ****     int32_t left_space = lv_obj_get_style_pad_left(obj, LV_PART_SCROLLBAR);
  4056              		.loc 1 513 5 is_stmt 1 view .LVU1137
  4057              	.LBB125:
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccFdpUWY.s 			page 136
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccMDqzFP.s 			page 136
 
 
  4058              	.LBI125:
@@ -8158,7 +8158,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccFdpUWY.s 			page 1
  4097              		.loc 3 347 5 is_stmt 0 view .LVU1152
  4098              	.LBE128:
  4099              	.LBE127:
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccFdpUWY.s 			page 137
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccMDqzFP.s 			page 137
 
 
  515:Middlewares/LVGL/lvgl/src/core/lv_obj_scroll.c ****     int32_t thickness = lv_obj_get_style_width(obj, LV_PART_SCROLLBAR);
@@ -8218,7 +8218,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccFdpUWY.s 			page 1
  4139              		.loc 3 32 26 view .LVU1167
  4140 016c 0790     		str	r0, [sp, #28]
  4141 016e 1190     		str	r0, [sp, #68]
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccFdpUWY.s 			page 138
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccMDqzFP.s 			page 138
 
 
   33:Middlewares/LVGL/lvgl/src/core/lv_obj_style_gen.h **** }
@@ -8278,7 +8278,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccFdpUWY.s 			page 1
  4181              	.LVL529:
  520:Middlewares/LVGL/lvgl/src/core/lv_obj_scroll.c **** 
  4182              		.loc 1 520 21 view .LVU1183
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccFdpUWY.s 			page 139
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccMDqzFP.s 			page 139
 
 
  4183 018a FFF7FEFF 		bl	lv_obj_get_width
@@ -8338,7 +8338,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccFdpUWY.s 			page 1
  4223 01b4 C0B2     		uxtb	r0, r0
  4224              	.LVL536:
  481:Middlewares/LVGL/lvgl/src/core/lv_obj_style_gen.h **** }
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccFdpUWY.s 			page 140
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccMDqzFP.s 			page 140
 
 
  4225              		.loc 3 481 12 view .LVU1198
@@ -8398,7 +8398,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccFdpUWY.s 			page 1
  4263              		.loc 1 542 13 is_stmt 1 view .LVU1214
  542:Middlewares/LVGL/lvgl/src/core/lv_obj_scroll.c ****             ver_area->x1 = ver_area->x2 - thickness + 1;
  4264              		.loc 1 542 39 is_stmt 0 view .LVU1215
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccFdpUWY.s 			page 141
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccMDqzFP.s 			page 141
 
 
  4265 01e2 E369     		ldr	r3, [r4, #28]
@@ -8458,7 +8458,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccFdpUWY.s 			page 1
  547:Middlewares/LVGL/lvgl/src/core/lv_obj_scroll.c ****         sb_h = LV_MIN(sb_h, obj_h); /*Limit scrollbar length to parent height*/
  4304              		.loc 1 547 16 discriminator 4 view .LVU1231
  4305 0214 0020     		movs	r0, #0
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccFdpUWY.s 			page 142
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccMDqzFP.s 			page 142
 
 
  4306 0216 FFF7FEFF 		bl	lv_display_get_dpi
@@ -8518,7 +8518,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccFdpUWY.s 			page 1
  4346 0248 93FBF5F3 		sdiv	r3, r3, r5
  4347              	.LVL546:
  558:Middlewares/LVGL/lvgl/src/core/lv_obj_scroll.c **** 
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccFdpUWY.s 			page 143
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccMDqzFP.s 			page 143
 
 
  4348              		.loc 1 558 13 is_stmt 1 view .LVU1246
@@ -8578,7 +8578,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccFdpUWY.s 			page 1
  568:Middlewares/LVGL/lvgl/src/core/lv_obj_scroll.c ****                 ver_area->y2 = obj->coords.y2 - hor_req_space - bottom_space;
  4385              		.loc 1 568 46 view .LVU1264
  4386 026e 0E9A     		ldr	r2, [sp, #56]
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccFdpUWY.s 			page 144
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccMDqzFP.s 			page 144
 
 
  4387 0270 AD1A     		subs	r5, r5, r2
@@ -8638,7 +8638,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccFdpUWY.s 			page 1
  4426 02a4 4300     		lsls	r3, r0, #1
  4427 02a6 EF2B     		cmp	r3, #239
  4428 02a8 00F32881 		bgt	.L315
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccFdpUWY.s 			page 145
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccMDqzFP.s 			page 145
 
 
  571:Middlewares/LVGL/lvgl/src/core/lv_obj_scroll.c ****                 }
@@ -8698,7 +8698,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccFdpUWY.s 			page 1
  4472              		.loc 1 523 50 discriminator 2 view .LVU1290
  4473 02e0 0023     		movs	r3, #0
  4474 02e2 0F93     		str	r3, [sp, #60]
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccFdpUWY.s 			page 146
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccMDqzFP.s 			page 146
 
 
  4475 02e4 59E7     		b	.L245
@@ -8758,7 +8758,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccFdpUWY.s 			page 1
  4517 030a 3360     		str	r3, [r6]
  539:Middlewares/LVGL/lvgl/src/core/lv_obj_scroll.c ****         }
  4518              		.loc 1 539 13 is_stmt 1 view .LVU1303
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccFdpUWY.s 			page 147
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccMDqzFP.s 			page 147
 
 
  539:Middlewares/LVGL/lvgl/src/core/lv_obj_scroll.c ****         }
@@ -8818,7 +8818,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccFdpUWY.s 			page 1
  4563 0354 5033     		adds	r3, r3, #80
  4564 0356 AA4A     		ldr	r2, .L335
  4565 0358 82FB0312 		smull	r1, r2, r2, r3
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccFdpUWY.s 			page 148
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccMDqzFP.s 			page 148
 
 
  4566 035c DB17     		asrs	r3, r3, #31
@@ -8878,7 +8878,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccFdpUWY.s 			page 1
  579:Middlewares/LVGL/lvgl/src/core/lv_obj_scroll.c ****         hor_area->y2 = obj->coords.y2 - bottom_space;
  4605              		.loc 1 579 7 is_stmt 0 view .LVU1329
  4606 0382 039B     		ldr	r3, [sp, #12]
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccFdpUWY.s 			page 149
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccMDqzFP.s 			page 149
 
 
  4607 0384 002B     		cmp	r3, #0
@@ -8938,7 +8938,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccFdpUWY.s 			page 1
  585:Middlewares/LVGL/lvgl/src/core/lv_obj_scroll.c ****         sb_w = LV_MAX(length > 0 ? length : sb_w, SCROLLBAR_MIN_SIZE); /*Style-defined size, calcul
  4644              		.loc 1 585 45 view .LVU1347
  4645 03ae 099B     		ldr	r3, [sp, #36]
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccFdpUWY.s 			page 150
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccMDqzFP.s 			page 150
 
 
  4646 03b0 F61A     		subs	r6, r6, r3
@@ -8998,7 +8998,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccFdpUWY.s 			page 1
  4687              		.loc 1 588 9 is_stmt 1 view .LVU1360
  588:Middlewares/LVGL/lvgl/src/core/lv_obj_scroll.c ****               sb_w;  /*Remaining size from the scrollbar track that is not the scrollbar itself*/
  4688              		.loc 1 588 13 is_stmt 0 view .LVU1361
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccFdpUWY.s 			page 151
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccMDqzFP.s 			page 151
 
 
  4689 03e6 A6EB0806 		sub	r6, r6, r8
@@ -9058,7 +9058,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccFdpUWY.s 			page 1
  4726              		.loc 1 623 17 is_stmt 1 view .LVU1378
  623:Middlewares/LVGL/lvgl/src/core/lv_obj_scroll.c ****                 if(hor_area->x1 < obj->coords.x1 + left_space) {
  4727              		.loc 1 623 45 is_stmt 0 view .LVU1379
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccFdpUWY.s 			page 152
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccMDqzFP.s 			page 152
 
 
  4728 0412 4344     		add	r3, r3, r8
@@ -9118,7 +9118,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccFdpUWY.s 			page 1
  632:Middlewares/LVGL/lvgl/src/core/lv_obj_scroll.c ****                         hor_area->x1 = hor_area->x2 - SCROLLBAR_MIN_SIZE;
  4766              		.loc 1 632 39 discriminator 1 view .LVU1396
  4767 043c 00EB8000 		add	r0, r0, r0, lsl #2
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccFdpUWY.s 			page 153
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccMDqzFP.s 			page 153
 
 
  4768 0440 4300     		lsls	r3, r0, #1
@@ -9178,7 +9178,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccFdpUWY.s 			page 1
  563:Middlewares/LVGL/lvgl/src/core/lv_obj_scroll.c ****                 if(ver_area->y1 + SCROLLBAR_MIN_SIZE > ver_area->y2) {
  4809              		.loc 1 563 30 is_stmt 0 view .LVU1410
  4810 0470 7560     		str	r5, [r6, #4]
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccFdpUWY.s 			page 154
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccMDqzFP.s 			page 154
 
 
  564:Middlewares/LVGL/lvgl/src/core/lv_obj_scroll.c ****                     ver_area->y2 = ver_area->y1 + SCROLLBAR_MIN_SIZE;
@@ -9238,7 +9238,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccFdpUWY.s 			page 1
  4851              	.L324:
  564:Middlewares/LVGL/lvgl/src/core/lv_obj_scroll.c ****                     ver_area->y2 = ver_area->y1 + SCROLLBAR_MIN_SIZE;
  4852              		.loc 1 564 35 discriminator 1 view .LVU1425
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccFdpUWY.s 			page 155
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccMDqzFP.s 			page 155
 
 
  4853 04a8 0020     		movs	r0, #0
@@ -9298,7 +9298,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccFdpUWY.s 			page 1
  4904              	.L317:
  571:Middlewares/LVGL/lvgl/src/core/lv_obj_scroll.c ****                 }
  4905              		.loc 1 571 51 discriminator 1 view .LVU1429
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccFdpUWY.s 			page 156
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccMDqzFP.s 			page 156
 
 
  4906              	.LBE139:
@@ -9358,7 +9358,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccFdpUWY.s 			page 1
  592:Middlewares/LVGL/lvgl/src/core/lv_obj_scroll.c ****                 hor_area->x1 = obj->coords.x1 + left_space + ver_reg_space - 1;
  4952              		.loc 1 592 15 is_stmt 0 view .LVU1438
  4953 0566 0B9B     		ldr	r3, [sp, #44]
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccFdpUWY.s 			page 157
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccMDqzFP.s 			page 157
 
 
  4954 0568 012B     		cmp	r3, #1
@@ -9418,7 +9418,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccFdpUWY.s 			page 1
  594:Middlewares/LVGL/lvgl/src/core/lv_obj_scroll.c ****             }
  4992              		.loc 1 594 17 is_stmt 1 view .LVU1455
  594:Middlewares/LVGL/lvgl/src/core/lv_obj_scroll.c ****             }
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccFdpUWY.s 			page 158
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccMDqzFP.s 			page 158
 
 
  4993              		.loc 1 594 43 is_stmt 0 view .LVU1456
@@ -9478,7 +9478,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccFdpUWY.s 			page 1
  5031 05b4 0544     		add	r5, r5, r0
  608:Middlewares/LVGL/lvgl/src/core/lv_obj_scroll.c ****                     hor_area->x1 = obj->coords.x1 + left_space + ver_reg_space;
  5032              		.loc 1 608 19 view .LVU1473
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccFdpUWY.s 			page 159
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccMDqzFP.s 			page 159
 
 
  5033 05b6 9A42     		cmp	r2, r3
@@ -9538,7 +9538,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccFdpUWY.s 			page 1
  617:Middlewares/LVGL/lvgl/src/core/lv_obj_scroll.c ****                     }
  5072              		.loc 1 617 48 is_stmt 0 view .LVU1489
  5073 05e6 BC68     		ldr	r4, [r7, #8]
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccFdpUWY.s 			page 160
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccMDqzFP.s 			page 160
 
 
  617:Middlewares/LVGL/lvgl/src/core/lv_obj_scroll.c ****                     }
@@ -9598,7 +9598,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccFdpUWY.s 			page 1
  5115              		.loc 1 610 68 discriminator 4 view .LVU1502
  5116 061a BB68     		ldr	r3, [r7, #8]
  610:Middlewares/LVGL/lvgl/src/core/lv_obj_scroll.c ****                         hor_area->x2 = hor_area->x1 + SCROLLBAR_MIN_SIZE;
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccFdpUWY.s 			page 161
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccMDqzFP.s 			page 161
 
 
  5117              		.loc 1 610 23 discriminator 4 view .LVU1503
@@ -9658,7 +9658,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccFdpUWY.s 			page 1
  5162 0666 93FBF2F3 		sdiv	r3, r3, r2
  5163 066a E3E7     		b	.L268
  5164              	.LVL605:
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccFdpUWY.s 			page 162
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccMDqzFP.s 			page 162
 
 
  5165              	.L329:
@@ -9718,7 +9718,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccFdpUWY.s 			page 1
  5209              		.loc 1 626 68 discriminator 4 view .LVU1522
  5210 06b4 BB68     		ldr	r3, [r7, #8]
  626:Middlewares/LVGL/lvgl/src/core/lv_obj_scroll.c ****                         hor_area->x2 = hor_area->x1 + SCROLLBAR_MIN_SIZE;
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccFdpUWY.s 			page 163
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccMDqzFP.s 			page 163
 
 
  5211              		.loc 1 626 23 discriminator 4 view .LVU1523
@@ -9778,7 +9778,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccFdpUWY.s 			page 1
  5256 0702 93FBF2F3 		sdiv	r3, r3, r2
  5257 0706 E3E7     		b	.L273
  5258              	.LVL613:
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccFdpUWY.s 			page 164
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccMDqzFP.s 			page 164
 
 
  5259              	.L322:
@@ -9838,7 +9838,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccFdpUWY.s 			page 1
  5311              		.cfi_offset 5, -8
  5312              		.cfi_offset 14, -4
  5313 0002 89B0     		sub	sp, sp, #36
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccFdpUWY.s 			page 165
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccMDqzFP.s 			page 165
 
 
  5314              	.LCFI69:
@@ -9898,7 +9898,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccFdpUWY.s 			page 1
  5354              	.L339:
  651:Middlewares/LVGL/lvgl/src/core/lv_obj_scroll.c **** 
  5355              		.loc 1 651 1 view .LVU1551
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccFdpUWY.s 			page 166
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccMDqzFP.s 			page 166
 
 
  5356 0030 09B0     		add	sp, sp, #36
@@ -9958,7 +9958,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccFdpUWY.s 			page 1
  5408 0004 0446     		mov	r4, r0
  5409 0006 0D46     		mov	r5, r1
  657:Middlewares/LVGL/lvgl/src/core/lv_obj_scroll.c ****         int32_t st = lv_obj_get_scroll_top(obj);
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccFdpUWY.s 			page 167
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccMDqzFP.s 			page 167
 
 
  5410              		.loc 1 657 5 is_stmt 1 view .LVU1556
@@ -10018,7 +10018,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccFdpUWY.s 			page 1
  660:Middlewares/LVGL/lvgl/src/core/lv_obj_scroll.c ****             sb = LV_MIN(st, -sb);
  5452              		.loc 1 660 11 is_stmt 0 view .LVU1569
  5453 0028 021E     		subs	r2, r0, #0
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccFdpUWY.s 			page 168
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccMDqzFP.s 			page 168
 
 
  5454 002a F0DA     		bge	.L348
@@ -10078,7 +10078,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccFdpUWY.s 			page 1
  5496              	.LVL642:
  669:Middlewares/LVGL/lvgl/src/core/lv_obj_scroll.c ****             /*Be sure the left side is not remains scrolled in*/
  5497              		.loc 1 669 9 is_stmt 1 view .LVU1582
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccFdpUWY.s 			page 169
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccMDqzFP.s 			page 169
 
 
  5498              	.LBB150:
@@ -10138,7 +10138,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccFdpUWY.s 			page 1
  5540              		.loc 1 673 17 is_stmt 0 view .LVU1597
  5541 007a 2046     		mov	r0, r4
  5542 007c FFF7FEFF 		bl	lv_obj_scroll_by
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccFdpUWY.s 			page 170
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccMDqzFP.s 			page 170
 
 
  5543              	.LVL648:
@@ -10193,102 +10193,102 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccFdpUWY.s 			page 1
  5587              		.file 20 "Middlewares/LVGL/lvgl/src/core/../indev/lv_indev_scroll.h"
  5588              		.file 21 "Middlewares/LVGL/lvgl/src/core/lv_obj_tree.h"
  5589              		.file 22 "Middlewares/LVGL/lvgl/src/core/lv_obj_event.h"
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccFdpUWY.s 			page 171
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccMDqzFP.s 			page 171
 
 
 DEFINED SYMBOLS
                             *ABS*:00000000 lv_obj_scroll.c
-C:\Users\w1785\AppData\Local\Temp\ccFdpUWY.s:21     .text.lv_obj_get_style_space_top:00000000 $t
-C:\Users\w1785\AppData\Local\Temp\ccFdpUWY.s:26     .text.lv_obj_get_style_space_top:00000000 lv_obj_get_style_space_top
-C:\Users\w1785\AppData\Local\Temp\ccFdpUWY.s:133    .text.lv_obj_get_style_space_bottom:00000000 $t
-C:\Users\w1785\AppData\Local\Temp\ccFdpUWY.s:138    .text.lv_obj_get_style_space_bottom:00000000 lv_obj_get_style_space_bottom
-C:\Users\w1785\AppData\Local\Temp\ccFdpUWY.s:235    .text.lv_obj_get_style_space_right:00000000 $t
-C:\Users\w1785\AppData\Local\Temp\ccFdpUWY.s:240    .text.lv_obj_get_style_space_right:00000000 lv_obj_get_style_space_right
-C:\Users\w1785\AppData\Local\Temp\ccFdpUWY.s:345    .text.lv_obj_get_style_space_left:00000000 $t
-C:\Users\w1785\AppData\Local\Temp\ccFdpUWY.s:350    .text.lv_obj_get_style_space_left:00000000 lv_obj_get_style_space_left
-C:\Users\w1785\AppData\Local\Temp\ccFdpUWY.s:455    .text.scroll_end_cb:00000000 $t
-C:\Users\w1785\AppData\Local\Temp\ccFdpUWY.s:460    .text.scroll_end_cb:00000000 scroll_end_cb
-C:\Users\w1785\AppData\Local\Temp\ccFdpUWY.s:499    .text.lv_obj_set_scrollbar_mode:00000000 $t
-C:\Users\w1785\AppData\Local\Temp\ccFdpUWY.s:505    .text.lv_obj_set_scrollbar_mode:00000000 lv_obj_set_scrollbar_mode
-C:\Users\w1785\AppData\Local\Temp\ccFdpUWY.s:569    .text.lv_obj_set_scroll_dir:00000000 $t
-C:\Users\w1785\AppData\Local\Temp\ccFdpUWY.s:575    .text.lv_obj_set_scroll_dir:00000000 lv_obj_set_scroll_dir
-C:\Users\w1785\AppData\Local\Temp\ccFdpUWY.s:619    .text.lv_obj_set_scroll_snap_x:00000000 $t
-C:\Users\w1785\AppData\Local\Temp\ccFdpUWY.s:625    .text.lv_obj_set_scroll_snap_x:00000000 lv_obj_set_scroll_snap_x
-C:\Users\w1785\AppData\Local\Temp\ccFdpUWY.s:659    .text.lv_obj_set_scroll_snap_y:00000000 $t
-C:\Users\w1785\AppData\Local\Temp\ccFdpUWY.s:665    .text.lv_obj_set_scroll_snap_y:00000000 lv_obj_set_scroll_snap_y
-C:\Users\w1785\AppData\Local\Temp\ccFdpUWY.s:699    .text.lv_obj_get_scrollbar_mode:00000000 $t
-C:\Users\w1785\AppData\Local\Temp\ccFdpUWY.s:705    .text.lv_obj_get_scrollbar_mode:00000000 lv_obj_get_scrollbar_mode
-C:\Users\w1785\AppData\Local\Temp\ccFdpUWY.s:737    .text.lv_obj_get_scroll_dir:00000000 $t
-C:\Users\w1785\AppData\Local\Temp\ccFdpUWY.s:743    .text.lv_obj_get_scroll_dir:00000000 lv_obj_get_scroll_dir
-C:\Users\w1785\AppData\Local\Temp\ccFdpUWY.s:775    .text.lv_obj_get_scroll_snap_x:00000000 $t
-C:\Users\w1785\AppData\Local\Temp\ccFdpUWY.s:781    .text.lv_obj_get_scroll_snap_x:00000000 lv_obj_get_scroll_snap_x
-C:\Users\w1785\AppData\Local\Temp\ccFdpUWY.s:813    .text.lv_obj_get_scroll_snap_y:00000000 $t
-C:\Users\w1785\AppData\Local\Temp\ccFdpUWY.s:819    .text.lv_obj_get_scroll_snap_y:00000000 lv_obj_get_scroll_snap_y
-C:\Users\w1785\AppData\Local\Temp\ccFdpUWY.s:851    .text.lv_obj_get_scroll_x:00000000 $t
-C:\Users\w1785\AppData\Local\Temp\ccFdpUWY.s:857    .text.lv_obj_get_scroll_x:00000000 lv_obj_get_scroll_x
-C:\Users\w1785\AppData\Local\Temp\ccFdpUWY.s:888    .text.lv_obj_get_scroll_y:00000000 $t
-C:\Users\w1785\AppData\Local\Temp\ccFdpUWY.s:894    .text.lv_obj_get_scroll_y:00000000 lv_obj_get_scroll_y
-C:\Users\w1785\AppData\Local\Temp\ccFdpUWY.s:925    .text.lv_obj_get_scroll_top:00000000 $t
-C:\Users\w1785\AppData\Local\Temp\ccFdpUWY.s:931    .text.lv_obj_get_scroll_top:00000000 lv_obj_get_scroll_top
-C:\Users\w1785\AppData\Local\Temp\ccFdpUWY.s:962    .text.lv_obj_get_scroll_bottom:00000000 $t
-C:\Users\w1785\AppData\Local\Temp\ccFdpUWY.s:968    .text.lv_obj_get_scroll_bottom:00000000 lv_obj_get_scroll_bottom
-C:\Users\w1785\AppData\Local\Temp\ccFdpUWY.s:1181   .text.lv_obj_get_scroll_bottom:00000098 $d
-C:\Users\w1785\AppData\Local\Temp\ccFdpUWY.s:1187   .text.lv_obj_get_scroll_left:00000000 $t
-C:\Users\w1785\AppData\Local\Temp\ccFdpUWY.s:1193   .text.lv_obj_get_scroll_left:00000000 lv_obj_get_scroll_left
-C:\Users\w1785\AppData\Local\Temp\ccFdpUWY.s:1462   .text.lv_obj_get_scroll_left:000000c4 $d
-C:\Users\w1785\AppData\Local\Temp\ccFdpUWY.s:1468   .text.lv_obj_get_scroll_right:00000000 $t
-C:\Users\w1785\AppData\Local\Temp\ccFdpUWY.s:1474   .text.lv_obj_get_scroll_right:00000000 lv_obj_get_scroll_right
-C:\Users\w1785\AppData\Local\Temp\ccFdpUWY.s:1730   .text.lv_obj_get_scroll_right:000000b8 $d
-C:\Users\w1785\AppData\Local\Temp\ccFdpUWY.s:1736   .text.lv_obj_get_scroll_end:00000000 $t
-C:\Users\w1785\AppData\Local\Temp\ccFdpUWY.s:1742   .text.lv_obj_get_scroll_end:00000000 lv_obj_get_scroll_end
-C:\Users\w1785\AppData\Local\Temp\ccFdpUWY.s:1818   .text.lv_obj_get_scroll_end:00000038 $d
-C:\Users\w1785\AppData\Local\Temp\ccFdpUWY.s:1965   .text.scroll_x_anim:00000000 scroll_x_anim
-C:\Users\w1785\AppData\Local\Temp\ccFdpUWY.s:1926   .text.scroll_y_anim:00000000 scroll_y_anim
-C:\Users\w1785\AppData\Local\Temp\ccFdpUWY.s:1824   .text.lv_obj_scroll_by_raw:00000000 $t
-C:\Users\w1785\AppData\Local\Temp\ccFdpUWY.s:1830   .text.lv_obj_scroll_by_raw:00000000 lv_obj_scroll_by_raw
-C:\Users\w1785\AppData\Local\Temp\ccFdpUWY.s:1921   .text.scroll_y_anim:00000000 $t
-C:\Users\w1785\AppData\Local\Temp\ccFdpUWY.s:1960   .text.scroll_x_anim:00000000 $t
-C:\Users\w1785\AppData\Local\Temp\ccFdpUWY.s:1999   .text.lv_obj_scroll_by:00000000 $t
-C:\Users\w1785\AppData\Local\Temp\ccFdpUWY.s:2005   .text.lv_obj_scroll_by:00000000 lv_obj_scroll_by
-C:\Users\w1785\AppData\Local\Temp\ccFdpUWY.s:2279   .text.lv_obj_scroll_by:00000118 $d
-C:\Users\w1785\AppData\Local\Temp\ccFdpUWY.s:2288   .text.lv_obj_scroll_by_bounded:00000000 $t
-C:\Users\w1785\AppData\Local\Temp\ccFdpUWY.s:2294   .text.lv_obj_scroll_by_bounded:00000000 lv_obj_scroll_by_bounded
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccFdpUWY.s 			page 172
+C:\Users\w1785\AppData\Local\Temp\ccMDqzFP.s:21     .text.lv_obj_get_style_space_top:00000000 $t
+C:\Users\w1785\AppData\Local\Temp\ccMDqzFP.s:26     .text.lv_obj_get_style_space_top:00000000 lv_obj_get_style_space_top
+C:\Users\w1785\AppData\Local\Temp\ccMDqzFP.s:133    .text.lv_obj_get_style_space_bottom:00000000 $t
+C:\Users\w1785\AppData\Local\Temp\ccMDqzFP.s:138    .text.lv_obj_get_style_space_bottom:00000000 lv_obj_get_style_space_bottom
+C:\Users\w1785\AppData\Local\Temp\ccMDqzFP.s:235    .text.lv_obj_get_style_space_right:00000000 $t
+C:\Users\w1785\AppData\Local\Temp\ccMDqzFP.s:240    .text.lv_obj_get_style_space_right:00000000 lv_obj_get_style_space_right
+C:\Users\w1785\AppData\Local\Temp\ccMDqzFP.s:345    .text.lv_obj_get_style_space_left:00000000 $t
+C:\Users\w1785\AppData\Local\Temp\ccMDqzFP.s:350    .text.lv_obj_get_style_space_left:00000000 lv_obj_get_style_space_left
+C:\Users\w1785\AppData\Local\Temp\ccMDqzFP.s:455    .text.scroll_end_cb:00000000 $t
+C:\Users\w1785\AppData\Local\Temp\ccMDqzFP.s:460    .text.scroll_end_cb:00000000 scroll_end_cb
+C:\Users\w1785\AppData\Local\Temp\ccMDqzFP.s:499    .text.lv_obj_set_scrollbar_mode:00000000 $t
+C:\Users\w1785\AppData\Local\Temp\ccMDqzFP.s:505    .text.lv_obj_set_scrollbar_mode:00000000 lv_obj_set_scrollbar_mode
+C:\Users\w1785\AppData\Local\Temp\ccMDqzFP.s:569    .text.lv_obj_set_scroll_dir:00000000 $t
+C:\Users\w1785\AppData\Local\Temp\ccMDqzFP.s:575    .text.lv_obj_set_scroll_dir:00000000 lv_obj_set_scroll_dir
+C:\Users\w1785\AppData\Local\Temp\ccMDqzFP.s:619    .text.lv_obj_set_scroll_snap_x:00000000 $t
+C:\Users\w1785\AppData\Local\Temp\ccMDqzFP.s:625    .text.lv_obj_set_scroll_snap_x:00000000 lv_obj_set_scroll_snap_x
+C:\Users\w1785\AppData\Local\Temp\ccMDqzFP.s:659    .text.lv_obj_set_scroll_snap_y:00000000 $t
+C:\Users\w1785\AppData\Local\Temp\ccMDqzFP.s:665    .text.lv_obj_set_scroll_snap_y:00000000 lv_obj_set_scroll_snap_y
+C:\Users\w1785\AppData\Local\Temp\ccMDqzFP.s:699    .text.lv_obj_get_scrollbar_mode:00000000 $t
+C:\Users\w1785\AppData\Local\Temp\ccMDqzFP.s:705    .text.lv_obj_get_scrollbar_mode:00000000 lv_obj_get_scrollbar_mode
+C:\Users\w1785\AppData\Local\Temp\ccMDqzFP.s:737    .text.lv_obj_get_scroll_dir:00000000 $t
+C:\Users\w1785\AppData\Local\Temp\ccMDqzFP.s:743    .text.lv_obj_get_scroll_dir:00000000 lv_obj_get_scroll_dir
+C:\Users\w1785\AppData\Local\Temp\ccMDqzFP.s:775    .text.lv_obj_get_scroll_snap_x:00000000 $t
+C:\Users\w1785\AppData\Local\Temp\ccMDqzFP.s:781    .text.lv_obj_get_scroll_snap_x:00000000 lv_obj_get_scroll_snap_x
+C:\Users\w1785\AppData\Local\Temp\ccMDqzFP.s:813    .text.lv_obj_get_scroll_snap_y:00000000 $t
+C:\Users\w1785\AppData\Local\Temp\ccMDqzFP.s:819    .text.lv_obj_get_scroll_snap_y:00000000 lv_obj_get_scroll_snap_y
+C:\Users\w1785\AppData\Local\Temp\ccMDqzFP.s:851    .text.lv_obj_get_scroll_x:00000000 $t
+C:\Users\w1785\AppData\Local\Temp\ccMDqzFP.s:857    .text.lv_obj_get_scroll_x:00000000 lv_obj_get_scroll_x
+C:\Users\w1785\AppData\Local\Temp\ccMDqzFP.s:888    .text.lv_obj_get_scroll_y:00000000 $t
+C:\Users\w1785\AppData\Local\Temp\ccMDqzFP.s:894    .text.lv_obj_get_scroll_y:00000000 lv_obj_get_scroll_y
+C:\Users\w1785\AppData\Local\Temp\ccMDqzFP.s:925    .text.lv_obj_get_scroll_top:00000000 $t
+C:\Users\w1785\AppData\Local\Temp\ccMDqzFP.s:931    .text.lv_obj_get_scroll_top:00000000 lv_obj_get_scroll_top
+C:\Users\w1785\AppData\Local\Temp\ccMDqzFP.s:962    .text.lv_obj_get_scroll_bottom:00000000 $t
+C:\Users\w1785\AppData\Local\Temp\ccMDqzFP.s:968    .text.lv_obj_get_scroll_bottom:00000000 lv_obj_get_scroll_bottom
+C:\Users\w1785\AppData\Local\Temp\ccMDqzFP.s:1181   .text.lv_obj_get_scroll_bottom:00000098 $d
+C:\Users\w1785\AppData\Local\Temp\ccMDqzFP.s:1187   .text.lv_obj_get_scroll_left:00000000 $t
+C:\Users\w1785\AppData\Local\Temp\ccMDqzFP.s:1193   .text.lv_obj_get_scroll_left:00000000 lv_obj_get_scroll_left
+C:\Users\w1785\AppData\Local\Temp\ccMDqzFP.s:1462   .text.lv_obj_get_scroll_left:000000c4 $d
+C:\Users\w1785\AppData\Local\Temp\ccMDqzFP.s:1468   .text.lv_obj_get_scroll_right:00000000 $t
+C:\Users\w1785\AppData\Local\Temp\ccMDqzFP.s:1474   .text.lv_obj_get_scroll_right:00000000 lv_obj_get_scroll_right
+C:\Users\w1785\AppData\Local\Temp\ccMDqzFP.s:1730   .text.lv_obj_get_scroll_right:000000b8 $d
+C:\Users\w1785\AppData\Local\Temp\ccMDqzFP.s:1736   .text.lv_obj_get_scroll_end:00000000 $t
+C:\Users\w1785\AppData\Local\Temp\ccMDqzFP.s:1742   .text.lv_obj_get_scroll_end:00000000 lv_obj_get_scroll_end
+C:\Users\w1785\AppData\Local\Temp\ccMDqzFP.s:1818   .text.lv_obj_get_scroll_end:00000038 $d
+C:\Users\w1785\AppData\Local\Temp\ccMDqzFP.s:1965   .text.scroll_x_anim:00000000 scroll_x_anim
+C:\Users\w1785\AppData\Local\Temp\ccMDqzFP.s:1926   .text.scroll_y_anim:00000000 scroll_y_anim
+C:\Users\w1785\AppData\Local\Temp\ccMDqzFP.s:1824   .text.lv_obj_scroll_by_raw:00000000 $t
+C:\Users\w1785\AppData\Local\Temp\ccMDqzFP.s:1830   .text.lv_obj_scroll_by_raw:00000000 lv_obj_scroll_by_raw
+C:\Users\w1785\AppData\Local\Temp\ccMDqzFP.s:1921   .text.scroll_y_anim:00000000 $t
+C:\Users\w1785\AppData\Local\Temp\ccMDqzFP.s:1960   .text.scroll_x_anim:00000000 $t
+C:\Users\w1785\AppData\Local\Temp\ccMDqzFP.s:1999   .text.lv_obj_scroll_by:00000000 $t
+C:\Users\w1785\AppData\Local\Temp\ccMDqzFP.s:2005   .text.lv_obj_scroll_by:00000000 lv_obj_scroll_by
+C:\Users\w1785\AppData\Local\Temp\ccMDqzFP.s:2279   .text.lv_obj_scroll_by:00000118 $d
+C:\Users\w1785\AppData\Local\Temp\ccMDqzFP.s:2288   .text.lv_obj_scroll_by_bounded:00000000 $t
+C:\Users\w1785\AppData\Local\Temp\ccMDqzFP.s:2294   .text.lv_obj_scroll_by_bounded:00000000 lv_obj_scroll_by_bounded
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccMDqzFP.s 			page 172
 
 
-C:\Users\w1785\AppData\Local\Temp\ccFdpUWY.s:2570   .text.lv_obj_scroll_to_x:00000000 $t
-C:\Users\w1785\AppData\Local\Temp\ccFdpUWY.s:2576   .text.lv_obj_scroll_to_x:00000000 lv_obj_scroll_to_x
-C:\Users\w1785\AppData\Local\Temp\ccFdpUWY.s:2624   .text.lv_obj_scroll_to_x:00000024 $d
-C:\Users\w1785\AppData\Local\Temp\ccFdpUWY.s:2629   .text.lv_obj_scroll_to_y:00000000 $t
-C:\Users\w1785\AppData\Local\Temp\ccFdpUWY.s:2635   .text.lv_obj_scroll_to_y:00000000 lv_obj_scroll_to_y
-C:\Users\w1785\AppData\Local\Temp\ccFdpUWY.s:2683   .text.lv_obj_scroll_to_y:00000024 $d
-C:\Users\w1785\AppData\Local\Temp\ccFdpUWY.s:2688   .text.lv_obj_scroll_to:00000000 $t
-C:\Users\w1785\AppData\Local\Temp\ccFdpUWY.s:2694   .text.lv_obj_scroll_to:00000000 lv_obj_scroll_to
-C:\Users\w1785\AppData\Local\Temp\ccFdpUWY.s:2731   .text.scroll_area_into_view:00000000 $t
-C:\Users\w1785\AppData\Local\Temp\ccFdpUWY.s:2736   .text.scroll_area_into_view:00000000 scroll_area_into_view
-C:\Users\w1785\AppData\Local\Temp\ccFdpUWY.s:3401   .text.scroll_area_into_view:00000294 $d
-C:\Users\w1785\AppData\Local\Temp\ccFdpUWY.s:3407   .text.lv_obj_scroll_to_view:00000000 $t
-C:\Users\w1785\AppData\Local\Temp\ccFdpUWY.s:3413   .text.lv_obj_scroll_to_view:00000000 lv_obj_scroll_to_view
-C:\Users\w1785\AppData\Local\Temp\ccFdpUWY.s:3458   .text.lv_obj_scroll_to_view_recursive:00000000 $t
-C:\Users\w1785\AppData\Local\Temp\ccFdpUWY.s:3464   .text.lv_obj_scroll_to_view_recursive:00000000 lv_obj_scroll_to_view_recursive
-C:\Users\w1785\AppData\Local\Temp\ccFdpUWY.s:3542   .text.lv_obj_is_scrolling:00000000 $t
-C:\Users\w1785\AppData\Local\Temp\ccFdpUWY.s:3548   .text.lv_obj_is_scrolling:00000000 lv_obj_is_scrolling
-C:\Users\w1785\AppData\Local\Temp\ccFdpUWY.s:3631   .text.lv_obj_is_scrolling:00000044 $d
-C:\Users\w1785\AppData\Local\Temp\ccFdpUWY.s:3637   .text.lv_obj_stop_scroll_anim:00000000 $t
-C:\Users\w1785\AppData\Local\Temp\ccFdpUWY.s:3643   .text.lv_obj_stop_scroll_anim:00000000 lv_obj_stop_scroll_anim
-C:\Users\w1785\AppData\Local\Temp\ccFdpUWY.s:3673   .text.lv_obj_stop_scroll_anim:00000014 $d
-C:\Users\w1785\AppData\Local\Temp\ccFdpUWY.s:3679   .text.lv_obj_update_snap:00000000 $t
-C:\Users\w1785\AppData\Local\Temp\ccFdpUWY.s:3685   .text.lv_obj_update_snap:00000000 lv_obj_update_snap
-C:\Users\w1785\AppData\Local\Temp\ccFdpUWY.s:3765   .text.lv_obj_update_snap:0000004c $d
-C:\Users\w1785\AppData\Local\Temp\ccFdpUWY.s:3770   .text.lv_obj_get_scrollbar_area:00000000 $t
-C:\Users\w1785\AppData\Local\Temp\ccFdpUWY.s:3776   .text.lv_obj_get_scrollbar_area:00000000 lv_obj_get_scrollbar_area
-C:\Users\w1785\AppData\Local\Temp\ccFdpUWY.s:5094   .text.lv_obj_get_scrollbar_area:00000600 $d
-C:\Users\w1785\AppData\Local\Temp\ccFdpUWY.s:5099   .text.lv_obj_get_scrollbar_area:00000604 $t
-C:\Users\w1785\AppData\Local\Temp\ccFdpUWY.s:5286   .text.lv_obj_get_scrollbar_area:0000073c $d
-C:\Users\w1785\AppData\Local\Temp\ccFdpUWY.s:5293   .text.lv_obj_scrollbar_invalidate:00000000 $t
-C:\Users\w1785\AppData\Local\Temp\ccFdpUWY.s:5299   .text.lv_obj_scrollbar_invalidate:00000000 lv_obj_scrollbar_invalidate
-C:\Users\w1785\AppData\Local\Temp\ccFdpUWY.s:5383   .text.lv_obj_readjust_scroll:00000000 $t
-C:\Users\w1785\AppData\Local\Temp\ccFdpUWY.s:5389   .text.lv_obj_readjust_scroll:00000000 lv_obj_readjust_scroll
+C:\Users\w1785\AppData\Local\Temp\ccMDqzFP.s:2570   .text.lv_obj_scroll_to_x:00000000 $t
+C:\Users\w1785\AppData\Local\Temp\ccMDqzFP.s:2576   .text.lv_obj_scroll_to_x:00000000 lv_obj_scroll_to_x
+C:\Users\w1785\AppData\Local\Temp\ccMDqzFP.s:2624   .text.lv_obj_scroll_to_x:00000024 $d
+C:\Users\w1785\AppData\Local\Temp\ccMDqzFP.s:2629   .text.lv_obj_scroll_to_y:00000000 $t
+C:\Users\w1785\AppData\Local\Temp\ccMDqzFP.s:2635   .text.lv_obj_scroll_to_y:00000000 lv_obj_scroll_to_y
+C:\Users\w1785\AppData\Local\Temp\ccMDqzFP.s:2683   .text.lv_obj_scroll_to_y:00000024 $d
+C:\Users\w1785\AppData\Local\Temp\ccMDqzFP.s:2688   .text.lv_obj_scroll_to:00000000 $t
+C:\Users\w1785\AppData\Local\Temp\ccMDqzFP.s:2694   .text.lv_obj_scroll_to:00000000 lv_obj_scroll_to
+C:\Users\w1785\AppData\Local\Temp\ccMDqzFP.s:2731   .text.scroll_area_into_view:00000000 $t
+C:\Users\w1785\AppData\Local\Temp\ccMDqzFP.s:2736   .text.scroll_area_into_view:00000000 scroll_area_into_view
+C:\Users\w1785\AppData\Local\Temp\ccMDqzFP.s:3401   .text.scroll_area_into_view:00000294 $d
+C:\Users\w1785\AppData\Local\Temp\ccMDqzFP.s:3407   .text.lv_obj_scroll_to_view:00000000 $t
+C:\Users\w1785\AppData\Local\Temp\ccMDqzFP.s:3413   .text.lv_obj_scroll_to_view:00000000 lv_obj_scroll_to_view
+C:\Users\w1785\AppData\Local\Temp\ccMDqzFP.s:3458   .text.lv_obj_scroll_to_view_recursive:00000000 $t
+C:\Users\w1785\AppData\Local\Temp\ccMDqzFP.s:3464   .text.lv_obj_scroll_to_view_recursive:00000000 lv_obj_scroll_to_view_recursive
+C:\Users\w1785\AppData\Local\Temp\ccMDqzFP.s:3542   .text.lv_obj_is_scrolling:00000000 $t
+C:\Users\w1785\AppData\Local\Temp\ccMDqzFP.s:3548   .text.lv_obj_is_scrolling:00000000 lv_obj_is_scrolling
+C:\Users\w1785\AppData\Local\Temp\ccMDqzFP.s:3631   .text.lv_obj_is_scrolling:00000044 $d
+C:\Users\w1785\AppData\Local\Temp\ccMDqzFP.s:3637   .text.lv_obj_stop_scroll_anim:00000000 $t
+C:\Users\w1785\AppData\Local\Temp\ccMDqzFP.s:3643   .text.lv_obj_stop_scroll_anim:00000000 lv_obj_stop_scroll_anim
+C:\Users\w1785\AppData\Local\Temp\ccMDqzFP.s:3673   .text.lv_obj_stop_scroll_anim:00000014 $d
+C:\Users\w1785\AppData\Local\Temp\ccMDqzFP.s:3679   .text.lv_obj_update_snap:00000000 $t
+C:\Users\w1785\AppData\Local\Temp\ccMDqzFP.s:3685   .text.lv_obj_update_snap:00000000 lv_obj_update_snap
+C:\Users\w1785\AppData\Local\Temp\ccMDqzFP.s:3765   .text.lv_obj_update_snap:0000004c $d
+C:\Users\w1785\AppData\Local\Temp\ccMDqzFP.s:3770   .text.lv_obj_get_scrollbar_area:00000000 $t
+C:\Users\w1785\AppData\Local\Temp\ccMDqzFP.s:3776   .text.lv_obj_get_scrollbar_area:00000000 lv_obj_get_scrollbar_area
+C:\Users\w1785\AppData\Local\Temp\ccMDqzFP.s:5094   .text.lv_obj_get_scrollbar_area:00000600 $d
+C:\Users\w1785\AppData\Local\Temp\ccMDqzFP.s:5099   .text.lv_obj_get_scrollbar_area:00000604 $t
+C:\Users\w1785\AppData\Local\Temp\ccMDqzFP.s:5286   .text.lv_obj_get_scrollbar_area:0000073c $d
+C:\Users\w1785\AppData\Local\Temp\ccMDqzFP.s:5293   .text.lv_obj_scrollbar_invalidate:00000000 $t
+C:\Users\w1785\AppData\Local\Temp\ccMDqzFP.s:5299   .text.lv_obj_scrollbar_invalidate:00000000 lv_obj_scrollbar_invalidate
+C:\Users\w1785\AppData\Local\Temp\ccMDqzFP.s:5383   .text.lv_obj_readjust_scroll:00000000 $t
+C:\Users\w1785\AppData\Local\Temp\ccMDqzFP.s:5389   .text.lv_obj_readjust_scroll:00000000 lv_obj_readjust_scroll
 
 UNDEFINED SYMBOLS
 lv_obj_get_style_prop
@@ -10313,7 +10313,7 @@ lv_anim_set_duration
 lv_anim_set_values
 lv_anim_set_exec_cb
 lv_anim_set_path_cb
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccFdpUWY.s 			page 173
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccMDqzFP.s 			page 173
 
 
 lv_anim_start

@@ -43,6 +43,7 @@ Application/Src/app_main.c \
 Services/Src/display_service.c \
 DeviceDrivers/LCD/Src/st7789.c \
 HardwareDrivers/LCD/Src/lcd_hw.c \
+HardwareDrivers/I2C/Src/i2c_sw.c \
 Core/Src/stm32g4xx_it.c \
 Core/Src/stm32g4xx_hal_msp.c \
 Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_pwr_ex.c \
@@ -139,6 +140,7 @@ C_INCLUDES =  \
 -IServices/Inc \
 -IDeviceDrivers/LCD/Inc \
 -IHardwareDrivers/LCD/Inc \
+-IHardwareDrivers/I2C/Inc \
 -IMiddlewares/LVGL \
 -IMiddlewares/LVGL/lvgl \
 -IMiddlewares/LVGL/lvgl/src \

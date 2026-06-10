@@ -1,0 +1,1708 @@
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\cctz5LaX.s 			page 1
+
+
+   1              		.cpu cortex-m4
+   2              		.arch armv7e-m
+   3              		.fpu fpv4-sp-d16
+   4              		.eabi_attribute 27, 1
+   5              		.eabi_attribute 28, 1
+   6              		.eabi_attribute 20, 1
+   7              		.eabi_attribute 21, 1
+   8              		.eabi_attribute 23, 3
+   9              		.eabi_attribute 24, 1
+  10              		.eabi_attribute 25, 1
+  11              		.eabi_attribute 26, 1
+  12              		.eabi_attribute 30, 1
+  13              		.eabi_attribute 34, 1
+  14              		.eabi_attribute 18, 4
+  15              		.file	"i2c_sw.c"
+  16              		.text
+  17              	.Ltext0:
+  18              		.cfi_sections	.debug_frame
+  19              		.file 1 "HardwareDrivers/I2C/Src/i2c_sw.c"
+  20              		.section	.text.I2C_SW_Delay,"ax",%progbits
+  21              		.align	1
+  22              		.syntax unified
+  23              		.thumb
+  24              		.thumb_func
+  26              	I2C_SW_Delay:
+  27              	.LFB132:
+   1:HardwareDrivers/I2C/Src/i2c_sw.c **** #include "i2c_sw.h"
+   2:HardwareDrivers/I2C/Src/i2c_sw.c **** 
+   3:HardwareDrivers/I2C/Src/i2c_sw.c **** /**
+   4:HardwareDrivers/I2C/Src/i2c_sw.c ****  * @brief 给软件 I2C bit 级时序提供一个很短的延时。
+   5:HardwareDrivers/I2C/Src/i2c_sw.c ****  * @retval 无
+   6:HardwareDrivers/I2C/Src/i2c_sw.c ****  */
+   7:HardwareDrivers/I2C/Src/i2c_sw.c **** static void I2C_SW_Delay(void)
+   8:HardwareDrivers/I2C/Src/i2c_sw.c **** {
+  28              		.loc 1 8 1 view -0
+  29              		.cfi_startproc
+  30              		@ args = 0, pretend = 0, frame = 8
+  31              		@ frame_needed = 0, uses_anonymous_args = 0
+  32              		@ link register save eliminated.
+  33 0000 82B0     		sub	sp, sp, #8
+  34              	.LCFI0:
+  35              		.cfi_def_cfa_offset 8
+   9:HardwareDrivers/I2C/Src/i2c_sw.c ****   /* 使用 volatile 变量，避免编译器把空循环优化掉。 */
+  10:HardwareDrivers/I2C/Src/i2c_sw.c ****   volatile uint32_t i;
+  36              		.loc 1 10 3 view .LVU1
+  11:HardwareDrivers/I2C/Src/i2c_sw.c **** 
+  12:HardwareDrivers/I2C/Src/i2c_sw.c ****   /* 第一版使用简单 for 循环，后续可以按示波器结果微调次数。 */
+  13:HardwareDrivers/I2C/Src/i2c_sw.c ****   for (i = 0U; i < 50U; i++)
+  37              		.loc 1 13 3 view .LVU2
+  38              		.loc 1 13 10 is_stmt 0 view .LVU3
+  39 0002 0023     		movs	r3, #0
+  40 0004 0193     		str	r3, [sp, #4]
+  41              		.loc 1 13 3 view .LVU4
+  42 0006 03E0     		b	.L2
+  43              	.L3:
+  14:HardwareDrivers/I2C/Src/i2c_sw.c ****   {
+  15:HardwareDrivers/I2C/Src/i2c_sw.c ****     /* 执行一条 CPU 空操作指令，用来消耗少量时间。 */
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\cctz5LaX.s 			page 2
+
+
+  16:HardwareDrivers/I2C/Src/i2c_sw.c ****     __NOP();
+  44              		.loc 1 16 5 is_stmt 1 view .LVU5
+  45              		.syntax unified
+  46              	@ 16 "HardwareDrivers/I2C/Src/i2c_sw.c" 1
+  47 0008 00BF     		nop
+  48              	@ 0 "" 2
+  13:HardwareDrivers/I2C/Src/i2c_sw.c ****   {
+  49              		.loc 1 13 26 discriminator 3 view .LVU6
+  50              		.thumb
+  51              		.syntax unified
+  52 000a 019B     		ldr	r3, [sp, #4]
+  53 000c 0133     		adds	r3, r3, #1
+  54 000e 0193     		str	r3, [sp, #4]
+  55              	.L2:
+  13:HardwareDrivers/I2C/Src/i2c_sw.c ****   {
+  56              		.loc 1 13 18 discriminator 1 view .LVU7
+  57 0010 019B     		ldr	r3, [sp, #4]
+  58 0012 312B     		cmp	r3, #49
+  59 0014 F8D9     		bls	.L3
+  17:HardwareDrivers/I2C/Src/i2c_sw.c ****   }
+  18:HardwareDrivers/I2C/Src/i2c_sw.c **** }
+  60              		.loc 1 18 1 is_stmt 0 view .LVU8
+  61 0016 02B0     		add	sp, sp, #8
+  62              	.LCFI1:
+  63              		.cfi_def_cfa_offset 0
+  64              		@ sp needed
+  65 0018 7047     		bx	lr
+  66              		.cfi_endproc
+  67              	.LFE132:
+  69              		.section	.text.I2C_SW_SCL_High,"ax",%progbits
+  70              		.align	1
+  71              		.global	I2C_SW_SCL_High
+  72              		.syntax unified
+  73              		.thumb
+  74              		.thumb_func
+  76              	I2C_SW_SCL_High:
+  77              	.LFB134:
+  19:HardwareDrivers/I2C/Src/i2c_sw.c **** 
+  20:HardwareDrivers/I2C/Src/i2c_sw.c **** /**
+  21:HardwareDrivers/I2C/Src/i2c_sw.c ****  * @brief 初始化软件 I2C 使用的 PB6/PB7 GPIO，并默认释放总线。
+  22:HardwareDrivers/I2C/Src/i2c_sw.c ****  * @retval 无
+  23:HardwareDrivers/I2C/Src/i2c_sw.c ****  */
+  24:HardwareDrivers/I2C/Src/i2c_sw.c **** void I2C_SW_GPIO_Init(void)
+  25:HardwareDrivers/I2C/Src/i2c_sw.c **** {
+  26:HardwareDrivers/I2C/Src/i2c_sw.c ****   /* 定义并清零 HAL GPIO 初始化结构体。 */
+  27:HardwareDrivers/I2C/Src/i2c_sw.c ****   GPIO_InitTypeDef GPIO_InitStruct = {0};
+  28:HardwareDrivers/I2C/Src/i2c_sw.c **** 
+  29:HardwareDrivers/I2C/Src/i2c_sw.c ****   /* 使用 PB6/PB7 之前，先使能 GPIOB 外设时钟。 */
+  30:HardwareDrivers/I2C/Src/i2c_sw.c ****   __HAL_RCC_GPIOB_CLK_ENABLE();
+  31:HardwareDrivers/I2C/Src/i2c_sw.c **** 
+  32:HardwareDrivers/I2C/Src/i2c_sw.c ****   /* 在切换为输出模式之前先把输出数据寄存器置高，减少上电时误拉低总�
+  33:HardwareDrivers/I2C/Src/i2c_sw.c ****   HAL_GPIO_WritePin(I2C_SW_SCL_PORT, I2C_SW_SCL_PIN, GPIO_PIN_SET);
+  34:HardwareDrivers/I2C/Src/i2c_sw.c ****   HAL_GPIO_WritePin(I2C_SW_SDA_PORT, I2C_SW_SDA_PIN, GPIO_PIN_SET);
+  35:HardwareDrivers/I2C/Src/i2c_sw.c **** 
+  36:HardwareDrivers/I2C/Src/i2c_sw.c ****   /* 选择 PB6 和 PB7，分别作为软件 I2C 的 SCL 和 SDA。 */
+  37:HardwareDrivers/I2C/Src/i2c_sw.c ****   GPIO_InitStruct.Pin = I2C_SW_SCL_PIN | I2C_SW_SDA_PIN;
+  38:HardwareDrivers/I2C/Src/i2c_sw.c **** 
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\cctz5LaX.s 			page 3
+
+
+  39:HardwareDrivers/I2C/Src/i2c_sw.c ****   /* I2C 总线是开漏结构，输出高表示释放总线，输出低才是真正拉低总线。
+  40:HardwareDrivers/I2C/Src/i2c_sw.c ****   GPIO_InitStruct.Mode = GPIO_MODE_OUTPUT_OD;
+  41:HardwareDrivers/I2C/Src/i2c_sw.c **** 
+  42:HardwareDrivers/I2C/Src/i2c_sw.c ****   /* 第一版保留芯片内部上拉；即使模块外部带上拉，内部上拉也不会影响�
+  43:HardwareDrivers/I2C/Src/i2c_sw.c ****   GPIO_InitStruct.Pull = GPIO_PULLUP;
+  44:HardwareDrivers/I2C/Src/i2c_sw.c **** 
+  45:HardwareDrivers/I2C/Src/i2c_sw.c ****   /* 软件 I2C 时序引脚使用高速 GPIO。 */
+  46:HardwareDrivers/I2C/Src/i2c_sw.c ****   GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_HIGH;
+  47:HardwareDrivers/I2C/Src/i2c_sw.c **** 
+  48:HardwareDrivers/I2C/Src/i2c_sw.c ****   /* 将上面的配置写入 GPIOB。 */
+  49:HardwareDrivers/I2C/Src/i2c_sw.c ****   HAL_GPIO_Init(GPIOB, &GPIO_InitStruct);
+  50:HardwareDrivers/I2C/Src/i2c_sw.c **** 
+  51:HardwareDrivers/I2C/Src/i2c_sw.c ****   /* 初始化完成后释放 SCL，总线由上拉电阻拉为高电平。 */
+  52:HardwareDrivers/I2C/Src/i2c_sw.c ****   I2C_SW_SCL_High();
+  53:HardwareDrivers/I2C/Src/i2c_sw.c **** 
+  54:HardwareDrivers/I2C/Src/i2c_sw.c ****   /* 初始化完成后释放 SDA，总线由上拉电阻拉为高电平。 */
+  55:HardwareDrivers/I2C/Src/i2c_sw.c ****   I2C_SW_SDA_High();
+  56:HardwareDrivers/I2C/Src/i2c_sw.c **** }
+  57:HardwareDrivers/I2C/Src/i2c_sw.c **** 
+  58:HardwareDrivers/I2C/Src/i2c_sw.c **** /**
+  59:HardwareDrivers/I2C/Src/i2c_sw.c ****  * @brief 释放 SCL，总线被上拉为高电平。
+  60:HardwareDrivers/I2C/Src/i2c_sw.c ****  * @retval 无
+  61:HardwareDrivers/I2C/Src/i2c_sw.c ****  */
+  62:HardwareDrivers/I2C/Src/i2c_sw.c **** void I2C_SW_SCL_High(void)
+  63:HardwareDrivers/I2C/Src/i2c_sw.c **** {
+  78              		.loc 1 63 1 is_stmt 1 view -0
+  79              		.cfi_startproc
+  80              		@ args = 0, pretend = 0, frame = 0
+  81              		@ frame_needed = 0, uses_anonymous_args = 0
+  82 0000 08B5     		push	{r3, lr}
+  83              	.LCFI2:
+  84              		.cfi_def_cfa_offset 8
+  85              		.cfi_offset 3, -8
+  86              		.cfi_offset 14, -4
+  64:HardwareDrivers/I2C/Src/i2c_sw.c ****   /* 开漏输出写 1 表示不主动拉低 SCL。 */
+  65:HardwareDrivers/I2C/Src/i2c_sw.c ****   HAL_GPIO_WritePin(I2C_SW_SCL_PORT, I2C_SW_SCL_PIN, GPIO_PIN_SET);
+  87              		.loc 1 65 3 view .LVU10
+  88 0002 0122     		movs	r2, #1
+  89 0004 4021     		movs	r1, #64
+  90 0006 0248     		ldr	r0, .L7
+  91 0008 FFF7FEFF 		bl	HAL_GPIO_WritePin
+  92              	.LVL0:
+  66:HardwareDrivers/I2C/Src/i2c_sw.c **** }
+  93              		.loc 1 66 1 is_stmt 0 view .LVU11
+  94 000c 08BD     		pop	{r3, pc}
+  95              	.L8:
+  96 000e 00BF     		.align	2
+  97              	.L7:
+  98 0010 00040048 		.word	1207960576
+  99              		.cfi_endproc
+ 100              	.LFE134:
+ 102              		.section	.text.I2C_SW_SCL_Low,"ax",%progbits
+ 103              		.align	1
+ 104              		.global	I2C_SW_SCL_Low
+ 105              		.syntax unified
+ 106              		.thumb
+ 107              		.thumb_func
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\cctz5LaX.s 			page 4
+
+
+ 109              	I2C_SW_SCL_Low:
+ 110              	.LFB135:
+  67:HardwareDrivers/I2C/Src/i2c_sw.c **** 
+  68:HardwareDrivers/I2C/Src/i2c_sw.c **** /**
+  69:HardwareDrivers/I2C/Src/i2c_sw.c ****  * @brief 拉低 SCL。
+  70:HardwareDrivers/I2C/Src/i2c_sw.c ****  * @retval 无
+  71:HardwareDrivers/I2C/Src/i2c_sw.c ****  */
+  72:HardwareDrivers/I2C/Src/i2c_sw.c **** void I2C_SW_SCL_Low(void)
+  73:HardwareDrivers/I2C/Src/i2c_sw.c **** {
+ 111              		.loc 1 73 1 is_stmt 1 view -0
+ 112              		.cfi_startproc
+ 113              		@ args = 0, pretend = 0, frame = 0
+ 114              		@ frame_needed = 0, uses_anonymous_args = 0
+ 115 0000 08B5     		push	{r3, lr}
+ 116              	.LCFI3:
+ 117              		.cfi_def_cfa_offset 8
+ 118              		.cfi_offset 3, -8
+ 119              		.cfi_offset 14, -4
+  74:HardwareDrivers/I2C/Src/i2c_sw.c ****   /* 开漏输出写 0 表示主动把 SCL 拉到低电平。 */
+  75:HardwareDrivers/I2C/Src/i2c_sw.c ****   HAL_GPIO_WritePin(I2C_SW_SCL_PORT, I2C_SW_SCL_PIN, GPIO_PIN_RESET);
+ 120              		.loc 1 75 3 view .LVU13
+ 121 0002 0022     		movs	r2, #0
+ 122 0004 4021     		movs	r1, #64
+ 123 0006 0248     		ldr	r0, .L11
+ 124 0008 FFF7FEFF 		bl	HAL_GPIO_WritePin
+ 125              	.LVL1:
+  76:HardwareDrivers/I2C/Src/i2c_sw.c **** }
+ 126              		.loc 1 76 1 is_stmt 0 view .LVU14
+ 127 000c 08BD     		pop	{r3, pc}
+ 128              	.L12:
+ 129 000e 00BF     		.align	2
+ 130              	.L11:
+ 131 0010 00040048 		.word	1207960576
+ 132              		.cfi_endproc
+ 133              	.LFE135:
+ 135              		.section	.text.I2C_SW_SDA_High,"ax",%progbits
+ 136              		.align	1
+ 137              		.global	I2C_SW_SDA_High
+ 138              		.syntax unified
+ 139              		.thumb
+ 140              		.thumb_func
+ 142              	I2C_SW_SDA_High:
+ 143              	.LFB136:
+  77:HardwareDrivers/I2C/Src/i2c_sw.c **** 
+  78:HardwareDrivers/I2C/Src/i2c_sw.c **** /**
+  79:HardwareDrivers/I2C/Src/i2c_sw.c ****  * @brief 释放 SDA，总线被上拉为高电平。
+  80:HardwareDrivers/I2C/Src/i2c_sw.c ****  * @retval 无
+  81:HardwareDrivers/I2C/Src/i2c_sw.c ****  */
+  82:HardwareDrivers/I2C/Src/i2c_sw.c **** void I2C_SW_SDA_High(void)
+  83:HardwareDrivers/I2C/Src/i2c_sw.c **** {
+ 144              		.loc 1 83 1 is_stmt 1 view -0
+ 145              		.cfi_startproc
+ 146              		@ args = 0, pretend = 0, frame = 0
+ 147              		@ frame_needed = 0, uses_anonymous_args = 0
+ 148 0000 08B5     		push	{r3, lr}
+ 149              	.LCFI4:
+ 150              		.cfi_def_cfa_offset 8
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\cctz5LaX.s 			page 5
+
+
+ 151              		.cfi_offset 3, -8
+ 152              		.cfi_offset 14, -4
+  84:HardwareDrivers/I2C/Src/i2c_sw.c ****   /* 开漏输出写 1 表示不主动拉低 SDA。 */
+  85:HardwareDrivers/I2C/Src/i2c_sw.c ****   HAL_GPIO_WritePin(I2C_SW_SDA_PORT, I2C_SW_SDA_PIN, GPIO_PIN_SET);
+ 153              		.loc 1 85 3 view .LVU16
+ 154 0002 0122     		movs	r2, #1
+ 155 0004 8021     		movs	r1, #128
+ 156 0006 0248     		ldr	r0, .L15
+ 157 0008 FFF7FEFF 		bl	HAL_GPIO_WritePin
+ 158              	.LVL2:
+  86:HardwareDrivers/I2C/Src/i2c_sw.c **** }
+ 159              		.loc 1 86 1 is_stmt 0 view .LVU17
+ 160 000c 08BD     		pop	{r3, pc}
+ 161              	.L16:
+ 162 000e 00BF     		.align	2
+ 163              	.L15:
+ 164 0010 00040048 		.word	1207960576
+ 165              		.cfi_endproc
+ 166              	.LFE136:
+ 168              		.section	.text.I2C_SW_GPIO_Init,"ax",%progbits
+ 169              		.align	1
+ 170              		.global	I2C_SW_GPIO_Init
+ 171              		.syntax unified
+ 172              		.thumb
+ 173              		.thumb_func
+ 175              	I2C_SW_GPIO_Init:
+ 176              	.LFB133:
+  25:HardwareDrivers/I2C/Src/i2c_sw.c ****   /* 定义并清零 HAL GPIO 初始化结构体。 */
+ 177              		.loc 1 25 1 is_stmt 1 view -0
+ 178              		.cfi_startproc
+ 179              		@ args = 0, pretend = 0, frame = 24
+ 180              		@ frame_needed = 0, uses_anonymous_args = 0
+ 181 0000 30B5     		push	{r4, r5, lr}
+ 182              	.LCFI5:
+ 183              		.cfi_def_cfa_offset 12
+ 184              		.cfi_offset 4, -12
+ 185              		.cfi_offset 5, -8
+ 186              		.cfi_offset 14, -4
+ 187 0002 87B0     		sub	sp, sp, #28
+ 188              	.LCFI6:
+ 189              		.cfi_def_cfa_offset 40
+  27:HardwareDrivers/I2C/Src/i2c_sw.c **** 
+ 190              		.loc 1 27 3 view .LVU19
+  27:HardwareDrivers/I2C/Src/i2c_sw.c **** 
+ 191              		.loc 1 27 20 is_stmt 0 view .LVU20
+ 192 0004 01AC     		add	r4, sp, #4
+ 193 0006 0023     		movs	r3, #0
+ 194 0008 0193     		str	r3, [sp, #4]
+ 195 000a 0293     		str	r3, [sp, #8]
+ 196 000c 0393     		str	r3, [sp, #12]
+ 197 000e 0493     		str	r3, [sp, #16]
+ 198 0010 0593     		str	r3, [sp, #20]
+  30:HardwareDrivers/I2C/Src/i2c_sw.c **** 
+ 199              		.loc 1 30 3 is_stmt 1 view .LVU21
+ 200              	.LBB2:
+  30:HardwareDrivers/I2C/Src/i2c_sw.c **** 
+ 201              		.loc 1 30 3 view .LVU22
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\cctz5LaX.s 			page 6
+
+
+  30:HardwareDrivers/I2C/Src/i2c_sw.c **** 
+ 202              		.loc 1 30 3 view .LVU23
+ 203 0012 03F18043 		add	r3, r3, #1073741824
+ 204 0016 03F50433 		add	r3, r3, #135168
+ 205 001a DA6C     		ldr	r2, [r3, #76]
+ 206 001c 42F00202 		orr	r2, r2, #2
+ 207 0020 DA64     		str	r2, [r3, #76]
+  30:HardwareDrivers/I2C/Src/i2c_sw.c **** 
+ 208              		.loc 1 30 3 view .LVU24
+ 209 0022 DB6C     		ldr	r3, [r3, #76]
+ 210 0024 03F00203 		and	r3, r3, #2
+ 211 0028 0093     		str	r3, [sp]
+  30:HardwareDrivers/I2C/Src/i2c_sw.c **** 
+ 212              		.loc 1 30 3 view .LVU25
+ 213 002a 009B     		ldr	r3, [sp]
+ 214              	.LBE2:
+  30:HardwareDrivers/I2C/Src/i2c_sw.c **** 
+ 215              		.loc 1 30 3 view .LVU26
+  33:HardwareDrivers/I2C/Src/i2c_sw.c ****   HAL_GPIO_WritePin(I2C_SW_SDA_PORT, I2C_SW_SDA_PIN, GPIO_PIN_SET);
+ 216              		.loc 1 33 3 view .LVU27
+ 217 002c 0E4D     		ldr	r5, .L19
+ 218 002e 0122     		movs	r2, #1
+ 219 0030 4021     		movs	r1, #64
+ 220 0032 2846     		mov	r0, r5
+ 221 0034 FFF7FEFF 		bl	HAL_GPIO_WritePin
+ 222              	.LVL3:
+  34:HardwareDrivers/I2C/Src/i2c_sw.c **** 
+ 223              		.loc 1 34 3 view .LVU28
+ 224 0038 0122     		movs	r2, #1
+ 225 003a 8021     		movs	r1, #128
+ 226 003c 2846     		mov	r0, r5
+ 227 003e FFF7FEFF 		bl	HAL_GPIO_WritePin
+ 228              	.LVL4:
+  37:HardwareDrivers/I2C/Src/i2c_sw.c **** 
+ 229              		.loc 1 37 3 view .LVU29
+  37:HardwareDrivers/I2C/Src/i2c_sw.c **** 
+ 230              		.loc 1 37 23 is_stmt 0 view .LVU30
+ 231 0042 C023     		movs	r3, #192
+ 232 0044 0193     		str	r3, [sp, #4]
+  40:HardwareDrivers/I2C/Src/i2c_sw.c **** 
+ 233              		.loc 1 40 3 is_stmt 1 view .LVU31
+  40:HardwareDrivers/I2C/Src/i2c_sw.c **** 
+ 234              		.loc 1 40 24 is_stmt 0 view .LVU32
+ 235 0046 1123     		movs	r3, #17
+ 236 0048 0293     		str	r3, [sp, #8]
+  43:HardwareDrivers/I2C/Src/i2c_sw.c **** 
+ 237              		.loc 1 43 3 is_stmt 1 view .LVU33
+  43:HardwareDrivers/I2C/Src/i2c_sw.c **** 
+ 238              		.loc 1 43 24 is_stmt 0 view .LVU34
+ 239 004a 0123     		movs	r3, #1
+ 240 004c 0393     		str	r3, [sp, #12]
+  46:HardwareDrivers/I2C/Src/i2c_sw.c **** 
+ 241              		.loc 1 46 3 is_stmt 1 view .LVU35
+  46:HardwareDrivers/I2C/Src/i2c_sw.c **** 
+ 242              		.loc 1 46 25 is_stmt 0 view .LVU36
+ 243 004e 0223     		movs	r3, #2
+ 244 0050 0493     		str	r3, [sp, #16]
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\cctz5LaX.s 			page 7
+
+
+  49:HardwareDrivers/I2C/Src/i2c_sw.c **** 
+ 245              		.loc 1 49 3 is_stmt 1 view .LVU37
+ 246 0052 2146     		mov	r1, r4
+ 247 0054 2846     		mov	r0, r5
+ 248 0056 FFF7FEFF 		bl	HAL_GPIO_Init
+ 249              	.LVL5:
+  52:HardwareDrivers/I2C/Src/i2c_sw.c **** 
+ 250              		.loc 1 52 3 view .LVU38
+ 251 005a FFF7FEFF 		bl	I2C_SW_SCL_High
+ 252              	.LVL6:
+  55:HardwareDrivers/I2C/Src/i2c_sw.c **** }
+ 253              		.loc 1 55 3 view .LVU39
+ 254 005e FFF7FEFF 		bl	I2C_SW_SDA_High
+ 255              	.LVL7:
+  56:HardwareDrivers/I2C/Src/i2c_sw.c **** 
+ 256              		.loc 1 56 1 is_stmt 0 view .LVU40
+ 257 0062 07B0     		add	sp, sp, #28
+ 258              	.LCFI7:
+ 259              		.cfi_def_cfa_offset 12
+ 260              		@ sp needed
+ 261 0064 30BD     		pop	{r4, r5, pc}
+ 262              	.L20:
+ 263 0066 00BF     		.align	2
+ 264              	.L19:
+ 265 0068 00040048 		.word	1207960576
+ 266              		.cfi_endproc
+ 267              	.LFE133:
+ 269              		.section	.text.I2C_SW_SDA_Low,"ax",%progbits
+ 270              		.align	1
+ 271              		.global	I2C_SW_SDA_Low
+ 272              		.syntax unified
+ 273              		.thumb
+ 274              		.thumb_func
+ 276              	I2C_SW_SDA_Low:
+ 277              	.LFB137:
+  87:HardwareDrivers/I2C/Src/i2c_sw.c **** 
+  88:HardwareDrivers/I2C/Src/i2c_sw.c **** /**
+  89:HardwareDrivers/I2C/Src/i2c_sw.c ****  * @brief 拉低 SDA。
+  90:HardwareDrivers/I2C/Src/i2c_sw.c ****  * @retval 无
+  91:HardwareDrivers/I2C/Src/i2c_sw.c ****  */
+  92:HardwareDrivers/I2C/Src/i2c_sw.c **** void I2C_SW_SDA_Low(void)
+  93:HardwareDrivers/I2C/Src/i2c_sw.c **** {
+ 278              		.loc 1 93 1 is_stmt 1 view -0
+ 279              		.cfi_startproc
+ 280              		@ args = 0, pretend = 0, frame = 0
+ 281              		@ frame_needed = 0, uses_anonymous_args = 0
+ 282 0000 08B5     		push	{r3, lr}
+ 283              	.LCFI8:
+ 284              		.cfi_def_cfa_offset 8
+ 285              		.cfi_offset 3, -8
+ 286              		.cfi_offset 14, -4
+  94:HardwareDrivers/I2C/Src/i2c_sw.c ****   /* 开漏输出写 0 表示主动把 SDA 拉到低电平。 */
+  95:HardwareDrivers/I2C/Src/i2c_sw.c ****   HAL_GPIO_WritePin(I2C_SW_SDA_PORT, I2C_SW_SDA_PIN, GPIO_PIN_RESET);
+ 287              		.loc 1 95 3 view .LVU42
+ 288 0002 0022     		movs	r2, #0
+ 289 0004 8021     		movs	r1, #128
+ 290 0006 0248     		ldr	r0, .L23
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\cctz5LaX.s 			page 8
+
+
+ 291 0008 FFF7FEFF 		bl	HAL_GPIO_WritePin
+ 292              	.LVL8:
+  96:HardwareDrivers/I2C/Src/i2c_sw.c **** }
+ 293              		.loc 1 96 1 is_stmt 0 view .LVU43
+ 294 000c 08BD     		pop	{r3, pc}
+ 295              	.L24:
+ 296 000e 00BF     		.align	2
+ 297              	.L23:
+ 298 0010 00040048 		.word	1207960576
+ 299              		.cfi_endproc
+ 300              	.LFE137:
+ 302              		.section	.text.I2C_SW_SDA_Read,"ax",%progbits
+ 303              		.align	1
+ 304              		.global	I2C_SW_SDA_Read
+ 305              		.syntax unified
+ 306              		.thumb
+ 307              		.thumb_func
+ 309              	I2C_SW_SDA_Read:
+ 310              	.LFB138:
+  97:HardwareDrivers/I2C/Src/i2c_sw.c **** 
+  98:HardwareDrivers/I2C/Src/i2c_sw.c **** /**
+  99:HardwareDrivers/I2C/Src/i2c_sw.c ****  * @brief 读取 SDA 当前实际电平。
+ 100:HardwareDrivers/I2C/Src/i2c_sw.c ****  * @retval 0 表示 SDA 为低电平，1 表示 SDA 为高电平。
+ 101:HardwareDrivers/I2C/Src/i2c_sw.c ****  */
+ 102:HardwareDrivers/I2C/Src/i2c_sw.c **** uint8_t I2C_SW_SDA_Read(void)
+ 103:HardwareDrivers/I2C/Src/i2c_sw.c **** {
+ 311              		.loc 1 103 1 is_stmt 1 view -0
+ 312              		.cfi_startproc
+ 313              		@ args = 0, pretend = 0, frame = 0
+ 314              		@ frame_needed = 0, uses_anonymous_args = 0
+ 315 0000 08B5     		push	{r3, lr}
+ 316              	.LCFI9:
+ 317              		.cfi_def_cfa_offset 8
+ 318              		.cfi_offset 3, -8
+ 319              		.cfi_offset 14, -4
+ 104:HardwareDrivers/I2C/Src/i2c_sw.c ****   /* 读取 GPIO 输入数据寄存器中的 SDA 实际电平。 */
+ 105:HardwareDrivers/I2C/Src/i2c_sw.c ****   if (HAL_GPIO_ReadPin(I2C_SW_SDA_PORT, I2C_SW_SDA_PIN) == GPIO_PIN_SET)
+ 320              		.loc 1 105 3 view .LVU45
+ 321              		.loc 1 105 7 is_stmt 0 view .LVU46
+ 322 0002 8021     		movs	r1, #128
+ 323 0004 0348     		ldr	r0, .L28
+ 324 0006 FFF7FEFF 		bl	HAL_GPIO_ReadPin
+ 325              	.LVL9:
+ 326              		.loc 1 105 6 discriminator 1 view .LVU47
+ 327 000a 0128     		cmp	r0, #1
+ 328 000c 00D0     		beq	.L26
+ 106:HardwareDrivers/I2C/Src/i2c_sw.c ****   {
+ 107:HardwareDrivers/I2C/Src/i2c_sw.c ****     /* HAL 读到 GPIO_PIN_SET，统一返回数字 1。 */
+ 108:HardwareDrivers/I2C/Src/i2c_sw.c ****     return 1U;
+ 109:HardwareDrivers/I2C/Src/i2c_sw.c ****   }
+ 110:HardwareDrivers/I2C/Src/i2c_sw.c **** 
+ 111:HardwareDrivers/I2C/Src/i2c_sw.c ****   /* HAL 没有读到 GPIO_PIN_SET，统一返回数字 0。 */
+ 112:HardwareDrivers/I2C/Src/i2c_sw.c ****   return 0U;
+ 329              		.loc 1 112 10 view .LVU48
+ 330 000e 0020     		movs	r0, #0
+ 331              	.L26:
+ 113:HardwareDrivers/I2C/Src/i2c_sw.c **** }
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\cctz5LaX.s 			page 9
+
+
+ 332              		.loc 1 113 1 view .LVU49
+ 333 0010 08BD     		pop	{r3, pc}
+ 334              	.L29:
+ 335 0012 00BF     		.align	2
+ 336              	.L28:
+ 337 0014 00040048 		.word	1207960576
+ 338              		.cfi_endproc
+ 339              	.LFE138:
+ 341              		.section	.text.I2C_SW_Start,"ax",%progbits
+ 342              		.align	1
+ 343              		.global	I2C_SW_Start
+ 344              		.syntax unified
+ 345              		.thumb
+ 346              		.thumb_func
+ 348              	I2C_SW_Start:
+ 349              	.LFB139:
+ 114:HardwareDrivers/I2C/Src/i2c_sw.c **** 
+ 115:HardwareDrivers/I2C/Src/i2c_sw.c **** /**
+ 116:HardwareDrivers/I2C/Src/i2c_sw.c ****  * @brief 产生软件 I2C START 起始信号。
+ 117:HardwareDrivers/I2C/Src/i2c_sw.c ****  * @retval 无
+ 118:HardwareDrivers/I2C/Src/i2c_sw.c ****  */
+ 119:HardwareDrivers/I2C/Src/i2c_sw.c **** void I2C_SW_Start(void)
+ 120:HardwareDrivers/I2C/Src/i2c_sw.c **** {
+ 350              		.loc 1 120 1 is_stmt 1 view -0
+ 351              		.cfi_startproc
+ 352              		@ args = 0, pretend = 0, frame = 0
+ 353              		@ frame_needed = 0, uses_anonymous_args = 0
+ 354 0000 08B5     		push	{r3, lr}
+ 355              	.LCFI10:
+ 356              		.cfi_def_cfa_offset 8
+ 357              		.cfi_offset 3, -8
+ 358              		.cfi_offset 14, -4
+ 121:HardwareDrivers/I2C/Src/i2c_sw.c ****   /* 先释放 SDA，保证起始信号之前 SDA 处于高电平。 */
+ 122:HardwareDrivers/I2C/Src/i2c_sw.c ****   I2C_SW_SDA_High();
+ 359              		.loc 1 122 3 view .LVU51
+ 360 0002 FFF7FEFF 		bl	I2C_SW_SDA_High
+ 361              	.LVL10:
+ 123:HardwareDrivers/I2C/Src/i2c_sw.c **** 
+ 124:HardwareDrivers/I2C/Src/i2c_sw.c ****   /* 再释放 SCL，让 SCL 处于高电平。 */
+ 125:HardwareDrivers/I2C/Src/i2c_sw.c ****   I2C_SW_SCL_High();
+ 362              		.loc 1 125 3 view .LVU52
+ 363 0006 FFF7FEFF 		bl	I2C_SW_SCL_High
+ 364              	.LVL11:
+ 126:HardwareDrivers/I2C/Src/i2c_sw.c **** 
+ 127:HardwareDrivers/I2C/Src/i2c_sw.c ****   /* 保持总线空闲状态一小段时间。 */
+ 128:HardwareDrivers/I2C/Src/i2c_sw.c ****   I2C_SW_Delay();
+ 365              		.loc 1 128 3 view .LVU53
+ 366 000a FFF7FEFF 		bl	I2C_SW_Delay
+ 367              	.LVL12:
+ 129:HardwareDrivers/I2C/Src/i2c_sw.c **** 
+ 130:HardwareDrivers/I2C/Src/i2c_sw.c ****   /* 当 SCL 为高时，SDA 从高变低，形成 START。 */
+ 131:HardwareDrivers/I2C/Src/i2c_sw.c ****   I2C_SW_SDA_Low();
+ 368              		.loc 1 131 3 view .LVU54
+ 369 000e FFF7FEFF 		bl	I2C_SW_SDA_Low
+ 370              	.LVL13:
+ 132:HardwareDrivers/I2C/Src/i2c_sw.c **** 
+ 133:HardwareDrivers/I2C/Src/i2c_sw.c ****   /* 保持 START 条件一小段时间。 */
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\cctz5LaX.s 			page 10
+
+
+ 134:HardwareDrivers/I2C/Src/i2c_sw.c ****   I2C_SW_Delay();
+ 371              		.loc 1 134 3 view .LVU55
+ 372 0012 FFF7FEFF 		bl	I2C_SW_Delay
+ 373              	.LVL14:
+ 135:HardwareDrivers/I2C/Src/i2c_sw.c **** 
+ 136:HardwareDrivers/I2C/Src/i2c_sw.c ****   /* 拉低 SCL，准备后续发送或读取数据位。 */
+ 137:HardwareDrivers/I2C/Src/i2c_sw.c ****   I2C_SW_SCL_Low();
+ 374              		.loc 1 137 3 view .LVU56
+ 375 0016 FFF7FEFF 		bl	I2C_SW_SCL_Low
+ 376              	.LVL15:
+ 138:HardwareDrivers/I2C/Src/i2c_sw.c **** 
+ 139:HardwareDrivers/I2C/Src/i2c_sw.c ****   /* 保持 SCL 低电平一小段时间。 */
+ 140:HardwareDrivers/I2C/Src/i2c_sw.c ****   I2C_SW_Delay();
+ 377              		.loc 1 140 3 view .LVU57
+ 378 001a FFF7FEFF 		bl	I2C_SW_Delay
+ 379              	.LVL16:
+ 141:HardwareDrivers/I2C/Src/i2c_sw.c **** }
+ 380              		.loc 1 141 1 is_stmt 0 view .LVU58
+ 381 001e 08BD     		pop	{r3, pc}
+ 382              		.cfi_endproc
+ 383              	.LFE139:
+ 385              		.section	.text.I2C_SW_Stop,"ax",%progbits
+ 386              		.align	1
+ 387              		.global	I2C_SW_Stop
+ 388              		.syntax unified
+ 389              		.thumb
+ 390              		.thumb_func
+ 392              	I2C_SW_Stop:
+ 393              	.LFB140:
+ 142:HardwareDrivers/I2C/Src/i2c_sw.c **** 
+ 143:HardwareDrivers/I2C/Src/i2c_sw.c **** /**
+ 144:HardwareDrivers/I2C/Src/i2c_sw.c ****  * @brief 产生软件 I2C STOP 停止信号。
+ 145:HardwareDrivers/I2C/Src/i2c_sw.c ****  * @retval 无
+ 146:HardwareDrivers/I2C/Src/i2c_sw.c ****  */
+ 147:HardwareDrivers/I2C/Src/i2c_sw.c **** void I2C_SW_Stop(void)
+ 148:HardwareDrivers/I2C/Src/i2c_sw.c **** {
+ 394              		.loc 1 148 1 is_stmt 1 view -0
+ 395              		.cfi_startproc
+ 396              		@ args = 0, pretend = 0, frame = 0
+ 397              		@ frame_needed = 0, uses_anonymous_args = 0
+ 398 0000 08B5     		push	{r3, lr}
+ 399              	.LCFI11:
+ 400              		.cfi_def_cfa_offset 8
+ 401              		.cfi_offset 3, -8
+ 402              		.cfi_offset 14, -4
+ 149:HardwareDrivers/I2C/Src/i2c_sw.c ****   /* 先拉低 SDA，为后面的低到高变化做准备。 */
+ 150:HardwareDrivers/I2C/Src/i2c_sw.c ****   I2C_SW_SDA_Low();
+ 403              		.loc 1 150 3 view .LVU60
+ 404 0002 FFF7FEFF 		bl	I2C_SW_SDA_Low
+ 405              	.LVL17:
+ 151:HardwareDrivers/I2C/Src/i2c_sw.c **** 
+ 152:HardwareDrivers/I2C/Src/i2c_sw.c ****   /* 保持 SDA 低电平一小段时间。 */
+ 153:HardwareDrivers/I2C/Src/i2c_sw.c ****   I2C_SW_Delay();
+ 406              		.loc 1 153 3 view .LVU61
+ 407 0006 FFF7FEFF 		bl	I2C_SW_Delay
+ 408              	.LVL18:
+ 154:HardwareDrivers/I2C/Src/i2c_sw.c **** 
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\cctz5LaX.s 			page 11
+
+
+ 155:HardwareDrivers/I2C/Src/i2c_sw.c ****   /* 释放 SCL，让 SCL 处于高电平。 */
+ 156:HardwareDrivers/I2C/Src/i2c_sw.c ****   I2C_SW_SCL_High();
+ 409              		.loc 1 156 3 view .LVU62
+ 410 000a FFF7FEFF 		bl	I2C_SW_SCL_High
+ 411              	.LVL19:
+ 157:HardwareDrivers/I2C/Src/i2c_sw.c **** 
+ 158:HardwareDrivers/I2C/Src/i2c_sw.c ****   /* 保持 SCL 高电平一小段时间。 */
+ 159:HardwareDrivers/I2C/Src/i2c_sw.c ****   I2C_SW_Delay();
+ 412              		.loc 1 159 3 view .LVU63
+ 413 000e FFF7FEFF 		bl	I2C_SW_Delay
+ 414              	.LVL20:
+ 160:HardwareDrivers/I2C/Src/i2c_sw.c **** 
+ 161:HardwareDrivers/I2C/Src/i2c_sw.c ****   /* 当 SCL 为高时，SDA 从低变高，形成 STOP。 */
+ 162:HardwareDrivers/I2C/Src/i2c_sw.c ****   I2C_SW_SDA_High();
+ 415              		.loc 1 162 3 view .LVU64
+ 416 0012 FFF7FEFF 		bl	I2C_SW_SDA_High
+ 417              	.LVL21:
+ 163:HardwareDrivers/I2C/Src/i2c_sw.c **** 
+ 164:HardwareDrivers/I2C/Src/i2c_sw.c ****   /* 保持 STOP 条件一小段时间。 */
+ 165:HardwareDrivers/I2C/Src/i2c_sw.c ****   I2C_SW_Delay();
+ 418              		.loc 1 165 3 view .LVU65
+ 419 0016 FFF7FEFF 		bl	I2C_SW_Delay
+ 420              	.LVL22:
+ 166:HardwareDrivers/I2C/Src/i2c_sw.c **** }
+ 421              		.loc 1 166 1 is_stmt 0 view .LVU66
+ 422 001a 08BD     		pop	{r3, pc}
+ 423              		.cfi_endproc
+ 424              	.LFE140:
+ 426              		.section	.text.I2C_SW_WriteBit,"ax",%progbits
+ 427              		.align	1
+ 428              		.global	I2C_SW_WriteBit
+ 429              		.syntax unified
+ 430              		.thumb
+ 431              		.thumb_func
+ 433              	I2C_SW_WriteBit:
+ 434              	.LVL23:
+ 435              	.LFB141:
+ 167:HardwareDrivers/I2C/Src/i2c_sw.c **** 
+ 168:HardwareDrivers/I2C/Src/i2c_sw.c **** /**
+ 169:HardwareDrivers/I2C/Src/i2c_sw.c ****  * @brief 通过软件 I2C 写入 1 个 bit。
+ 170:HardwareDrivers/I2C/Src/i2c_sw.c ****  * @param bit 要发送的 bit 值；0 表示发送 0，非 0 表示发送 1。
+ 171:HardwareDrivers/I2C/Src/i2c_sw.c ****  * @retval 无
+ 172:HardwareDrivers/I2C/Src/i2c_sw.c ****  */
+ 173:HardwareDrivers/I2C/Src/i2c_sw.c **** void I2C_SW_WriteBit(uint8_t bit)
+ 174:HardwareDrivers/I2C/Src/i2c_sw.c **** {
+ 436              		.loc 1 174 1 is_stmt 1 view -0
+ 437              		.cfi_startproc
+ 438              		@ args = 0, pretend = 0, frame = 0
+ 439              		@ frame_needed = 0, uses_anonymous_args = 0
+ 440              		.loc 1 174 1 is_stmt 0 view .LVU68
+ 441 0000 10B5     		push	{r4, lr}
+ 442              	.LCFI12:
+ 443              		.cfi_def_cfa_offset 8
+ 444              		.cfi_offset 4, -8
+ 445              		.cfi_offset 14, -4
+ 446 0002 0446     		mov	r4, r0
+ 175:HardwareDrivers/I2C/Src/i2c_sw.c ****   /* SCL 低电平期间准备 SDA 数据，避免从机在高电平采样期看到毛刺。 */
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\cctz5LaX.s 			page 12
+
+
+ 176:HardwareDrivers/I2C/Src/i2c_sw.c ****   I2C_SW_SCL_Low();
+ 447              		.loc 1 176 3 is_stmt 1 view .LVU69
+ 448 0004 FFF7FEFF 		bl	I2C_SW_SCL_Low
+ 449              	.LVL24:
+ 177:HardwareDrivers/I2C/Src/i2c_sw.c **** 
+ 178:HardwareDrivers/I2C/Src/i2c_sw.c ****   /* 判断当前要发送的 bit 是否为逻辑 1。 */
+ 179:HardwareDrivers/I2C/Src/i2c_sw.c ****   if (bit != 0U)
+ 450              		.loc 1 179 3 view .LVU70
+ 451              		.loc 1 179 6 is_stmt 0 view .LVU71
+ 452 0008 64B1     		cbz	r4, .L35
+ 180:HardwareDrivers/I2C/Src/i2c_sw.c ****   {
+ 181:HardwareDrivers/I2C/Src/i2c_sw.c ****     /* 发送 1 时释放 SDA，由上拉电阻把总线拉高。 */
+ 182:HardwareDrivers/I2C/Src/i2c_sw.c ****     I2C_SW_SDA_High();
+ 453              		.loc 1 182 5 is_stmt 1 view .LVU72
+ 454 000a FFF7FEFF 		bl	I2C_SW_SDA_High
+ 455              	.LVL25:
+ 456              	.L36:
+ 183:HardwareDrivers/I2C/Src/i2c_sw.c ****   }
+ 184:HardwareDrivers/I2C/Src/i2c_sw.c ****   else
+ 185:HardwareDrivers/I2C/Src/i2c_sw.c ****   {
+ 186:HardwareDrivers/I2C/Src/i2c_sw.c ****     /* 发送 0 时主动拉低 SDA。 */
+ 187:HardwareDrivers/I2C/Src/i2c_sw.c ****     I2C_SW_SDA_Low();
+ 188:HardwareDrivers/I2C/Src/i2c_sw.c ****   }
+ 189:HardwareDrivers/I2C/Src/i2c_sw.c **** 
+ 190:HardwareDrivers/I2C/Src/i2c_sw.c ****   /* 数据准备好后保持一小段时间。 */
+ 191:HardwareDrivers/I2C/Src/i2c_sw.c ****   I2C_SW_Delay();
+ 457              		.loc 1 191 3 view .LVU73
+ 458 000e FFF7FEFF 		bl	I2C_SW_Delay
+ 459              	.LVL26:
+ 192:HardwareDrivers/I2C/Src/i2c_sw.c **** 
+ 193:HardwareDrivers/I2C/Src/i2c_sw.c ****   /* 拉高 SCL，产生时钟高电平，从机在这个阶段采样 SDA。 */
+ 194:HardwareDrivers/I2C/Src/i2c_sw.c ****   I2C_SW_SCL_High();
+ 460              		.loc 1 194 3 view .LVU74
+ 461 0012 FFF7FEFF 		bl	I2C_SW_SCL_High
+ 462              	.LVL27:
+ 195:HardwareDrivers/I2C/Src/i2c_sw.c **** 
+ 196:HardwareDrivers/I2C/Src/i2c_sw.c ****   /* 保持 SCL 高电平一小段时间。 */
+ 197:HardwareDrivers/I2C/Src/i2c_sw.c ****   I2C_SW_Delay();
+ 463              		.loc 1 197 3 view .LVU75
+ 464 0016 FFF7FEFF 		bl	I2C_SW_Delay
+ 465              	.LVL28:
+ 198:HardwareDrivers/I2C/Src/i2c_sw.c **** 
+ 199:HardwareDrivers/I2C/Src/i2c_sw.c ****   /* 拉低 SCL，结束当前 bit 的时钟周期。 */
+ 200:HardwareDrivers/I2C/Src/i2c_sw.c ****   I2C_SW_SCL_Low();
+ 466              		.loc 1 200 3 view .LVU76
+ 467 001a FFF7FEFF 		bl	I2C_SW_SCL_Low
+ 468              	.LVL29:
+ 201:HardwareDrivers/I2C/Src/i2c_sw.c **** 
+ 202:HardwareDrivers/I2C/Src/i2c_sw.c ****   /* 保持 SCL 低电平一小段时间，准备下一个 bit。 */
+ 203:HardwareDrivers/I2C/Src/i2c_sw.c ****   I2C_SW_Delay();
+ 469              		.loc 1 203 3 view .LVU77
+ 470 001e FFF7FEFF 		bl	I2C_SW_Delay
+ 471              	.LVL30:
+ 204:HardwareDrivers/I2C/Src/i2c_sw.c **** }
+ 472              		.loc 1 204 1 is_stmt 0 view .LVU78
+ 473 0022 10BD     		pop	{r4, pc}
+ 474              	.LVL31:
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\cctz5LaX.s 			page 13
+
+
+ 475              	.L35:
+ 187:HardwareDrivers/I2C/Src/i2c_sw.c ****   }
+ 476              		.loc 1 187 5 is_stmt 1 view .LVU79
+ 477 0024 FFF7FEFF 		bl	I2C_SW_SDA_Low
+ 478              	.LVL32:
+ 479 0028 F1E7     		b	.L36
+ 480              		.cfi_endproc
+ 481              	.LFE141:
+ 483              		.section	.text.I2C_SW_ReadBit,"ax",%progbits
+ 484              		.align	1
+ 485              		.global	I2C_SW_ReadBit
+ 486              		.syntax unified
+ 487              		.thumb
+ 488              		.thumb_func
+ 490              	I2C_SW_ReadBit:
+ 491              	.LFB142:
+ 205:HardwareDrivers/I2C/Src/i2c_sw.c **** 
+ 206:HardwareDrivers/I2C/Src/i2c_sw.c **** /**
+ 207:HardwareDrivers/I2C/Src/i2c_sw.c ****  * @brief 通过软件 I2C 读取 1 个 bit。
+ 208:HardwareDrivers/I2C/Src/i2c_sw.c ****  * @retval 0 表示读到低电平，1 表示读到高电平。
+ 209:HardwareDrivers/I2C/Src/i2c_sw.c ****  */
+ 210:HardwareDrivers/I2C/Src/i2c_sw.c **** uint8_t I2C_SW_ReadBit(void)
+ 211:HardwareDrivers/I2C/Src/i2c_sw.c **** {
+ 492              		.loc 1 211 1 view -0
+ 493              		.cfi_startproc
+ 494              		@ args = 0, pretend = 0, frame = 0
+ 495              		@ frame_needed = 0, uses_anonymous_args = 0
+ 496 0000 10B5     		push	{r4, lr}
+ 497              	.LCFI13:
+ 498              		.cfi_def_cfa_offset 8
+ 499              		.cfi_offset 4, -8
+ 500              		.cfi_offset 14, -4
+ 212:HardwareDrivers/I2C/Src/i2c_sw.c ****   /* 定义变量保存当前读到的 bit。 */
+ 213:HardwareDrivers/I2C/Src/i2c_sw.c ****   uint8_t bit_value;
+ 501              		.loc 1 213 3 view .LVU81
+ 214:HardwareDrivers/I2C/Src/i2c_sw.c **** 
+ 215:HardwareDrivers/I2C/Src/i2c_sw.c ****   /* SCL 低电平期间释放 SDA，让从机能够驱动 SDA。 */
+ 216:HardwareDrivers/I2C/Src/i2c_sw.c ****   I2C_SW_SCL_Low();
+ 502              		.loc 1 216 3 view .LVU82
+ 503 0002 FFF7FEFF 		bl	I2C_SW_SCL_Low
+ 504              	.LVL33:
+ 217:HardwareDrivers/I2C/Src/i2c_sw.c ****   I2C_SW_SDA_High();
+ 505              		.loc 1 217 3 view .LVU83
+ 506 0006 FFF7FEFF 		bl	I2C_SW_SDA_High
+ 507              	.LVL34:
+ 218:HardwareDrivers/I2C/Src/i2c_sw.c **** 
+ 219:HardwareDrivers/I2C/Src/i2c_sw.c ****   /* 给 SDA 释放和从机输出留一点建立时间。 */
+ 220:HardwareDrivers/I2C/Src/i2c_sw.c ****   I2C_SW_Delay();
+ 508              		.loc 1 220 3 view .LVU84
+ 509 000a FFF7FEFF 		bl	I2C_SW_Delay
+ 510              	.LVL35:
+ 221:HardwareDrivers/I2C/Src/i2c_sw.c **** 
+ 222:HardwareDrivers/I2C/Src/i2c_sw.c ****   /* 拉高 SCL，进入读数据采样窗口。 */
+ 223:HardwareDrivers/I2C/Src/i2c_sw.c ****   I2C_SW_SCL_High();
+ 511              		.loc 1 223 3 view .LVU85
+ 512 000e FFF7FEFF 		bl	I2C_SW_SCL_High
+ 513              	.LVL36:
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\cctz5LaX.s 			page 14
+
+
+ 224:HardwareDrivers/I2C/Src/i2c_sw.c **** 
+ 225:HardwareDrivers/I2C/Src/i2c_sw.c ****   /* 保持 SCL 高电平一小段时间，让 SDA 电平稳定。 */
+ 226:HardwareDrivers/I2C/Src/i2c_sw.c ****   I2C_SW_Delay();
+ 514              		.loc 1 226 3 view .LVU86
+ 515 0012 FFF7FEFF 		bl	I2C_SW_Delay
+ 516              	.LVL37:
+ 227:HardwareDrivers/I2C/Src/i2c_sw.c **** 
+ 228:HardwareDrivers/I2C/Src/i2c_sw.c ****   /* 读取 SDA 当前实际电平。 */
+ 229:HardwareDrivers/I2C/Src/i2c_sw.c ****   bit_value = I2C_SW_SDA_Read();
+ 517              		.loc 1 229 3 view .LVU87
+ 518              		.loc 1 229 15 is_stmt 0 view .LVU88
+ 519 0016 FFF7FEFF 		bl	I2C_SW_SDA_Read
+ 520              	.LVL38:
+ 521 001a 0446     		mov	r4, r0
+ 522              	.LVL39:
+ 230:HardwareDrivers/I2C/Src/i2c_sw.c **** 
+ 231:HardwareDrivers/I2C/Src/i2c_sw.c ****   /* 拉低 SCL，结束当前 bit 的时钟周期。 */
+ 232:HardwareDrivers/I2C/Src/i2c_sw.c ****   I2C_SW_SCL_Low();
+ 523              		.loc 1 232 3 is_stmt 1 view .LVU89
+ 524 001c FFF7FEFF 		bl	I2C_SW_SCL_Low
+ 525              	.LVL40:
+ 233:HardwareDrivers/I2C/Src/i2c_sw.c **** 
+ 234:HardwareDrivers/I2C/Src/i2c_sw.c ****   /* 保持 SCL 低电平一小段时间。 */
+ 235:HardwareDrivers/I2C/Src/i2c_sw.c ****   I2C_SW_Delay();
+ 526              		.loc 1 235 3 view .LVU90
+ 527 0020 FFF7FEFF 		bl	I2C_SW_Delay
+ 528              	.LVL41:
+ 236:HardwareDrivers/I2C/Src/i2c_sw.c **** 
+ 237:HardwareDrivers/I2C/Src/i2c_sw.c ****   /* 返回读到的 bit，数值只会是 0 或 1。 */
+ 238:HardwareDrivers/I2C/Src/i2c_sw.c ****   return bit_value;
+ 529              		.loc 1 238 3 view .LVU91
+ 239:HardwareDrivers/I2C/Src/i2c_sw.c **** }
+ 530              		.loc 1 239 1 is_stmt 0 view .LVU92
+ 531 0024 2046     		mov	r0, r4
+ 532 0026 10BD     		pop	{r4, pc}
+ 533              		.loc 1 239 1 view .LVU93
+ 534              		.cfi_endproc
+ 535              	.LFE142:
+ 537              		.section	.text.I2C_SW_WaitAck,"ax",%progbits
+ 538              		.align	1
+ 539              		.global	I2C_SW_WaitAck
+ 540              		.syntax unified
+ 541              		.thumb
+ 542              		.thumb_func
+ 544              	I2C_SW_WaitAck:
+ 545              	.LFB143:
+ 240:HardwareDrivers/I2C/Src/i2c_sw.c **** 
+ 241:HardwareDrivers/I2C/Src/i2c_sw.c **** /**
+ 242:HardwareDrivers/I2C/Src/i2c_sw.c ****  * @brief 等待从机 ACK 应答。
+ 243:HardwareDrivers/I2C/Src/i2c_sw.c ****  * @retval I2C_SW_OK 表示收到 ACK，I2C_SW_ERROR 表示没有收到 ACK。
+ 244:HardwareDrivers/I2C/Src/i2c_sw.c ****  */
+ 245:HardwareDrivers/I2C/Src/i2c_sw.c **** I2C_SW_Status_t I2C_SW_WaitAck(void)
+ 246:HardwareDrivers/I2C/Src/i2c_sw.c **** {
+ 546              		.loc 1 246 1 is_stmt 1 view -0
+ 547              		.cfi_startproc
+ 548              		@ args = 0, pretend = 0, frame = 0
+ 549              		@ frame_needed = 0, uses_anonymous_args = 0
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\cctz5LaX.s 			page 15
+
+
+ 550 0000 10B5     		push	{r4, lr}
+ 551              	.LCFI14:
+ 552              		.cfi_def_cfa_offset 8
+ 553              		.cfi_offset 4, -8
+ 554              		.cfi_offset 14, -4
+ 247:HardwareDrivers/I2C/Src/i2c_sw.c ****   /* 定义状态变量，默认按未收到 ACK 处理。 */
+ 248:HardwareDrivers/I2C/Src/i2c_sw.c ****   I2C_SW_Status_t status = I2C_SW_ERROR;
+ 555              		.loc 1 248 3 view .LVU95
+ 556              	.LVL42:
+ 249:HardwareDrivers/I2C/Src/i2c_sw.c **** 
+ 250:HardwareDrivers/I2C/Src/i2c_sw.c ****   /* 第 9 个时钟之前释放 SDA，让从机有机会拉低 SDA。 */
+ 251:HardwareDrivers/I2C/Src/i2c_sw.c ****   I2C_SW_SDA_High();
+ 557              		.loc 1 251 3 view .LVU96
+ 558 0002 FFF7FEFF 		bl	I2C_SW_SDA_High
+ 559              	.LVL43:
+ 252:HardwareDrivers/I2C/Src/i2c_sw.c **** 
+ 253:HardwareDrivers/I2C/Src/i2c_sw.c ****   /* 给 SDA 释放和从机驱动留一点建立时间。 */
+ 254:HardwareDrivers/I2C/Src/i2c_sw.c ****   I2C_SW_Delay();
+ 560              		.loc 1 254 3 view .LVU97
+ 561 0006 FFF7FEFF 		bl	I2C_SW_Delay
+ 562              	.LVL44:
+ 255:HardwareDrivers/I2C/Src/i2c_sw.c **** 
+ 256:HardwareDrivers/I2C/Src/i2c_sw.c ****   /* 拉高 SCL，进入 ACK 采样窗口。 */
+ 257:HardwareDrivers/I2C/Src/i2c_sw.c ****   I2C_SW_SCL_High();
+ 563              		.loc 1 257 3 view .LVU98
+ 564 000a FFF7FEFF 		bl	I2C_SW_SCL_High
+ 565              	.LVL45:
+ 258:HardwareDrivers/I2C/Src/i2c_sw.c **** 
+ 259:HardwareDrivers/I2C/Src/i2c_sw.c ****   /* 保持 SCL 高电平一小段时间，让 SDA 电平稳定。 */
+ 260:HardwareDrivers/I2C/Src/i2c_sw.c ****   I2C_SW_Delay();
+ 566              		.loc 1 260 3 view .LVU99
+ 567 000e FFF7FEFF 		bl	I2C_SW_Delay
+ 568              	.LVL46:
+ 261:HardwareDrivers/I2C/Src/i2c_sw.c **** 
+ 262:HardwareDrivers/I2C/Src/i2c_sw.c ****   /* ACK 的含义是从机在第 9 个时钟期间把 SDA 拉低。 */
+ 263:HardwareDrivers/I2C/Src/i2c_sw.c ****   if (I2C_SW_SDA_Read() == 0U)
+ 569              		.loc 1 263 3 view .LVU100
+ 570              		.loc 1 263 7 is_stmt 0 view .LVU101
+ 571 0012 FFF7FEFF 		bl	I2C_SW_SDA_Read
+ 572              	.LVL47:
+ 573              		.loc 1 263 6 discriminator 1 view .LVU102
+ 574 0016 0446     		mov	r4, r0
+ 575 0018 00B1     		cbz	r0, .L41
+ 248:HardwareDrivers/I2C/Src/i2c_sw.c **** 
+ 576              		.loc 1 248 19 view .LVU103
+ 577 001a 0124     		movs	r4, #1
+ 578              	.L41:
+ 579              	.LVL48:
+ 264:HardwareDrivers/I2C/Src/i2c_sw.c ****   {
+ 265:HardwareDrivers/I2C/Src/i2c_sw.c ****     /* 读到 SDA 为低，表示收到 ACK。 */
+ 266:HardwareDrivers/I2C/Src/i2c_sw.c ****     status = I2C_SW_OK;
+ 267:HardwareDrivers/I2C/Src/i2c_sw.c ****   }
+ 268:HardwareDrivers/I2C/Src/i2c_sw.c **** 
+ 269:HardwareDrivers/I2C/Src/i2c_sw.c ****   /* 拉低 SCL，结束 ACK 时钟。 */
+ 270:HardwareDrivers/I2C/Src/i2c_sw.c ****   I2C_SW_SCL_Low();
+ 580              		.loc 1 270 3 is_stmt 1 view .LVU104
+ 581 001c FFF7FEFF 		bl	I2C_SW_SCL_Low
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\cctz5LaX.s 			page 16
+
+
+ 582              	.LVL49:
+ 271:HardwareDrivers/I2C/Src/i2c_sw.c **** 
+ 272:HardwareDrivers/I2C/Src/i2c_sw.c ****   /* 保持 SCL 低电平一小段时间。 */
+ 273:HardwareDrivers/I2C/Src/i2c_sw.c ****   I2C_SW_Delay();
+ 583              		.loc 1 273 3 view .LVU105
+ 584 0020 FFF7FEFF 		bl	I2C_SW_Delay
+ 585              	.LVL50:
+ 274:HardwareDrivers/I2C/Src/i2c_sw.c **** 
+ 275:HardwareDrivers/I2C/Src/i2c_sw.c ****   /* 返回本次 ACK 采样结果。 */
+ 276:HardwareDrivers/I2C/Src/i2c_sw.c ****   return status;
+ 586              		.loc 1 276 3 view .LVU106
+ 277:HardwareDrivers/I2C/Src/i2c_sw.c **** }
+ 587              		.loc 1 277 1 is_stmt 0 view .LVU107
+ 588 0024 2046     		mov	r0, r4
+ 589 0026 10BD     		pop	{r4, pc}
+ 590              		.loc 1 277 1 view .LVU108
+ 591              		.cfi_endproc
+ 592              	.LFE143:
+ 594              		.section	.text.I2C_SW_Ack,"ax",%progbits
+ 595              		.align	1
+ 596              		.global	I2C_SW_Ack
+ 597              		.syntax unified
+ 598              		.thumb
+ 599              		.thumb_func
+ 601              	I2C_SW_Ack:
+ 602              	.LFB144:
+ 278:HardwareDrivers/I2C/Src/i2c_sw.c **** 
+ 279:HardwareDrivers/I2C/Src/i2c_sw.c **** /**
+ 280:HardwareDrivers/I2C/Src/i2c_sw.c ****  * @brief 主机向从机发送 ACK。
+ 281:HardwareDrivers/I2C/Src/i2c_sw.c ****  * @retval 无
+ 282:HardwareDrivers/I2C/Src/i2c_sw.c ****  */
+ 283:HardwareDrivers/I2C/Src/i2c_sw.c **** void I2C_SW_Ack(void)
+ 284:HardwareDrivers/I2C/Src/i2c_sw.c **** {
+ 603              		.loc 1 284 1 is_stmt 1 view -0
+ 604              		.cfi_startproc
+ 605              		@ args = 0, pretend = 0, frame = 0
+ 606              		@ frame_needed = 0, uses_anonymous_args = 0
+ 607 0000 08B5     		push	{r3, lr}
+ 608              	.LCFI15:
+ 609              		.cfi_def_cfa_offset 8
+ 610              		.cfi_offset 3, -8
+ 611              		.cfi_offset 14, -4
+ 285:HardwareDrivers/I2C/Src/i2c_sw.c ****   /* SCL 低电平期间准备 ACK 数据位。 */
+ 286:HardwareDrivers/I2C/Src/i2c_sw.c ****   I2C_SW_SCL_Low();
+ 612              		.loc 1 286 3 view .LVU110
+ 613 0002 FFF7FEFF 		bl	I2C_SW_SCL_Low
+ 614              	.LVL51:
+ 287:HardwareDrivers/I2C/Src/i2c_sw.c **** 
+ 288:HardwareDrivers/I2C/Src/i2c_sw.c ****   /* ACK 是低电平，所以主机主动拉低 SDA。 */
+ 289:HardwareDrivers/I2C/Src/i2c_sw.c ****   I2C_SW_SDA_Low();
+ 615              		.loc 1 289 3 view .LVU111
+ 616 0006 FFF7FEFF 		bl	I2C_SW_SDA_Low
+ 617              	.LVL52:
+ 290:HardwareDrivers/I2C/Src/i2c_sw.c **** 
+ 291:HardwareDrivers/I2C/Src/i2c_sw.c ****   /* 保持 SDA 低电平一小段时间。 */
+ 292:HardwareDrivers/I2C/Src/i2c_sw.c ****   I2C_SW_Delay();
+ 618              		.loc 1 292 3 view .LVU112
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\cctz5LaX.s 			page 17
+
+
+ 619 000a FFF7FEFF 		bl	I2C_SW_Delay
+ 620              	.LVL53:
+ 293:HardwareDrivers/I2C/Src/i2c_sw.c **** 
+ 294:HardwareDrivers/I2C/Src/i2c_sw.c ****   /* 拉高 SCL，把 ACK 位发送给从机。 */
+ 295:HardwareDrivers/I2C/Src/i2c_sw.c ****   I2C_SW_SCL_High();
+ 621              		.loc 1 295 3 view .LVU113
+ 622 000e FFF7FEFF 		bl	I2C_SW_SCL_High
+ 623              	.LVL54:
+ 296:HardwareDrivers/I2C/Src/i2c_sw.c **** 
+ 297:HardwareDrivers/I2C/Src/i2c_sw.c ****   /* 保持 SCL 高电平一小段时间。 */
+ 298:HardwareDrivers/I2C/Src/i2c_sw.c ****   I2C_SW_Delay();
+ 624              		.loc 1 298 3 view .LVU114
+ 625 0012 FFF7FEFF 		bl	I2C_SW_Delay
+ 626              	.LVL55:
+ 299:HardwareDrivers/I2C/Src/i2c_sw.c **** 
+ 300:HardwareDrivers/I2C/Src/i2c_sw.c ****   /* 拉低 SCL，结束 ACK 位。 */
+ 301:HardwareDrivers/I2C/Src/i2c_sw.c ****   I2C_SW_SCL_Low();
+ 627              		.loc 1 301 3 view .LVU115
+ 628 0016 FFF7FEFF 		bl	I2C_SW_SCL_Low
+ 629              	.LVL56:
+ 302:HardwareDrivers/I2C/Src/i2c_sw.c **** 
+ 303:HardwareDrivers/I2C/Src/i2c_sw.c ****   /* 保持 SCL 低电平一小段时间。 */
+ 304:HardwareDrivers/I2C/Src/i2c_sw.c ****   I2C_SW_Delay();
+ 630              		.loc 1 304 3 view .LVU116
+ 631 001a FFF7FEFF 		bl	I2C_SW_Delay
+ 632              	.LVL57:
+ 305:HardwareDrivers/I2C/Src/i2c_sw.c **** 
+ 306:HardwareDrivers/I2C/Src/i2c_sw.c ****   /* 发送完 ACK 后释放 SDA，避免继续占用总线。 */
+ 307:HardwareDrivers/I2C/Src/i2c_sw.c ****   I2C_SW_SDA_High();
+ 633              		.loc 1 307 3 view .LVU117
+ 634 001e FFF7FEFF 		bl	I2C_SW_SDA_High
+ 635              	.LVL58:
+ 308:HardwareDrivers/I2C/Src/i2c_sw.c **** }
+ 636              		.loc 1 308 1 is_stmt 0 view .LVU118
+ 637 0022 08BD     		pop	{r3, pc}
+ 638              		.cfi_endproc
+ 639              	.LFE144:
+ 641              		.section	.text.I2C_SW_NAck,"ax",%progbits
+ 642              		.align	1
+ 643              		.global	I2C_SW_NAck
+ 644              		.syntax unified
+ 645              		.thumb
+ 646              		.thumb_func
+ 648              	I2C_SW_NAck:
+ 649              	.LFB145:
+ 309:HardwareDrivers/I2C/Src/i2c_sw.c **** 
+ 310:HardwareDrivers/I2C/Src/i2c_sw.c **** /**
+ 311:HardwareDrivers/I2C/Src/i2c_sw.c ****  * @brief 主机向从机发送 NACK。
+ 312:HardwareDrivers/I2C/Src/i2c_sw.c ****  * @retval 无
+ 313:HardwareDrivers/I2C/Src/i2c_sw.c ****  */
+ 314:HardwareDrivers/I2C/Src/i2c_sw.c **** void I2C_SW_NAck(void)
+ 315:HardwareDrivers/I2C/Src/i2c_sw.c **** {
+ 650              		.loc 1 315 1 is_stmt 1 view -0
+ 651              		.cfi_startproc
+ 652              		@ args = 0, pretend = 0, frame = 0
+ 653              		@ frame_needed = 0, uses_anonymous_args = 0
+ 654 0000 08B5     		push	{r3, lr}
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\cctz5LaX.s 			page 18
+
+
+ 655              	.LCFI16:
+ 656              		.cfi_def_cfa_offset 8
+ 657              		.cfi_offset 3, -8
+ 658              		.cfi_offset 14, -4
+ 316:HardwareDrivers/I2C/Src/i2c_sw.c ****   /* SCL 低电平期间准备 NACK 数据位。 */
+ 317:HardwareDrivers/I2C/Src/i2c_sw.c ****   I2C_SW_SCL_Low();
+ 659              		.loc 1 317 3 view .LVU120
+ 660 0002 FFF7FEFF 		bl	I2C_SW_SCL_Low
+ 661              	.LVL59:
+ 318:HardwareDrivers/I2C/Src/i2c_sw.c **** 
+ 319:HardwareDrivers/I2C/Src/i2c_sw.c ****   /* NACK 是高电平，所以主机释放 SDA。 */
+ 320:HardwareDrivers/I2C/Src/i2c_sw.c ****   I2C_SW_SDA_High();
+ 662              		.loc 1 320 3 view .LVU121
+ 663 0006 FFF7FEFF 		bl	I2C_SW_SDA_High
+ 664              	.LVL60:
+ 321:HardwareDrivers/I2C/Src/i2c_sw.c **** 
+ 322:HardwareDrivers/I2C/Src/i2c_sw.c ****   /* 保持 SDA 高电平一小段时间。 */
+ 323:HardwareDrivers/I2C/Src/i2c_sw.c ****   I2C_SW_Delay();
+ 665              		.loc 1 323 3 view .LVU122
+ 666 000a FFF7FEFF 		bl	I2C_SW_Delay
+ 667              	.LVL61:
+ 324:HardwareDrivers/I2C/Src/i2c_sw.c **** 
+ 325:HardwareDrivers/I2C/Src/i2c_sw.c ****   /* 拉高 SCL，把 NACK 位发送给从机。 */
+ 326:HardwareDrivers/I2C/Src/i2c_sw.c ****   I2C_SW_SCL_High();
+ 668              		.loc 1 326 3 view .LVU123
+ 669 000e FFF7FEFF 		bl	I2C_SW_SCL_High
+ 670              	.LVL62:
+ 327:HardwareDrivers/I2C/Src/i2c_sw.c **** 
+ 328:HardwareDrivers/I2C/Src/i2c_sw.c ****   /* 保持 SCL 高电平一小段时间。 */
+ 329:HardwareDrivers/I2C/Src/i2c_sw.c ****   I2C_SW_Delay();
+ 671              		.loc 1 329 3 view .LVU124
+ 672 0012 FFF7FEFF 		bl	I2C_SW_Delay
+ 673              	.LVL63:
+ 330:HardwareDrivers/I2C/Src/i2c_sw.c **** 
+ 331:HardwareDrivers/I2C/Src/i2c_sw.c ****   /* 拉低 SCL，结束 NACK 位。 */
+ 332:HardwareDrivers/I2C/Src/i2c_sw.c ****   I2C_SW_SCL_Low();
+ 674              		.loc 1 332 3 view .LVU125
+ 675 0016 FFF7FEFF 		bl	I2C_SW_SCL_Low
+ 676              	.LVL64:
+ 333:HardwareDrivers/I2C/Src/i2c_sw.c **** 
+ 334:HardwareDrivers/I2C/Src/i2c_sw.c ****   /* 保持 SCL 低电平一小段时间。 */
+ 335:HardwareDrivers/I2C/Src/i2c_sw.c ****   I2C_SW_Delay();
+ 677              		.loc 1 335 3 view .LVU126
+ 678 001a FFF7FEFF 		bl	I2C_SW_Delay
+ 679              	.LVL65:
+ 336:HardwareDrivers/I2C/Src/i2c_sw.c **** }
+ 680              		.loc 1 336 1 is_stmt 0 view .LVU127
+ 681 001e 08BD     		pop	{r3, pc}
+ 682              		.cfi_endproc
+ 683              	.LFE145:
+ 685              		.section	.text.I2C_SW_WriteByte,"ax",%progbits
+ 686              		.align	1
+ 687              		.global	I2C_SW_WriteByte
+ 688              		.syntax unified
+ 689              		.thumb
+ 690              		.thumb_func
+ 692              	I2C_SW_WriteByte:
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\cctz5LaX.s 			page 19
+
+
+ 693              	.LVL66:
+ 694              	.LFB146:
+ 337:HardwareDrivers/I2C/Src/i2c_sw.c **** 
+ 338:HardwareDrivers/I2C/Src/i2c_sw.c **** /**
+ 339:HardwareDrivers/I2C/Src/i2c_sw.c ****  * @brief 通过软件 I2C 写入 1 个字节，并等待从机 ACK。
+ 340:HardwareDrivers/I2C/Src/i2c_sw.c ****  * @param data 要发送的字节，按高位在前的顺序发送。
+ 341:HardwareDrivers/I2C/Src/i2c_sw.c ****  * @retval I2C_SW_OK 表示收到 ACK，I2C_SW_ERROR 表示没有收到 ACK。
+ 342:HardwareDrivers/I2C/Src/i2c_sw.c ****  */
+ 343:HardwareDrivers/I2C/Src/i2c_sw.c **** I2C_SW_Status_t I2C_SW_WriteByte(uint8_t data)
+ 344:HardwareDrivers/I2C/Src/i2c_sw.c **** {
+ 695              		.loc 1 344 1 is_stmt 1 view -0
+ 696              		.cfi_startproc
+ 697              		@ args = 0, pretend = 0, frame = 0
+ 698              		@ frame_needed = 0, uses_anonymous_args = 0
+ 699              		.loc 1 344 1 is_stmt 0 view .LVU129
+ 700 0000 38B5     		push	{r3, r4, r5, lr}
+ 701              	.LCFI17:
+ 702              		.cfi_def_cfa_offset 16
+ 703              		.cfi_offset 3, -16
+ 704              		.cfi_offset 4, -12
+ 705              		.cfi_offset 5, -8
+ 706              		.cfi_offset 14, -4
+ 707 0002 0446     		mov	r4, r0
+ 345:HardwareDrivers/I2C/Src/i2c_sw.c ****   /* 一共发送 8 位，从 bit7 一直发送到 bit0。 */
+ 346:HardwareDrivers/I2C/Src/i2c_sw.c ****   for (uint8_t bit_index = 0U; bit_index < 8U; bit_index++)
+ 708              		.loc 1 346 3 is_stmt 1 view .LVU130
+ 709              	.LBB3:
+ 710              		.loc 1 346 8 view .LVU131
+ 711              	.LVL67:
+ 712              		.loc 1 346 16 is_stmt 0 view .LVU132
+ 713 0004 0025     		movs	r5, #0
+ 714              		.loc 1 346 3 view .LVU133
+ 715 0006 07E0     		b	.L48
+ 716              	.LVL68:
+ 717              	.L49:
+ 347:HardwareDrivers/I2C/Src/i2c_sw.c ****   {
+ 348:HardwareDrivers/I2C/Src/i2c_sw.c ****     /* 发送当前最高位。 */
+ 349:HardwareDrivers/I2C/Src/i2c_sw.c ****     I2C_SW_WriteBit((uint8_t)(data & 0x80U));
+ 718              		.loc 1 349 5 is_stmt 1 view .LVU134
+ 719 0008 04F08000 		and	r0, r4, #128
+ 720 000c FFF7FEFF 		bl	I2C_SW_WriteBit
+ 721              	.LVL69:
+ 350:HardwareDrivers/I2C/Src/i2c_sw.c **** 
+ 351:HardwareDrivers/I2C/Src/i2c_sw.c ****     /* 左移 1 位，把下一位移动到最高位位置。 */
+ 352:HardwareDrivers/I2C/Src/i2c_sw.c ****     data <<= 1U;
+ 722              		.loc 1 352 5 view .LVU135
+ 723              		.loc 1 352 10 is_stmt 0 view .LVU136
+ 724 0010 6400     		lsls	r4, r4, #1
+ 725              	.LVL70:
+ 726              		.loc 1 352 10 view .LVU137
+ 727 0012 E4B2     		uxtb	r4, r4
+ 728              	.LVL71:
+ 346:HardwareDrivers/I2C/Src/i2c_sw.c ****   {
+ 729              		.loc 1 346 57 is_stmt 1 discriminator 3 view .LVU138
+ 730 0014 0135     		adds	r5, r5, #1
+ 731              	.LVL72:
+ 346:HardwareDrivers/I2C/Src/i2c_sw.c ****   {
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\cctz5LaX.s 			page 20
+
+
+ 732              		.loc 1 346 57 is_stmt 0 discriminator 3 view .LVU139
+ 733 0016 EDB2     		uxtb	r5, r5
+ 734              	.LVL73:
+ 735              	.L48:
+ 346:HardwareDrivers/I2C/Src/i2c_sw.c ****   {
+ 736              		.loc 1 346 42 is_stmt 1 discriminator 1 view .LVU140
+ 737 0018 072D     		cmp	r5, #7
+ 738 001a F5D9     		bls	.L49
+ 739              	.LBE3:
+ 353:HardwareDrivers/I2C/Src/i2c_sw.c ****   }
+ 354:HardwareDrivers/I2C/Src/i2c_sw.c **** 
+ 355:HardwareDrivers/I2C/Src/i2c_sw.c ****   /* 8 位发送完成后读取第 9 个时钟上的 ACK。 */
+ 356:HardwareDrivers/I2C/Src/i2c_sw.c ****   return I2C_SW_WaitAck();
+ 740              		.loc 1 356 3 view .LVU141
+ 741              		.loc 1 356 10 is_stmt 0 view .LVU142
+ 742 001c FFF7FEFF 		bl	I2C_SW_WaitAck
+ 743              	.LVL74:
+ 357:HardwareDrivers/I2C/Src/i2c_sw.c **** }
+ 744              		.loc 1 357 1 view .LVU143
+ 745 0020 38BD     		pop	{r3, r4, r5, pc}
+ 746              		.loc 1 357 1 view .LVU144
+ 747              		.cfi_endproc
+ 748              	.LFE146:
+ 750              		.section	.text.I2C_SW_ReadByte,"ax",%progbits
+ 751              		.align	1
+ 752              		.global	I2C_SW_ReadByte
+ 753              		.syntax unified
+ 754              		.thumb
+ 755              		.thumb_func
+ 757              	I2C_SW_ReadByte:
+ 758              	.LVL75:
+ 759              	.LFB147:
+ 358:HardwareDrivers/I2C/Src/i2c_sw.c **** 
+ 359:HardwareDrivers/I2C/Src/i2c_sw.c **** /**
+ 360:HardwareDrivers/I2C/Src/i2c_sw.c ****  * @brief 通过软件 I2C 读取 1 个字节，并按参数发送 ACK 或 NACK。
+ 361:HardwareDrivers/I2C/Src/i2c_sw.c ****  * @param ack 1 表示读完后发送 ACK，0 表示读完后发送 NACK。
+ 362:HardwareDrivers/I2C/Src/i2c_sw.c ****  * @retval 读取到的 8 位数据。
+ 363:HardwareDrivers/I2C/Src/i2c_sw.c ****  */
+ 364:HardwareDrivers/I2C/Src/i2c_sw.c **** uint8_t I2C_SW_ReadByte(uint8_t ack)
+ 365:HardwareDrivers/I2C/Src/i2c_sw.c **** {
+ 760              		.loc 1 365 1 is_stmt 1 view -0
+ 761              		.cfi_startproc
+ 762              		@ args = 0, pretend = 0, frame = 0
+ 763              		@ frame_needed = 0, uses_anonymous_args = 0
+ 764              		.loc 1 365 1 is_stmt 0 view .LVU146
+ 765 0000 70B5     		push	{r4, r5, r6, lr}
+ 766              	.LCFI18:
+ 767              		.cfi_def_cfa_offset 16
+ 768              		.cfi_offset 4, -16
+ 769              		.cfi_offset 5, -12
+ 770              		.cfi_offset 6, -8
+ 771              		.cfi_offset 14, -4
+ 772 0002 0646     		mov	r6, r0
+ 366:HardwareDrivers/I2C/Src/i2c_sw.c ****   /* 定义变量保存最终读到的字节。 */
+ 367:HardwareDrivers/I2C/Src/i2c_sw.c ****   uint8_t data = 0U;
+ 773              		.loc 1 367 3 is_stmt 1 view .LVU147
+ 774              	.LVL76:
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\cctz5LaX.s 			page 21
+
+
+ 368:HardwareDrivers/I2C/Src/i2c_sw.c **** 
+ 369:HardwareDrivers/I2C/Src/i2c_sw.c ****   /* 一共读取 8 位，从 bit7 一直读取到 bit0。 */
+ 370:HardwareDrivers/I2C/Src/i2c_sw.c ****   for (uint8_t bit_index = 0U; bit_index < 8U; bit_index++)
+ 775              		.loc 1 370 3 view .LVU148
+ 776              	.LBB4:
+ 777              		.loc 1 370 8 view .LVU149
+ 778              		.loc 1 370 16 is_stmt 0 view .LVU150
+ 779 0004 0025     		movs	r5, #0
+ 780              	.LBE4:
+ 367:HardwareDrivers/I2C/Src/i2c_sw.c **** 
+ 781              		.loc 1 367 11 view .LVU151
+ 782 0006 2C46     		mov	r4, r5
+ 783              	.LBB5:
+ 784              		.loc 1 370 3 view .LVU152
+ 785 0008 07E0     		b	.L52
+ 786              	.LVL77:
+ 787              	.L53:
+ 371:HardwareDrivers/I2C/Src/i2c_sw.c ****   {
+ 372:HardwareDrivers/I2C/Src/i2c_sw.c ****     /* 先左移 1 位，给即将读到的新 bit 腾出最低位位置。 */
+ 373:HardwareDrivers/I2C/Src/i2c_sw.c ****     data <<= 1U;
+ 788              		.loc 1 373 5 is_stmt 1 view .LVU153
+ 789              		.loc 1 373 10 is_stmt 0 view .LVU154
+ 790 000a 6400     		lsls	r4, r4, #1
+ 791              	.LVL78:
+ 792              		.loc 1 373 10 view .LVU155
+ 793 000c E4B2     		uxtb	r4, r4
+ 794              	.LVL79:
+ 374:HardwareDrivers/I2C/Src/i2c_sw.c **** 
+ 375:HardwareDrivers/I2C/Src/i2c_sw.c ****     /* 读取 1 个 bit，并合并到 data 的最低位。 */
+ 376:HardwareDrivers/I2C/Src/i2c_sw.c ****     data |= I2C_SW_ReadBit();
+ 795              		.loc 1 376 5 is_stmt 1 view .LVU156
+ 796              		.loc 1 376 13 is_stmt 0 view .LVU157
+ 797 000e FFF7FEFF 		bl	I2C_SW_ReadBit
+ 798              	.LVL80:
+ 799              		.loc 1 376 10 discriminator 1 view .LVU158
+ 800 0012 0443     		orrs	r4, r4, r0
+ 801              	.LVL81:
+ 802              		.loc 1 376 10 discriminator 1 view .LVU159
+ 803 0014 E4B2     		uxtb	r4, r4
+ 804              	.LVL82:
+ 370:HardwareDrivers/I2C/Src/i2c_sw.c ****   {
+ 805              		.loc 1 370 57 is_stmt 1 discriminator 3 view .LVU160
+ 806 0016 0135     		adds	r5, r5, #1
+ 807              	.LVL83:
+ 370:HardwareDrivers/I2C/Src/i2c_sw.c ****   {
+ 808              		.loc 1 370 57 is_stmt 0 discriminator 3 view .LVU161
+ 809 0018 EDB2     		uxtb	r5, r5
+ 810              	.LVL84:
+ 811              	.L52:
+ 370:HardwareDrivers/I2C/Src/i2c_sw.c ****   {
+ 812              		.loc 1 370 42 is_stmt 1 discriminator 1 view .LVU162
+ 813 001a 072D     		cmp	r5, #7
+ 814 001c F5D9     		bls	.L53
+ 815              	.LBE5:
+ 377:HardwareDrivers/I2C/Src/i2c_sw.c ****   }
+ 378:HardwareDrivers/I2C/Src/i2c_sw.c **** 
+ 379:HardwareDrivers/I2C/Src/i2c_sw.c ****   /* 判断调用者是否希望继续读取后续字节。 */
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\cctz5LaX.s 			page 22
+
+
+ 380:HardwareDrivers/I2C/Src/i2c_sw.c ****   if (ack != 0U)
+ 816              		.loc 1 380 3 view .LVU163
+ 817              		.loc 1 380 6 is_stmt 0 view .LVU164
+ 818 001e 1EB1     		cbz	r6, .L54
+ 381:HardwareDrivers/I2C/Src/i2c_sw.c ****   {
+ 382:HardwareDrivers/I2C/Src/i2c_sw.c ****     /* 发送 ACK，告诉从机主机还要继续读取。 */
+ 383:HardwareDrivers/I2C/Src/i2c_sw.c ****     I2C_SW_Ack();
+ 819              		.loc 1 383 5 is_stmt 1 view .LVU165
+ 820 0020 FFF7FEFF 		bl	I2C_SW_Ack
+ 821              	.LVL85:
+ 822              	.L55:
+ 384:HardwareDrivers/I2C/Src/i2c_sw.c ****   }
+ 385:HardwareDrivers/I2C/Src/i2c_sw.c ****   else
+ 386:HardwareDrivers/I2C/Src/i2c_sw.c ****   {
+ 387:HardwareDrivers/I2C/Src/i2c_sw.c ****     /* 发送 NACK，告诉从机这是最后一个字节。 */
+ 388:HardwareDrivers/I2C/Src/i2c_sw.c ****     I2C_SW_NAck();
+ 389:HardwareDrivers/I2C/Src/i2c_sw.c ****   }
+ 390:HardwareDrivers/I2C/Src/i2c_sw.c **** 
+ 391:HardwareDrivers/I2C/Src/i2c_sw.c ****   /* 返回读到的完整字节。 */
+ 392:HardwareDrivers/I2C/Src/i2c_sw.c ****   return data;
+ 823              		.loc 1 392 3 view .LVU166
+ 393:HardwareDrivers/I2C/Src/i2c_sw.c **** }
+ 824              		.loc 1 393 1 is_stmt 0 view .LVU167
+ 825 0024 2046     		mov	r0, r4
+ 826 0026 70BD     		pop	{r4, r5, r6, pc}
+ 827              	.LVL86:
+ 828              	.L54:
+ 388:HardwareDrivers/I2C/Src/i2c_sw.c ****   }
+ 829              		.loc 1 388 5 is_stmt 1 view .LVU168
+ 830 0028 FFF7FEFF 		bl	I2C_SW_NAck
+ 831              	.LVL87:
+ 832 002c FAE7     		b	.L55
+ 833              		.cfi_endproc
+ 834              	.LFE147:
+ 836              		.section	.text.I2C_SW_Write,"ax",%progbits
+ 837              		.align	1
+ 838              		.global	I2C_SW_Write
+ 839              		.syntax unified
+ 840              		.thumb
+ 841              		.thumb_func
+ 843              	I2C_SW_Write:
+ 844              	.LVL88:
+ 845              	.LFB148:
+ 394:HardwareDrivers/I2C/Src/i2c_sw.c **** 
+ 395:HardwareDrivers/I2C/Src/i2c_sw.c **** /**
+ 396:HardwareDrivers/I2C/Src/i2c_sw.c ****  * @brief 向 7 位地址的 I2C 设备连续写入数据。
+ 397:HardwareDrivers/I2C/Src/i2c_sw.c ****  * @param dev_addr_7bit 7 位设备地址，例如 AHT20 为 0x38。
+ 398:HardwareDrivers/I2C/Src/i2c_sw.c ****  * @param data 指向待发送数据缓冲区的指针。
+ 399:HardwareDrivers/I2C/Src/i2c_sw.c ****  * @param len 要发送的数据字节数量。
+ 400:HardwareDrivers/I2C/Src/i2c_sw.c ****  * @retval I2C_SW_OK 表示写入流程收到所有 ACK，I2C_SW_ERROR 表示中途没有 ACK 或�
+ 401:HardwareDrivers/I2C/Src/i2c_sw.c ****  */
+ 402:HardwareDrivers/I2C/Src/i2c_sw.c **** I2C_SW_Status_t I2C_SW_Write(uint8_t dev_addr_7bit, const uint8_t *data, uint16_t len)
+ 403:HardwareDrivers/I2C/Src/i2c_sw.c **** {
+ 846              		.loc 1 403 1 view -0
+ 847              		.cfi_startproc
+ 848              		@ args = 0, pretend = 0, frame = 0
+ 849              		@ frame_needed = 0, uses_anonymous_args = 0
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\cctz5LaX.s 			page 23
+
+
+ 850              		.loc 1 403 1 is_stmt 0 view .LVU170
+ 851 0000 F8B5     		push	{r3, r4, r5, r6, r7, lr}
+ 852              	.LCFI19:
+ 853              		.cfi_def_cfa_offset 24
+ 854              		.cfi_offset 3, -24
+ 855              		.cfi_offset 4, -20
+ 856              		.cfi_offset 5, -16
+ 857              		.cfi_offset 6, -12
+ 858              		.cfi_offset 7, -8
+ 859              		.cfi_offset 14, -4
+ 860 0002 0446     		mov	r4, r0
+ 861 0004 1546     		mov	r5, r2
+ 404:HardwareDrivers/I2C/Src/i2c_sw.c ****   /* 如果要发送的数据长度不为 0，则数据指针必须有效。 */
+ 405:HardwareDrivers/I2C/Src/i2c_sw.c ****   if ((data == (const uint8_t *)0) && (len > 0U))
+ 862              		.loc 1 405 3 is_stmt 1 view .LVU171
+ 863              		.loc 1 405 6 is_stmt 0 view .LVU172
+ 864 0006 0E46     		mov	r6, r1
+ 865 0008 91B1     		cbz	r1, .L66
+ 866              	.L58:
+ 406:HardwareDrivers/I2C/Src/i2c_sw.c ****   {
+ 407:HardwareDrivers/I2C/Src/i2c_sw.c ****     /* 参数无效，直接返回错误，避免后面访问空指针。 */
+ 408:HardwareDrivers/I2C/Src/i2c_sw.c ****     return I2C_SW_ERROR;
+ 409:HardwareDrivers/I2C/Src/i2c_sw.c ****   }
+ 410:HardwareDrivers/I2C/Src/i2c_sw.c **** 
+ 411:HardwareDrivers/I2C/Src/i2c_sw.c ****   /* 产生 START 信号，开始一次 I2C 写事务。 */
+ 412:HardwareDrivers/I2C/Src/i2c_sw.c ****   I2C_SW_Start();
+ 867              		.loc 1 412 3 is_stmt 1 view .LVU173
+ 868 000a FFF7FEFF 		bl	I2C_SW_Start
+ 869              	.LVL89:
+ 413:HardwareDrivers/I2C/Src/i2c_sw.c **** 
+ 414:HardwareDrivers/I2C/Src/i2c_sw.c ****   /* 发送 7 位设备地址左移 1 位后的写地址，最低位 0 表示写方向。 */
+ 415:HardwareDrivers/I2C/Src/i2c_sw.c ****   if (I2C_SW_WriteByte((uint8_t)(dev_addr_7bit << 1U)) != I2C_SW_OK)
+ 870              		.loc 1 415 3 view .LVU174
+ 871              		.loc 1 415 7 is_stmt 0 view .LVU175
+ 872 000e 6000     		lsls	r0, r4, #1
+ 873 0010 00F0FE00 		and	r0, r0, #254
+ 874 0014 FFF7FEFF 		bl	I2C_SW_WriteByte
+ 875              	.LVL90:
+ 876              		.loc 1 415 6 discriminator 1 view .LVU176
+ 877 0018 0746     		mov	r7, r0
+ 878 001a 68B9     		cbnz	r0, .L67
+ 879              	.LBB6:
+ 416:HardwareDrivers/I2C/Src/i2c_sw.c ****   {
+ 417:HardwareDrivers/I2C/Src/i2c_sw.c ****     /* 地址阶段没有收到 ACK，先发送 STOP 释放总线。 */
+ 418:HardwareDrivers/I2C/Src/i2c_sw.c ****     I2C_SW_Stop();
+ 419:HardwareDrivers/I2C/Src/i2c_sw.c **** 
+ 420:HardwareDrivers/I2C/Src/i2c_sw.c ****     /* 返回错误给上层设备驱动。 */
+ 421:HardwareDrivers/I2C/Src/i2c_sw.c ****     return I2C_SW_ERROR;
+ 422:HardwareDrivers/I2C/Src/i2c_sw.c ****   }
+ 423:HardwareDrivers/I2C/Src/i2c_sw.c **** 
+ 424:HardwareDrivers/I2C/Src/i2c_sw.c ****   /* 按顺序发送数据缓冲区中的每一个字节。 */
+ 425:HardwareDrivers/I2C/Src/i2c_sw.c ****   for (uint16_t index = 0U; index < len; index++)
+ 880              		.loc 1 425 17 view .LVU177
+ 881 001c 0024     		movs	r4, #0
+ 882              	.LVL91:
+ 883              	.L60:
+ 884              		.loc 1 425 35 is_stmt 1 discriminator 1 view .LVU178
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\cctz5LaX.s 			page 24
+
+
+ 885 001e AC42     		cmp	r4, r5
+ 886 0020 12D2     		bcs	.L68
+ 426:HardwareDrivers/I2C/Src/i2c_sw.c ****   {
+ 427:HardwareDrivers/I2C/Src/i2c_sw.c ****     /* 发送当前数据字节，并检查从机是否 ACK。 */
+ 428:HardwareDrivers/I2C/Src/i2c_sw.c ****     if (I2C_SW_WriteByte(data[index]) != I2C_SW_OK)
+ 887              		.loc 1 428 5 view .LVU179
+ 888              		.loc 1 428 9 is_stmt 0 view .LVU180
+ 889 0022 305D     		ldrb	r0, [r6, r4]	@ zero_extendqisi2
+ 890 0024 FFF7FEFF 		bl	I2C_SW_WriteByte
+ 891              	.LVL92:
+ 892              		.loc 1 428 8 discriminator 1 view .LVU181
+ 893 0028 50B9     		cbnz	r0, .L69
+ 425:HardwareDrivers/I2C/Src/i2c_sw.c ****   {
+ 894              		.loc 1 425 47 is_stmt 1 discriminator 2 view .LVU182
+ 895 002a 0134     		adds	r4, r4, #1
+ 896              	.LVL93:
+ 425:HardwareDrivers/I2C/Src/i2c_sw.c ****   {
+ 897              		.loc 1 425 47 is_stmt 0 discriminator 2 view .LVU183
+ 898 002c A4B2     		uxth	r4, r4
+ 899              	.LVL94:
+ 425:HardwareDrivers/I2C/Src/i2c_sw.c ****   {
+ 900              		.loc 1 425 47 discriminator 2 view .LVU184
+ 901 002e F6E7     		b	.L60
+ 902              	.LVL95:
+ 903              	.L66:
+ 425:HardwareDrivers/I2C/Src/i2c_sw.c ****   {
+ 904              		.loc 1 425 47 discriminator 2 view .LVU185
+ 905              	.LBE6:
+ 405:HardwareDrivers/I2C/Src/i2c_sw.c ****   {
+ 906              		.loc 1 405 36 discriminator 1 view .LVU186
+ 907 0030 002A     		cmp	r2, #0
+ 908 0032 EAD0     		beq	.L58
+ 408:HardwareDrivers/I2C/Src/i2c_sw.c ****   }
+ 909              		.loc 1 408 12 view .LVU187
+ 910 0034 0127     		movs	r7, #1
+ 911 0036 09E0     		b	.L59
+ 912              	.LVL96:
+ 913              	.L67:
+ 418:HardwareDrivers/I2C/Src/i2c_sw.c **** 
+ 914              		.loc 1 418 5 is_stmt 1 view .LVU188
+ 915 0038 FFF7FEFF 		bl	I2C_SW_Stop
+ 916              	.LVL97:
+ 421:HardwareDrivers/I2C/Src/i2c_sw.c ****   }
+ 917              		.loc 1 421 5 view .LVU189
+ 421:HardwareDrivers/I2C/Src/i2c_sw.c ****   }
+ 918              		.loc 1 421 12 is_stmt 0 view .LVU190
+ 919 003c 0127     		movs	r7, #1
+ 920 003e 05E0     		b	.L59
+ 921              	.LVL98:
+ 922              	.L69:
+ 923              	.LBB7:
+ 429:HardwareDrivers/I2C/Src/i2c_sw.c ****     {
+ 430:HardwareDrivers/I2C/Src/i2c_sw.c ****       /* 数据阶段没有收到 ACK，先发送 STOP 释放总线。 */
+ 431:HardwareDrivers/I2C/Src/i2c_sw.c ****       I2C_SW_Stop();
+ 924              		.loc 1 431 7 is_stmt 1 view .LVU191
+ 925 0040 FFF7FEFF 		bl	I2C_SW_Stop
+ 926              	.LVL99:
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\cctz5LaX.s 			page 25
+
+
+ 432:HardwareDrivers/I2C/Src/i2c_sw.c **** 
+ 433:HardwareDrivers/I2C/Src/i2c_sw.c ****       /* 返回错误给上层设备驱动。 */
+ 434:HardwareDrivers/I2C/Src/i2c_sw.c ****       return I2C_SW_ERROR;
+ 927              		.loc 1 434 7 view .LVU192
+ 928              		.loc 1 434 14 is_stmt 0 view .LVU193
+ 929 0044 0127     		movs	r7, #1
+ 930 0046 01E0     		b	.L59
+ 931              	.L68:
+ 932              		.loc 1 434 14 view .LVU194
+ 933              	.LBE7:
+ 435:HardwareDrivers/I2C/Src/i2c_sw.c ****     }
+ 436:HardwareDrivers/I2C/Src/i2c_sw.c ****   }
+ 437:HardwareDrivers/I2C/Src/i2c_sw.c **** 
+ 438:HardwareDrivers/I2C/Src/i2c_sw.c ****   /* 所有字节都发送并收到 ACK 后，发送 STOP 结束事务。 */
+ 439:HardwareDrivers/I2C/Src/i2c_sw.c ****   I2C_SW_Stop();
+ 934              		.loc 1 439 3 is_stmt 1 view .LVU195
+ 935 0048 FFF7FEFF 		bl	I2C_SW_Stop
+ 936              	.LVL100:
+ 440:HardwareDrivers/I2C/Src/i2c_sw.c **** 
+ 441:HardwareDrivers/I2C/Src/i2c_sw.c ****   /* 返回成功状态。 */
+ 442:HardwareDrivers/I2C/Src/i2c_sw.c ****   return I2C_SW_OK;
+ 937              		.loc 1 442 3 view .LVU196
+ 938              	.L59:
+ 443:HardwareDrivers/I2C/Src/i2c_sw.c **** }
+ 939              		.loc 1 443 1 is_stmt 0 view .LVU197
+ 940 004c 3846     		mov	r0, r7
+ 941 004e F8BD     		pop	{r3, r4, r5, r6, r7, pc}
+ 942              		.loc 1 443 1 view .LVU198
+ 943              		.cfi_endproc
+ 944              	.LFE148:
+ 946              		.section	.text.I2C_SW_Read,"ax",%progbits
+ 947              		.align	1
+ 948              		.global	I2C_SW_Read
+ 949              		.syntax unified
+ 950              		.thumb
+ 951              		.thumb_func
+ 953              	I2C_SW_Read:
+ 954              	.LVL101:
+ 955              	.LFB149:
+ 444:HardwareDrivers/I2C/Src/i2c_sw.c **** 
+ 445:HardwareDrivers/I2C/Src/i2c_sw.c **** /**
+ 446:HardwareDrivers/I2C/Src/i2c_sw.c ****  * @brief 从 7 位地址的 I2C 设备连续读取数据。
+ 447:HardwareDrivers/I2C/Src/i2c_sw.c ****  * @param dev_addr_7bit 7 位设备地址，例如 AHT20 为 0x38。
+ 448:HardwareDrivers/I2C/Src/i2c_sw.c ****  * @param data 指向接收数据缓冲区的指针。
+ 449:HardwareDrivers/I2C/Src/i2c_sw.c ****  * @param len 要读取的数据字节数量。
+ 450:HardwareDrivers/I2C/Src/i2c_sw.c ****  * @retval I2C_SW_OK 表示读取流程完成，I2C_SW_ERROR 表示地址阶段没有 ACK 或参数
+ 451:HardwareDrivers/I2C/Src/i2c_sw.c ****  */
+ 452:HardwareDrivers/I2C/Src/i2c_sw.c **** I2C_SW_Status_t I2C_SW_Read(uint8_t dev_addr_7bit, uint8_t *data, uint16_t len)
+ 453:HardwareDrivers/I2C/Src/i2c_sw.c **** {
+ 956              		.loc 1 453 1 is_stmt 1 view -0
+ 957              		.cfi_startproc
+ 958              		@ args = 0, pretend = 0, frame = 0
+ 959              		@ frame_needed = 0, uses_anonymous_args = 0
+ 960              		.loc 1 453 1 is_stmt 0 view .LVU200
+ 961 0000 2DE9F041 		push	{r4, r5, r6, r7, r8, lr}
+ 962              	.LCFI20:
+ 963              		.cfi_def_cfa_offset 24
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\cctz5LaX.s 			page 26
+
+
+ 964              		.cfi_offset 4, -24
+ 965              		.cfi_offset 5, -20
+ 966              		.cfi_offset 6, -16
+ 967              		.cfi_offset 7, -12
+ 968              		.cfi_offset 8, -8
+ 969              		.cfi_offset 14, -4
+ 454:HardwareDrivers/I2C/Src/i2c_sw.c ****   /* 如果读取长度为 0，不需要访问总线，直接按成功处理。 */
+ 455:HardwareDrivers/I2C/Src/i2c_sw.c ****   if (len == 0U)
+ 970              		.loc 1 455 3 is_stmt 1 view .LVU201
+ 971              		.loc 1 455 6 is_stmt 0 view .LVU202
+ 972 0004 22B3     		cbz	r2, .L74
+ 973 0006 0446     		mov	r4, r0
+ 974 0008 0F46     		mov	r7, r1
+ 975 000a 1646     		mov	r6, r2
+ 456:HardwareDrivers/I2C/Src/i2c_sw.c ****   {
+ 457:HardwareDrivers/I2C/Src/i2c_sw.c ****     /* 0 长度读取没有实际事务，也不会产生 ACK 错误。 */
+ 458:HardwareDrivers/I2C/Src/i2c_sw.c ****     return I2C_SW_OK;
+ 459:HardwareDrivers/I2C/Src/i2c_sw.c ****   }
+ 460:HardwareDrivers/I2C/Src/i2c_sw.c **** 
+ 461:HardwareDrivers/I2C/Src/i2c_sw.c ****   /* 读取长度不为 0 时，接收缓冲区指针必须有效。 */
+ 462:HardwareDrivers/I2C/Src/i2c_sw.c ****   if (data == (uint8_t *)0)
+ 976              		.loc 1 462 3 is_stmt 1 view .LVU203
+ 977              		.loc 1 462 6 is_stmt 0 view .LVU204
+ 978 000c 19B3     		cbz	r1, .L75
+ 463:HardwareDrivers/I2C/Src/i2c_sw.c ****   {
+ 464:HardwareDrivers/I2C/Src/i2c_sw.c ****     /* 参数无效，直接返回错误，避免后面访问空指针。 */
+ 465:HardwareDrivers/I2C/Src/i2c_sw.c ****     return I2C_SW_ERROR;
+ 466:HardwareDrivers/I2C/Src/i2c_sw.c ****   }
+ 467:HardwareDrivers/I2C/Src/i2c_sw.c **** 
+ 468:HardwareDrivers/I2C/Src/i2c_sw.c ****   /* 产生 START 信号，开始一次 I2C 读事务。 */
+ 469:HardwareDrivers/I2C/Src/i2c_sw.c ****   I2C_SW_Start();
+ 979              		.loc 1 469 3 is_stmt 1 view .LVU205
+ 980 000e FFF7FEFF 		bl	I2C_SW_Start
+ 981              	.LVL102:
+ 470:HardwareDrivers/I2C/Src/i2c_sw.c **** 
+ 471:HardwareDrivers/I2C/Src/i2c_sw.c ****   /* 发送 7 位设备地址左移 1 位后的读地址，最低位 1 表示读方向。 */
+ 472:HardwareDrivers/I2C/Src/i2c_sw.c ****   if (I2C_SW_WriteByte((uint8_t)((dev_addr_7bit << 1U) | 0x01U)) != I2C_SW_OK)
+ 982              		.loc 1 472 3 view .LVU206
+ 983              		.loc 1 472 49 is_stmt 0 view .LVU207
+ 984 0012 6000     		lsls	r0, r4, #1
+ 985 0014 C0B2     		uxtb	r0, r0
+ 986              		.loc 1 472 7 view .LVU208
+ 987 0016 40F00100 		orr	r0, r0, #1
+ 988 001a FFF7FEFF 		bl	I2C_SW_WriteByte
+ 989              	.LVL103:
+ 990              		.loc 1 472 6 discriminator 1 view .LVU209
+ 991 001e 8046     		mov	r8, r0
+ 992 0020 08B9     		cbnz	r0, .L78
+ 993              	.LBB8:
+ 473:HardwareDrivers/I2C/Src/i2c_sw.c ****   {
+ 474:HardwareDrivers/I2C/Src/i2c_sw.c ****     /* 地址阶段没有收到 ACK，先发送 STOP 释放总线。 */
+ 475:HardwareDrivers/I2C/Src/i2c_sw.c ****     I2C_SW_Stop();
+ 476:HardwareDrivers/I2C/Src/i2c_sw.c **** 
+ 477:HardwareDrivers/I2C/Src/i2c_sw.c ****     /* 返回错误给上层设备驱动。 */
+ 478:HardwareDrivers/I2C/Src/i2c_sw.c ****     return I2C_SW_ERROR;
+ 479:HardwareDrivers/I2C/Src/i2c_sw.c ****   }
+ 480:HardwareDrivers/I2C/Src/i2c_sw.c **** 
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\cctz5LaX.s 			page 27
+
+
+ 481:HardwareDrivers/I2C/Src/i2c_sw.c ****   /* 按顺序读取指定数量的数据字节。 */
+ 482:HardwareDrivers/I2C/Src/i2c_sw.c ****   for (uint16_t index = 0U; index < len; index++)
+ 994              		.loc 1 482 17 view .LVU210
+ 995 0022 0024     		movs	r4, #0
+ 996              	.LVL104:
+ 997              		.loc 1 482 17 view .LVU211
+ 998 0024 0DE0     		b	.L72
+ 999              	.L78:
+ 1000              	.LBE8:
+ 475:HardwareDrivers/I2C/Src/i2c_sw.c **** 
+ 1001              		.loc 1 475 5 is_stmt 1 view .LVU212
+ 1002 0026 FFF7FEFF 		bl	I2C_SW_Stop
+ 1003              	.LVL105:
+ 478:HardwareDrivers/I2C/Src/i2c_sw.c ****   }
+ 1004              		.loc 1 478 5 view .LVU213
+ 478:HardwareDrivers/I2C/Src/i2c_sw.c ****   }
+ 1005              		.loc 1 478 12 is_stmt 0 view .LVU214
+ 1006 002a 4FF00108 		mov	r8, #1
+ 1007 002e 0CE0     		b	.L71
+ 1008              	.LVL106:
+ 1009              	.L73:
+ 1010              	.LBB10:
+ 1011              	.LBB9:
+ 483:HardwareDrivers/I2C/Src/i2c_sw.c ****   {
+ 484:HardwareDrivers/I2C/Src/i2c_sw.c ****     /* 前 len-1 个字节读完发送 ACK，最后 1 个字节读完发送 NACK。 */
+ 485:HardwareDrivers/I2C/Src/i2c_sw.c ****     uint8_t ack = (uint8_t)((index + 1U) < len);
+ 1012              		.loc 1 485 5 is_stmt 1 view .LVU215
+ 1013              		.loc 1 485 36 is_stmt 0 view .LVU216
+ 1014 0030 651C     		adds	r5, r4, #1
+ 1015              	.LVL107:
+ 486:HardwareDrivers/I2C/Src/i2c_sw.c **** 
+ 487:HardwareDrivers/I2C/Src/i2c_sw.c ****     /* 读取当前字节，并按 ack 参数自动发送 ACK 或 NACK。 */
+ 488:HardwareDrivers/I2C/Src/i2c_sw.c ****     data[index] = I2C_SW_ReadByte(ack);
+ 1016              		.loc 1 488 5 is_stmt 1 view .LVU217
+ 1017              		.loc 1 488 19 is_stmt 0 view .LVU218
+ 1018 0032 B542     		cmp	r5, r6
+ 1019 0034 2CBF     		ite	cs
+ 1020 0036 0020     		movcs	r0, #0
+ 1021 0038 0120     		movcc	r0, #1
+ 1022 003a FFF7FEFF 		bl	I2C_SW_ReadByte
+ 1023              	.LVL108:
+ 1024              		.loc 1 488 17 discriminator 1 view .LVU219
+ 1025 003e 3855     		strb	r0, [r7, r4]
+ 1026              	.LBE9:
+ 482:HardwareDrivers/I2C/Src/i2c_sw.c ****   {
+ 1027              		.loc 1 482 47 is_stmt 1 discriminator 3 view .LVU220
+ 1028 0040 ACB2     		uxth	r4, r5
+ 1029              	.LVL109:
+ 1030              	.L72:
+ 482:HardwareDrivers/I2C/Src/i2c_sw.c ****   {
+ 1031              		.loc 1 482 35 discriminator 1 view .LVU221
+ 1032 0042 B442     		cmp	r4, r6
+ 1033 0044 F4D3     		bcc	.L73
+ 1034              	.LBE10:
+ 489:HardwareDrivers/I2C/Src/i2c_sw.c ****   }
+ 490:HardwareDrivers/I2C/Src/i2c_sw.c **** 
+ 491:HardwareDrivers/I2C/Src/i2c_sw.c ****   /* 所有字节读取完成后，发送 STOP 结束事务。 */
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\cctz5LaX.s 			page 28
+
+
+ 492:HardwareDrivers/I2C/Src/i2c_sw.c ****   I2C_SW_Stop();
+ 1035              		.loc 1 492 3 view .LVU222
+ 1036 0046 FFF7FEFF 		bl	I2C_SW_Stop
+ 1037              	.LVL110:
+ 493:HardwareDrivers/I2C/Src/i2c_sw.c **** 
+ 494:HardwareDrivers/I2C/Src/i2c_sw.c ****   /* 返回成功状态。 */
+ 495:HardwareDrivers/I2C/Src/i2c_sw.c ****   return I2C_SW_OK;
+ 1038              		.loc 1 495 3 view .LVU223
+ 1039              	.L71:
+ 496:HardwareDrivers/I2C/Src/i2c_sw.c **** }
+ 1040              		.loc 1 496 1 is_stmt 0 view .LVU224
+ 1041 004a 4046     		mov	r0, r8
+ 1042 004c BDE8F081 		pop	{r4, r5, r6, r7, r8, pc}
+ 1043              	.LVL111:
+ 1044              	.L74:
+ 458:HardwareDrivers/I2C/Src/i2c_sw.c ****   }
+ 1045              		.loc 1 458 12 view .LVU225
+ 1046 0050 4FF00008 		mov	r8, #0
+ 1047 0054 F9E7     		b	.L71
+ 1048              	.L75:
+ 465:HardwareDrivers/I2C/Src/i2c_sw.c ****   }
+ 1049              		.loc 1 465 12 view .LVU226
+ 1050 0056 4FF00108 		mov	r8, #1
+ 1051 005a F6E7     		b	.L71
+ 1052              		.cfi_endproc
+ 1053              	.LFE149:
+ 1055              		.text
+ 1056              	.Letext0:
+ 1057              		.file 2 "D:\\STM32CubeIDE\\STM32CubeIDE_2.1.1\\STM32CubeIDE\\plugins\\com.st.stm32cube.ide.mcu.ext
+ 1058              		.file 3 "D:\\STM32CubeIDE\\STM32CubeIDE_2.1.1\\STM32CubeIDE\\plugins\\com.st.stm32cube.ide.mcu.ext
+ 1059              		.file 4 "Drivers/CMSIS/Device/ST/STM32G4xx/Include/stm32g474xx.h"
+ 1060              		.file 5 "Drivers/STM32G4xx_HAL_Driver/Inc/stm32g4xx_hal_gpio.h"
+ 1061              		.file 6 "HardwareDrivers/I2C/Inc/i2c_sw.h"
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\cctz5LaX.s 			page 29
+
+
+DEFINED SYMBOLS
+                            *ABS*:00000000 i2c_sw.c
+C:\Users\w1785\AppData\Local\Temp\cctz5LaX.s:21     .text.I2C_SW_Delay:00000000 $t
+C:\Users\w1785\AppData\Local\Temp\cctz5LaX.s:26     .text.I2C_SW_Delay:00000000 I2C_SW_Delay
+C:\Users\w1785\AppData\Local\Temp\cctz5LaX.s:70     .text.I2C_SW_SCL_High:00000000 $t
+C:\Users\w1785\AppData\Local\Temp\cctz5LaX.s:76     .text.I2C_SW_SCL_High:00000000 I2C_SW_SCL_High
+C:\Users\w1785\AppData\Local\Temp\cctz5LaX.s:98     .text.I2C_SW_SCL_High:00000010 $d
+C:\Users\w1785\AppData\Local\Temp\cctz5LaX.s:103    .text.I2C_SW_SCL_Low:00000000 $t
+C:\Users\w1785\AppData\Local\Temp\cctz5LaX.s:109    .text.I2C_SW_SCL_Low:00000000 I2C_SW_SCL_Low
+C:\Users\w1785\AppData\Local\Temp\cctz5LaX.s:131    .text.I2C_SW_SCL_Low:00000010 $d
+C:\Users\w1785\AppData\Local\Temp\cctz5LaX.s:136    .text.I2C_SW_SDA_High:00000000 $t
+C:\Users\w1785\AppData\Local\Temp\cctz5LaX.s:142    .text.I2C_SW_SDA_High:00000000 I2C_SW_SDA_High
+C:\Users\w1785\AppData\Local\Temp\cctz5LaX.s:164    .text.I2C_SW_SDA_High:00000010 $d
+C:\Users\w1785\AppData\Local\Temp\cctz5LaX.s:169    .text.I2C_SW_GPIO_Init:00000000 $t
+C:\Users\w1785\AppData\Local\Temp\cctz5LaX.s:175    .text.I2C_SW_GPIO_Init:00000000 I2C_SW_GPIO_Init
+C:\Users\w1785\AppData\Local\Temp\cctz5LaX.s:265    .text.I2C_SW_GPIO_Init:00000068 $d
+C:\Users\w1785\AppData\Local\Temp\cctz5LaX.s:270    .text.I2C_SW_SDA_Low:00000000 $t
+C:\Users\w1785\AppData\Local\Temp\cctz5LaX.s:276    .text.I2C_SW_SDA_Low:00000000 I2C_SW_SDA_Low
+C:\Users\w1785\AppData\Local\Temp\cctz5LaX.s:298    .text.I2C_SW_SDA_Low:00000010 $d
+C:\Users\w1785\AppData\Local\Temp\cctz5LaX.s:303    .text.I2C_SW_SDA_Read:00000000 $t
+C:\Users\w1785\AppData\Local\Temp\cctz5LaX.s:309    .text.I2C_SW_SDA_Read:00000000 I2C_SW_SDA_Read
+C:\Users\w1785\AppData\Local\Temp\cctz5LaX.s:337    .text.I2C_SW_SDA_Read:00000014 $d
+C:\Users\w1785\AppData\Local\Temp\cctz5LaX.s:342    .text.I2C_SW_Start:00000000 $t
+C:\Users\w1785\AppData\Local\Temp\cctz5LaX.s:348    .text.I2C_SW_Start:00000000 I2C_SW_Start
+C:\Users\w1785\AppData\Local\Temp\cctz5LaX.s:386    .text.I2C_SW_Stop:00000000 $t
+C:\Users\w1785\AppData\Local\Temp\cctz5LaX.s:392    .text.I2C_SW_Stop:00000000 I2C_SW_Stop
+C:\Users\w1785\AppData\Local\Temp\cctz5LaX.s:427    .text.I2C_SW_WriteBit:00000000 $t
+C:\Users\w1785\AppData\Local\Temp\cctz5LaX.s:433    .text.I2C_SW_WriteBit:00000000 I2C_SW_WriteBit
+C:\Users\w1785\AppData\Local\Temp\cctz5LaX.s:484    .text.I2C_SW_ReadBit:00000000 $t
+C:\Users\w1785\AppData\Local\Temp\cctz5LaX.s:490    .text.I2C_SW_ReadBit:00000000 I2C_SW_ReadBit
+C:\Users\w1785\AppData\Local\Temp\cctz5LaX.s:538    .text.I2C_SW_WaitAck:00000000 $t
+C:\Users\w1785\AppData\Local\Temp\cctz5LaX.s:544    .text.I2C_SW_WaitAck:00000000 I2C_SW_WaitAck
+C:\Users\w1785\AppData\Local\Temp\cctz5LaX.s:595    .text.I2C_SW_Ack:00000000 $t
+C:\Users\w1785\AppData\Local\Temp\cctz5LaX.s:601    .text.I2C_SW_Ack:00000000 I2C_SW_Ack
+C:\Users\w1785\AppData\Local\Temp\cctz5LaX.s:642    .text.I2C_SW_NAck:00000000 $t
+C:\Users\w1785\AppData\Local\Temp\cctz5LaX.s:648    .text.I2C_SW_NAck:00000000 I2C_SW_NAck
+C:\Users\w1785\AppData\Local\Temp\cctz5LaX.s:686    .text.I2C_SW_WriteByte:00000000 $t
+C:\Users\w1785\AppData\Local\Temp\cctz5LaX.s:692    .text.I2C_SW_WriteByte:00000000 I2C_SW_WriteByte
+C:\Users\w1785\AppData\Local\Temp\cctz5LaX.s:751    .text.I2C_SW_ReadByte:00000000 $t
+C:\Users\w1785\AppData\Local\Temp\cctz5LaX.s:757    .text.I2C_SW_ReadByte:00000000 I2C_SW_ReadByte
+C:\Users\w1785\AppData\Local\Temp\cctz5LaX.s:837    .text.I2C_SW_Write:00000000 $t
+C:\Users\w1785\AppData\Local\Temp\cctz5LaX.s:843    .text.I2C_SW_Write:00000000 I2C_SW_Write
+C:\Users\w1785\AppData\Local\Temp\cctz5LaX.s:947    .text.I2C_SW_Read:00000000 $t
+C:\Users\w1785\AppData\Local\Temp\cctz5LaX.s:953    .text.I2C_SW_Read:00000000 I2C_SW_Read
+
+UNDEFINED SYMBOLS
+HAL_GPIO_WritePin
+HAL_GPIO_Init
+HAL_GPIO_ReadPin

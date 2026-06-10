@@ -92,6 +92,57 @@ Discarded input sections
  .bss           0x00000000        0x0 build/lcd_hw.o
  .text.LCD_WriteDataBuffer
                 0x00000000       0x24 build/lcd_hw.o
+ .text          0x00000000        0x0 build/i2c_sw.o
+ .data          0x00000000        0x0 build/i2c_sw.o
+ .bss           0x00000000        0x0 build/i2c_sw.o
+ .text.I2C_SW_Delay
+                0x00000000       0x1a build/i2c_sw.o
+ .text.I2C_SW_SCL_High
+                0x00000000       0x14 build/i2c_sw.o
+ .text.I2C_SW_SCL_Low
+                0x00000000       0x14 build/i2c_sw.o
+ .text.I2C_SW_SDA_High
+                0x00000000       0x14 build/i2c_sw.o
+ .text.I2C_SW_GPIO_Init
+                0x00000000       0x6c build/i2c_sw.o
+ .text.I2C_SW_SDA_Low
+                0x00000000       0x14 build/i2c_sw.o
+ .text.I2C_SW_SDA_Read
+                0x00000000       0x18 build/i2c_sw.o
+ .text.I2C_SW_Start
+                0x00000000       0x20 build/i2c_sw.o
+ .text.I2C_SW_Stop
+                0x00000000       0x1c build/i2c_sw.o
+ .text.I2C_SW_WriteBit
+                0x00000000       0x2a build/i2c_sw.o
+ .text.I2C_SW_ReadBit
+                0x00000000       0x28 build/i2c_sw.o
+ .text.I2C_SW_WaitAck
+                0x00000000       0x28 build/i2c_sw.o
+ .text.I2C_SW_Ack
+                0x00000000       0x24 build/i2c_sw.o
+ .text.I2C_SW_NAck
+                0x00000000       0x20 build/i2c_sw.o
+ .text.I2C_SW_WriteByte
+                0x00000000       0x22 build/i2c_sw.o
+ .text.I2C_SW_ReadByte
+                0x00000000       0x2e build/i2c_sw.o
+ .text.I2C_SW_Write
+                0x00000000       0x50 build/i2c_sw.o
+ .text.I2C_SW_Read
+                0x00000000       0x5c build/i2c_sw.o
+ .debug_info    0x00000000      0xcce build/i2c_sw.o
+ .debug_abbrev  0x00000000      0x296 build/i2c_sw.o
+ .debug_loc     0x00000000      0x61a build/i2c_sw.o
+ .debug_aranges
+                0x00000000       0xa8 build/i2c_sw.o
+ .debug_ranges  0x00000000       0xe0 build/i2c_sw.o
+ .debug_line    0x00000000      0x67c build/i2c_sw.o
+ .debug_str     0x00000000      0x53f build/i2c_sw.o
+ .comment       0x00000000       0x44 build/i2c_sw.o
+ .debug_frame   0x00000000      0x1e0 build/i2c_sw.o
+ .ARM.attributes
+                0x00000000       0x34 build/i2c_sw.o
  .text          0x00000000        0x0 build/stm32g4xx_it.o
  .data          0x00000000        0x0 build/stm32g4xx_it.o
  .bss           0x00000000        0x0 build/stm32g4xx_it.o
@@ -7615,6 +7666,7 @@ LOAD build/app_main.o
 LOAD build/display_service.o
 LOAD build/st7789.o
 LOAD build/lcd_hw.o
+LOAD build/i2c_sw.o
 LOAD build/stm32g4xx_it.o
 LOAD build/stm32g4xx_hal_msp.o
 LOAD build/stm32g4xx_hal_pwr_ex.o
@@ -14358,11 +14410,14 @@ HAL_GPIO_EXTI_IRQHandler                          build/stm32g4xx_hal_gpio.o
 HAL_GPIO_Init                                     build/stm32g4xx_hal_gpio.o
                                                   build/stm32g4xx_hal_rcc_ex.o
                                                   build/stm32g4xx_hal_rcc.o
+                                                  build/i2c_sw.o
                                                   build/lcd_hw.o
 HAL_GPIO_LockPin                                  build/stm32g4xx_hal_gpio.o
 HAL_GPIO_ReadPin                                  build/stm32g4xx_hal_gpio.o
+                                                  build/i2c_sw.o
 HAL_GPIO_TogglePin                                build/stm32g4xx_hal_gpio.o
 HAL_GPIO_WritePin                                 build/stm32g4xx_hal_gpio.o
+                                                  build/i2c_sw.o
                                                   build/lcd_hw.o
 HAL_GetDEVID                                      build/stm32g4xx_hal.o
 HAL_GetHalVersion                                 build/stm32g4xx_hal.o
@@ -14543,6 +14598,23 @@ I2C3_ER_IRQHandler                                build/startup_stm32g474xx.o
 I2C3_EV_IRQHandler                                build/startup_stm32g474xx.o
 I2C4_ER_IRQHandler                                build/startup_stm32g474xx.o
 I2C4_EV_IRQHandler                                build/startup_stm32g474xx.o
+I2C_SW_Ack                                        build/i2c_sw.o
+I2C_SW_GPIO_Init                                  build/i2c_sw.o
+I2C_SW_NAck                                       build/i2c_sw.o
+I2C_SW_Read                                       build/i2c_sw.o
+I2C_SW_ReadBit                                    build/i2c_sw.o
+I2C_SW_ReadByte                                   build/i2c_sw.o
+I2C_SW_SCL_High                                   build/i2c_sw.o
+I2C_SW_SCL_Low                                    build/i2c_sw.o
+I2C_SW_SDA_High                                   build/i2c_sw.o
+I2C_SW_SDA_Low                                    build/i2c_sw.o
+I2C_SW_SDA_Read                                   build/i2c_sw.o
+I2C_SW_Start                                      build/i2c_sw.o
+I2C_SW_Stop                                       build/i2c_sw.o
+I2C_SW_WaitAck                                    build/i2c_sw.o
+I2C_SW_Write                                      build/i2c_sw.o
+I2C_SW_WriteBit                                   build/i2c_sw.o
+I2C_SW_WriteByte                                  build/i2c_sw.o
 LCD_CS_High                                       build/lcd_hw.o
 LCD_CS_Low                                        build/lcd_hw.o
 LCD_DC_High                                       build/lcd_hw.o

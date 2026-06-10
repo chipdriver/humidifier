@@ -1,4 +1,4 @@
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\cc9aXUZl.s 			page 1
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\cchqKdt6.s 			page 1
 
 
    1              		.cpu cortex-m4
@@ -58,7 +58,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\cc9aXUZl.s 			page 1
   28:Middlewares/LVGL/lvgl/src/themes/default/lv_theme_default.c **** 
   29:Middlewares/LVGL/lvgl/src/themes/default/lv_theme_default.c **** /*SCREEN*/
   30:Middlewares/LVGL/lvgl/src/themes/default/lv_theme_default.c **** #define LIGHT_COLOR_SCR        lv_palette_lighten(LV_PALETTE_GREY, 4)
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\cc9aXUZl.s 			page 2
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\cchqKdt6.s 			page 2
 
 
   31:Middlewares/LVGL/lvgl/src/themes/default/lv_theme_default.c **** #define LIGHT_COLOR_CARD       lv_color_white()
@@ -118,7 +118,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\cc9aXUZl.s 			page 1
   85:Middlewares/LVGL/lvgl/src/themes/default/lv_theme_default.c ****     lv_style_t anim_fast;
   86:Middlewares/LVGL/lvgl/src/themes/default/lv_theme_default.c **** 
   87:Middlewares/LVGL/lvgl/src/themes/default/lv_theme_default.c ****     /*Parts*/
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\cc9aXUZl.s 			page 3
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\cchqKdt6.s 			page 3
 
 
   88:Middlewares/LVGL/lvgl/src/themes/default/lv_theme_default.c ****     lv_style_t knob;
@@ -178,7 +178,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\cc9aXUZl.s 			page 1
  142:Middlewares/LVGL/lvgl/src/themes/default/lv_theme_default.c **** #endif
  143:Middlewares/LVGL/lvgl/src/themes/default/lv_theme_default.c **** 
  144:Middlewares/LVGL/lvgl/src/themes/default/lv_theme_default.c **** #if LV_USE_TABVIEW
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\cc9aXUZl.s 			page 4
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\cchqKdt6.s 			page 4
 
 
  145:Middlewares/LVGL/lvgl/src/themes/default/lv_theme_default.c ****     lv_style_t tab_bg_focus, tab_btn;
@@ -238,7 +238,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\cc9aXUZl.s 			page 1
  199:Middlewares/LVGL/lvgl/src/themes/default/lv_theme_default.c **** {
  200:Middlewares/LVGL/lvgl/src/themes/default/lv_theme_default.c **** #if TRANSITION_TIME
  201:Middlewares/LVGL/lvgl/src/themes/default/lv_theme_default.c ****     static const lv_style_prop_t trans_props[] = {
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\cc9aXUZl.s 			page 5
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\cchqKdt6.s 			page 5
 
 
  202:Middlewares/LVGL/lvgl/src/themes/default/lv_theme_default.c ****         LV_STYLE_BG_OPA, LV_STYLE_BG_COLOR,
@@ -298,7 +298,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\cc9aXUZl.s 			page 1
  256:Middlewares/LVGL/lvgl/src/themes/default/lv_theme_default.c ****     lv_style_set_bg_opa(&theme->styles.card, LV_OPA_COVER);
  257:Middlewares/LVGL/lvgl/src/themes/default/lv_theme_default.c ****     lv_style_set_bg_color(&theme->styles.card, theme->color_card);
  258:Middlewares/LVGL/lvgl/src/themes/default/lv_theme_default.c ****     lv_style_set_border_color(&theme->styles.card, theme->color_grey);
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\cc9aXUZl.s 			page 6
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\cchqKdt6.s 			page 6
 
 
  259:Middlewares/LVGL/lvgl/src/themes/default/lv_theme_default.c ****     lv_style_set_border_width(&theme->styles.card, BORDER_WIDTH);
@@ -358,7 +358,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\cc9aXUZl.s 			page 1
  313:Middlewares/LVGL/lvgl/src/themes/default/lv_theme_default.c ****     lv_style_set_pad_row(&theme->styles.pad_normal, PAD_DEF);
  314:Middlewares/LVGL/lvgl/src/themes/default/lv_theme_default.c ****     lv_style_set_pad_column(&theme->styles.pad_normal, PAD_DEF);
  315:Middlewares/LVGL/lvgl/src/themes/default/lv_theme_default.c **** 
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\cc9aXUZl.s 			page 7
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\cchqKdt6.s 			page 7
 
 
  316:Middlewares/LVGL/lvgl/src/themes/default/lv_theme_default.c ****     style_init_reset(&theme->styles.pad_small);
@@ -418,7 +418,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\cc9aXUZl.s 			page 1
  370:Middlewares/LVGL/lvgl/src/themes/default/lv_theme_default.c ****     style_init_reset(&theme->styles.circle);
  371:Middlewares/LVGL/lvgl/src/themes/default/lv_theme_default.c ****     lv_style_set_radius(&theme->styles.circle, LV_RADIUS_CIRCLE);
  372:Middlewares/LVGL/lvgl/src/themes/default/lv_theme_default.c **** 
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\cc9aXUZl.s 			page 8
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\cchqKdt6.s 			page 8
 
 
  373:Middlewares/LVGL/lvgl/src/themes/default/lv_theme_default.c ****     style_init_reset(&theme->styles.no_radius);
@@ -478,7 +478,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\cc9aXUZl.s 			page 1
  427:Middlewares/LVGL/lvgl/src/themes/default/lv_theme_default.c ****     style_init_reset(&theme->styles.switch_knob);
  428:Middlewares/LVGL/lvgl/src/themes/default/lv_theme_default.c ****     lv_style_set_pad_all(&theme->styles.switch_knob, - LV_DPX_CALC(theme->disp_dpi, 4));
  429:Middlewares/LVGL/lvgl/src/themes/default/lv_theme_default.c ****     lv_style_set_bg_color(&theme->styles.switch_knob, lv_color_white());
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\cc9aXUZl.s 			page 9
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\cchqKdt6.s 			page 9
 
 
  430:Middlewares/LVGL/lvgl/src/themes/default/lv_theme_default.c **** #endif
@@ -538,7 +538,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\cc9aXUZl.s 			page 1
  484:Middlewares/LVGL/lvgl/src/themes/default/lv_theme_default.c ****     lv_style_set_pad_all(&theme->styles.menu_sidebar_cont, 0);
  485:Middlewares/LVGL/lvgl/src/themes/default/lv_theme_default.c ****     lv_style_set_pad_gap(&theme->styles.menu_sidebar_cont, 0);
  486:Middlewares/LVGL/lvgl/src/themes/default/lv_theme_default.c ****     lv_style_set_border_width(&theme->styles.menu_sidebar_cont, LV_DPX_CALC(theme->disp_dpi, 1));
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\cc9aXUZl.s 			page 10
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\cchqKdt6.s 			page 10
 
 
  487:Middlewares/LVGL/lvgl/src/themes/default/lv_theme_default.c ****     lv_style_set_border_opa(&theme->styles.menu_sidebar_cont, LV_OPA_10);
@@ -598,7 +598,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\cc9aXUZl.s 			page 1
  541:Middlewares/LVGL/lvgl/src/themes/default/lv_theme_default.c **** #if LV_USE_CALENDAR
  542:Middlewares/LVGL/lvgl/src/themes/default/lv_theme_default.c ****     style_init_reset(&theme->styles.calendar_btnm_bg);
  543:Middlewares/LVGL/lvgl/src/themes/default/lv_theme_default.c ****     lv_style_set_pad_all(&theme->styles.calendar_btnm_bg, PAD_SMALL);
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\cc9aXUZl.s 			page 11
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\cchqKdt6.s 			page 11
 
 
  544:Middlewares/LVGL/lvgl/src/themes/default/lv_theme_default.c ****     lv_style_set_pad_gap(&theme->styles.calendar_btnm_bg, PAD_SMALL / 2);
@@ -658,7 +658,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\cc9aXUZl.s 			page 1
  598:Middlewares/LVGL/lvgl/src/themes/default/lv_theme_default.c **** #endif
  599:Middlewares/LVGL/lvgl/src/themes/default/lv_theme_default.c **** 
  600:Middlewares/LVGL/lvgl/src/themes/default/lv_theme_default.c **** #if LV_USE_LED
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\cc9aXUZl.s 			page 12
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\cchqKdt6.s 			page 12
 
 
  601:Middlewares/LVGL/lvgl/src/themes/default/lv_theme_default.c ****     style_init_reset(&theme->styles.led);
@@ -718,7 +718,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\cc9aXUZl.s 			page 1
  655:Middlewares/LVGL/lvgl/src/themes/default/lv_theme_default.c ****        (theme->base.flags == (dark ? MODE_DARK : 0)) &&
  656:Middlewares/LVGL/lvgl/src/themes/default/lv_theme_default.c ****        theme->base.font_small == font) {
  657:Middlewares/LVGL/lvgl/src/themes/default/lv_theme_default.c ****         return (lv_theme_t *) theme;
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\cc9aXUZl.s 			page 13
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\cchqKdt6.s 			page 13
 
 
  658:Middlewares/LVGL/lvgl/src/themes/default/lv_theme_default.c ****     }
@@ -778,7 +778,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\cc9aXUZl.s 			page 1
  712:Middlewares/LVGL/lvgl/src/themes/default/lv_theme_default.c ****             lv_style_t * theme_styles = (lv_style_t *)(&(theme->styles));
  713:Middlewares/LVGL/lvgl/src/themes/default/lv_theme_default.c ****             uint32_t i;
  714:Middlewares/LVGL/lvgl/src/themes/default/lv_theme_default.c ****             for(i = 0; i < sizeof(my_theme_styles_t) / sizeof(lv_style_t); i++) {
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\cc9aXUZl.s 			page 14
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\cchqKdt6.s 			page 14
 
 
  715:Middlewares/LVGL/lvgl/src/themes/default/lv_theme_default.c ****                 lv_style_reset(theme_styles + i);
@@ -838,7 +838,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\cc9aXUZl.s 			page 1
   57              		.loc 1 740 5 is_stmt 1 view .LVU8
   58              		.loc 1 740 7 is_stmt 0 view .LVU9
   59 0010 0028     		cmp	r0, #0
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\cc9aXUZl.s 			page 15
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\cchqKdt6.s 			page 15
 
 
   60 0012 54D0     		beq	.L61
@@ -898,7 +898,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\cc9aXUZl.s 			page 1
  100 0046 3046     		mov	r0, r6
  101 0048 FFF7FEFF 		bl	lv_obj_get_child
  102              	.LVL9:
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\cc9aXUZl.s 			page 16
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\cchqKdt6.s 			page 16
 
 
  103              		.loc 1 754 62 discriminator 1 view .LVU23
@@ -958,7 +958,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\cc9aXUZl.s 			page 1
  776:Middlewares/LVGL/lvgl/src/themes/default/lv_theme_default.c ****         }
  777:Middlewares/LVGL/lvgl/src/themes/default/lv_theme_default.c ****         /*Content*/
  778:Middlewares/LVGL/lvgl/src/themes/default/lv_theme_default.c ****         else if(lv_obj_check_type(parent, &lv_win_class) && lv_obj_get_child(parent, 1) == obj) {
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\cc9aXUZl.s 			page 17
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\cchqKdt6.s 			page 17
 
 
  136              		.loc 1 778 14 is_stmt 1 view .LVU33
@@ -1018,7 +1018,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\cc9aXUZl.s 			page 1
  796:Middlewares/LVGL/lvgl/src/themes/default/lv_theme_default.c ****         lv_obj_add_style(obj, &theme->styles.scrollbar_scrolled, LV_PART_SCROLLBAR | LV_STATE_SCROL
  173              		.loc 1 796 9 view .LVU43
  174 00b0 AA4A     		ldr	r2, .L71+20
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\cc9aXUZl.s 			page 18
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\cchqKdt6.s 			page 18
 
 
  175 00b2 05F15801 		add	r1, r5, #88
@@ -1078,7 +1078,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\cc9aXUZl.s 			page 1
  817:Middlewares/LVGL/lvgl/src/themes/default/lv_theme_default.c ****         lv_obj_add_style(obj, &theme->styles.transition_delayed, 0);
  818:Middlewares/LVGL/lvgl/src/themes/default/lv_theme_default.c ****         lv_obj_add_style(obj, &theme->styles.pressed, LV_STATE_PRESSED);
  819:Middlewares/LVGL/lvgl/src/themes/default/lv_theme_default.c ****         lv_obj_add_style(obj, &theme->styles.transition_normal, LV_STATE_PRESSED);
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\cc9aXUZl.s 			page 19
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\cchqKdt6.s 			page 19
 
 
  820:Middlewares/LVGL/lvgl/src/themes/default/lv_theme_default.c ****         lv_obj_add_style(obj, &theme->styles.outline_primary, LV_STATE_FOCUS_KEY);
@@ -1138,7 +1138,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\cc9aXUZl.s 			page 1
  874:Middlewares/LVGL/lvgl/src/themes/default/lv_theme_default.c ****         lv_obj_add_style(obj, &theme->styles.circle, 0);
  875:Middlewares/LVGL/lvgl/src/themes/default/lv_theme_default.c ****         lv_obj_add_style(obj, &theme->styles.outline_primary, LV_STATE_FOCUS_KEY);
  876:Middlewares/LVGL/lvgl/src/themes/default/lv_theme_default.c ****         lv_obj_add_style(obj, &theme->styles.outline_secondary, LV_STATE_EDITED);
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\cc9aXUZl.s 			page 20
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\cchqKdt6.s 			page 20
 
 
  877:Middlewares/LVGL/lvgl/src/themes/default/lv_theme_default.c ****         lv_obj_add_style(obj, &theme->styles.bg_color_primary, LV_PART_INDICATOR);
@@ -1198,7 +1198,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\cc9aXUZl.s 			page 1
  931:Middlewares/LVGL/lvgl/src/themes/default/lv_theme_default.c ****     }
  932:Middlewares/LVGL/lvgl/src/themes/default/lv_theme_default.c **** #endif
  933:Middlewares/LVGL/lvgl/src/themes/default/lv_theme_default.c **** 
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\cc9aXUZl.s 			page 21
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\cchqKdt6.s 			page 21
 
 
  934:Middlewares/LVGL/lvgl/src/themes/default/lv_theme_default.c **** #if LV_USE_SWITCH
@@ -1258,7 +1258,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\cc9aXUZl.s 			page 1
  988:Middlewares/LVGL/lvgl/src/themes/default/lv_theme_default.c ****     }
  989:Middlewares/LVGL/lvgl/src/themes/default/lv_theme_default.c ****     else if(lv_obj_check_type(obj, &lv_dropdownlist_class)) {
  990:Middlewares/LVGL/lvgl/src/themes/default/lv_theme_default.c ****         lv_obj_add_style(obj, &theme->styles.card, 0);
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\cc9aXUZl.s 			page 22
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\cchqKdt6.s 			page 22
 
 
  991:Middlewares/LVGL/lvgl/src/themes/default/lv_theme_default.c ****         lv_obj_add_style(obj, &theme->styles.line_space_large, 0);
@@ -1318,7 +1318,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\cc9aXUZl.s 			page 1
 1045:Middlewares/LVGL/lvgl/src/themes/default/lv_theme_default.c ****     else if(lv_obj_check_type(obj, &lv_calendar_header_dropdown_class)) {
 1046:Middlewares/LVGL/lvgl/src/themes/default/lv_theme_default.c ****         lv_obj_add_style(obj, &theme->styles.calendar_header, 0);
 1047:Middlewares/LVGL/lvgl/src/themes/default/lv_theme_default.c ****     }
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\cc9aXUZl.s 			page 23
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\cchqKdt6.s 			page 23
 
 
 1048:Middlewares/LVGL/lvgl/src/themes/default/lv_theme_default.c **** #endif
@@ -1378,7 +1378,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\cc9aXUZl.s 			page 1
 1102:Middlewares/LVGL/lvgl/src/themes/default/lv_theme_default.c ****         lv_obj_add_style(obj, &theme->styles.scrollbar, LV_PART_SCROLLBAR);
 1103:Middlewares/LVGL/lvgl/src/themes/default/lv_theme_default.c ****         lv_obj_add_style(obj, &theme->styles.scrollbar_scrolled, LV_PART_SCROLLBAR | LV_STATE_SCROL
 1104:Middlewares/LVGL/lvgl/src/themes/default/lv_theme_default.c ****     }
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\cc9aXUZl.s 			page 24
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\cchqKdt6.s 			page 24
 
 
 1105:Middlewares/LVGL/lvgl/src/themes/default/lv_theme_default.c ****     else if(lv_obj_check_type(obj, &lv_menu_main_cont_class)) {
@@ -1438,7 +1438,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\cc9aXUZl.s 			page 1
 1159:Middlewares/LVGL/lvgl/src/themes/default/lv_theme_default.c ****     else if(lv_obj_check_type(obj, &lv_msgbox_header_button_class) ||
 1160:Middlewares/LVGL/lvgl/src/themes/default/lv_theme_default.c ****             lv_obj_check_type(obj, &lv_msgbox_footer_button_class)) {
 1161:Middlewares/LVGL/lvgl/src/themes/default/lv_theme_default.c ****         lv_obj_add_style(obj, &theme->styles.btn, 0);
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\cc9aXUZl.s 			page 25
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\cchqKdt6.s 			page 25
 
 
 1162:Middlewares/LVGL/lvgl/src/themes/default/lv_theme_default.c ****         lv_obj_add_style(obj, &theme->styles.bg_color_primary, 0);
@@ -1498,7 +1498,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\cc9aXUZl.s 			page 1
 1216:Middlewares/LVGL/lvgl/src/themes/default/lv_theme_default.c ****         lv_obj_add_style(obj, &theme->styles.scale, LV_PART_INDICATOR);
 1217:Middlewares/LVGL/lvgl/src/themes/default/lv_theme_default.c ****         lv_obj_add_style(obj, &theme->styles.scale, LV_PART_ITEMS);
 1218:Middlewares/LVGL/lvgl/src/themes/default/lv_theme_default.c ****     }
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\cc9aXUZl.s 			page 26
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\cchqKdt6.s 			page 26
 
 
 1219:Middlewares/LVGL/lvgl/src/themes/default/lv_theme_default.c **** #endif
@@ -1558,7 +1558,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\cc9aXUZl.s 			page 1
  248 0132 8A4A     		ldr	r2, .L71+20
  249 0134 05F15801 		add	r1, r5, #88
  250 0138 2046     		mov	r0, r4
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\cc9aXUZl.s 			page 27
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\cchqKdt6.s 			page 27
 
 
  251 013a FFF7FEFF 		bl	lv_obj_add_style
@@ -1618,7 +1618,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\cc9aXUZl.s 			page 1
  296 018c AAE7     		b	.L1
  297              	.L4:
  799:Middlewares/LVGL/lvgl/src/themes/default/lv_theme_default.c **** 
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\cc9aXUZl.s 			page 28
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\cchqKdt6.s 			page 28
 
 
  298              		.loc 1 799 10 view .LVU67
@@ -1678,7 +1678,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\cc9aXUZl.s 			page 1
  341 01d0 FFF7FEFF 		bl	lv_obj_add_style
  342              	.LVL44:
  818:Middlewares/LVGL/lvgl/src/themes/default/lv_theme_default.c ****         lv_obj_add_style(obj, &theme->styles.transition_normal, LV_STATE_PRESSED);
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\cc9aXUZl.s 			page 29
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\cchqKdt6.s 			page 29
 
 
  343              		.loc 1 818 9 view .LVU79
@@ -1738,7 +1738,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\cc9aXUZl.s 			page 1
  388 0228 4F49     		ldr	r1, .L71+32
  389 022a 3046     		mov	r0, r6
  390 022c FFF7FEFF 		bl	lv_obj_check_type
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\cc9aXUZl.s 			page 30
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\cchqKdt6.s 			page 30
 
 
  391              	.LVL52:
@@ -1798,7 +1798,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\cc9aXUZl.s 			page 1
  436              	.LVL58:
  808:Middlewares/LVGL/lvgl/src/themes/default/lv_theme_default.c ****                 lv_obj_add_style(obj, &theme->styles.outline_secondary, LV_STATE_EDITED);
  437              		.loc 1 808 17 view .LVU98
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\cc9aXUZl.s 			page 31
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\cchqKdt6.s 			page 31
 
 
  438 0280 1022     		movs	r2, #16
@@ -1858,7 +1858,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\cc9aXUZl.s 			page 1
  482              	.LVL65:
  844:Middlewares/LVGL/lvgl/src/themes/default/lv_theme_default.c **** 
  483              		.loc 1 844 12 discriminator 1 view .LVU109
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\cc9aXUZl.s 			page 32
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\cchqKdt6.s 			page 32
 
 
  484 02c6 0028     		cmp	r0, #0
@@ -1918,7 +1918,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\cc9aXUZl.s 			page 1
  526              		.loc 1 863 9 view .LVU121
  527 030e 194A     		ldr	r2, .L71+44
  528 0310 05F1D001 		add	r1, r5, #208
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\cc9aXUZl.s 			page 33
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\cchqKdt6.s 			page 33
 
 
  529 0314 2046     		mov	r0, r4
@@ -1978,7 +1978,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\cc9aXUZl.s 			page 1
  578              		.loc 1 848 13 view .LVU126
  579 0388 0022     		movs	r2, #0
  580 038a 05F51771 		add	r1, r5, #604
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\cc9aXUZl.s 			page 34
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\cchqKdt6.s 			page 34
 
 
  581 038e 2046     		mov	r0, r4
@@ -2038,7 +2038,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\cc9aXUZl.s 			page 1
  625 03dc FFF7FEFF 		bl	lv_obj_add_style
  626              	.LVL85:
  855:Middlewares/LVGL/lvgl/src/themes/default/lv_theme_default.c ****             return;
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\cc9aXUZl.s 			page 35
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\cchqKdt6.s 			page 35
 
 
  627              		.loc 1 855 13 view .LVU137
@@ -2098,7 +2098,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\cc9aXUZl.s 			page 1
  671 0424 FFF7FEFF 		bl	lv_obj_add_style
  672              	.LVL93:
  877:Middlewares/LVGL/lvgl/src/themes/default/lv_theme_default.c ****         lv_obj_add_style(obj, &theme->styles.circle, LV_PART_INDICATOR);
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\cc9aXUZl.s 			page 36
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\cchqKdt6.s 			page 36
 
 
  673              		.loc 1 877 9 view .LVU148
@@ -2158,7 +2158,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\cc9aXUZl.s 			page 1
  718              	.LVL101:
  887:Middlewares/LVGL/lvgl/src/themes/default/lv_theme_default.c ****         lv_obj_add_style(obj, &theme->styles.bg_color_primary, LV_PART_INDICATOR);
  719              		.loc 1 887 9 view .LVU158
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\cc9aXUZl.s 			page 37
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\cchqKdt6.s 			page 37
 
 
  720 0476 2022     		movs	r2, #32
@@ -2218,7 +2218,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\cc9aXUZl.s 			page 1
  766              		.loc 1 900 13 is_stmt 0 view .LVU166
  767 04d4 9F49     		ldr	r1, .L73+28
  768 04d6 2046     		mov	r0, r4
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\cc9aXUZl.s 			page 38
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\cchqKdt6.s 			page 38
 
 
  769 04d8 FFF7FEFF 		bl	lv_obj_check_type
@@ -2278,7 +2278,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\cc9aXUZl.s 			page 1
  815              	.LVL117:
  908:Middlewares/LVGL/lvgl/src/themes/default/lv_theme_default.c ****         lv_obj_add_style(obj, &theme->styles.table_cell, LV_PART_ITEMS);
  816              		.loc 1 908 9 view .LVU175
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\cc9aXUZl.s 			page 39
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\cchqKdt6.s 			page 39
 
 
  817 0536 4FF4A022 		mov	r2, #327680
@@ -2338,7 +2338,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\cc9aXUZl.s 			page 1
  919:Middlewares/LVGL/lvgl/src/themes/default/lv_theme_default.c ****         lv_obj_add_style(obj, &theme->styles.outline_primary, LV_STATE_FOCUS_KEY);
  863              		.loc 1 919 9 is_stmt 1 view .LVU184
  864 0592 0022     		movs	r2, #0
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\cc9aXUZl.s 			page 40
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\cchqKdt6.s 			page 40
 
 
  865 0594 05F58671 		add	r1, r5, #268
@@ -2398,7 +2398,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\cc9aXUZl.s 			page 1
  911 05ee 05F5BC71 		add	r1, r5, #376
  912 05f2 2046     		mov	r0, r4
  913 05f4 FFF7FEFF 		bl	lv_obj_add_style
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\cc9aXUZl.s 			page 41
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\cchqKdt6.s 			page 41
 
 
  914              	.LVL133:
@@ -2458,7 +2458,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\cc9aXUZl.s 			page 1
  958 0642 FFF7FEFF 		bl	lv_obj_add_style
  959              	.LVL140:
  939:Middlewares/LVGL/lvgl/src/themes/default/lv_theme_default.c ****         lv_obj_add_style(obj, &theme->styles.outline_primary, LV_STATE_FOCUS_KEY);
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\cc9aXUZl.s 			page 42
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\cchqKdt6.s 			page 42
 
 
  960              		.loc 1 939 9 view .LVU203
@@ -2518,7 +2518,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\cc9aXUZl.s 			page 1
  947:Middlewares/LVGL/lvgl/src/themes/default/lv_theme_default.c ****         lv_obj_add_style(obj, &theme->styles.transition_normal, LV_PART_INDICATOR);
  1006              		.loc 1 947 31 is_stmt 0 view .LVU212
  1007 06a4 05F5C875 		add	r5, r5, #400
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\cc9aXUZl.s 			page 43
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\cchqKdt6.s 			page 43
 
 
  1008              	.LVL149:
@@ -2578,7 +2578,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\cc9aXUZl.s 			page 1
  1053 06f4 05F14C01 		add	r1, r5, #76
  1054 06f8 2046     		mov	r0, r4
  1055 06fa FFF7FEFF 		bl	lv_obj_add_style
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\cc9aXUZl.s 			page 44
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\cchqKdt6.s 			page 44
 
 
  1056              	.LVL157:
@@ -2638,7 +2638,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\cc9aXUZl.s 			page 1
  1104              	.L21:
  966:Middlewares/LVGL/lvgl/src/themes/default/lv_theme_default.c ****         lv_obj_add_style(obj, &theme->styles.card, 0);
  1105              		.loc 1 966 10 view .LVU228
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\cc9aXUZl.s 			page 45
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\cchqKdt6.s 			page 45
 
 
  966:Middlewares/LVGL/lvgl/src/themes/default/lv_theme_default.c ****         lv_obj_add_style(obj, &theme->styles.card, 0);
@@ -2698,7 +2698,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\cc9aXUZl.s 			page 1
  1151 07c6 05F17C01 		add	r1, r5, #124
  1152 07ca 2046     		mov	r0, r4
  1153 07cc FFF7FEFF 		bl	lv_obj_add_style
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\cc9aXUZl.s 			page 46
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\cchqKdt6.s 			page 46
 
 
  1154              	.LVL171:
@@ -2758,7 +2758,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\cc9aXUZl.s 			page 1
  1198              	.LVL178:
  984:Middlewares/LVGL/lvgl/src/themes/default/lv_theme_default.c ****         lv_obj_add_style(obj, &theme->styles.outline_secondary, LV_STATE_EDITED);
  1199              		.loc 1 984 9 view .LVU248
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\cc9aXUZl.s 			page 47
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\cchqKdt6.s 			page 47
 
 
  1200 081a 1022     		movs	r2, #16
@@ -2818,7 +2818,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\cc9aXUZl.s 			page 1
  992:Middlewares/LVGL/lvgl/src/themes/default/lv_theme_default.c ****         lv_obj_add_style(obj, &theme->styles.scrollbar, LV_PART_SCROLLBAR);
  1246              		.loc 1 992 9 view .LVU257
  1247 0870 0022     		movs	r2, #0
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\cc9aXUZl.s 			page 48
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\cchqKdt6.s 			page 48
 
 
  1248 0872 05F5FE71 		add	r1, r5, #508
@@ -2878,7 +2878,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\cc9aXUZl.s 			page 1
 1003:Middlewares/LVGL/lvgl/src/themes/default/lv_theme_default.c ****         lv_obj_add_style(obj, &theme->styles.arc_indic, LV_PART_INDICATOR);
  1293              		.loc 1 1003 31 is_stmt 0 view .LVU267
  1294 08ca 05F5E076 		add	r6, r5, #448
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\cc9aXUZl.s 			page 49
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\cchqKdt6.s 			page 49
 
 
  1295              	.LVL194:
@@ -2938,7 +2938,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\cc9aXUZl.s 			page 1
  1339 0918 FFF7FEFF 		bl	lv_obj_add_style
  1340              	.LVL202:
 1013:Middlewares/LVGL/lvgl/src/themes/default/lv_theme_default.c ****         lv_obj_add_style(obj, &theme->styles.arc_indic_primary, LV_PART_INDICATOR);
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\cc9aXUZl.s 			page 50
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\cchqKdt6.s 			page 50
 
 
  1341              		.loc 1 1013 9 is_stmt 1 view .LVU278
@@ -2998,7 +2998,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\cc9aXUZl.s 			page 1
  1387              	.LVL210:
 1024:Middlewares/LVGL/lvgl/src/themes/default/lv_theme_default.c ****         lv_obj_add_style(obj, &theme->styles.scrollbar, LV_PART_SCROLLBAR);
  1388              		.loc 1 1024 9 view .LVU287
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\cc9aXUZl.s 			page 51
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\cchqKdt6.s 			page 51
 
 
  1389 0976 2022     		movs	r2, #32
@@ -3058,7 +3058,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\cc9aXUZl.s 			page 1
  1434              		.loc 1 1035 9 view .LVU296
  1435 09d0 0022     		movs	r2, #0
  1436 09d2 05F1DC01 		add	r1, r5, #220
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\cc9aXUZl.s 			page 52
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\cchqKdt6.s 			page 52
 
 
  1437 09d6 2046     		mov	r0, r4
@@ -3118,7 +3118,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\cc9aXUZl.s 			page 1
  1480              		.loc 1 1052 12 discriminator 1 view .LVU307
  1481 0a1c 0028     		cmp	r0, #0
  1482 0a1e 77D0     		beq	.L31
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\cc9aXUZl.s 			page 53
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\cchqKdt6.s 			page 53
 
 
 1053:Middlewares/LVGL/lvgl/src/themes/default/lv_theme_default.c ****         lv_obj_add_style(obj, theme->disp_size == DISP_LARGE ? &theme->styles.pad_small : &theme->s
@@ -3178,7 +3178,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\cc9aXUZl.s 			page 1
 1059:Middlewares/LVGL/lvgl/src/themes/default/lv_theme_default.c ****         lv_obj_add_style(obj, &theme->styles.keyboard_button_bg, LV_PART_ITEMS);
  1527              		.loc 1 1059 9 view .LVU318
  1528 0a72 4FF4A022 		mov	r2, #327680
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\cc9aXUZl.s 			page 54
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\cchqKdt6.s 			page 54
 
 
  1529 0a76 05F1B801 		add	r1, r5, #184
@@ -3238,7 +3238,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\cc9aXUZl.s 			page 1
  1577 0ae0 00000000 		.word	lv_spinner_class
  1578 0ae4 00000000 		.word	lv_textarea_class
  1579 0ae8 08000600 		.word	393224
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\cc9aXUZl.s 			page 55
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\cchqKdt6.s 			page 55
 
 
  1580 0aec 00000000 		.word	lv_calendar_class
@@ -3298,7 +3298,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\cc9aXUZl.s 			page 1
  1622              		.loc 1 1083 9 is_stmt 1 view .LVU336
  1623 0b38 0022     		movs	r2, #0
  1624 0b3a 05F1AC01 		add	r1, r5, #172
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\cc9aXUZl.s 			page 56
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\cchqKdt6.s 			page 56
 
 
  1625 0b3e 2046     		mov	r0, r4
@@ -3358,7 +3358,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\cc9aXUZl.s 			page 1
  1671              		.loc 1 1086 10 view .LVU344
 1086:Middlewares/LVGL/lvgl/src/themes/default/lv_theme_default.c ****         lv_obj_add_style(obj, &theme->styles.bg_color_white, 0);
  1672              		.loc 1 1086 13 is_stmt 0 view .LVU345
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\cc9aXUZl.s 			page 57
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\cchqKdt6.s 			page 57
 
 
  1673 0b9c A349     		ldr	r1, .L77+20
@@ -3418,7 +3418,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\cc9aXUZl.s 			page 1
  1718              	.LVL254:
  1719 0bee FFF779BA 		b	.L1
  1720              	.LVL255:
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\cc9aXUZl.s 			page 58
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\cchqKdt6.s 			page 58
 
 
  1721              	.L37:
@@ -3478,7 +3478,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\cc9aXUZl.s 			page 1
  1764              		.loc 1 1103 9 view .LVU365
  1765 0c3c 7A4A     		ldr	r2, .L77+16
  1766 0c3e 05F15801 		add	r1, r5, #88
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\cc9aXUZl.s 			page 59
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\cchqKdt6.s 			page 59
 
 
  1767 0c42 2046     		mov	r0, r4
@@ -3538,7 +3538,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\cc9aXUZl.s 			page 1
  1811 0c90 2046     		mov	r0, r4
  1812 0c92 FFF7FEFF 		bl	lv_obj_add_style
  1813              	.LVL268:
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\cc9aXUZl.s 			page 60
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\cchqKdt6.s 			page 60
 
 
 1112:Middlewares/LVGL/lvgl/src/themes/default/lv_theme_default.c ****         lv_obj_add_style(obj, &theme->styles.bg_color_primary_muted, LV_STATE_PRESSED | LV_STATE_CH
@@ -3598,7 +3598,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\cc9aXUZl.s 			page 1
 1117:Middlewares/LVGL/lvgl/src/themes/default/lv_theme_default.c ****             lv_obj_check_type(obj, &lv_menu_main_header_cont_class)) {
  1858              		.loc 1 1117 72 discriminator 1 view .LVU386
  1859 0cdc 38B1     		cbz	r0, .L43
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\cc9aXUZl.s 			page 61
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\cchqKdt6.s 			page 61
 
 
  1860              	.L42:
@@ -3658,7 +3658,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\cc9aXUZl.s 			page 1
  1904 0d2a 38B1     		cbz	r0, .L45
 1127:Middlewares/LVGL/lvgl/src/themes/default/lv_theme_default.c ****     }
  1905              		.loc 1 1127 9 is_stmt 1 view .LVU397
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\cc9aXUZl.s 			page 62
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\cchqKdt6.s 			page 62
 
 
  1906 0d2c 0022     		movs	r2, #0
@@ -3718,7 +3718,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\cc9aXUZl.s 			page 1
  1950 0d78 0022     		movs	r2, #0
  1951 0d7a 05F5B071 		add	r1, r5, #352
  1952 0d7e 2046     		mov	r0, r4
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\cc9aXUZl.s 			page 63
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\cchqKdt6.s 			page 63
 
 
  1953 0d80 FFF7FEFF 		bl	lv_obj_add_style
@@ -3778,7 +3778,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\cc9aXUZl.s 			page 1
  1995              		.loc 1 1147 9 view .LVU419
  1996 0dc4 FFF78EB9 		b	.L1
  1997              	.L49:
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\cc9aXUZl.s 			page 64
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\cchqKdt6.s 			page 64
 
 
 1149:Middlewares/LVGL/lvgl/src/themes/default/lv_theme_default.c ****         lv_obj_add_style(obj, &theme->styles.pad_small, 0);
@@ -3838,7 +3838,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\cc9aXUZl.s 			page 1
  2041              	.LVL300:
 1157:Middlewares/LVGL/lvgl/src/themes/default/lv_theme_default.c ****     }
  2042              		.loc 1 1157 9 view .LVU431
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\cc9aXUZl.s 			page 65
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\cchqKdt6.s 			page 65
 
 
  2043 0e14 FFF766B9 		b	.L1
@@ -3898,7 +3898,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\cc9aXUZl.s 			page 1
  2090              		.loc 1 1162 9 view .LVU438
  2091 0e88 0022     		movs	r2, #0
  2092 0e8a 05F17C01 		add	r1, r5, #124
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\cc9aXUZl.s 			page 66
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\cchqKdt6.s 			page 66
 
 
  2093 0e8e 2046     		mov	r0, r4
@@ -3958,7 +3958,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\cc9aXUZl.s 			page 1
  2138 0ee4 2046     		mov	r0, r4
  2139 0ee6 FFF7FEFF 		bl	lv_obj_check_type
  2140              	.LVL311:
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\cc9aXUZl.s 			page 67
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\cchqKdt6.s 			page 67
 
 
 1174:Middlewares/LVGL/lvgl/src/themes/default/lv_theme_default.c ****         lv_obj_add_style(obj, &theme->styles.card, 0);
@@ -4018,7 +4018,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\cc9aXUZl.s 			page 1
  2185 0f3a 05F14001 		add	r1, r5, #64
  2186 0f3e 2046     		mov	r0, r4
  2187 0f40 FFF7FEFF 		bl	lv_obj_add_style
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\cc9aXUZl.s 			page 68
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\cchqKdt6.s 			page 68
 
 
  2188              	.LVL318:
@@ -4078,7 +4078,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\cc9aXUZl.s 			page 1
  2232 0f92 68B1     		cbz	r0, .L57
 1196:Middlewares/LVGL/lvgl/src/themes/default/lv_theme_default.c ****         lv_obj_add_style(obj, &theme->styles.pad_zero, 0);
  2233              		.loc 1 1196 9 is_stmt 1 view .LVU468
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\cc9aXUZl.s 			page 69
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\cchqKdt6.s 			page 69
 
 
  2234 0f94 0022     		movs	r2, #0
@@ -4138,7 +4138,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\cc9aXUZl.s 			page 1
 1214:Middlewares/LVGL/lvgl/src/themes/default/lv_theme_default.c ****         lv_obj_add_style(obj, &theme->styles.scale, LV_PART_MAIN);
  2279              		.loc 1 1214 10 view .LVU478
 1214:Middlewares/LVGL/lvgl/src/themes/default/lv_theme_default.c ****         lv_obj_add_style(obj, &theme->styles.scale, LV_PART_MAIN);
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\cc9aXUZl.s 			page 70
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\cchqKdt6.s 			page 70
 
 
  2280              		.loc 1 1214 13 is_stmt 0 view .LVU479
@@ -4198,7 +4198,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\cc9aXUZl.s 			page 1
  2329              		.syntax unified
  2330              		.thumb
  2331              		.thumb_func
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\cc9aXUZl.s 			page 71
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\cchqKdt6.s 			page 71
 
 
  2333              	lv_style_set_pad_gap:
@@ -4258,7 +4258,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\cc9aXUZl.s 			page 1
   51:Middlewares/LVGL/lvgl/src/themes/default/../../../src/core/../misc/lv_style.h **** // *INDENT-OFF*
   52:Middlewares/LVGL/lvgl/src/themes/default/../../../src/core/../misc/lv_style.h **** #if LV_USE_ASSERT_STYLE
   53:Middlewares/LVGL/lvgl/src/themes/default/../../../src/core/../misc/lv_style.h **** #define LV_STYLE_CONST_INIT(var_name, prop_array)                       \
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\cc9aXUZl.s 			page 72
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\cchqKdt6.s 			page 72
 
 
   54:Middlewares/LVGL/lvgl/src/themes/default/../../../src/core/../misc/lv_style.h ****     const lv_style_t var_name = {                                       \
@@ -4318,7 +4318,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\cc9aXUZl.s 			page 1
  108:Middlewares/LVGL/lvgl/src/themes/default/../../../src/core/../misc/lv_style.h ****  * Selects on which sides border should be drawn
  109:Middlewares/LVGL/lvgl/src/themes/default/../../../src/core/../misc/lv_style.h ****  * 'OR'ed values can be used.
  110:Middlewares/LVGL/lvgl/src/themes/default/../../../src/core/../misc/lv_style.h ****  */
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\cc9aXUZl.s 			page 73
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\cchqKdt6.s 			page 73
 
 
  111:Middlewares/LVGL/lvgl/src/themes/default/../../../src/core/../misc/lv_style.h **** typedef enum {
@@ -4378,7 +4378,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\cc9aXUZl.s 			page 1
  165:Middlewares/LVGL/lvgl/src/themes/default/../../../src/core/../misc/lv_style.h ****      *
  166:Middlewares/LVGL/lvgl/src/themes/default/../../../src/core/../misc/lv_style.h ****      *Strategy 3: group properties they are used rarely together so that caching doesn't
  167:Middlewares/LVGL/lvgl/src/themes/default/../../../src/core/../misc/lv_style.h ****      *            interfere
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\cc9aXUZl.s 			page 74
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\cchqKdt6.s 			page 74
 
 
  168:Middlewares/LVGL/lvgl/src/themes/default/../../../src/core/../misc/lv_style.h ****      *
@@ -4438,7 +4438,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\cc9aXUZl.s 			page 1
  222:Middlewares/LVGL/lvgl/src/themes/default/../../../src/core/../misc/lv_style.h ****     /*Group 3*/
  223:Middlewares/LVGL/lvgl/src/themes/default/../../../src/core/../misc/lv_style.h ****     LV_STYLE_BORDER_WIDTH = 56,
  224:Middlewares/LVGL/lvgl/src/themes/default/../../../src/core/../misc/lv_style.h ****     LV_STYLE_BORDER_COLOR,
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\cc9aXUZl.s 			page 75
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\cchqKdt6.s 			page 75
 
 
  225:Middlewares/LVGL/lvgl/src/themes/default/../../../src/core/../misc/lv_style.h ****     LV_STYLE_BORDER_OPA,
@@ -4498,7 +4498,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\cc9aXUZl.s 			page 1
  279:Middlewares/LVGL/lvgl/src/themes/default/../../../src/core/../misc/lv_style.h ****     LV_STYLE_ANIM,
  280:Middlewares/LVGL/lvgl/src/themes/default/../../../src/core/../misc/lv_style.h ****     LV_STYLE_ANIM_DURATION,
  281:Middlewares/LVGL/lvgl/src/themes/default/../../../src/core/../misc/lv_style.h ****     LV_STYLE_TRANSITION,
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\cc9aXUZl.s 			page 76
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\cchqKdt6.s 			page 76
 
 
  282:Middlewares/LVGL/lvgl/src/themes/default/../../../src/core/../misc/lv_style.h **** 
@@ -4558,7 +4558,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\cc9aXUZl.s 			page 1
  336:Middlewares/LVGL/lvgl/src/themes/default/../../../src/core/../misc/lv_style.h **** 
  337:Middlewares/LVGL/lvgl/src/themes/default/../../../src/core/../misc/lv_style.h ****     LV_STYLE_LAST_BUILT_IN_PROP,
  338:Middlewares/LVGL/lvgl/src/themes/default/../../../src/core/../misc/lv_style.h ****     LV_STYLE_NUM_BUILT_IN_PROPS     = LV_STYLE_LAST_BUILT_IN_PROP + 1,
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\cc9aXUZl.s 			page 77
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\cchqKdt6.s 			page 77
 
 
  339:Middlewares/LVGL/lvgl/src/themes/default/../../../src/core/../misc/lv_style.h **** 
@@ -4618,7 +4618,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\cc9aXUZl.s 			page 1
  393:Middlewares/LVGL/lvgl/src/themes/default/../../../src/core/../misc/lv_style.h ****  */
  394:Middlewares/LVGL/lvgl/src/themes/default/../../../src/core/../misc/lv_style.h **** void lv_style_init(lv_style_t * style);
  395:Middlewares/LVGL/lvgl/src/themes/default/../../../src/core/../misc/lv_style.h **** 
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\cc9aXUZl.s 			page 78
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\cchqKdt6.s 			page 78
 
 
  396:Middlewares/LVGL/lvgl/src/themes/default/../../../src/core/../misc/lv_style.h **** /**
@@ -4678,7 +4678,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\cc9aXUZl.s 			page 1
  450:Middlewares/LVGL/lvgl/src/themes/default/../../../src/core/../misc/lv_style.h ****  *
  451:Middlewares/LVGL/lvgl/src/themes/default/../../../src/core/../misc/lv_style.h ****  * ...
  452:Middlewares/LVGL/lvgl/src/themes/default/../../../src/core/../misc/lv_style.h ****  * MY_PROP = lv_style_register_prop();
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\cc9aXUZl.s 			page 79
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\cchqKdt6.s 			page 79
 
 
  453:Middlewares/LVGL/lvgl/src/themes/default/../../../src/core/../misc/lv_style.h ****  * ...
@@ -4738,7 +4738,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\cc9aXUZl.s 			page 1
  507:Middlewares/LVGL/lvgl/src/themes/default/../../../src/core/../misc/lv_style.h ****  * @endcode
  508:Middlewares/LVGL/lvgl/src/themes/default/../../../src/core/../misc/lv_style.h ****  */
  509:Middlewares/LVGL/lvgl/src/themes/default/../../../src/core/../misc/lv_style.h **** void lv_style_transition_dsc_init(lv_style_transition_dsc_t * tr, const lv_style_prop_t props[],
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\cc9aXUZl.s 			page 80
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\cchqKdt6.s 			page 80
 
 
  510:Middlewares/LVGL/lvgl/src/themes/default/../../../src/core/../misc/lv_style.h ****                                   lv_anim_path_cb_t path_cb, uint32_t time, uint32_t delay, void * 
@@ -4798,7 +4798,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\cc9aXUZl.s 			page 1
  564:Middlewares/LVGL/lvgl/src/themes/default/../../../src/core/../misc/lv_style.h ****  * Tell the group of a property. If the a property from a group is set in a style the (1 << group) 
  565:Middlewares/LVGL/lvgl/src/themes/default/../../../src/core/../misc/lv_style.h ****  * It allows early skipping the style if the property is not exists in the style at all.
  566:Middlewares/LVGL/lvgl/src/themes/default/../../../src/core/../misc/lv_style.h ****  * @param prop a style property
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\cc9aXUZl.s 			page 81
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\cchqKdt6.s 			page 81
 
 
  567:Middlewares/LVGL/lvgl/src/themes/default/../../../src/core/../misc/lv_style.h ****  * @return the group [0..30] 30 means all the custom properties with index > 120
@@ -4858,7 +4858,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\cc9aXUZl.s 			page 1
  621:Middlewares/LVGL/lvgl/src/themes/default/../../../src/core/../misc/lv_style.h **** }
  622:Middlewares/LVGL/lvgl/src/themes/default/../../../src/core/../misc/lv_style.h **** 
  623:Middlewares/LVGL/lvgl/src/themes/default/../../../src/core/../misc/lv_style.h **** /**
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\cc9aXUZl.s 			page 82
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\cchqKdt6.s 			page 82
 
 
  624:Middlewares/LVGL/lvgl/src/themes/default/../../../src/core/../misc/lv_style.h ****  * Set `style`s top and bottom padding values.
@@ -4918,7 +4918,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\cc9aXUZl.s 			page 1
  2373              	.LFB26:
  629:Middlewares/LVGL/lvgl/src/themes/default/../../../src/core/../misc/lv_style.h ****     lv_style_set_pad_top(style, value);
  2374              		.loc 2 629 1 is_stmt 1 view -0
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\cc9aXUZl.s 			page 83
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\cchqKdt6.s 			page 83
 
 
  2375              		.cfi_startproc
@@ -4978,7 +4978,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\cc9aXUZl.s 			page 1
  2424 0004 0D46     		mov	r5, r1
  619:Middlewares/LVGL/lvgl/src/themes/default/../../../src/core/../misc/lv_style.h ****     lv_style_set_pad_right(style, value);
  2425              		.loc 2 619 5 is_stmt 1 view .LVU500
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\cc9aXUZl.s 			page 84
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\cchqKdt6.s 			page 84
 
 
  2426 0006 FFF7FEFF 		bl	lv_style_set_pad_left
@@ -5038,7 +5038,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\cc9aXUZl.s 			page 1
  2474              	.LVL348:
  609:Middlewares/LVGL/lvgl/src/themes/default/../../../src/core/../misc/lv_style.h **** }
  2475              		.loc 2 609 5 view .LVU509
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\cc9aXUZl.s 			page 85
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\cchqKdt6.s 			page 85
 
 
  2476 001a 2946     		mov	r1, r5
@@ -5098,7 +5098,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\cc9aXUZl.s 			page 1
  2521              		.cfi_endproc
  2522              	.LFE211:
  2524              		.section	.text.style_init_reset,"ax",%progbits
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\cc9aXUZl.s 			page 86
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\cchqKdt6.s 			page 86
 
 
  2525              		.align	1
@@ -5158,7 +5158,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\cc9aXUZl.s 			page 1
  2570              	.LC0:
  2571 0000 EF808C00 		.ascii	"\357\200\214\000"
  2572              		.section	.text.style_init,"ax",%progbits
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\cc9aXUZl.s 			page 87
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\cchqKdt6.s 			page 87
 
 
  2573              		.align	1
@@ -5218,7 +5218,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\cc9aXUZl.s 			page 1
  2620              	.L100:
  213:Middlewares/LVGL/lvgl/src/themes/default/lv_theme_default.c ****     theme->color_card = theme->base.flags & MODE_DARK ? DARK_COLOR_CARD : LIGHT_COLOR_CARD;
  2621              		.loc 1 213 5 is_stmt 1 view .LVU538
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\cc9aXUZl.s 			page 88
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\cchqKdt6.s 			page 88
 
 
  213:Middlewares/LVGL/lvgl/src/themes/default/lv_theme_default.c ****     theme->color_card = theme->base.flags & MODE_DARK ? DARK_COLOR_CARD : LIGHT_COLOR_CARD;
@@ -5278,7 +5278,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\cc9aXUZl.s 			page 1
  2665 008a C0F30723 		ubfx	r3, r0, #8, #8
  2666 008e 84F83A30 		strb	r3, [r4, #58]
  2667 0092 C0F30740 		ubfx	r0, r0, #16, #8
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\cc9aXUZl.s 			page 89
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\cchqKdt6.s 			page 89
 
 
  2668 0096 84F83B00 		strb	r0, [r4, #59]
@@ -5338,7 +5338,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\cc9aXUZl.s 			page 1
  2715 00f2 04F14C05 		add	r5, r4, #76
  2716 00f6 2846     		mov	r0, r5
  2717 00f8 FFF7FEFF 		bl	style_init_reset
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\cc9aXUZl.s 			page 90
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\cchqKdt6.s 			page 90
 
 
  2718              	.LVL368:
@@ -5398,7 +5398,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\cc9aXUZl.s 			page 1
  235:Middlewares/LVGL/lvgl/src/themes/default/lv_theme_default.c ****     lv_style_set_width(&theme->styles.scrollbar,  LV_DPX_CALC(theme->disp_dpi, 5));
  2761              		.loc 1 235 5 discriminator 4 view .LVU568
  2762 014e 2846     		mov	r0, r5
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\cc9aXUZl.s 			page 91
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\cchqKdt6.s 			page 91
 
 
  2763 0150 FFF7FEFF 		bl	lv_style_set_pad_all
@@ -5458,7 +5458,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\cc9aXUZl.s 			page 1
  2806 019a 2846     		mov	r0, r5
  2807 019c FFF7FEFF 		bl	style_init_reset
  2808              	.LVL378:
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\cc9aXUZl.s 			page 92
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\cchqKdt6.s 			page 92
 
 
  246:Middlewares/LVGL/lvgl/src/themes/default/lv_theme_default.c ****     lv_style_set_bg_color(&theme->styles.scr, theme->color_scr);
@@ -5518,7 +5518,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\cc9aXUZl.s 			page 1
  250:Middlewares/LVGL/lvgl/src/themes/default/lv_theme_default.c ****     lv_style_set_pad_column(&theme->styles.scr, PAD_SMALL);
  2852              		.loc 1 250 5 discriminator 18 view .LVU591
  2853 01f2 664B     		ldr	r3, .L451+12
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\cc9aXUZl.s 			page 93
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\cchqKdt6.s 			page 93
 
 
  2854 01f4 83FB0123 		smull	r2, r3, r3, r1
@@ -5578,7 +5578,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\cc9aXUZl.s 			page 1
  2895 0238 0029     		cmp	r1, #0
  2896 023a C1F20F83 		blt	.L402
  2897              	.L115:
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\cc9aXUZl.s 			page 94
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\cchqKdt6.s 			page 94
 
 
  2898 023e 8910     		asrs	r1, r1, #2
@@ -5638,7 +5638,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\cc9aXUZl.s 			page 1
  2940              		.loc 1 257 5 view .LVU616
  2941 0286 E38E     		ldrh	r3, [r4, #54]
  2942 0288 94F83810 		ldrb	r1, [r4, #56]	@ zero_extendqisi2
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\cc9aXUZl.s 			page 95
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\cchqKdt6.s 			page 95
 
 
  2943 028c 43EA0141 		orr	r1, r3, r1, lsl #16
@@ -5698,7 +5698,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\cc9aXUZl.s 			page 1
  262:Middlewares/LVGL/lvgl/src/themes/default/lv_theme_default.c ****     lv_style_set_pad_row(&theme->styles.card, PAD_SMALL);
  2988              		.loc 1 262 5 view .LVU626
  262:Middlewares/LVGL/lvgl/src/themes/default/lv_theme_default.c ****     lv_style_set_pad_row(&theme->styles.card, PAD_SMALL);
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\cc9aXUZl.s 			page 96
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\cchqKdt6.s 			page 96
 
 
  2989              		.loc 1 262 47 is_stmt 0 view .LVU627
@@ -5758,7 +5758,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\cc9aXUZl.s 			page 1
  263:Middlewares/LVGL/lvgl/src/themes/default/lv_theme_default.c ****     lv_style_set_pad_column(&theme->styles.card, PAD_SMALL);
  3031              		.loc 1 263 5 discriminator 8 view .LVU640
  3032 0338 EF29     		cmp	r1, #239
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\cc9aXUZl.s 			page 97
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\cchqKdt6.s 			page 97
 
 
  3033 033a 41F3AA82 		ble	.L256
@@ -5818,7 +5818,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\cc9aXUZl.s 			page 1
  3076 0388 37322F00 		.word	3093047
  3077 038c 67666666 		.word	1717986919
  3078 0390 00000000 		.word	lv_anim_path_linear
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\cc9aXUZl.s 			page 98
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\cchqKdt6.s 			page 98
 
 
  3079 0394 00000000 		.word	trans_props.0
@@ -5878,7 +5878,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\cc9aXUZl.s 			page 1
  269:Middlewares/LVGL/lvgl/src/themes/default/lv_theme_default.c ****     lv_style_set_outline_width(&theme->styles.outline_primary, OUTLINE_WIDTH);
  3123              		.loc 1 269 5 view .LVU662
  3124 03e6 2169     		ldr	r1, [r4, #16]
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\cc9aXUZl.s 			page 99
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\cchqKdt6.s 			page 99
 
 
  3125 03e8 2846     		mov	r0, r5
@@ -5938,7 +5938,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\cc9aXUZl.s 			page 1
  3166              		.loc 1 272 5 is_stmt 1 view .LVU675
  3167 042e 7F21     		movs	r1, #127
  3168 0430 2846     		mov	r0, r5
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\cc9aXUZl.s 			page 100
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\cchqKdt6.s 			page 100
 
 
  3169 0432 FFF7FEFF 		bl	lv_style_set_outline_opa
@@ -5998,7 +5998,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\cc9aXUZl.s 			page 1
  3213              	.LVL409:
  280:Middlewares/LVGL/lvgl/src/themes/default/lv_theme_default.c ****                         LV_DPX_CALC(theme->disp_dpi, theme->disp_size == DISP_LARGE ? 16 : theme->d
  3214              		.loc 1 280 5 view .LVU686
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\cc9aXUZl.s 			page 101
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\cchqKdt6.s 			page 101
 
 
  281:Middlewares/LVGL/lvgl/src/themes/default/lv_theme_default.c ****     lv_style_set_bg_opa(&theme->styles.btn, LV_OPA_COVER);
@@ -6058,7 +6058,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\cc9aXUZl.s 			page 1
  284:Middlewares/LVGL/lvgl/src/themes/default/lv_theme_default.c ****         lv_style_set_shadow_color(&theme->styles.btn, lv_palette_main(LV_PALETTE_GREY));
  3258              		.loc 1 284 21 is_stmt 0 view .LVU698
  3259 04da 636A     		ldr	r3, [r4, #36]
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\cc9aXUZl.s 			page 102
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\cchqKdt6.s 			page 102
 
 
  284:Middlewares/LVGL/lvgl/src/themes/default/lv_theme_default.c ****         lv_style_set_shadow_color(&theme->styles.btn, lv_palette_main(LV_PALETTE_GREY));
@@ -6118,7 +6118,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\cc9aXUZl.s 			page 1
  3302              		.loc 1 292 5 is_stmt 1 view .LVU710
  292:Middlewares/LVGL/lvgl/src/themes/default/lv_theme_default.c ****     lv_style_set_pad_column(&theme->styles.btn, LV_DPX_CALC(theme->disp_dpi, 5));
  3303              		.loc 1 292 46 is_stmt 0 view .LVU711
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\cc9aXUZl.s 			page 103
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\cchqKdt6.s 			page 103
 
 
  3304 0530 E16A     		ldr	r1, [r4, #44]
@@ -6178,7 +6178,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\cc9aXUZl.s 			page 1
  293:Middlewares/LVGL/lvgl/src/themes/default/lv_theme_default.c ****     lv_style_set_pad_row(&theme->styles.btn, LV_DPX_CALC(theme->disp_dpi, 5));
  3346              		.loc 1 293 5 discriminator 4 view .LVU724
  3347 057c 2846     		mov	r0, r5
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\cc9aXUZl.s 			page 104
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\cchqKdt6.s 			page 104
 
 
  3348 057e FFF7FEFF 		bl	lv_style_set_pad_column
@@ -6238,7 +6238,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\cc9aXUZl.s 			page 1
  300:Middlewares/LVGL/lvgl/src/themes/default/lv_theme_default.c ****     if(theme_def->base.flags & MODE_DARK)
  3392              		.loc 1 300 5 view .LVU735
  3393 05d4 04F1D005 		add	r5, r4, #208
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\cc9aXUZl.s 			page 105
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\cchqKdt6.s 			page 105
 
 
  3394 05d8 2846     		mov	r0, r5
@@ -6298,7 +6298,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\cc9aXUZl.s 			page 1
  3438 062c 0121     		movs	r1, #1
  3439 062e 2846     		mov	r0, r5
  3440 0630 FFF7FEFF 		bl	lv_style_set_border_post
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\cc9aXUZl.s 			page 106
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\cchqKdt6.s 			page 106
 
 
  3441              	.LVL428:
@@ -6358,7 +6358,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\cc9aXUZl.s 			page 1
  3482              		.loc 1 313 53 discriminator 1 view .LVU758
  3483 067c 022B     		cmp	r3, #2
  3484 067e 01F0D381 		beq	.L412
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\cc9aXUZl.s 			page 107
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\cchqKdt6.s 			page 107
 
 
  313:Middlewares/LVGL/lvgl/src/themes/default/lv_theme_default.c ****     lv_style_set_pad_column(&theme->styles.pad_normal, PAD_DEF);
@@ -6418,7 +6418,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\cc9aXUZl.s 			page 1
  3525 06c2 1F4B     		ldr	r3, .L454
  3526 06c4 83FB0123 		smull	r2, r3, r3, r1
  3527 06c8 C917     		asrs	r1, r1, #31
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\cc9aXUZl.s 			page 108
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\cchqKdt6.s 			page 108
 
 
  3528 06ca C1EBA311 		rsb	r1, r1, r3, asr #6
@@ -6478,7 +6478,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\cc9aXUZl.s 			page 1
  3569              		.loc 1 318 52 is_stmt 0 view .LVU785
  3570 0710 E16A     		ldr	r1, [r4, #44]
  3571 0712 94F82830 		ldrb	r3, [r4, #40]	@ zero_extendqisi2
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\cc9aXUZl.s 			page 109
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\cchqKdt6.s 			page 109
 
 
  3572 0716 012B     		cmp	r3, #1
@@ -6538,7 +6538,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\cc9aXUZl.s 			page 1
  3615 0760 EF2B     		cmp	r3, #239
  3616 0762 41F38581 		ble	.L295
  321:Middlewares/LVGL/lvgl/src/themes/default/lv_theme_default.c ****     lv_style_set_pad_column(&theme->styles.pad_gap, LV_DPX_CALC(theme->disp_dpi, 10));
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\cc9aXUZl.s 			page 110
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\cchqKdt6.s 			page 110
 
 
  3617              		.loc 1 321 50 discriminator 1 view .LVU797
@@ -6598,7 +6598,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\cc9aXUZl.s 			page 1
  3659              		.loc 1 325 5 view .LVU809
  3660 07ae EF2B     		cmp	r3, #239
  3661 07b0 41F36481 		ble	.L297
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\cc9aXUZl.s 			page 111
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\cchqKdt6.s 			page 111
 
 
  325:Middlewares/LVGL/lvgl/src/themes/default/lv_theme_default.c **** 
@@ -6658,7 +6658,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\cc9aXUZl.s 			page 1
  3706 0800 2846     		mov	r0, r5
  3707 0802 FFF7FEFF 		bl	style_init_reset
  3708              	.LVL447:
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\cc9aXUZl.s 			page 112
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\cchqKdt6.s 			page 112
 
 
  336:Middlewares/LVGL/lvgl/src/themes/default/lv_theme_default.c ****     lv_style_set_pad_row(&theme->styles.pad_tiny, PAD_TINY);
@@ -6718,7 +6718,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\cc9aXUZl.s 			page 1
  337:Middlewares/LVGL/lvgl/src/themes/default/lv_theme_default.c ****     lv_style_set_pad_column(&theme->styles.pad_tiny, PAD_TINY);
  3750              		.loc 1 337 51 discriminator 8 view .LVU833
  3751 084c 03FB01F1 		mul	r1, r3, r1
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\cc9aXUZl.s 			page 113
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\cchqKdt6.s 			page 113
 
 
  337:Middlewares/LVGL/lvgl/src/themes/default/lv_theme_default.c ****     lv_style_set_pad_column(&theme->styles.pad_tiny, PAD_TINY);
@@ -6778,7 +6778,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\cc9aXUZl.s 			page 1
  3793 0896 2846     		mov	r0, r5
  3794 0898 FFF7FEFF 		bl	lv_style_set_pad_column
  3795              	.LVL450:
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\cc9aXUZl.s 			page 114
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\cchqKdt6.s 			page 114
 
 
  340:Middlewares/LVGL/lvgl/src/themes/default/lv_theme_default.c ****     lv_style_set_bg_color(&theme->styles.bg_color_primary, theme->base.color_primary);
@@ -6838,7 +6838,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\cc9aXUZl.s 			page 1
  3841 08f2 2846     		mov	r0, r5
  3842 08f4 FFF7FEFF 		bl	lv_style_set_bg_opa
  3843              	.LVL459:
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\cc9aXUZl.s 			page 115
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\cchqKdt6.s 			page 115
 
 
  350:Middlewares/LVGL/lvgl/src/themes/default/lv_theme_default.c ****     lv_style_set_bg_color(&theme->styles.bg_color_secondary, theme->base.color_secondary);
@@ -6898,7 +6898,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\cc9aXUZl.s 			page 1
  3890              		.loc 1 357 5 view .LVU863
  3891 095c E37C     		ldrb	r3, [r4, #19]	@ zero_extendqisi2
  3892 095e 227D     		ldrb	r2, [r4, #20]	@ zero_extendqisi2
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\cc9aXUZl.s 			page 116
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\cchqKdt6.s 			page 116
 
 
  3893 0960 43EA0223 		orr	r3, r3, r2, lsl #8
@@ -6958,7 +6958,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\cc9aXUZl.s 			page 1
  3940 09ce 43EA0141 		orr	r1, r3, r1, lsl #16
  3941 09d2 2846     		mov	r0, r5
  3942 09d4 FFF7FEFF 		bl	lv_style_set_bg_color
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\cc9aXUZl.s 			page 117
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\cchqKdt6.s 			page 117
 
 
  3943              	.LVL474:
@@ -7018,7 +7018,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\cc9aXUZl.s 			page 1
  3987 0a2c 0029     		cmp	r1, #0
  3988 0a2e C1F24380 		blt	.L419
  3989              	.L164:
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\cc9aXUZl.s 			page 118
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\cchqKdt6.s 			page 118
 
 
  3990 0a32 8910     		asrs	r1, r1, #2
@@ -7078,7 +7078,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\cc9aXUZl.s 			page 1
  4031 0a76 83FB0123 		smull	r2, r3, r3, r1
  4032 0a7a C917     		asrs	r1, r1, #31
  4033 0a7c C1EBA311 		rsb	r1, r1, r3, asr #6
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\cc9aXUZl.s 			page 119
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\cchqKdt6.s 			page 119
 
 
  4034              	.L166:
@@ -7138,7 +7138,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\cc9aXUZl.s 			page 1
  4078 0ac6 FFF7FEFF 		bl	lv_style_set_pad_all
  4079              	.LVL489:
  389:Middlewares/LVGL/lvgl/src/themes/default/lv_theme_default.c **** 
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\cc9aXUZl.s 			page 120
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\cchqKdt6.s 			page 120
 
 
  4080              		.loc 1 389 5 is_stmt 1 view .LVU904
@@ -7198,7 +7198,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\cc9aXUZl.s 			page 1
  4125 0b24 40F3D487 		ble	.L310
  400:Middlewares/LVGL/lvgl/src/themes/default/lv_theme_default.c ****     lv_style_set_arc_rounded(&theme->styles.arc_indic, true);
  4126              		.loc 1 400 54 discriminator 1 view .LVU914
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\cc9aXUZl.s 			page 121
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\cchqKdt6.s 			page 121
 
 
  4127 0b28 5031     		adds	r1, r1, #80
@@ -7258,7 +7258,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\cc9aXUZl.s 			page 1
  4171 0b76 01EB4101 		add	r1, r1, r1, lsl #1
  413:Middlewares/LVGL/lvgl/src/themes/default/lv_theme_default.c ****     lv_style_set_border_width(&theme->styles.cb_marker, BORDER_WIDTH);
  4172              		.loc 1 413 5 view .LVU925
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\cc9aXUZl.s 			page 122
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\cchqKdt6.s 			page 122
 
 
  4173 0b7a EF29     		cmp	r1, #239
@@ -7318,7 +7318,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\cc9aXUZl.s 			page 1
  4216              	.LVL507:
  417:Middlewares/LVGL/lvgl/src/themes/default/lv_theme_default.c ****     lv_style_set_radius(&theme->styles.cb_marker, RADIUS_DEFAULT / 2);
  4217              		.loc 1 417 5 view .LVU937
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\cc9aXUZl.s 			page 123
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\cchqKdt6.s 			page 123
 
 
  4218 0bc8 FF21     		movs	r1, #255
@@ -7378,7 +7378,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\cc9aXUZl.s 			page 1
  4261              		.loc 1 420 5 is_stmt 0 discriminator 1 view .LVU948
  4262 0c1c 0A99     		ldr	r1, [sp, #40]
  4263 0c1e 2846     		mov	r0, r5
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\cc9aXUZl.s 			page 124
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\cchqKdt6.s 			page 124
 
 
  4264 0c20 FFF7FEFF 		bl	lv_style_set_text_color
@@ -7438,7 +7438,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\cc9aXUZl.s 			page 1
  4307              		.loc 1 429 5 is_stmt 0 discriminator 1 view .LVU959
  4308 0c74 0B99     		ldr	r1, [sp, #44]
  4309 0c76 2846     		mov	r0, r5
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\cc9aXUZl.s 			page 125
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\cchqKdt6.s 			page 125
 
 
  4310 0c78 FFF7FEFF 		bl	lv_style_set_bg_color
@@ -7498,7 +7498,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\cc9aXUZl.s 			page 1
  4354 0cd0 DB17     		asrs	r3, r3, #31
  4355 0cd2 C3EBA211 		rsb	r1, r3, r2, asr #6
  4356              	.L174:
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\cc9aXUZl.s 			page 126
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\cchqKdt6.s 			page 126
 
 
  441:Middlewares/LVGL/lvgl/src/themes/default/lv_theme_default.c ****     lv_style_set_line_color(&theme->styles.chart_bg, theme->color_grey);
@@ -7558,7 +7558,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\cc9aXUZl.s 			page 1
  4399 0d26 EF29     		cmp	r1, #239
  4400 0d28 40F3EB86 		ble	.L318
  446:Middlewares/LVGL/lvgl/src/themes/default/lv_theme_default.c **** 
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\cc9aXUZl.s 			page 127
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\cchqKdt6.s 			page 127
 
 
  4401              		.loc 1 446 54 discriminator 1 view .LVU982
@@ -7618,7 +7618,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\cc9aXUZl.s 			page 1
  4444              		.loc 1 450 5 is_stmt 1 view .LVU993
  450:Middlewares/LVGL/lvgl/src/themes/default/lv_theme_default.c **** 
  4445              		.loc 1 450 58 is_stmt 0 view .LVU994
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\cc9aXUZl.s 			page 128
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\cchqKdt6.s 			page 128
 
 
  4446 0d66 E16A     		ldr	r1, [r4, #44]
@@ -7678,7 +7678,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\cc9aXUZl.s 			page 1
  4489              	.LBE9:
  455:Middlewares/LVGL/lvgl/src/themes/default/lv_theme_default.c ****     lv_style_set_bg_opa(&theme->styles.chart_indic, LV_OPA_COVER);
  4490              		.loc 1 455 5 is_stmt 1 view .LVU1006
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\cc9aXUZl.s 			page 129
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\cchqKdt6.s 			page 129
 
 
  4491 0da6 2169     		ldr	r1, [r4, #16]
@@ -7738,7 +7738,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\cc9aXUZl.s 			page 1
  4536              	.LVL546:
  468:Middlewares/LVGL/lvgl/src/themes/default/lv_theme_default.c ****     lv_style_set_clip_corner(&theme->styles.menu_section, true);
  4537              		.loc 1 468 5 view .LVU1016
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\cc9aXUZl.s 			page 130
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\cchqKdt6.s 			page 130
 
 
  468:Middlewares/LVGL/lvgl/src/themes/default/lv_theme_default.c ****     lv_style_set_clip_corner(&theme->styles.menu_section, true);
@@ -7798,7 +7798,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\cc9aXUZl.s 			page 1
  4581 0e3e 94F83330 		ldrb	r3, [r4, #51]	@ zero_extendqisi2
  4582 0e42 94F83420 		ldrb	r2, [r4, #52]	@ zero_extendqisi2
  4583 0e46 43EA0223 		orr	r3, r3, r2, lsl #8
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\cc9aXUZl.s 			page 131
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\cchqKdt6.s 			page 131
 
 
  4584 0e4a 94F83510 		ldrb	r1, [r4, #53]	@ zero_extendqisi2
@@ -7858,7 +7858,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\cc9aXUZl.s 			page 1
  4626 0e96 94F82830 		ldrb	r3, [r4, #40]	@ zero_extendqisi2
  4627 0e9a 012B     		cmp	r3, #1
  4628 0e9c 00F04C86 		beq	.L326
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\cc9aXUZl.s 			page 132
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\cchqKdt6.s 			page 132
 
 
  476:Middlewares/LVGL/lvgl/src/themes/default/lv_theme_default.c ****     lv_style_set_pad_gap(&theme->styles.menu_cont, PAD_SMALL);
@@ -7918,7 +7918,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\cc9aXUZl.s 			page 1
  4671              		.loc 1 477 52 discriminator 8 view .LVU1051
  4672 0ee4 03FB01F1 		mul	r1, r3, r1
  477:Middlewares/LVGL/lvgl/src/themes/default/lv_theme_default.c ****     lv_style_set_border_width(&theme->styles.menu_cont, LV_DPX_CALC(theme->disp_dpi, 1));
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\cc9aXUZl.s 			page 133
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\cchqKdt6.s 			page 133
 
 
  4673              		.loc 1 477 5 discriminator 8 view .LVU1052
@@ -7978,7 +7978,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\cc9aXUZl.s 			page 1
  4716 0f36 43EA0141 		orr	r1, r3, r1, lsl #16
  4717 0f3a 2846     		mov	r0, r5
  4718 0f3c FFF7FEFF 		bl	lv_style_set_border_color
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\cc9aXUZl.s 			page 134
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\cchqKdt6.s 			page 134
 
 
  4719              	.LVL558:
@@ -8038,7 +8038,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\cc9aXUZl.s 			page 1
  4762              	.LVL564:
  488:Middlewares/LVGL/lvgl/src/themes/default/lv_theme_default.c ****     lv_style_set_border_side(&theme->styles.menu_sidebar_cont, LV_BORDER_SIDE_RIGHT);
  4763              		.loc 1 488 5 view .LVU1075
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\cc9aXUZl.s 			page 135
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\cchqKdt6.s 			page 135
 
 
  4764 0f86 94F83330 		ldrb	r3, [r4, #51]	@ zero_extendqisi2
@@ -8098,7 +8098,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\cc9aXUZl.s 			page 1
  496:Middlewares/LVGL/lvgl/src/themes/default/lv_theme_default.c ****     lv_style_set_pad_ver(&theme->styles.menu_header_cont, PAD_TINY);
  4809              		.loc 1 496 59 discriminator 8 view .LVU1085
  4810 0fe0 03FB01F1 		mul	r1, r3, r1
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\cc9aXUZl.s 			page 136
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\cchqKdt6.s 			page 136
 
 
  496:Middlewares/LVGL/lvgl/src/themes/default/lv_theme_default.c ****     lv_style_set_pad_ver(&theme->styles.menu_header_cont, PAD_TINY);
@@ -8158,7 +8158,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\cc9aXUZl.s 			page 1
  4852 102a 2846     		mov	r0, r5
  4853 102c FFF7FEFF 		bl	lv_style_set_pad_ver
  4854              	.LVL572:
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\cc9aXUZl.s 			page 137
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\cchqKdt6.s 			page 137
 
 
  498:Middlewares/LVGL/lvgl/src/themes/default/lv_theme_default.c **** 
@@ -8218,7 +8218,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\cc9aXUZl.s 			page 1
  4896 1078 022B     		cmp	r3, #2
  4897 107a 00F08D85 		beq	.L428
  501:Middlewares/LVGL/lvgl/src/themes/default/lv_theme_default.c ****     lv_style_set_pad_ver(&theme->styles.menu_header_btn, PAD_TINY);
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\cc9aXUZl.s 			page 138
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\cchqKdt6.s 			page 138
 
 
  4898              		.loc 1 501 58 discriminator 4 view .LVU1112
@@ -8278,7 +8278,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\cc9aXUZl.s 			page 1
  4939 10c0 83FB0123 		smull	r2, r3, r3, r1
  4940 10c4 C917     		asrs	r1, r1, #31
  4941 10c6 C1EBA311 		rsb	r1, r1, r3, asr #6
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\cc9aXUZl.s 			page 139
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\cchqKdt6.s 			page 139
 
 
  4942              	.L198:
@@ -8338,7 +8338,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\cc9aXUZl.s 			page 1
  4987 111e 3321     		movs	r1, #51
  4988 1120 2846     		mov	r0, r5
  4989 1122 FFF7FEFF 		bl	lv_style_set_bg_opa
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\cc9aXUZl.s 			page 140
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\cchqKdt6.s 			page 140
 
 
  4990              	.LVL584:
@@ -8398,7 +8398,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\cc9aXUZl.s 			page 1
  5033 1178 5031     		adds	r1, r1, #80
  517:Middlewares/LVGL/lvgl/src/themes/default/lv_theme_default.c **** #endif
  5034              		.loc 1 517 5 discriminator 18 view .LVU1146
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\cc9aXUZl.s 			page 141
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\cchqKdt6.s 			page 141
 
 
  5035 117a 3E4B     		ldr	r3, .L463
@@ -8458,7 +8458,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\cc9aXUZl.s 			page 1
  5079 11d0 FFF7FEFF 		bl	lv_style_set_border_side
  5080              	.LVL593:
  528:Middlewares/LVGL/lvgl/src/themes/default/lv_theme_default.c ****     lv_style_set_border_color(&theme->styles.ta_cursor, theme->color_text);
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\cc9aXUZl.s 			page 142
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\cchqKdt6.s 			page 142
 
 
  5081              		.loc 1 528 5 view .LVU1157
@@ -8518,7 +8518,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\cc9aXUZl.s 			page 1
  5123 1220 83FB0123 		smull	r2, r3, r3, r1
  5124 1224 C917     		asrs	r1, r1, #31
  5125 1226 A1EBA311 		sub	r1, r1, r3, asr #6
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\cc9aXUZl.s 			page 143
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\cchqKdt6.s 			page 143
 
 
  5126              	.L203:
@@ -8578,7 +8578,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\cc9aXUZl.s 			page 1
  5171 127a 2846     		mov	r0, r5
  5172 127c FFF7FEFF 		bl	lv_style_set_text_color
  5173              	.LVL602:
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\cc9aXUZl.s 			page 144
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\cchqKdt6.s 			page 144
 
 
  542:Middlewares/LVGL/lvgl/src/themes/default/lv_theme_default.c ****     lv_style_set_pad_all(&theme->styles.calendar_btnm_bg, PAD_SMALL);
@@ -8638,7 +8638,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\cc9aXUZl.s 			page 1
  5215 12c8 022B     		cmp	r3, #2
  5216 12ca 00F0A384 		beq	.L432
  544:Middlewares/LVGL/lvgl/src/themes/default/lv_theme_default.c **** 
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\cc9aXUZl.s 			page 145
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\cchqKdt6.s 			page 145
 
 
  5217              		.loc 1 544 59 discriminator 4 view .LVU1192
@@ -8698,7 +8698,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\cc9aXUZl.s 			page 1
  5259              	.LVL607:
  548:Middlewares/LVGL/lvgl/src/themes/default/lv_theme_default.c ****     lv_style_set_bg_color(&theme->styles.calendar_btnm_day, theme->color_card);
  5260              		.loc 1 548 5 is_stmt 1 view .LVU1205
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\cc9aXUZl.s 			page 146
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\cchqKdt6.s 			page 146
 
 
  5261 1314 94F83930 		ldrb	r3, [r4, #57]	@ zero_extendqisi2
@@ -8758,7 +8758,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\cc9aXUZl.s 			page 1
  553:Middlewares/LVGL/lvgl/src/themes/default/lv_theme_default.c ****     lv_style_set_pad_top(&theme->styles.calendar_header, PAD_SMALL);
  5305              		.loc 1 553 5 discriminator 18 view .LVU1216
  5306 1370 A54B     		ldr	r3, .L466
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\cc9aXUZl.s 			page 147
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\cchqKdt6.s 			page 147
 
 
  5307 1372 83FB0123 		smull	r2, r3, r3, r1
@@ -8818,7 +8818,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\cc9aXUZl.s 			page 1
  5349 13bc 00F04B84 		beq	.L368
  555:Middlewares/LVGL/lvgl/src/themes/default/lv_theme_default.c ****     lv_style_set_pad_gap(&theme->styles.calendar_header, PAD_SMALL);
  5350              		.loc 1 555 61 discriminator 1 view .LVU1229
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\cc9aXUZl.s 			page 148
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\cchqKdt6.s 			page 148
 
 
  5351 13c0 022B     		cmp	r3, #2
@@ -8878,7 +8878,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\cc9aXUZl.s 			page 1
  556:Middlewares/LVGL/lvgl/src/themes/default/lv_theme_default.c **** #endif
  5392              		.loc 1 556 5 discriminator 18 view .LVU1243
  5393 1406 804B     		ldr	r3, .L466
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\cc9aXUZl.s 			page 149
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\cchqKdt6.s 			page 149
 
 
  5394 1408 83FB0123 		smull	r2, r3, r3, r1
@@ -8938,7 +8938,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\cc9aXUZl.s 			page 1
  567:Middlewares/LVGL/lvgl/src/themes/default/lv_theme_default.c ****                         theme->disp_size == DISP_SMALL ? RADIUS_DEFAULT / 2 : RADIUS_DEFAULT);
  5439              		.loc 1 567 5 view .LVU1253
  5440 1462 032B     		cmp	r3, #3
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\cc9aXUZl.s 			page 150
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\cchqKdt6.s 			page 150
 
 
  5441 1464 00F00684 		beq	.L437
@@ -8998,7 +8998,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\cc9aXUZl.s 			page 1
  5482              		.loc 1 574 55 discriminator 1 view .LVU1266
  5483 14aa 2833     		adds	r3, r3, #40
  5484 14ac 564A     		ldr	r2, .L466
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\cc9aXUZl.s 			page 151
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\cchqKdt6.s 			page 151
 
 
  5485 14ae 82FB0312 		smull	r1, r2, r2, r3
@@ -9058,7 +9058,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\cc9aXUZl.s 			page 1
  579:Middlewares/LVGL/lvgl/src/themes/default/lv_theme_default.c **** #endif
  5527              		.loc 1 579 5 view .LVU1279
  5528 14f2 7729     		cmp	r1, #119
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\cc9aXUZl.s 			page 152
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\cchqKdt6.s 			page 152
 
 
  5529 14f4 40F3DE83 		ble	.L380
@@ -9118,7 +9118,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\cc9aXUZl.s 			page 1
  5571              	.L227:
  584:Middlewares/LVGL/lvgl/src/themes/default/lv_theme_default.c ****     lv_style_set_pad_ver(&theme->styles.list_bg, 0);
  5572              		.loc 1 584 5 discriminator 20 view .LVU1292
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\cc9aXUZl.s 			page 153
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\cchqKdt6.s 			page 153
 
 
  5573 1542 2846     		mov	r0, r5
@@ -9178,7 +9178,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\cc9aXUZl.s 			page 1
  5616 158a 94F83A20 		ldrb	r2, [r4, #58]	@ zero_extendqisi2
  5617 158e 43EA0223 		orr	r3, r3, r2, lsl #8
  5618 1592 94F83B10 		ldrb	r1, [r4, #59]	@ zero_extendqisi2
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\cc9aXUZl.s 			page 154
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\cchqKdt6.s 			page 154
 
 
  5619 1596 43EA0141 		orr	r1, r3, r1, lsl #16
@@ -9238,7 +9238,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\cc9aXUZl.s 			page 1
  5661 15e0 012B     		cmp	r3, #1
  5662 15e2 00F07A83 		beq	.L388
  594:Middlewares/LVGL/lvgl/src/themes/default/lv_theme_default.c **** 
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\cc9aXUZl.s 			page 155
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\cchqKdt6.s 			page 155
 
 
  5663              		.loc 1 594 54 discriminator 1 view .LVU1316
@@ -9298,7 +9298,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\cc9aXUZl.s 			page 1
  5706              		.loc 1 597 65 discriminator 4 view .LVU1327
  5707 162e 1023     		movs	r3, #16
  5708              	.L233:
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\cc9aXUZl.s 			page 156
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\cchqKdt6.s 			page 156
 
 
  597:Middlewares/LVGL/lvgl/src/themes/default/lv_theme_default.c **** #endif
@@ -9358,7 +9358,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\cc9aXUZl.s 			page 1
  5753 1686 8DF84000 		strb	r0, [sp, #64]
  5754 168a C0F30723 		ubfx	r3, r0, #8, #8
  5755 168e 8DF84130 		strb	r3, [sp, #65]
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\cc9aXUZl.s 			page 157
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\cchqKdt6.s 			page 157
 
 
  5756 1692 C0F30740 		ubfx	r0, r0, #16, #8
@@ -9418,7 +9418,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\cc9aXUZl.s 			page 1
  608:Middlewares/LVGL/lvgl/src/themes/default/lv_theme_default.c **** #endif
  5800              		.loc 1 608 5 is_stmt 1 view .LVU1348
  608:Middlewares/LVGL/lvgl/src/themes/default/lv_theme_default.c **** #endif
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\cc9aXUZl.s 			page 158
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\cchqKdt6.s 			page 158
 
 
  5801              		.loc 1 608 52 is_stmt 0 view .LVU1349
@@ -9478,7 +9478,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\cc9aXUZl.s 			page 1
  5844              		.loc 1 614 5 discriminator 4 view .LVU1360
  5845 173e 2846     		mov	r0, r5
  5846 1740 FFF7FEFF 		bl	lv_style_set_line_width
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\cc9aXUZl.s 			page 159
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\cchqKdt6.s 			page 159
 
 
  5847              	.LVL657:
@@ -9538,7 +9538,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\cc9aXUZl.s 			page 1
  5889              	.LVL662:
  619:Middlewares/LVGL/lvgl/src/themes/default/lv_theme_default.c **** 
  5890              		.loc 1 619 1 view .LVU1373
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\cc9aXUZl.s 			page 160
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\cchqKdt6.s 			page 160
 
 
  5891 178c 13B0     		add	sp, sp, #76
@@ -9598,7 +9598,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\cc9aXUZl.s 			page 1
  5940 17f2 FFF7FEFF 		bl	lv_palette_lighten
  5941              	.LVL668:
  5942 17f6 84F83900 		strb	r0, [r4, #57]
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\cc9aXUZl.s 			page 161
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\cchqKdt6.s 			page 161
 
 
  5943 17fa C0F30723 		ubfx	r3, r0, #8, #8
@@ -9658,7 +9658,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\cc9aXUZl.s 			page 1
  5988              		.loc 1 251 5 discriminator 10 view .LVU1387
  5989 1856 0121     		movs	r1, #1
  5990 1858 FEF7EABC 		b	.L114
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\cc9aXUZl.s 			page 162
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\cchqKdt6.s 			page 162
 
 
  5991              	.L402:
@@ -9718,7 +9718,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\cc9aXUZl.s 			page 1
  6034 189a FEF764BD 		b	.L123
  6035              	.L257:
  264:Middlewares/LVGL/lvgl/src/themes/default/lv_theme_default.c ****     lv_style_set_line_color(&theme->styles.card, lv_palette_main(LV_PALETTE_GREY));
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\cc9aXUZl.s 			page 163
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\cchqKdt6.s 			page 163
 
 
  6036              		.loc 1 264 50 discriminator 2 view .LVU1399
@@ -9778,7 +9778,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\cc9aXUZl.s 			page 1
  285:Middlewares/LVGL/lvgl/src/themes/default/lv_theme_default.c ****         lv_style_set_shadow_width(&theme->styles.btn, LV_DPX(3));
  6081              		.loc 1 285 9 is_stmt 0 discriminator 1 view .LVU1409
  6082 18ee 0499     		ldr	r1, [sp, #16]
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\cc9aXUZl.s 			page 164
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\cchqKdt6.s 			page 164
 
 
  6083 18f0 2846     		mov	r0, r5
@@ -9838,7 +9838,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\cc9aXUZl.s 			page 1
  288:Middlewares/LVGL/lvgl/src/themes/default/lv_theme_default.c ****     }
  6125              		.loc 1 288 58 discriminator 3 view .LVU1422
  6126 192a E66A     		ldr	r6, [r4, #44]
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\cc9aXUZl.s 			page 165
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\cchqKdt6.s 			page 165
 
 
  6127 192c 0020     		movs	r0, #0
@@ -9898,7 +9898,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\cc9aXUZl.s 			page 1
  6172 197c DCE7     		b	.L135
  6173              	.L448:
  288:Middlewares/LVGL/lvgl/src/themes/default/lv_theme_default.c ****     }
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\cc9aXUZl.s 			page 166
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\cchqKdt6.s 			page 166
 
 
  6174              		.loc 1 288 58 discriminator 9 view .LVU1432
@@ -9958,7 +9958,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\cc9aXUZl.s 			page 1
  6219 19c6 0121     		movs	r1, #1
  6220 19c8 FEF7AFBD 		b	.L138
  6221              	.L410:
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\cc9aXUZl.s 			page 167
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\cchqKdt6.s 			page 167
 
 
  292:Middlewares/LVGL/lvgl/src/themes/default/lv_theme_default.c ****     lv_style_set_pad_column(&theme->styles.btn, LV_DPX_CALC(theme->disp_dpi, 5));
@@ -10018,7 +10018,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\cc9aXUZl.s 			page 1
  6267              		.loc 1 312 53 discriminator 2 view .LVU1450
  6268 1a1c 1823     		movs	r3, #24
  6269 1a1e FEF718BE 		b	.L145
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\cc9aXUZl.s 			page 168
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\cchqKdt6.s 			page 168
 
 
  6270              	.L282:
@@ -10078,7 +10078,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\cc9aXUZl.s 			page 1
  6313 1a60 FEF760BE 		b	.L153
  6314              	.L292:
  318:Middlewares/LVGL/lvgl/src/themes/default/lv_theme_default.c **** 
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\cc9aXUZl.s 			page 169
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\cchqKdt6.s 			page 169
 
 
  6315              		.loc 1 318 52 discriminator 2 view .LVU1462
@@ -10138,7 +10138,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\cc9aXUZl.s 			page 1
  338:Middlewares/LVGL/lvgl/src/themes/default/lv_theme_default.c **** 
  6359              		.loc 1 338 54 discriminator 3 view .LVU1473
  6360 1aa6 0623     		movs	r3, #6
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\cc9aXUZl.s 			page 170
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\cchqKdt6.s 			page 170
 
 
  6361 1aa8 FEF7E9BE 		b	.L162
@@ -10198,7 +10198,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\cc9aXUZl.s 			page 1
  6404 1ae8 0021     		movs	r1, #0
  6405 1aea FFF784B8 		b	.L172
  6406              	.L315:
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\cc9aXUZl.s 			page 171
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\cchqKdt6.s 			page 171
 
 
  428:Middlewares/LVGL/lvgl/src/themes/default/lv_theme_default.c ****     lv_style_set_bg_color(&theme->styles.switch_knob, lv_color_white());
@@ -10258,7 +10258,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\cc9aXUZl.s 			page 1
  6450 1b2c 0121     		movs	r1, #1
  6451 1b2e FFF7AEB9 		b	.L182
  6452              	.L423:
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\cc9aXUZl.s 			page 172
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\cchqKdt6.s 			page 172
 
 
  476:Middlewares/LVGL/lvgl/src/themes/default/lv_theme_default.c ****     lv_style_set_pad_gap(&theme->styles.menu_cont, PAD_SMALL);
@@ -10318,7 +10318,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\cc9aXUZl.s 			page 1
  6496              	.L426:
  497:Middlewares/LVGL/lvgl/src/themes/default/lv_theme_default.c ****     lv_style_set_pad_gap(&theme->styles.menu_header_cont, PAD_SMALL);
  6497              		.loc 1 497 59 discriminator 3 view .LVU1507
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\cc9aXUZl.s 			page 173
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\cchqKdt6.s 			page 173
 
 
  6498 1b74 0623     		movs	r3, #6
@@ -10378,7 +10378,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\cc9aXUZl.s 			page 1
  6541              		.loc 1 502 5 discriminator 10 view .LVU1518
  6542 1bb6 0121     		movs	r1, #1
  6543 1bb8 FFF787BA 		b	.L198
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\cc9aXUZl.s 			page 174
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\cchqKdt6.s 			page 174
 
 
  6544              	.L430:
@@ -10438,7 +10438,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\cc9aXUZl.s 			page 1
  543:Middlewares/LVGL/lvgl/src/themes/default/lv_theme_default.c ****     lv_style_set_pad_gap(&theme->styles.calendar_btnm_bg, PAD_SMALL / 2);
  6589              		.loc 1 543 5 discriminator 10 view .LVU1528
  6590 1c0e 0121     		movs	r1, #1
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\cc9aXUZl.s 			page 175
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\cchqKdt6.s 			page 175
 
 
  6591 1c10 FFF751BB 		b	.L207
@@ -10498,7 +10498,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\cc9aXUZl.s 			page 1
  6634 1c50 0623     		movs	r3, #6
  6635 1c52 FFF7B9BB 		b	.L215
  6636              	.L368:
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\cc9aXUZl.s 			page 176
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\cchqKdt6.s 			page 176
 
 
  555:Middlewares/LVGL/lvgl/src/themes/default/lv_theme_default.c ****     lv_style_set_pad_gap(&theme->styles.calendar_header, PAD_SMALL);
@@ -10558,7 +10558,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\cc9aXUZl.s 			page 1
  6679 1c96 0C23     		movs	r3, #12
  6680 1c98 F0E7     		b	.L220
  6681              	.L438:
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\cc9aXUZl.s 			page 177
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\cchqKdt6.s 			page 177
 
 
  568:Middlewares/LVGL/lvgl/src/themes/default/lv_theme_default.c **** #endif
@@ -10618,7 +10618,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\cc9aXUZl.s 			page 1
  6725              	.L385:
  593:Middlewares/LVGL/lvgl/src/themes/default/lv_theme_default.c ****     lv_style_set_pad_column(&theme->styles.list_btn, PAD_SMALL);
  6726              		.loc 1 593 51 discriminator 2 view .LVU1563
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\cc9aXUZl.s 			page 178
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\cchqKdt6.s 			page 178
 
 
  6727 1cce 0E23     		movs	r3, #14
@@ -10678,7 +10678,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\cc9aXUZl.s 			page 1
  614:Middlewares/LVGL/lvgl/src/themes/default/lv_theme_default.c ****     lv_style_set_arc_color(&theme->styles.scale, theme->color_text);
  6771              		.loc 1 614 5 discriminator 1 view .LVU1574
  6772 1cfe 104B     		ldr	r3, .L471
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\cc9aXUZl.s 			page 179
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\cchqKdt6.s 			page 179
 
 
  6773 1d00 83FB0023 		smull	r2, r3, r3, r0
@@ -10738,7 +10738,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\cc9aXUZl.s 			page 1
  627:Middlewares/LVGL/lvgl/src/themes/default/lv_theme_default.c ****     /*This trick is required only to avoid the garbage collection of
  6824              		.loc 1 627 1 is_stmt 0 view .LVU1580
  6825 0000 2DE9F047 		push	{r4, r5, r6, r7, r8, r9, r10, lr}
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\cc9aXUZl.s 			page 180
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\cchqKdt6.s 			page 180
 
 
  6826              	.LCFI10:
@@ -10798,7 +10798,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\cc9aXUZl.s 			page 1
  6868 0024 FFF7FEFF 		bl	lv_display_get_dpi
  6869              	.LVL695:
  6870 0028 8046     		mov	r8, r0
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\cc9aXUZl.s 			page 181
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\cchqKdt6.s 			page 181
 
 
  6871              	.LVL696:
@@ -10858,7 +10858,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\cc9aXUZl.s 			page 1
  633:Middlewares/LVGL/lvgl/src/themes/default/lv_theme_default.c ****         LV_ASSERT_MALLOC(theme_def);
  6910              		.loc 1 633 9 is_stmt 1 view .LVU1608
  633:Middlewares/LVGL/lvgl/src/themes/default/lv_theme_default.c ****         LV_ASSERT_MALLOC(theme_def);
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\cc9aXUZl.s 			page 182
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\cchqKdt6.s 			page 182
 
 
  6911              		.loc 1 633 21 is_stmt 0 view .LVU1609
@@ -10918,7 +10918,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\cc9aXUZl.s 			page 1
  6950 0074 4345     		cmp	r3, r8
  6951 0076 3AD0     		beq	.L490
  6952              	.LVL710:
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\cc9aXUZl.s 			page 183
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\cchqKdt6.s 			page 183
 
 
  6953              	.L478:
@@ -10978,7 +10978,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\cc9aXUZl.s 			page 1
  6988              		.loc 1 669 5 is_stmt 1 view .LVU1643
  669:Middlewares/LVGL/lvgl/src/themes/default/lv_theme_default.c **** #if LV_USE_EXT_DATA
  6989              		.loc 1 669 23 is_stmt 0 view .LVU1644
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\cc9aXUZl.s 			page 184
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\cchqKdt6.s 			page 184
 
 
  6990 00a8 C4F82490 		str	r9, [r4, #36]
@@ -11038,7 +11038,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\cc9aXUZl.s 			page 1
  7032              	.L473:
  689:Middlewares/LVGL/lvgl/src/themes/default/lv_theme_default.c **** 
  7033              		.loc 1 689 1 is_stmt 0 view .LVU1657
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\cc9aXUZl.s 			page 185
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\cchqKdt6.s 			page 185
 
 
  7034 00e2 2046     		mov	r0, r4
@@ -11098,7 +11098,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\cc9aXUZl.s 			page 1
  655:Middlewares/LVGL/lvgl/src/themes/default/lv_theme_default.c ****        theme->base.font_small == font) {
  7079              		.loc 1 655 20 view .LVU1667
  7080 011a 626A     		ldr	r2, [r4, #36]
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\cc9aXUZl.s 			page 186
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\cchqKdt6.s 			page 186
 
 
  655:Middlewares/LVGL/lvgl/src/themes/default/lv_theme_default.c ****        theme->base.font_small == font) {
@@ -11158,7 +11158,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\cc9aXUZl.s 			page 1
  7127              		.cfi_offset 5, -8
  7128              		.cfi_offset 14, -4
  7129 0002 83B0     		sub	sp, sp, #12
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\cc9aXUZl.s 			page 187
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\cchqKdt6.s 			page 187
 
 
  7130              	.LCFI15:
@@ -11218,7 +11218,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\cc9aXUZl.s 			page 1
  7178              		.align	1
  7179              		.global	lv_theme_default_get
  7180              		.syntax unified
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\cc9aXUZl.s 			page 188
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\cchqKdt6.s 			page 188
 
 
  7181              		.thumb
@@ -11278,7 +11278,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\cc9aXUZl.s 			page 1
  7229              		.cfi_startproc
  7230              		@ args = 0, pretend = 0, frame = 0
  7231              		@ frame_needed = 0, uses_anonymous_args = 0
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\cc9aXUZl.s 			page 189
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\cchqKdt6.s 			page 189
 
 
  7232 0000 38B5     		push	{r3, r4, r5, lr}
@@ -11338,7 +11338,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\cc9aXUZl.s 			page 1
  7270 001c 2844     		add	r0, r0, r5
  7271 001e FFF7FEFF 		bl	lv_style_reset
  7272              	.LVL734:
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\cc9aXUZl.s 			page 190
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\cchqKdt6.s 			page 190
 
 
  714:Middlewares/LVGL/lvgl/src/themes/default/lv_theme_default.c ****                 lv_style_reset(theme_styles + i);
@@ -11398,7 +11398,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\cc9aXUZl.s 			page 1
  7321              		.file 13 "Middlewares/LVGL/lvgl/src/themes/default/../../core/../draw/../misc/cache/class/../lv_ca
  7322              		.file 14 "Middlewares/LVGL/lvgl/src/themes/default/../../core/../draw/lv_draw_buf_private.h"
  7323              		.file 15 "Middlewares/LVGL/lvgl/src/themes/default/../../../src/misc/../draw/lv_draw_buf.h"
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\cc9aXUZl.s 			page 191
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\cchqKdt6.s 			page 191
 
 
  7324              		.file 16 "Middlewares/LVGL/lvgl/src/themes/default/../../../src/misc/../tick/lv_tick.h"
@@ -11454,67 +11454,67 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\cc9aXUZl.s 			page 1
  7374              		.file 66 "Middlewares/LVGL/lvgl/src/themes/default/../../../src/core/../misc/lv_style_gen.h"
  7375              		.file 67 "Middlewares/LVGL/lvgl/src/themes/default/../../../src/core/lv_obj_tree.h"
  7376              		.file 68 "Middlewares/LVGL/lvgl/src/themes/default/../../../src/core/../display/lv_display.h"
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\cc9aXUZl.s 			page 192
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\cchqKdt6.s 			page 192
 
 
 DEFINED SYMBOLS
                             *ABS*:00000000 lv_theme_default.c
-C:\Users\w1785\AppData\Local\Temp\cc9aXUZl.s:21     .text.theme_apply:00000000 $t
-C:\Users\w1785\AppData\Local\Temp\cc9aXUZl.s:26     .text.theme_apply:00000000 theme_apply
-C:\Users\w1785\AppData\Local\Temp\cc9aXUZl.s:560    .text.theme_apply:00000348 $d
-C:\Users\w1785\AppData\Local\Temp\cc9aXUZl.s:579    .text.theme_apply:00000388 $t
-C:\Users\w1785\AppData\Local\Temp\cc9aXUZl.s:1089   .text.theme_apply:00000738 $d
-C:\Users\w1785\AppData\Local\Temp\cc9aXUZl.s:1107   .text.theme_apply:00000770 $t
-C:\Users\w1785\AppData\Local\Temp\cc9aXUZl.s:1571   .text.theme_apply:00000ac8 $d
-C:\Users\w1785\AppData\Local\Temp\cc9aXUZl.s:1592   .text.theme_apply:00000b10 $t
-C:\Users\w1785\AppData\Local\Temp\cc9aXUZl.s:2047   .text.theme_apply:00000e18 $d
-C:\Users\w1785\AppData\Local\Temp\cc9aXUZl.s:2070   .text.theme_apply:00000e68 $t
-C:\Users\w1785\AppData\Local\Temp\cc9aXUZl.s:2314   .text.theme_apply:0000101c $d
-C:\Users\w1785\AppData\Local\Temp\cc9aXUZl.s:2328   .text.lv_style_set_pad_gap:00000000 $t
-C:\Users\w1785\AppData\Local\Temp\cc9aXUZl.s:2333   .text.lv_style_set_pad_gap:00000000 lv_style_set_pad_gap
-C:\Users\w1785\AppData\Local\Temp\cc9aXUZl.s:2366   .text.lv_style_set_pad_ver:00000000 $t
-C:\Users\w1785\AppData\Local\Temp\cc9aXUZl.s:2371   .text.lv_style_set_pad_ver:00000000 lv_style_set_pad_ver
-C:\Users\w1785\AppData\Local\Temp\cc9aXUZl.s:2403   .text.lv_style_set_pad_hor:00000000 $t
-C:\Users\w1785\AppData\Local\Temp\cc9aXUZl.s:2408   .text.lv_style_set_pad_hor:00000000 lv_style_set_pad_hor
-C:\Users\w1785\AppData\Local\Temp\cc9aXUZl.s:2440   .text.lv_style_set_pad_all:00000000 $t
-C:\Users\w1785\AppData\Local\Temp\cc9aXUZl.s:2445   .text.lv_style_set_pad_all:00000000 lv_style_set_pad_all
-C:\Users\w1785\AppData\Local\Temp\cc9aXUZl.s:2487   .text.lv_theme_default_is_inited:00000000 $t
-C:\Users\w1785\AppData\Local\Temp\cc9aXUZl.s:2493   .text.lv_theme_default_is_inited:00000000 lv_theme_default_is_inited
-C:\Users\w1785\AppData\Local\Temp\cc9aXUZl.s:2520   .text.lv_theme_default_is_inited:00000014 $d
-C:\Users\w1785\AppData\Local\Temp\cc9aXUZl.s:2525   .text.style_init_reset:00000000 $t
-C:\Users\w1785\AppData\Local\Temp\cc9aXUZl.s:2530   .text.style_init_reset:00000000 style_init_reset
-C:\Users\w1785\AppData\Local\Temp\cc9aXUZl.s:2569   .rodata.style_init.str1.4:00000000 $d
-C:\Users\w1785\AppData\Local\Temp\cc9aXUZl.s:2573   .text.style_init:00000000 $t
-C:\Users\w1785\AppData\Local\Temp\cc9aXUZl.s:2578   .text.style_init:00000000 style_init
-C:\Users\w1785\AppData\Local\Temp\cc9aXUZl.s:3074   .text.style_init:00000380 $d
-C:\Users\w1785\AppData\Local\Temp\cc9aXUZl.s:7307   .rodata.trans_props.0:00000000 trans_props.0
-C:\Users\w1785\AppData\Local\Temp\cc9aXUZl.s:3083   .text.style_init:00000398 $t
-C:\Users\w1785\AppData\Local\Temp\cc9aXUZl.s:3596   .text.style_init:00000740 $d
-C:\Users\w1785\AppData\Local\Temp\cc9aXUZl.s:3601   .text.style_init:00000748 $t
-C:\Users\w1785\AppData\Local\Temp\cc9aXUZl.s:4073   .text.style_init:00000ac0 $d
-C:\Users\w1785\AppData\Local\Temp\cc9aXUZl.s:4077   .text.style_init:00000ac4 $t
-C:\Users\w1785\AppData\Local\Temp\cc9aXUZl.s:4649   .text.style_init:00000ebc $d
-C:\Users\w1785\AppData\Local\Temp\cc9aXUZl.s:4652   .text.style_init:00000ec4 $t
-C:\Users\w1785\AppData\Local\Temp\cc9aXUZl.s:5166   .text.style_init:00001274 $d
-C:\Users\w1785\AppData\Local\Temp\cc9aXUZl.s:5170   .text.style_init:00001278 $t
-C:\Users\w1785\AppData\Local\Temp\cc9aXUZl.s:5685   .text.style_init:00001608 $d
-C:\Users\w1785\AppData\Local\Temp\cc9aXUZl.s:5689   .text.style_init:0000160c $t
-C:\Users\w1785\AppData\Local\Temp\cc9aXUZl.s:6240   .text.style_init:000019e4 $d
-C:\Users\w1785\AppData\Local\Temp\cc9aXUZl.s:6243   .text.style_init:000019e8 $t
-C:\Users\w1785\AppData\Local\Temp\cc9aXUZl.s:6806   .text.style_init:00001d40 $d
-C:\Users\w1785\AppData\Local\Temp\cc9aXUZl.s:6811   .text.lv_theme_default_init:00000000 $t
-C:\Users\w1785\AppData\Local\Temp\cc9aXUZl.s:6817   .text.lv_theme_default_init:00000000 lv_theme_default_init
-C:\Users\w1785\AppData\Local\Temp\cc9aXUZl.s:7103   .text.lv_theme_default_init:00000134 $d
-C:\Users\w1785\AppData\Local\Temp\cc9aXUZl.s:7115   .text.resolution_change_event_cb:00000000 resolution_change_event_cb
-C:\Users\w1785\AppData\Local\Temp\cc9aXUZl.s:7110   .text.resolution_change_event_cb:00000000 $t
-C:\Users\w1785\AppData\Local\Temp\cc9aXUZl.s:7178   .text.lv_theme_default_get:00000000 $t
-C:\Users\w1785\AppData\Local\Temp\cc9aXUZl.s:7184   .text.lv_theme_default_get:00000000 lv_theme_default_get
-C:\Users\w1785\AppData\Local\Temp\cc9aXUZl.s:7215   .text.lv_theme_default_get:00000014 $d
-C:\Users\w1785\AppData\Local\Temp\cc9aXUZl.s:7220   .text.lv_theme_default_deinit:00000000 $t
-C:\Users\w1785\AppData\Local\Temp\cc9aXUZl.s:7226   .text.lv_theme_default_deinit:00000000 lv_theme_default_deinit
-C:\Users\w1785\AppData\Local\Temp\cc9aXUZl.s:7299   .text.lv_theme_default_deinit:0000003c $d
-C:\Users\w1785\AppData\Local\Temp\cc9aXUZl.s:7304   .rodata.trans_props.0:00000000 $d
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\cc9aXUZl.s 			page 193
+C:\Users\w1785\AppData\Local\Temp\cchqKdt6.s:21     .text.theme_apply:00000000 $t
+C:\Users\w1785\AppData\Local\Temp\cchqKdt6.s:26     .text.theme_apply:00000000 theme_apply
+C:\Users\w1785\AppData\Local\Temp\cchqKdt6.s:560    .text.theme_apply:00000348 $d
+C:\Users\w1785\AppData\Local\Temp\cchqKdt6.s:579    .text.theme_apply:00000388 $t
+C:\Users\w1785\AppData\Local\Temp\cchqKdt6.s:1089   .text.theme_apply:00000738 $d
+C:\Users\w1785\AppData\Local\Temp\cchqKdt6.s:1107   .text.theme_apply:00000770 $t
+C:\Users\w1785\AppData\Local\Temp\cchqKdt6.s:1571   .text.theme_apply:00000ac8 $d
+C:\Users\w1785\AppData\Local\Temp\cchqKdt6.s:1592   .text.theme_apply:00000b10 $t
+C:\Users\w1785\AppData\Local\Temp\cchqKdt6.s:2047   .text.theme_apply:00000e18 $d
+C:\Users\w1785\AppData\Local\Temp\cchqKdt6.s:2070   .text.theme_apply:00000e68 $t
+C:\Users\w1785\AppData\Local\Temp\cchqKdt6.s:2314   .text.theme_apply:0000101c $d
+C:\Users\w1785\AppData\Local\Temp\cchqKdt6.s:2328   .text.lv_style_set_pad_gap:00000000 $t
+C:\Users\w1785\AppData\Local\Temp\cchqKdt6.s:2333   .text.lv_style_set_pad_gap:00000000 lv_style_set_pad_gap
+C:\Users\w1785\AppData\Local\Temp\cchqKdt6.s:2366   .text.lv_style_set_pad_ver:00000000 $t
+C:\Users\w1785\AppData\Local\Temp\cchqKdt6.s:2371   .text.lv_style_set_pad_ver:00000000 lv_style_set_pad_ver
+C:\Users\w1785\AppData\Local\Temp\cchqKdt6.s:2403   .text.lv_style_set_pad_hor:00000000 $t
+C:\Users\w1785\AppData\Local\Temp\cchqKdt6.s:2408   .text.lv_style_set_pad_hor:00000000 lv_style_set_pad_hor
+C:\Users\w1785\AppData\Local\Temp\cchqKdt6.s:2440   .text.lv_style_set_pad_all:00000000 $t
+C:\Users\w1785\AppData\Local\Temp\cchqKdt6.s:2445   .text.lv_style_set_pad_all:00000000 lv_style_set_pad_all
+C:\Users\w1785\AppData\Local\Temp\cchqKdt6.s:2487   .text.lv_theme_default_is_inited:00000000 $t
+C:\Users\w1785\AppData\Local\Temp\cchqKdt6.s:2493   .text.lv_theme_default_is_inited:00000000 lv_theme_default_is_inited
+C:\Users\w1785\AppData\Local\Temp\cchqKdt6.s:2520   .text.lv_theme_default_is_inited:00000014 $d
+C:\Users\w1785\AppData\Local\Temp\cchqKdt6.s:2525   .text.style_init_reset:00000000 $t
+C:\Users\w1785\AppData\Local\Temp\cchqKdt6.s:2530   .text.style_init_reset:00000000 style_init_reset
+C:\Users\w1785\AppData\Local\Temp\cchqKdt6.s:2569   .rodata.style_init.str1.4:00000000 $d
+C:\Users\w1785\AppData\Local\Temp\cchqKdt6.s:2573   .text.style_init:00000000 $t
+C:\Users\w1785\AppData\Local\Temp\cchqKdt6.s:2578   .text.style_init:00000000 style_init
+C:\Users\w1785\AppData\Local\Temp\cchqKdt6.s:3074   .text.style_init:00000380 $d
+C:\Users\w1785\AppData\Local\Temp\cchqKdt6.s:7307   .rodata.trans_props.0:00000000 trans_props.0
+C:\Users\w1785\AppData\Local\Temp\cchqKdt6.s:3083   .text.style_init:00000398 $t
+C:\Users\w1785\AppData\Local\Temp\cchqKdt6.s:3596   .text.style_init:00000740 $d
+C:\Users\w1785\AppData\Local\Temp\cchqKdt6.s:3601   .text.style_init:00000748 $t
+C:\Users\w1785\AppData\Local\Temp\cchqKdt6.s:4073   .text.style_init:00000ac0 $d
+C:\Users\w1785\AppData\Local\Temp\cchqKdt6.s:4077   .text.style_init:00000ac4 $t
+C:\Users\w1785\AppData\Local\Temp\cchqKdt6.s:4649   .text.style_init:00000ebc $d
+C:\Users\w1785\AppData\Local\Temp\cchqKdt6.s:4652   .text.style_init:00000ec4 $t
+C:\Users\w1785\AppData\Local\Temp\cchqKdt6.s:5166   .text.style_init:00001274 $d
+C:\Users\w1785\AppData\Local\Temp\cchqKdt6.s:5170   .text.style_init:00001278 $t
+C:\Users\w1785\AppData\Local\Temp\cchqKdt6.s:5685   .text.style_init:00001608 $d
+C:\Users\w1785\AppData\Local\Temp\cchqKdt6.s:5689   .text.style_init:0000160c $t
+C:\Users\w1785\AppData\Local\Temp\cchqKdt6.s:6240   .text.style_init:000019e4 $d
+C:\Users\w1785\AppData\Local\Temp\cchqKdt6.s:6243   .text.style_init:000019e8 $t
+C:\Users\w1785\AppData\Local\Temp\cchqKdt6.s:6806   .text.style_init:00001d40 $d
+C:\Users\w1785\AppData\Local\Temp\cchqKdt6.s:6811   .text.lv_theme_default_init:00000000 $t
+C:\Users\w1785\AppData\Local\Temp\cchqKdt6.s:6817   .text.lv_theme_default_init:00000000 lv_theme_default_init
+C:\Users\w1785\AppData\Local\Temp\cchqKdt6.s:7103   .text.lv_theme_default_init:00000134 $d
+C:\Users\w1785\AppData\Local\Temp\cchqKdt6.s:7115   .text.resolution_change_event_cb:00000000 resolution_change_event_cb
+C:\Users\w1785\AppData\Local\Temp\cchqKdt6.s:7110   .text.resolution_change_event_cb:00000000 $t
+C:\Users\w1785\AppData\Local\Temp\cchqKdt6.s:7178   .text.lv_theme_default_get:00000000 $t
+C:\Users\w1785\AppData\Local\Temp\cchqKdt6.s:7184   .text.lv_theme_default_get:00000000 lv_theme_default_get
+C:\Users\w1785\AppData\Local\Temp\cchqKdt6.s:7215   .text.lv_theme_default_get:00000014 $d
+C:\Users\w1785\AppData\Local\Temp\cchqKdt6.s:7220   .text.lv_theme_default_deinit:00000000 $t
+C:\Users\w1785\AppData\Local\Temp\cchqKdt6.s:7226   .text.lv_theme_default_deinit:00000000 lv_theme_default_deinit
+C:\Users\w1785\AppData\Local\Temp\cchqKdt6.s:7299   .text.lv_theme_default_deinit:0000003c $d
+C:\Users\w1785\AppData\Local\Temp\cchqKdt6.s:7304   .rodata.trans_props.0:00000000 $d
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\cchqKdt6.s 			page 193
 
 
 
@@ -11574,7 +11574,7 @@ lv_scale_class
 lv_style_set_pad_row
 lv_style_set_pad_column
 lv_style_set_pad_top
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\cc9aXUZl.s 			page 194
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\cchqKdt6.s 			page 194
 
 
 lv_style_set_pad_bottom
@@ -11634,7 +11634,7 @@ lv_style_set_shadow_offset_y
 lv_display_get_horizontal_resolution
 lv_display_get_vertical_resolution
 lv_malloc_zeroed
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\cc9aXUZl.s 			page 195
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\cchqKdt6.s 			page 195
 
 
 lv_display_get_default
