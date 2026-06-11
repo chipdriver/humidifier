@@ -17,11 +17,11 @@ void App_Main(void)
     /* 如果传感器初始化失败，就在屏幕上显示错误。 */
     DisplayService_ShowSensorError();
 
-    /* 停在错误循环中，方便烧录后观察屏幕和调试。 */
+    /* 停在错误循环中，但仍保持 LVGL 定时任务刷新。 */
     while (1)
     {
-      /* 每 1 秒延时一次，避免空转。 */
-      HAL_Delay(1000U);
+      DisplayService_Update();
+      HAL_Delay(5U);
     }
   }
 
@@ -36,7 +36,7 @@ void App_Main(void)
     /* 把当前温湿度缓存显示到 LCD。 */
     DisplayService_Update();
 
-    /* 应用主循环每 200 ms 执行一次。 */
-    HAL_Delay(200U);
+    /* LVGL 需要高频调用 timer handler，真实传感器读取周期仍由 SensorService 控制。 */
+    HAL_Delay(5U);
   }
 }

@@ -1,4 +1,4 @@
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccdg8d3a.s 			page 1
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccKSMgob.s 			page 1
 
 
    1              		.cpu cortex-m4
@@ -58,7 +58,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccdg8d3a.s 			page 1
   28:Core/Src/gpio.c **** /*----------------------------------------------------------------------------*/
   29:Core/Src/gpio.c **** /* Configure GPIO                                                             */
   30:Core/Src/gpio.c **** /*----------------------------------------------------------------------------*/
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccdg8d3a.s 			page 2
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccKSMgob.s 			page 2
 
 
   31:Core/Src/gpio.c **** /* USER CODE BEGIN 1 */
@@ -118,18 +118,18 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccdg8d3a.s 			page 1
   66              		.text
   67              	.Letext0:
   68              		.file 2 "D:\\STM32CubeIDE\\STM32CubeIDE_2.1.1\\STM32CubeIDE\\plugins\\com.st.stm32cube.ide.mcu.ext
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccdg8d3a.s 			page 3
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccKSMgob.s 			page 3
 
 
   69              		.file 3 "D:\\STM32CubeIDE\\STM32CubeIDE_2.1.1\\STM32CubeIDE\\plugins\\com.st.stm32cube.ide.mcu.ext
   70              		.file 4 "Drivers/CMSIS/Device/ST/STM32G4xx/Include/stm32g474xx.h"
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccdg8d3a.s 			page 4
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccKSMgob.s 			page 4
 
 
 DEFINED SYMBOLS
                             *ABS*:00000000 gpio.c
-C:\Users\w1785\AppData\Local\Temp\ccdg8d3a.s:21     .text.MX_GPIO_Init:00000000 $t
-C:\Users\w1785\AppData\Local\Temp\ccdg8d3a.s:27     .text.MX_GPIO_Init:00000000 MX_GPIO_Init
-C:\Users\w1785\AppData\Local\Temp\ccdg8d3a.s:62     .text.MX_GPIO_Init:0000001c $d
+C:\Users\w1785\AppData\Local\Temp\ccKSMgob.s:21     .text.MX_GPIO_Init:00000000 $t
+C:\Users\w1785\AppData\Local\Temp\ccKSMgob.s:27     .text.MX_GPIO_Init:00000000 MX_GPIO_Init
+C:\Users\w1785\AppData\Local\Temp\ccKSMgob.s:62     .text.MX_GPIO_Init:0000001c $d
 
 NO UNDEFINED SYMBOLS

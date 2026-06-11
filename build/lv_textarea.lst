@@ -1,4 +1,4 @@
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\cclaFkaS.s 			page 1
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccTiCGRo.s 			page 1
 
 
    1              		.cpu cortex-m4
@@ -58,7 +58,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\cclaFkaS.s 			page 1
   28:Middlewares/LVGL/lvgl/src/widgets/textarea/lv_textarea.c **** #define MY_CLASS (&lv_textarea_class)
   29:Middlewares/LVGL/lvgl/src/widgets/textarea/lv_textarea.c **** 
   30:Middlewares/LVGL/lvgl/src/widgets/textarea/lv_textarea.c **** /*Test configuration*/
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\cclaFkaS.s 			page 2
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccTiCGRo.s 			page 2
 
 
   31:Middlewares/LVGL/lvgl/src/widgets/textarea/lv_textarea.c **** #ifndef LV_TEXTAREA_DEF_CURSOR_BLINK_TIME
@@ -118,7 +118,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\cclaFkaS.s 			page 1
   85:Middlewares/LVGL/lvgl/src/widgets/textarea/lv_textarea.c ****         .id = LV_PROPERTY_TEXTAREA_CURSOR_POS,
   86:Middlewares/LVGL/lvgl/src/widgets/textarea/lv_textarea.c ****         .setter = lv_textarea_set_cursor_pos,
   87:Middlewares/LVGL/lvgl/src/widgets/textarea/lv_textarea.c ****         .getter = lv_textarea_get_cursor_pos,
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\cclaFkaS.s 			page 3
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccTiCGRo.s 			page 3
 
 
   88:Middlewares/LVGL/lvgl/src/widgets/textarea/lv_textarea.c ****     },
@@ -178,7 +178,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\cclaFkaS.s 			page 1
  142:Middlewares/LVGL/lvgl/src/widgets/textarea/lv_textarea.c ****         .getter = lv_textarea_get_current_char,
  143:Middlewares/LVGL/lvgl/src/widgets/textarea/lv_textarea.c ****     },
  144:Middlewares/LVGL/lvgl/src/widgets/textarea/lv_textarea.c **** };
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\cclaFkaS.s 			page 4
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccTiCGRo.s 			page 4
 
 
  145:Middlewares/LVGL/lvgl/src/widgets/textarea/lv_textarea.c **** #endif
@@ -238,7 +238,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\cclaFkaS.s 			page 1
  199:Middlewares/LVGL/lvgl/src/widgets/textarea/lv_textarea.c **** 
  200:Middlewares/LVGL/lvgl/src/widgets/textarea/lv_textarea.c ****     uint32_t c2 = c;
  201:Middlewares/LVGL/lvgl/src/widgets/textarea/lv_textarea.c **** #if LV_BIG_ENDIAN_SYSTEM
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\cclaFkaS.s 			page 5
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccTiCGRo.s 			page 5
 
 
  202:Middlewares/LVGL/lvgl/src/widgets/textarea/lv_textarea.c ****     if(c != 0) while(*letter_buf == 0) ++letter_buf;
@@ -298,7 +298,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\cclaFkaS.s 			page 1
  256:Middlewares/LVGL/lvgl/src/widgets/textarea/lv_textarea.c **** {
  257:Middlewares/LVGL/lvgl/src/widgets/textarea/lv_textarea.c ****     LV_ASSERT_OBJ(obj, MY_CLASS);
  258:Middlewares/LVGL/lvgl/src/widgets/textarea/lv_textarea.c ****     LV_ASSERT_NULL(txt);
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\cclaFkaS.s 			page 6
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccTiCGRo.s 			page 6
 
 
  259:Middlewares/LVGL/lvgl/src/widgets/textarea/lv_textarea.c **** 
@@ -358,7 +358,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\cclaFkaS.s 			page 1
  313:Middlewares/LVGL/lvgl/src/widgets/textarea/lv_textarea.c **** 
  314:Middlewares/LVGL/lvgl/src/widgets/textarea/lv_textarea.c ****     char del_buf[2]   = {LV_KEY_DEL, '\0'};
  315:Middlewares/LVGL/lvgl/src/widgets/textarea/lv_textarea.c **** 
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\cclaFkaS.s 			page 7
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccTiCGRo.s 			page 7
 
 
  316:Middlewares/LVGL/lvgl/src/widgets/textarea/lv_textarea.c ****     lv_result_t res = insert_handler(obj, del_buf);
@@ -418,7 +418,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\cclaFkaS.s 			page 1
  370:Middlewares/LVGL/lvgl/src/widgets/textarea/lv_textarea.c ****     lv_textarea_clear_selection(obj);
  371:Middlewares/LVGL/lvgl/src/widgets/textarea/lv_textarea.c **** 
  372:Middlewares/LVGL/lvgl/src/widgets/textarea/lv_textarea.c ****     /*Add the character one-by-one if not all characters are accepted or there is character limit.*
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\cclaFkaS.s 			page 8
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccTiCGRo.s 			page 8
 
 
  373:Middlewares/LVGL/lvgl/src/widgets/textarea/lv_textarea.c ****     if(lv_textarea_get_accepted_chars(obj) || lv_textarea_get_max_length(obj)) {
@@ -478,7 +478,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\cclaFkaS.s 			page 1
  427:Middlewares/LVGL/lvgl/src/widgets/textarea/lv_textarea.c ****             return;
  428:Middlewares/LVGL/lvgl/src/widgets/textarea/lv_textarea.c ****         }
  429:Middlewares/LVGL/lvgl/src/widgets/textarea/lv_textarea.c **** 
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\cclaFkaS.s 			page 9
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccTiCGRo.s 			page 9
 
 
  430:Middlewares/LVGL/lvgl/src/widgets/textarea/lv_textarea.c ****         lv_strcpy(ta->placeholder_txt, txt);
@@ -538,7 +538,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\cclaFkaS.s 			page 1
  484:Middlewares/LVGL/lvgl/src/widgets/textarea/lv_textarea.c ****         lv_textarea_clear_selection(obj);
  485:Middlewares/LVGL/lvgl/src/widgets/textarea/lv_textarea.c ****     }
  486:Middlewares/LVGL/lvgl/src/widgets/textarea/lv_textarea.c ****     /*Pwd mode is now disabled*/
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\cclaFkaS.s 			page 10
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccTiCGRo.s 			page 10
 
 
  487:Middlewares/LVGL/lvgl/src/widgets/textarea/lv_textarea.c ****     else {
@@ -598,7 +598,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\cclaFkaS.s 			page 1
  541:Middlewares/LVGL/lvgl/src/widgets/textarea/lv_textarea.c ****     if(en) {
  542:Middlewares/LVGL/lvgl/src/widgets/textarea/lv_textarea.c ****         lv_obj_set_height(obj, LV_SIZE_CONTENT);
  543:Middlewares/LVGL/lvgl/src/widgets/textarea/lv_textarea.c ****     }
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\cclaFkaS.s 			page 11
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccTiCGRo.s 			page 11
 
 
  544:Middlewares/LVGL/lvgl/src/widgets/textarea/lv_textarea.c ****     else {
@@ -658,7 +658,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\cclaFkaS.s 			page 1
  598:Middlewares/LVGL/lvgl/src/widgets/textarea/lv_textarea.c **** {
  599:Middlewares/LVGL/lvgl/src/widgets/textarea/lv_textarea.c ****     LV_ASSERT_OBJ(obj, MY_CLASS);
  600:Middlewares/LVGL/lvgl/src/widgets/textarea/lv_textarea.c **** 
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\cclaFkaS.s 			page 12
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccTiCGRo.s 			page 12
 
 
  601:Middlewares/LVGL/lvgl/src/widgets/textarea/lv_textarea.c **** #if LV_LABEL_TEXT_SELECTION
@@ -718,7 +718,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\cclaFkaS.s 			page 1
  655:Middlewares/LVGL/lvgl/src/widgets/textarea/lv_textarea.c ****     else {
  656:Middlewares/LVGL/lvgl/src/widgets/textarea/lv_textarea.c ****         txt = ta->pwd_tmp;
  657:Middlewares/LVGL/lvgl/src/widgets/textarea/lv_textarea.c ****     }
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\cclaFkaS.s 			page 13
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccTiCGRo.s 			page 13
 
 
  658:Middlewares/LVGL/lvgl/src/widgets/textarea/lv_textarea.c **** 
@@ -778,7 +778,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\cclaFkaS.s 			page 1
  712:Middlewares/LVGL/lvgl/src/widgets/textarea/lv_textarea.c **** 
  713:Middlewares/LVGL/lvgl/src/widgets/textarea/lv_textarea.c ****     /*If the textarea's font has the bullet character use it else fallback to "*"*/
  714:Middlewares/LVGL/lvgl/src/widgets/textarea/lv_textarea.c ****     const lv_font_t * bullet_font = lv_obj_get_style_text_font(obj, LV_PART_MAIN);
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\cclaFkaS.s 			page 14
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccTiCGRo.s 			page 14
 
 
  715:Middlewares/LVGL/lvgl/src/widgets/textarea/lv_textarea.c ****     if(lv_font_get_glyph_dsc(bullet_font, &g, LV_TEXTAREA_PWD_BULLET_UNICODE, '\0'))
@@ -838,7 +838,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\cclaFkaS.s 			page 1
  769:Middlewares/LVGL/lvgl/src/widgets/textarea/lv_textarea.c **** 
  770:Middlewares/LVGL/lvgl/src/widgets/textarea/lv_textarea.c **** #if LV_LABEL_TEXT_SELECTION
  771:Middlewares/LVGL/lvgl/src/widgets/textarea/lv_textarea.c ****     lv_textarea_t * ta = (lv_textarea_t *)obj;
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\cclaFkaS.s 			page 15
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccTiCGRo.s 			page 15
 
 
  772:Middlewares/LVGL/lvgl/src/widgets/textarea/lv_textarea.c ****     return ta->text_sel_en;
@@ -898,7 +898,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\cclaFkaS.s 			page 1
  826:Middlewares/LVGL/lvgl/src/widgets/textarea/lv_textarea.c ****     uint32_t cp = lv_textarea_get_cursor_pos(obj);
  827:Middlewares/LVGL/lvgl/src/widgets/textarea/lv_textarea.c ****     cp++;
  828:Middlewares/LVGL/lvgl/src/widgets/textarea/lv_textarea.c ****     lv_textarea_set_cursor_pos(obj, cp);
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\cclaFkaS.s 			page 16
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccTiCGRo.s 			page 16
 
 
  829:Middlewares/LVGL/lvgl/src/widgets/textarea/lv_textarea.c **** }
@@ -958,7 +958,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\cclaFkaS.s 			page 1
  883:Middlewares/LVGL/lvgl/src/widgets/textarea/lv_textarea.c ****     const lv_font_t * font = lv_obj_get_style_text_font(obj, LV_PART_MAIN);
  884:Middlewares/LVGL/lvgl/src/widgets/textarea/lv_textarea.c ****     int32_t font_h              = lv_font_get_line_height(font);
  885:Middlewares/LVGL/lvgl/src/widgets/textarea/lv_textarea.c ****     pos.y -= font_h + line_space - 1;
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\cclaFkaS.s 			page 17
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccTiCGRo.s 			page 17
 
 
  886:Middlewares/LVGL/lvgl/src/widgets/textarea/lv_textarea.c ****     pos.x = ta->cursor.valid_x;
@@ -1018,7 +1018,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\cclaFkaS.s 			page 1
  940:Middlewares/LVGL/lvgl/src/widgets/textarea/lv_textarea.c **** static void lv_textarea_destructor(const lv_obj_class_t * class_p, lv_obj_t * obj)
  941:Middlewares/LVGL/lvgl/src/widgets/textarea/lv_textarea.c **** {
  942:Middlewares/LVGL/lvgl/src/widgets/textarea/lv_textarea.c ****     LV_UNUSED(class_p);
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\cclaFkaS.s 			page 18
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccTiCGRo.s 			page 18
 
 
  943:Middlewares/LVGL/lvgl/src/widgets/textarea/lv_textarea.c **** 
@@ -1078,7 +1078,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\cclaFkaS.s 			page 1
  997:Middlewares/LVGL/lvgl/src/widgets/textarea/lv_textarea.c ****             lv_textarea_add_char(obj, c);
  998:Middlewares/LVGL/lvgl/src/widgets/textarea/lv_textarea.c ****         }
  999:Middlewares/LVGL/lvgl/src/widgets/textarea/lv_textarea.c ****     }
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\cclaFkaS.s 			page 19
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccTiCGRo.s 			page 19
 
 
 1000:Middlewares/LVGL/lvgl/src/widgets/textarea/lv_textarea.c ****     else if(code == LV_EVENT_PRESSED || code == LV_EVENT_PRESSING || code == LV_EVENT_PRESS_LOST ||
@@ -1138,7 +1138,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\cclaFkaS.s 			page 1
 1054:Middlewares/LVGL/lvgl/src/widgets/textarea/lv_textarea.c ****  * @param x unused
 1055:Middlewares/LVGL/lvgl/src/widgets/textarea/lv_textarea.c ****  */
 1056:Middlewares/LVGL/lvgl/src/widgets/textarea/lv_textarea.c **** static void pwd_char_hider_anim(void * obj, int32_t x)
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\cclaFkaS.s 			page 20
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccTiCGRo.s 			page 20
 
 
 1057:Middlewares/LVGL/lvgl/src/widgets/textarea/lv_textarea.c **** {
@@ -1198,7 +1198,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\cclaFkaS.s 			page 1
 1092:Middlewares/LVGL/lvgl/src/widgets/textarea/lv_textarea.c ****     uint32_t i;
 1093:Middlewares/LVGL/lvgl/src/widgets/textarea/lv_textarea.c ****     for(i = 0; i < enc_len; i++) {
 1094:Middlewares/LVGL/lvgl/src/widgets/textarea/lv_textarea.c ****         lv_memcpy(&txt_tmp[i * bullet_len], bullet, bullet_len);
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\cclaFkaS.s 			page 21
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccTiCGRo.s 			page 21
 
 
 1095:Middlewares/LVGL/lvgl/src/widgets/textarea/lv_textarea.c ****     }
@@ -1258,7 +1258,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\cclaFkaS.s 			page 1
 1149:Middlewares/LVGL/lvgl/src/widgets/textarea/lv_textarea.c ****         lv_anim_set_path_cb(&a, lv_anim_path_step);
 1150:Middlewares/LVGL/lvgl/src/widgets/textarea/lv_textarea.c ****         lv_anim_set_repeat_count(&a, LV_ANIM_REPEAT_INFINITE);
 1151:Middlewares/LVGL/lvgl/src/widgets/textarea/lv_textarea.c ****         lv_anim_start(&a);
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\cclaFkaS.s 			page 22
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccTiCGRo.s 			page 22
 
 
 1152:Middlewares/LVGL/lvgl/src/widgets/textarea/lv_textarea.c ****     }
@@ -1318,7 +1318,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\cclaFkaS.s 			page 1
 1206:Middlewares/LVGL/lvgl/src/widgets/textarea/lv_textarea.c ****     int32_t border_width = lv_obj_get_style_border_width(obj, LV_PART_CURSOR);
 1207:Middlewares/LVGL/lvgl/src/widgets/textarea/lv_textarea.c ****     int32_t top = lv_obj_get_style_pad_top(obj, LV_PART_CURSOR) + border_width;
 1208:Middlewares/LVGL/lvgl/src/widgets/textarea/lv_textarea.c ****     int32_t bottom = lv_obj_get_style_pad_bottom(obj, LV_PART_CURSOR) + border_width;
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\cclaFkaS.s 			page 23
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccTiCGRo.s 			page 23
 
 
 1209:Middlewares/LVGL/lvgl/src/widgets/textarea/lv_textarea.c ****     int32_t left = lv_obj_get_style_pad_left(obj, LV_PART_CURSOR) + border_width;
@@ -1378,7 +1378,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\cclaFkaS.s 			page 1
 1263:Middlewares/LVGL/lvgl/src/widgets/textarea/lv_textarea.c **** 
 1264:Middlewares/LVGL/lvgl/src/widgets/textarea/lv_textarea.c ****     const lv_event_code_t code = lv_event_get_code(e);
 1265:Middlewares/LVGL/lvgl/src/widgets/textarea/lv_textarea.c **** 
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\cclaFkaS.s 			page 24
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccTiCGRo.s 			page 24
 
 
 1266:Middlewares/LVGL/lvgl/src/widgets/textarea/lv_textarea.c ****     int32_t label_width = lv_obj_get_width(ta->label);
@@ -1438,7 +1438,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\cclaFkaS.s 			page 1
 1320:Middlewares/LVGL/lvgl/src/widgets/textarea/lv_textarea.c ****                 label_data->sel_start = ta->sel_start;
 1321:Middlewares/LVGL/lvgl/src/widgets/textarea/lv_textarea.c ****                 label_data->sel_end   = ta->sel_end;
 1322:Middlewares/LVGL/lvgl/src/widgets/textarea/lv_textarea.c ****                 lv_obj_invalidate(obj);
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\cclaFkaS.s 			page 25
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccTiCGRo.s 			page 25
 
 
 1323:Middlewares/LVGL/lvgl/src/widgets/textarea/lv_textarea.c ****             }
@@ -1498,7 +1498,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\cclaFkaS.s 			page 1
 1377:Middlewares/LVGL/lvgl/src/widgets/textarea/lv_textarea.c **** {
 1378:Middlewares/LVGL/lvgl/src/widgets/textarea/lv_textarea.c ****     lv_obj_t * obj = lv_event_get_current_target(e);
 1379:Middlewares/LVGL/lvgl/src/widgets/textarea/lv_textarea.c ****     lv_textarea_t * ta = (lv_textarea_t *)obj;
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\cclaFkaS.s 			page 26
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccTiCGRo.s 			page 26
 
 
 1380:Middlewares/LVGL/lvgl/src/widgets/textarea/lv_textarea.c ****     lv_layer_t * layer = lv_event_get_layer(e);
@@ -1558,7 +1558,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\cclaFkaS.s 			page 1
 1434:Middlewares/LVGL/lvgl/src/widgets/textarea/lv_textarea.c ****     int32_t left = lv_obj_get_style_pad_left(obj, LV_PART_CURSOR) + border_width;
 1435:Middlewares/LVGL/lvgl/src/widgets/textarea/lv_textarea.c ****     int32_t top = lv_obj_get_style_pad_top(obj, LV_PART_CURSOR) + border_width;
 1436:Middlewares/LVGL/lvgl/src/widgets/textarea/lv_textarea.c ****     char letter_buf[8] = {0};
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\cclaFkaS.s 			page 27
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccTiCGRo.s 			page 27
 
 
 1437:Middlewares/LVGL/lvgl/src/widgets/textarea/lv_textarea.c ****     lv_memcpy(letter_buf, &txt[ta->cursor.txt_byte_pos], lv_text_encoded_size(&txt[ta->cursor.txt_b
@@ -1618,7 +1618,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\cclaFkaS.s 			page 1
   61 0002 0249     		ldr	r1, .L4
   62 0004 FFF7FEFF 		bl	lv_anim_delete
   63              	.LVL2:
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\cclaFkaS.s 			page 28
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccTiCGRo.s 			page 28
 
 
 1480:Middlewares/LVGL/lvgl/src/widgets/textarea/lv_textarea.c **** }
@@ -1678,7 +1678,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\cclaFkaS.s 			page 1
  110 0012 0122     		movs	r2, #1
  111              	.L8:
 1038:Middlewares/LVGL/lvgl/src/widgets/textarea/lv_textarea.c ****         lv_area_t area_tmp;
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\cclaFkaS.s 			page 29
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccTiCGRo.s 			page 29
 
 
  112              		.loc 1 1038 25 discriminator 4 view .LVU17
@@ -1738,7 +1738,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\cclaFkaS.s 			page 1
   43:Middlewares/LVGL/lvgl/src/widgets/textarea/../../core/../misc/../font/../draw/../misc/lv_area.h ****     int32_t x1;
   44:Middlewares/LVGL/lvgl/src/widgets/textarea/../../core/../misc/../font/../draw/../misc/lv_area.h ****     int32_t y1;
   45:Middlewares/LVGL/lvgl/src/widgets/textarea/../../core/../misc/../font/../draw/../misc/lv_area.h ****     int32_t x2;
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\cclaFkaS.s 			page 30
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccTiCGRo.s 			page 30
 
 
   46:Middlewares/LVGL/lvgl/src/widgets/textarea/../../core/../misc/../font/../draw/../misc/lv_area.h ****     int32_t y2;
@@ -1798,7 +1798,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\cclaFkaS.s 			page 1
  100:Middlewares/LVGL/lvgl/src/widgets/textarea/../../core/../misc/../font/../draw/../misc/lv_area.h **** void lv_area_set(lv_area_t * area_p, int32_t x1, int32_t y1, int32_t x2, int32_t y2);
  101:Middlewares/LVGL/lvgl/src/widgets/textarea/../../core/../misc/../font/../draw/../misc/lv_area.h **** 
  102:Middlewares/LVGL/lvgl/src/widgets/textarea/../../core/../misc/../font/../draw/../misc/lv_area.h **** /**
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\cclaFkaS.s 			page 31
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccTiCGRo.s 			page 31
 
 
  103:Middlewares/LVGL/lvgl/src/widgets/textarea/../../core/../misc/../font/../draw/../misc/lv_area.h ****  * Copy an area
@@ -1858,7 +1858,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\cclaFkaS.s 			page 1
 1042:Middlewares/LVGL/lvgl/src/widgets/textarea/lv_textarea.c ****         area_tmp.x2 += ta->label->coords.x1;
  160              		.loc 1 1042 21 view .LVU40
  161 003a 1944     		add	r1, r1, r3
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\cclaFkaS.s 			page 32
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccTiCGRo.s 			page 32
 
 
  162 003c 0191     		str	r1, [sp, #4]
@@ -1918,7 +1918,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\cclaFkaS.s 			page 1
  210              	start_cursor_blink:
  211              	.LVL9:
  212              	.LFB238:
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\cclaFkaS.s 			page 33
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccTiCGRo.s 			page 33
 
 
 1134:Middlewares/LVGL/lvgl/src/widgets/textarea/lv_textarea.c ****     lv_textarea_t * ta = (lv_textarea_t *)obj;
@@ -1978,7 +1978,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\cclaFkaS.s 			page 1
   29:Middlewares/LVGL/lvgl/src/widgets/textarea/../../core/lv_obj_style_gen.h ****  */
   30:Middlewares/LVGL/lvgl/src/widgets/textarea/../../core/lv_obj_style_gen.h **** static inline int32_t lv_obj_get_style_width(const lv_obj_t * obj, lv_part_t part)
   31:Middlewares/LVGL/lvgl/src/widgets/textarea/../../core/lv_obj_style_gen.h **** {
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\cclaFkaS.s 			page 34
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccTiCGRo.s 			page 34
 
 
   32:Middlewares/LVGL/lvgl/src/widgets/textarea/../../core/lv_obj_style_gen.h ****     lv_style_value_t v = lv_obj_get_style_prop(obj, part, LV_STYLE_WIDTH);
@@ -2038,7 +2038,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\cclaFkaS.s 			page 1
   86:Middlewares/LVGL/lvgl/src/widgets/textarea/../../core/lv_obj_style_gen.h **** }
   87:Middlewares/LVGL/lvgl/src/widgets/textarea/../../core/lv_obj_style_gen.h **** 
   88:Middlewares/LVGL/lvgl/src/widgets/textarea/../../core/lv_obj_style_gen.h **** /**
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\cclaFkaS.s 			page 35
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccTiCGRo.s 			page 35
 
 
   89:Middlewares/LVGL/lvgl/src/widgets/textarea/../../core/lv_obj_style_gen.h ****  * Gets a maximal height. Pixel and percentage values can be used. Percentage values
@@ -2098,7 +2098,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\cclaFkaS.s 			page 1
  143:Middlewares/LVGL/lvgl/src/widgets/textarea/../../core/lv_obj_style_gen.h ****  * Get the alignment which tells from which point of the parent the X and Y
  144:Middlewares/LVGL/lvgl/src/widgets/textarea/../../core/lv_obj_style_gen.h ****  * coordinates should be interpreted. Possible values are: `LV_ALIGN_DEFAULT`,
  145:Middlewares/LVGL/lvgl/src/widgets/textarea/../../core/lv_obj_style_gen.h ****  * `LV_ALIGN_TOP_LEFT/MID/RIGHT`, `LV_ALIGN_BOTTOM_LEFT/MID/RIGHT`,
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\cclaFkaS.s 			page 36
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccTiCGRo.s 			page 36
 
 
  146:Middlewares/LVGL/lvgl/src/widgets/textarea/../../core/lv_obj_style_gen.h ****  * `LV_ALIGN_LEFT/RIGHT_MID`, `LV_ALIGN_CENTER`. `LV_ALIGN_DEFAULT` means
@@ -2158,7 +2158,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\cclaFkaS.s 			page 1
  200:Middlewares/LVGL/lvgl/src/widgets/textarea/../../core/lv_obj_style_gen.h ****  * Move Widget with this value in Y direction. Applied after layouts, aligns and other
  201:Middlewares/LVGL/lvgl/src/widgets/textarea/../../core/lv_obj_style_gen.h ****  * positioning. Pixel and percentage (with `lv_pct(x)`) values can be used. Percentage
  202:Middlewares/LVGL/lvgl/src/widgets/textarea/../../core/lv_obj_style_gen.h ****  * values are relative to Widget's height.
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\cclaFkaS.s 			page 37
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccTiCGRo.s 			page 37
 
 
  203:Middlewares/LVGL/lvgl/src/widgets/textarea/../../core/lv_obj_style_gen.h ****  * Default: 0, inherited: No, layout: Yes, ext. draw: No.
@@ -2218,7 +2218,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\cclaFkaS.s 			page 1
  257:Middlewares/LVGL/lvgl/src/widgets/textarea/../../core/lv_obj_style_gen.h ****  */
  258:Middlewares/LVGL/lvgl/src/widgets/textarea/../../core/lv_obj_style_gen.h **** static inline int32_t lv_obj_get_style_transform_rotation(const lv_obj_t * obj, lv_part_t part)
  259:Middlewares/LVGL/lvgl/src/widgets/textarea/../../core/lv_obj_style_gen.h **** {
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\cclaFkaS.s 			page 38
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccTiCGRo.s 			page 38
 
 
  260:Middlewares/LVGL/lvgl/src/widgets/textarea/../../core/lv_obj_style_gen.h ****     lv_style_value_t v = lv_obj_get_style_prop(obj, part, LV_STYLE_TRANSFORM_ROTATION);
@@ -2278,7 +2278,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\cclaFkaS.s 			page 1
  314:Middlewares/LVGL/lvgl/src/widgets/textarea/../../core/lv_obj_style_gen.h **** /**
  315:Middlewares/LVGL/lvgl/src/widgets/textarea/../../core/lv_obj_style_gen.h ****  * Gets the padding on the top. It makes the content area smaller in this direction.
  316:Middlewares/LVGL/lvgl/src/widgets/textarea/../../core/lv_obj_style_gen.h ****  * Default: 0, inherited: No, layout: Yes, ext. draw: No.
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\cclaFkaS.s 			page 39
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccTiCGRo.s 			page 39
 
 
  317:Middlewares/LVGL/lvgl/src/widgets/textarea/../../core/lv_obj_style_gen.h ****  * @param  obj    Pointer to Widget
@@ -2338,7 +2338,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\cclaFkaS.s 			page 1
  371:Middlewares/LVGL/lvgl/src/widgets/textarea/../../core/lv_obj_style_gen.h ****     return (int32_t)v.num;
  372:Middlewares/LVGL/lvgl/src/widgets/textarea/../../core/lv_obj_style_gen.h **** }
  373:Middlewares/LVGL/lvgl/src/widgets/textarea/../../core/lv_obj_style_gen.h **** 
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\cclaFkaS.s 			page 40
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccTiCGRo.s 			page 40
 
 
  374:Middlewares/LVGL/lvgl/src/widgets/textarea/../../core/lv_obj_style_gen.h **** /**
@@ -2398,7 +2398,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\cclaFkaS.s 			page 1
  428:Middlewares/LVGL/lvgl/src/widgets/textarea/../../core/lv_obj_style_gen.h **** static inline int32_t lv_obj_get_style_margin_left(const lv_obj_t * obj, lv_part_t part)
  429:Middlewares/LVGL/lvgl/src/widgets/textarea/../../core/lv_obj_style_gen.h **** {
  430:Middlewares/LVGL/lvgl/src/widgets/textarea/../../core/lv_obj_style_gen.h ****     lv_style_value_t v = lv_obj_get_style_prop(obj, part, LV_STYLE_MARGIN_LEFT);
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\cclaFkaS.s 			page 41
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccTiCGRo.s 			page 41
 
 
  431:Middlewares/LVGL/lvgl/src/widgets/textarea/../../core/lv_obj_style_gen.h ****     return (int32_t)v.num;
@@ -2458,7 +2458,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\cclaFkaS.s 			page 1
  485:Middlewares/LVGL/lvgl/src/widgets/textarea/../../core/lv_obj_style_gen.h ****  * Get gradient color of the background. Used only if `grad_dir` is not `LV_GRAD_DIR_NONE`.
  486:Middlewares/LVGL/lvgl/src/widgets/textarea/../../core/lv_obj_style_gen.h ****  * Default: `0x000000`, inherited: No, layout: No, ext. draw: No.
  487:Middlewares/LVGL/lvgl/src/widgets/textarea/../../core/lv_obj_style_gen.h ****  * @param  obj    Pointer to Widget
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\cclaFkaS.s 			page 42
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccTiCGRo.s 			page 42
 
 
  488:Middlewares/LVGL/lvgl/src/widgets/textarea/../../core/lv_obj_style_gen.h ****  * @param  part   One of the `LV_PART_...` enum values
@@ -2518,7 +2518,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\cclaFkaS.s 			page 1
  542:Middlewares/LVGL/lvgl/src/widgets/textarea/../../core/lv_obj_style_gen.h **** {
  543:Middlewares/LVGL/lvgl/src/widgets/textarea/../../core/lv_obj_style_gen.h ****     lv_style_value_t v = lv_obj_get_style_prop(obj, part, LV_STYLE_BG_GRAD_STOP);
  544:Middlewares/LVGL/lvgl/src/widgets/textarea/../../core/lv_obj_style_gen.h ****     return (int32_t)v.num;
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\cclaFkaS.s 			page 43
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccTiCGRo.s 			page 43
 
 
  545:Middlewares/LVGL/lvgl/src/widgets/textarea/../../core/lv_obj_style_gen.h **** }
@@ -2578,7 +2578,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\cclaFkaS.s 			page 1
  599:Middlewares/LVGL/lvgl/src/widgets/textarea/../../core/lv_obj_style_gen.h **** /**
  600:Middlewares/LVGL/lvgl/src/widgets/textarea/../../core/lv_obj_style_gen.h ****  * Get opacity of the background image. Value 0, `LV_OPA_0` or `LV_OPA_TRANSP` means
  601:Middlewares/LVGL/lvgl/src/widgets/textarea/../../core/lv_obj_style_gen.h ****  * fully transparent, 255, `LV_OPA_100` or `LV_OPA_COVER` means fully covering, other
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\cclaFkaS.s 			page 44
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccTiCGRo.s 			page 44
 
 
  602:Middlewares/LVGL/lvgl/src/widgets/textarea/../../core/lv_obj_style_gen.h ****  * values or LV_OPA_10, LV_OPA_20, etc means semi transparency.
@@ -2638,7 +2638,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\cclaFkaS.s 			page 1
  656:Middlewares/LVGL/lvgl/src/widgets/textarea/../../core/lv_obj_style_gen.h ****  * @param  part   One of the `LV_PART_...` enum values
  657:Middlewares/LVGL/lvgl/src/widgets/textarea/../../core/lv_obj_style_gen.h ****  */
  658:Middlewares/LVGL/lvgl/src/widgets/textarea/../../core/lv_obj_style_gen.h **** static inline bool lv_obj_get_style_bg_image_tiled(const lv_obj_t * obj, lv_part_t part)
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\cclaFkaS.s 			page 45
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccTiCGRo.s 			page 45
 
 
  659:Middlewares/LVGL/lvgl/src/widgets/textarea/../../core/lv_obj_style_gen.h **** {
@@ -2698,7 +2698,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\cclaFkaS.s 			page 1
  713:Middlewares/LVGL/lvgl/src/widgets/textarea/../../core/lv_obj_style_gen.h **** 
  714:Middlewares/LVGL/lvgl/src/widgets/textarea/../../core/lv_obj_style_gen.h **** /**
  715:Middlewares/LVGL/lvgl/src/widgets/textarea/../../core/lv_obj_style_gen.h ****  * Get only which side(s) the border should be drawn. Possible values are
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\cclaFkaS.s 			page 46
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccTiCGRo.s 			page 46
 
 
  716:Middlewares/LVGL/lvgl/src/widgets/textarea/../../core/lv_obj_style_gen.h ****  * `LV_BORDER_SIDE_NONE/TOP/BOTTOM/LEFT/RIGHT/INTERNAL`. OR-ed values can be used as
@@ -2758,7 +2758,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\cclaFkaS.s 			page 1
  770:Middlewares/LVGL/lvgl/src/widgets/textarea/../../core/lv_obj_style_gen.h ****  */
  771:Middlewares/LVGL/lvgl/src/widgets/textarea/../../core/lv_obj_style_gen.h **** static inline lv_color_t lv_obj_get_style_outline_color_filtered(const lv_obj_t * obj, lv_part_t pa
  772:Middlewares/LVGL/lvgl/src/widgets/textarea/../../core/lv_obj_style_gen.h **** {
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\cclaFkaS.s 			page 47
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccTiCGRo.s 			page 47
 
 
  773:Middlewares/LVGL/lvgl/src/widgets/textarea/../../core/lv_obj_style_gen.h ****     lv_style_value_t v = lv_obj_style_apply_color_filter(obj, part, lv_obj_get_style_prop(obj, part
@@ -2818,7 +2818,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\cclaFkaS.s 			page 1
  827:Middlewares/LVGL/lvgl/src/widgets/textarea/../../core/lv_obj_style_gen.h **** /**
  828:Middlewares/LVGL/lvgl/src/widgets/textarea/../../core/lv_obj_style_gen.h ****  * Get an offset on the shadow in pixels in Y direction.
  829:Middlewares/LVGL/lvgl/src/widgets/textarea/../../core/lv_obj_style_gen.h ****  * Default: 0, inherited: No, layout: No, ext. draw: Yes.
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\cclaFkaS.s 			page 48
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccTiCGRo.s 			page 48
 
 
  830:Middlewares/LVGL/lvgl/src/widgets/textarea/../../core/lv_obj_style_gen.h ****  * @param  obj    Pointer to Widget
@@ -2878,7 +2878,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\cclaFkaS.s 			page 1
  884:Middlewares/LVGL/lvgl/src/widgets/textarea/../../core/lv_obj_style_gen.h **** static inline lv_opa_t lv_obj_get_style_shadow_opa(const lv_obj_t * obj, lv_part_t part)
  885:Middlewares/LVGL/lvgl/src/widgets/textarea/../../core/lv_obj_style_gen.h **** {
  886:Middlewares/LVGL/lvgl/src/widgets/textarea/../../core/lv_obj_style_gen.h ****     lv_style_value_t v = lv_obj_get_style_prop(obj, part, LV_STYLE_SHADOW_OPA);
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\cclaFkaS.s 			page 49
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccTiCGRo.s 			page 49
 
 
  887:Middlewares/LVGL/lvgl/src/widgets/textarea/../../core/lv_obj_style_gen.h ****     return (lv_opa_t)v.num;
@@ -2938,7 +2938,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\cclaFkaS.s 			page 1
  941:Middlewares/LVGL/lvgl/src/widgets/textarea/../../core/lv_obj_style_gen.h **** 
  942:Middlewares/LVGL/lvgl/src/widgets/textarea/../../core/lv_obj_style_gen.h **** /**
  943:Middlewares/LVGL/lvgl/src/widgets/textarea/../../core/lv_obj_style_gen.h ****  * Get image colorkey definition. The lv_image_colorkey_t contains two color values:
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\cclaFkaS.s 			page 50
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccTiCGRo.s 			page 50
 
 
  944:Middlewares/LVGL/lvgl/src/widgets/textarea/../../core/lv_obj_style_gen.h ****  * `high_color` and `low_color`. the color of pixels ranging from `low_color` to
@@ -2998,7 +2998,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\cclaFkaS.s 			page 1
  998:Middlewares/LVGL/lvgl/src/widgets/textarea/../../core/lv_obj_style_gen.h ****  */
  999:Middlewares/LVGL/lvgl/src/widgets/textarea/../../core/lv_obj_style_gen.h **** static inline bool lv_obj_get_style_line_rounded(const lv_obj_t * obj, lv_part_t part)
 1000:Middlewares/LVGL/lvgl/src/widgets/textarea/../../core/lv_obj_style_gen.h **** {
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\cclaFkaS.s 			page 51
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccTiCGRo.s 			page 51
 
 
 1001:Middlewares/LVGL/lvgl/src/widgets/textarea/../../core/lv_obj_style_gen.h ****     lv_style_value_t v = lv_obj_get_style_prop(obj, part, LV_STYLE_LINE_ROUNDED);
@@ -3058,7 +3058,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\cclaFkaS.s 			page 1
 1055:Middlewares/LVGL/lvgl/src/widgets/textarea/../../core/lv_obj_style_gen.h ****  * Default: 0, inherited: No, layout: No, ext. draw: No.
 1056:Middlewares/LVGL/lvgl/src/widgets/textarea/../../core/lv_obj_style_gen.h ****  * @param  obj    Pointer to Widget
 1057:Middlewares/LVGL/lvgl/src/widgets/textarea/../../core/lv_obj_style_gen.h ****  * @param  part   One of the `LV_PART_...` enum values
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\cclaFkaS.s 			page 52
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccTiCGRo.s 			page 52
 
 
 1058:Middlewares/LVGL/lvgl/src/widgets/textarea/../../core/lv_obj_style_gen.h ****  */
@@ -3118,7 +3118,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\cclaFkaS.s 			page 1
 1112:Middlewares/LVGL/lvgl/src/widgets/textarea/../../core/lv_obj_style_gen.h **** }
 1113:Middlewares/LVGL/lvgl/src/widgets/textarea/../../core/lv_obj_style_gen.h **** 
 1114:Middlewares/LVGL/lvgl/src/widgets/textarea/../../core/lv_obj_style_gen.h **** /**
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\cclaFkaS.s 			page 53
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccTiCGRo.s 			page 53
 
 
 1115:Middlewares/LVGL/lvgl/src/widgets/textarea/../../core/lv_obj_style_gen.h ****  * Gets color of text.
@@ -3178,7 +3178,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\cclaFkaS.s 			page 1
 1169:Middlewares/LVGL/lvgl/src/widgets/textarea/../../core/lv_obj_style_gen.h ****  */
 1170:Middlewares/LVGL/lvgl/src/widgets/textarea/../../core/lv_obj_style_gen.h **** static inline int32_t lv_obj_get_style_text_letter_space(const lv_obj_t * obj, lv_part_t part)
 1171:Middlewares/LVGL/lvgl/src/widgets/textarea/../../core/lv_obj_style_gen.h **** {
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\cclaFkaS.s 			page 54
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccTiCGRo.s 			page 54
 
 
 1172:Middlewares/LVGL/lvgl/src/widgets/textarea/../../core/lv_obj_style_gen.h ****     lv_style_value_t v = lv_obj_get_style_prop(obj, part, LV_STYLE_TEXT_LETTER_SPACE);
@@ -3238,7 +3238,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\cclaFkaS.s 			page 1
 1226:Middlewares/LVGL/lvgl/src/widgets/textarea/../../core/lv_obj_style_gen.h **** }
 1227:Middlewares/LVGL/lvgl/src/widgets/textarea/../../core/lv_obj_style_gen.h **** 
 1228:Middlewares/LVGL/lvgl/src/widgets/textarea/../../core/lv_obj_style_gen.h **** /**
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\cclaFkaS.s 			page 55
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccTiCGRo.s 			page 55
 
 
 1229:Middlewares/LVGL/lvgl/src/widgets/textarea/../../core/lv_obj_style_gen.h ****  * Gets the color of letter outline stroke.
@@ -3298,7 +3298,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\cclaFkaS.s 			page 1
 1283:Middlewares/LVGL/lvgl/src/widgets/textarea/../../core/lv_obj_style_gen.h ****  * Default: `false`, inherited: No, layout: No, ext. draw: No.
 1284:Middlewares/LVGL/lvgl/src/widgets/textarea/../../core/lv_obj_style_gen.h ****  * @param  obj    Pointer to Widget
 1285:Middlewares/LVGL/lvgl/src/widgets/textarea/../../core/lv_obj_style_gen.h ****  * @param  part   One of the `LV_PART_...` enum values
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\cclaFkaS.s 			page 56
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccTiCGRo.s 			page 56
 
 
 1286:Middlewares/LVGL/lvgl/src/widgets/textarea/../../core/lv_obj_style_gen.h ****  */
@@ -3358,7 +3358,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\cclaFkaS.s 			page 1
 1340:Middlewares/LVGL/lvgl/src/widgets/textarea/../../core/lv_obj_style_gen.h ****     lv_style_value_t v = lv_obj_get_style_prop(obj, part, LV_STYLE_DROP_SHADOW_OFFSET_Y);
 1341:Middlewares/LVGL/lvgl/src/widgets/textarea/../../core/lv_obj_style_gen.h ****     return (int32_t)v.num;
 1342:Middlewares/LVGL/lvgl/src/widgets/textarea/../../core/lv_obj_style_gen.h **** }
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\cclaFkaS.s 			page 57
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccTiCGRo.s 			page 57
 
 
 1343:Middlewares/LVGL/lvgl/src/widgets/textarea/../../core/lv_obj_style_gen.h **** 
@@ -3418,7 +3418,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\cclaFkaS.s 			page 1
 1397:Middlewares/LVGL/lvgl/src/widgets/textarea/../../core/lv_obj_style_gen.h ****  * Default: 0, inherited: No, layout: No, ext. draw: No.
 1398:Middlewares/LVGL/lvgl/src/widgets/textarea/../../core/lv_obj_style_gen.h ****  * @param  obj    Pointer to Widget
 1399:Middlewares/LVGL/lvgl/src/widgets/textarea/../../core/lv_obj_style_gen.h ****  * @param  part   One of the `LV_PART_...` enum values
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\cclaFkaS.s 			page 58
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccTiCGRo.s 			page 58
 
 
 1400:Middlewares/LVGL/lvgl/src/widgets/textarea/../../core/lv_obj_style_gen.h ****  */
@@ -3478,7 +3478,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\cclaFkaS.s 			page 1
 1454:Middlewares/LVGL/lvgl/src/widgets/textarea/../../core/lv_obj_style_gen.h ****  */
 1455:Middlewares/LVGL/lvgl/src/widgets/textarea/../../core/lv_obj_style_gen.h **** static inline lv_opa_t lv_obj_get_style_opa_layered(const lv_obj_t * obj, lv_part_t part)
 1456:Middlewares/LVGL/lvgl/src/widgets/textarea/../../core/lv_obj_style_gen.h **** {
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\cclaFkaS.s 			page 59
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccTiCGRo.s 			page 59
 
 
 1457:Middlewares/LVGL/lvgl/src/widgets/textarea/../../core/lv_obj_style_gen.h ****     lv_style_value_t v = lv_obj_get_style_prop(obj, part, LV_STYLE_OPA_LAYERED);
@@ -3538,7 +3538,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\cclaFkaS.s 			page 1
 1511:Middlewares/LVGL/lvgl/src/widgets/textarea/../../core/lv_obj_style_gen.h **** 
 1512:Middlewares/LVGL/lvgl/src/widgets/textarea/../../core/lv_obj_style_gen.h **** /**
 1513:Middlewares/LVGL/lvgl/src/widgets/textarea/../../core/lv_obj_style_gen.h ****  * Animation template for Widget's animation. Should be a pointer to `lv_anim_t`. The
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\cclaFkaS.s 			page 60
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccTiCGRo.s 			page 60
 
 
 1514:Middlewares/LVGL/lvgl/src/widgets/textarea/../../core/lv_obj_style_gen.h ****  * animation parameters are widget specific, e.g. animation time could be the E.g.
@@ -3598,7 +3598,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\cclaFkaS.s 			page 1
 1139:Middlewares/LVGL/lvgl/src/widgets/textarea/lv_textarea.c ****     }
  260              		.loc 1 1139 9 is_stmt 1 view .LVU63
 1139:Middlewares/LVGL/lvgl/src/widgets/textarea/lv_textarea.c ****     }
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\cclaFkaS.s 			page 61
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccTiCGRo.s 			page 61
 
 
  261              		.loc 1 1139 25 is_stmt 0 view .LVU64
@@ -3658,7 +3658,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\cclaFkaS.s 			page 1
  306              	.LVL21:
 1148:Middlewares/LVGL/lvgl/src/widgets/textarea/lv_textarea.c ****         lv_anim_set_path_cb(&a, lv_anim_path_step);
  307              		.loc 1 1148 9 view .LVU74
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\cclaFkaS.s 			page 62
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccTiCGRo.s 			page 62
 
 
  308 0054 0022     		movs	r2, #0
@@ -3718,7 +3718,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\cclaFkaS.s 			page 1
  358              		.cfi_offset 7, -16
  359              		.cfi_offset 8, -12
  360              		.cfi_offset 9, -8
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\cclaFkaS.s 			page 63
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccTiCGRo.s 			page 63
 
 
  361              		.cfi_offset 14, -4
@@ -3778,7 +3778,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\cclaFkaS.s 			page 1
  399              		.loc 1 1384 68 discriminator 2 view .LVU96
  400 0024 1B78     		ldrb	r3, [r3]	@ zero_extendqisi2
 1384:Middlewares/LVGL/lvgl/src/widgets/textarea/lv_textarea.c ****         lv_draw_label_dsc_t ph_dsc;
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\cclaFkaS.s 			page 64
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccTiCGRo.s 			page 64
 
 
  401              		.loc 1 1384 46 discriminator 2 view .LVU97
@@ -3838,7 +3838,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\cclaFkaS.s 			page 1
  443 0052 DA08     		lsrs	r2, r3, #3
 1390:Middlewares/LVGL/lvgl/src/widgets/textarea/lv_textarea.c **** 
  444              		.loc 1 1390 38 discriminator 1 view .LVU110
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\cclaFkaS.s 			page 65
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccTiCGRo.s 			page 65
 
 
  445 0054 42F00102 		orr	r2, r2, #1
@@ -3898,7 +3898,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\cclaFkaS.s 			page 1
  359:Middlewares/LVGL/lvgl/src/widgets/textarea/../../core/lv_obj_style_gen.h **** }
  487              		.loc 3 359 5 is_stmt 0 view .LVU123
  488              	.LBE82:
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\cclaFkaS.s 			page 66
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccTiCGRo.s 			page 66
 
 
  489              	.LBE81:
@@ -3958,7 +3958,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\cclaFkaS.s 			page 1
  529              		.loc 3 335 5 is_stmt 0 view .LVU137
  530              	.LBE86:
  531              	.LBE85:
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\cclaFkaS.s 			page 67
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccTiCGRo.s 			page 67
 
 
 1396:Middlewares/LVGL/lvgl/src/widgets/textarea/lv_textarea.c ****         lv_area_t ph_coords;
@@ -4018,7 +4018,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\cclaFkaS.s 			page 1
  111:Middlewares/LVGL/lvgl/src/widgets/textarea/../../core/../misc/../font/../draw/../misc/lv_area.h ****     dest->y2 = src->y2;
  570              		.loc 2 111 5 is_stmt 1 view .LVU154
  111:Middlewares/LVGL/lvgl/src/widgets/textarea/../../core/../misc/../font/../draw/../misc/lv_area.h ****     dest->y2 = src->y2;
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\cclaFkaS.s 			page 68
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccTiCGRo.s 			page 68
 
 
  571              		.loc 2 111 19 is_stmt 0 view .LVU155
@@ -4078,7 +4078,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\cclaFkaS.s 			page 1
 1403:Middlewares/LVGL/lvgl/src/widgets/textarea/lv_textarea.c ****         lv_draw_label(layer, &ph_dsc, &ph_coords);
  612              		.loc 1 1403 9 is_stmt 1 view .LVU173
 1403:Middlewares/LVGL/lvgl/src/widgets/textarea/lv_textarea.c ****         lv_draw_label(layer, &ph_dsc, &ph_coords);
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\cclaFkaS.s 			page 69
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccTiCGRo.s 			page 69
 
 
  613              		.loc 1 1403 25 is_stmt 0 view .LVU174
@@ -4138,7 +4138,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\cclaFkaS.s 			page 1
  662              	.LVL62:
 1410:Middlewares/LVGL/lvgl/src/widgets/textarea/lv_textarea.c ****     lv_textarea_t * ta = (lv_textarea_t *)obj;
  663              		.loc 1 1410 22 view .LVU182
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\cclaFkaS.s 			page 70
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccTiCGRo.s 			page 70
 
 
  664 000c 0446     		mov	r4, r0
@@ -4198,7 +4198,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\cclaFkaS.s 			page 1
 1418:Middlewares/LVGL/lvgl/src/widgets/textarea/lv_textarea.c ****     cur_dsc.base.layer = layer;
  705              		.loc 1 1418 5 view .LVU196
  706 002e 27AF     		add	r7, sp, #156
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\cclaFkaS.s 			page 71
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccTiCGRo.s 			page 71
 
 
  707 0030 3846     		mov	r0, r7
@@ -4258,7 +4258,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\cclaFkaS.s 			page 1
  745              		.loc 2 112 14 view .LVU215
  746 0056 2690     		str	r0, [sp, #152]
  747              	.LVL74:
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\cclaFkaS.s 			page 72
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccTiCGRo.s 			page 72
 
 
  748              		.loc 2 112 14 view .LVU216
@@ -4318,7 +4318,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\cclaFkaS.s 			page 1
  786 007e 3822     		movs	r2, #56
  787 0080 4FF4C021 		mov	r1, #393216
  788 0084 2046     		mov	r0, r4
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\cclaFkaS.s 			page 73
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccTiCGRo.s 			page 73
 
 
  789 0086 FFF7FEFF 		bl	lv_obj_get_style_prop
@@ -4378,7 +4378,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\cclaFkaS.s 			page 1
  829 00a2 4FF4C021 		mov	r1, #393216
  830 00a6 2046     		mov	r0, r4
  831 00a8 FFF7FEFF 		bl	lv_obj_get_style_prop
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\cclaFkaS.s 			page 74
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccTiCGRo.s 			page 74
 
 
  832              	.LVL82:
@@ -4438,7 +4438,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\cclaFkaS.s 			page 1
  872              		.loc 1 1440 5 is_stmt 1 view .LVU260
 1440:Middlewares/LVGL/lvgl/src/widgets/textarea/lv_textarea.c **** 
  873              		.loc 1 1440 13 is_stmt 0 view .LVU261
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\cclaFkaS.s 			page 75
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccTiCGRo.s 			page 75
 
 
  874 00dc 249B     		ldr	r3, [sp, #144]
@@ -4498,7 +4498,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\cclaFkaS.s 			page 1
 1449:Middlewares/LVGL/lvgl/src/widgets/textarea/lv_textarea.c ****     if(cur_dsc.bg_opa > LV_OPA_MIN || !lv_color_eq(cur_label_dsc.color, label_color)) {
  915              		.loc 1 1449 5 is_stmt 1 view .LVU275
  916 010e 3246     		mov	r2, r6
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\cclaFkaS.s 			page 76
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccTiCGRo.s 			page 76
 
 
  917 0110 4FF4C021 		mov	r1, #393216
@@ -4558,7 +4558,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\cclaFkaS.s 			page 1
  962              		.thumb
  963              		.thumb_func
  965              	lv_textarea_destructor:
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\cclaFkaS.s 			page 77
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccTiCGRo.s 			page 77
 
 
  966              	.LVL95:
@@ -4618,7 +4618,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\cclaFkaS.s 			page 1
  951:Middlewares/LVGL/lvgl/src/widgets/textarea/lv_textarea.c ****     }
  1005              		.loc 1 951 24 is_stmt 0 view .LVU301
  1006 0018 0023     		movs	r3, #0
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\cclaFkaS.s 			page 78
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccTiCGRo.s 			page 78
 
 
  1007 001a E363     		str	r3, [r4, #60]
@@ -4678,7 +4678,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\cclaFkaS.s 			page 1
  1049              		.thumb
  1050              		.thumb_func
  1052              	lv_textarea_create:
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\cclaFkaS.s 			page 79
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccTiCGRo.s 			page 79
 
 
  1053              	.LVL103:
@@ -4738,7 +4738,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\cclaFkaS.s 			page 1
  1095              		.section	.text.lv_textarea_set_placeholder_text,"ax",%progbits
  1096              		.align	1
  1097              		.global	lv_textarea_set_placeholder_text
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\cclaFkaS.s 			page 80
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccTiCGRo.s 			page 80
 
 
  1098              		.syntax unified
@@ -4798,7 +4798,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\cclaFkaS.s 			page 1
  1138              		.loc 1 416 5 is_stmt 1 view .LVU342
  416:Middlewares/LVGL/lvgl/src/widgets/textarea/lv_textarea.c ****         lv_free(ta->placeholder_txt);
  1139              		.loc 1 416 7 is_stmt 0 view .LVU343
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\cclaFkaS.s 			page 81
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccTiCGRo.s 			page 81
 
 
  1140 0010 0646     		mov	r6, r0
@@ -4858,7 +4858,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\cclaFkaS.s 			page 1
  411:Middlewares/LVGL/lvgl/src/widgets/textarea/lv_textarea.c **** 
  1182              		.loc 1 411 5 view .LVU356
  411:Middlewares/LVGL/lvgl/src/widgets/textarea/lv_textarea.c **** 
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\cclaFkaS.s 			page 82
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccTiCGRo.s 			page 82
 
 
  1183              		.loc 1 411 5 view .LVU357
@@ -4918,7 +4918,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\cclaFkaS.s 			page 1
  424:Middlewares/LVGL/lvgl/src/widgets/textarea/lv_textarea.c ****         if(ta->placeholder_txt == NULL) {
  1219              		.loc 1 424 9 view .LVU376
  424:Middlewares/LVGL/lvgl/src/widgets/textarea/lv_textarea.c ****         if(ta->placeholder_txt == NULL) {
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\cclaFkaS.s 			page 83
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccTiCGRo.s 			page 83
 
 
  1220              		.loc 1 424 9 view .LVU377
@@ -4978,7 +4978,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\cclaFkaS.s 			page 1
  1262              		.cfi_endproc
  1263              	.LFE199:
  1265              		.section	.text.lv_textarea_set_one_line,"ax",%progbits
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\cclaFkaS.s 			page 84
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccTiCGRo.s 			page 84
 
 
  1266              		.align	1
@@ -5038,7 +5038,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\cclaFkaS.s 			page 1
  1308              		.loc 1 534 18 discriminator 4 view .LVU404
  1309 0016 90F87430 		ldrb	r3, [r0, #116]	@ zero_extendqisi2
  1310 001a 43F00803 		orr	r3, r3, #8
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\cclaFkaS.s 			page 85
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccTiCGRo.s 			page 85
 
 
  1311 001e 80F87430 		strb	r3, [r0, #116]
@@ -5098,7 +5098,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\cclaFkaS.s 			page 1
  1353 0054 F8BD     		pop	{r3, r4, r5, r6, r7, pc}
  1354              	.LVL131:
  1355              	.L61:
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\cclaFkaS.s 			page 86
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccTiCGRo.s 			page 86
 
 
  1356              	.LCFI24:
@@ -5158,7 +5158,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\cclaFkaS.s 			page 1
  1399              	.LVL136:
  1400 0074 0646     		mov	r6, r0
  1401 0076 D8E7     		b	.L65
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\cclaFkaS.s 			page 87
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccTiCGRo.s 			page 87
 
 
  1402              	.LVL137:
@@ -5218,7 +5218,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\cclaFkaS.s 			page 1
  1447              		.loc 1 558 7 is_stmt 0 view .LVU438
  1448 0008 21B1     		cbz	r1, .L75
  559:Middlewares/LVGL/lvgl/src/widgets/textarea/lv_textarea.c ****         LV_ASSERT_MALLOC(copied_list);
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\cclaFkaS.s 			page 88
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccTiCGRo.s 			page 88
 
 
  1449              		.loc 1 559 9 is_stmt 1 view .LVU439
@@ -5278,7 +5278,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\cclaFkaS.s 			page 1
  1488              		.cfi_restore 4
  1489              		.cfi_restore 5
  1490              		.cfi_restore 14
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\cclaFkaS.s 			page 89
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccTiCGRo.s 			page 89
 
 
  553:Middlewares/LVGL/lvgl/src/widgets/textarea/lv_textarea.c **** 
@@ -5338,7 +5338,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\cclaFkaS.s 			page 1
  570:Middlewares/LVGL/lvgl/src/widgets/textarea/lv_textarea.c **** 
  1535              		.loc 1 570 5 view .LVU467
  570:Middlewares/LVGL/lvgl/src/widgets/textarea/lv_textarea.c **** 
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\cclaFkaS.s 			page 90
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccTiCGRo.s 			page 90
 
 
  1536              		.loc 1 570 5 view .LVU468
@@ -5398,7 +5398,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\cclaFkaS.s 			page 1
  570:Middlewares/LVGL/lvgl/src/widgets/textarea/lv_textarea.c **** 
  1578              		.loc 1 570 5 is_stmt 1 view .LVU481
  570:Middlewares/LVGL/lvgl/src/widgets/textarea/lv_textarea.c **** 
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\cclaFkaS.s 			page 91
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccTiCGRo.s 			page 91
 
 
  1579              		.loc 1 570 5 view .LVU482
@@ -5458,7 +5458,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\cclaFkaS.s 			page 1
  1623              		.loc 1 584 5 view .LVU494
  1624              	.LVL157:
  586:Middlewares/LVGL/lvgl/src/widgets/textarea/lv_textarea.c **** }
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\cclaFkaS.s 			page 92
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccTiCGRo.s 			page 92
 
 
  1625              		.loc 1 586 5 view .LVU495
@@ -5518,7 +5518,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\cclaFkaS.s 			page 1
  595:Middlewares/LVGL/lvgl/src/widgets/textarea/lv_textarea.c **** 
  1666              		.loc 1 595 1 view .LVU511
  1667 0006 7047     		bx	lr
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\cclaFkaS.s 			page 93
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccTiCGRo.s 			page 93
 
 
  1668              	.L93:
@@ -5578,7 +5578,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\cclaFkaS.s 			page 1
  1710              		.loc 1 652 5 view .LVU525
  652:Middlewares/LVGL/lvgl/src/widgets/textarea/lv_textarea.c ****         txt = lv_label_get_text(ta->label);
  1711              		.loc 1 652 21 is_stmt 0 view .LVU526
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\cclaFkaS.s 			page 94
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccTiCGRo.s 			page 94
 
 
  1712 0004 90F87420 		ldrb	r2, [r0, #116]	@ zero_extendqisi2
@@ -5638,7 +5638,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\cclaFkaS.s 			page 1
  1752              	.LFE210:
  1754              		.section	.text.char_is_accepted,"ax",%progbits
  1755              		.align	1
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\cclaFkaS.s 			page 95
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccTiCGRo.s 			page 95
 
 
  1756              		.syntax unified
@@ -5698,7 +5698,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\cclaFkaS.s 			page 1
 1123:Middlewares/LVGL/lvgl/src/widgets/textarea/lv_textarea.c **** 
  1799              		.loc 1 1123 14 is_stmt 0 view .LVU553
  1800 0014 0023     		movs	r3, #0
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\cclaFkaS.s 			page 96
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccTiCGRo.s 			page 96
 
 
  1801 0016 0193     		str	r3, [sp, #4]
@@ -5758,7 +5758,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\cclaFkaS.s 			page 1
 1117:Middlewares/LVGL/lvgl/src/widgets/textarea/lv_textarea.c ****         return false;
  1841              		.loc 1 1117 89 discriminator 2 view .LVU568
  1842 003a 636C     		ldr	r3, [r4, #68]
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\cclaFkaS.s 			page 97
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccTiCGRo.s 			page 97
 
 
 1117:Middlewares/LVGL/lvgl/src/widgets/textarea/lv_textarea.c ****         return false;
@@ -5818,7 +5818,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\cclaFkaS.s 			page 1
  1892              		@ args = 0, pretend = 0, frame = 0
  1893              		@ frame_needed = 0, uses_anonymous_args = 0
  1894              		@ link register save eliminated.
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\cclaFkaS.s 			page 98
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccTiCGRo.s 			page 98
 
 
  664:Middlewares/LVGL/lvgl/src/widgets/textarea/lv_textarea.c **** 
@@ -5878,7 +5878,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\cclaFkaS.s 			page 1
  1935              		.thumb
  1936              		.thumb_func
  1938              	lv_textarea_get_label:
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\cclaFkaS.s 			page 99
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccTiCGRo.s 			page 99
 
 
  1939              	.LVL181:
@@ -5938,7 +5938,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\cclaFkaS.s 			page 1
  1980              		.loc 1 623 1 view -0
  1981              		.cfi_startproc
  1982              		@ args = 0, pretend = 0, frame = 0
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\cclaFkaS.s 			page 100
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccTiCGRo.s 			page 100
 
 
  1983              		@ frame_needed = 0, uses_anonymous_args = 0
@@ -5998,7 +5998,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\cclaFkaS.s 			page 1
  633:Middlewares/LVGL/lvgl/src/widgets/textarea/lv_textarea.c ****             break;
  2026              		.loc 1 633 13 is_stmt 0 discriminator 1 view .LVU617
  2027 002c 0023     		movs	r3, #0
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\cclaFkaS.s 			page 101
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccTiCGRo.s 			page 101
 
 
  2028 002e 1A46     		mov	r2, r3
@@ -6058,7 +6058,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\cclaFkaS.s 			page 1
  684:Middlewares/LVGL/lvgl/src/widgets/textarea/lv_textarea.c **** }
  2073              		.loc 1 684 5 view .LVU629
  685:Middlewares/LVGL/lvgl/src/widgets/textarea/lv_textarea.c **** 
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\cclaFkaS.s 			page 102
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccTiCGRo.s 			page 102
 
 
  2074              		.loc 1 685 1 is_stmt 0 view .LVU630
@@ -6118,7 +6118,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\cclaFkaS.s 			page 1
  2121              	.LVL199:
 1159:Middlewares/LVGL/lvgl/src/widgets/textarea/lv_textarea.c ****     int32_t line_space = lv_obj_get_style_text_line_space(obj, LV_PART_MAIN);
  2122              		.loc 1 1159 5 view .LVU640
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\cclaFkaS.s 			page 103
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccTiCGRo.s 			page 103
 
 
  2123              	.LBB102:
@@ -6178,7 +6178,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\cclaFkaS.s 			page 1
 1162:Middlewares/LVGL/lvgl/src/widgets/textarea/lv_textarea.c ****     const char * txt = lv_label_get_text(ta->label);
  2163              		.loc 1 1162 24 is_stmt 0 view .LVU655
  2164 0022 2046     		mov	r0, r4
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\cclaFkaS.s 			page 104
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccTiCGRo.s 			page 104
 
 
  2165              	.LVL205:
@@ -6238,7 +6238,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\cclaFkaS.s 			page 1
  2206              		.loc 1 1169 30 is_stmt 0 view .LVU668
  2207 0050 2846     		mov	r0, r5
  2208              	.LVL216:
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\cclaFkaS.s 			page 105
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccTiCGRo.s 			page 105
 
 
 1169:Middlewares/LVGL/lvgl/src/widgets/textarea/lv_textarea.c ****     /*Set letter_w (set not 0 on non printable but valid chars)*/
@@ -6298,7 +6298,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\cclaFkaS.s 			page 1
  2249              		.loc 1 1180 5 is_stmt 1 view .LVU682
 1180:Middlewares/LVGL/lvgl/src/widgets/textarea/lv_textarea.c **** 
  2250              		.loc 1 1180 65 is_stmt 0 view .LVU683
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\cclaFkaS.s 			page 106
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccTiCGRo.s 			page 106
 
 
  2251 0080 D4F83090 		ldr	r9, [r4, #48]
@@ -6358,7 +6358,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\cclaFkaS.s 			page 1
 1187:Middlewares/LVGL/lvgl/src/widgets/textarea/lv_textarea.c **** 
  2291              		.loc 1 1187 9 is_stmt 1 view .LVU698
 1187:Middlewares/LVGL/lvgl/src/widgets/textarea/lv_textarea.c **** 
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\cclaFkaS.s 			page 107
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccTiCGRo.s 			page 107
 
 
  2292              		.loc 1 1187 34 is_stmt 0 view .LVU699
@@ -6418,7 +6418,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\cclaFkaS.s 			page 1
  2333              		.loc 1 1197 17 view .LVU712
  2334 00e8 2021     		movs	r1, #32
  2335 00ea 04E0     		b	.L140
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\cclaFkaS.s 			page 108
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccTiCGRo.s 			page 108
 
 
  2336              	.LVL233:
@@ -6478,7 +6478,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\cclaFkaS.s 			page 1
  2376              		.loc 3 710 26 is_stmt 0 view .LVU726
  2377 0102 3822     		movs	r2, #56
  2378 0104 4FF4C021 		mov	r1, #393216
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\cclaFkaS.s 			page 109
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccTiCGRo.s 			page 109
 
 
  2379 0108 2046     		mov	r0, r4
@@ -6538,7 +6538,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\cclaFkaS.s 			page 1
  2419              		.loc 3 334 5 view .LVU740
  334:Middlewares/LVGL/lvgl/src/widgets/textarea/../../core/lv_obj_style_gen.h ****     return (int32_t)v.num;
  2420              		.loc 3 334 26 is_stmt 0 view .LVU741
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\cclaFkaS.s 			page 110
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccTiCGRo.s 			page 110
 
 
  2421 0124 1922     		movs	r2, #25
@@ -6598,7 +6598,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\cclaFkaS.s 			page 1
  358:Middlewares/LVGL/lvgl/src/widgets/textarea/../../core/lv_obj_style_gen.h ****     return (int32_t)v.num;
  2462              		.loc 3 358 26 is_stmt 0 view .LVU755
  2463 0146 1B22     		movs	r2, #27
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\cclaFkaS.s 			page 111
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccTiCGRo.s 			page 111
 
 
  2464 0148 4FF4C021 		mov	r1, #393216
@@ -6658,7 +6658,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\cclaFkaS.s 			page 1
 1214:Middlewares/LVGL/lvgl/src/widgets/textarea/lv_textarea.c ****     cur_area.y1 = letter_pos.y - top;
  2504              		.loc 1 1214 56 view .LVU770
  2505 0168 00EBD072 		add	r2, r0, r0, lsr #31
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\cclaFkaS.s 			page 112
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccTiCGRo.s 			page 112
 
 
 1214:Middlewares/LVGL/lvgl/src/widgets/textarea/lv_textarea.c ****     cur_area.y1 = letter_pos.y - top;
@@ -6718,7 +6718,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\cclaFkaS.s 			page 1
  2542 0196 013F     		subs	r7, r7, #1
 1217:Middlewares/LVGL/lvgl/src/widgets/textarea/lv_textarea.c **** 
  2543              		.loc 1 1217 17 view .LVU789
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\cclaFkaS.s 			page 113
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccTiCGRo.s 			page 113
 
 
  2544 0198 0D97     		str	r7, [sp, #52]
@@ -6778,7 +6778,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\cclaFkaS.s 			page 1
  2582              		.loc 1 1222 17 view .LVU809
  2583 01b6 1344     		add	r3, r3, r2
  2584 01b8 0693     		str	r3, [sp, #24]
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\cclaFkaS.s 			page 114
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccTiCGRo.s 			page 114
 
 
 1223:Middlewares/LVGL/lvgl/src/widgets/textarea/lv_textarea.c ****     area_tmp.x2 += ta->label->coords.x1;
@@ -6838,7 +6838,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\cclaFkaS.s 			page 1
  2622              		.loc 2 112 14 is_stmt 0 view .LVU828
  2623 01de 2766     		str	r7, [r4, #96]
  2624              	.LVL266:
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\cclaFkaS.s 			page 115
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccTiCGRo.s 			page 115
 
 
  2625              		.loc 2 112 14 view .LVU829
@@ -6898,7 +6898,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\cclaFkaS.s 			page 1
  2663              		.loc 1 1233 5 is_stmt 1 view .LVU848
 1233:Middlewares/LVGL/lvgl/src/widgets/textarea/lv_textarea.c ****     area_tmp.y2 += ta->label->coords.y1;
  2664              		.loc 1 1233 17 is_stmt 0 view .LVU849
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\cclaFkaS.s 			page 116
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccTiCGRo.s 			page 116
 
 
  2665 01fa 0D44     		add	r5, r5, r1
@@ -6958,7 +6958,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\cclaFkaS.s 			page 1
 1492:Middlewares/LVGL/lvgl/src/widgets/textarea/lv_textarea.c **** {
  2704              		.loc 1 1492 1 is_stmt 1 view -0
  2705              		.cfi_startproc
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\cclaFkaS.s 			page 117
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccTiCGRo.s 			page 117
 
 
  2706              		@ args = 0, pretend = 0, frame = 16
@@ -7018,7 +7018,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\cclaFkaS.s 			page 1
 1498:Middlewares/LVGL/lvgl/src/widgets/textarea/lv_textarea.c ****     lv_label_get_letter_pos(ta->label, pos, &cur_pos);
  2750              		.loc 1 1498 5 is_stmt 1 view .LVU868
  2751 001c 02AA     		add	r2, sp, #8
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\cclaFkaS.s 			page 118
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccTiCGRo.s 			page 118
 
 
  2752 001e 3146     		mov	r1, r6
@@ -7078,7 +7078,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\cclaFkaS.s 			page 1
  2795 0048 FFF7FEFF 		bl	lv_obj_get_scroll_top
  2796              	.LVL287:
  2797              		.loc 1 1509 27 discriminator 1 view .LVU884
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\cclaFkaS.s 			page 119
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccTiCGRo.s 			page 119
 
 
  2798 004c 2D1A     		subs	r5, r5, r0
@@ -7138,7 +7138,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\cclaFkaS.s 			page 1
 1523:Middlewares/LVGL/lvgl/src/widgets/textarea/lv_textarea.c ****         lv_obj_scroll_to_x(obj, 0, LV_ANIM_ON);
 1524:Middlewares/LVGL/lvgl/src/widgets/textarea/lv_textarea.c ****     }
 1525:Middlewares/LVGL/lvgl/src/widgets/textarea/lv_textarea.c **** 
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\cclaFkaS.s 			page 120
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccTiCGRo.s 			page 120
 
 
 1526:Middlewares/LVGL/lvgl/src/widgets/textarea/lv_textarea.c ****     ta->cursor.valid_x = cur_pos.x;
@@ -7198,7 +7198,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\cclaFkaS.s 			page 1
  2882              	.LVL297:
  2883 00a6 D4E7     		b	.L149
  2884              	.L156:
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\cclaFkaS.s 			page 121
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccTiCGRo.s 			page 121
 
 
 1515:Middlewares/LVGL/lvgl/src/widgets/textarea/lv_textarea.c ****     }
@@ -7258,7 +7258,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\cclaFkaS.s 			page 1
  2933              		.loc 1 439 5 is_stmt 1 view .LVU918
  439:Middlewares/LVGL/lvgl/src/widgets/textarea/lv_textarea.c **** 
  2934              		.loc 1 439 33 view .LVU919
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\cclaFkaS.s 			page 122
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccTiCGRo.s 			page 122
 
 
  441:Middlewares/LVGL/lvgl/src/widgets/textarea/lv_textarea.c ****     if((uint32_t)ta->cursor.pos == (uint32_t)pos) return;
@@ -7318,7 +7318,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\cclaFkaS.s 			page 1
  2974              	.LVL308:
  450:Middlewares/LVGL/lvgl/src/widgets/textarea/lv_textarea.c **** 
  2975              		.loc 1 450 5 is_stmt 1 view .LVU935
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\cclaFkaS.s 			page 123
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccTiCGRo.s 			page 123
 
 
  450:Middlewares/LVGL/lvgl/src/widgets/textarea/lv_textarea.c **** 
@@ -7378,7 +7378,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\cclaFkaS.s 			page 1
  446:Middlewares/LVGL/lvgl/src/widgets/textarea/lv_textarea.c **** 
  3018              		.loc 1 446 27 discriminator 1 view .LVU948
  3019 0044 EBE7     		b	.L161
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\cclaFkaS.s 			page 124
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccTiCGRo.s 			page 124
 
 
  3020              	.L167:
@@ -7438,7 +7438,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\cclaFkaS.s 			page 1
  3067 0012 FFF7FEFF 		bl	lv_event_get_current_target
  3068              	.LVL318:
  3069 0016 0446     		mov	r4, r0
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\cclaFkaS.s 			page 125
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccTiCGRo.s 			page 125
 
 
  3070              	.LVL319:
@@ -7498,7 +7498,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\cclaFkaS.s 			page 1
  3111 003e 206B     		ldr	r0, [r4, #48]
  3112 0040 FFF7FEFF 		bl	lv_obj_get_coords
  3113              	.LVL325:
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\cclaFkaS.s 			page 126
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccTiCGRo.s 			page 126
 
 
 1255:Middlewares/LVGL/lvgl/src/widgets/textarea/lv_textarea.c ****     lv_indev_get_point(click_source, &point_act);
@@ -7558,7 +7558,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\cclaFkaS.s 			page 1
 1264:Middlewares/LVGL/lvgl/src/widgets/textarea/lv_textarea.c **** 
  3151              		.loc 1 1264 5 is_stmt 1 view .LVU988
 1264:Middlewares/LVGL/lvgl/src/widgets/textarea/lv_textarea.c **** 
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\cclaFkaS.s 			page 127
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccTiCGRo.s 			page 127
 
 
  3152              		.loc 1 1264 34 is_stmt 0 view .LVU989
@@ -7618,7 +7618,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\cclaFkaS.s 			page 1
  3190 0090 6946     		mov	r1, sp
  3191 0092 3046     		mov	r0, r6
  3192              	.LVL333:
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\cclaFkaS.s 			page 128
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccTiCGRo.s 			page 128
 
 
 1283:Middlewares/LVGL/lvgl/src/widgets/textarea/lv_textarea.c ****         click_outside_label = !lv_label_is_char_under_pos(ta->label, &rel_pos);
@@ -7678,7 +7678,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\cclaFkaS.s 			page 1
  3232              		.loc 1 1288 58 discriminator 2 view .LVU1020
  3233 00c0 012D     		cmp	r5, #1
  3234 00c2 32D0     		beq	.L193
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\cclaFkaS.s 			page 129
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccTiCGRo.s 			page 129
 
 
  3235              	.L174:
@@ -7738,7 +7738,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\cclaFkaS.s 			page 1
  3274 00ee 13F0010F 		tst	r3, #1
  3275 00f2 96D0     		beq	.L168
 1311:Middlewares/LVGL/lvgl/src/widgets/textarea/lv_textarea.c ****             if(label_data->sel_start != ta->sel_end || label_data->sel_end != ta->sel_start) {
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\cclaFkaS.s 			page 130
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccTiCGRo.s 			page 130
 
 
  3276              		.loc 1 1311 9 is_stmt 1 view .LVU1036
@@ -7798,7 +7798,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\cclaFkaS.s 			page 1
  3313              		.loc 1 1333 40 discriminator 1 view .LVU1053
  3314 0118 0B2D     		cmp	r5, #11
  3315 011a 82D1     		bne	.L168
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\cclaFkaS.s 			page 131
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccTiCGRo.s 			page 131
 
 
  3316              	.L186:
@@ -7858,7 +7858,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\cclaFkaS.s 			page 1
  3356              		.loc 1 1301 13 is_stmt 0 view .LVU1067
  3357 0158 BCE7     		b	.L173
  3358              	.L180:
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\cclaFkaS.s 			page 132
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccTiCGRo.s 			page 132
 
 
 1318:Middlewares/LVGL/lvgl/src/widgets/textarea/lv_textarea.c ****             if(label_data->sel_start != ta->sel_start || label_data->sel_end != ta->sel_end) {
@@ -7918,7 +7918,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\cclaFkaS.s 			page 1
  3396              		.loc 1 1326 79 discriminator 1 view .LVU1084
  3397 0182 F26C     		ldr	r2, [r6, #76]
 1326:Middlewares/LVGL/lvgl/src/widgets/textarea/lv_textarea.c ****                 label_data->sel_start = LV_DRAW_LABEL_NO_TXT_SEL;
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\cclaFkaS.s 			page 133
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccTiCGRo.s 			page 133
 
 
  3398              		.loc 1 1326 66 discriminator 1 view .LVU1085
@@ -7978,7 +7978,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\cclaFkaS.s 			page 1
  3443              		.loc 1 906 5 view .LVU1096
  906:Middlewares/LVGL/lvgl/src/widgets/textarea/lv_textarea.c ****     ta->pwd_tmp           = NULL;
  3444              		.loc 1 906 27 is_stmt 0 view .LVU1097
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\cclaFkaS.s 			page 134
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccTiCGRo.s 			page 134
 
 
  3445 0004 91F87430 		ldrb	r3, [r1, #116]	@ zero_extendqisi2
@@ -8038,7 +8038,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\cclaFkaS.s 			page 1
  3481 003c 91F86830 		ldrb	r3, [r1, #104]	@ zero_extendqisi2
  3482 0040 43F00203 		orr	r3, r3, #2
  3483 0044 81F86830 		strb	r3, [r1, #104]
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\cclaFkaS.s 			page 135
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccTiCGRo.s 			page 135
 
 
  917:Middlewares/LVGL/lvgl/src/widgets/textarea/lv_textarea.c ****     ta->one_line          = 0;
@@ -8098,7 +8098,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\cclaFkaS.s 			page 1
  3521 0078 FFF7FEFF 		bl	lv_obj_set_width
  3522              	.LVL355:
  927:Middlewares/LVGL/lvgl/src/widgets/textarea/lv_textarea.c ****     lv_obj_add_event_cb(ta->label, label_event_cb, LV_EVENT_STYLE_CHANGED, NULL);
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\cclaFkaS.s 			page 136
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccTiCGRo.s 			page 136
 
 
  3523              		.loc 1 927 5 is_stmt 1 view .LVU1133
@@ -8158,7 +8158,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\cclaFkaS.s 			page 1
  3568 00c2 00BF     		.align	2
  3569              	.L197:
  3570 00c4 00000000 		.word	.LC0
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\cclaFkaS.s 			page 137
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccTiCGRo.s 			page 137
 
 
  3571 00c8 00000000 		.word	label_event_cb
@@ -8218,7 +8218,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\cclaFkaS.s 			page 1
 1022:Middlewares/LVGL/lvgl/src/widgets/textarea/lv_textarea.c ****         lv_label_set_text(label, NULL);
  3617              		.loc 1 1022 5 is_stmt 1 view .LVU1153
 1022:Middlewares/LVGL/lvgl/src/widgets/textarea/lv_textarea.c ****         lv_label_set_text(label, NULL);
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\cclaFkaS.s 			page 138
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccTiCGRo.s 			page 138
 
 
  3618              		.loc 1 1022 39 is_stmt 0 view .LVU1154
@@ -8278,7 +8278,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\cclaFkaS.s 			page 1
  3665              		@ args = 0, pretend = 0, frame = 0
  3666              		@ frame_needed = 0, uses_anonymous_args = 0
  3667              		@ link register save eliminated.
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\cclaFkaS.s 			page 139
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccTiCGRo.s 			page 139
 
 
  689:Middlewares/LVGL/lvgl/src/widgets/textarea/lv_textarea.c **** 
@@ -8338,7 +8338,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\cclaFkaS.s 			page 1
  697:Middlewares/LVGL/lvgl/src/widgets/textarea/lv_textarea.c **** 
  3709              		.loc 1 697 5 view .LVU1179
  3710 0000 20B1     		cbz	r0, .L208
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\cclaFkaS.s 			page 140
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccTiCGRo.s 			page 140
 
 
  697:Middlewares/LVGL/lvgl/src/widgets/textarea/lv_textarea.c **** 
@@ -8398,7 +8398,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\cclaFkaS.s 			page 1
  3754              		.loc 1 705 5 view .LVU1192
  705:Middlewares/LVGL/lvgl/src/widgets/textarea/lv_textarea.c **** 
  3755              		.loc 1 705 5 view .LVU1193
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\cclaFkaS.s 			page 141
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccTiCGRo.s 			page 141
 
 
  3756 0000 18B1     		cbz	r0, .L211
@@ -8458,7 +8458,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\cclaFkaS.s 			page 1
  3794              	.LBB129:
 1160:Middlewares/LVGL/lvgl/src/widgets/textarea/../../core/lv_obj_style_gen.h ****     return (const lv_font_t *)v.ptr;
  3795              		.loc 3 1160 5 view .LVU1210
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\cclaFkaS.s 			page 142
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccTiCGRo.s 			page 142
 
 
 1160:Middlewares/LVGL/lvgl/src/widgets/textarea/../../core/lv_obj_style_gen.h ****     return (const lv_font_t *)v.ptr;
@@ -8518,7 +8518,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\cclaFkaS.s 			page 1
  3840              		.cfi_endproc
  3841              	.LFE216:
  3843              		.section	.text.pwd_char_hider,"ax",%progbits
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\cclaFkaS.s 			page 143
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccTiCGRo.s 			page 143
 
 
  3844              		.align	1
@@ -8578,7 +8578,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\cclaFkaS.s 			page 1
  3888              		.loc 1 1084 18 view .LVU1231
  3889 0016 FFF7FEFF 		bl	lv_label_get_text
  3890              	.LVL402:
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\cclaFkaS.s 			page 144
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccTiCGRo.s 			page 144
 
 
 1085:Middlewares/LVGL/lvgl/src/widgets/textarea/lv_textarea.c ****     if(enc_len == 0) return;
@@ -8638,7 +8638,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\cclaFkaS.s 			page 1
 1093:Middlewares/LVGL/lvgl/src/widgets/textarea/lv_textarea.c ****         lv_memcpy(&txt_tmp[i * bullet_len], bullet, bullet_len);
  3930              		.loc 1 1093 11 is_stmt 0 view .LVU1247
  3931 0040 0024     		movs	r4, #0
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\cclaFkaS.s 			page 145
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccTiCGRo.s 			page 145
 
 
 1093:Middlewares/LVGL/lvgl/src/widgets/textarea/lv_textarea.c ****         lv_memcpy(&txt_tmp[i * bullet_len], bullet, bullet_len);
@@ -8698,7 +8698,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\cclaFkaS.s 			page 1
  3975 007a 00BF     		.align	2
  3976              	.L227:
  3977 007c 00000000 		.word	lv_text_get_encoded_length
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\cclaFkaS.s 			page 146
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccTiCGRo.s 			page 146
 
 
  3978              		.cfi_endproc
@@ -8758,7 +8758,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\cclaFkaS.s 			page 1
  4026              		.cfi_restore_state
  4027              	.LBB130:
 1465:Middlewares/LVGL/lvgl/src/widgets/textarea/lv_textarea.c ****         lv_anim_init(&a);
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\cclaFkaS.s 			page 147
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccTiCGRo.s 			page 147
 
 
  4028              		.loc 1 1465 9 is_stmt 1 view .LVU1267
@@ -8818,7 +8818,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\cclaFkaS.s 			page 1
  4072 0050 DDE7     		b	.L229
  4073              	.L234:
  4074 0052 00BF     		.align	2
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\cclaFkaS.s 			page 148
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccTiCGRo.s 			page 148
 
 
  4075              	.L233:
@@ -8878,7 +8878,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\cclaFkaS.s 			page 1
  4126              		@ args = 0, pretend = 0, frame = 0
  4127              		@ frame_needed = 0, uses_anonymous_args = 0
  499:Middlewares/LVGL/lvgl/src/widgets/textarea/lv_textarea.c ****     LV_ASSERT_NULL(bullet);
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\cclaFkaS.s 			page 149
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccTiCGRo.s 			page 149
 
 
  4128              		.loc 1 499 5 view .LVU1285
@@ -8938,7 +8938,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\cclaFkaS.s 			page 1
  4166              	.LVL442:
  513:Middlewares/LVGL/lvgl/src/widgets/textarea/lv_textarea.c ****         LV_ASSERT_MALLOC(ta->pwd_bullet);
  4167              		.loc 1 513 26 view .LVU1302
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\cclaFkaS.s 			page 150
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccTiCGRo.s 			page 150
 
 
  4168 0016 FFF7FEFF 		bl	lv_realloc
@@ -8998,7 +8998,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\cclaFkaS.s 			page 1
  499:Middlewares/LVGL/lvgl/src/widgets/textarea/lv_textarea.c ****     LV_ASSERT_NULL(bullet);
  4207              		.loc 1 499 5 view .LVU1318
  499:Middlewares/LVGL/lvgl/src/widgets/textarea/lv_textarea.c ****     LV_ASSERT_NULL(bullet);
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\cclaFkaS.s 			page 151
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccTiCGRo.s 			page 151
 
 
  4208              		.loc 1 499 5 view .LVU1319
@@ -9058,7 +9058,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\cclaFkaS.s 			page 1
  4251              		.loc 1 615 5 view .LVU1332
  4252 0000 20B1     		cbz	r0, .L248
  614:Middlewares/LVGL/lvgl/src/widgets/textarea/lv_textarea.c ****     LV_ASSERT_OBJ(obj, MY_CLASS);
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\cclaFkaS.s 			page 152
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccTiCGRo.s 			page 152
 
 
  4253              		.loc 1 614 1 is_stmt 0 view .LVU1333
@@ -9118,7 +9118,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\cclaFkaS.s 			page 1
  4296              		.loc 1 722 1 view -0
  4297              		.cfi_startproc
  4298              		@ args = 0, pretend = 0, frame = 0
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\cclaFkaS.s 			page 153
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccTiCGRo.s 			page 153
 
 
  4299              		@ frame_needed = 0, uses_anonymous_args = 0
@@ -9178,7 +9178,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\cclaFkaS.s 			page 1
  731:Middlewares/LVGL/lvgl/src/widgets/textarea/lv_textarea.c **** 
  4341              		.loc 1 731 5 view .LVU1361
  731:Middlewares/LVGL/lvgl/src/widgets/textarea/lv_textarea.c **** 
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\cclaFkaS.s 			page 154
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccTiCGRo.s 			page 154
 
 
  4342              		.loc 1 731 5 view .LVU1362
@@ -9238,7 +9238,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\cclaFkaS.s 			page 1
  4383              		.loc 1 740 5 view .LVU1377
  740:Middlewares/LVGL/lvgl/src/widgets/textarea/lv_textarea.c **** 
  4384              		.loc 1 740 33 view .LVU1378
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\cclaFkaS.s 			page 155
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccTiCGRo.s 			page 155
 
 
  742:Middlewares/LVGL/lvgl/src/widgets/textarea/lv_textarea.c ****     return ta->max_length;
@@ -9298,7 +9298,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\cclaFkaS.s 			page 1
  748:Middlewares/LVGL/lvgl/src/widgets/textarea/lv_textarea.c **** 
  4428              		.loc 1 748 5 is_stmt 1 view .LVU1392
  748:Middlewares/LVGL/lvgl/src/widgets/textarea/lv_textarea.c **** 
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\cclaFkaS.s 			page 156
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccTiCGRo.s 			page 156
 
 
  4429              		.loc 1 748 33 view .LVU1393
@@ -9358,7 +9358,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\cclaFkaS.s 			page 1
  4469 001a 206B     		ldr	r0, [r4, #48]
  4470 001c FFF7FEFF 		bl	lv_label_get_text_selection_end
  4471              	.LVL470:
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\cclaFkaS.s 			page 157
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccTiCGRo.s 			page 157
 
 
  753:Middlewares/LVGL/lvgl/src/widgets/textarea/lv_textarea.c ****         lv_label_get_text_selection_end(ta->label) != LV_DRAW_LABEL_NO_TXT_SEL)) {
@@ -9418,7 +9418,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\cclaFkaS.s 			page 1
  768:Middlewares/LVGL/lvgl/src/widgets/textarea/lv_textarea.c **** 
  4515              		.loc 1 768 5 view .LVU1421
  768:Middlewares/LVGL/lvgl/src/widgets/textarea/lv_textarea.c **** 
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\cclaFkaS.s 			page 158
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccTiCGRo.s 			page 158
 
 
  4516              		.loc 1 768 5 view .LVU1422
@@ -9478,7 +9478,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\cclaFkaS.s 			page 1
  4557 0006 FEE7     		b	.L274
  4558              		.cfi_endproc
  4559              	.LFE222:
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\cclaFkaS.s 			page 159
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccTiCGRo.s 			page 159
 
 
  4561              		.section	.text.lv_textarea_get_current_char,"ax",%progbits
@@ -9538,7 +9538,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\cclaFkaS.s 			page 1
  4603 0010 0193     		str	r3, [sp, #4]
  795:Middlewares/LVGL/lvgl/src/widgets/textarea/lv_textarea.c ****         return lv_text_encoded_prev(txt, &pos);
  4604              		.loc 1 795 5 is_stmt 1 view .LVU1451
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\cclaFkaS.s 			page 160
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccTiCGRo.s 			page 160
 
 
  795:Middlewares/LVGL/lvgl/src/widgets/textarea/lv_textarea.c ****         return lv_text_encoded_prev(txt, &pos);
@@ -9598,7 +9598,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\cclaFkaS.s 			page 1
  4647              		.loc 1 798 16 is_stmt 0 view .LVU1463
  4648 0030 0023     		movs	r3, #0
  4649              	.L275:
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\cclaFkaS.s 			page 161
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccTiCGRo.s 			page 161
 
 
  799:Middlewares/LVGL/lvgl/src/widgets/textarea/lv_textarea.c **** 
@@ -9658,7 +9658,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\cclaFkaS.s 			page 1
  812:Middlewares/LVGL/lvgl/src/widgets/textarea/lv_textarea.c ****        lv_label_get_text_selection_end(ta->label) != LV_DRAW_LABEL_NO_TXT_SEL) {
  4696              		.loc 1 812 8 is_stmt 0 view .LVU1474
  4697 0006 006B     		ldr	r0, [r0, #48]
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\cclaFkaS.s 			page 162
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccTiCGRo.s 			page 162
 
 
  4698              	.LVL489:
@@ -9718,7 +9718,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\cclaFkaS.s 			page 1
  4741              	.LVL495:
  812:Middlewares/LVGL/lvgl/src/widgets/textarea/lv_textarea.c ****        lv_label_get_text_selection_end(ta->label) != LV_DRAW_LABEL_NO_TXT_SEL) {
  4742              		.loc 1 812 81 discriminator 1 view .LVU1486
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\cclaFkaS.s 			page 163
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccTiCGRo.s 			page 163
 
 
  4743 0032 4FF6FF73 		movw	r3, #65535
@@ -9778,7 +9778,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\cclaFkaS.s 			page 1
  4788              	.LVL497:
  262:Middlewares/LVGL/lvgl/src/widgets/textarea/lv_textarea.c **** 
  4789              		.loc 1 262 5 view .LVU1498
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\cclaFkaS.s 			page 164
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccTiCGRo.s 			page 164
 
 
  262:Middlewares/LVGL/lvgl/src/widgets/textarea/lv_textarea.c **** 
@@ -9838,7 +9838,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\cclaFkaS.s 			page 1
  4829              	.L296:
  4830              	.LCFI84:
  4831              		.cfi_def_cfa_offset 24
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\cclaFkaS.s 			page 165
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccTiCGRo.s 			page 165
 
 
  4832              		.cfi_offset 4, -16
@@ -9898,7 +9898,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\cclaFkaS.s 			page 1
  4870              		.loc 1 278 7 view .LVU1529
  4871 0046 2BB1     		cbz	r3, .L303
  4872              	.LBB135:
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\cclaFkaS.s 			page 166
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccTiCGRo.s 			page 166
 
 
  279:Middlewares/LVGL/lvgl/src/widgets/textarea/lv_textarea.c ****         if(txt_act[0] == '\0') lv_obj_invalidate(obj);
@@ -9958,7 +9958,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\cclaFkaS.s 			page 1
  288:Middlewares/LVGL/lvgl/src/widgets/textarea/lv_textarea.c ****         ta->pwd_tmp = lv_realloc(ta->pwd_tmp, realloc_size);
  4913              		.loc 1 288 56 discriminator 1 view .LVU1544
  4914 0076 2046     		mov	r0, r4
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\cclaFkaS.s 			page 167
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccTiCGRo.s 			page 167
 
 
  4915 0078 FFF7FEFF 		bl	lv_strlen
@@ -10018,7 +10018,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\cclaFkaS.s 			page 1
  4954 00a0 0646     		mov	r6, r0
  300:Middlewares/LVGL/lvgl/src/widgets/textarea/lv_textarea.c **** 
  4955              		.loc 1 300 71 discriminator 1 view .LVU1560
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\cclaFkaS.s 			page 168
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccTiCGRo.s 			page 168
 
 
  4956 00a2 134B     		ldr	r3, .L312
@@ -10078,7 +10078,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\cclaFkaS.s 			page 1
  267:Middlewares/LVGL/lvgl/src/widgets/textarea/lv_textarea.c ****             uint32_t c = lv_text_encoded_next(txt, &i);
  5001              		.loc 1 267 18 is_stmt 0 view .LVU1570
  5002 00d8 019B     		ldr	r3, [sp, #4]
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\cclaFkaS.s 			page 169
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccTiCGRo.s 			page 169
 
 
  5003 00da E35C     		ldrb	r3, [r4, r3]	@ zero_extendqisi2
@@ -10138,7 +10138,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\cclaFkaS.s 			page 1
  5046              	.LBE139:
  5047              		.cfi_endproc
  5048              	.LFE193:
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\cclaFkaS.s 			page 170
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccTiCGRo.s 			page 170
 
 
  5050              		.section	.text.insert_handler,"ax",%progbits
@@ -10198,7 +10198,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\cclaFkaS.s 			page 1
  5094              	.L315:
 1365:Middlewares/LVGL/lvgl/src/widgets/textarea/lv_textarea.c ****         /*Add the replaced text directly it's different from the original*/
  5095              		.loc 1 1365 5 is_stmt 1 view .LVU1593
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\cclaFkaS.s 			page 171
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccTiCGRo.s 			page 171
 
 
 1365:Middlewares/LVGL/lvgl/src/widgets/textarea/lv_textarea.c ****         /*Add the replaced text directly it's different from the original*/
@@ -10258,7 +10258,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\cclaFkaS.s 			page 1
  5140              		.thumb_func
  5142              	lv_textarea_add_char:
  5143              	.LVL535:
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\cclaFkaS.s 			page 172
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccTiCGRo.s 			page 172
 
 
  5144              	.LFB192:
@@ -10318,7 +10318,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\cclaFkaS.s 			page 1
  5183              		.loc 1 195 16 is_stmt 0 view .LVU1619
  5184 001c 0291     		str	r1, [sp, #8]
  196:Middlewares/LVGL/lvgl/src/widgets/textarea/lv_textarea.c **** 
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\cclaFkaS.s 			page 173
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccTiCGRo.s 			page 173
 
 
  5185              		.loc 1 196 5 is_stmt 1 view .LVU1620
@@ -10378,7 +10378,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\cclaFkaS.s 			page 1
  220:Middlewares/LVGL/lvgl/src/widgets/textarea/lv_textarea.c ****         LV_LOG_INFO("Character is not accepted by the text area (too long text or not in the accept
  5224              		.loc 1 220 8 view .LVU1636
  5225 003e FFF7FEFF 		bl	char_is_accepted
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\cclaFkaS.s 			page 174
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccTiCGRo.s 			page 174
 
 
  5226              	.LVL545:
@@ -10438,7 +10438,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\cclaFkaS.s 			page 1
  234:Middlewares/LVGL/lvgl/src/widgets/textarea/lv_textarea.c **** 
  5265              		.loc 1 234 5 is_stmt 1 view .LVU1652
  5266 0068 2046     		mov	r0, r4
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\cclaFkaS.s 			page 175
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccTiCGRo.s 			page 175
 
 
  5267 006a FFF7FEFF 		bl	lv_textarea_clear_selection
@@ -10498,7 +10498,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\cclaFkaS.s 			page 1
  5305              		.loc 1 240 38 view .LVU1668
  241:Middlewares/LVGL/lvgl/src/widgets/textarea/lv_textarea.c **** 
  5306              		.loc 1 241 9 view .LVU1669
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\cclaFkaS.s 			page 176
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccTiCGRo.s 			page 176
 
 
  243:Middlewares/LVGL/lvgl/src/widgets/textarea/lv_textarea.c **** 
@@ -10558,7 +10558,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\cclaFkaS.s 			page 1
  5351              		.loc 1 185 5 is_stmt 1 view .LVU1679
  185:Middlewares/LVGL/lvgl/src/widgets/textarea/lv_textarea.c **** 
  5352              		.loc 1 185 5 view .LVU1680
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\cclaFkaS.s 			page 177
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccTiCGRo.s 			page 177
 
 
  185:Middlewares/LVGL/lvgl/src/widgets/textarea/lv_textarea.c **** 
@@ -10618,7 +10618,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\cclaFkaS.s 			page 1
  5395              		.cfi_endproc
  5396              	.LFE192:
  5398              		.section	.text.lv_textarea_delete_char,"ax",%progbits
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\cclaFkaS.s 			page 178
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccTiCGRo.s 			page 178
 
 
  5399              		.align	1
@@ -10678,7 +10678,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\cclaFkaS.s 			page 1
  5442              		.cfi_def_cfa_offset 12
  5443              		@ sp needed
  5444 000e 30BD     		pop	{r4, r5, pc}
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\cclaFkaS.s 			page 179
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccTiCGRo.s 			page 179
 
 
  5445              	.LVL574:
@@ -10738,7 +10738,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\cclaFkaS.s 			page 1
  5484              		.loc 1 319 24 view .LVU1719
  5485 0024 FFF7FEFF 		bl	lv_label_get_text
  5486              	.LVL579:
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\cclaFkaS.s 			page 180
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccTiCGRo.s 			page 180
 
 
  5487 0028 0546     		mov	r5, r0
@@ -10798,7 +10798,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\cclaFkaS.s 			page 1
  5526              		.loc 1 334 5 is_stmt 1 view .LVU1734
  334:Middlewares/LVGL/lvgl/src/widgets/textarea/lv_textarea.c ****         lv_text_cut(ta->pwd_tmp, ta->cursor.pos - 1, 1);
  5527              		.loc 1 334 8 is_stmt 0 view .LVU1735
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\cclaFkaS.s 			page 181
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccTiCGRo.s 			page 181
 
 
  5528 0050 94F87430 		ldrb	r3, [r4, #116]	@ zero_extendqisi2
@@ -10858,7 +10858,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\cclaFkaS.s 			page 1
  345:Middlewares/LVGL/lvgl/src/widgets/textarea/lv_textarea.c **** 
  5568              		.loc 1 345 5 is_stmt 1 view .LVU1750
  5569 0084 0022     		movs	r2, #0
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\cclaFkaS.s 			page 182
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccTiCGRo.s 			page 182
 
 
  5570 0086 2321     		movs	r1, #35
@@ -10918,7 +10918,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\cclaFkaS.s 			page 1
  350:Middlewares/LVGL/lvgl/src/widgets/textarea/lv_textarea.c ****     LV_ASSERT_OBJ(obj, MY_CLASS);
  5615              		.loc 1 350 1 is_stmt 0 view .LVU1762
  5616 0002 38B5     		push	{r3, r4, r5, lr}
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\cclaFkaS.s 			page 183
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccTiCGRo.s 			page 183
 
 
  5617              	.LCFI98:
@@ -10978,7 +10978,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\cclaFkaS.s 			page 1
  5659              		.loc 1 351 5 is_stmt 1 view .LVU1774
  351:Middlewares/LVGL/lvgl/src/widgets/textarea/lv_textarea.c **** 
  5660              		.loc 1 351 5 view .LVU1775
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\cclaFkaS.s 			page 184
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccTiCGRo.s 			page 184
 
 
  351:Middlewares/LVGL/lvgl/src/widgets/textarea/lv_textarea.c **** 
@@ -11038,7 +11038,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\cclaFkaS.s 			page 1
  5708              		.cfi_def_cfa_offset 24
  5709 0006 0C46     		mov	r4, r1
  5710 0008 0546     		mov	r5, r0
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\cclaFkaS.s 			page 185
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccTiCGRo.s 			page 185
 
 
  364:Middlewares/LVGL/lvgl/src/widgets/textarea/lv_textarea.c ****     LV_ASSERT_NULL(txt);
@@ -11098,7 +11098,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\cclaFkaS.s 			page 1
  5748              		.loc 1 377 13 is_stmt 1 view .LVU1801
  377:Middlewares/LVGL/lvgl/src/widgets/textarea/lv_textarea.c ****         }
  5749              		.loc 1 377 15 is_stmt 0 view .LVU1802
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\cclaFkaS.s 			page 186
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccTiCGRo.s 			page 186
 
 
  5750 0034 AB6B     		ldr	r3, [r5, #56]
@@ -11158,7 +11158,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\cclaFkaS.s 			page 1
  5788 0042 FEE7     		b	.L363
  5789              	.LVL612:
  5790              	.L376:
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\cclaFkaS.s 			page 187
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccTiCGRo.s 			page 187
 
 
  373:Middlewares/LVGL/lvgl/src/widgets/textarea/lv_textarea.c ****         lv_label_set_text(ta->label, "");
@@ -11218,7 +11218,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\cclaFkaS.s 			page 1
  5834              		.loc 1 380 22 is_stmt 1 view .LVU1829
  380:Middlewares/LVGL/lvgl/src/widgets/textarea/lv_textarea.c ****             uint32_t c = lv_text_encoded_next(txt, &i);
  5835              		.loc 1 380 18 is_stmt 0 view .LVU1830
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\cclaFkaS.s 			page 188
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccTiCGRo.s 			page 188
 
 
  5836 007a 019B     		ldr	r3, [sp, #4]
@@ -11278,7 +11278,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\cclaFkaS.s 			page 1
  5874              		.loc 1 398 9 view .LVU1846
  398:Middlewares/LVGL/lvgl/src/widgets/textarea/lv_textarea.c ****         LV_ASSERT_MALLOC(ta->pwd_tmp);
  5875              		.loc 1 398 23 is_stmt 0 view .LVU1847
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\cclaFkaS.s 			page 189
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccTiCGRo.s 			page 189
 
 
  5876 00a0 2046     		mov	r0, r4
@@ -11338,7 +11338,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\cclaFkaS.s 			page 1
  393:Middlewares/LVGL/lvgl/src/widgets/textarea/lv_textarea.c ****     }
  5919              		.loc 1 393 32 discriminator 1 view .LVU1859
  5920              	.LBE150:
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\cclaFkaS.s 			page 190
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccTiCGRo.s 			page 190
 
 
  399:Middlewares/LVGL/lvgl/src/widgets/textarea/lv_textarea.c ****         if(ta->pwd_tmp == NULL) return;
@@ -11398,7 +11398,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\cclaFkaS.s 			page 1
  5965              	.LVL630:
  471:Middlewares/LVGL/lvgl/src/widgets/textarea/lv_textarea.c **** 
  5966              		.loc 1 471 5 view .LVU1872
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\cclaFkaS.s 			page 191
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccTiCGRo.s 			page 191
 
 
  471:Middlewares/LVGL/lvgl/src/widgets/textarea/lv_textarea.c **** 
@@ -11458,7 +11458,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\cclaFkaS.s 			page 1
  6005              		.loc 1 479 9 is_stmt 1 view .LVU1888
  479:Middlewares/LVGL/lvgl/src/widgets/textarea/lv_textarea.c ****         if(ta->pwd_tmp == NULL) return;
  6006              		.loc 1 479 9 view .LVU1889
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\cclaFkaS.s 			page 192
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccTiCGRo.s 			page 192
 
 
  6007 0036 38B1     		cbz	r0, .L391
@@ -11518,7 +11518,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\cclaFkaS.s 			page 1
  479:Middlewares/LVGL/lvgl/src/widgets/textarea/lv_textarea.c ****         if(ta->pwd_tmp == NULL) return;
  6048              		.loc 1 479 9 view .LVU1903
  479:Middlewares/LVGL/lvgl/src/widgets/textarea/lv_textarea.c ****         if(ta->pwd_tmp == NULL) return;
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\cclaFkaS.s 			page 193
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccTiCGRo.s 			page 193
 
 
  6049              		.loc 1 479 9 view .LVU1904
@@ -11578,7 +11578,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\cclaFkaS.s 			page 1
  6093              		.thumb_func
  6095              	lv_textarea_set_text_selection:
  6096              	.LVL646:
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\cclaFkaS.s 			page 194
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccTiCGRo.s 			page 194
 
 
  6097              	.LFB207:
@@ -11638,7 +11638,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\cclaFkaS.s 			page 1
  599:Middlewares/LVGL/lvgl/src/widgets/textarea/lv_textarea.c **** 
  6136              		.loc 1 599 5 view .LVU1931
  599:Middlewares/LVGL/lvgl/src/widgets/textarea/lv_textarea.c **** 
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\cclaFkaS.s 			page 195
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccTiCGRo.s 			page 195
 
 
  6137              		.loc 1 599 5 view .LVU1932
@@ -11698,7 +11698,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\cclaFkaS.s 			page 1
  827:Middlewares/LVGL/lvgl/src/widgets/textarea/lv_textarea.c ****     lv_textarea_set_cursor_pos(obj, cp);
  6183              		.loc 1 827 5 is_stmt 1 view .LVU1943
  828:Middlewares/LVGL/lvgl/src/widgets/textarea/lv_textarea.c **** }
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\cclaFkaS.s 			page 196
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccTiCGRo.s 			page 196
 
 
  6184              		.loc 1 828 5 view .LVU1944
@@ -11758,7 +11758,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\cclaFkaS.s 			page 1
  6229              		.cfi_offset 4, -8
  6230              		.cfi_offset 14, -4
  6231 0004 0446     		mov	r4, r0
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\cclaFkaS.s 			page 197
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccTiCGRo.s 			page 197
 
 
  833:Middlewares/LVGL/lvgl/src/widgets/textarea/lv_textarea.c **** 
@@ -11818,7 +11818,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\cclaFkaS.s 			page 1
  840:Middlewares/LVGL/lvgl/src/widgets/textarea/lv_textarea.c **** 
  6271              		.loc 1 840 1 view .LVU1971
  6272 0018 F8E7     		b	.L404
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\cclaFkaS.s 			page 198
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccTiCGRo.s 			page 198
 
 
  6273              		.cfi_endproc
@@ -11878,7 +11878,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\cclaFkaS.s 			page 1
  850:Middlewares/LVGL/lvgl/src/widgets/textarea/lv_textarea.c **** 
  6317              		.loc 1 850 5 discriminator 1 view .LVU1984
  6318 0010 02AA     		add	r2, sp, #8
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\cclaFkaS.s 			page 199
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccTiCGRo.s 			page 199
 
 
  6319 0012 2846     		mov	r0, r5
@@ -11938,7 +11938,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\cclaFkaS.s 			page 1
  6360              	.LBE155:
  856:Middlewares/LVGL/lvgl/src/widgets/textarea/lv_textarea.c ****     pos.y += font_h + line_space + 1;
  6361              		.loc 1 856 5 is_stmt 1 view .LVU1998
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\cclaFkaS.s 			page 200
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccTiCGRo.s 			page 200
 
 
  856:Middlewares/LVGL/lvgl/src/widgets/textarea/lv_textarea.c ****     pos.y += font_h + line_space + 1;
@@ -11998,7 +11998,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\cclaFkaS.s 			page 1
  6402              		.cfi_restore 4
  6403              		.cfi_restore 5
  6404              		.cfi_restore 14
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\cclaFkaS.s 			page 201
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccTiCGRo.s 			page 201
 
 
  844:Middlewares/LVGL/lvgl/src/widgets/textarea/lv_textarea.c **** 
@@ -12058,7 +12058,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\cclaFkaS.s 			page 1
  6445              	.LFE227:
  6447              		.section	.text.lv_textarea_cursor_up,"ax",%progbits
  6448              		.align	1
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\cclaFkaS.s 			page 202
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccTiCGRo.s 			page 202
 
 
  6449              		.global	lv_textarea_cursor_up
@@ -12118,7 +12118,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\cclaFkaS.s 			page 1
  6491 0012 3246     		mov	r2, r6
  6492 0014 2846     		mov	r0, r5
  6493 0016 FFF7FEFF 		bl	lv_label_get_letter_pos
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\cclaFkaS.s 			page 203
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccTiCGRo.s 			page 203
 
 
  6494              	.LVL687:
@@ -12178,7 +12178,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\cclaFkaS.s 			page 1
  6534              		.loc 1 884 5 is_stmt 1 view .LVU2053
  884:Middlewares/LVGL/lvgl/src/widgets/textarea/lv_textarea.c ****     pos.y -= font_h + line_space - 1;
  6535              		.loc 1 884 35 is_stmt 0 view .LVU2054
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\cclaFkaS.s 			page 204
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccTiCGRo.s 			page 204
 
 
  6536 0034 FFF7FEFF 		bl	lv_font_get_line_height
@@ -12238,7 +12238,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\cclaFkaS.s 			page 1
  6574              		.loc 1 892 24 is_stmt 0 view .LVU2070
  6575 005a E564     		str	r5, [r4, #76]
  893:Middlewares/LVGL/lvgl/src/widgets/textarea/lv_textarea.c **** 
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\cclaFkaS.s 			page 205
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccTiCGRo.s 			page 205
 
 
  6576              		.loc 1 893 1 view .LVU2071
@@ -12298,7 +12298,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\cclaFkaS.s 			page 1
  967:Middlewares/LVGL/lvgl/src/widgets/textarea/lv_textarea.c ****     if(res != LV_RESULT_OK) return;
  6623              		.loc 1 967 5 view .LVU2081
  967:Middlewares/LVGL/lvgl/src/widgets/textarea/lv_textarea.c ****     if(res != LV_RESULT_OK) return;
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\cclaFkaS.s 			page 206
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccTiCGRo.s 			page 206
 
 
  6624              		.loc 1 967 11 is_stmt 0 view .LVU2082
@@ -12358,7 +12358,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\cclaFkaS.s 			page 1
  6667 0030 95010000 		.word	.L431+1
  6668 0034 95010000 		.word	.L431+1
  6669 0038 0F000000 		.word	.L423+1
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\cclaFkaS.s 			page 207
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccTiCGRo.s 			page 207
 
 
  6670 003c 0F000000 		.word	.L423+1
@@ -12418,7 +12418,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\cclaFkaS.s 			page 1
  6722              		.loc 1 974 9 is_stmt 0 view .LVU2095
  6723 00fc 87E7     		b	.L423
  6724              	.LVL713:
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\cclaFkaS.s 			page 208
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccTiCGRo.s 			page 208
 
 
  6725              	.L430:
@@ -12478,7 +12478,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\cclaFkaS.s 			page 1
  6773              	.LVL717:
  6774 0136 6AE7     		b	.L423
  6775              	.L436:
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\cclaFkaS.s 			page 209
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccTiCGRo.s 			page 209
 
 
  979:Middlewares/LVGL/lvgl/src/widgets/textarea/lv_textarea.c ****         else if(c == LV_KEY_LEFT)
@@ -12538,7 +12538,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\cclaFkaS.s 			page 1
  6822 0178 FFF7FEFF 		bl	lv_textarea_get_one_line
  6823              	.LVL725:
  994:Middlewares/LVGL/lvgl/src/widgets/textarea/lv_textarea.c ****             lv_obj_send_event(obj, LV_EVENT_READY, NULL);
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\cclaFkaS.s 			page 210
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccTiCGRo.s 			page 210
 
 
  6824              		.loc 1 994 35 discriminator 1 view .LVU2110
@@ -12598,7 +12598,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\cclaFkaS.s 			page 1
  6869 01aa 30E7     		b	.L423
  6870              	.LVL737:
  6871              	.L425:
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\cclaFkaS.s 			page 211
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccTiCGRo.s 			page 211
 
 
  6872              	.LBB163:
@@ -12658,7 +12658,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\cclaFkaS.s 			page 1
  6926              		.file 12 "Middlewares/LVGL/lvgl/src/widgets/textarea/../../core/../misc/../font/lv_font.h"
  6927              		.file 13 "Middlewares/LVGL/lvgl/src/widgets/textarea/../label/../../draw/lv_draw_label_private.h"
  6928              		.file 14 "Middlewares/LVGL/lvgl/src/widgets/textarea/../label/lv_label_private.h"
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\cclaFkaS.s 			page 212
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccTiCGRo.s 			page 212
 
 
  6929              		.file 15 "Middlewares/LVGL/lvgl/src/widgets/textarea/lv_textarea_private.h"
@@ -12688,160 +12688,160 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\cclaFkaS.s 			page 1
  6953              		.file 39 "Middlewares/LVGL/lvgl/src/widgets/textarea/../../core/lv_obj_tree.h"
  6954              		.file 40 "Middlewares/LVGL/lvgl/src/widgets/textarea/../../core/lv_obj_event.h"
  6955              		.file 41 "Middlewares/LVGL/lvgl/src/widgets/textarea/../../core/lv_obj_draw.h"
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\cclaFkaS.s 			page 213
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccTiCGRo.s 			page 213
 
 
 DEFINED SYMBOLS
                             *ABS*:00000000 lv_textarea.c
-C:\Users\w1785\AppData\Local\Temp\cclaFkaS.s:21     .text.pwd_char_hider_anim:00000000 $t
-C:\Users\w1785\AppData\Local\Temp\cclaFkaS.s:26     .text.pwd_char_hider_anim:00000000 pwd_char_hider_anim
-C:\Users\w1785\AppData\Local\Temp\cclaFkaS.s:42     .text.auto_hide_characters_cancel:00000000 $t
-C:\Users\w1785\AppData\Local\Temp\cclaFkaS.s:47     .text.auto_hide_characters_cancel:00000000 auto_hide_characters_cancel
-C:\Users\w1785\AppData\Local\Temp\cclaFkaS.s:69     .text.auto_hide_characters_cancel:0000000c $d
-C:\Users\w1785\AppData\Local\Temp\cclaFkaS.s:74     .text.cursor_blink_anim_cb:00000000 $t
-C:\Users\w1785\AppData\Local\Temp\cclaFkaS.s:79     .text.cursor_blink_anim_cb:00000000 cursor_blink_anim_cb
-C:\Users\w1785\AppData\Local\Temp\cclaFkaS.s:205    .text.start_cursor_blink:00000000 $t
-C:\Users\w1785\AppData\Local\Temp\cclaFkaS.s:210    .text.start_cursor_blink:00000000 start_cursor_blink
-C:\Users\w1785\AppData\Local\Temp\cclaFkaS.s:333    .text.start_cursor_blink:00000078 $d
-C:\Users\w1785\AppData\Local\Temp\cclaFkaS.s:339    .text.draw_placeholder:00000000 $t
-C:\Users\w1785\AppData\Local\Temp\cclaFkaS.s:344    .text.draw_placeholder:00000000 draw_placeholder
-C:\Users\w1785\AppData\Local\Temp\cclaFkaS.s:630    .text.draw_cursor:00000000 $t
-C:\Users\w1785\AppData\Local\Temp\cclaFkaS.s:635    .text.draw_cursor:00000000 draw_cursor
-C:\Users\w1785\AppData\Local\Temp\cclaFkaS.s:955    .text.draw_cursor:0000014c $d
-C:\Users\w1785\AppData\Local\Temp\cclaFkaS.s:960    .text.lv_textarea_destructor:00000000 $t
-C:\Users\w1785\AppData\Local\Temp\cclaFkaS.s:965    .text.lv_textarea_destructor:00000000 lv_textarea_destructor
-C:\Users\w1785\AppData\Local\Temp\cclaFkaS.s:1046   .text.lv_textarea_create:00000000 $t
-C:\Users\w1785\AppData\Local\Temp\cclaFkaS.s:1052   .text.lv_textarea_create:00000000 lv_textarea_create
-C:\Users\w1785\AppData\Local\Temp\cclaFkaS.s:1091   .text.lv_textarea_create:00000014 $d
-C:\Users\w1785\AppData\Local\Temp\cclaFkaS.s:6903   .rodata.lv_textarea_class:00000000 lv_textarea_class
-C:\Users\w1785\AppData\Local\Temp\cclaFkaS.s:1096   .text.lv_textarea_set_placeholder_text:00000000 $t
-C:\Users\w1785\AppData\Local\Temp\cclaFkaS.s:1102   .text.lv_textarea_set_placeholder_text:00000000 lv_textarea_set_placeholder_text
-C:\Users\w1785\AppData\Local\Temp\cclaFkaS.s:1226   .text.lv_textarea_set_cursor_click_pos:00000000 $t
-C:\Users\w1785\AppData\Local\Temp\cclaFkaS.s:1232   .text.lv_textarea_set_cursor_click_pos:00000000 lv_textarea_set_cursor_click_pos
-C:\Users\w1785\AppData\Local\Temp\cclaFkaS.s:1266   .text.lv_textarea_set_one_line:00000000 $t
-C:\Users\w1785\AppData\Local\Temp\cclaFkaS.s:1272   .text.lv_textarea_set_one_line:00000000 lv_textarea_set_one_line
-C:\Users\w1785\AppData\Local\Temp\cclaFkaS.s:1415   .text.lv_textarea_set_accepted_chars:00000000 $t
-C:\Users\w1785\AppData\Local\Temp\cclaFkaS.s:1421   .text.lv_textarea_set_accepted_chars:00000000 lv_textarea_set_accepted_chars
-C:\Users\w1785\AppData\Local\Temp\cclaFkaS.s:1522   .text.lv_textarea_set_accepted_chars_static:00000000 $t
-C:\Users\w1785\AppData\Local\Temp\cclaFkaS.s:1528   .text.lv_textarea_set_accepted_chars_static:00000000 lv_textarea_set_accepted_chars_static
-C:\Users\w1785\AppData\Local\Temp\cclaFkaS.s:1604   .text.lv_textarea_set_max_length:00000000 $t
-C:\Users\w1785\AppData\Local\Temp\cclaFkaS.s:1610   .text.lv_textarea_set_max_length:00000000 lv_textarea_set_max_length
-C:\Users\w1785\AppData\Local\Temp\cclaFkaS.s:1642   .text.lv_textarea_set_insert_replace:00000000 $t
-C:\Users\w1785\AppData\Local\Temp\cclaFkaS.s:1648   .text.lv_textarea_set_insert_replace:00000000 lv_textarea_set_insert_replace
-C:\Users\w1785\AppData\Local\Temp\cclaFkaS.s:1678   .text.lv_textarea_set_insert_replace:0000000c $d
-C:\Users\w1785\AppData\Local\Temp\cclaFkaS.s:6892   .bss.ta_insert_replace:00000000 ta_insert_replace
-C:\Users\w1785\AppData\Local\Temp\cclaFkaS.s:1683   .text.lv_textarea_get_text:00000000 $t
-C:\Users\w1785\AppData\Local\Temp\cclaFkaS.s:1689   .text.lv_textarea_get_text:00000000 lv_textarea_get_text
-C:\Users\w1785\AppData\Local\Temp\cclaFkaS.s:1755   .text.char_is_accepted:00000000 $t
-C:\Users\w1785\AppData\Local\Temp\cclaFkaS.s:1760   .text.char_is_accepted:00000000 char_is_accepted
-C:\Users\w1785\AppData\Local\Temp\cclaFkaS.s:1871   .text.char_is_accepted:00000054 $d
-C:\Users\w1785\AppData\Local\Temp\cclaFkaS.s:1877   .rodata.lv_textarea_get_placeholder_text.str1.4:00000000 $d
-C:\Users\w1785\AppData\Local\Temp\cclaFkaS.s:1881   .text.lv_textarea_get_placeholder_text:00000000 $t
-C:\Users\w1785\AppData\Local\Temp\cclaFkaS.s:1887   .text.lv_textarea_get_placeholder_text:00000000 lv_textarea_get_placeholder_text
-C:\Users\w1785\AppData\Local\Temp\cclaFkaS.s:1927   .text.lv_textarea_get_placeholder_text:00000010 $d
-C:\Users\w1785\AppData\Local\Temp\cclaFkaS.s:1932   .text.lv_textarea_get_label:00000000 $t
-C:\Users\w1785\AppData\Local\Temp\cclaFkaS.s:1938   .text.lv_textarea_get_label:00000000 lv_textarea_get_label
-C:\Users\w1785\AppData\Local\Temp\cclaFkaS.s:1971   .text.lv_textarea_set_align:00000000 $t
-C:\Users\w1785\AppData\Local\Temp\cclaFkaS.s:1977   .text.lv_textarea_set_align:00000000 lv_textarea_set_align
-C:\Users\w1785\AppData\Local\Temp\cclaFkaS.s:2052   .text.lv_textarea_get_cursor_pos:00000000 $t
-C:\Users\w1785\AppData\Local\Temp\cclaFkaS.s:2058   .text.lv_textarea_get_cursor_pos:00000000 lv_textarea_get_cursor_pos
-C:\Users\w1785\AppData\Local\Temp\cclaFkaS.s:2091   .text.refr_cursor_area:00000000 $t
-C:\Users\w1785\AppData\Local\Temp\cclaFkaS.s:2096   .text.refr_cursor_area:00000000 refr_cursor_area
-C:\Users\w1785\AppData\Local\Temp\cclaFkaS.s:2689   .text.refr_cursor_area:00000210 $d
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\cclaFkaS.s 			page 214
+C:\Users\w1785\AppData\Local\Temp\ccTiCGRo.s:21     .text.pwd_char_hider_anim:00000000 $t
+C:\Users\w1785\AppData\Local\Temp\ccTiCGRo.s:26     .text.pwd_char_hider_anim:00000000 pwd_char_hider_anim
+C:\Users\w1785\AppData\Local\Temp\ccTiCGRo.s:42     .text.auto_hide_characters_cancel:00000000 $t
+C:\Users\w1785\AppData\Local\Temp\ccTiCGRo.s:47     .text.auto_hide_characters_cancel:00000000 auto_hide_characters_cancel
+C:\Users\w1785\AppData\Local\Temp\ccTiCGRo.s:69     .text.auto_hide_characters_cancel:0000000c $d
+C:\Users\w1785\AppData\Local\Temp\ccTiCGRo.s:74     .text.cursor_blink_anim_cb:00000000 $t
+C:\Users\w1785\AppData\Local\Temp\ccTiCGRo.s:79     .text.cursor_blink_anim_cb:00000000 cursor_blink_anim_cb
+C:\Users\w1785\AppData\Local\Temp\ccTiCGRo.s:205    .text.start_cursor_blink:00000000 $t
+C:\Users\w1785\AppData\Local\Temp\ccTiCGRo.s:210    .text.start_cursor_blink:00000000 start_cursor_blink
+C:\Users\w1785\AppData\Local\Temp\ccTiCGRo.s:333    .text.start_cursor_blink:00000078 $d
+C:\Users\w1785\AppData\Local\Temp\ccTiCGRo.s:339    .text.draw_placeholder:00000000 $t
+C:\Users\w1785\AppData\Local\Temp\ccTiCGRo.s:344    .text.draw_placeholder:00000000 draw_placeholder
+C:\Users\w1785\AppData\Local\Temp\ccTiCGRo.s:630    .text.draw_cursor:00000000 $t
+C:\Users\w1785\AppData\Local\Temp\ccTiCGRo.s:635    .text.draw_cursor:00000000 draw_cursor
+C:\Users\w1785\AppData\Local\Temp\ccTiCGRo.s:955    .text.draw_cursor:0000014c $d
+C:\Users\w1785\AppData\Local\Temp\ccTiCGRo.s:960    .text.lv_textarea_destructor:00000000 $t
+C:\Users\w1785\AppData\Local\Temp\ccTiCGRo.s:965    .text.lv_textarea_destructor:00000000 lv_textarea_destructor
+C:\Users\w1785\AppData\Local\Temp\ccTiCGRo.s:1046   .text.lv_textarea_create:00000000 $t
+C:\Users\w1785\AppData\Local\Temp\ccTiCGRo.s:1052   .text.lv_textarea_create:00000000 lv_textarea_create
+C:\Users\w1785\AppData\Local\Temp\ccTiCGRo.s:1091   .text.lv_textarea_create:00000014 $d
+C:\Users\w1785\AppData\Local\Temp\ccTiCGRo.s:6903   .rodata.lv_textarea_class:00000000 lv_textarea_class
+C:\Users\w1785\AppData\Local\Temp\ccTiCGRo.s:1096   .text.lv_textarea_set_placeholder_text:00000000 $t
+C:\Users\w1785\AppData\Local\Temp\ccTiCGRo.s:1102   .text.lv_textarea_set_placeholder_text:00000000 lv_textarea_set_placeholder_text
+C:\Users\w1785\AppData\Local\Temp\ccTiCGRo.s:1226   .text.lv_textarea_set_cursor_click_pos:00000000 $t
+C:\Users\w1785\AppData\Local\Temp\ccTiCGRo.s:1232   .text.lv_textarea_set_cursor_click_pos:00000000 lv_textarea_set_cursor_click_pos
+C:\Users\w1785\AppData\Local\Temp\ccTiCGRo.s:1266   .text.lv_textarea_set_one_line:00000000 $t
+C:\Users\w1785\AppData\Local\Temp\ccTiCGRo.s:1272   .text.lv_textarea_set_one_line:00000000 lv_textarea_set_one_line
+C:\Users\w1785\AppData\Local\Temp\ccTiCGRo.s:1415   .text.lv_textarea_set_accepted_chars:00000000 $t
+C:\Users\w1785\AppData\Local\Temp\ccTiCGRo.s:1421   .text.lv_textarea_set_accepted_chars:00000000 lv_textarea_set_accepted_chars
+C:\Users\w1785\AppData\Local\Temp\ccTiCGRo.s:1522   .text.lv_textarea_set_accepted_chars_static:00000000 $t
+C:\Users\w1785\AppData\Local\Temp\ccTiCGRo.s:1528   .text.lv_textarea_set_accepted_chars_static:00000000 lv_textarea_set_accepted_chars_static
+C:\Users\w1785\AppData\Local\Temp\ccTiCGRo.s:1604   .text.lv_textarea_set_max_length:00000000 $t
+C:\Users\w1785\AppData\Local\Temp\ccTiCGRo.s:1610   .text.lv_textarea_set_max_length:00000000 lv_textarea_set_max_length
+C:\Users\w1785\AppData\Local\Temp\ccTiCGRo.s:1642   .text.lv_textarea_set_insert_replace:00000000 $t
+C:\Users\w1785\AppData\Local\Temp\ccTiCGRo.s:1648   .text.lv_textarea_set_insert_replace:00000000 lv_textarea_set_insert_replace
+C:\Users\w1785\AppData\Local\Temp\ccTiCGRo.s:1678   .text.lv_textarea_set_insert_replace:0000000c $d
+C:\Users\w1785\AppData\Local\Temp\ccTiCGRo.s:6892   .bss.ta_insert_replace:00000000 ta_insert_replace
+C:\Users\w1785\AppData\Local\Temp\ccTiCGRo.s:1683   .text.lv_textarea_get_text:00000000 $t
+C:\Users\w1785\AppData\Local\Temp\ccTiCGRo.s:1689   .text.lv_textarea_get_text:00000000 lv_textarea_get_text
+C:\Users\w1785\AppData\Local\Temp\ccTiCGRo.s:1755   .text.char_is_accepted:00000000 $t
+C:\Users\w1785\AppData\Local\Temp\ccTiCGRo.s:1760   .text.char_is_accepted:00000000 char_is_accepted
+C:\Users\w1785\AppData\Local\Temp\ccTiCGRo.s:1871   .text.char_is_accepted:00000054 $d
+C:\Users\w1785\AppData\Local\Temp\ccTiCGRo.s:1877   .rodata.lv_textarea_get_placeholder_text.str1.4:00000000 $d
+C:\Users\w1785\AppData\Local\Temp\ccTiCGRo.s:1881   .text.lv_textarea_get_placeholder_text:00000000 $t
+C:\Users\w1785\AppData\Local\Temp\ccTiCGRo.s:1887   .text.lv_textarea_get_placeholder_text:00000000 lv_textarea_get_placeholder_text
+C:\Users\w1785\AppData\Local\Temp\ccTiCGRo.s:1927   .text.lv_textarea_get_placeholder_text:00000010 $d
+C:\Users\w1785\AppData\Local\Temp\ccTiCGRo.s:1932   .text.lv_textarea_get_label:00000000 $t
+C:\Users\w1785\AppData\Local\Temp\ccTiCGRo.s:1938   .text.lv_textarea_get_label:00000000 lv_textarea_get_label
+C:\Users\w1785\AppData\Local\Temp\ccTiCGRo.s:1971   .text.lv_textarea_set_align:00000000 $t
+C:\Users\w1785\AppData\Local\Temp\ccTiCGRo.s:1977   .text.lv_textarea_set_align:00000000 lv_textarea_set_align
+C:\Users\w1785\AppData\Local\Temp\ccTiCGRo.s:2052   .text.lv_textarea_get_cursor_pos:00000000 $t
+C:\Users\w1785\AppData\Local\Temp\ccTiCGRo.s:2058   .text.lv_textarea_get_cursor_pos:00000000 lv_textarea_get_cursor_pos
+C:\Users\w1785\AppData\Local\Temp\ccTiCGRo.s:2091   .text.refr_cursor_area:00000000 $t
+C:\Users\w1785\AppData\Local\Temp\ccTiCGRo.s:2096   .text.refr_cursor_area:00000000 refr_cursor_area
+C:\Users\w1785\AppData\Local\Temp\ccTiCGRo.s:2689   .text.refr_cursor_area:00000210 $d
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccTiCGRo.s 			page 214
 
 
-C:\Users\w1785\AppData\Local\Temp\cclaFkaS.s:2696   .text.lv_textarea_scroll_to_cusor_pos:00000000 $t
-C:\Users\w1785\AppData\Local\Temp\cclaFkaS.s:2701   .text.lv_textarea_scroll_to_cusor_pos:00000000 lv_textarea_scroll_to_cusor_pos
-C:\Users\w1785\AppData\Local\Temp\cclaFkaS.s:2907   .text.lv_textarea_set_cursor_pos:00000000 $t
-C:\Users\w1785\AppData\Local\Temp\cclaFkaS.s:2913   .text.lv_textarea_set_cursor_pos:00000000 lv_textarea_set_cursor_pos
-C:\Users\w1785\AppData\Local\Temp\cclaFkaS.s:3023   .text.lv_textarea_set_cursor_pos:00000048 $d
-C:\Users\w1785\AppData\Local\Temp\cclaFkaS.s:3028   .text.update_cursor_position_on_click:00000000 $t
-C:\Users\w1785\AppData\Local\Temp\cclaFkaS.s:3033   .text.update_cursor_position_on_click:00000000 update_cursor_position_on_click
-C:\Users\w1785\AppData\Local\Temp\cclaFkaS.s:3418   .text.lv_textarea_constructor:00000000 $t
-C:\Users\w1785\AppData\Local\Temp\cclaFkaS.s:3423   .text.lv_textarea_constructor:00000000 lv_textarea_constructor
-C:\Users\w1785\AppData\Local\Temp\cclaFkaS.s:3570   .text.lv_textarea_constructor:000000c4 $d
-C:\Users\w1785\AppData\Local\Temp\cclaFkaS.s:3581   .text.label_event_cb:00000000 label_event_cb
-C:\Users\w1785\AppData\Local\Temp\cclaFkaS.s:3576   .text.label_event_cb:00000000 $t
-C:\Users\w1785\AppData\Local\Temp\cclaFkaS.s:3654   .text.lv_textarea_get_cursor_click_pos:00000000 $t
-C:\Users\w1785\AppData\Local\Temp\cclaFkaS.s:3660   .text.lv_textarea_get_cursor_click_pos:00000000 lv_textarea_get_cursor_click_pos
-C:\Users\w1785\AppData\Local\Temp\cclaFkaS.s:3694   .text.lv_textarea_get_password_mode:00000000 $t
-C:\Users\w1785\AppData\Local\Temp\cclaFkaS.s:3700   .text.lv_textarea_get_password_mode:00000000 lv_textarea_get_password_mode
-C:\Users\w1785\AppData\Local\Temp\cclaFkaS.s:3734   .rodata.lv_textarea_get_password_bullet.str1.4:00000000 $d
-C:\Users\w1785\AppData\Local\Temp\cclaFkaS.s:3741   .text.lv_textarea_get_password_bullet:00000000 $t
-C:\Users\w1785\AppData\Local\Temp\cclaFkaS.s:3747   .text.lv_textarea_get_password_bullet:00000000 lv_textarea_get_password_bullet
-C:\Users\w1785\AppData\Local\Temp\cclaFkaS.s:3838   .text.lv_textarea_get_password_bullet:00000034 $d
-C:\Users\w1785\AppData\Local\Temp\cclaFkaS.s:3844   .text.pwd_char_hider:00000000 $t
-C:\Users\w1785\AppData\Local\Temp\cclaFkaS.s:3849   .text.pwd_char_hider:00000000 pwd_char_hider
-C:\Users\w1785\AppData\Local\Temp\cclaFkaS.s:3977   .text.pwd_char_hider:0000007c $d
-C:\Users\w1785\AppData\Local\Temp\cclaFkaS.s:3982   .text.auto_hide_characters:00000000 $t
-C:\Users\w1785\AppData\Local\Temp\cclaFkaS.s:3987   .text.auto_hide_characters:00000000 auto_hide_characters
-C:\Users\w1785\AppData\Local\Temp\cclaFkaS.s:4076   .text.auto_hide_characters:00000054 $d
-C:\Users\w1785\AppData\Local\Temp\cclaFkaS.s:4088   .text.pwd_char_hider_anim_completed:00000000 pwd_char_hider_anim_completed
-C:\Users\w1785\AppData\Local\Temp\cclaFkaS.s:4083   .text.pwd_char_hider_anim_completed:00000000 $t
-C:\Users\w1785\AppData\Local\Temp\cclaFkaS.s:4115   .text.lv_textarea_set_password_bullet:00000000 $t
-C:\Users\w1785\AppData\Local\Temp\cclaFkaS.s:4121   .text.lv_textarea_set_password_bullet:00000000 lv_textarea_set_password_bullet
-C:\Users\w1785\AppData\Local\Temp\cclaFkaS.s:4237   .text.lv_textarea_set_password_show_time:00000000 $t
-C:\Users\w1785\AppData\Local\Temp\cclaFkaS.s:4243   .text.lv_textarea_set_password_show_time:00000000 lv_textarea_set_password_show_time
-C:\Users\w1785\AppData\Local\Temp\cclaFkaS.s:4287   .text.lv_textarea_get_one_line:00000000 $t
-C:\Users\w1785\AppData\Local\Temp\cclaFkaS.s:4293   .text.lv_textarea_get_one_line:00000000 lv_textarea_get_one_line
-C:\Users\w1785\AppData\Local\Temp\cclaFkaS.s:4327   .text.lv_textarea_get_accepted_chars:00000000 $t
-C:\Users\w1785\AppData\Local\Temp\cclaFkaS.s:4333   .text.lv_textarea_get_accepted_chars:00000000 lv_textarea_get_accepted_chars
-C:\Users\w1785\AppData\Local\Temp\cclaFkaS.s:4366   .text.lv_textarea_get_max_length:00000000 $t
-C:\Users\w1785\AppData\Local\Temp\cclaFkaS.s:4372   .text.lv_textarea_get_max_length:00000000 lv_textarea_get_max_length
-C:\Users\w1785\AppData\Local\Temp\cclaFkaS.s:4405   .text.lv_textarea_text_is_selected:00000000 $t
-C:\Users\w1785\AppData\Local\Temp\cclaFkaS.s:4411   .text.lv_textarea_text_is_selected:00000000 lv_textarea_text_is_selected
-C:\Users\w1785\AppData\Local\Temp\cclaFkaS.s:4483   .text.lv_textarea_get_text_selection:00000000 $t
-C:\Users\w1785\AppData\Local\Temp\cclaFkaS.s:4489   .text.lv_textarea_get_text_selection:00000000 lv_textarea_get_text_selection
-C:\Users\w1785\AppData\Local\Temp\cclaFkaS.s:4523   .text.lv_textarea_get_password_show_time:00000000 $t
-C:\Users\w1785\AppData\Local\Temp\cclaFkaS.s:4529   .text.lv_textarea_get_password_show_time:00000000 lv_textarea_get_password_show_time
-C:\Users\w1785\AppData\Local\Temp\cclaFkaS.s:4562   .text.lv_textarea_get_current_char:00000000 $t
-C:\Users\w1785\AppData\Local\Temp\cclaFkaS.s:4568   .text.lv_textarea_get_current_char:00000000 lv_textarea_get_current_char
-C:\Users\w1785\AppData\Local\Temp\cclaFkaS.s:4662   .text.lv_textarea_get_current_char:00000038 $d
-C:\Users\w1785\AppData\Local\Temp\cclaFkaS.s:4668   .text.lv_textarea_clear_selection:00000000 $t
-C:\Users\w1785\AppData\Local\Temp\cclaFkaS.s:4674   .text.lv_textarea_clear_selection:00000000 lv_textarea_clear_selection
-C:\Users\w1785\AppData\Local\Temp\cclaFkaS.s:4751   .text.lv_textarea_add_text:00000000 $t
-C:\Users\w1785\AppData\Local\Temp\cclaFkaS.s:4757   .text.lv_textarea_add_text:00000000 lv_textarea_add_text
-C:\Users\w1785\AppData\Local\Temp\cclaFkaS.s:5056   .text.insert_handler:00000000 insert_handler
-C:\Users\w1785\AppData\Local\Temp\cclaFkaS.s:5142   .text.lv_textarea_add_char:00000000 lv_textarea_add_char
-C:\Users\w1785\AppData\Local\Temp\cclaFkaS.s:5043   .text.lv_textarea_add_text:000000f0 $d
-C:\Users\w1785\AppData\Local\Temp\cclaFkaS.s:5051   .text.insert_handler:00000000 $t
-C:\Users\w1785\AppData\Local\Temp\cclaFkaS.s:5131   .text.insert_handler:00000040 $d
-C:\Users\w1785\AppData\Local\Temp\cclaFkaS.s:5136   .text.lv_textarea_add_char:00000000 $t
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\cclaFkaS.s 			page 215
+C:\Users\w1785\AppData\Local\Temp\ccTiCGRo.s:2696   .text.lv_textarea_scroll_to_cusor_pos:00000000 $t
+C:\Users\w1785\AppData\Local\Temp\ccTiCGRo.s:2701   .text.lv_textarea_scroll_to_cusor_pos:00000000 lv_textarea_scroll_to_cusor_pos
+C:\Users\w1785\AppData\Local\Temp\ccTiCGRo.s:2907   .text.lv_textarea_set_cursor_pos:00000000 $t
+C:\Users\w1785\AppData\Local\Temp\ccTiCGRo.s:2913   .text.lv_textarea_set_cursor_pos:00000000 lv_textarea_set_cursor_pos
+C:\Users\w1785\AppData\Local\Temp\ccTiCGRo.s:3023   .text.lv_textarea_set_cursor_pos:00000048 $d
+C:\Users\w1785\AppData\Local\Temp\ccTiCGRo.s:3028   .text.update_cursor_position_on_click:00000000 $t
+C:\Users\w1785\AppData\Local\Temp\ccTiCGRo.s:3033   .text.update_cursor_position_on_click:00000000 update_cursor_position_on_click
+C:\Users\w1785\AppData\Local\Temp\ccTiCGRo.s:3418   .text.lv_textarea_constructor:00000000 $t
+C:\Users\w1785\AppData\Local\Temp\ccTiCGRo.s:3423   .text.lv_textarea_constructor:00000000 lv_textarea_constructor
+C:\Users\w1785\AppData\Local\Temp\ccTiCGRo.s:3570   .text.lv_textarea_constructor:000000c4 $d
+C:\Users\w1785\AppData\Local\Temp\ccTiCGRo.s:3581   .text.label_event_cb:00000000 label_event_cb
+C:\Users\w1785\AppData\Local\Temp\ccTiCGRo.s:3576   .text.label_event_cb:00000000 $t
+C:\Users\w1785\AppData\Local\Temp\ccTiCGRo.s:3654   .text.lv_textarea_get_cursor_click_pos:00000000 $t
+C:\Users\w1785\AppData\Local\Temp\ccTiCGRo.s:3660   .text.lv_textarea_get_cursor_click_pos:00000000 lv_textarea_get_cursor_click_pos
+C:\Users\w1785\AppData\Local\Temp\ccTiCGRo.s:3694   .text.lv_textarea_get_password_mode:00000000 $t
+C:\Users\w1785\AppData\Local\Temp\ccTiCGRo.s:3700   .text.lv_textarea_get_password_mode:00000000 lv_textarea_get_password_mode
+C:\Users\w1785\AppData\Local\Temp\ccTiCGRo.s:3734   .rodata.lv_textarea_get_password_bullet.str1.4:00000000 $d
+C:\Users\w1785\AppData\Local\Temp\ccTiCGRo.s:3741   .text.lv_textarea_get_password_bullet:00000000 $t
+C:\Users\w1785\AppData\Local\Temp\ccTiCGRo.s:3747   .text.lv_textarea_get_password_bullet:00000000 lv_textarea_get_password_bullet
+C:\Users\w1785\AppData\Local\Temp\ccTiCGRo.s:3838   .text.lv_textarea_get_password_bullet:00000034 $d
+C:\Users\w1785\AppData\Local\Temp\ccTiCGRo.s:3844   .text.pwd_char_hider:00000000 $t
+C:\Users\w1785\AppData\Local\Temp\ccTiCGRo.s:3849   .text.pwd_char_hider:00000000 pwd_char_hider
+C:\Users\w1785\AppData\Local\Temp\ccTiCGRo.s:3977   .text.pwd_char_hider:0000007c $d
+C:\Users\w1785\AppData\Local\Temp\ccTiCGRo.s:3982   .text.auto_hide_characters:00000000 $t
+C:\Users\w1785\AppData\Local\Temp\ccTiCGRo.s:3987   .text.auto_hide_characters:00000000 auto_hide_characters
+C:\Users\w1785\AppData\Local\Temp\ccTiCGRo.s:4076   .text.auto_hide_characters:00000054 $d
+C:\Users\w1785\AppData\Local\Temp\ccTiCGRo.s:4088   .text.pwd_char_hider_anim_completed:00000000 pwd_char_hider_anim_completed
+C:\Users\w1785\AppData\Local\Temp\ccTiCGRo.s:4083   .text.pwd_char_hider_anim_completed:00000000 $t
+C:\Users\w1785\AppData\Local\Temp\ccTiCGRo.s:4115   .text.lv_textarea_set_password_bullet:00000000 $t
+C:\Users\w1785\AppData\Local\Temp\ccTiCGRo.s:4121   .text.lv_textarea_set_password_bullet:00000000 lv_textarea_set_password_bullet
+C:\Users\w1785\AppData\Local\Temp\ccTiCGRo.s:4237   .text.lv_textarea_set_password_show_time:00000000 $t
+C:\Users\w1785\AppData\Local\Temp\ccTiCGRo.s:4243   .text.lv_textarea_set_password_show_time:00000000 lv_textarea_set_password_show_time
+C:\Users\w1785\AppData\Local\Temp\ccTiCGRo.s:4287   .text.lv_textarea_get_one_line:00000000 $t
+C:\Users\w1785\AppData\Local\Temp\ccTiCGRo.s:4293   .text.lv_textarea_get_one_line:00000000 lv_textarea_get_one_line
+C:\Users\w1785\AppData\Local\Temp\ccTiCGRo.s:4327   .text.lv_textarea_get_accepted_chars:00000000 $t
+C:\Users\w1785\AppData\Local\Temp\ccTiCGRo.s:4333   .text.lv_textarea_get_accepted_chars:00000000 lv_textarea_get_accepted_chars
+C:\Users\w1785\AppData\Local\Temp\ccTiCGRo.s:4366   .text.lv_textarea_get_max_length:00000000 $t
+C:\Users\w1785\AppData\Local\Temp\ccTiCGRo.s:4372   .text.lv_textarea_get_max_length:00000000 lv_textarea_get_max_length
+C:\Users\w1785\AppData\Local\Temp\ccTiCGRo.s:4405   .text.lv_textarea_text_is_selected:00000000 $t
+C:\Users\w1785\AppData\Local\Temp\ccTiCGRo.s:4411   .text.lv_textarea_text_is_selected:00000000 lv_textarea_text_is_selected
+C:\Users\w1785\AppData\Local\Temp\ccTiCGRo.s:4483   .text.lv_textarea_get_text_selection:00000000 $t
+C:\Users\w1785\AppData\Local\Temp\ccTiCGRo.s:4489   .text.lv_textarea_get_text_selection:00000000 lv_textarea_get_text_selection
+C:\Users\w1785\AppData\Local\Temp\ccTiCGRo.s:4523   .text.lv_textarea_get_password_show_time:00000000 $t
+C:\Users\w1785\AppData\Local\Temp\ccTiCGRo.s:4529   .text.lv_textarea_get_password_show_time:00000000 lv_textarea_get_password_show_time
+C:\Users\w1785\AppData\Local\Temp\ccTiCGRo.s:4562   .text.lv_textarea_get_current_char:00000000 $t
+C:\Users\w1785\AppData\Local\Temp\ccTiCGRo.s:4568   .text.lv_textarea_get_current_char:00000000 lv_textarea_get_current_char
+C:\Users\w1785\AppData\Local\Temp\ccTiCGRo.s:4662   .text.lv_textarea_get_current_char:00000038 $d
+C:\Users\w1785\AppData\Local\Temp\ccTiCGRo.s:4668   .text.lv_textarea_clear_selection:00000000 $t
+C:\Users\w1785\AppData\Local\Temp\ccTiCGRo.s:4674   .text.lv_textarea_clear_selection:00000000 lv_textarea_clear_selection
+C:\Users\w1785\AppData\Local\Temp\ccTiCGRo.s:4751   .text.lv_textarea_add_text:00000000 $t
+C:\Users\w1785\AppData\Local\Temp\ccTiCGRo.s:4757   .text.lv_textarea_add_text:00000000 lv_textarea_add_text
+C:\Users\w1785\AppData\Local\Temp\ccTiCGRo.s:5056   .text.insert_handler:00000000 insert_handler
+C:\Users\w1785\AppData\Local\Temp\ccTiCGRo.s:5142   .text.lv_textarea_add_char:00000000 lv_textarea_add_char
+C:\Users\w1785\AppData\Local\Temp\ccTiCGRo.s:5043   .text.lv_textarea_add_text:000000f0 $d
+C:\Users\w1785\AppData\Local\Temp\ccTiCGRo.s:5051   .text.insert_handler:00000000 $t
+C:\Users\w1785\AppData\Local\Temp\ccTiCGRo.s:5131   .text.insert_handler:00000040 $d
+C:\Users\w1785\AppData\Local\Temp\ccTiCGRo.s:5136   .text.lv_textarea_add_char:00000000 $t
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccTiCGRo.s 			page 215
 
 
-C:\Users\w1785\AppData\Local\Temp\cclaFkaS.s:5393   .text.lv_textarea_add_char:000000d4 $d
-C:\Users\w1785\AppData\Local\Temp\cclaFkaS.s:5399   .text.lv_textarea_delete_char:00000000 $t
-C:\Users\w1785\AppData\Local\Temp\cclaFkaS.s:5405   .text.lv_textarea_delete_char:00000000 lv_textarea_delete_char
-C:\Users\w1785\AppData\Local\Temp\cclaFkaS.s:5599   .text.lv_textarea_delete_char_forward:00000000 $t
-C:\Users\w1785\AppData\Local\Temp\cclaFkaS.s:5605   .text.lv_textarea_delete_char_forward:00000000 lv_textarea_delete_char_forward
-C:\Users\w1785\AppData\Local\Temp\cclaFkaS.s:5683   .text.lv_textarea_set_text:00000000 $t
-C:\Users\w1785\AppData\Local\Temp\cclaFkaS.s:5689   .text.lv_textarea_set_text:00000000 lv_textarea_set_text
-C:\Users\w1785\AppData\Local\Temp\cclaFkaS.s:5930   .text.lv_textarea_set_text:000000c8 $d
-C:\Users\w1785\AppData\Local\Temp\cclaFkaS.s:5937   .text.lv_textarea_set_password_mode:00000000 $t
-C:\Users\w1785\AppData\Local\Temp\cclaFkaS.s:5943   .text.lv_textarea_set_password_mode:00000000 lv_textarea_set_password_mode
-C:\Users\w1785\AppData\Local\Temp\cclaFkaS.s:6089   .text.lv_textarea_set_text_selection:00000000 $t
-C:\Users\w1785\AppData\Local\Temp\cclaFkaS.s:6095   .text.lv_textarea_set_text_selection:00000000 lv_textarea_set_text_selection
-C:\Users\w1785\AppData\Local\Temp\cclaFkaS.s:6154   .text.lv_textarea_cursor_right:00000000 $t
-C:\Users\w1785\AppData\Local\Temp\cclaFkaS.s:6160   .text.lv_textarea_cursor_right:00000000 lv_textarea_cursor_right
-C:\Users\w1785\AppData\Local\Temp\cclaFkaS.s:6209   .text.lv_textarea_cursor_left:00000000 $t
-C:\Users\w1785\AppData\Local\Temp\cclaFkaS.s:6215   .text.lv_textarea_cursor_left:00000000 lv_textarea_cursor_left
-C:\Users\w1785\AppData\Local\Temp\cclaFkaS.s:6277   .text.lv_textarea_cursor_down:00000000 $t
-C:\Users\w1785\AppData\Local\Temp\cclaFkaS.s:6283   .text.lv_textarea_cursor_down:00000000 lv_textarea_cursor_down
-C:\Users\w1785\AppData\Local\Temp\cclaFkaS.s:6448   .text.lv_textarea_cursor_up:00000000 $t
-C:\Users\w1785\AppData\Local\Temp\cclaFkaS.s:6454   .text.lv_textarea_cursor_up:00000000 lv_textarea_cursor_up
-C:\Users\w1785\AppData\Local\Temp\cclaFkaS.s:6600   .text.lv_textarea_event:00000000 $t
-C:\Users\w1785\AppData\Local\Temp\cclaFkaS.s:6605   .text.lv_textarea_event:00000000 lv_textarea_event
-C:\Users\w1785\AppData\Local\Temp\cclaFkaS.s:6666   .text.lv_textarea_event:0000002c $d
-C:\Users\w1785\AppData\Local\Temp\cclaFkaS.s:6717   .text.lv_textarea_event:000000f8 $t
-C:\Users\w1785\AppData\Local\Temp\cclaFkaS.s:6747   .text.lv_textarea_event:00000118 $d
-C:\Users\w1785\AppData\Local\Temp\cclaFkaS.s:6883   .text.lv_textarea_event:000001b4 $d
-C:\Users\w1785\AppData\Local\Temp\cclaFkaS.s:6889   .bss.ta_insert_replace:00000000 $d
-C:\Users\w1785\AppData\Local\Temp\cclaFkaS.s:6896   .rodata.str1.4:00000000 $d
-C:\Users\w1785\AppData\Local\Temp\cclaFkaS.s:6900   .rodata.lv_textarea_class:00000000 $d
-C:\Users\w1785\AppData\Local\Temp\cclaFkaS.s:6766   .text.lv_textarea_event:0000012b $d
-C:\Users\w1785\AppData\Local\Temp\cclaFkaS.s:6766   .text.lv_textarea_event:0000012c $t
+C:\Users\w1785\AppData\Local\Temp\ccTiCGRo.s:5393   .text.lv_textarea_add_char:000000d4 $d
+C:\Users\w1785\AppData\Local\Temp\ccTiCGRo.s:5399   .text.lv_textarea_delete_char:00000000 $t
+C:\Users\w1785\AppData\Local\Temp\ccTiCGRo.s:5405   .text.lv_textarea_delete_char:00000000 lv_textarea_delete_char
+C:\Users\w1785\AppData\Local\Temp\ccTiCGRo.s:5599   .text.lv_textarea_delete_char_forward:00000000 $t
+C:\Users\w1785\AppData\Local\Temp\ccTiCGRo.s:5605   .text.lv_textarea_delete_char_forward:00000000 lv_textarea_delete_char_forward
+C:\Users\w1785\AppData\Local\Temp\ccTiCGRo.s:5683   .text.lv_textarea_set_text:00000000 $t
+C:\Users\w1785\AppData\Local\Temp\ccTiCGRo.s:5689   .text.lv_textarea_set_text:00000000 lv_textarea_set_text
+C:\Users\w1785\AppData\Local\Temp\ccTiCGRo.s:5930   .text.lv_textarea_set_text:000000c8 $d
+C:\Users\w1785\AppData\Local\Temp\ccTiCGRo.s:5937   .text.lv_textarea_set_password_mode:00000000 $t
+C:\Users\w1785\AppData\Local\Temp\ccTiCGRo.s:5943   .text.lv_textarea_set_password_mode:00000000 lv_textarea_set_password_mode
+C:\Users\w1785\AppData\Local\Temp\ccTiCGRo.s:6089   .text.lv_textarea_set_text_selection:00000000 $t
+C:\Users\w1785\AppData\Local\Temp\ccTiCGRo.s:6095   .text.lv_textarea_set_text_selection:00000000 lv_textarea_set_text_selection
+C:\Users\w1785\AppData\Local\Temp\ccTiCGRo.s:6154   .text.lv_textarea_cursor_right:00000000 $t
+C:\Users\w1785\AppData\Local\Temp\ccTiCGRo.s:6160   .text.lv_textarea_cursor_right:00000000 lv_textarea_cursor_right
+C:\Users\w1785\AppData\Local\Temp\ccTiCGRo.s:6209   .text.lv_textarea_cursor_left:00000000 $t
+C:\Users\w1785\AppData\Local\Temp\ccTiCGRo.s:6215   .text.lv_textarea_cursor_left:00000000 lv_textarea_cursor_left
+C:\Users\w1785\AppData\Local\Temp\ccTiCGRo.s:6277   .text.lv_textarea_cursor_down:00000000 $t
+C:\Users\w1785\AppData\Local\Temp\ccTiCGRo.s:6283   .text.lv_textarea_cursor_down:00000000 lv_textarea_cursor_down
+C:\Users\w1785\AppData\Local\Temp\ccTiCGRo.s:6448   .text.lv_textarea_cursor_up:00000000 $t
+C:\Users\w1785\AppData\Local\Temp\ccTiCGRo.s:6454   .text.lv_textarea_cursor_up:00000000 lv_textarea_cursor_up
+C:\Users\w1785\AppData\Local\Temp\ccTiCGRo.s:6600   .text.lv_textarea_event:00000000 $t
+C:\Users\w1785\AppData\Local\Temp\ccTiCGRo.s:6605   .text.lv_textarea_event:00000000 lv_textarea_event
+C:\Users\w1785\AppData\Local\Temp\ccTiCGRo.s:6666   .text.lv_textarea_event:0000002c $d
+C:\Users\w1785\AppData\Local\Temp\ccTiCGRo.s:6717   .text.lv_textarea_event:000000f8 $t
+C:\Users\w1785\AppData\Local\Temp\ccTiCGRo.s:6747   .text.lv_textarea_event:00000118 $d
+C:\Users\w1785\AppData\Local\Temp\ccTiCGRo.s:6883   .text.lv_textarea_event:000001b4 $d
+C:\Users\w1785\AppData\Local\Temp\ccTiCGRo.s:6889   .bss.ta_insert_replace:00000000 $d
+C:\Users\w1785\AppData\Local\Temp\ccTiCGRo.s:6896   .rodata.str1.4:00000000 $d
+C:\Users\w1785\AppData\Local\Temp\ccTiCGRo.s:6900   .rodata.lv_textarea_class:00000000 $d
+C:\Users\w1785\AppData\Local\Temp\ccTiCGRo.s:6766   .text.lv_textarea_event:0000012b $d
+C:\Users\w1785\AppData\Local\Temp\ccTiCGRo.s:6766   .text.lv_textarea_event:0000012c $t
 
 UNDEFINED SYMBOLS
 lv_anim_delete
@@ -12868,7 +12868,7 @@ lv_obj_init_draw_rect_dsc
 lv_draw_rect
 lv_memcpy
 lv_color_eq
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\cclaFkaS.s 			page 216
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccTiCGRo.s 			page 216
 
 
 lv_text_encoded_size
@@ -12928,7 +12928,7 @@ lv_label_set_text_selection_end
 lv_label_ins_text
 lv_text_ins
 lv_obj_send_event
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\cclaFkaS.s 			page 217
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccTiCGRo.s 			page 217
 
 
 lv_text_unicode_to_encoded

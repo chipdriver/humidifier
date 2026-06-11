@@ -1,4 +1,4 @@
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccDhU1dv.s 			page 1
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccM97vYx.s 			page 1
 
 
    1              		.cpu cortex-m4
@@ -20,781 +20,2444 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccDhU1dv.s 			page 1
   17              	.Ltext0:
   18              		.cfi_sections	.debug_frame
   19              		.file 1 "Services/Src/display_service.c"
-  20              		.section	.text.DisplayService_FloatToX10,"ax",%progbits
+  20              		.section	.text.DisplayService_GetUIFont,"ax",%progbits
   21              		.align	1
   22              		.syntax unified
   23              		.thumb
   24              		.thumb_func
-  26              	DisplayService_FloatToX10:
-  27              	.LVL0:
-  28              	.LFB135:
+  26              	DisplayService_GetUIFont:
+  27              	.LFB330:
    1:Services/Src/display_service.c **** #include "display_service.h"
-   2:Services/Src/display_service.c **** #include "sensor_service.h"
-   3:Services/Src/display_service.c **** #include "st7789.h"
-   4:Services/Src/display_service.c **** #include <stdio.h>
-   5:Services/Src/display_service.c **** 
-   6:Services/Src/display_service.c **** #define DISPLAY_TITLE_X        10U
-   7:Services/Src/display_service.c **** #define DISPLAY_TITLE_Y        20U
-   8:Services/Src/display_service.c **** #define DISPLAY_TEMP_X         10U
-   9:Services/Src/display_service.c **** #define DISPLAY_TEMP_Y         80U
-  10:Services/Src/display_service.c **** #define DISPLAY_HUMI_X         10U
-  11:Services/Src/display_service.c **** #define DISPLAY_HUMI_Y         110U
-  12:Services/Src/display_service.c **** #define DISPLAY_STATUS_X       10U
-  13:Services/Src/display_service.c **** #define DISPLAY_STATUS_Y       150U
-  14:Services/Src/display_service.c **** #define DISPLAY_TEXT_AREA_Y    60U
-  15:Services/Src/display_service.c **** #define DISPLAY_TEXT_AREA_H    120U
-  16:Services/Src/display_service.c **** 
-  17:Services/Src/display_service.c **** /**
-  18:Services/Src/display_service.c ****  * @brief 把浮点数放大 10 倍后转换为整数，便于不用 float printf 显示 1 位小�
-  19:Services/Src/display_service.c ****  * @param value 要转换的浮点数。
-  20:Services/Src/display_service.c ****  * @retval 放大 10 倍后的整数值。
-  21:Services/Src/display_service.c ****  */
-  22:Services/Src/display_service.c **** static int DisplayService_FloatToX10(float value)
-  23:Services/Src/display_service.c **** {
-  29              		.loc 1 23 1 view -0
-  30              		.cfi_startproc
-  31              		@ args = 0, pretend = 0, frame = 0
-  32              		@ frame_needed = 0, uses_anonymous_args = 0
-  33              		@ link register save eliminated.
-  24:Services/Src/display_service.c ****   /* 正数加 0.5，负数减 0.5，用来做简单四舍五入。 */
-  25:Services/Src/display_service.c ****   if (value >= 0.0f)
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccDhU1dv.s 			page 2
+   2:Services/Src/display_service.c **** 
+   3:Services/Src/display_service.c **** #include "display_ui_format.h"
+   4:Services/Src/display_service.c **** #include "display_ui_layout.h"
+   5:Services/Src/display_service.c **** #include "humidifier_symbol_font.h"
+   6:Services/Src/display_service.c **** #include "lv_port_disp.h"
+   7:Services/Src/display_service.c **** #include "sensor_service.h"
+   8:Services/Src/display_service.c **** #include "st7789.h"
+   9:Services/Src/display_service.c **** 
+  10:Services/Src/display_service.c **** #define UI_TARGET_HUMIDITY      60
+  11:Services/Src/display_service.c **** #define UI_TARGET_HUMIDITY_MIN  30
+  12:Services/Src/display_service.c **** #define UI_TARGET_HUMIDITY_MAX  90
+  13:Services/Src/display_service.c **** #define UI_LINE_TEXT_SIZE       24U
+  14:Services/Src/display_service.c **** 
+  15:Services/Src/display_service.c **** #define UI_COLOR_BG             0x03070CU
+  16:Services/Src/display_service.c **** #define UI_COLOR_CARD_BG        0x07111FU
+  17:Services/Src/display_service.c **** #define UI_COLOR_CARD_BORDER    0x245070U
+  18:Services/Src/display_service.c **** #define UI_COLOR_TEXT_MAIN      0xF4F9FFU
+  19:Services/Src/display_service.c **** #define UI_COLOR_BLUE           0x3F86FFU
+  20:Services/Src/display_service.c **** #define UI_COLOR_GREEN          0x76D94CU
+  21:Services/Src/display_service.c **** #define UI_COLOR_BAR_BG         0x2D343CU
+  22:Services/Src/display_service.c **** #define UI_COLOR_ERROR          0xFF4D4DU
+  23:Services/Src/display_service.c **** 
+  24:Services/Src/display_service.c **** #if (DISPLAY_UI_SCREEN_W != ST7789_WIDTH) || (DISPLAY_UI_SCREEN_H != ST7789_HEIGHT)
+  25:Services/Src/display_service.c **** #error "Display UI layout must match ST7789 panel resolution."
+  26:Services/Src/display_service.c **** #endif
+  27:Services/Src/display_service.c **** 
+  28:Services/Src/display_service.c **** static lv_obj_t *s_temp_label;
+  29:Services/Src/display_service.c **** static lv_obj_t *s_humi_label;
+  30:Services/Src/display_service.c **** static lv_obj_t *s_mode_label;
+  31:Services/Src/display_service.c **** static lv_obj_t *s_target_label;
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccM97vYx.s 			page 2
 
 
-  34              		.loc 1 25 3 view .LVU1
-  35              		.loc 1 25 6 is_stmt 0 view .LVU2
-  36 0000 B5EEC00A 		vcmpe.f32	s0, #0
-  37 0004 F1EE10FA 		vmrs	APSR_nzcv, FPSCR
-  38 0008 0CDA     		bge	.L7
-  26:Services/Src/display_service.c ****   {
-  27:Services/Src/display_service.c ****     return (int)((value * 10.0f) + 0.5f);
-  28:Services/Src/display_service.c ****   }
-  29:Services/Src/display_service.c **** 
-  30:Services/Src/display_service.c ****   /* 负数路径使用 -0.5f，避免 -1.26 直接截断成 -12。 */
-  31:Services/Src/display_service.c ****   return (int)((value * 10.0f) - 0.5f);
-  39              		.loc 1 31 3 is_stmt 1 view .LVU3
-  40              		.loc 1 31 23 is_stmt 0 view .LVU4
-  41 000a F2EE047A 		vmov.f32	s15, #1.0e+1
-  42 000e 20EE270A 		vmul.f32	s0, s0, s15
-  43              	.LVL1:
-  44              		.loc 1 31 32 view .LVU5
-  45 0012 F6EE007A 		vmov.f32	s15, #5.0e-1
-  46 0016 30EE670A 		vsub.f32	s0, s0, s15
-  47              		.loc 1 31 10 view .LVU6
-  48 001a BDEEC00A 		vcvt.s32.f32	s0, s0
-  49              	.L1:
-  32:Services/Src/display_service.c **** }
-  50              		.loc 1 32 1 view .LVU7
-  51 001e 10EE100A 		vmov	r0, s0	@ int
-  52 0022 7047     		bx	lr
-  53              	.LVL2:
-  54              	.L7:
-  27:Services/Src/display_service.c ****   }
-  55              		.loc 1 27 5 is_stmt 1 view .LVU8
-  27:Services/Src/display_service.c ****   }
-  56              		.loc 1 27 25 is_stmt 0 view .LVU9
-  57 0024 F2EE047A 		vmov.f32	s15, #1.0e+1
-  58 0028 20EE270A 		vmul.f32	s0, s0, s15
-  59              	.LVL3:
-  27:Services/Src/display_service.c ****   }
-  60              		.loc 1 27 34 view .LVU10
-  61 002c F6EE007A 		vmov.f32	s15, #5.0e-1
-  62 0030 30EE270A 		vadd.f32	s0, s0, s15
-  27:Services/Src/display_service.c ****   }
-  63              		.loc 1 27 12 view .LVU11
-  64 0034 BDEEC00A 		vcvt.s32.f32	s0, s0
-  65 0038 F1E7     		b	.L1
-  66              		.cfi_endproc
-  67              	.LFE135:
-  69              		.section	.rodata.DisplayService_FormatValue.str1.4,"aMS",%progbits,1
-  70              		.align	2
-  71              	.LC0:
-  72 0000 25733A20 		.ascii	"%s: %d.%d %s\000"
-  72      25642E25 
-  72      64202573 
-  72      00
-  73              		.section	.text.DisplayService_FormatValue,"ax",%progbits
-  74              		.align	1
-  75              		.syntax unified
-  76              		.thumb
-  77              		.thumb_func
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccDhU1dv.s 			page 3
-
-
-  79              	DisplayService_FormatValue:
-  80              	.LVL4:
-  81              	.LFB136:
+  32:Services/Src/display_service.c **** static lv_obj_t *s_target_bar;
   33:Services/Src/display_service.c **** 
-  34:Services/Src/display_service.c **** /**
-  35:Services/Src/display_service.c ****  * @brief 生成带 1 位小数的整数格式字符串。
-  36:Services/Src/display_service.c ****  * @param buffer 字符串输出缓冲区。
-  37:Services/Src/display_service.c ****  * @param buffer_size 输出缓冲区大小。
-  38:Services/Src/display_service.c ****  * @param prefix 显示前缀，例如 "Temp"。
-  39:Services/Src/display_service.c ****  * @param value 要显示的浮点数。
-  40:Services/Src/display_service.c ****  * @param suffix 显示后缀，例如 "C" 或 "%"。
-  41:Services/Src/display_service.c ****  * @retval 无
-  42:Services/Src/display_service.c ****  */
-  43:Services/Src/display_service.c **** static void DisplayService_FormatValue(char *buffer, uint32_t buffer_size, const char *prefix, floa
+  34:Services/Src/display_service.c **** static lv_font_t s_ui_font_16;
+  35:Services/Src/display_service.c **** static lv_font_t s_num_font;
+  36:Services/Src/display_service.c **** static uint8_t s_display_ready;
+  37:Services/Src/display_service.c **** 
+  38:Services/Src/display_service.c **** static lv_color_t DisplayService_Color(uint32_t color)
+  39:Services/Src/display_service.c **** {
+  40:Services/Src/display_service.c ****   return lv_color_hex(color);
+  41:Services/Src/display_service.c **** }
+  42:Services/Src/display_service.c **** 
+  43:Services/Src/display_service.c **** static const lv_font_t *DisplayService_GetUIFont(void)
   44:Services/Src/display_service.c **** {
-  82              		.loc 1 44 1 is_stmt 1 view -0
-  83              		.cfi_startproc
-  84              		@ args = 0, pretend = 0, frame = 0
-  85              		@ frame_needed = 0, uses_anonymous_args = 0
-  86              		.loc 1 44 1 is_stmt 0 view .LVU13
-  87 0000 2DE9F041 		push	{r4, r5, r6, r7, r8, lr}
-  88              	.LCFI0:
-  89              		.cfi_def_cfa_offset 24
-  90              		.cfi_offset 4, -24
-  91              		.cfi_offset 5, -20
-  92              		.cfi_offset 6, -16
-  93              		.cfi_offset 7, -12
-  94              		.cfi_offset 8, -8
-  95              		.cfi_offset 14, -4
-  96 0004 84B0     		sub	sp, sp, #16
-  97              	.LCFI1:
-  98              		.cfi_def_cfa_offset 40
-  99 0006 0646     		mov	r6, r0
- 100 0008 0F46     		mov	r7, r1
- 101 000a 9046     		mov	r8, r2
- 102 000c 1C46     		mov	r4, r3
-  45:Services/Src/display_service.c ****   /* 把浮点数转换为放大 10 倍后的整数。 */
-  46:Services/Src/display_service.c ****   int value_x10 = DisplayService_FloatToX10(value);
- 103              		.loc 1 46 3 is_stmt 1 view .LVU14
- 104              		.loc 1 46 19 is_stmt 0 view .LVU15
- 105 000e FFF7FEFF 		bl	DisplayService_FloatToX10
- 106              	.LVL5:
+  28              		.loc 1 44 1 view -0
+  29              		.cfi_startproc
+  30              		@ args = 0, pretend = 0, frame = 0
+  31              		@ frame_needed = 0, uses_anonymous_args = 0
+  32              		@ link register save eliminated.
+  45:Services/Src/display_service.c ****   return &s_ui_font_16;
+  33              		.loc 1 45 3 view .LVU1
+  46:Services/Src/display_service.c **** }
+  34              		.loc 1 46 1 is_stmt 0 view .LVU2
+  35 0000 0048     		ldr	r0, .L2
+  36 0002 7047     		bx	lr
+  37              	.L3:
+  38              		.align	2
+  39              	.L2:
+  40 0004 00000000 		.word	s_ui_font_16
+  41              		.cfi_endproc
+  42              	.LFE330:
+  44              		.section	.text.DisplayService_GetNumFont,"ax",%progbits
+  45              		.align	1
+  46              		.syntax unified
+  47              		.thumb
+  48              		.thumb_func
+  50              	DisplayService_GetNumFont:
+  51              	.LFB331:
   47:Services/Src/display_service.c **** 
-  48:Services/Src/display_service.c ****   /* 计算整数部分。 */
-  49:Services/Src/display_service.c ****   int value_int = value_x10 / 10;
- 107              		.loc 1 49 3 is_stmt 1 view .LVU16
- 108              		.loc 1 49 7 is_stmt 0 view .LVU17
- 109 0012 0C4B     		ldr	r3, .L12
- 110 0014 83FB0023 		smull	r2, r3, r3, r0
- 111 0018 C517     		asrs	r5, r0, #31
- 112 001a C5EBA305 		rsb	r5, r5, r3, asr #2
- 113              	.LVL6:
-  50:Services/Src/display_service.c **** 
-  51:Services/Src/display_service.c ****   /* 计算小数部分。 */
-  52:Services/Src/display_service.c ****   int value_dec = value_x10 % 10;
- 114              		.loc 1 52 3 is_stmt 1 view .LVU18
- 115              		.loc 1 52 7 is_stmt 0 view .LVU19
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccDhU1dv.s 			page 4
+  48:Services/Src/display_service.c **** static const lv_font_t *DisplayService_GetNumFont(void)
+  49:Services/Src/display_service.c **** {
+  52              		.loc 1 49 1 is_stmt 1 view -0
+  53              		.cfi_startproc
+  54              		@ args = 0, pretend = 0, frame = 0
+  55              		@ frame_needed = 0, uses_anonymous_args = 0
+  56              		@ link register save eliminated.
+  50:Services/Src/display_service.c ****   return &s_num_font;
+  57              		.loc 1 50 3 view .LVU4
+  51:Services/Src/display_service.c **** }
+  58              		.loc 1 51 1 is_stmt 0 view .LVU5
+  59 0000 0048     		ldr	r0, .L5
+  60 0002 7047     		bx	lr
+  61              	.L6:
+  62              		.align	2
+  63              	.L5:
+  64 0004 00000000 		.word	s_num_font
+  65              		.cfi_endproc
+  66              	.LFE331:
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccM97vYx.s 			page 3
 
 
- 116 001e 05EB8503 		add	r3, r5, r5, lsl #2
- 117              	.LVL7:
-  53:Services/Src/display_service.c **** 
-  54:Services/Src/display_service.c ****   /* 如果小数部分为负数，就取正，显示时只让整数部分带负号。 */
-  55:Services/Src/display_service.c ****   if (value_dec < 0)
- 118              		.loc 1 55 3 is_stmt 1 view .LVU20
- 119              		.loc 1 55 6 is_stmt 0 view .LVU21
- 120 0022 B0EB4303 		subs	r3, r0, r3, lsl #1
- 121              	.LVL8:
- 122              		.loc 1 55 6 view .LVU22
- 123 0026 0BD4     		bmi	.L11
- 124              	.LVL9:
+  68              		.section	.text.DisplayService_InitFonts,"ax",%progbits
+  69              		.align	1
+  70              		.syntax unified
+  71              		.thumb
+  72              		.thumb_func
+  74              	DisplayService_InitFonts:
+  75              	.LFB332:
+  52:Services/Src/display_service.c **** 
+  53:Services/Src/display_service.c **** static void DisplayService_InitFonts(void)
+  54:Services/Src/display_service.c **** {
+  76              		.loc 1 54 1 is_stmt 1 view -0
+  77              		.cfi_startproc
+  78              		@ args = 0, pretend = 0, frame = 0
+  79              		@ frame_needed = 0, uses_anonymous_args = 0
+  80 0000 70B5     		push	{r4, r5, r6, lr}
+  81              	.LCFI0:
+  82              		.cfi_def_cfa_offset 16
+  83              		.cfi_offset 4, -16
+  84              		.cfi_offset 5, -12
+  85              		.cfi_offset 6, -8
+  86              		.cfi_offset 14, -4
+  55:Services/Src/display_service.c **** #if LV_FONT_SOURCE_HAN_SANS_SC_16_CJK
+  56:Services/Src/display_service.c ****   s_ui_font_16 = lv_font_source_han_sans_sc_16_cjk;
+  57:Services/Src/display_service.c **** #else
+  58:Services/Src/display_service.c ****   s_ui_font_16 = lv_font_montserrat_14;
+  87              		.loc 1 58 3 view .LVU7
+  88              		.loc 1 58 16 is_stmt 0 view .LVU8
+  89 0002 0E4E     		ldr	r6, .L9
+  90 0004 3446     		mov	r4, r6
+  91 0006 0E4D     		ldr	r5, .L9+4
+  92 0008 0FCD     		ldmia	r5!, {r0, r1, r2, r3}
+  93 000a 0FC4     		stmia	r4!, {r0, r1, r2, r3}
+  94 000c 0FCD     		ldmia	r5!, {r0, r1, r2, r3}
+  95 000e 0FC4     		stmia	r4!, {r0, r1, r2, r3}
+  96 0010 2B68     		ldr	r3, [r5]
+  97 0012 2360     		str	r3, [r4]
+  59:Services/Src/display_service.c **** #endif
+  60:Services/Src/display_service.c ****   s_ui_font_16.fallback = HumidifierSymbolFont_Get16();
+  98              		.loc 1 60 3 is_stmt 1 view .LVU9
+  99              		.loc 1 60 27 is_stmt 0 view .LVU10
+ 100 0014 FFF7FEFF 		bl	HumidifierSymbolFont_Get16
+ 101              	.LVL0:
+ 102              		.loc 1 60 25 discriminator 1 view .LVU11
+ 103 0018 F061     		str	r0, [r6, #28]
+  61:Services/Src/display_service.c **** 
+  62:Services/Src/display_service.c **** #if LV_FONT_MONTSERRAT_16
+  63:Services/Src/display_service.c ****   s_num_font = lv_font_montserrat_16;
+ 104              		.loc 1 63 3 is_stmt 1 view .LVU12
+ 105              		.loc 1 63 14 is_stmt 0 view .LVU13
+ 106 001a 0A4D     		ldr	r5, .L9+8
+ 107 001c AC46     		mov	ip, r5
+ 108 001e 0A4C     		ldr	r4, .L9+12
+ 109 0020 0FCC     		ldmia	r4!, {r0, r1, r2, r3}
+ 110 0022 ACE80F00 		stmia	ip!, {r0, r1, r2, r3}
+ 111 0026 0FCC     		ldmia	r4!, {r0, r1, r2, r3}
+ 112 0028 ACE80F00 		stmia	ip!, {r0, r1, r2, r3}
+ 113 002c 2368     		ldr	r3, [r4]
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccM97vYx.s 			page 4
+
+
+ 114 002e CCF80030 		str	r3, [ip]
+  64:Services/Src/display_service.c **** #else
+  65:Services/Src/display_service.c ****   s_num_font = lv_font_montserrat_14;
+  66:Services/Src/display_service.c **** #endif
+  67:Services/Src/display_service.c ****   s_num_font.fallback = HumidifierSymbolFont_Get16();
+ 115              		.loc 1 67 3 is_stmt 1 view .LVU14
+ 116              		.loc 1 67 25 is_stmt 0 view .LVU15
+ 117 0032 FFF7FEFF 		bl	HumidifierSymbolFont_Get16
+ 118              	.LVL1:
+ 119              		.loc 1 67 23 discriminator 1 view .LVU16
+ 120 0036 E861     		str	r0, [r5, #28]
+  68:Services/Src/display_service.c **** }
+ 121              		.loc 1 68 1 view .LVU17
+ 122 0038 70BD     		pop	{r4, r5, r6, pc}
+ 123              	.L10:
+ 124 003a 00BF     		.align	2
  125              	.L9:
-  56:Services/Src/display_service.c ****   {
-  57:Services/Src/display_service.c ****     value_dec = -value_dec;
-  58:Services/Src/display_service.c ****   }
-  59:Services/Src/display_service.c **** 
-  60:Services/Src/display_service.c ****   /* 使用整数 snprintf，避免依赖 printf 的 float 支持。 */
-  61:Services/Src/display_service.c ****   (void)snprintf(buffer, buffer_size, "%s: %d.%d %s", prefix, value_int, value_dec, suffix);
- 126              		.loc 1 61 3 is_stmt 1 view .LVU23
- 127              		.loc 1 61 9 is_stmt 0 view .LVU24
- 128 0028 0294     		str	r4, [sp, #8]
- 129 002a 0193     		str	r3, [sp, #4]
- 130 002c 0095     		str	r5, [sp]
- 131 002e 4346     		mov	r3, r8
- 132              	.LVL10:
- 133              		.loc 1 61 9 view .LVU25
- 134 0030 054A     		ldr	r2, .L12+4
- 135 0032 3946     		mov	r1, r7
- 136 0034 3046     		mov	r0, r6
- 137              	.LVL11:
- 138              		.loc 1 61 9 view .LVU26
- 139 0036 FFF7FEFF 		bl	snprintf
- 140              	.LVL12:
-  62:Services/Src/display_service.c **** }
- 141              		.loc 1 62 1 view .LVU27
- 142 003a 04B0     		add	sp, sp, #16
- 143              	.LCFI2:
- 144              		.cfi_remember_state
- 145              		.cfi_def_cfa_offset 24
- 146              		@ sp needed
- 147 003c BDE8F081 		pop	{r4, r5, r6, r7, r8, pc}
- 148              	.LVL13:
- 149              	.L11:
- 150              	.LCFI3:
- 151              		.cfi_restore_state
-  57:Services/Src/display_service.c ****   }
- 152              		.loc 1 57 5 is_stmt 1 view .LVU28
-  57:Services/Src/display_service.c ****   }
- 153              		.loc 1 57 15 is_stmt 0 view .LVU29
- 154 0040 5B42     		rsbs	r3, r3, #0
- 155              	.LVL14:
-  57:Services/Src/display_service.c ****   }
- 156              		.loc 1 57 15 view .LVU30
- 157 0042 F1E7     		b	.L9
- 158              	.L13:
- 159              		.align	2
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccDhU1dv.s 			page 5
+ 126 003c 00000000 		.word	s_ui_font_16
+ 127 0040 00000000 		.word	lv_font_montserrat_14
+ 128 0044 00000000 		.word	s_num_font
+ 129 0048 00000000 		.word	lv_font_montserrat_16
+ 130              		.cfi_endproc
+ 131              	.LFE332:
+ 133              		.section	.text.lv_obj_set_style_pad_all,"ax",%progbits
+ 134              		.align	1
+ 135              		.syntax unified
+ 136              		.thumb
+ 137              		.thumb_func
+ 139              	lv_obj_set_style_pad_all:
+ 140              	.LVL2:
+ 141              	.LFB307:
+ 142              		.file 2 "Middlewares/LVGL/lvgl/src/core/lv_obj_style.h"
+   1:Middlewares/LVGL/lvgl/src/core/lv_obj_style.h **** /**
+   2:Middlewares/LVGL/lvgl/src/core/lv_obj_style.h ****  * @file lv_obj_style.h
+   3:Middlewares/LVGL/lvgl/src/core/lv_obj_style.h ****  *
+   4:Middlewares/LVGL/lvgl/src/core/lv_obj_style.h ****  */
+   5:Middlewares/LVGL/lvgl/src/core/lv_obj_style.h **** 
+   6:Middlewares/LVGL/lvgl/src/core/lv_obj_style.h **** #ifndef LV_OBJ_STYLE_H
+   7:Middlewares/LVGL/lvgl/src/core/lv_obj_style.h **** #define LV_OBJ_STYLE_H
+   8:Middlewares/LVGL/lvgl/src/core/lv_obj_style.h **** 
+   9:Middlewares/LVGL/lvgl/src/core/lv_obj_style.h **** #ifdef __cplusplus
+  10:Middlewares/LVGL/lvgl/src/core/lv_obj_style.h **** extern "C" {
+  11:Middlewares/LVGL/lvgl/src/core/lv_obj_style.h **** #endif
+  12:Middlewares/LVGL/lvgl/src/core/lv_obj_style.h **** 
+  13:Middlewares/LVGL/lvgl/src/core/lv_obj_style.h **** /*********************
+  14:Middlewares/LVGL/lvgl/src/core/lv_obj_style.h ****  *      INCLUDES
+  15:Middlewares/LVGL/lvgl/src/core/lv_obj_style.h ****  *********************/
+  16:Middlewares/LVGL/lvgl/src/core/lv_obj_style.h **** #include "../misc/lv_bidi.h"
+  17:Middlewares/LVGL/lvgl/src/core/lv_obj_style.h **** #include "../misc/lv_style.h"
+  18:Middlewares/LVGL/lvgl/src/core/lv_obj_style.h **** #include "../misc/lv_types.h"
+  19:Middlewares/LVGL/lvgl/src/core/lv_obj_style.h **** 
+  20:Middlewares/LVGL/lvgl/src/core/lv_obj_style.h **** /*********************
+  21:Middlewares/LVGL/lvgl/src/core/lv_obj_style.h ****  *      DEFINES
+  22:Middlewares/LVGL/lvgl/src/core/lv_obj_style.h ****  *********************/
+  23:Middlewares/LVGL/lvgl/src/core/lv_obj_style.h **** 
+  24:Middlewares/LVGL/lvgl/src/core/lv_obj_style.h **** /**********************
+  25:Middlewares/LVGL/lvgl/src/core/lv_obj_style.h ****  *      TYPEDEFS
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccM97vYx.s 			page 5
 
 
- 160              	.L12:
- 161 0044 67666666 		.word	1717986919
- 162 0048 00000000 		.word	.LC0
- 163              		.cfi_endproc
- 164              	.LFE136:
- 166              		.section	.rodata.DisplayService_ShowBootScreen.str1.4,"aMS",%progbits,1
- 167              		.align	2
- 168              	.LC1:
- 169 0000 41485432 		.ascii	"AHT20 LCD Test\000"
- 169      30204C43 
- 169      44205465 
- 169      737400
- 170 000f 00       		.align	2
- 171              	.LC2:
- 172 0010 53746172 		.ascii	"Starting...\000"
- 172      74696E67 
- 172      2E2E2E00 
- 173              		.section	.text.DisplayService_ShowBootScreen,"ax",%progbits
- 174              		.align	1
- 175              		.global	DisplayService_ShowBootScreen
- 176              		.syntax unified
- 177              		.thumb
- 178              		.thumb_func
- 180              	DisplayService_ShowBootScreen:
- 181              	.LFB138:
-  63:Services/Src/display_service.c **** 
-  64:Services/Src/display_service.c **** /**
-  65:Services/Src/display_service.c ****  * @brief 初始化显示服务。
-  66:Services/Src/display_service.c ****  * @retval 无
-  67:Services/Src/display_service.c ****  */
-  68:Services/Src/display_service.c **** void DisplayService_Init(void)
-  69:Services/Src/display_service.c **** {
-  70:Services/Src/display_service.c ****   /* 显示服务通过设备驱动层初始化 ST7789 屏幕。 */
-  71:Services/Src/display_service.c ****   ST7789_Init();
-  72:Services/Src/display_service.c **** 
-  73:Services/Src/display_service.c ****   /* 初始化完成后先清为黑色背景。 */
-  74:Services/Src/display_service.c ****   ST7789_FillScreen(ST7789_COLOR_BLACK);
-  75:Services/Src/display_service.c **** 
-  76:Services/Src/display_service.c ****   /* 显示简单启动页面。 */
-  77:Services/Src/display_service.c ****   DisplayService_ShowBootScreen();
-  78:Services/Src/display_service.c **** }
-  79:Services/Src/display_service.c **** 
-  80:Services/Src/display_service.c **** /**
-  81:Services/Src/display_service.c ****  * @brief 显示启动页面。
-  82:Services/Src/display_service.c ****  * @retval 无
-  83:Services/Src/display_service.c ****  */
-  84:Services/Src/display_service.c **** void DisplayService_ShowBootScreen(void)
-  85:Services/Src/display_service.c **** {
- 182              		.loc 1 85 1 is_stmt 1 view -0
- 183              		.cfi_startproc
- 184              		@ args = 0, pretend = 0, frame = 0
- 185              		@ frame_needed = 0, uses_anonymous_args = 0
- 186 0000 10B5     		push	{r4, lr}
- 187              	.LCFI4:
- 188              		.cfi_def_cfa_offset 8
- 189              		.cfi_offset 4, -8
- 190              		.cfi_offset 14, -4
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccDhU1dv.s 			page 6
+  26:Middlewares/LVGL/lvgl/src/core/lv_obj_style.h ****  **********************/
+  27:Middlewares/LVGL/lvgl/src/core/lv_obj_style.h **** 
+  28:Middlewares/LVGL/lvgl/src/core/lv_obj_style.h **** /**
+  29:Middlewares/LVGL/lvgl/src/core/lv_obj_style.h ****  * Possible states of a widget.
+  30:Middlewares/LVGL/lvgl/src/core/lv_obj_style.h ****  * OR-ed values are possible
+  31:Middlewares/LVGL/lvgl/src/core/lv_obj_style.h ****  */
+  32:Middlewares/LVGL/lvgl/src/core/lv_obj_style.h **** typedef enum {
+  33:Middlewares/LVGL/lvgl/src/core/lv_obj_style.h ****     LV_STATE_DEFAULT     = 0,
+  34:Middlewares/LVGL/lvgl/src/core/lv_obj_style.h ****     LV_STATE_ALT         = 1 << 0,
+  35:Middlewares/LVGL/lvgl/src/core/lv_obj_style.h ****     /*1 reserved*/
+  36:Middlewares/LVGL/lvgl/src/core/lv_obj_style.h ****     LV_STATE_CHECKED     = 1 << 2,
+  37:Middlewares/LVGL/lvgl/src/core/lv_obj_style.h ****     LV_STATE_FOCUSED     = 1 << 3,
+  38:Middlewares/LVGL/lvgl/src/core/lv_obj_style.h ****     LV_STATE_FOCUS_KEY   = 1 << 4,
+  39:Middlewares/LVGL/lvgl/src/core/lv_obj_style.h ****     LV_STATE_EDITED      = 1 << 5,
+  40:Middlewares/LVGL/lvgl/src/core/lv_obj_style.h ****     LV_STATE_HOVERED     = 1 << 6,
+  41:Middlewares/LVGL/lvgl/src/core/lv_obj_style.h ****     LV_STATE_PRESSED     = 1 << 7,
+  42:Middlewares/LVGL/lvgl/src/core/lv_obj_style.h ****     LV_STATE_SCROLLED    = 1 << 8,
+  43:Middlewares/LVGL/lvgl/src/core/lv_obj_style.h ****     LV_STATE_DISABLED    = 1 << 9,
+  44:Middlewares/LVGL/lvgl/src/core/lv_obj_style.h ****     /*2 reserved*/
+  45:Middlewares/LVGL/lvgl/src/core/lv_obj_style.h ****     LV_STATE_USER_1      = 1 << 12,
+  46:Middlewares/LVGL/lvgl/src/core/lv_obj_style.h ****     LV_STATE_USER_2      = 1 << 13,
+  47:Middlewares/LVGL/lvgl/src/core/lv_obj_style.h ****     LV_STATE_USER_3      = 1 << 14,
+  48:Middlewares/LVGL/lvgl/src/core/lv_obj_style.h ****     LV_STATE_USER_4      = 1 << 15,
+  49:Middlewares/LVGL/lvgl/src/core/lv_obj_style.h **** 
+  50:Middlewares/LVGL/lvgl/src/core/lv_obj_style.h ****     LV_STATE_ANY         = 0xFFFF,  /**< Special value can be used in some functions to target all 
+  51:Middlewares/LVGL/lvgl/src/core/lv_obj_style.h **** } lv_state_t;
+  52:Middlewares/LVGL/lvgl/src/core/lv_obj_style.h **** 
+  53:Middlewares/LVGL/lvgl/src/core/lv_obj_style.h **** /**
+  54:Middlewares/LVGL/lvgl/src/core/lv_obj_style.h ****  * The possible parts of widgets.
+  55:Middlewares/LVGL/lvgl/src/core/lv_obj_style.h ****  * The parts can be considered as the internal building block of the widgets.
+  56:Middlewares/LVGL/lvgl/src/core/lv_obj_style.h ****  * E.g. slider = background + indicator + knob
+  57:Middlewares/LVGL/lvgl/src/core/lv_obj_style.h ****  * Not all parts are used by every widget
+  58:Middlewares/LVGL/lvgl/src/core/lv_obj_style.h ****  */
+  59:Middlewares/LVGL/lvgl/src/core/lv_obj_style.h **** 
+  60:Middlewares/LVGL/lvgl/src/core/lv_obj_style.h **** typedef enum {
+  61:Middlewares/LVGL/lvgl/src/core/lv_obj_style.h ****     LV_PART_MAIN         = 0x000000,  /**< A background like rectangle*/
+  62:Middlewares/LVGL/lvgl/src/core/lv_obj_style.h ****     LV_PART_SCROLLBAR    = 0x010000,  /**< The scrollbar(s)*/
+  63:Middlewares/LVGL/lvgl/src/core/lv_obj_style.h ****     LV_PART_INDICATOR    = 0x020000,  /**< Indicator, e.g. for slider, bar, switch, or the tick box
+  64:Middlewares/LVGL/lvgl/src/core/lv_obj_style.h ****     LV_PART_KNOB         = 0x030000,  /**< Like handle to grab to adjust the value*/
+  65:Middlewares/LVGL/lvgl/src/core/lv_obj_style.h ****     LV_PART_SELECTED     = 0x040000,  /**< Indicate the currently selected option or section*/
+  66:Middlewares/LVGL/lvgl/src/core/lv_obj_style.h ****     LV_PART_ITEMS        = 0x050000,  /**< Used if the widget has multiple similar elements (e.g. t
+  67:Middlewares/LVGL/lvgl/src/core/lv_obj_style.h ****     LV_PART_CURSOR       = 0x060000,  /**< Mark a specific place e.g. for text area's cursor or on 
+  68:Middlewares/LVGL/lvgl/src/core/lv_obj_style.h **** 
+  69:Middlewares/LVGL/lvgl/src/core/lv_obj_style.h ****     LV_PART_CUSTOM_FIRST = 0x080000,  /**< Extension point for custom widgets*/
+  70:Middlewares/LVGL/lvgl/src/core/lv_obj_style.h **** 
+  71:Middlewares/LVGL/lvgl/src/core/lv_obj_style.h ****     LV_PART_ANY          = 0x0F0000,  /**< Special value can be used in some functions to target al
+  72:Middlewares/LVGL/lvgl/src/core/lv_obj_style.h **** } lv_part_t;
+  73:Middlewares/LVGL/lvgl/src/core/lv_obj_style.h **** 
+  74:Middlewares/LVGL/lvgl/src/core/lv_obj_style.h **** typedef enum {
+  75:Middlewares/LVGL/lvgl/src/core/lv_obj_style.h ****     LV_STYLE_STATE_CMP_SAME,           /**< The style properties in the 2 states are identical */
+  76:Middlewares/LVGL/lvgl/src/core/lv_obj_style.h ****     LV_STYLE_STATE_CMP_DIFF_REDRAW,    /**< The differences can be shown with a simple redraw */
+  77:Middlewares/LVGL/lvgl/src/core/lv_obj_style.h ****     LV_STYLE_STATE_CMP_DIFF_DRAW_PAD,  /**< The differences can be shown with a simple redraw */
+  78:Middlewares/LVGL/lvgl/src/core/lv_obj_style.h ****     LV_STYLE_STATE_CMP_DIFF_LAYOUT,    /**< The differences can be shown with a simple redraw */
+  79:Middlewares/LVGL/lvgl/src/core/lv_obj_style.h **** } lv_style_state_cmp_t;
+  80:Middlewares/LVGL/lvgl/src/core/lv_obj_style.h **** 
+  81:Middlewares/LVGL/lvgl/src/core/lv_obj_style.h **** /**
+  82:Middlewares/LVGL/lvgl/src/core/lv_obj_style.h ****  * A joint type for `lv_part_t` and `lv_state_t`. Example values
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccM97vYx.s 			page 6
 
 
- 191 0002 82B0     		sub	sp, sp, #8
- 192              	.LCFI5:
- 193              		.cfi_def_cfa_offset 16
-  86:Services/Src/display_service.c ****   /* 清屏为黑色。 */
-  87:Services/Src/display_service.c ****   ST7789_FillScreen(ST7789_COLOR_BLACK);
- 194              		.loc 1 87 3 view .LVU32
- 195 0004 0020     		movs	r0, #0
- 196 0006 FFF7FEFF 		bl	ST7789_FillScreen
- 197              	.LVL15:
-  88:Services/Src/display_service.c **** 
-  89:Services/Src/display_service.c ****   /* 显示测试标题。 */
-  90:Services/Src/display_service.c ****   ST7789_DrawString(DISPLAY_TITLE_X, DISPLAY_TITLE_Y, "AHT20 LCD Test", ST7789_COLOR_WHITE, ST7789_
- 198              		.loc 1 90 3 view .LVU33
- 199 000a 0024     		movs	r4, #0
- 200 000c 0094     		str	r4, [sp]
- 201 000e 4FF6FF73 		movw	r3, #65535
- 202 0012 074A     		ldr	r2, .L16
- 203 0014 1421     		movs	r1, #20
- 204 0016 0A20     		movs	r0, #10
- 205 0018 FFF7FEFF 		bl	ST7789_DrawString
- 206              	.LVL16:
-  91:Services/Src/display_service.c **** 
-  92:Services/Src/display_service.c ****   /* 显示启动状态。 */
-  93:Services/Src/display_service.c ****   ST7789_DrawString(DISPLAY_TITLE_X, DISPLAY_TITLE_Y + 20U, "Starting...", ST7789_COLOR_CYAN, ST778
- 207              		.loc 1 93 3 view .LVU34
- 208 001c 0094     		str	r4, [sp]
- 209 001e 40F2FF73 		movw	r3, #2047
- 210 0022 044A     		ldr	r2, .L16+4
- 211 0024 2821     		movs	r1, #40
- 212 0026 0A20     		movs	r0, #10
- 213 0028 FFF7FEFF 		bl	ST7789_DrawString
- 214              	.LVL17:
-  94:Services/Src/display_service.c **** }
- 215              		.loc 1 94 1 is_stmt 0 view .LVU35
- 216 002c 02B0     		add	sp, sp, #8
- 217              	.LCFI6:
- 218              		.cfi_def_cfa_offset 8
- 219              		@ sp needed
- 220 002e 10BD     		pop	{r4, pc}
- 221              	.L17:
- 222              		.align	2
- 223              	.L16:
- 224 0030 00000000 		.word	.LC1
- 225 0034 10000000 		.word	.LC2
- 226              		.cfi_endproc
- 227              	.LFE138:
- 229              		.section	.text.DisplayService_Init,"ax",%progbits
- 230              		.align	1
- 231              		.global	DisplayService_Init
- 232              		.syntax unified
- 233              		.thumb
- 234              		.thumb_func
- 236              	DisplayService_Init:
- 237              	.LFB137:
-  69:Services/Src/display_service.c ****   /* 显示服务通过设备驱动层初始化 ST7789 屏幕。 */
- 238              		.loc 1 69 1 is_stmt 1 view -0
- 239              		.cfi_startproc
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccDhU1dv.s 			page 7
+  83:Middlewares/LVGL/lvgl/src/core/lv_obj_style.h ****  * - `0`: means `LV_PART_MAIN | LV_STATE_DEFAULT`
+  84:Middlewares/LVGL/lvgl/src/core/lv_obj_style.h ****  * - `LV_STATE_PRSSED`
+  85:Middlewares/LVGL/lvgl/src/core/lv_obj_style.h ****  * - `LV_PART_KNOB`
+  86:Middlewares/LVGL/lvgl/src/core/lv_obj_style.h ****  * - `LV_PART_KNOB | LV_STATE_PRESSED | LV_STATE_CHECKED`
+  87:Middlewares/LVGL/lvgl/src/core/lv_obj_style.h ****  */
+  88:Middlewares/LVGL/lvgl/src/core/lv_obj_style.h **** typedef uint32_t lv_style_selector_t;
+  89:Middlewares/LVGL/lvgl/src/core/lv_obj_style.h **** 
+  90:Middlewares/LVGL/lvgl/src/core/lv_obj_style.h **** /**********************
+  91:Middlewares/LVGL/lvgl/src/core/lv_obj_style.h ****  * GLOBAL PROTOTYPES
+  92:Middlewares/LVGL/lvgl/src/core/lv_obj_style.h ****  **********************/
+  93:Middlewares/LVGL/lvgl/src/core/lv_obj_style.h **** 
+  94:Middlewares/LVGL/lvgl/src/core/lv_obj_style.h **** /**
+  95:Middlewares/LVGL/lvgl/src/core/lv_obj_style.h ****  * Add a style to an object.
+  96:Middlewares/LVGL/lvgl/src/core/lv_obj_style.h ****  * @param obj       pointer to an object
+  97:Middlewares/LVGL/lvgl/src/core/lv_obj_style.h ****  * @param style     pointer to a style to add
+  98:Middlewares/LVGL/lvgl/src/core/lv_obj_style.h ****  * @param selector  OR-ed value of parts and state to which the style should be added
+  99:Middlewares/LVGL/lvgl/src/core/lv_obj_style.h ****  *
+ 100:Middlewares/LVGL/lvgl/src/core/lv_obj_style.h ****  * Examples:
+ 101:Middlewares/LVGL/lvgl/src/core/lv_obj_style.h ****  * @code
+ 102:Middlewares/LVGL/lvgl/src/core/lv_obj_style.h ****  * lv_obj_add_style(btn, &style_btn, 0); //Default button style
+ 103:Middlewares/LVGL/lvgl/src/core/lv_obj_style.h ****  *
+ 104:Middlewares/LVGL/lvgl/src/core/lv_obj_style.h ****  * lv_obj_add_style(btn, &btn_red, LV_STATE_PRESSED); //Overwrite only some colors to red when pres
+ 105:Middlewares/LVGL/lvgl/src/core/lv_obj_style.h ****  * @endcode
+ 106:Middlewares/LVGL/lvgl/src/core/lv_obj_style.h ****  */
+ 107:Middlewares/LVGL/lvgl/src/core/lv_obj_style.h **** void lv_obj_add_style(lv_obj_t * obj, const lv_style_t * style, lv_style_selector_t selector);
+ 108:Middlewares/LVGL/lvgl/src/core/lv_obj_style.h **** 
+ 109:Middlewares/LVGL/lvgl/src/core/lv_obj_style.h **** /**
+ 110:Middlewares/LVGL/lvgl/src/core/lv_obj_style.h ****  * Replaces a style of an object, preserving the order of the style stack (local styles and transit
+ 111:Middlewares/LVGL/lvgl/src/core/lv_obj_style.h ****  * @param obj           pointer to an object
+ 112:Middlewares/LVGL/lvgl/src/core/lv_obj_style.h ****  * @param old_style     pointer to a style to replace.
+ 113:Middlewares/LVGL/lvgl/src/core/lv_obj_style.h ****  * @param new_style     pointer to a style to replace the old style with.
+ 114:Middlewares/LVGL/lvgl/src/core/lv_obj_style.h ****  * @param selector      OR-ed values of states and a part to replace only styles with matching sele
+ 115:Middlewares/LVGL/lvgl/src/core/lv_obj_style.h ****  *
+ 116:Middlewares/LVGL/lvgl/src/core/lv_obj_style.h ****  * Examples:
+ 117:Middlewares/LVGL/lvgl/src/core/lv_obj_style.h ****  * @code
+ 118:Middlewares/LVGL/lvgl/src/core/lv_obj_style.h ****  * lv_obj_replace_style(obj, &yellow_style, &blue_style, LV_PART_ANY | LV_STATE_ANY); //Replace a s
+ 119:Middlewares/LVGL/lvgl/src/core/lv_obj_style.h ****  *
+ 120:Middlewares/LVGL/lvgl/src/core/lv_obj_style.h ****  * lv_obj_replace_style(obj, &yellow_style, &blue_style, LV_PART_MAIN | LV_STATE_PRESSED); //Replac
+ 121:Middlewares/LVGL/lvgl/src/core/lv_obj_style.h ****  * @endcode
+ 122:Middlewares/LVGL/lvgl/src/core/lv_obj_style.h ****  */
+ 123:Middlewares/LVGL/lvgl/src/core/lv_obj_style.h **** bool lv_obj_replace_style(lv_obj_t * obj, const lv_style_t * old_style, const lv_style_t * new_styl
+ 124:Middlewares/LVGL/lvgl/src/core/lv_obj_style.h ****                           lv_style_selector_t selector);
+ 125:Middlewares/LVGL/lvgl/src/core/lv_obj_style.h **** 
+ 126:Middlewares/LVGL/lvgl/src/core/lv_obj_style.h **** /**
+ 127:Middlewares/LVGL/lvgl/src/core/lv_obj_style.h ****  * Remove a style from an object.
+ 128:Middlewares/LVGL/lvgl/src/core/lv_obj_style.h ****  * @param obj       pointer to an object
+ 129:Middlewares/LVGL/lvgl/src/core/lv_obj_style.h ****  * @param style     pointer to a style to remove. Can be NULL to check only the selector
+ 130:Middlewares/LVGL/lvgl/src/core/lv_obj_style.h ****  * @param selector  OR-ed values of states and a part to remove only styles with matching selectors
+ 131:Middlewares/LVGL/lvgl/src/core/lv_obj_style.h ****  *
+ 132:Middlewares/LVGL/lvgl/src/core/lv_obj_style.h ****  * Examples:
+ 133:Middlewares/LVGL/lvgl/src/core/lv_obj_style.h ****  * @code
+ 134:Middlewares/LVGL/lvgl/src/core/lv_obj_style.h ****  * lv_obj_remove_style(obj, &style, LV_PART_ANY | LV_STATE_ANY); //Remove a specific style
+ 135:Middlewares/LVGL/lvgl/src/core/lv_obj_style.h ****  *
+ 136:Middlewares/LVGL/lvgl/src/core/lv_obj_style.h ****  * lv_obj_remove_style(obj, NULL, LV_PART_MAIN | LV_STATE_ANY); //Remove all styles from the main p
+ 137:Middlewares/LVGL/lvgl/src/core/lv_obj_style.h ****  *
+ 138:Middlewares/LVGL/lvgl/src/core/lv_obj_style.h ****  * lv_obj_remove_style(obj, NULL, LV_PART_ANY | LV_STATE_ANY); //Remove all styles
+ 139:Middlewares/LVGL/lvgl/src/core/lv_obj_style.h ****  * @endcode
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccM97vYx.s 			page 7
 
 
- 240              		@ args = 0, pretend = 0, frame = 0
- 241              		@ frame_needed = 0, uses_anonymous_args = 0
- 242 0000 08B5     		push	{r3, lr}
- 243              	.LCFI7:
- 244              		.cfi_def_cfa_offset 8
- 245              		.cfi_offset 3, -8
- 246              		.cfi_offset 14, -4
-  71:Services/Src/display_service.c **** 
- 247              		.loc 1 71 3 view .LVU37
- 248 0002 FFF7FEFF 		bl	ST7789_Init
- 249              	.LVL18:
-  74:Services/Src/display_service.c **** 
- 250              		.loc 1 74 3 view .LVU38
- 251 0006 0020     		movs	r0, #0
- 252 0008 FFF7FEFF 		bl	ST7789_FillScreen
- 253              	.LVL19:
-  77:Services/Src/display_service.c **** }
- 254              		.loc 1 77 3 view .LVU39
- 255 000c FFF7FEFF 		bl	DisplayService_ShowBootScreen
- 256              	.LVL20:
-  78:Services/Src/display_service.c **** 
- 257              		.loc 1 78 1 is_stmt 0 view .LVU40
- 258 0010 08BD     		pop	{r3, pc}
- 259              		.cfi_endproc
- 260              	.LFE137:
- 262              		.section	.rodata.DisplayService_ShowSensorError.str1.4,"aMS",%progbits,1
- 263              		.align	2
- 264              	.LC3:
- 265 0000 53656E73 		.ascii	"Sensor Error\000"
- 265      6F722045 
- 265      72726F72 
- 265      00
- 266              		.section	.text.DisplayService_ShowSensorError,"ax",%progbits
- 267              		.align	1
- 268              		.global	DisplayService_ShowSensorError
- 269              		.syntax unified
- 270              		.thumb
- 271              		.thumb_func
- 273              	DisplayService_ShowSensorError:
- 274              	.LFB140:
-  95:Services/Src/display_service.c **** 
-  96:Services/Src/display_service.c **** /**
-  97:Services/Src/display_service.c ****  * @brief 显示当前 SensorService 缓存中的温湿度数据。
-  98:Services/Src/display_service.c ****  * @retval 无
-  99:Services/Src/display_service.c ****  */
- 100:Services/Src/display_service.c **** void DisplayService_ShowSensorData(void)
- 101:Services/Src/display_service.c **** {
- 102:Services/Src/display_service.c ****   /* 定义变量保存从传感器服务层获取到的数据。 */
- 103:Services/Src/display_service.c ****   SensorService_Data_t sensor_data = {0};
- 104:Services/Src/display_service.c **** 
- 105:Services/Src/display_service.c ****   /* 定义温度显示行缓冲区。 */
- 106:Services/Src/display_service.c ****   char temp_line[20] = {0};
- 107:Services/Src/display_service.c **** 
- 108:Services/Src/display_service.c ****   /* 定义湿度显示行缓冲区。 */
- 109:Services/Src/display_service.c ****   char humi_line[20] = {0};
- 110:Services/Src/display_service.c **** 
- 111:Services/Src/display_service.c ****   /* 必须通过 SensorService 获取数据，不直接读取 AHT20。 */
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccDhU1dv.s 			page 8
+ 140:Middlewares/LVGL/lvgl/src/core/lv_obj_style.h ****  */
+ 141:Middlewares/LVGL/lvgl/src/core/lv_obj_style.h **** void lv_obj_remove_style(lv_obj_t * obj, const lv_style_t * style, lv_style_selector_t selector);
+ 142:Middlewares/LVGL/lvgl/src/core/lv_obj_style.h **** 
+ 143:Middlewares/LVGL/lvgl/src/core/lv_obj_style.h **** 
+ 144:Middlewares/LVGL/lvgl/src/core/lv_obj_style.h **** /**
+ 145:Middlewares/LVGL/lvgl/src/core/lv_obj_style.h ****  * Remove all styles added by a theme from a widget
+ 146:Middlewares/LVGL/lvgl/src/core/lv_obj_style.h ****  * @param selector  OR-ed values of states and a part to remove only styles with matching selectors
+ 147:Middlewares/LVGL/lvgl/src/core/lv_obj_style.h ****  *                  LV_STATE_ANY and LV_PART_ANY can be used
+ 148:Middlewares/LVGL/lvgl/src/core/lv_obj_style.h ****  * @param obj   pointer to a widget
+ 149:Middlewares/LVGL/lvgl/src/core/lv_obj_style.h ****  */
+ 150:Middlewares/LVGL/lvgl/src/core/lv_obj_style.h **** void lv_obj_remove_theme(lv_obj_t * obj, lv_style_selector_t selector);
+ 151:Middlewares/LVGL/lvgl/src/core/lv_obj_style.h **** 
+ 152:Middlewares/LVGL/lvgl/src/core/lv_obj_style.h **** /**
+ 153:Middlewares/LVGL/lvgl/src/core/lv_obj_style.h ****  * Remove all styles from an object
+ 154:Middlewares/LVGL/lvgl/src/core/lv_obj_style.h ****  * @param obj       pointer to an object
+ 155:Middlewares/LVGL/lvgl/src/core/lv_obj_style.h ****  */
+ 156:Middlewares/LVGL/lvgl/src/core/lv_obj_style.h **** void lv_obj_remove_style_all(lv_obj_t * obj);
+ 157:Middlewares/LVGL/lvgl/src/core/lv_obj_style.h **** 
+ 158:Middlewares/LVGL/lvgl/src/core/lv_obj_style.h **** /**
+ 159:Middlewares/LVGL/lvgl/src/core/lv_obj_style.h ****  * Notify all object if a style is modified
+ 160:Middlewares/LVGL/lvgl/src/core/lv_obj_style.h ****  * @param style     pointer to a style. Only the objects with this style will be notified
+ 161:Middlewares/LVGL/lvgl/src/core/lv_obj_style.h ****  *                  (NULL to notify all objects)
+ 162:Middlewares/LVGL/lvgl/src/core/lv_obj_style.h ****  */
+ 163:Middlewares/LVGL/lvgl/src/core/lv_obj_style.h **** void lv_obj_report_style_change(lv_style_t * style);
+ 164:Middlewares/LVGL/lvgl/src/core/lv_obj_style.h **** 
+ 165:Middlewares/LVGL/lvgl/src/core/lv_obj_style.h **** /**
+ 166:Middlewares/LVGL/lvgl/src/core/lv_obj_style.h ****  * Notify an object and its children about its style is modified.
+ 167:Middlewares/LVGL/lvgl/src/core/lv_obj_style.h ****  * @param obj       pointer to an object
+ 168:Middlewares/LVGL/lvgl/src/core/lv_obj_style.h ****  * @param part      the part whose style was changed. E.g. `LV_PART_ANY`, `LV_PART_MAIN`
+ 169:Middlewares/LVGL/lvgl/src/core/lv_obj_style.h ****  * @param prop      `LV_STYLE_PROP_ANY` or an `LV_STYLE_...` property.
+ 170:Middlewares/LVGL/lvgl/src/core/lv_obj_style.h ****  *                  It is used to optimize what needs to be refreshed.
+ 171:Middlewares/LVGL/lvgl/src/core/lv_obj_style.h ****  *                  `LV_STYLE_PROP_INV` to perform only a style cache update
+ 172:Middlewares/LVGL/lvgl/src/core/lv_obj_style.h ****  */
+ 173:Middlewares/LVGL/lvgl/src/core/lv_obj_style.h **** void lv_obj_refresh_style(lv_obj_t * obj, lv_part_t part, lv_style_prop_t prop);
+ 174:Middlewares/LVGL/lvgl/src/core/lv_obj_style.h **** 
+ 175:Middlewares/LVGL/lvgl/src/core/lv_obj_style.h **** /**
+ 176:Middlewares/LVGL/lvgl/src/core/lv_obj_style.h ****  * Temporary disable a style for a selector. It will look like is the style wasn't added
+ 177:Middlewares/LVGL/lvgl/src/core/lv_obj_style.h ****  * @param obj       pointer to an object
+ 178:Middlewares/LVGL/lvgl/src/core/lv_obj_style.h ****  * @param style     pointer to a style
+ 179:Middlewares/LVGL/lvgl/src/core/lv_obj_style.h ****  * @param selector  the selector of a style (e.g. LV_STATE_PRESSED | LV_PART_KNOB)
+ 180:Middlewares/LVGL/lvgl/src/core/lv_obj_style.h ****  * @param dis       true: disable the style, false: enable the style
+ 181:Middlewares/LVGL/lvgl/src/core/lv_obj_style.h ****  */
+ 182:Middlewares/LVGL/lvgl/src/core/lv_obj_style.h **** void lv_obj_style_set_disabled(lv_obj_t * obj, const lv_style_t * style, lv_style_selector_t select
+ 183:Middlewares/LVGL/lvgl/src/core/lv_obj_style.h **** 
+ 184:Middlewares/LVGL/lvgl/src/core/lv_obj_style.h **** /**
+ 185:Middlewares/LVGL/lvgl/src/core/lv_obj_style.h ****  * Get if a given style is disabled on an object.
+ 186:Middlewares/LVGL/lvgl/src/core/lv_obj_style.h ****  * @param obj       pointer to an object
+ 187:Middlewares/LVGL/lvgl/src/core/lv_obj_style.h ****  * @param style     pointer to a style
+ 188:Middlewares/LVGL/lvgl/src/core/lv_obj_style.h ****  * @param selector  the selector of a style (e.g. LV_STATE_PRESSED | LV_PART_KNOB)
+ 189:Middlewares/LVGL/lvgl/src/core/lv_obj_style.h ****  * @return          true: disable the style, false: enable the style
+ 190:Middlewares/LVGL/lvgl/src/core/lv_obj_style.h ****  */
+ 191:Middlewares/LVGL/lvgl/src/core/lv_obj_style.h **** bool lv_obj_style_get_disabled(lv_obj_t * obj, const lv_style_t * style, lv_style_selector_t select
+ 192:Middlewares/LVGL/lvgl/src/core/lv_obj_style.h **** 
+ 193:Middlewares/LVGL/lvgl/src/core/lv_obj_style.h **** /**
+ 194:Middlewares/LVGL/lvgl/src/core/lv_obj_style.h ****  * Enable or disable automatic style refreshing when a new style is added/removed to/from an object
+ 195:Middlewares/LVGL/lvgl/src/core/lv_obj_style.h ****  * or any other style change happens.
+ 196:Middlewares/LVGL/lvgl/src/core/lv_obj_style.h ****  * @param en        true: enable refreshing; false: disable refreshing
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccM97vYx.s 			page 8
 
 
- 112:Services/Src/display_service.c ****   if (SensorService_GetData(&sensor_data) != SENSOR_SERVICE_OK)
- 113:Services/Src/display_service.c ****   {
- 114:Services/Src/display_service.c ****     /* 如果当前没有有效数据，就显示错误页面。 */
- 115:Services/Src/display_service.c ****     DisplayService_ShowSensorError();
- 116:Services/Src/display_service.c **** 
- 117:Services/Src/display_service.c ****     /* 错误页面已经处理完成。 */
- 118:Services/Src/display_service.c ****     return;
- 119:Services/Src/display_service.c ****   }
- 120:Services/Src/display_service.c **** 
- 121:Services/Src/display_service.c ****   /* 清除温湿度显示区域，减少旧字符残留。 */
- 122:Services/Src/display_service.c ****   ST7789_FillRect(0U, DISPLAY_TEXT_AREA_Y, ST7789_WIDTH, DISPLAY_TEXT_AREA_H, ST7789_COLOR_BLACK);
+ 197:Middlewares/LVGL/lvgl/src/core/lv_obj_style.h ****  */
+ 198:Middlewares/LVGL/lvgl/src/core/lv_obj_style.h **** void lv_obj_enable_style_refresh(bool en);
+ 199:Middlewares/LVGL/lvgl/src/core/lv_obj_style.h **** 
+ 200:Middlewares/LVGL/lvgl/src/core/lv_obj_style.h **** /**
+ 201:Middlewares/LVGL/lvgl/src/core/lv_obj_style.h ****  * Get the value of a style property. The current state of the object will be considered.
+ 202:Middlewares/LVGL/lvgl/src/core/lv_obj_style.h ****  * Inherited properties will be inherited.
+ 203:Middlewares/LVGL/lvgl/src/core/lv_obj_style.h ****  * If a property is not set a default value will be returned.
+ 204:Middlewares/LVGL/lvgl/src/core/lv_obj_style.h ****  * @param obj       pointer to an object
+ 205:Middlewares/LVGL/lvgl/src/core/lv_obj_style.h ****  * @param part      a part from which the property should be get
+ 206:Middlewares/LVGL/lvgl/src/core/lv_obj_style.h ****  * @param prop      the property to get
+ 207:Middlewares/LVGL/lvgl/src/core/lv_obj_style.h ****  * @return          the value of the property.
+ 208:Middlewares/LVGL/lvgl/src/core/lv_obj_style.h ****  *                  Should be read from the correct field of the `lv_style_value_t` according to th
+ 209:Middlewares/LVGL/lvgl/src/core/lv_obj_style.h ****  */
+ 210:Middlewares/LVGL/lvgl/src/core/lv_obj_style.h **** lv_style_value_t lv_obj_get_style_prop(const lv_obj_t * obj, lv_part_t part, lv_style_prop_t prop);
+ 211:Middlewares/LVGL/lvgl/src/core/lv_obj_style.h **** 
+ 212:Middlewares/LVGL/lvgl/src/core/lv_obj_style.h **** /**
+ 213:Middlewares/LVGL/lvgl/src/core/lv_obj_style.h ****  * Check if an object has a specified style property for a given style selector.
+ 214:Middlewares/LVGL/lvgl/src/core/lv_obj_style.h ****  * @param obj       pointer to an object
+ 215:Middlewares/LVGL/lvgl/src/core/lv_obj_style.h ****  * @param selector  the style selector to be checked, defining the scope of the style to be examine
+ 216:Middlewares/LVGL/lvgl/src/core/lv_obj_style.h ****  * @param prop      the property to be checked.
+ 217:Middlewares/LVGL/lvgl/src/core/lv_obj_style.h ****  * @return          true if the object has the specified selector and property, false otherwise.
+ 218:Middlewares/LVGL/lvgl/src/core/lv_obj_style.h ****  */
+ 219:Middlewares/LVGL/lvgl/src/core/lv_obj_style.h **** bool lv_obj_has_style_prop(const lv_obj_t * obj, lv_style_selector_t selector, lv_style_prop_t prop
+ 220:Middlewares/LVGL/lvgl/src/core/lv_obj_style.h **** 
+ 221:Middlewares/LVGL/lvgl/src/core/lv_obj_style.h **** /**
+ 222:Middlewares/LVGL/lvgl/src/core/lv_obj_style.h ****  * Set local style property on an object's part and state.
+ 223:Middlewares/LVGL/lvgl/src/core/lv_obj_style.h ****  * @param obj       pointer to an object
+ 224:Middlewares/LVGL/lvgl/src/core/lv_obj_style.h ****  * @param prop      the property
+ 225:Middlewares/LVGL/lvgl/src/core/lv_obj_style.h ****  * @param value     value of the property. The correct element should be set according to the type 
+ 226:Middlewares/LVGL/lvgl/src/core/lv_obj_style.h ****  * @param selector  OR-ed value of parts and state for which the style should be set
+ 227:Middlewares/LVGL/lvgl/src/core/lv_obj_style.h ****  */
+ 228:Middlewares/LVGL/lvgl/src/core/lv_obj_style.h **** void lv_obj_set_local_style_prop(lv_obj_t * obj, lv_style_prop_t prop, lv_style_value_t value,
+ 229:Middlewares/LVGL/lvgl/src/core/lv_obj_style.h ****                                  lv_style_selector_t selector);
+ 230:Middlewares/LVGL/lvgl/src/core/lv_obj_style.h **** 
+ 231:Middlewares/LVGL/lvgl/src/core/lv_obj_style.h **** lv_style_res_t lv_obj_get_local_style_prop(lv_obj_t * obj, lv_style_prop_t prop, lv_style_value_t *
+ 232:Middlewares/LVGL/lvgl/src/core/lv_obj_style.h ****                                            lv_style_selector_t selector);
+ 233:Middlewares/LVGL/lvgl/src/core/lv_obj_style.h **** 
+ 234:Middlewares/LVGL/lvgl/src/core/lv_obj_style.h **** /**
+ 235:Middlewares/LVGL/lvgl/src/core/lv_obj_style.h ****  * Remove a local style property from a part of an object with a given state.
+ 236:Middlewares/LVGL/lvgl/src/core/lv_obj_style.h ****  * @param obj       pointer to an object
+ 237:Middlewares/LVGL/lvgl/src/core/lv_obj_style.h ****  * @param prop      a style property to remove.
+ 238:Middlewares/LVGL/lvgl/src/core/lv_obj_style.h ****  * @param selector  OR-ed value of parts and state for which the style should be removed
+ 239:Middlewares/LVGL/lvgl/src/core/lv_obj_style.h ****  * @return true     the property was found and removed; false: the property was not found
+ 240:Middlewares/LVGL/lvgl/src/core/lv_obj_style.h ****  */
+ 241:Middlewares/LVGL/lvgl/src/core/lv_obj_style.h **** bool lv_obj_remove_local_style_prop(lv_obj_t * obj, lv_style_prop_t prop, lv_style_selector_t selec
+ 242:Middlewares/LVGL/lvgl/src/core/lv_obj_style.h **** 
+ 243:Middlewares/LVGL/lvgl/src/core/lv_obj_style.h **** /**
+ 244:Middlewares/LVGL/lvgl/src/core/lv_obj_style.h ****  * Used internally for color filtering
+ 245:Middlewares/LVGL/lvgl/src/core/lv_obj_style.h ****  */
+ 246:Middlewares/LVGL/lvgl/src/core/lv_obj_style.h **** lv_style_value_t lv_obj_style_apply_color_filter(const lv_obj_t * obj, lv_part_t part, lv_style_val
+ 247:Middlewares/LVGL/lvgl/src/core/lv_obj_style.h **** 
+ 248:Middlewares/LVGL/lvgl/src/core/lv_obj_style.h **** /**
+ 249:Middlewares/LVGL/lvgl/src/core/lv_obj_style.h ****  * Fade in an an object and all its children.
+ 250:Middlewares/LVGL/lvgl/src/core/lv_obj_style.h ****  * @param obj       the object to fade in
+ 251:Middlewares/LVGL/lvgl/src/core/lv_obj_style.h ****  * @param time      time of fade
+ 252:Middlewares/LVGL/lvgl/src/core/lv_obj_style.h ****  * @param delay     delay to start the animation
+ 253:Middlewares/LVGL/lvgl/src/core/lv_obj_style.h ****  */
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccM97vYx.s 			page 9
+
+
+ 254:Middlewares/LVGL/lvgl/src/core/lv_obj_style.h **** void lv_obj_fade_in(lv_obj_t * obj, uint32_t time, uint32_t delay);
+ 255:Middlewares/LVGL/lvgl/src/core/lv_obj_style.h **** 
+ 256:Middlewares/LVGL/lvgl/src/core/lv_obj_style.h **** /**
+ 257:Middlewares/LVGL/lvgl/src/core/lv_obj_style.h ****  * Fade out an an object and all its children.
+ 258:Middlewares/LVGL/lvgl/src/core/lv_obj_style.h ****  * @param obj       the object to fade out
+ 259:Middlewares/LVGL/lvgl/src/core/lv_obj_style.h ****  * @param time      time of fade
+ 260:Middlewares/LVGL/lvgl/src/core/lv_obj_style.h ****  * @param delay     delay to start the animation
+ 261:Middlewares/LVGL/lvgl/src/core/lv_obj_style.h ****  */
+ 262:Middlewares/LVGL/lvgl/src/core/lv_obj_style.h **** void lv_obj_fade_out(lv_obj_t * obj, uint32_t time, uint32_t delay);
+ 263:Middlewares/LVGL/lvgl/src/core/lv_obj_style.h **** 
+ 264:Middlewares/LVGL/lvgl/src/core/lv_obj_style.h **** static inline lv_state_t lv_obj_style_get_selector_state(lv_style_selector_t selector)
+ 265:Middlewares/LVGL/lvgl/src/core/lv_obj_style.h **** {
+ 266:Middlewares/LVGL/lvgl/src/core/lv_obj_style.h ****     return (lv_state_t)(selector & 0xFFFF);
+ 267:Middlewares/LVGL/lvgl/src/core/lv_obj_style.h **** }
+ 268:Middlewares/LVGL/lvgl/src/core/lv_obj_style.h **** 
+ 269:Middlewares/LVGL/lvgl/src/core/lv_obj_style.h **** static inline lv_part_t lv_obj_style_get_selector_part(lv_style_selector_t selector)
+ 270:Middlewares/LVGL/lvgl/src/core/lv_obj_style.h **** {
+ 271:Middlewares/LVGL/lvgl/src/core/lv_obj_style.h ****     return (lv_part_t)(selector & 0xFF0000);
+ 272:Middlewares/LVGL/lvgl/src/core/lv_obj_style.h **** }
+ 273:Middlewares/LVGL/lvgl/src/core/lv_obj_style.h **** 
+ 274:Middlewares/LVGL/lvgl/src/core/lv_obj_style.h **** #include "lv_obj_style_gen.h"
+ 275:Middlewares/LVGL/lvgl/src/core/lv_obj_style.h **** 
+ 276:Middlewares/LVGL/lvgl/src/core/lv_obj_style.h **** static inline void lv_obj_set_style_pad_all(lv_obj_t * obj, int32_t value, lv_style_selector_t sele
+ 277:Middlewares/LVGL/lvgl/src/core/lv_obj_style.h **** {
+ 143              		.loc 2 277 1 is_stmt 1 view -0
+ 144              		.cfi_startproc
+ 145              		@ args = 0, pretend = 0, frame = 0
+ 146              		@ frame_needed = 0, uses_anonymous_args = 0
+ 147              		.loc 2 277 1 is_stmt 0 view .LVU19
+ 148 0000 70B5     		push	{r4, r5, r6, lr}
+ 149              	.LCFI1:
+ 150              		.cfi_def_cfa_offset 16
+ 151              		.cfi_offset 4, -16
+ 152              		.cfi_offset 5, -12
+ 153              		.cfi_offset 6, -8
+ 154              		.cfi_offset 14, -4
+ 155 0002 0446     		mov	r4, r0
+ 156 0004 0D46     		mov	r5, r1
+ 157 0006 1646     		mov	r6, r2
+ 278:Middlewares/LVGL/lvgl/src/core/lv_obj_style.h ****     lv_obj_set_style_pad_left(obj, value, selector);
+ 158              		.loc 2 278 5 is_stmt 1 view .LVU20
+ 159 0008 FFF7FEFF 		bl	lv_obj_set_style_pad_left
+ 160              	.LVL3:
+ 279:Middlewares/LVGL/lvgl/src/core/lv_obj_style.h ****     lv_obj_set_style_pad_right(obj, value, selector);
+ 161              		.loc 2 279 5 view .LVU21
+ 162 000c 3246     		mov	r2, r6
+ 163 000e 2946     		mov	r1, r5
+ 164 0010 2046     		mov	r0, r4
+ 165 0012 FFF7FEFF 		bl	lv_obj_set_style_pad_right
+ 166              	.LVL4:
+ 280:Middlewares/LVGL/lvgl/src/core/lv_obj_style.h ****     lv_obj_set_style_pad_top(obj, value, selector);
+ 167              		.loc 2 280 5 view .LVU22
+ 168 0016 3246     		mov	r2, r6
+ 169 0018 2946     		mov	r1, r5
+ 170 001a 2046     		mov	r0, r4
+ 171 001c FFF7FEFF 		bl	lv_obj_set_style_pad_top
+ 172              	.LVL5:
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccM97vYx.s 			page 10
+
+
+ 281:Middlewares/LVGL/lvgl/src/core/lv_obj_style.h ****     lv_obj_set_style_pad_bottom(obj, value, selector);
+ 173              		.loc 2 281 5 view .LVU23
+ 174 0020 3246     		mov	r2, r6
+ 175 0022 2946     		mov	r1, r5
+ 176 0024 2046     		mov	r0, r4
+ 177 0026 FFF7FEFF 		bl	lv_obj_set_style_pad_bottom
+ 178              	.LVL6:
+ 282:Middlewares/LVGL/lvgl/src/core/lv_obj_style.h **** }
+ 179              		.loc 2 282 1 is_stmt 0 view .LVU24
+ 180 002a 70BD     		pop	{r4, r5, r6, pc}
+ 181              		.loc 2 282 1 view .LVU25
+ 182              		.cfi_endproc
+ 183              	.LFE307:
+ 185              		.section	.text.DisplayService_Color,"ax",%progbits
+ 186              		.align	1
+ 187              		.syntax unified
+ 188              		.thumb
+ 189              		.thumb_func
+ 191              	DisplayService_Color:
+ 192              	.LVL7:
+ 193              	.LFB329:
+  39:Services/Src/display_service.c ****   return lv_color_hex(color);
+ 194              		.loc 1 39 1 is_stmt 1 view -0
+ 195              		.cfi_startproc
+ 196              		@ args = 0, pretend = 0, frame = 8
+ 197              		@ frame_needed = 0, uses_anonymous_args = 0
+  39:Services/Src/display_service.c ****   return lv_color_hex(color);
+ 198              		.loc 1 39 1 is_stmt 0 view .LVU27
+ 199 0000 00B5     		push	{lr}
+ 200              	.LCFI2:
+ 201              		.cfi_def_cfa_offset 4
+ 202              		.cfi_offset 14, -4
+ 203 0002 83B0     		sub	sp, sp, #12
+ 204              	.LCFI3:
+ 205              		.cfi_def_cfa_offset 16
+  40:Services/Src/display_service.c **** }
+ 206              		.loc 1 40 3 is_stmt 1 view .LVU28
+  40:Services/Src/display_service.c **** }
+ 207              		.loc 1 40 10 is_stmt 0 view .LVU29
+ 208 0004 FFF7FEFF 		bl	lv_color_hex
+ 209              	.LVL8:
+  40:Services/Src/display_service.c **** }
+ 210              		.loc 1 40 10 view .LVU30
+ 211 0008 8DF80400 		strb	r0, [sp, #4]
+ 212 000c C0F30723 		ubfx	r3, r0, #8, #8
+ 213 0010 8DF80530 		strb	r3, [sp, #5]
+ 214 0014 C0F30740 		ubfx	r0, r0, #16, #8
+ 215 0018 8DF80600 		strb	r0, [sp, #6]
+  40:Services/Src/display_service.c **** }
+ 216              		.loc 1 40 10 discriminator 1 view .LVU31
+ 217 001c 0020     		movs	r0, #0
+ 218 001e 9DF80430 		ldrb	r3, [sp, #4]	@ zero_extendqisi2
+ 219 0022 63F30700 		bfi	r0, r3, #0, #8
+ 220 0026 9DF80530 		ldrb	r3, [sp, #5]	@ zero_extendqisi2
+ 221 002a 63F30F20 		bfi	r0, r3, #8, #8
+ 222 002e 9DF80630 		ldrb	r3, [sp, #6]	@ zero_extendqisi2
+ 223 0032 63F31740 		bfi	r0, r3, #16, #8
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccM97vYx.s 			page 11
+
+
+  41:Services/Src/display_service.c **** 
+ 224              		.loc 1 41 1 view .LVU32
+ 225 0036 03B0     		add	sp, sp, #12
+ 226              	.LCFI4:
+ 227              		.cfi_def_cfa_offset 4
+ 228              		@ sp needed
+ 229 0038 00BD     		pop	{pc}
+ 230              		.cfi_endproc
+ 231              	.LFE329:
+ 233              		.section	.text.DisplayService_PrepareObject,"ax",%progbits
+ 234              		.align	1
+ 235              		.syntax unified
+ 236              		.thumb
+ 237              		.thumb_func
+ 239              	DisplayService_PrepareObject:
+ 240              	.LVL9:
+ 241              	.LFB333:
+  69:Services/Src/display_service.c **** 
+  70:Services/Src/display_service.c **** static void DisplayService_PrepareObject(lv_obj_t *obj)
+  71:Services/Src/display_service.c **** {
+ 242              		.loc 1 71 1 is_stmt 1 view -0
+ 243              		.cfi_startproc
+ 244              		@ args = 0, pretend = 0, frame = 0
+ 245              		@ frame_needed = 0, uses_anonymous_args = 0
+ 246              		.loc 1 71 1 is_stmt 0 view .LVU34
+ 247 0000 10B5     		push	{r4, lr}
+ 248              	.LCFI5:
+ 249              		.cfi_def_cfa_offset 8
+ 250              		.cfi_offset 4, -8
+ 251              		.cfi_offset 14, -4
+ 252 0002 0446     		mov	r4, r0
+  72:Services/Src/display_service.c ****   lv_obj_remove_flag(obj, LV_OBJ_FLAG_CLICKABLE);
+ 253              		.loc 1 72 3 is_stmt 1 view .LVU35
+ 254 0004 0221     		movs	r1, #2
+ 255 0006 FFF7FEFF 		bl	lv_obj_remove_flag
+ 256              	.LVL10:
+  73:Services/Src/display_service.c ****   lv_obj_remove_flag(obj, LV_OBJ_FLAG_SCROLLABLE);
+ 257              		.loc 1 73 3 view .LVU36
+ 258 000a 1021     		movs	r1, #16
+ 259 000c 2046     		mov	r0, r4
+ 260 000e FFF7FEFF 		bl	lv_obj_remove_flag
+ 261              	.LVL11:
+  74:Services/Src/display_service.c ****   lv_obj_set_scrollbar_mode(obj, LV_SCROLLBAR_MODE_OFF);
+ 262              		.loc 1 74 3 view .LVU37
+ 263 0012 0021     		movs	r1, #0
+ 264 0014 2046     		mov	r0, r4
+ 265 0016 FFF7FEFF 		bl	lv_obj_set_scrollbar_mode
+ 266              	.LVL12:
+  75:Services/Src/display_service.c **** }
+ 267              		.loc 1 75 1 is_stmt 0 view .LVU38
+ 268 001a 10BD     		pop	{r4, pc}
+ 269              		.loc 1 75 1 view .LVU39
+ 270              		.cfi_endproc
+ 271              	.LFE333:
+ 273              		.section	.text.DisplayService_CreateCard,"ax",%progbits
+ 274              		.align	1
+ 275              		.syntax unified
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccM97vYx.s 			page 12
+
+
+ 276              		.thumb
+ 277              		.thumb_func
+ 279              	DisplayService_CreateCard:
+ 280              	.LVL13:
+ 281              	.LFB334:
+  76:Services/Src/display_service.c **** 
+  77:Services/Src/display_service.c **** static lv_obj_t *DisplayService_CreateCard(lv_obj_t *parent, int32_t x, int32_t y, int32_t width, i
+  78:Services/Src/display_service.c **** {
+ 282              		.loc 1 78 1 is_stmt 1 view -0
+ 283              		.cfi_startproc
+ 284              		@ args = 4, pretend = 0, frame = 8
+ 285              		@ frame_needed = 0, uses_anonymous_args = 0
+ 286              		.loc 1 78 1 is_stmt 0 view .LVU41
+ 287 0000 F0B5     		push	{r4, r5, r6, r7, lr}
+ 288              	.LCFI6:
+ 289              		.cfi_def_cfa_offset 20
+ 290              		.cfi_offset 4, -20
+ 291              		.cfi_offset 5, -16
+ 292              		.cfi_offset 6, -12
+ 293              		.cfi_offset 7, -8
+ 294              		.cfi_offset 14, -4
+ 295 0002 83B0     		sub	sp, sp, #12
+ 296              	.LCFI7:
+ 297              		.cfi_def_cfa_offset 32
+ 298 0004 0E46     		mov	r6, r1
+ 299 0006 1746     		mov	r7, r2
+ 300 0008 1D46     		mov	r5, r3
+  79:Services/Src/display_service.c ****   lv_obj_t *card = lv_obj_create(parent);
+ 301              		.loc 1 79 3 is_stmt 1 view .LVU42
+ 302              		.loc 1 79 20 is_stmt 0 view .LVU43
+ 303 000a FFF7FEFF 		bl	lv_obj_create
+ 304              	.LVL14:
+ 305              		.loc 1 79 20 view .LVU44
+ 306 000e 0446     		mov	r4, r0
+ 307              	.LVL15:
+  80:Services/Src/display_service.c **** 
+  81:Services/Src/display_service.c ****   lv_obj_remove_style_all(card);
+ 308              		.loc 1 81 3 is_stmt 1 view .LVU45
+ 309 0010 FFF7FEFF 		bl	lv_obj_remove_style_all
+ 310              	.LVL16:
+  82:Services/Src/display_service.c ****   lv_obj_set_pos(card, x, y);
+ 311              		.loc 1 82 3 view .LVU46
+ 312 0014 3A46     		mov	r2, r7
+ 313 0016 3146     		mov	r1, r6
+ 314 0018 2046     		mov	r0, r4
+ 315 001a FFF7FEFF 		bl	lv_obj_set_pos
+ 316              	.LVL17:
+  83:Services/Src/display_service.c ****   lv_obj_set_size(card, width, height);
+ 317              		.loc 1 83 3 view .LVU47
+ 318 001e 089A     		ldr	r2, [sp, #32]
+ 319 0020 2946     		mov	r1, r5
+ 320 0022 2046     		mov	r0, r4
+ 321 0024 FFF7FEFF 		bl	lv_obj_set_size
+ 322              	.LVL18:
+  84:Services/Src/display_service.c ****   lv_obj_set_style_bg_color(card, DisplayService_Color(UI_COLOR_CARD_BG), 0);
+ 323              		.loc 1 84 3 view .LVU48
+ 324 0028 2B48     		ldr	r0, .L19
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccM97vYx.s 			page 13
+
+
+ 325 002a FFF7FEFF 		bl	DisplayService_Color
+ 326              	.LVL19:
+ 327 002e 8DF80000 		strb	r0, [sp]
+ 328 0032 C0F30723 		ubfx	r3, r0, #8, #8
+ 329 0036 8DF80130 		strb	r3, [sp, #1]
+ 330 003a C0F30740 		ubfx	r0, r0, #16, #8
+ 331 003e 8DF80200 		strb	r0, [sp, #2]
+ 332              		.loc 1 84 3 is_stmt 0 discriminator 1 view .LVU49
+ 333 0042 0022     		movs	r2, #0
+ 334 0044 0099     		ldr	r1, [sp]
+ 335 0046 2046     		mov	r0, r4
+ 336 0048 FFF7FEFF 		bl	lv_obj_set_style_bg_color
+ 337              	.LVL20:
+  85:Services/Src/display_service.c ****   lv_obj_set_style_bg_opa(card, LV_OPA_COVER, 0);
+ 338              		.loc 1 85 3 is_stmt 1 view .LVU50
+ 339 004c 0022     		movs	r2, #0
+ 340 004e FF21     		movs	r1, #255
+ 341 0050 2046     		mov	r0, r4
+ 342 0052 FFF7FEFF 		bl	lv_obj_set_style_bg_opa
+ 343              	.LVL21:
+  86:Services/Src/display_service.c ****   lv_obj_set_style_border_color(card, DisplayService_Color(UI_COLOR_CARD_BORDER), 0);
+ 344              		.loc 1 86 3 view .LVU51
+ 345 0056 2148     		ldr	r0, .L19+4
+ 346 0058 FFF7FEFF 		bl	DisplayService_Color
+ 347              	.LVL22:
+ 348 005c 8DF80400 		strb	r0, [sp, #4]
+ 349 0060 C0F30723 		ubfx	r3, r0, #8, #8
+ 350 0064 8DF80530 		strb	r3, [sp, #5]
+ 351 0068 C0F30740 		ubfx	r0, r0, #16, #8
+ 352 006c 8DF80600 		strb	r0, [sp, #6]
+ 353              		.loc 1 86 3 is_stmt 0 discriminator 1 view .LVU52
+ 354 0070 0022     		movs	r2, #0
+ 355 0072 0199     		ldr	r1, [sp, #4]
+ 356 0074 2046     		mov	r0, r4
+ 357 0076 FFF7FEFF 		bl	lv_obj_set_style_border_color
+ 358              	.LVL23:
+  87:Services/Src/display_service.c ****   lv_obj_set_style_border_width(card, 1, 0);
+ 359              		.loc 1 87 3 is_stmt 1 view .LVU53
+ 360 007a 0022     		movs	r2, #0
+ 361 007c 0121     		movs	r1, #1
+ 362 007e 2046     		mov	r0, r4
+ 363 0080 FFF7FEFF 		bl	lv_obj_set_style_border_width
+ 364              	.LVL24:
+  88:Services/Src/display_service.c ****   lv_obj_set_style_border_opa(card, LV_OPA_COVER, 0);
+ 365              		.loc 1 88 3 view .LVU54
+ 366 0084 0022     		movs	r2, #0
+ 367 0086 FF21     		movs	r1, #255
+ 368 0088 2046     		mov	r0, r4
+ 369 008a FFF7FEFF 		bl	lv_obj_set_style_border_opa
+ 370              	.LVL25:
+  89:Services/Src/display_service.c ****   lv_obj_set_style_radius(card, DISPLAY_UI_CARD_RADIUS, 0);
+ 371              		.loc 1 89 3 view .LVU55
+ 372 008e 0022     		movs	r2, #0
+ 373 0090 0821     		movs	r1, #8
+ 374 0092 2046     		mov	r0, r4
+ 375 0094 FFF7FEFF 		bl	lv_obj_set_style_radius
+ 376              	.LVL26:
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccM97vYx.s 			page 14
+
+
+  90:Services/Src/display_service.c ****   lv_obj_set_style_pad_all(card, 0, 0);
+ 377              		.loc 1 90 3 view .LVU56
+ 378 0098 0022     		movs	r2, #0
+ 379 009a 1146     		mov	r1, r2
+ 380 009c 2046     		mov	r0, r4
+ 381 009e FFF7FEFF 		bl	lv_obj_set_style_pad_all
+ 382              	.LVL27:
+  91:Services/Src/display_service.c ****   lv_obj_set_style_pad_left(card, 0, 0);
+ 383              		.loc 1 91 3 view .LVU57
+ 384 00a2 0022     		movs	r2, #0
+ 385 00a4 1146     		mov	r1, r2
+ 386 00a6 2046     		mov	r0, r4
+ 387 00a8 FFF7FEFF 		bl	lv_obj_set_style_pad_left
+ 388              	.LVL28:
+  92:Services/Src/display_service.c ****   lv_obj_set_style_pad_right(card, 0, 0);
+ 389              		.loc 1 92 3 view .LVU58
+ 390 00ac 0022     		movs	r2, #0
+ 391 00ae 1146     		mov	r1, r2
+ 392 00b0 2046     		mov	r0, r4
+ 393 00b2 FFF7FEFF 		bl	lv_obj_set_style_pad_right
+ 394              	.LVL29:
+  93:Services/Src/display_service.c ****   lv_obj_set_style_pad_top(card, 0, 0);
+ 395              		.loc 1 93 3 view .LVU59
+ 396 00b6 0022     		movs	r2, #0
+ 397 00b8 1146     		mov	r1, r2
+ 398 00ba 2046     		mov	r0, r4
+ 399 00bc FFF7FEFF 		bl	lv_obj_set_style_pad_top
+ 400              	.LVL30:
+  94:Services/Src/display_service.c ****   lv_obj_set_style_pad_bottom(card, 0, 0);
+ 401              		.loc 1 94 3 view .LVU60
+ 402 00c0 0022     		movs	r2, #0
+ 403 00c2 1146     		mov	r1, r2
+ 404 00c4 2046     		mov	r0, r4
+ 405 00c6 FFF7FEFF 		bl	lv_obj_set_style_pad_bottom
+ 406              	.LVL31:
+  95:Services/Src/display_service.c ****   DisplayService_PrepareObject(card);
+ 407              		.loc 1 95 3 view .LVU61
+ 408 00ca 2046     		mov	r0, r4
+ 409 00cc FFF7FEFF 		bl	DisplayService_PrepareObject
+ 410              	.LVL32:
+  96:Services/Src/display_service.c **** 
+  97:Services/Src/display_service.c ****   return card;
+ 411              		.loc 1 97 3 view .LVU62
+  98:Services/Src/display_service.c **** }
+ 412              		.loc 1 98 1 is_stmt 0 view .LVU63
+ 413 00d0 2046     		mov	r0, r4
+ 414 00d2 03B0     		add	sp, sp, #12
+ 415              	.LCFI8:
+ 416              		.cfi_def_cfa_offset 20
+ 417              		@ sp needed
+ 418 00d4 F0BD     		pop	{r4, r5, r6, r7, pc}
+ 419              	.LVL33:
+ 420              	.L20:
+ 421              		.loc 1 98 1 view .LVU64
+ 422 00d6 00BF     		.align	2
+ 423              	.L19:
+ 424 00d8 1F110700 		.word	463135
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccM97vYx.s 			page 15
+
+
+ 425 00dc 70502400 		.word	2379888
+ 426              		.cfi_endproc
+ 427              	.LFE334:
+ 429              		.section	.rodata.DisplayService_SetDefaultValues.str1.4,"aMS",%progbits,1
+ 430              		.align	2
+ 431              	.LC0:
+ 432 0000 E6B8A9E5 		.ascii	"\346\270\251\345\272\246: 25.6C\000"
+ 432      BAA63A20 
+ 432      32352E36 
+ 432      4300
+ 433 000e 0000     		.align	2
+ 434              	.LC1:
+ 435 0010 E6B9BFE5 		.ascii	"\346\271\277\345\272\246: 63.2%\000"
+ 435      BAA63A20 
+ 435      36332E32 
+ 435      2500
+ 436 001e 0000     		.align	2
+ 437              	.LC2:
+ 438 0020 E5B7A5E4 		.ascii	"\345\267\245\344\275\234: \350\207\252\345\212\250\000"
+ 438      BD9C3A20 
+ 438      E887AAE5 
+ 438      8AA800
+ 439 002f 00       		.align	2
+ 440              	.LC3:
+ 441 0030 E79BAEE6 		.ascii	"\347\233\256\346\240\207: 60%\000"
+ 441      A0873A20 
+ 441      36302500 
+ 442              		.section	.text.DisplayService_SetDefaultValues,"ax",%progbits
+ 443              		.align	1
+ 444              		.syntax unified
+ 445              		.thumb
+ 446              		.thumb_func
+ 448              	DisplayService_SetDefaultValues:
+ 449              	.LFB336:
+  99:Services/Src/display_service.c **** 
+ 100:Services/Src/display_service.c **** static lv_obj_t *DisplayService_CreateLabel(lv_obj_t *parent,
+ 101:Services/Src/display_service.c ****                                             const char *text,
+ 102:Services/Src/display_service.c ****                                             uint32_t color,
+ 103:Services/Src/display_service.c ****                                             const lv_font_t *font,
+ 104:Services/Src/display_service.c ****                                             int32_t x,
+ 105:Services/Src/display_service.c ****                                             int32_t y,
+ 106:Services/Src/display_service.c ****                                             int32_t width,
+ 107:Services/Src/display_service.c ****                                             int32_t height,
+ 108:Services/Src/display_service.c ****                                             lv_text_align_t align)
+ 109:Services/Src/display_service.c **** {
+ 110:Services/Src/display_service.c ****   lv_obj_t *label = lv_label_create(parent);
+ 111:Services/Src/display_service.c **** 
+ 112:Services/Src/display_service.c ****   lv_label_set_text(label, text);
+ 113:Services/Src/display_service.c ****   lv_label_set_long_mode(label, LV_LABEL_LONG_MODE_CLIP);
+ 114:Services/Src/display_service.c ****   lv_obj_set_pos(label, x, y);
+ 115:Services/Src/display_service.c ****   lv_obj_set_size(label, width, height);
+ 116:Services/Src/display_service.c ****   lv_obj_set_style_bg_opa(label, LV_OPA_TRANSP, 0);
+ 117:Services/Src/display_service.c ****   lv_obj_set_style_text_color(label, DisplayService_Color(color), 0);
+ 118:Services/Src/display_service.c ****   lv_obj_set_style_text_font(label, font, 0);
+ 119:Services/Src/display_service.c ****   lv_obj_set_style_text_align(label, align, 0);
+ 120:Services/Src/display_service.c ****   lv_obj_set_style_text_letter_space(label, 0, 0);
+ 121:Services/Src/display_service.c ****   lv_obj_set_style_text_line_space(label, 0, 0);
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccM97vYx.s 			page 16
+
+
+ 122:Services/Src/display_service.c ****   DisplayService_PrepareObject(label);
  123:Services/Src/display_service.c **** 
- 124:Services/Src/display_service.c ****   /* 显示固定标题。 */
- 125:Services/Src/display_service.c ****   ST7789_DrawString(DISPLAY_TITLE_X, DISPLAY_TITLE_Y, "AHT20 LCD Test", ST7789_COLOR_WHITE, ST7789_
+ 124:Services/Src/display_service.c ****   return label;
+ 125:Services/Src/display_service.c **** }
  126:Services/Src/display_service.c **** 
- 127:Services/Src/display_service.c ****   /* 把温度格式化成 Temp: 25.6 C。 */
- 128:Services/Src/display_service.c ****   DisplayService_FormatValue(temp_line, sizeof(temp_line), "Temp", sensor_data.temperature, "C");
- 129:Services/Src/display_service.c **** 
- 130:Services/Src/display_service.c ****   /* 把湿度格式化成 Humi: 63.2 %。 */
- 131:Services/Src/display_service.c ****   DisplayService_FormatValue(humi_line, sizeof(humi_line), "Humi", sensor_data.humidity, "%");
- 132:Services/Src/display_service.c **** 
- 133:Services/Src/display_service.c ****   /* 绘制温度行。 */
- 134:Services/Src/display_service.c ****   ST7789_DrawString(DISPLAY_TEMP_X, DISPLAY_TEMP_Y, temp_line, ST7789_COLOR_YELLOW, ST7789_COLOR_BL
- 135:Services/Src/display_service.c **** 
- 136:Services/Src/display_service.c ****   /* 绘制湿度行。 */
- 137:Services/Src/display_service.c ****   ST7789_DrawString(DISPLAY_HUMI_X, DISPLAY_HUMI_Y, humi_line, ST7789_COLOR_CYAN, ST7789_COLOR_BLAC
- 138:Services/Src/display_service.c **** }
- 139:Services/Src/display_service.c **** 
- 140:Services/Src/display_service.c **** /**
- 141:Services/Src/display_service.c ****  * @brief 显示传感器错误页面。
- 142:Services/Src/display_service.c ****  * @retval 无
- 143:Services/Src/display_service.c ****  */
- 144:Services/Src/display_service.c **** void DisplayService_ShowSensorError(void)
- 145:Services/Src/display_service.c **** {
- 275              		.loc 1 145 1 is_stmt 1 view -0
- 276              		.cfi_startproc
- 277              		@ args = 0, pretend = 0, frame = 0
- 278              		@ frame_needed = 0, uses_anonymous_args = 0
- 279 0000 10B5     		push	{r4, lr}
- 280              	.LCFI8:
- 281              		.cfi_def_cfa_offset 8
- 282              		.cfi_offset 4, -8
- 283              		.cfi_offset 14, -4
- 284 0002 82B0     		sub	sp, sp, #8
- 285              	.LCFI9:
- 286              		.cfi_def_cfa_offset 16
- 146:Services/Src/display_service.c ****   /* 清屏为黑色。 */
- 147:Services/Src/display_service.c ****   ST7789_FillScreen(ST7789_COLOR_BLACK);
- 287              		.loc 1 147 3 view .LVU42
- 288 0004 0020     		movs	r0, #0
- 289 0006 FFF7FEFF 		bl	ST7789_FillScreen
- 290              	.LVL21:
- 148:Services/Src/display_service.c **** 
- 149:Services/Src/display_service.c ****   /* 显示固定标题。 */
- 150:Services/Src/display_service.c ****   ST7789_DrawString(DISPLAY_TITLE_X, DISPLAY_TITLE_Y, "AHT20 LCD Test", ST7789_COLOR_WHITE, ST7789_
- 291              		.loc 1 150 3 view .LVU43
- 292 000a 0024     		movs	r4, #0
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccDhU1dv.s 			page 9
+ 127:Services/Src/display_service.c **** static void DisplayService_SetDefaultValues(void)
+ 128:Services/Src/display_service.c **** {
+ 450              		.loc 1 128 1 is_stmt 1 view -0
+ 451              		.cfi_startproc
+ 452              		@ args = 0, pretend = 0, frame = 8
+ 453              		@ frame_needed = 0, uses_anonymous_args = 0
+ 454 0000 10B5     		push	{r4, lr}
+ 455              	.LCFI9:
+ 456              		.cfi_def_cfa_offset 8
+ 457              		.cfi_offset 4, -8
+ 458              		.cfi_offset 14, -4
+ 459 0002 82B0     		sub	sp, sp, #8
+ 460              	.LCFI10:
+ 461              		.cfi_def_cfa_offset 16
+ 129:Services/Src/display_service.c ****   lv_label_set_text(s_temp_label, "温度: 25.6C");
+ 462              		.loc 1 129 3 view .LVU66
+ 463 0004 1749     		ldr	r1, .L23
+ 464 0006 184B     		ldr	r3, .L23+4
+ 465 0008 1868     		ldr	r0, [r3]
+ 466 000a FFF7FEFF 		bl	lv_label_set_text
+ 467              	.LVL34:
+ 130:Services/Src/display_service.c ****   lv_label_set_text(s_humi_label, "湿度: 63.2%");
+ 468              		.loc 1 130 3 view .LVU67
+ 469 000e 1749     		ldr	r1, .L23+8
+ 470 0010 174B     		ldr	r3, .L23+12
+ 471 0012 1868     		ldr	r0, [r3]
+ 472 0014 FFF7FEFF 		bl	lv_label_set_text
+ 473              	.LVL35:
+ 131:Services/Src/display_service.c ****   lv_label_set_text(s_mode_label, "工作: 自动");
+ 474              		.loc 1 131 3 view .LVU68
+ 475 0018 164C     		ldr	r4, .L23+16
+ 476 001a 1749     		ldr	r1, .L23+20
+ 477 001c 2068     		ldr	r0, [r4]
+ 478 001e FFF7FEFF 		bl	lv_label_set_text
+ 479              	.LVL36:
+ 132:Services/Src/display_service.c ****   lv_obj_set_style_text_color(s_mode_label, DisplayService_Color(UI_COLOR_GREEN), 0);
+ 480              		.loc 1 132 3 view .LVU69
+ 481 0022 2468     		ldr	r4, [r4]
+ 482 0024 1548     		ldr	r0, .L23+24
+ 483 0026 FFF7FEFF 		bl	DisplayService_Color
+ 484              	.LVL37:
+ 485 002a 8DF80400 		strb	r0, [sp, #4]
+ 486 002e C0F30723 		ubfx	r3, r0, #8, #8
+ 487 0032 8DF80530 		strb	r3, [sp, #5]
+ 488 0036 C0F30740 		ubfx	r0, r0, #16, #8
+ 489 003a 8DF80600 		strb	r0, [sp, #6]
+ 490              		.loc 1 132 3 is_stmt 0 discriminator 1 view .LVU70
+ 491 003e 0022     		movs	r2, #0
+ 492 0040 0199     		ldr	r1, [sp, #4]
+ 493 0042 2046     		mov	r0, r4
+ 494 0044 FFF7FEFF 		bl	lv_obj_set_style_text_color
+ 495              	.LVL38:
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccM97vYx.s 			page 17
 
 
- 293 000c 0094     		str	r4, [sp]
- 294 000e 4FF6FF73 		movw	r3, #65535
- 295 0012 074A     		ldr	r2, .L22
- 296 0014 1421     		movs	r1, #20
- 297 0016 0A20     		movs	r0, #10
- 298 0018 FFF7FEFF 		bl	ST7789_DrawString
- 299              	.LVL22:
- 151:Services/Src/display_service.c **** 
- 152:Services/Src/display_service.c ****   /* 显示传感器错误提示。 */
- 153:Services/Src/display_service.c ****   ST7789_DrawString(DISPLAY_STATUS_X, DISPLAY_STATUS_Y, "Sensor Error", ST7789_COLOR_RED, ST7789_CO
- 300              		.loc 1 153 3 view .LVU44
- 301 001c 0094     		str	r4, [sp]
- 302 001e 4FF47843 		mov	r3, #63488
- 303 0022 044A     		ldr	r2, .L22+4
- 304 0024 9621     		movs	r1, #150
- 305 0026 0A20     		movs	r0, #10
- 306 0028 FFF7FEFF 		bl	ST7789_DrawString
- 307              	.LVL23:
- 154:Services/Src/display_service.c **** }
- 308              		.loc 1 154 1 is_stmt 0 view .LVU45
- 309 002c 02B0     		add	sp, sp, #8
- 310              	.LCFI10:
- 311              		.cfi_def_cfa_offset 8
- 312              		@ sp needed
- 313 002e 10BD     		pop	{r4, pc}
- 314              	.L23:
- 315              		.align	2
- 316              	.L22:
- 317 0030 00000000 		.word	.LC1
- 318 0034 00000000 		.word	.LC3
- 319              		.cfi_endproc
- 320              	.LFE140:
- 322              		.section	.rodata.DisplayService_ShowSensorData.str1.4,"aMS",%progbits,1
- 323              		.align	2
- 324              	.LC4:
- 325 0000 4300     		.ascii	"C\000"
- 326 0002 0000     		.align	2
- 327              	.LC5:
- 328 0004 54656D70 		.ascii	"Temp\000"
- 328      00
- 329 0009 000000   		.align	2
- 330              	.LC6:
- 331 000c 2500     		.ascii	"%\000"
- 332 000e 0000     		.align	2
- 333              	.LC7:
- 334 0010 48756D69 		.ascii	"Humi\000"
- 334      00
- 335              		.section	.text.DisplayService_ShowSensorData,"ax",%progbits
- 336              		.align	1
- 337              		.global	DisplayService_ShowSensorData
- 338              		.syntax unified
- 339              		.thumb
- 340              		.thumb_func
- 342              	DisplayService_ShowSensorData:
- 343              	.LFB139:
- 101:Services/Src/display_service.c ****   /* 定义变量保存从传感器服务层获取到的数据。 */
- 344              		.loc 1 101 1 is_stmt 1 view -0
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccDhU1dv.s 			page 10
+ 133:Services/Src/display_service.c ****   lv_label_set_text(s_target_label, "目标: 60%");
+ 496              		.loc 1 133 3 is_stmt 1 view .LVU71
+ 497 0048 0D49     		ldr	r1, .L23+28
+ 498 004a 0E4B     		ldr	r3, .L23+32
+ 499 004c 1868     		ldr	r0, [r3]
+ 500 004e FFF7FEFF 		bl	lv_label_set_text
+ 501              	.LVL39:
+ 134:Services/Src/display_service.c ****   lv_bar_set_value(s_target_bar, UI_TARGET_HUMIDITY, LV_ANIM_OFF);
+ 502              		.loc 1 134 3 view .LVU72
+ 503 0052 0022     		movs	r2, #0
+ 504 0054 3C21     		movs	r1, #60
+ 505 0056 0C4B     		ldr	r3, .L23+36
+ 506 0058 1868     		ldr	r0, [r3]
+ 507 005a FFF7FEFF 		bl	lv_bar_set_value
+ 508              	.LVL40:
+ 135:Services/Src/display_service.c **** }
+ 509              		.loc 1 135 1 is_stmt 0 view .LVU73
+ 510 005e 02B0     		add	sp, sp, #8
+ 511              	.LCFI11:
+ 512              		.cfi_def_cfa_offset 8
+ 513              		@ sp needed
+ 514 0060 10BD     		pop	{r4, pc}
+ 515              	.L24:
+ 516 0062 00BF     		.align	2
+ 517              	.L23:
+ 518 0064 00000000 		.word	.LC0
+ 519 0068 00000000 		.word	s_temp_label
+ 520 006c 10000000 		.word	.LC1
+ 521 0070 00000000 		.word	s_humi_label
+ 522 0074 00000000 		.word	s_mode_label
+ 523 0078 20000000 		.word	.LC2
+ 524 007c 4CD97600 		.word	7788876
+ 525 0080 30000000 		.word	.LC3
+ 526 0084 00000000 		.word	s_target_label
+ 527 0088 00000000 		.word	s_target_bar
+ 528              		.cfi_endproc
+ 529              	.LFE336:
+ 531              		.section	.text.DisplayService_CreateLabel,"ax",%progbits
+ 532              		.align	1
+ 533              		.syntax unified
+ 534              		.thumb
+ 535              		.thumb_func
+ 537              	DisplayService_CreateLabel:
+ 538              	.LVL41:
+ 539              	.LFB335:
+ 109:Services/Src/display_service.c ****   lv_obj_t *label = lv_label_create(parent);
+ 540              		.loc 1 109 1 is_stmt 1 view -0
+ 541              		.cfi_startproc
+ 542              		@ args = 20, pretend = 0, frame = 8
+ 543              		@ frame_needed = 0, uses_anonymous_args = 0
+ 109:Services/Src/display_service.c ****   lv_obj_t *label = lv_label_create(parent);
+ 544              		.loc 1 109 1 is_stmt 0 view .LVU75
+ 545 0000 F0B5     		push	{r4, r5, r6, r7, lr}
+ 546              	.LCFI12:
+ 547              		.cfi_def_cfa_offset 20
+ 548              		.cfi_offset 4, -20
+ 549              		.cfi_offset 5, -16
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccM97vYx.s 			page 18
 
 
- 345              		.cfi_startproc
- 346              		@ args = 0, pretend = 0, frame = 56
- 347              		@ frame_needed = 0, uses_anonymous_args = 0
- 348 0000 70B5     		push	{r4, r5, r6, lr}
- 349              	.LCFI11:
- 350              		.cfi_def_cfa_offset 16
- 351              		.cfi_offset 4, -16
- 352              		.cfi_offset 5, -12
- 353              		.cfi_offset 6, -8
- 354              		.cfi_offset 14, -4
- 355 0002 90B0     		sub	sp, sp, #64
- 356              	.LCFI12:
- 357              		.cfi_def_cfa_offset 80
- 103:Services/Src/display_service.c **** 
- 358              		.loc 1 103 3 view .LVU47
- 103:Services/Src/display_service.c **** 
- 359              		.loc 1 103 24 is_stmt 0 view .LVU48
- 360 0004 0DA8     		add	r0, sp, #52
- 361 0006 0023     		movs	r3, #0
- 362 0008 0D93     		str	r3, [sp, #52]
- 363 000a 4360     		str	r3, [r0, #4]
- 364 000c 8360     		str	r3, [r0, #8]
- 106:Services/Src/display_service.c **** 
- 365              		.loc 1 106 3 is_stmt 1 view .LVU49
- 106:Services/Src/display_service.c **** 
- 366              		.loc 1 106 8 is_stmt 0 view .LVU50
- 367 000e 0893     		str	r3, [sp, #32]
- 368 0010 0993     		str	r3, [sp, #36]
- 369 0012 0A93     		str	r3, [sp, #40]
- 370 0014 0B93     		str	r3, [sp, #44]
- 371 0016 0C93     		str	r3, [sp, #48]
- 109:Services/Src/display_service.c **** 
- 372              		.loc 1 109 3 is_stmt 1 view .LVU51
- 109:Services/Src/display_service.c **** 
- 373              		.loc 1 109 8 is_stmt 0 view .LVU52
- 374 0018 0393     		str	r3, [sp, #12]
- 375 001a 0493     		str	r3, [sp, #16]
- 376 001c 0593     		str	r3, [sp, #20]
- 377 001e 0693     		str	r3, [sp, #24]
- 378 0020 0793     		str	r3, [sp, #28]
- 112:Services/Src/display_service.c ****   {
- 379              		.loc 1 112 3 is_stmt 1 view .LVU53
- 112:Services/Src/display_service.c ****   {
- 380              		.loc 1 112 7 is_stmt 0 view .LVU54
- 381 0022 FFF7FEFF 		bl	SensorService_GetData
- 382              	.LVL24:
- 112:Services/Src/display_service.c ****   {
- 383              		.loc 1 112 6 discriminator 1 view .LVU55
- 384 0026 98BB     		cbnz	r0, .L28
+ 550              		.cfi_offset 6, -12
+ 551              		.cfi_offset 7, -8
+ 552              		.cfi_offset 14, -4
+ 553 0002 83B0     		sub	sp, sp, #12
+ 554              	.LCFI13:
+ 555              		.cfi_def_cfa_offset 32
+ 556 0004 0F46     		mov	r7, r1
+ 557 0006 1646     		mov	r6, r2
+ 558 0008 1D46     		mov	r5, r3
+ 110:Services/Src/display_service.c **** 
+ 559              		.loc 1 110 3 is_stmt 1 view .LVU76
+ 110:Services/Src/display_service.c **** 
+ 560              		.loc 1 110 21 is_stmt 0 view .LVU77
+ 561 000a FFF7FEFF 		bl	lv_label_create
+ 562              	.LVL42:
+ 110:Services/Src/display_service.c **** 
+ 563              		.loc 1 110 21 view .LVU78
+ 564 000e 0446     		mov	r4, r0
+ 565              	.LVL43:
+ 112:Services/Src/display_service.c ****   lv_label_set_long_mode(label, LV_LABEL_LONG_MODE_CLIP);
+ 566              		.loc 1 112 3 is_stmt 1 view .LVU79
+ 567 0010 3946     		mov	r1, r7
+ 568 0012 FFF7FEFF 		bl	lv_label_set_text
+ 569              	.LVL44:
+ 113:Services/Src/display_service.c ****   lv_obj_set_pos(label, x, y);
+ 570              		.loc 1 113 3 view .LVU80
+ 571 0016 0421     		movs	r1, #4
+ 572 0018 2046     		mov	r0, r4
+ 573 001a FFF7FEFF 		bl	lv_label_set_long_mode
+ 574              	.LVL45:
+ 114:Services/Src/display_service.c ****   lv_obj_set_size(label, width, height);
+ 575              		.loc 1 114 3 view .LVU81
+ 576 001e 099A     		ldr	r2, [sp, #36]
+ 577 0020 0899     		ldr	r1, [sp, #32]
+ 578 0022 2046     		mov	r0, r4
+ 579 0024 FFF7FEFF 		bl	lv_obj_set_pos
+ 580              	.LVL46:
+ 115:Services/Src/display_service.c ****   lv_obj_set_style_bg_opa(label, LV_OPA_TRANSP, 0);
+ 581              		.loc 1 115 3 view .LVU82
+ 582 0028 0B9A     		ldr	r2, [sp, #44]
+ 583 002a 0A99     		ldr	r1, [sp, #40]
+ 584 002c 2046     		mov	r0, r4
+ 585 002e FFF7FEFF 		bl	lv_obj_set_size
+ 586              	.LVL47:
+ 116:Services/Src/display_service.c ****   lv_obj_set_style_text_color(label, DisplayService_Color(color), 0);
+ 587              		.loc 1 116 3 view .LVU83
+ 588 0032 0022     		movs	r2, #0
+ 589 0034 1146     		mov	r1, r2
+ 590 0036 2046     		mov	r0, r4
+ 591 0038 FFF7FEFF 		bl	lv_obj_set_style_bg_opa
+ 592              	.LVL48:
+ 117:Services/Src/display_service.c ****   lv_obj_set_style_text_font(label, font, 0);
+ 593              		.loc 1 117 3 view .LVU84
+ 594 003c 3046     		mov	r0, r6
+ 595 003e FFF7FEFF 		bl	DisplayService_Color
+ 596              	.LVL49:
+ 597 0042 8DF80400 		strb	r0, [sp, #4]
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccM97vYx.s 			page 19
+
+
+ 598 0046 C0F30723 		ubfx	r3, r0, #8, #8
+ 599 004a 8DF80530 		strb	r3, [sp, #5]
+ 600 004e C0F30740 		ubfx	r0, r0, #16, #8
+ 601 0052 8DF80600 		strb	r0, [sp, #6]
+ 117:Services/Src/display_service.c ****   lv_obj_set_style_text_font(label, font, 0);
+ 602              		.loc 1 117 3 is_stmt 0 discriminator 1 view .LVU85
+ 603 0056 0022     		movs	r2, #0
+ 604 0058 0199     		ldr	r1, [sp, #4]
+ 605 005a 2046     		mov	r0, r4
+ 606 005c FFF7FEFF 		bl	lv_obj_set_style_text_color
+ 607              	.LVL50:
+ 118:Services/Src/display_service.c ****   lv_obj_set_style_text_align(label, align, 0);
+ 608              		.loc 1 118 3 is_stmt 1 view .LVU86
+ 609 0060 0022     		movs	r2, #0
+ 610 0062 2946     		mov	r1, r5
+ 611 0064 2046     		mov	r0, r4
+ 612 0066 FFF7FEFF 		bl	lv_obj_set_style_text_font
+ 613              	.LVL51:
+ 119:Services/Src/display_service.c ****   lv_obj_set_style_text_letter_space(label, 0, 0);
+ 614              		.loc 1 119 3 view .LVU87
+ 615 006a 0022     		movs	r2, #0
+ 616 006c 9DF83010 		ldrb	r1, [sp, #48]	@ zero_extendqisi2
+ 617 0070 2046     		mov	r0, r4
+ 618 0072 FFF7FEFF 		bl	lv_obj_set_style_text_align
+ 619              	.LVL52:
+ 120:Services/Src/display_service.c ****   lv_obj_set_style_text_line_space(label, 0, 0);
+ 620              		.loc 1 120 3 view .LVU88
+ 621 0076 0022     		movs	r2, #0
+ 622 0078 1146     		mov	r1, r2
+ 623 007a 2046     		mov	r0, r4
+ 624 007c FFF7FEFF 		bl	lv_obj_set_style_text_letter_space
+ 625              	.LVL53:
+ 121:Services/Src/display_service.c ****   DisplayService_PrepareObject(label);
+ 626              		.loc 1 121 3 view .LVU89
+ 627 0080 0022     		movs	r2, #0
+ 628 0082 1146     		mov	r1, r2
+ 629 0084 2046     		mov	r0, r4
+ 630 0086 FFF7FEFF 		bl	lv_obj_set_style_text_line_space
+ 631              	.LVL54:
  122:Services/Src/display_service.c **** 
- 385              		.loc 1 122 3 is_stmt 1 view .LVU56
- 386 0028 0024     		movs	r4, #0
- 387 002a 0094     		str	r4, [sp]
- 388 002c 7823     		movs	r3, #120
- 389 002e AC22     		movs	r2, #172
- 390 0030 3C21     		movs	r1, #60
- 391 0032 2046     		mov	r0, r4
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccDhU1dv.s 			page 11
-
-
- 392 0034 FFF7FEFF 		bl	ST7789_FillRect
- 393              	.LVL25:
+ 632              		.loc 1 122 3 view .LVU90
+ 633 008a 2046     		mov	r0, r4
+ 634 008c FFF7FEFF 		bl	DisplayService_PrepareObject
+ 635              	.LVL55:
+ 124:Services/Src/display_service.c **** }
+ 636              		.loc 1 124 3 view .LVU91
  125:Services/Src/display_service.c **** 
- 394              		.loc 1 125 3 view .LVU57
- 395 0038 0094     		str	r4, [sp]
- 396 003a 4FF6FF73 		movw	r3, #65535
- 397 003e 164A     		ldr	r2, .L29
- 398 0040 1421     		movs	r1, #20
- 399 0042 0A20     		movs	r0, #10
- 400 0044 FFF7FEFF 		bl	ST7789_DrawString
- 401              	.LVL26:
- 128:Services/Src/display_service.c **** 
- 402              		.loc 1 128 3 view .LVU58
- 403 0048 08AE     		add	r6, sp, #32
- 404 004a 144B     		ldr	r3, .L29+4
- 405 004c 9DED0D0A 		vldr.32	s0, [sp, #52]
- 406 0050 134A     		ldr	r2, .L29+8
- 407 0052 1421     		movs	r1, #20
- 408 0054 3046     		mov	r0, r6
- 409 0056 FFF7FEFF 		bl	DisplayService_FormatValue
- 410              	.LVL27:
- 131:Services/Src/display_service.c **** 
- 411              		.loc 1 131 3 view .LVU59
- 412 005a 03AD     		add	r5, sp, #12
- 413 005c 114B     		ldr	r3, .L29+12
- 414 005e 9DED0E0A 		vldr.32	s0, [sp, #56]
- 415 0062 114A     		ldr	r2, .L29+16
- 416 0064 1421     		movs	r1, #20
- 417 0066 2846     		mov	r0, r5
- 418 0068 FFF7FEFF 		bl	DisplayService_FormatValue
- 419              	.LVL28:
- 134:Services/Src/display_service.c **** 
- 420              		.loc 1 134 3 view .LVU60
- 421 006c 0094     		str	r4, [sp]
- 422 006e 4FF6E073 		movw	r3, #65504
- 423 0072 3246     		mov	r2, r6
- 424 0074 5021     		movs	r1, #80
- 425 0076 0A20     		movs	r0, #10
- 426 0078 FFF7FEFF 		bl	ST7789_DrawString
- 427              	.LVL29:
- 137:Services/Src/display_service.c **** }
- 428              		.loc 1 137 3 view .LVU61
- 429 007c 0094     		str	r4, [sp]
- 430 007e 40F2FF73 		movw	r3, #2047
- 431 0082 2A46     		mov	r2, r5
- 432 0084 6E21     		movs	r1, #110
- 433 0086 0A20     		movs	r0, #10
- 434 0088 FFF7FEFF 		bl	ST7789_DrawString
- 435              	.LVL30:
- 436              	.L24:
- 138:Services/Src/display_service.c **** 
- 437              		.loc 1 138 1 is_stmt 0 view .LVU62
- 438 008c 10B0     		add	sp, sp, #64
- 439              	.LCFI13:
- 440              		.cfi_remember_state
- 441              		.cfi_def_cfa_offset 16
- 442              		@ sp needed
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccDhU1dv.s 			page 12
+ 637              		.loc 1 125 1 is_stmt 0 view .LVU92
+ 638 0090 2046     		mov	r0, r4
+ 639 0092 03B0     		add	sp, sp, #12
+ 640              	.LCFI14:
+ 641              		.cfi_def_cfa_offset 20
+ 642              		@ sp needed
+ 643 0094 F0BD     		pop	{r4, r5, r6, r7, pc}
+ 125:Services/Src/display_service.c **** 
+ 644              		.loc 1 125 1 view .LVU93
+ 645              		.cfi_endproc
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccM97vYx.s 			page 20
 
 
- 443 008e 70BD     		pop	{r4, r5, r6, pc}
- 444              	.L28:
- 445              	.LCFI14:
- 446              		.cfi_restore_state
- 115:Services/Src/display_service.c **** 
- 447              		.loc 1 115 5 is_stmt 1 view .LVU63
- 448 0090 FFF7FEFF 		bl	DisplayService_ShowSensorError
- 449              	.LVL31:
- 118:Services/Src/display_service.c ****   }
- 450              		.loc 1 118 5 view .LVU64
- 451 0094 FAE7     		b	.L24
- 452              	.L30:
- 453 0096 00BF     		.align	2
- 454              	.L29:
- 455 0098 00000000 		.word	.LC1
- 456 009c 00000000 		.word	.LC4
- 457 00a0 04000000 		.word	.LC5
- 458 00a4 0C000000 		.word	.LC6
- 459 00a8 10000000 		.word	.LC7
- 460              		.cfi_endproc
- 461              	.LFE139:
- 463              		.section	.text.DisplayService_Update,"ax",%progbits
- 464              		.align	1
- 465              		.global	DisplayService_Update
- 466              		.syntax unified
- 467              		.thumb
- 468              		.thumb_func
- 470              	DisplayService_Update:
- 471              	.LFB141:
- 155:Services/Src/display_service.c **** 
- 156:Services/Src/display_service.c **** /**
- 157:Services/Src/display_service.c ****  * @brief 刷新显示服务内容。
- 158:Services/Src/display_service.c ****  * @retval 无
- 159:Services/Src/display_service.c ****  */
- 160:Services/Src/display_service.c **** void DisplayService_Update(void)
- 161:Services/Src/display_service.c **** {
- 472              		.loc 1 161 1 view -0
- 473              		.cfi_startproc
- 474              		@ args = 0, pretend = 0, frame = 0
- 475              		@ frame_needed = 0, uses_anonymous_args = 0
- 476 0000 08B5     		push	{r3, lr}
- 477              	.LCFI15:
- 478              		.cfi_def_cfa_offset 8
- 479              		.cfi_offset 3, -8
- 480              		.cfi_offset 14, -4
- 162:Services/Src/display_service.c ****   /* 第一版直接显示当前传感器缓存数据。 */
- 163:Services/Src/display_service.c ****   DisplayService_ShowSensorData();
- 481              		.loc 1 163 3 view .LVU66
- 482 0002 FFF7FEFF 		bl	DisplayService_ShowSensorData
- 483              	.LVL32:
- 164:Services/Src/display_service.c **** }
- 484              		.loc 1 164 1 is_stmt 0 view .LVU67
- 485 0006 08BD     		pop	{r3, pc}
- 486              		.cfi_endproc
- 487              	.LFE141:
- 489              		.section	.text.DisplayService_TestColorCycle,"ax",%progbits
- 490              		.align	1
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccDhU1dv.s 			page 13
+ 646              	.LFE335:
+ 648              		.section	.rodata.DisplayService_CreateUI.str1.4,"aMS",%progbits,1
+ 649              		.align	2
+ 650              	.LC4:
+ 651 0000 E699BAE8 		.ascii	"\346\231\272\350\203\275\345\212\240\346\271\277\345"
+ 651      83BDE58A 
+ 651      A0E6B9BF 
+ 651      E5
+ 652 000d 99A800   		.ascii	"\231\250\000"
+ 653              		.align	2
+ 654              	.LC5:
+ 655 0010 33302500 		.ascii	"30%\000"
+ 656              		.align	2
+ 657              	.LC6:
+ 658 0014 36302500 		.ascii	"60%\000"
+ 659              		.align	2
+ 660              	.LC7:
+ 661 0018 39302500 		.ascii	"90%\000"
+ 662              		.section	.text.DisplayService_CreateUI,"ax",%progbits
+ 663              		.align	1
+ 664              		.syntax unified
+ 665              		.thumb
+ 666              		.thumb_func
+ 668              	DisplayService_CreateUI:
+ 669              	.LFB337:
+ 136:Services/Src/display_service.c **** 
+ 137:Services/Src/display_service.c **** static void DisplayService_CreateUI(void)
+ 138:Services/Src/display_service.c **** {
+ 670              		.loc 1 138 1 is_stmt 1 view -0
+ 671              		.cfi_startproc
+ 672              		@ args = 0, pretend = 0, frame = 24
+ 673              		@ frame_needed = 0, uses_anonymous_args = 0
+ 674 0000 2DE9F04F 		push	{r4, r5, r6, r7, r8, r9, r10, fp, lr}
+ 675              	.LCFI15:
+ 676              		.cfi_def_cfa_offset 36
+ 677              		.cfi_offset 4, -36
+ 678              		.cfi_offset 5, -32
+ 679              		.cfi_offset 6, -28
+ 680              		.cfi_offset 7, -24
+ 681              		.cfi_offset 8, -20
+ 682              		.cfi_offset 9, -16
+ 683              		.cfi_offset 10, -12
+ 684              		.cfi_offset 11, -8
+ 685              		.cfi_offset 14, -4
+ 686 0004 8DB0     		sub	sp, sp, #52
+ 687              	.LCFI16:
+ 688              		.cfi_def_cfa_offset 88
+ 139:Services/Src/display_service.c ****   lv_obj_t *screen = lv_screen_active();
+ 689              		.loc 1 139 3 view .LVU95
+ 690              		.loc 1 139 22 is_stmt 0 view .LVU96
+ 691 0006 FFF7FEFF 		bl	lv_screen_active
+ 692              	.LVL56:
+ 693 000a 0446     		mov	r4, r0
+ 694              	.LVL57:
+ 140:Services/Src/display_service.c ****   lv_obj_t *data_card;
+ 695              		.loc 1 140 3 is_stmt 1 view .LVU97
+ 141:Services/Src/display_service.c ****   lv_obj_t *mode_card;
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccM97vYx.s 			page 21
 
 
- 491              		.global	DisplayService_TestColorCycle
- 492              		.syntax unified
- 493              		.thumb
- 494              		.thumb_func
- 496              	DisplayService_TestColorCycle:
- 497              	.LFB142:
- 165:Services/Src/display_service.c **** 
- 166:Services/Src/display_service.c **** /**
- 167:Services/Src/display_service.c ****  * @brief 执行显示服务的颜色循环测试。
- 168:Services/Src/display_service.c ****  * @retval 无
- 169:Services/Src/display_service.c ****  */
- 170:Services/Src/display_service.c **** void DisplayService_TestColorCycle(void)
- 171:Services/Src/display_service.c **** {
- 498              		.loc 1 171 1 is_stmt 1 view -0
- 499              		.cfi_startproc
- 500              		@ args = 0, pretend = 0, frame = 0
- 501              		@ frame_needed = 0, uses_anonymous_args = 0
- 502 0000 08B5     		push	{r3, lr}
- 503              	.LCFI16:
- 504              		.cfi_def_cfa_offset 8
- 505              		.cfi_offset 3, -8
- 506              		.cfi_offset 14, -4
- 172:Services/Src/display_service.c ****   /* 显示服务通过设备驱动层执行 ST7789 颜色循环测试。 */
- 173:Services/Src/display_service.c ****   ST7789_TestColorCycle();
- 507              		.loc 1 173 3 view .LVU69
- 508 0002 FFF7FEFF 		bl	ST7789_TestColorCycle
- 509              	.LVL33:
- 174:Services/Src/display_service.c **** }
- 510              		.loc 1 174 1 is_stmt 0 view .LVU70
- 511 0006 08BD     		pop	{r3, pc}
- 512              		.cfi_endproc
- 513              	.LFE142:
- 515              		.text
- 516              	.Letext0:
- 517              		.file 2 "D:\\STM32CubeIDE\\STM32CubeIDE_2.1.1\\STM32CubeIDE\\plugins\\com.st.stm32cube.ide.mcu.ext
- 518              		.file 3 "D:\\STM32CubeIDE\\STM32CubeIDE_2.1.1\\STM32CubeIDE\\plugins\\com.st.stm32cube.ide.mcu.ext
- 519              		.file 4 "Services/Inc/sensor_service.h"
- 520              		.file 5 "D:\\STM32CubeIDE\\STM32CubeIDE_2.1.1\\STM32CubeIDE\\plugins\\com.st.stm32cube.ide.mcu.ext
- 521              		.file 6 "DeviceDrivers/LCD/Inc/st7789.h"
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccDhU1dv.s 			page 14
+ 696              		.loc 1 141 3 view .LVU98
+ 142:Services/Src/display_service.c ****   lv_obj_t *target_card;
+ 697              		.loc 1 142 3 view .LVU99
+ 143:Services/Src/display_service.c **** 
+ 144:Services/Src/display_service.c ****   lv_obj_remove_style_all(screen);
+ 698              		.loc 1 144 3 view .LVU100
+ 699 000c FFF7FEFF 		bl	lv_obj_remove_style_all
+ 700              	.LVL58:
+ 145:Services/Src/display_service.c ****   lv_obj_set_size(screen, DISPLAY_UI_SCREEN_W, DISPLAY_UI_SCREEN_H);
+ 701              		.loc 1 145 3 view .LVU101
+ 702 0010 4FF4A072 		mov	r2, #320
+ 703 0014 AC21     		movs	r1, #172
+ 704 0016 2046     		mov	r0, r4
+ 705 0018 FFF7FEFF 		bl	lv_obj_set_size
+ 706              	.LVL59:
+ 146:Services/Src/display_service.c ****   lv_obj_set_style_bg_color(screen, DisplayService_Color(UI_COLOR_BG), 0);
+ 707              		.loc 1 146 3 view .LVU102
+ 708 001c 9048     		ldr	r0, .L29
+ 709 001e FFF7FEFF 		bl	DisplayService_Color
+ 710              	.LVL60:
+ 711 0022 8DF82400 		strb	r0, [sp, #36]
+ 712 0026 C0F30723 		ubfx	r3, r0, #8, #8
+ 713 002a 8DF82530 		strb	r3, [sp, #37]
+ 714 002e C0F30740 		ubfx	r0, r0, #16, #8
+ 715 0032 8DF82600 		strb	r0, [sp, #38]
+ 716              		.loc 1 146 3 is_stmt 0 discriminator 1 view .LVU103
+ 717 0036 0022     		movs	r2, #0
+ 718 0038 0999     		ldr	r1, [sp, #36]
+ 719 003a 2046     		mov	r0, r4
+ 720 003c FFF7FEFF 		bl	lv_obj_set_style_bg_color
+ 721              	.LVL61:
+ 147:Services/Src/display_service.c ****   lv_obj_set_style_bg_opa(screen, LV_OPA_COVER, 0);
+ 722              		.loc 1 147 3 is_stmt 1 view .LVU104
+ 723 0040 0022     		movs	r2, #0
+ 724 0042 FF21     		movs	r1, #255
+ 725 0044 2046     		mov	r0, r4
+ 726 0046 FFF7FEFF 		bl	lv_obj_set_style_bg_opa
+ 727              	.LVL62:
+ 148:Services/Src/display_service.c ****   lv_obj_set_style_pad_all(screen, 0, 0);
+ 728              		.loc 1 148 3 view .LVU105
+ 729 004a 0022     		movs	r2, #0
+ 730 004c 1146     		mov	r1, r2
+ 731 004e 2046     		mov	r0, r4
+ 732 0050 FFF7FEFF 		bl	lv_obj_set_style_pad_all
+ 733              	.LVL63:
+ 149:Services/Src/display_service.c ****   DisplayService_PrepareObject(screen);
+ 734              		.loc 1 149 3 view .LVU106
+ 735 0054 2046     		mov	r0, r4
+ 736 0056 FFF7FEFF 		bl	DisplayService_PrepareObject
+ 737              	.LVL64:
+ 150:Services/Src/display_service.c **** 
+ 151:Services/Src/display_service.c ****   (void)DisplayService_CreateLabel(screen,
+ 738              		.loc 1 151 3 view .LVU107
+ 739              		.loc 1 151 9 is_stmt 0 view .LVU108
+ 740 005a FFF7FEFF 		bl	DisplayService_GetUIFont
+ 741              	.LVL65:
+ 742 005e 0646     		mov	r6, r0
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccM97vYx.s 			page 22
+
+
+ 743              		.loc 1 151 9 discriminator 1 view .LVU109
+ 744 0060 DFF84092 		ldr	r9, .L29+68
+ 745 0064 0227     		movs	r7, #2
+ 746 0066 0497     		str	r7, [sp, #16]
+ 747 0068 4FF0180B 		mov	fp, #24
+ 748 006c CDF80CB0 		str	fp, [sp, #12]
+ 749 0070 AC23     		movs	r3, #172
+ 750 0072 0293     		str	r3, [sp, #8]
+ 751 0074 0F23     		movs	r3, #15
+ 752 0076 0193     		str	r3, [sp, #4]
+ 753 0078 0025     		movs	r5, #0
+ 754 007a 0095     		str	r5, [sp]
+ 755 007c 0346     		mov	r3, r0
+ 756 007e 4A46     		mov	r2, r9
+ 757 0080 7849     		ldr	r1, .L29+4
+ 758 0082 2046     		mov	r0, r4
+ 759 0084 FFF7FEFF 		bl	DisplayService_CreateLabel
+ 760              	.LVL66:
+ 152:Services/Src/display_service.c ****                                    "智能加湿器",
+ 153:Services/Src/display_service.c ****                                    UI_COLOR_TEXT_MAIN,
+ 154:Services/Src/display_service.c ****                                    DisplayService_GetUIFont(),
+ 155:Services/Src/display_service.c ****                                    DISPLAY_UI_TITLE_X,
+ 156:Services/Src/display_service.c ****                                    DISPLAY_UI_TITLE_Y,
+ 157:Services/Src/display_service.c ****                                    DISPLAY_UI_TITLE_W,
+ 158:Services/Src/display_service.c ****                                    DISPLAY_UI_TITLE_H,
+ 159:Services/Src/display_service.c ****                                    LV_TEXT_ALIGN_CENTER);
+ 160:Services/Src/display_service.c **** 
+ 161:Services/Src/display_service.c ****   data_card = DisplayService_CreateCard(screen,
+ 761              		.loc 1 161 3 is_stmt 1 view .LVU110
+ 762              		.loc 1 161 15 is_stmt 0 view .LVU111
+ 763 0088 4823     		movs	r3, #72
+ 764 008a 0093     		str	r3, [sp]
+ 765 008c A023     		movs	r3, #160
+ 766 008e 3422     		movs	r2, #52
+ 767 0090 0621     		movs	r1, #6
+ 768 0092 2046     		mov	r0, r4
+ 769 0094 FFF7FEFF 		bl	DisplayService_CreateCard
+ 770              	.LVL67:
+ 771 0098 0790     		str	r0, [sp, #28]
+ 772              	.LVL68:
+ 162:Services/Src/display_service.c ****                                         DISPLAY_UI_DATA_X,
+ 163:Services/Src/display_service.c ****                                         DISPLAY_UI_DATA_Y,
+ 164:Services/Src/display_service.c ****                                         DISPLAY_UI_DATA_W,
+ 165:Services/Src/display_service.c ****                                         DISPLAY_UI_DATA_H);
+ 166:Services/Src/display_service.c ****   s_temp_label = DisplayService_CreateLabel(data_card,
+ 773              		.loc 1 166 3 is_stmt 1 view .LVU112
+ 774              		.loc 1 166 18 is_stmt 0 discriminator 1 view .LVU113
+ 775 009a 0497     		str	r7, [sp, #16]
+ 776 009c 4FF0160A 		mov	r10, #22
+ 777 00a0 CDF80CA0 		str	r10, [sp, #12]
+ 778 00a4 4FF0A008 		mov	r8, #160
+ 779 00a8 CDF80880 		str	r8, [sp, #8]
+ 780 00ac 0C23     		movs	r3, #12
+ 781 00ae 0193     		str	r3, [sp, #4]
+ 782 00b0 0095     		str	r5, [sp]
+ 783 00b2 3346     		mov	r3, r6
+ 784 00b4 6C4A     		ldr	r2, .L29+8
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccM97vYx.s 			page 23
+
+
+ 785 00b6 6D49     		ldr	r1, .L29+12
+ 786 00b8 FFF7FEFF 		bl	DisplayService_CreateLabel
+ 787              	.LVL69:
+ 788              		.loc 1 166 16 discriminator 2 view .LVU114
+ 789 00bc 6C4B     		ldr	r3, .L29+16
+ 790 00be 1860     		str	r0, [r3]
+ 167:Services/Src/display_service.c ****                                             "温度: 25.6C",
+ 168:Services/Src/display_service.c ****                                             UI_COLOR_BLUE,
+ 169:Services/Src/display_service.c ****                                             DisplayService_GetUIFont(),
+ 170:Services/Src/display_service.c ****                                             DISPLAY_UI_TEMP_LINE_X,
+ 171:Services/Src/display_service.c ****                                             DISPLAY_UI_TEMP_LINE_Y,
+ 172:Services/Src/display_service.c ****                                             DISPLAY_UI_DATA_LINE_W,
+ 173:Services/Src/display_service.c ****                                             DISPLAY_UI_DATA_LINE_H,
+ 174:Services/Src/display_service.c ****                                             LV_TEXT_ALIGN_CENTER);
+ 175:Services/Src/display_service.c ****   s_humi_label = DisplayService_CreateLabel(data_card,
+ 791              		.loc 1 175 3 is_stmt 1 view .LVU115
+ 792              		.loc 1 175 18 is_stmt 0 discriminator 1 view .LVU116
+ 793 00c0 0497     		str	r7, [sp, #16]
+ 794 00c2 CDF80CA0 		str	r10, [sp, #12]
+ 795 00c6 CDF80880 		str	r8, [sp, #8]
+ 796 00ca 2A23     		movs	r3, #42
+ 797 00cc 0193     		str	r3, [sp, #4]
+ 798 00ce 0095     		str	r5, [sp]
+ 799 00d0 3346     		mov	r3, r6
+ 800 00d2 684A     		ldr	r2, .L29+20
+ 801 00d4 6849     		ldr	r1, .L29+24
+ 802 00d6 0798     		ldr	r0, [sp, #28]
+ 803 00d8 FFF7FEFF 		bl	DisplayService_CreateLabel
+ 804              	.LVL70:
+ 805              		.loc 1 175 16 discriminator 2 view .LVU117
+ 806 00dc 674B     		ldr	r3, .L29+28
+ 807 00de 1860     		str	r0, [r3]
+ 176:Services/Src/display_service.c ****                                             "湿度: 63.2%",
+ 177:Services/Src/display_service.c ****                                             UI_COLOR_GREEN,
+ 178:Services/Src/display_service.c ****                                             DisplayService_GetUIFont(),
+ 179:Services/Src/display_service.c ****                                             DISPLAY_UI_HUMI_LINE_X,
+ 180:Services/Src/display_service.c ****                                             DISPLAY_UI_HUMI_LINE_Y,
+ 181:Services/Src/display_service.c ****                                             DISPLAY_UI_DATA_LINE_W,
+ 182:Services/Src/display_service.c ****                                             DISPLAY_UI_DATA_LINE_H,
+ 183:Services/Src/display_service.c ****                                             LV_TEXT_ALIGN_CENTER);
+ 184:Services/Src/display_service.c **** 
+ 185:Services/Src/display_service.c ****   mode_card = DisplayService_CreateCard(screen,
+ 808              		.loc 1 185 3 is_stmt 1 view .LVU118
+ 809              		.loc 1 185 15 is_stmt 0 view .LVU119
+ 810 00e0 3423     		movs	r3, #52
+ 811 00e2 0093     		str	r3, [sp]
+ 812 00e4 4346     		mov	r3, r8
+ 813 00e6 8822     		movs	r2, #136
+ 814 00e8 0621     		movs	r1, #6
+ 815 00ea 2046     		mov	r0, r4
+ 816 00ec FFF7FEFF 		bl	DisplayService_CreateCard
+ 817              	.LVL71:
+ 186:Services/Src/display_service.c ****                                         DISPLAY_UI_MODE_X,
+ 187:Services/Src/display_service.c ****                                         DISPLAY_UI_MODE_Y,
+ 188:Services/Src/display_service.c ****                                         DISPLAY_UI_MODE_W,
+ 189:Services/Src/display_service.c ****                                         DISPLAY_UI_MODE_H);
+ 190:Services/Src/display_service.c ****   s_mode_label = DisplayService_CreateLabel(mode_card,
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccM97vYx.s 			page 24
+
+
+ 818              		.loc 1 190 3 is_stmt 1 view .LVU120
+ 819              		.loc 1 190 18 is_stmt 0 discriminator 1 view .LVU121
+ 820 00f0 0497     		str	r7, [sp, #16]
+ 821 00f2 CDF80CB0 		str	fp, [sp, #12]
+ 822 00f6 CDF80880 		str	r8, [sp, #8]
+ 823 00fa 4FF0140A 		mov	r10, #20
+ 824 00fe CDF804A0 		str	r10, [sp, #4]
+ 825 0102 0095     		str	r5, [sp]
+ 826 0104 3346     		mov	r3, r6
+ 827 0106 5B4A     		ldr	r2, .L29+20
+ 828 0108 5D49     		ldr	r1, .L29+32
+ 829 010a FFF7FEFF 		bl	DisplayService_CreateLabel
+ 830              	.LVL72:
+ 831              		.loc 1 190 16 discriminator 2 view .LVU122
+ 832 010e 5D4B     		ldr	r3, .L29+36
+ 833 0110 1860     		str	r0, [r3]
+ 191:Services/Src/display_service.c ****                                             "工作: 自动",
+ 192:Services/Src/display_service.c ****                                             UI_COLOR_GREEN,
+ 193:Services/Src/display_service.c ****                                             DisplayService_GetUIFont(),
+ 194:Services/Src/display_service.c ****                                             DISPLAY_UI_MODE_LINE_X,
+ 195:Services/Src/display_service.c ****                                             DISPLAY_UI_MODE_LINE_Y,
+ 196:Services/Src/display_service.c ****                                             DISPLAY_UI_MODE_LINE_W,
+ 197:Services/Src/display_service.c ****                                             DISPLAY_UI_MODE_LINE_H,
+ 198:Services/Src/display_service.c ****                                             LV_TEXT_ALIGN_CENTER);
+ 199:Services/Src/display_service.c **** 
+ 200:Services/Src/display_service.c ****   target_card = DisplayService_CreateCard(screen,
+ 834              		.loc 1 200 3 is_stmt 1 view .LVU123
+ 835              		.loc 1 200 17 is_stmt 0 view .LVU124
+ 836 0112 6823     		movs	r3, #104
+ 837 0114 0093     		str	r3, [sp]
+ 838 0116 4346     		mov	r3, r8
+ 839 0118 C822     		movs	r2, #200
+ 840 011a 0621     		movs	r1, #6
+ 841 011c 2046     		mov	r0, r4
+ 842 011e FFF7FEFF 		bl	DisplayService_CreateCard
+ 843              	.LVL73:
+ 844 0122 0446     		mov	r4, r0
+ 845              	.LVL74:
+ 201:Services/Src/display_service.c ****                                           DISPLAY_UI_TARGET_X,
+ 202:Services/Src/display_service.c ****                                           DISPLAY_UI_TARGET_Y,
+ 203:Services/Src/display_service.c ****                                           DISPLAY_UI_TARGET_W,
+ 204:Services/Src/display_service.c ****                                           DISPLAY_UI_TARGET_H);
+ 205:Services/Src/display_service.c ****   s_target_label = DisplayService_CreateLabel(target_card,
+ 846              		.loc 1 205 3 is_stmt 1 view .LVU125
+ 847              		.loc 1 205 20 is_stmt 0 discriminator 1 view .LVU126
+ 848 0124 0497     		str	r7, [sp, #16]
+ 849 0126 CDF80CB0 		str	fp, [sp, #12]
+ 850 012a CDF80880 		str	r8, [sp, #8]
+ 851 012e 1123     		movs	r3, #17
+ 852 0130 0193     		str	r3, [sp, #4]
+ 853 0132 0095     		str	r5, [sp]
+ 854 0134 3346     		mov	r3, r6
+ 855 0136 4A46     		mov	r2, r9
+ 856 0138 5349     		ldr	r1, .L29+40
+ 857 013a FFF7FEFF 		bl	DisplayService_CreateLabel
+ 858              	.LVL75:
+ 859              		.loc 1 205 18 discriminator 2 view .LVU127
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccM97vYx.s 			page 25
+
+
+ 860 013e 534B     		ldr	r3, .L29+44
+ 861 0140 1860     		str	r0, [r3]
+ 206:Services/Src/display_service.c ****                                               "目标: 60%",
+ 207:Services/Src/display_service.c ****                                               UI_COLOR_TEXT_MAIN,
+ 208:Services/Src/display_service.c ****                                               DisplayService_GetUIFont(),
+ 209:Services/Src/display_service.c ****                                               DISPLAY_UI_TARGET_LABEL_X,
+ 210:Services/Src/display_service.c ****                                               DISPLAY_UI_TARGET_LABEL_Y,
+ 211:Services/Src/display_service.c ****                                               DISPLAY_UI_TARGET_LABEL_W,
+ 212:Services/Src/display_service.c ****                                               DISPLAY_UI_TARGET_LABEL_H,
+ 213:Services/Src/display_service.c ****                                               LV_TEXT_ALIGN_CENTER);
+ 214:Services/Src/display_service.c **** 
+ 215:Services/Src/display_service.c ****   s_target_bar = lv_bar_create(target_card);
+ 862              		.loc 1 215 3 is_stmt 1 view .LVU128
+ 863              		.loc 1 215 18 is_stmt 0 view .LVU129
+ 864 0142 2046     		mov	r0, r4
+ 865 0144 FFF7FEFF 		bl	lv_bar_create
+ 866              	.LVL76:
+ 867              		.loc 1 215 16 discriminator 1 view .LVU130
+ 868 0148 514E     		ldr	r6, .L29+48
+ 869 014a 3060     		str	r0, [r6]
+ 216:Services/Src/display_service.c ****   lv_obj_set_pos(s_target_bar, DISPLAY_UI_TARGET_BAR_X, DISPLAY_UI_TARGET_BAR_Y);
+ 870              		.loc 1 216 3 is_stmt 1 view .LVU131
+ 871 014c 3022     		movs	r2, #48
+ 872 014e 0E21     		movs	r1, #14
+ 873 0150 FFF7FEFF 		bl	lv_obj_set_pos
+ 874              	.LVL77:
+ 217:Services/Src/display_service.c ****   lv_obj_set_size(s_target_bar, DISPLAY_UI_TARGET_BAR_W, DISPLAY_UI_TARGET_BAR_H);
+ 875              		.loc 1 217 3 view .LVU132
+ 876 0154 0A22     		movs	r2, #10
+ 877 0156 8421     		movs	r1, #132
+ 878 0158 3068     		ldr	r0, [r6]
+ 879 015a FFF7FEFF 		bl	lv_obj_set_size
+ 880              	.LVL78:
+ 218:Services/Src/display_service.c ****   lv_bar_set_range(s_target_bar, UI_TARGET_HUMIDITY_MIN, UI_TARGET_HUMIDITY_MAX);
+ 881              		.loc 1 218 3 view .LVU133
+ 882 015e 5A22     		movs	r2, #90
+ 883 0160 1E21     		movs	r1, #30
+ 884 0162 3068     		ldr	r0, [r6]
+ 885 0164 FFF7FEFF 		bl	lv_bar_set_range
+ 886              	.LVL79:
+ 219:Services/Src/display_service.c ****   lv_bar_set_value(s_target_bar, UI_TARGET_HUMIDITY, LV_ANIM_OFF);
+ 887              		.loc 1 219 3 view .LVU134
+ 888 0168 2A46     		mov	r2, r5
+ 889 016a 3C21     		movs	r1, #60
+ 890 016c 3068     		ldr	r0, [r6]
+ 891 016e FFF7FEFF 		bl	lv_bar_set_value
+ 892              	.LVL80:
+ 220:Services/Src/display_service.c ****   lv_obj_set_style_bg_color(s_target_bar, DisplayService_Color(UI_COLOR_BAR_BG), LV_PART_MAIN);
+ 893              		.loc 1 220 3 view .LVU135
+ 894 0172 D6F80080 		ldr	r8, [r6]
+ 895 0176 4748     		ldr	r0, .L29+52
+ 896 0178 FFF7FEFF 		bl	DisplayService_Color
+ 897              	.LVL81:
+ 898 017c 8DF82800 		strb	r0, [sp, #40]
+ 899 0180 C0F30723 		ubfx	r3, r0, #8, #8
+ 900 0184 8DF82930 		strb	r3, [sp, #41]
+ 901 0188 C0F30740 		ubfx	r0, r0, #16, #8
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccM97vYx.s 			page 26
+
+
+ 902 018c 8DF82A00 		strb	r0, [sp, #42]
+ 903              		.loc 1 220 3 is_stmt 0 discriminator 1 view .LVU136
+ 904 0190 2A46     		mov	r2, r5
+ 905 0192 0A99     		ldr	r1, [sp, #40]
+ 906 0194 4046     		mov	r0, r8
+ 907 0196 FFF7FEFF 		bl	lv_obj_set_style_bg_color
+ 908              	.LVL82:
+ 221:Services/Src/display_service.c ****   lv_obj_set_style_bg_opa(s_target_bar, LV_OPA_COVER, LV_PART_MAIN);
+ 909              		.loc 1 221 3 is_stmt 1 view .LVU137
+ 910 019a 2A46     		mov	r2, r5
+ 911 019c FF21     		movs	r1, #255
+ 912 019e 3068     		ldr	r0, [r6]
+ 913 01a0 FFF7FEFF 		bl	lv_obj_set_style_bg_opa
+ 914              	.LVL83:
+ 222:Services/Src/display_service.c ****   lv_obj_set_style_bg_color(s_target_bar, DisplayService_Color(UI_COLOR_BLUE), LV_PART_INDICATOR);
+ 915              		.loc 1 222 3 view .LVU138
+ 916 01a4 D6F80080 		ldr	r8, [r6]
+ 917 01a8 2F48     		ldr	r0, .L29+8
+ 918 01aa FFF7FEFF 		bl	DisplayService_Color
+ 919              	.LVL84:
+ 920 01ae 8DF82C00 		strb	r0, [sp, #44]
+ 921 01b2 C0F30723 		ubfx	r3, r0, #8, #8
+ 922 01b6 8DF82D30 		strb	r3, [sp, #45]
+ 923 01ba C0F30740 		ubfx	r0, r0, #16, #8
+ 924 01be 8DF82E00 		strb	r0, [sp, #46]
+ 925              		.loc 1 222 3 is_stmt 0 discriminator 1 view .LVU139
+ 926 01c2 4FF40032 		mov	r2, #131072
+ 927 01c6 0B99     		ldr	r1, [sp, #44]
+ 928 01c8 4046     		mov	r0, r8
+ 929 01ca FFF7FEFF 		bl	lv_obj_set_style_bg_color
+ 930              	.LVL85:
+ 223:Services/Src/display_service.c ****   lv_obj_set_style_bg_opa(s_target_bar, LV_OPA_COVER, LV_PART_INDICATOR);
+ 931              		.loc 1 223 3 is_stmt 1 view .LVU140
+ 932 01ce 4FF40032 		mov	r2, #131072
+ 933 01d2 FF21     		movs	r1, #255
+ 934 01d4 3068     		ldr	r0, [r6]
+ 935 01d6 FFF7FEFF 		bl	lv_obj_set_style_bg_opa
+ 936              	.LVL86:
+ 224:Services/Src/display_service.c ****   lv_obj_set_style_radius(s_target_bar, 4, LV_PART_MAIN);
+ 937              		.loc 1 224 3 view .LVU141
+ 938 01da 2A46     		mov	r2, r5
+ 939 01dc 0421     		movs	r1, #4
+ 940 01de 3068     		ldr	r0, [r6]
+ 941 01e0 FFF7FEFF 		bl	lv_obj_set_style_radius
+ 942              	.LVL87:
+ 225:Services/Src/display_service.c ****   lv_obj_set_style_radius(s_target_bar, 4, LV_PART_INDICATOR);
+ 943              		.loc 1 225 3 view .LVU142
+ 944 01e4 4FF40032 		mov	r2, #131072
+ 945 01e8 0421     		movs	r1, #4
+ 946 01ea 3068     		ldr	r0, [r6]
+ 947 01ec FFF7FEFF 		bl	lv_obj_set_style_radius
+ 948              	.LVL88:
+ 226:Services/Src/display_service.c ****   DisplayService_PrepareObject(s_target_bar);
+ 949              		.loc 1 226 3 view .LVU143
+ 950 01f0 3068     		ldr	r0, [r6]
+ 951 01f2 FFF7FEFF 		bl	DisplayService_PrepareObject
+ 952              	.LVL89:
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccM97vYx.s 			page 27
+
+
+ 227:Services/Src/display_service.c **** 
+ 228:Services/Src/display_service.c ****   (void)DisplayService_CreateLabel(target_card,
+ 953              		.loc 1 228 3 view .LVU144
+ 954              		.loc 1 228 9 is_stmt 0 view .LVU145
+ 955 01f6 FFF7FEFF 		bl	DisplayService_GetNumFont
+ 956              	.LVL90:
+ 957 01fa 0546     		mov	r5, r0
+ 958              		.loc 1 228 9 discriminator 1 view .LVU146
+ 959 01fc 0123     		movs	r3, #1
+ 960 01fe 0493     		str	r3, [sp, #16]
+ 961 0200 CDF80CA0 		str	r10, [sp, #12]
+ 962 0204 4FF02808 		mov	r8, #40
+ 963 0208 CDF80880 		str	r8, [sp, #8]
+ 964 020c 4426     		movs	r6, #68
+ 965 020e 0196     		str	r6, [sp, #4]
+ 966 0210 0823     		movs	r3, #8
+ 967 0212 0093     		str	r3, [sp]
+ 968 0214 0346     		mov	r3, r0
+ 969 0216 4A46     		mov	r2, r9
+ 970 0218 1F49     		ldr	r1, .L29+56
+ 971 021a 2046     		mov	r0, r4
+ 972 021c FFF7FEFF 		bl	DisplayService_CreateLabel
+ 973              	.LVL91:
+ 229:Services/Src/display_service.c ****                                    "30%",
+ 230:Services/Src/display_service.c ****                                    UI_COLOR_TEXT_MAIN,
+ 231:Services/Src/display_service.c ****                                    DisplayService_GetNumFont(),
+ 232:Services/Src/display_service.c ****                                    DISPLAY_UI_TARGET_SCALE_MIN_X,
+ 233:Services/Src/display_service.c ****                                    DISPLAY_UI_TARGET_SCALE_Y,
+ 234:Services/Src/display_service.c ****                                    DISPLAY_UI_TARGET_SCALE_W,
+ 235:Services/Src/display_service.c ****                                    DISPLAY_UI_TARGET_SCALE_H,
+ 236:Services/Src/display_service.c ****                                    LV_TEXT_ALIGN_LEFT);
+ 237:Services/Src/display_service.c ****   (void)DisplayService_CreateLabel(target_card,
+ 974              		.loc 1 237 3 is_stmt 1 view .LVU147
+ 975              		.loc 1 237 9 is_stmt 0 discriminator 1 view .LVU148
+ 976 0220 0497     		str	r7, [sp, #16]
+ 977 0222 CDF80CA0 		str	r10, [sp, #12]
+ 978 0226 CDF80880 		str	r8, [sp, #8]
+ 979 022a 0196     		str	r6, [sp, #4]
+ 980 022c 3C23     		movs	r3, #60
+ 981 022e 0093     		str	r3, [sp]
+ 982 0230 2B46     		mov	r3, r5
+ 983 0232 4A46     		mov	r2, r9
+ 984 0234 1949     		ldr	r1, .L29+60
+ 985 0236 2046     		mov	r0, r4
+ 986 0238 FFF7FEFF 		bl	DisplayService_CreateLabel
+ 987              	.LVL92:
+ 238:Services/Src/display_service.c ****                                    "60%",
+ 239:Services/Src/display_service.c ****                                    UI_COLOR_TEXT_MAIN,
+ 240:Services/Src/display_service.c ****                                    DisplayService_GetNumFont(),
+ 241:Services/Src/display_service.c ****                                    DISPLAY_UI_TARGET_SCALE_MID_X,
+ 242:Services/Src/display_service.c ****                                    DISPLAY_UI_TARGET_SCALE_Y,
+ 243:Services/Src/display_service.c ****                                    DISPLAY_UI_TARGET_SCALE_W,
+ 244:Services/Src/display_service.c ****                                    DISPLAY_UI_TARGET_SCALE_H,
+ 245:Services/Src/display_service.c ****                                    LV_TEXT_ALIGN_CENTER);
+ 246:Services/Src/display_service.c ****   (void)DisplayService_CreateLabel(target_card,
+ 988              		.loc 1 246 3 is_stmt 1 view .LVU149
+ 989              		.loc 1 246 9 is_stmt 0 discriminator 1 view .LVU150
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccM97vYx.s 			page 28
+
+
+ 990 023c 0323     		movs	r3, #3
+ 991 023e 0493     		str	r3, [sp, #16]
+ 992 0240 CDF80CA0 		str	r10, [sp, #12]
+ 993 0244 CDF80880 		str	r8, [sp, #8]
+ 994 0248 0196     		str	r6, [sp, #4]
+ 995 024a 6D23     		movs	r3, #109
+ 996 024c 0093     		str	r3, [sp]
+ 997 024e 2B46     		mov	r3, r5
+ 998 0250 4A46     		mov	r2, r9
+ 999 0252 1349     		ldr	r1, .L29+64
+ 1000 0254 2046     		mov	r0, r4
+ 1001 0256 FFF7FEFF 		bl	DisplayService_CreateLabel
+ 1002              	.LVL93:
+ 247:Services/Src/display_service.c ****                                    "90%",
+ 248:Services/Src/display_service.c ****                                    UI_COLOR_TEXT_MAIN,
+ 249:Services/Src/display_service.c ****                                    DisplayService_GetNumFont(),
+ 250:Services/Src/display_service.c ****                                    DISPLAY_UI_TARGET_SCALE_MAX_X,
+ 251:Services/Src/display_service.c ****                                    DISPLAY_UI_TARGET_SCALE_Y,
+ 252:Services/Src/display_service.c ****                                    DISPLAY_UI_TARGET_SCALE_W,
+ 253:Services/Src/display_service.c ****                                    DISPLAY_UI_TARGET_SCALE_H,
+ 254:Services/Src/display_service.c ****                                    LV_TEXT_ALIGN_RIGHT);
+ 255:Services/Src/display_service.c **** }
+ 1003              		.loc 1 255 1 view .LVU151
+ 1004 025a 0DB0     		add	sp, sp, #52
+ 1005              	.LCFI17:
+ 1006              		.cfi_def_cfa_offset 36
+ 1007              		@ sp needed
+ 1008 025c BDE8F08F 		pop	{r4, r5, r6, r7, r8, r9, r10, fp, pc}
+ 1009              	.LVL94:
+ 1010              	.L30:
+ 1011              		.loc 1 255 1 view .LVU152
+ 1012              		.align	2
+ 1013              	.L29:
+ 1014 0260 0C070300 		.word	198412
+ 1015 0264 00000000 		.word	.LC4
+ 1016 0268 FF863F00 		.word	4163327
+ 1017 026c 00000000 		.word	.LC0
+ 1018 0270 00000000 		.word	s_temp_label
+ 1019 0274 4CD97600 		.word	7788876
+ 1020 0278 10000000 		.word	.LC1
+ 1021 027c 00000000 		.word	s_humi_label
+ 1022 0280 20000000 		.word	.LC2
+ 1023 0284 00000000 		.word	s_mode_label
+ 1024 0288 30000000 		.word	.LC3
+ 1025 028c 00000000 		.word	s_target_label
+ 1026 0290 00000000 		.word	s_target_bar
+ 1027 0294 3C342D00 		.word	2962492
+ 1028 0298 10000000 		.word	.LC5
+ 1029 029c 14000000 		.word	.LC6
+ 1030 02a0 18000000 		.word	.LC7
+ 1031 02a4 FFF9F400 		.word	16054783
+ 1032              		.cfi_endproc
+ 1033              	.LFE337:
+ 1035              		.section	.text.DisplayService_Init,"ax",%progbits
+ 1036              		.align	1
+ 1037              		.global	DisplayService_Init
+ 1038              		.syntax unified
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccM97vYx.s 			page 29
+
+
+ 1039              		.thumb
+ 1040              		.thumb_func
+ 1042              	DisplayService_Init:
+ 1043              	.LFB338:
+ 256:Services/Src/display_service.c **** 
+ 257:Services/Src/display_service.c **** void DisplayService_Init(void)
+ 258:Services/Src/display_service.c **** {
+ 1044              		.loc 1 258 1 is_stmt 1 view -0
+ 1045              		.cfi_startproc
+ 1046              		@ args = 0, pretend = 0, frame = 0
+ 1047              		@ frame_needed = 0, uses_anonymous_args = 0
+ 1048 0000 08B5     		push	{r3, lr}
+ 1049              	.LCFI18:
+ 1050              		.cfi_def_cfa_offset 8
+ 1051              		.cfi_offset 3, -8
+ 1052              		.cfi_offset 14, -4
+ 259:Services/Src/display_service.c ****   ST7789_Init();
+ 1053              		.loc 1 259 3 view .LVU154
+ 1054 0002 FFF7FEFF 		bl	ST7789_Init
+ 1055              	.LVL95:
+ 260:Services/Src/display_service.c **** 
+ 261:Services/Src/display_service.c ****   lv_init();
+ 1056              		.loc 1 261 3 view .LVU155
+ 1057 0006 FFF7FEFF 		bl	lv_init
+ 1058              	.LVL96:
+ 262:Services/Src/display_service.c ****   lv_tick_set_cb(HAL_GetTick);
+ 1059              		.loc 1 262 3 view .LVU156
+ 1060 000a 0848     		ldr	r0, .L33
+ 1061 000c FFF7FEFF 		bl	lv_tick_set_cb
+ 1062              	.LVL97:
+ 263:Services/Src/display_service.c ****   LV_Port_Disp_Init();
+ 1063              		.loc 1 263 3 view .LVU157
+ 1064 0010 FFF7FEFF 		bl	LV_Port_Disp_Init
+ 1065              	.LVL98:
+ 264:Services/Src/display_service.c **** 
+ 265:Services/Src/display_service.c ****   DisplayService_InitFonts();
+ 1066              		.loc 1 265 3 view .LVU158
+ 1067 0014 FFF7FEFF 		bl	DisplayService_InitFonts
+ 1068              	.LVL99:
+ 266:Services/Src/display_service.c ****   DisplayService_CreateUI();
+ 1069              		.loc 1 266 3 view .LVU159
+ 1070 0018 FFF7FEFF 		bl	DisplayService_CreateUI
+ 1071              	.LVL100:
+ 267:Services/Src/display_service.c ****   s_display_ready = 1U;
+ 1072              		.loc 1 267 3 view .LVU160
+ 1073              		.loc 1 267 19 is_stmt 0 view .LVU161
+ 1074 001c 044B     		ldr	r3, .L33+4
+ 1075 001e 0122     		movs	r2, #1
+ 1076 0020 1A70     		strb	r2, [r3]
+ 268:Services/Src/display_service.c ****   DisplayService_SetDefaultValues();
+ 1077              		.loc 1 268 3 is_stmt 1 view .LVU162
+ 1078 0022 FFF7FEFF 		bl	DisplayService_SetDefaultValues
+ 1079              	.LVL101:
+ 269:Services/Src/display_service.c **** 
+ 270:Services/Src/display_service.c ****   (void)lv_timer_handler();
+ 1080              		.loc 1 270 3 view .LVU163
+ 1081              		.loc 1 270 9 is_stmt 0 view .LVU164
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccM97vYx.s 			page 30
+
+
+ 1082 0026 FFF7FEFF 		bl	lv_timer_handler
+ 1083              	.LVL102:
+ 271:Services/Src/display_service.c **** }
+ 1084              		.loc 1 271 1 view .LVU165
+ 1085 002a 08BD     		pop	{r3, pc}
+ 1086              	.L34:
+ 1087              		.align	2
+ 1088              	.L33:
+ 1089 002c 00000000 		.word	HAL_GetTick
+ 1090 0030 00000000 		.word	s_display_ready
+ 1091              		.cfi_endproc
+ 1092              	.LFE338:
+ 1094              		.section	.text.DisplayService_ShowBootScreen,"ax",%progbits
+ 1095              		.align	1
+ 1096              		.global	DisplayService_ShowBootScreen
+ 1097              		.syntax unified
+ 1098              		.thumb
+ 1099              		.thumb_func
+ 1101              	DisplayService_ShowBootScreen:
+ 1102              	.LFB339:
+ 272:Services/Src/display_service.c **** 
+ 273:Services/Src/display_service.c **** void DisplayService_ShowBootScreen(void)
+ 274:Services/Src/display_service.c **** {
+ 1103              		.loc 1 274 1 is_stmt 1 view -0
+ 1104              		.cfi_startproc
+ 1105              		@ args = 0, pretend = 0, frame = 0
+ 1106              		@ frame_needed = 0, uses_anonymous_args = 0
+ 1107 0000 08B5     		push	{r3, lr}
+ 1108              	.LCFI19:
+ 1109              		.cfi_def_cfa_offset 8
+ 1110              		.cfi_offset 3, -8
+ 1111              		.cfi_offset 14, -4
+ 275:Services/Src/display_service.c ****   if (s_display_ready == 0U)
+ 1112              		.loc 1 275 3 view .LVU167
+ 1113              		.loc 1 275 23 is_stmt 0 view .LVU168
+ 1114 0002 034B     		ldr	r3, .L39
+ 1115 0004 1B78     		ldrb	r3, [r3]	@ zero_extendqisi2
+ 1116              		.loc 1 275 6 view .LVU169
+ 1117 0006 03B9     		cbnz	r3, .L38
+ 1118              	.L35:
+ 276:Services/Src/display_service.c ****   {
+ 277:Services/Src/display_service.c ****     return;
+ 278:Services/Src/display_service.c ****   }
+ 279:Services/Src/display_service.c **** 
+ 280:Services/Src/display_service.c ****   DisplayService_SetDefaultValues();
+ 281:Services/Src/display_service.c **** }
+ 1119              		.loc 1 281 1 view .LVU170
+ 1120 0008 08BD     		pop	{r3, pc}
+ 1121              	.L38:
+ 280:Services/Src/display_service.c **** }
+ 1122              		.loc 1 280 3 is_stmt 1 view .LVU171
+ 1123 000a FFF7FEFF 		bl	DisplayService_SetDefaultValues
+ 1124              	.LVL103:
+ 1125 000e FBE7     		b	.L35
+ 1126              	.L40:
+ 1127              		.align	2
+ 1128              	.L39:
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccM97vYx.s 			page 31
+
+
+ 1129 0010 00000000 		.word	s_display_ready
+ 1130              		.cfi_endproc
+ 1131              	.LFE339:
+ 1133              		.section	.rodata.DisplayService_ShowSensorError.str1.4,"aMS",%progbits,1
+ 1134              		.align	2
+ 1135              	.LC8:
+ 1136 0000 E6B8A9E5 		.ascii	"\346\270\251\345\272\246: --.-C\000"
+ 1136      BAA63A20 
+ 1136      2D2D2E2D 
+ 1136      4300
+ 1137 000e 0000     		.align	2
+ 1138              	.LC9:
+ 1139 0010 E6B9BFE5 		.ascii	"\346\271\277\345\272\246: --.-%\000"
+ 1139      BAA63A20 
+ 1139      2D2D2E2D 
+ 1139      2500
+ 1140              		.section	.text.DisplayService_ShowSensorError,"ax",%progbits
+ 1141              		.align	1
+ 1142              		.global	DisplayService_ShowSensorError
+ 1143              		.syntax unified
+ 1144              		.thumb
+ 1145              		.thumb_func
+ 1147              	DisplayService_ShowSensorError:
+ 1148              	.LFB341:
+ 282:Services/Src/display_service.c **** 
+ 283:Services/Src/display_service.c **** void DisplayService_ShowSensorData(void)
+ 284:Services/Src/display_service.c **** {
+ 285:Services/Src/display_service.c ****   SensorService_Data_t sensor_data = {0};
+ 286:Services/Src/display_service.c ****   char temp_text[UI_LINE_TEXT_SIZE] = {0};
+ 287:Services/Src/display_service.c ****   char humi_text[UI_LINE_TEXT_SIZE] = {0};
+ 288:Services/Src/display_service.c **** 
+ 289:Services/Src/display_service.c ****   if (s_display_ready == 0U)
+ 290:Services/Src/display_service.c ****   {
+ 291:Services/Src/display_service.c ****     return;
+ 292:Services/Src/display_service.c ****   }
+ 293:Services/Src/display_service.c **** 
+ 294:Services/Src/display_service.c ****   if (SensorService_GetData(&sensor_data) != SENSOR_SERVICE_OK)
+ 295:Services/Src/display_service.c ****   {
+ 296:Services/Src/display_service.c ****     DisplayService_ShowSensorError();
+ 297:Services/Src/display_service.c ****     return;
+ 298:Services/Src/display_service.c ****   }
+ 299:Services/Src/display_service.c **** 
+ 300:Services/Src/display_service.c ****   DisplayUI_FormatTemperature(temp_text, sizeof(temp_text), sensor_data.temperature);
+ 301:Services/Src/display_service.c ****   DisplayUI_FormatHumidity(humi_text, sizeof(humi_text), sensor_data.humidity);
+ 302:Services/Src/display_service.c **** 
+ 303:Services/Src/display_service.c ****   lv_label_set_text(s_temp_label, temp_text);
+ 304:Services/Src/display_service.c ****   lv_label_set_text(s_humi_label, humi_text);
+ 305:Services/Src/display_service.c ****   lv_label_set_text(s_mode_label, "工作: 自动");
+ 306:Services/Src/display_service.c ****   lv_obj_set_style_text_color(s_mode_label, DisplayService_Color(UI_COLOR_GREEN), 0);
+ 307:Services/Src/display_service.c ****   lv_label_set_text(s_target_label, "目标: 60%");
+ 308:Services/Src/display_service.c ****   lv_bar_set_value(s_target_bar, UI_TARGET_HUMIDITY, LV_ANIM_OFF);
+ 309:Services/Src/display_service.c **** }
+ 310:Services/Src/display_service.c **** 
+ 311:Services/Src/display_service.c **** void DisplayService_ShowSensorError(void)
+ 312:Services/Src/display_service.c **** {
+ 1149              		.loc 1 312 1 view -0
+ 1150              		.cfi_startproc
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccM97vYx.s 			page 32
+
+
+ 1151              		@ args = 0, pretend = 0, frame = 8
+ 1152              		@ frame_needed = 0, uses_anonymous_args = 0
+ 313:Services/Src/display_service.c ****   if (s_display_ready == 0U)
+ 1153              		.loc 1 313 3 view .LVU173
+ 1154              		.loc 1 313 23 is_stmt 0 view .LVU174
+ 1155 0000 1B4B     		ldr	r3, .L48
+ 1156 0002 1B78     		ldrb	r3, [r3]	@ zero_extendqisi2
+ 1157              		.loc 1 313 6 view .LVU175
+ 1158 0004 03B9     		cbnz	r3, .L47
+ 1159 0006 7047     		bx	lr
+ 1160              	.L47:
+ 312:Services/Src/display_service.c ****   if (s_display_ready == 0U)
+ 1161              		.loc 1 312 1 view .LVU176
+ 1162 0008 30B5     		push	{r4, r5, lr}
+ 1163              	.LCFI20:
+ 1164              		.cfi_def_cfa_offset 12
+ 1165              		.cfi_offset 4, -12
+ 1166              		.cfi_offset 5, -8
+ 1167              		.cfi_offset 14, -4
+ 1168 000a 83B0     		sub	sp, sp, #12
+ 1169              	.LCFI21:
+ 1170              		.cfi_def_cfa_offset 24
+ 314:Services/Src/display_service.c ****   {
+ 315:Services/Src/display_service.c ****     return;
+ 316:Services/Src/display_service.c ****   }
+ 317:Services/Src/display_service.c **** 
+ 318:Services/Src/display_service.c ****   lv_label_set_text(s_temp_label, "温度: --.-C");
+ 1171              		.loc 1 318 3 is_stmt 1 view .LVU177
+ 1172 000c 1949     		ldr	r1, .L48+4
+ 1173 000e 1A4B     		ldr	r3, .L48+8
+ 1174 0010 1868     		ldr	r0, [r3]
+ 1175 0012 FFF7FEFF 		bl	lv_label_set_text
+ 1176              	.LVL104:
+ 319:Services/Src/display_service.c ****   lv_label_set_text(s_humi_label, "湿度: --.-%");
+ 1177              		.loc 1 319 3 view .LVU178
+ 1178 0016 1949     		ldr	r1, .L48+12
+ 1179 0018 194B     		ldr	r3, .L48+16
+ 1180 001a 1868     		ldr	r0, [r3]
+ 1181 001c FFF7FEFF 		bl	lv_label_set_text
+ 1182              	.LVL105:
+ 320:Services/Src/display_service.c ****   lv_label_set_text(s_mode_label, DisplayUI_GetSensorErrorText());
+ 1183              		.loc 1 320 3 view .LVU179
+ 1184 0020 184C     		ldr	r4, .L48+20
+ 1185 0022 2568     		ldr	r5, [r4]
+ 1186 0024 FFF7FEFF 		bl	DisplayUI_GetSensorErrorText
+ 1187              	.LVL106:
+ 1188 0028 0146     		mov	r1, r0
+ 1189              		.loc 1 320 3 is_stmt 0 discriminator 1 view .LVU180
+ 1190 002a 2846     		mov	r0, r5
+ 1191 002c FFF7FEFF 		bl	lv_label_set_text
+ 1192              	.LVL107:
+ 321:Services/Src/display_service.c ****   lv_obj_set_style_text_color(s_mode_label, DisplayService_Color(UI_COLOR_ERROR), 0);
+ 1193              		.loc 1 321 3 is_stmt 1 view .LVU181
+ 1194 0030 2468     		ldr	r4, [r4]
+ 1195 0032 1548     		ldr	r0, .L48+24
+ 1196 0034 FFF7FEFF 		bl	DisplayService_Color
+ 1197              	.LVL108:
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccM97vYx.s 			page 33
+
+
+ 1198 0038 8DF80400 		strb	r0, [sp, #4]
+ 1199 003c C0F30723 		ubfx	r3, r0, #8, #8
+ 1200 0040 8DF80530 		strb	r3, [sp, #5]
+ 1201 0044 C0F30740 		ubfx	r0, r0, #16, #8
+ 1202 0048 8DF80600 		strb	r0, [sp, #6]
+ 1203              		.loc 1 321 3 is_stmt 0 discriminator 1 view .LVU182
+ 1204 004c 0022     		movs	r2, #0
+ 1205 004e 0199     		ldr	r1, [sp, #4]
+ 1206 0050 2046     		mov	r0, r4
+ 1207 0052 FFF7FEFF 		bl	lv_obj_set_style_text_color
+ 1208              	.LVL109:
+ 322:Services/Src/display_service.c ****   lv_label_set_text(s_target_label, "目标: 60%");
+ 1209              		.loc 1 322 3 is_stmt 1 view .LVU183
+ 1210 0056 0D49     		ldr	r1, .L48+28
+ 1211 0058 0D4B     		ldr	r3, .L48+32
+ 1212 005a 1868     		ldr	r0, [r3]
+ 1213 005c FFF7FEFF 		bl	lv_label_set_text
+ 1214              	.LVL110:
+ 323:Services/Src/display_service.c ****   lv_bar_set_value(s_target_bar, UI_TARGET_HUMIDITY, LV_ANIM_OFF);
+ 1215              		.loc 1 323 3 view .LVU184
+ 1216 0060 0022     		movs	r2, #0
+ 1217 0062 3C21     		movs	r1, #60
+ 1218 0064 0B4B     		ldr	r3, .L48+36
+ 1219 0066 1868     		ldr	r0, [r3]
+ 1220 0068 FFF7FEFF 		bl	lv_bar_set_value
+ 1221              	.LVL111:
+ 324:Services/Src/display_service.c **** }
+ 1222              		.loc 1 324 1 is_stmt 0 view .LVU185
+ 1223 006c 03B0     		add	sp, sp, #12
+ 1224              	.LCFI22:
+ 1225              		.cfi_def_cfa_offset 12
+ 1226              		@ sp needed
+ 1227 006e 30BD     		pop	{r4, r5, pc}
+ 1228              	.L49:
+ 1229              		.align	2
+ 1230              	.L48:
+ 1231 0070 00000000 		.word	s_display_ready
+ 1232 0074 00000000 		.word	.LC8
+ 1233 0078 00000000 		.word	s_temp_label
+ 1234 007c 10000000 		.word	.LC9
+ 1235 0080 00000000 		.word	s_humi_label
+ 1236 0084 00000000 		.word	s_mode_label
+ 1237 0088 4D4DFF00 		.word	16731469
+ 1238 008c 30000000 		.word	.LC3
+ 1239 0090 00000000 		.word	s_target_label
+ 1240 0094 00000000 		.word	s_target_bar
+ 1241              		.cfi_endproc
+ 1242              	.LFE341:
+ 1244              		.section	.text.DisplayService_ShowSensorData,"ax",%progbits
+ 1245              		.align	1
+ 1246              		.global	DisplayService_ShowSensorData
+ 1247              		.syntax unified
+ 1248              		.thumb
+ 1249              		.thumb_func
+ 1251              	DisplayService_ShowSensorData:
+ 1252              	.LFB340:
+ 284:Services/Src/display_service.c ****   SensorService_Data_t sensor_data = {0};
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccM97vYx.s 			page 34
+
+
+ 1253              		.loc 1 284 1 is_stmt 1 view -0
+ 1254              		.cfi_startproc
+ 1255              		@ args = 0, pretend = 0, frame = 64
+ 1256              		@ frame_needed = 0, uses_anonymous_args = 0
+ 1257 0000 30B5     		push	{r4, r5, lr}
+ 1258              	.LCFI23:
+ 1259              		.cfi_def_cfa_offset 12
+ 1260              		.cfi_offset 4, -12
+ 1261              		.cfi_offset 5, -8
+ 1262              		.cfi_offset 14, -4
+ 1263 0002 91B0     		sub	sp, sp, #68
+ 1264              	.LCFI24:
+ 1265              		.cfi_def_cfa_offset 80
+ 285:Services/Src/display_service.c ****   char temp_text[UI_LINE_TEXT_SIZE] = {0};
+ 1266              		.loc 1 285 3 view .LVU187
+ 285:Services/Src/display_service.c ****   char temp_text[UI_LINE_TEXT_SIZE] = {0};
+ 1267              		.loc 1 285 24 is_stmt 0 view .LVU188
+ 1268 0004 0023     		movs	r3, #0
+ 1269 0006 0C93     		str	r3, [sp, #48]
+ 1270 0008 0D93     		str	r3, [sp, #52]
+ 1271 000a 0E93     		str	r3, [sp, #56]
+ 286:Services/Src/display_service.c ****   char humi_text[UI_LINE_TEXT_SIZE] = {0};
+ 1272              		.loc 1 286 3 is_stmt 1 view .LVU189
+ 286:Services/Src/display_service.c ****   char humi_text[UI_LINE_TEXT_SIZE] = {0};
+ 1273              		.loc 1 286 8 is_stmt 0 view .LVU190
+ 1274 000c 0693     		str	r3, [sp, #24]
+ 1275 000e 0793     		str	r3, [sp, #28]
+ 1276 0010 0893     		str	r3, [sp, #32]
+ 1277 0012 0993     		str	r3, [sp, #36]
+ 1278 0014 0A93     		str	r3, [sp, #40]
+ 1279 0016 0B93     		str	r3, [sp, #44]
+ 287:Services/Src/display_service.c **** 
+ 1280              		.loc 1 287 3 is_stmt 1 view .LVU191
+ 287:Services/Src/display_service.c **** 
+ 1281              		.loc 1 287 8 is_stmt 0 view .LVU192
+ 1282 0018 0093     		str	r3, [sp]
+ 1283 001a 0193     		str	r3, [sp, #4]
+ 1284 001c 0293     		str	r3, [sp, #8]
+ 1285 001e 0393     		str	r3, [sp, #12]
+ 1286 0020 0493     		str	r3, [sp, #16]
+ 1287 0022 0593     		str	r3, [sp, #20]
+ 289:Services/Src/display_service.c ****   {
+ 1288              		.loc 1 289 3 is_stmt 1 view .LVU193
+ 289:Services/Src/display_service.c ****   {
+ 1289              		.loc 1 289 23 is_stmt 0 view .LVU194
+ 1290 0024 234B     		ldr	r3, .L57
+ 1291 0026 1B78     		ldrb	r3, [r3]	@ zero_extendqisi2
+ 289:Services/Src/display_service.c ****   {
+ 1292              		.loc 1 289 6 view .LVU195
+ 1293 0028 0BB9     		cbnz	r3, .L55
+ 1294              	.L50:
+ 309:Services/Src/display_service.c **** 
+ 1295              		.loc 1 309 1 view .LVU196
+ 1296 002a 11B0     		add	sp, sp, #68
+ 1297              	.LCFI25:
+ 1298              		.cfi_remember_state
+ 1299              		.cfi_def_cfa_offset 12
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccM97vYx.s 			page 35
+
+
+ 1300              		@ sp needed
+ 1301 002c 30BD     		pop	{r4, r5, pc}
+ 1302              	.L55:
+ 1303              	.LCFI26:
+ 1304              		.cfi_restore_state
+ 294:Services/Src/display_service.c ****   {
+ 1305              		.loc 1 294 3 is_stmt 1 view .LVU197
+ 294:Services/Src/display_service.c ****   {
+ 1306              		.loc 1 294 7 is_stmt 0 view .LVU198
+ 1307 002e 0CA8     		add	r0, sp, #48
+ 1308 0030 FFF7FEFF 		bl	SensorService_GetData
+ 1309              	.LVL112:
+ 294:Services/Src/display_service.c ****   {
+ 1310              		.loc 1 294 6 discriminator 1 view .LVU199
+ 1311 0034 0028     		cmp	r0, #0
+ 1312 0036 3AD1     		bne	.L56
+ 300:Services/Src/display_service.c ****   DisplayUI_FormatHumidity(humi_text, sizeof(humi_text), sensor_data.humidity);
+ 1313              		.loc 1 300 3 is_stmt 1 view .LVU200
+ 1314 0038 06AD     		add	r5, sp, #24
+ 1315 003a 9DED0C0A 		vldr.32	s0, [sp, #48]
+ 1316 003e 1821     		movs	r1, #24
+ 1317 0040 2846     		mov	r0, r5
+ 1318 0042 FFF7FEFF 		bl	DisplayUI_FormatTemperature
+ 1319              	.LVL113:
+ 301:Services/Src/display_service.c **** 
+ 1320              		.loc 1 301 3 view .LVU201
+ 1321 0046 9DED0D0A 		vldr.32	s0, [sp, #52]
+ 1322 004a 1821     		movs	r1, #24
+ 1323 004c 6846     		mov	r0, sp
+ 1324 004e FFF7FEFF 		bl	DisplayUI_FormatHumidity
+ 1325              	.LVL114:
+ 303:Services/Src/display_service.c ****   lv_label_set_text(s_humi_label, humi_text);
+ 1326              		.loc 1 303 3 view .LVU202
+ 1327 0052 2946     		mov	r1, r5
+ 1328 0054 184B     		ldr	r3, .L57+4
+ 1329 0056 1868     		ldr	r0, [r3]
+ 1330 0058 FFF7FEFF 		bl	lv_label_set_text
+ 1331              	.LVL115:
+ 304:Services/Src/display_service.c ****   lv_label_set_text(s_mode_label, "工作: 自动");
+ 1332              		.loc 1 304 3 view .LVU203
+ 1333 005c 6946     		mov	r1, sp
+ 1334 005e 174B     		ldr	r3, .L57+8
+ 1335 0060 1868     		ldr	r0, [r3]
+ 1336 0062 FFF7FEFF 		bl	lv_label_set_text
+ 1337              	.LVL116:
+ 305:Services/Src/display_service.c ****   lv_obj_set_style_text_color(s_mode_label, DisplayService_Color(UI_COLOR_GREEN), 0);
+ 1338              		.loc 1 305 3 view .LVU204
+ 1339 0066 164C     		ldr	r4, .L57+12
+ 1340 0068 1649     		ldr	r1, .L57+16
+ 1341 006a 2068     		ldr	r0, [r4]
+ 1342 006c FFF7FEFF 		bl	lv_label_set_text
+ 1343              	.LVL117:
+ 306:Services/Src/display_service.c ****   lv_label_set_text(s_target_label, "目标: 60%");
+ 1344              		.loc 1 306 3 view .LVU205
+ 1345 0070 2468     		ldr	r4, [r4]
+ 1346 0072 1548     		ldr	r0, .L57+20
+ 1347 0074 FFF7FEFF 		bl	DisplayService_Color
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccM97vYx.s 			page 36
+
+
+ 1348              	.LVL118:
+ 1349 0078 8DF83C00 		strb	r0, [sp, #60]
+ 1350 007c C0F30723 		ubfx	r3, r0, #8, #8
+ 1351 0080 8DF83D30 		strb	r3, [sp, #61]
+ 1352 0084 C0F30740 		ubfx	r0, r0, #16, #8
+ 1353 0088 8DF83E00 		strb	r0, [sp, #62]
+ 306:Services/Src/display_service.c ****   lv_label_set_text(s_target_label, "目标: 60%");
+ 1354              		.loc 1 306 3 is_stmt 0 discriminator 1 view .LVU206
+ 1355 008c 0022     		movs	r2, #0
+ 1356 008e 0F99     		ldr	r1, [sp, #60]
+ 1357 0090 2046     		mov	r0, r4
+ 1358 0092 FFF7FEFF 		bl	lv_obj_set_style_text_color
+ 1359              	.LVL119:
+ 307:Services/Src/display_service.c ****   lv_bar_set_value(s_target_bar, UI_TARGET_HUMIDITY, LV_ANIM_OFF);
+ 1360              		.loc 1 307 3 is_stmt 1 view .LVU207
+ 1361 0096 0D49     		ldr	r1, .L57+24
+ 1362 0098 0D4B     		ldr	r3, .L57+28
+ 1363 009a 1868     		ldr	r0, [r3]
+ 1364 009c FFF7FEFF 		bl	lv_label_set_text
+ 1365              	.LVL120:
+ 308:Services/Src/display_service.c **** }
+ 1366              		.loc 1 308 3 view .LVU208
+ 1367 00a0 0022     		movs	r2, #0
+ 1368 00a2 3C21     		movs	r1, #60
+ 1369 00a4 0B4B     		ldr	r3, .L57+32
+ 1370 00a6 1868     		ldr	r0, [r3]
+ 1371 00a8 FFF7FEFF 		bl	lv_bar_set_value
+ 1372              	.LVL121:
+ 1373 00ac BDE7     		b	.L50
+ 1374              	.L56:
+ 296:Services/Src/display_service.c ****     return;
+ 1375              		.loc 1 296 5 view .LVU209
+ 1376 00ae FFF7FEFF 		bl	DisplayService_ShowSensorError
+ 1377              	.LVL122:
+ 297:Services/Src/display_service.c ****   }
+ 1378              		.loc 1 297 5 view .LVU210
+ 1379 00b2 BAE7     		b	.L50
+ 1380              	.L58:
+ 1381              		.align	2
+ 1382              	.L57:
+ 1383 00b4 00000000 		.word	s_display_ready
+ 1384 00b8 00000000 		.word	s_temp_label
+ 1385 00bc 00000000 		.word	s_humi_label
+ 1386 00c0 00000000 		.word	s_mode_label
+ 1387 00c4 20000000 		.word	.LC2
+ 1388 00c8 4CD97600 		.word	7788876
+ 1389 00cc 30000000 		.word	.LC3
+ 1390 00d0 00000000 		.word	s_target_label
+ 1391 00d4 00000000 		.word	s_target_bar
+ 1392              		.cfi_endproc
+ 1393              	.LFE340:
+ 1395              		.section	.text.DisplayService_Update,"ax",%progbits
+ 1396              		.align	1
+ 1397              		.global	DisplayService_Update
+ 1398              		.syntax unified
+ 1399              		.thumb
+ 1400              		.thumb_func
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccM97vYx.s 			page 37
+
+
+ 1402              	DisplayService_Update:
+ 1403              	.LFB342:
+ 325:Services/Src/display_service.c **** 
+ 326:Services/Src/display_service.c **** void DisplayService_Update(void)
+ 327:Services/Src/display_service.c **** {
+ 1404              		.loc 1 327 1 view -0
+ 1405              		.cfi_startproc
+ 1406              		@ args = 0, pretend = 0, frame = 0
+ 1407              		@ frame_needed = 0, uses_anonymous_args = 0
+ 1408 0000 08B5     		push	{r3, lr}
+ 1409              	.LCFI27:
+ 1410              		.cfi_def_cfa_offset 8
+ 1411              		.cfi_offset 3, -8
+ 1412              		.cfi_offset 14, -4
+ 328:Services/Src/display_service.c ****   if (s_display_ready == 0U)
+ 1413              		.loc 1 328 3 view .LVU212
+ 1414              		.loc 1 328 23 is_stmt 0 view .LVU213
+ 1415 0002 044B     		ldr	r3, .L63
+ 1416 0004 1B78     		ldrb	r3, [r3]	@ zero_extendqisi2
+ 1417              		.loc 1 328 6 view .LVU214
+ 1418 0006 03B9     		cbnz	r3, .L62
+ 1419              	.L59:
+ 329:Services/Src/display_service.c ****   {
+ 330:Services/Src/display_service.c ****     return;
+ 331:Services/Src/display_service.c ****   }
+ 332:Services/Src/display_service.c **** 
+ 333:Services/Src/display_service.c ****   DisplayService_ShowSensorData();
+ 334:Services/Src/display_service.c ****   (void)lv_timer_handler();
+ 335:Services/Src/display_service.c **** }
+ 1420              		.loc 1 335 1 view .LVU215
+ 1421 0008 08BD     		pop	{r3, pc}
+ 1422              	.L62:
+ 333:Services/Src/display_service.c ****   (void)lv_timer_handler();
+ 1423              		.loc 1 333 3 is_stmt 1 view .LVU216
+ 1424 000a FFF7FEFF 		bl	DisplayService_ShowSensorData
+ 1425              	.LVL123:
+ 334:Services/Src/display_service.c **** }
+ 1426              		.loc 1 334 3 view .LVU217
+ 334:Services/Src/display_service.c **** }
+ 1427              		.loc 1 334 9 is_stmt 0 view .LVU218
+ 1428 000e FFF7FEFF 		bl	lv_timer_handler
+ 1429              	.LVL124:
+ 1430 0012 F9E7     		b	.L59
+ 1431              	.L64:
+ 1432              		.align	2
+ 1433              	.L63:
+ 1434 0014 00000000 		.word	s_display_ready
+ 1435              		.cfi_endproc
+ 1436              	.LFE342:
+ 1438              		.section	.text.DisplayService_TestColorCycle,"ax",%progbits
+ 1439              		.align	1
+ 1440              		.global	DisplayService_TestColorCycle
+ 1441              		.syntax unified
+ 1442              		.thumb
+ 1443              		.thumb_func
+ 1445              	DisplayService_TestColorCycle:
+ 1446              	.LFB343:
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccM97vYx.s 			page 38
+
+
+ 336:Services/Src/display_service.c **** 
+ 337:Services/Src/display_service.c **** void DisplayService_TestColorCycle(void)
+ 338:Services/Src/display_service.c **** {
+ 1447              		.loc 1 338 1 is_stmt 1 view -0
+ 1448              		.cfi_startproc
+ 1449              		@ args = 0, pretend = 0, frame = 0
+ 1450              		@ frame_needed = 0, uses_anonymous_args = 0
+ 1451 0000 08B5     		push	{r3, lr}
+ 1452              	.LCFI28:
+ 1453              		.cfi_def_cfa_offset 8
+ 1454              		.cfi_offset 3, -8
+ 1455              		.cfi_offset 14, -4
+ 339:Services/Src/display_service.c ****   ST7789_TestColorCycle();
+ 1456              		.loc 1 339 3 view .LVU220
+ 1457 0002 FFF7FEFF 		bl	ST7789_TestColorCycle
+ 1458              	.LVL125:
+ 340:Services/Src/display_service.c **** 
+ 341:Services/Src/display_service.c ****   if (s_display_ready != 0U)
+ 1459              		.loc 1 341 3 view .LVU221
+ 1460              		.loc 1 341 23 is_stmt 0 view .LVU222
+ 1461 0006 044B     		ldr	r3, .L69
+ 1462 0008 1B78     		ldrb	r3, [r3]	@ zero_extendqisi2
+ 1463              		.loc 1 341 6 view .LVU223
+ 1464 000a 03B9     		cbnz	r3, .L68
+ 1465              	.L65:
+ 342:Services/Src/display_service.c ****   {
+ 343:Services/Src/display_service.c ****     lv_obj_invalidate(lv_screen_active());
+ 344:Services/Src/display_service.c ****   }
+ 345:Services/Src/display_service.c **** }
+ 1466              		.loc 1 345 1 view .LVU224
+ 1467 000c 08BD     		pop	{r3, pc}
+ 1468              	.L68:
+ 343:Services/Src/display_service.c ****   }
+ 1469              		.loc 1 343 5 is_stmt 1 view .LVU225
+ 343:Services/Src/display_service.c ****   }
+ 1470              		.loc 1 343 23 is_stmt 0 view .LVU226
+ 1471 000e FFF7FEFF 		bl	lv_screen_active
+ 1472              	.LVL126:
+ 343:Services/Src/display_service.c ****   }
+ 1473              		.loc 1 343 5 discriminator 1 view .LVU227
+ 1474 0012 FFF7FEFF 		bl	lv_obj_invalidate
+ 1475              	.LVL127:
+ 1476              		.loc 1 345 1 view .LVU228
+ 1477 0016 F9E7     		b	.L65
+ 1478              	.L70:
+ 1479              		.align	2
+ 1480              	.L69:
+ 1481 0018 00000000 		.word	s_display_ready
+ 1482              		.cfi_endproc
+ 1483              	.LFE343:
+ 1485              		.section	.bss.s_display_ready,"aw",%nobits
+ 1488              	s_display_ready:
+ 1489 0000 00       		.space	1
+ 1490              		.section	.bss.s_num_font,"aw",%nobits
+ 1491              		.align	2
+ 1494              	s_num_font:
+ 1495 0000 00000000 		.space	36
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccM97vYx.s 			page 39
+
+
+ 1495      00000000 
+ 1495      00000000 
+ 1495      00000000 
+ 1495      00000000 
+ 1496              		.section	.bss.s_ui_font_16,"aw",%nobits
+ 1497              		.align	2
+ 1500              	s_ui_font_16:
+ 1501 0000 00000000 		.space	36
+ 1501      00000000 
+ 1501      00000000 
+ 1501      00000000 
+ 1501      00000000 
+ 1502              		.section	.bss.s_target_bar,"aw",%nobits
+ 1503              		.align	2
+ 1506              	s_target_bar:
+ 1507 0000 00000000 		.space	4
+ 1508              		.section	.bss.s_target_label,"aw",%nobits
+ 1509              		.align	2
+ 1512              	s_target_label:
+ 1513 0000 00000000 		.space	4
+ 1514              		.section	.bss.s_mode_label,"aw",%nobits
+ 1515              		.align	2
+ 1518              	s_mode_label:
+ 1519 0000 00000000 		.space	4
+ 1520              		.section	.bss.s_humi_label,"aw",%nobits
+ 1521              		.align	2
+ 1524              	s_humi_label:
+ 1525 0000 00000000 		.space	4
+ 1526              		.section	.bss.s_temp_label,"aw",%nobits
+ 1527              		.align	2
+ 1530              	s_temp_label:
+ 1531 0000 00000000 		.space	4
+ 1532              		.text
+ 1533              	.Letext0:
+ 1534              		.file 3 "D:\\STM32CubeIDE\\STM32CubeIDE_2.1.1\\STM32CubeIDE\\plugins\\com.st.stm32cube.ide.mcu.ext
+ 1535              		.file 4 "D:\\STM32CubeIDE\\STM32CubeIDE_2.1.1\\STM32CubeIDE\\plugins\\com.st.stm32cube.ide.mcu.ext
+ 1536              		.file 5 "Middlewares/LVGL/lvgl/src/misc/lv_types.h"
+ 1537              		.file 6 "Middlewares/LVGL/lvgl/src/core/../misc/../font/lv_font.h"
+ 1538              		.file 7 "Middlewares/LVGL/lvgl/src/misc/../draw/lv_draw_buf.h"
+ 1539              		.file 8 "Middlewares/LVGL/lvgl/src/misc/../tick/lv_tick.h"
+ 1540              		.file 9 "Middlewares/LVGL/lvgl/src/misc/lv_anim.h"
+ 1541              		.file 10 "Middlewares/LVGL/lvgl/src/misc/../draw/../misc/lv_color.h"
+ 1542              		.file 11 "Middlewares/LVGL/lvgl/src/misc/../draw/lv_image_dsc.h"
+ 1543              		.file 12 "Middlewares/LVGL/lvgl/src/core/../misc/lv_text.h"
+ 1544              		.file 13 "Middlewares/LVGL/lvgl/src/core/lv_obj_scroll.h"
+ 1545              		.file 14 "Middlewares/LVGL/lvgl/src/core/../indev/lv_indev.h"
+ 1546              		.file 15 "Middlewares/LVGL/lvgl/src/core/lv_obj.h"
+ 1547              		.file 16 "Middlewares/LVGL/lvgl/src/widgets/bar/../label/lv_label.h"
+ 1548              		.file 17 "Middlewares/LVGL/lvgl/src/widgets/bar/lv_bar.h"
+ 1549              		.file 18 "Services/Inc/sensor_service.h"
+ 1550              		.file 19 "Services/Inc/display_ui_format.h"
+ 1551              		.file 20 "Middlewares/LVGL/lvgl/src/core/lv_obj_pos.h"
+ 1552              		.file 21 "Middlewares/LVGL/lvgl/src/core/lv_obj_style_gen.h"
+ 1553              		.file 22 "Middlewares/LVGL/lvgl/src/core/../display/lv_display.h"
+ 1554              		.file 23 "Services/Inc/humidifier_symbol_font.h"
+ 1555              		.file 24 "Middlewares/LVGL/lvgl/src/misc/lv_timer.h"
+ 1556              		.file 25 "DeviceDrivers/LCD/Inc/st7789.h"
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccM97vYx.s 			page 40
+
+
+ 1557              		.file 26 "Core/Inc/lv_port_disp.h"
+ 1558              		.file 27 "Drivers/STM32G4xx_HAL_Driver/Inc/stm32g4xx_hal.h"
+ 1559              		.file 28 "Middlewares/LVGL/lvgl/src/lv_init.h"
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccM97vYx.s 			page 41
 
 
 DEFINED SYMBOLS
                             *ABS*:00000000 display_service.c
-C:\Users\w1785\AppData\Local\Temp\ccDhU1dv.s:21     .text.DisplayService_FloatToX10:00000000 $t
-C:\Users\w1785\AppData\Local\Temp\ccDhU1dv.s:26     .text.DisplayService_FloatToX10:00000000 DisplayService_FloatToX10
-C:\Users\w1785\AppData\Local\Temp\ccDhU1dv.s:70     .rodata.DisplayService_FormatValue.str1.4:00000000 $d
-C:\Users\w1785\AppData\Local\Temp\ccDhU1dv.s:74     .text.DisplayService_FormatValue:00000000 $t
-C:\Users\w1785\AppData\Local\Temp\ccDhU1dv.s:79     .text.DisplayService_FormatValue:00000000 DisplayService_FormatValue
-C:\Users\w1785\AppData\Local\Temp\ccDhU1dv.s:161    .text.DisplayService_FormatValue:00000044 $d
-C:\Users\w1785\AppData\Local\Temp\ccDhU1dv.s:167    .rodata.DisplayService_ShowBootScreen.str1.4:00000000 $d
-C:\Users\w1785\AppData\Local\Temp\ccDhU1dv.s:174    .text.DisplayService_ShowBootScreen:00000000 $t
-C:\Users\w1785\AppData\Local\Temp\ccDhU1dv.s:180    .text.DisplayService_ShowBootScreen:00000000 DisplayService_ShowBootScreen
-C:\Users\w1785\AppData\Local\Temp\ccDhU1dv.s:224    .text.DisplayService_ShowBootScreen:00000030 $d
-C:\Users\w1785\AppData\Local\Temp\ccDhU1dv.s:230    .text.DisplayService_Init:00000000 $t
-C:\Users\w1785\AppData\Local\Temp\ccDhU1dv.s:236    .text.DisplayService_Init:00000000 DisplayService_Init
-C:\Users\w1785\AppData\Local\Temp\ccDhU1dv.s:263    .rodata.DisplayService_ShowSensorError.str1.4:00000000 $d
-C:\Users\w1785\AppData\Local\Temp\ccDhU1dv.s:267    .text.DisplayService_ShowSensorError:00000000 $t
-C:\Users\w1785\AppData\Local\Temp\ccDhU1dv.s:273    .text.DisplayService_ShowSensorError:00000000 DisplayService_ShowSensorError
-C:\Users\w1785\AppData\Local\Temp\ccDhU1dv.s:317    .text.DisplayService_ShowSensorError:00000030 $d
-C:\Users\w1785\AppData\Local\Temp\ccDhU1dv.s:323    .rodata.DisplayService_ShowSensorData.str1.4:00000000 $d
-C:\Users\w1785\AppData\Local\Temp\ccDhU1dv.s:336    .text.DisplayService_ShowSensorData:00000000 $t
-C:\Users\w1785\AppData\Local\Temp\ccDhU1dv.s:342    .text.DisplayService_ShowSensorData:00000000 DisplayService_ShowSensorData
-C:\Users\w1785\AppData\Local\Temp\ccDhU1dv.s:455    .text.DisplayService_ShowSensorData:00000098 $d
-C:\Users\w1785\AppData\Local\Temp\ccDhU1dv.s:464    .text.DisplayService_Update:00000000 $t
-C:\Users\w1785\AppData\Local\Temp\ccDhU1dv.s:470    .text.DisplayService_Update:00000000 DisplayService_Update
-C:\Users\w1785\AppData\Local\Temp\ccDhU1dv.s:490    .text.DisplayService_TestColorCycle:00000000 $t
-C:\Users\w1785\AppData\Local\Temp\ccDhU1dv.s:496    .text.DisplayService_TestColorCycle:00000000 DisplayService_TestColorCycle
+C:\Users\w1785\AppData\Local\Temp\ccM97vYx.s:21     .text.DisplayService_GetUIFont:00000000 $t
+C:\Users\w1785\AppData\Local\Temp\ccM97vYx.s:26     .text.DisplayService_GetUIFont:00000000 DisplayService_GetUIFont
+C:\Users\w1785\AppData\Local\Temp\ccM97vYx.s:40     .text.DisplayService_GetUIFont:00000004 $d
+C:\Users\w1785\AppData\Local\Temp\ccM97vYx.s:1500   .bss.s_ui_font_16:00000000 s_ui_font_16
+C:\Users\w1785\AppData\Local\Temp\ccM97vYx.s:45     .text.DisplayService_GetNumFont:00000000 $t
+C:\Users\w1785\AppData\Local\Temp\ccM97vYx.s:50     .text.DisplayService_GetNumFont:00000000 DisplayService_GetNumFont
+C:\Users\w1785\AppData\Local\Temp\ccM97vYx.s:64     .text.DisplayService_GetNumFont:00000004 $d
+C:\Users\w1785\AppData\Local\Temp\ccM97vYx.s:1494   .bss.s_num_font:00000000 s_num_font
+C:\Users\w1785\AppData\Local\Temp\ccM97vYx.s:69     .text.DisplayService_InitFonts:00000000 $t
+C:\Users\w1785\AppData\Local\Temp\ccM97vYx.s:74     .text.DisplayService_InitFonts:00000000 DisplayService_InitFonts
+C:\Users\w1785\AppData\Local\Temp\ccM97vYx.s:126    .text.DisplayService_InitFonts:0000003c $d
+C:\Users\w1785\AppData\Local\Temp\ccM97vYx.s:134    .text.lv_obj_set_style_pad_all:00000000 $t
+C:\Users\w1785\AppData\Local\Temp\ccM97vYx.s:139    .text.lv_obj_set_style_pad_all:00000000 lv_obj_set_style_pad_all
+C:\Users\w1785\AppData\Local\Temp\ccM97vYx.s:186    .text.DisplayService_Color:00000000 $t
+C:\Users\w1785\AppData\Local\Temp\ccM97vYx.s:191    .text.DisplayService_Color:00000000 DisplayService_Color
+C:\Users\w1785\AppData\Local\Temp\ccM97vYx.s:234    .text.DisplayService_PrepareObject:00000000 $t
+C:\Users\w1785\AppData\Local\Temp\ccM97vYx.s:239    .text.DisplayService_PrepareObject:00000000 DisplayService_PrepareObject
+C:\Users\w1785\AppData\Local\Temp\ccM97vYx.s:274    .text.DisplayService_CreateCard:00000000 $t
+C:\Users\w1785\AppData\Local\Temp\ccM97vYx.s:279    .text.DisplayService_CreateCard:00000000 DisplayService_CreateCard
+C:\Users\w1785\AppData\Local\Temp\ccM97vYx.s:424    .text.DisplayService_CreateCard:000000d8 $d
+C:\Users\w1785\AppData\Local\Temp\ccM97vYx.s:430    .rodata.DisplayService_SetDefaultValues.str1.4:00000000 $d
+C:\Users\w1785\AppData\Local\Temp\ccM97vYx.s:443    .text.DisplayService_SetDefaultValues:00000000 $t
+C:\Users\w1785\AppData\Local\Temp\ccM97vYx.s:448    .text.DisplayService_SetDefaultValues:00000000 DisplayService_SetDefaultValues
+C:\Users\w1785\AppData\Local\Temp\ccM97vYx.s:518    .text.DisplayService_SetDefaultValues:00000064 $d
+C:\Users\w1785\AppData\Local\Temp\ccM97vYx.s:1530   .bss.s_temp_label:00000000 s_temp_label
+C:\Users\w1785\AppData\Local\Temp\ccM97vYx.s:1524   .bss.s_humi_label:00000000 s_humi_label
+C:\Users\w1785\AppData\Local\Temp\ccM97vYx.s:1518   .bss.s_mode_label:00000000 s_mode_label
+C:\Users\w1785\AppData\Local\Temp\ccM97vYx.s:1512   .bss.s_target_label:00000000 s_target_label
+C:\Users\w1785\AppData\Local\Temp\ccM97vYx.s:1506   .bss.s_target_bar:00000000 s_target_bar
+C:\Users\w1785\AppData\Local\Temp\ccM97vYx.s:532    .text.DisplayService_CreateLabel:00000000 $t
+C:\Users\w1785\AppData\Local\Temp\ccM97vYx.s:537    .text.DisplayService_CreateLabel:00000000 DisplayService_CreateLabel
+C:\Users\w1785\AppData\Local\Temp\ccM97vYx.s:649    .rodata.DisplayService_CreateUI.str1.4:00000000 $d
+C:\Users\w1785\AppData\Local\Temp\ccM97vYx.s:663    .text.DisplayService_CreateUI:00000000 $t
+C:\Users\w1785\AppData\Local\Temp\ccM97vYx.s:668    .text.DisplayService_CreateUI:00000000 DisplayService_CreateUI
+C:\Users\w1785\AppData\Local\Temp\ccM97vYx.s:1014   .text.DisplayService_CreateUI:00000260 $d
+C:\Users\w1785\AppData\Local\Temp\ccM97vYx.s:1036   .text.DisplayService_Init:00000000 $t
+C:\Users\w1785\AppData\Local\Temp\ccM97vYx.s:1042   .text.DisplayService_Init:00000000 DisplayService_Init
+C:\Users\w1785\AppData\Local\Temp\ccM97vYx.s:1089   .text.DisplayService_Init:0000002c $d
+C:\Users\w1785\AppData\Local\Temp\ccM97vYx.s:1488   .bss.s_display_ready:00000000 s_display_ready
+C:\Users\w1785\AppData\Local\Temp\ccM97vYx.s:1095   .text.DisplayService_ShowBootScreen:00000000 $t
+C:\Users\w1785\AppData\Local\Temp\ccM97vYx.s:1101   .text.DisplayService_ShowBootScreen:00000000 DisplayService_ShowBootScreen
+C:\Users\w1785\AppData\Local\Temp\ccM97vYx.s:1129   .text.DisplayService_ShowBootScreen:00000010 $d
+C:\Users\w1785\AppData\Local\Temp\ccM97vYx.s:1134   .rodata.DisplayService_ShowSensorError.str1.4:00000000 $d
+C:\Users\w1785\AppData\Local\Temp\ccM97vYx.s:1141   .text.DisplayService_ShowSensorError:00000000 $t
+C:\Users\w1785\AppData\Local\Temp\ccM97vYx.s:1147   .text.DisplayService_ShowSensorError:00000000 DisplayService_ShowSensorError
+C:\Users\w1785\AppData\Local\Temp\ccM97vYx.s:1231   .text.DisplayService_ShowSensorError:00000070 $d
+C:\Users\w1785\AppData\Local\Temp\ccM97vYx.s:1245   .text.DisplayService_ShowSensorData:00000000 $t
+C:\Users\w1785\AppData\Local\Temp\ccM97vYx.s:1251   .text.DisplayService_ShowSensorData:00000000 DisplayService_ShowSensorData
+C:\Users\w1785\AppData\Local\Temp\ccM97vYx.s:1383   .text.DisplayService_ShowSensorData:000000b4 $d
+C:\Users\w1785\AppData\Local\Temp\ccM97vYx.s:1396   .text.DisplayService_Update:00000000 $t
+C:\Users\w1785\AppData\Local\Temp\ccM97vYx.s:1402   .text.DisplayService_Update:00000000 DisplayService_Update
+C:\Users\w1785\AppData\Local\Temp\ccM97vYx.s:1434   .text.DisplayService_Update:00000014 $d
+C:\Users\w1785\AppData\Local\Temp\ccM97vYx.s:1439   .text.DisplayService_TestColorCycle:00000000 $t
+C:\Users\w1785\AppData\Local\Temp\ccM97vYx.s:1445   .text.DisplayService_TestColorCycle:00000000 DisplayService_TestColorCycle
+C:\Users\w1785\AppData\Local\Temp\ccM97vYx.s:1481   .text.DisplayService_TestColorCycle:00000018 $d
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccM97vYx.s 			page 42
+
+
+C:\Users\w1785\AppData\Local\Temp\ccM97vYx.s:1489   .bss.s_display_ready:00000000 $d
+C:\Users\w1785\AppData\Local\Temp\ccM97vYx.s:1491   .bss.s_num_font:00000000 $d
+C:\Users\w1785\AppData\Local\Temp\ccM97vYx.s:1497   .bss.s_ui_font_16:00000000 $d
+C:\Users\w1785\AppData\Local\Temp\ccM97vYx.s:1503   .bss.s_target_bar:00000000 $d
+C:\Users\w1785\AppData\Local\Temp\ccM97vYx.s:1509   .bss.s_target_label:00000000 $d
+C:\Users\w1785\AppData\Local\Temp\ccM97vYx.s:1515   .bss.s_mode_label:00000000 $d
+C:\Users\w1785\AppData\Local\Temp\ccM97vYx.s:1521   .bss.s_humi_label:00000000 $d
+C:\Users\w1785\AppData\Local\Temp\ccM97vYx.s:1527   .bss.s_temp_label:00000000 $d
 
 UNDEFINED SYMBOLS
-snprintf
-ST7789_FillScreen
-ST7789_DrawString
+HumidifierSymbolFont_Get16
+lv_font_montserrat_14
+lv_font_montserrat_16
+lv_obj_set_style_pad_left
+lv_obj_set_style_pad_right
+lv_obj_set_style_pad_top
+lv_obj_set_style_pad_bottom
+lv_color_hex
+lv_obj_remove_flag
+lv_obj_set_scrollbar_mode
+lv_obj_create
+lv_obj_remove_style_all
+lv_obj_set_pos
+lv_obj_set_size
+lv_obj_set_style_bg_color
+lv_obj_set_style_bg_opa
+lv_obj_set_style_border_color
+lv_obj_set_style_border_width
+lv_obj_set_style_border_opa
+lv_obj_set_style_radius
+lv_label_set_text
+lv_obj_set_style_text_color
+lv_bar_set_value
+lv_label_create
+lv_label_set_long_mode
+lv_obj_set_style_text_font
+lv_obj_set_style_text_align
+lv_obj_set_style_text_letter_space
+lv_obj_set_style_text_line_space
+lv_screen_active
+lv_bar_create
+lv_bar_set_range
 ST7789_Init
+lv_init
+lv_tick_set_cb
+LV_Port_Disp_Init
+lv_timer_handler
+HAL_GetTick
+DisplayUI_GetSensorErrorText
 SensorService_GetData
-ST7789_FillRect
+DisplayUI_FormatTemperature
+DisplayUI_FormatHumidity
 ST7789_TestColorCycle
+lv_obj_invalidate

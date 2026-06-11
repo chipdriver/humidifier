@@ -1,4 +1,4 @@
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccMZLNKf.s 			page 1
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccLbFRdq.s 			page 1
 
 
    1              		.cpu cortex-m4
@@ -58,7 +58,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccMZLNKf.s 			page 1
   27:Middlewares/LVGL/lvgl/src/misc/lv_array.c **** 
   28:Middlewares/LVGL/lvgl/src/misc/lv_array.c **** /**********************
   29:Middlewares/LVGL/lvgl/src/misc/lv_array.c ****  *  STATIC VARIABLES
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccMZLNKf.s 			page 2
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccLbFRdq.s 			page 2
 
 
   30:Middlewares/LVGL/lvgl/src/misc/lv_array.c ****  **********************/
@@ -118,7 +118,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccMZLNKf.s 			page 1
   66 001a 00B1     		cbz	r0, .L3
   48:Middlewares/LVGL/lvgl/src/misc/lv_array.c **** }
   67              		.loc 1 48 1 is_stmt 0 view .LVU16
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccMZLNKf.s 			page 3
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccLbFRdq.s 			page 3
 
 
   68 001c 10BD     		pop	{r4, pc}
@@ -178,7 +178,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccMZLNKf.s 			page 1
  112              		.loc 1 54 5 is_stmt 1 view .LVU31
  113              		.loc 1 54 21 is_stmt 0 view .LVU32
  114 000a 8260     		str	r2, [r0, #8]
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccMZLNKf.s 			page 4
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccLbFRdq.s 			page 4
 
 
   55:Middlewares/LVGL/lvgl/src/misc/lv_array.c ****     array->element_size = element_size;
@@ -238,7 +238,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccMZLNKf.s 			page 1
  158 0000 10B5     		push	{r4, lr}
  159              	.LCFI3:
  160              		.cfi_def_cfa_offset 8
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccMZLNKf.s 			page 5
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccLbFRdq.s 			page 5
 
 
  161              		.cfi_offset 4, -8
@@ -298,7 +298,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccMZLNKf.s 			page 1
  208              	.LFB12:
   71:Middlewares/LVGL/lvgl/src/misc/lv_array.c **** 
   72:Middlewares/LVGL/lvgl/src/misc/lv_array.c **** void lv_array_copy(lv_array_t * target, const lv_array_t * source)
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccMZLNKf.s 			page 6
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccLbFRdq.s 			page 6
 
 
   73:Middlewares/LVGL/lvgl/src/misc/lv_array.c **** {
@@ -358,7 +358,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccMZLNKf.s 			page 1
   36:Middlewares/LVGL/lvgl/src/misc/lv_array.h ****     uint8_t * data;
   37:Middlewares/LVGL/lvgl/src/misc/lv_array.h ****     uint32_t size;
   38:Middlewares/LVGL/lvgl/src/misc/lv_array.h ****     uint32_t capacity;
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccMZLNKf.s 			page 7
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccLbFRdq.s 			page 7
 
 
   39:Middlewares/LVGL/lvgl/src/misc/lv_array.h ****     uint32_t element_size;
@@ -418,7 +418,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccMZLNKf.s 			page 1
   93:Middlewares/LVGL/lvgl/src/misc/lv_array.h ****  * @param array pointer to an `lv_array_t` variable
   94:Middlewares/LVGL/lvgl/src/misc/lv_array.h ****  * @return the capacity of the array
   95:Middlewares/LVGL/lvgl/src/misc/lv_array.h ****  */
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccMZLNKf.s 			page 8
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccLbFRdq.s 			page 8
 
 
   96:Middlewares/LVGL/lvgl/src/misc/lv_array.h **** static inline uint32_t lv_array_capacity(const lv_array_t * array)
@@ -478,7 +478,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccMZLNKf.s 			page 1
  256              		.loc 1 79 49 is_stmt 0 view .LVU75
  257 001a 6368     		ldr	r3, [r4, #4]
   79:Middlewares/LVGL/lvgl/src/misc/lv_array.c ****     target->size = source->size;
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccMZLNKf.s 			page 9
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccLbFRdq.s 			page 9
 
 
  258              		.loc 1 79 64 view .LVU76
@@ -538,7 +538,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccMZLNKf.s 			page 1
  107:Middlewares/LVGL/lvgl/src/misc/lv_array.c ****     uint8_t * start = lv_array_at(array, index);
  108:Middlewares/LVGL/lvgl/src/misc/lv_array.c ****     uint8_t * remaining = start + array->element_size;
  109:Middlewares/LVGL/lvgl/src/misc/lv_array.c ****     uint32_t remaining_size = (array->size - index - 1) * array->element_size;
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccMZLNKf.s 			page 10
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccLbFRdq.s 			page 10
 
 
  110:Middlewares/LVGL/lvgl/src/misc/lv_array.c ****     lv_memmove(start, remaining, remaining_size);
@@ -598,7 +598,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccMZLNKf.s 			page 1
  164:Middlewares/LVGL/lvgl/src/misc/lv_array.c ****     array->size -= (end - start);
  165:Middlewares/LVGL/lvgl/src/misc/lv_array.c ****     lv_array_shrink(array);
  166:Middlewares/LVGL/lvgl/src/misc/lv_array.c ****     return LV_RESULT_OK;
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccMZLNKf.s 			page 11
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccLbFRdq.s 			page 11
 
 
  167:Middlewares/LVGL/lvgl/src/misc/lv_array.c **** }
@@ -658,7 +658,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccMZLNKf.s 			page 1
  176:Middlewares/LVGL/lvgl/src/misc/lv_array.c ****     LV_ASSERT_NULL(data);
  316              		.loc 1 176 22 view .LVU90
  317 0010 05FB01F1 		mul	r1, r5, r1
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccMZLNKf.s 			page 12
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccLbFRdq.s 			page 12
 
 
  318 0014 0068     		ldr	r0, [r0]
@@ -718,7 +718,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccMZLNKf.s 			page 1
  352              		.cfi_endproc
  353              	.LFE17:
  355              		.section	.text.lv_array_shrink,"ax",%progbits
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccMZLNKf.s 			page 13
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccLbFRdq.s 			page 13
 
 
  356              		.align	1
@@ -778,7 +778,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccMZLNKf.s 			page 1
  404              	lv_array_concat:
  405              	.LVL30:
  406              	.LFB18:
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccMZLNKf.s 			page 14
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccLbFRdq.s 			page 14
 
 
  188:Middlewares/LVGL/lvgl/src/misc/lv_array.c **** 
@@ -838,7 +838,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccMZLNKf.s 			page 1
  199:Middlewares/LVGL/lvgl/src/misc/lv_array.c **** 
  200:Middlewares/LVGL/lvgl/src/misc/lv_array.c ****     uint8_t * data = array->data + array->size * array->element_size;
  449              		.loc 1 200 5 is_stmt 1 view .LVU136
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccMZLNKf.s 			page 15
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccLbFRdq.s 			page 15
 
 
  450              		.loc 1 200 27 is_stmt 0 view .LVU137
@@ -898,7 +898,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccMZLNKf.s 			page 1
  495              	.LCFI9:
  496              		.cfi_def_cfa_offset 16
  497              		.cfi_offset 4, -16
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccMZLNKf.s 			page 16
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccLbFRdq.s 			page 16
 
 
  498              		.cfi_offset 5, -12
@@ -958,7 +958,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccMZLNKf.s 			page 1
  547              	.L40:
  211:Middlewares/LVGL/lvgl/src/misc/lv_array.c ****         /*array is full*/
  212:Middlewares/LVGL/lvgl/src/misc/lv_array.c ****         if(lv_array_resize(array, array->capacity + LV_ARRAY_DEFAULT_CAPACITY) == false) {
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccMZLNKf.s 			page 17
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccLbFRdq.s 			page 17
 
 
  213:Middlewares/LVGL/lvgl/src/misc/lv_array.c ****             return LV_RESULT_INVALID;
@@ -1018,7 +1018,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccMZLNKf.s 			page 1
  584              		.loc 1 208 5 view .LVU181
  208:Middlewares/LVGL/lvgl/src/misc/lv_array.c **** 
  585              		.loc 1 208 5 view .LVU182
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccMZLNKf.s 			page 18
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccLbFRdq.s 			page 18
 
 
  586 002e FEE7     		b	.L39
@@ -1078,7 +1078,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccMZLNKf.s 			page 1
   30:Middlewares/LVGL/lvgl/src/misc/../stdlib/lv_string.h **** 
   31:Middlewares/LVGL/lvgl/src/misc/../stdlib/lv_string.h **** /**
   32:Middlewares/LVGL/lvgl/src/misc/../stdlib/lv_string.h ****  * @brief Copies a block of memory from a source address to a destination address.
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccMZLNKf.s 			page 19
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccLbFRdq.s 			page 19
 
 
   33:Middlewares/LVGL/lvgl/src/misc/../stdlib/lv_string.h ****  * @param dst Pointer to the destination array where the content is to be copied.
@@ -1138,7 +1138,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccMZLNKf.s 			page 1
  616              		.cfi_endproc
  617              	.LFE19:
  619              		.section	.text.lv_array_at,"ax",%progbits
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccMZLNKf.s 			page 20
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccLbFRdq.s 			page 20
 
 
  620              		.align	1
@@ -1198,7 +1198,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccMZLNKf.s 			page 1
  661              	.L51:
  231:Middlewares/LVGL/lvgl/src/misc/lv_array.c ****         return NULL;
  662              		.loc 1 231 16 is_stmt 0 view .LVU207
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccMZLNKf.s 			page 21
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccLbFRdq.s 			page 21
 
 
  663 0014 0020     		movs	r0, #0
@@ -1258,7 +1258,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccMZLNKf.s 			page 1
  708 0012 11D0     		beq	.L61
  107:Middlewares/LVGL/lvgl/src/misc/lv_array.c ****     uint8_t * remaining = start + array->element_size;
  709              		.loc 1 107 5 is_stmt 1 view .LVU219
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccMZLNKf.s 			page 22
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccLbFRdq.s 			page 22
 
 
  107:Middlewares/LVGL/lvgl/src/misc/lv_array.c ****     uint8_t * remaining = start + array->element_size;
@@ -1318,7 +1318,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccMZLNKf.s 			page 1
  748 0036 70BD     		pop	{r4, r5, r6, pc}
  749              	.LVL65:
  750              	.L61:
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccMZLNKf.s 			page 23
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccLbFRdq.s 			page 23
 
 
  102:Middlewares/LVGL/lvgl/src/misc/lv_array.c ****         lv_array_shrink(array);
@@ -1378,7 +1378,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccMZLNKf.s 			page 1
  798              	.LVL71:
  799              	.LFB15:
  117:Middlewares/LVGL/lvgl/src/misc/lv_array.c ****     if(!array) {
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccMZLNKf.s 			page 24
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccLbFRdq.s 			page 24
 
 
  800              		.loc 1 117 1 is_stmt 1 view -0
@@ -1438,7 +1438,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccMZLNKf.s 			page 1
  135:Middlewares/LVGL/lvgl/src/misc/lv_array.c **** 
  840              		.loc 1 135 21 view .LVU260
  841 001c FFF7FEFF 		bl	lv_array_at
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccMZLNKf.s 			page 25
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccLbFRdq.s 			page 25
 
 
  842              	.LVL75:
@@ -1498,7 +1498,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccMZLNKf.s 			page 1
  882              	.L65:
  883              	.LCFI15:
  884              		.cfi_def_cfa_offset 0
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccMZLNKf.s 			page 26
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccLbFRdq.s 			page 26
 
 
  885              		.cfi_restore 4
@@ -1558,7 +1558,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccMZLNKf.s 			page 1
  935 0004 0C46     		mov	r4, r1
  936 0006 1546     		mov	r5, r2
  145:Middlewares/LVGL/lvgl/src/misc/lv_array.c ****         end = array->size;
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccMZLNKf.s 			page 27
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccLbFRdq.s 			page 27
 
 
  937              		.loc 1 145 5 is_stmt 1 view .LVU281
@@ -1618,7 +1618,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccMZLNKf.s 			page 1
  163:Middlewares/LVGL/lvgl/src/misc/lv_array.c ****     array->size -= (end - start);
  975              		.loc 1 163 5 is_stmt 1 view .LVU298
  976 0026 03FB02F2 		mul	r2, r3, r2
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccMZLNKf.s 			page 28
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccLbFRdq.s 			page 28
 
 
  977              	.LVL94:
@@ -1678,7 +1678,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccMZLNKf.s 			page 1
  157:Middlewares/LVGL/lvgl/src/misc/lv_array.c ****     }
  1016              		.loc 1 157 16 is_stmt 0 view .LVU314
  1017 004c 0120     		movs	r0, #1
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccMZLNKf.s 			page 29
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccLbFRdq.s 			page 29
 
 
  1018 004e F8E7     		b	.L74
@@ -1738,7 +1738,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccMZLNKf.s 			page 1
  244:Middlewares/LVGL/lvgl/src/misc/lv_array.c ****     return LV_RESULT_OK;
  1065              		.loc 1 244 5 view .LVU324
  1066              		.loc 1 244 12 is_stmt 0 view .LVU325
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccMZLNKf.s 			page 30
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccLbFRdq.s 			page 30
 
 
  1067 0014 0120     		movs	r0, #1
@@ -1764,37 +1764,37 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccMZLNKf.s 			page 1
  1085              		.file 6 "D:\\STM32CubeIDE\\STM32CubeIDE_2.1.1\\STM32CubeIDE\\plugins\\com.st.stm32cube.ide.mcu.ext
  1086              		.file 7 "Middlewares/LVGL/lvgl/src/misc/lv_types.h"
  1087              		.file 8 "Middlewares/LVGL/lvgl/src/misc/../stdlib/lv_mem.h"
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccMZLNKf.s 			page 31
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccLbFRdq.s 			page 31
 
 
 DEFINED SYMBOLS
                             *ABS*:00000000 lv_array.c
-C:\Users\w1785\AppData\Local\Temp\ccMZLNKf.s:21     .text.lv_array_init:00000000 $t
-C:\Users\w1785\AppData\Local\Temp\ccMZLNKf.s:27     .text.lv_array_init:00000000 lv_array_init
-C:\Users\w1785\AppData\Local\Temp\ccMZLNKf.s:81     .text.lv_array_init_from_buf:00000000 $t
-C:\Users\w1785\AppData\Local\Temp\ccMZLNKf.s:87     .text.lv_array_init_from_buf:00000000 lv_array_init_from_buf
-C:\Users\w1785\AppData\Local\Temp\ccMZLNKf.s:144    .text.lv_array_deinit:00000000 $t
-C:\Users\w1785\AppData\Local\Temp\ccMZLNKf.s:150    .text.lv_array_deinit:00000000 lv_array_deinit
-C:\Users\w1785\AppData\Local\Temp\ccMZLNKf.s:200    .text.lv_array_copy:00000000 $t
-C:\Users\w1785\AppData\Local\Temp\ccMZLNKf.s:206    .text.lv_array_copy:00000000 lv_array_copy
-C:\Users\w1785\AppData\Local\Temp\ccMZLNKf.s:276    .text.lv_array_resize:00000000 $t
-C:\Users\w1785\AppData\Local\Temp\ccMZLNKf.s:282    .text.lv_array_resize:00000000 lv_array_resize
-C:\Users\w1785\AppData\Local\Temp\ccMZLNKf.s:356    .text.lv_array_shrink:00000000 $t
-C:\Users\w1785\AppData\Local\Temp\ccMZLNKf.s:362    .text.lv_array_shrink:00000000 lv_array_shrink
-C:\Users\w1785\AppData\Local\Temp\ccMZLNKf.s:398    .text.lv_array_concat:00000000 $t
-C:\Users\w1785\AppData\Local\Temp\ccMZLNKf.s:404    .text.lv_array_concat:00000000 lv_array_concat
-C:\Users\w1785\AppData\Local\Temp\ccMZLNKf.s:508    .text.lv_array_push_back:00000000 $t
-C:\Users\w1785\AppData\Local\Temp\ccMZLNKf.s:514    .text.lv_array_push_back:00000000 lv_array_push_back
-C:\Users\w1785\AppData\Local\Temp\ccMZLNKf.s:620    .text.lv_array_at:00000000 $t
-C:\Users\w1785\AppData\Local\Temp\ccMZLNKf.s:626    .text.lv_array_at:00000000 lv_array_at
-C:\Users\w1785\AppData\Local\Temp\ccMZLNKf.s:671    .text.lv_array_remove:00000000 $t
-C:\Users\w1785\AppData\Local\Temp\ccMZLNKf.s:677    .text.lv_array_remove:00000000 lv_array_remove
-C:\Users\w1785\AppData\Local\Temp\ccMZLNKf.s:791    .text.lv_array_remove_unordered:00000000 $t
-C:\Users\w1785\AppData\Local\Temp\ccMZLNKf.s:797    .text.lv_array_remove_unordered:00000000 lv_array_remove_unordered
-C:\Users\w1785\AppData\Local\Temp\ccMZLNKf.s:911    .text.lv_array_erase:00000000 $t
-C:\Users\w1785\AppData\Local\Temp\ccMZLNKf.s:917    .text.lv_array_erase:00000000 lv_array_erase
-C:\Users\w1785\AppData\Local\Temp\ccMZLNKf.s:1030   .text.lv_array_assign:00000000 $t
-C:\Users\w1785\AppData\Local\Temp\ccMZLNKf.s:1036   .text.lv_array_assign:00000000 lv_array_assign
+C:\Users\w1785\AppData\Local\Temp\ccLbFRdq.s:21     .text.lv_array_init:00000000 $t
+C:\Users\w1785\AppData\Local\Temp\ccLbFRdq.s:27     .text.lv_array_init:00000000 lv_array_init
+C:\Users\w1785\AppData\Local\Temp\ccLbFRdq.s:81     .text.lv_array_init_from_buf:00000000 $t
+C:\Users\w1785\AppData\Local\Temp\ccLbFRdq.s:87     .text.lv_array_init_from_buf:00000000 lv_array_init_from_buf
+C:\Users\w1785\AppData\Local\Temp\ccLbFRdq.s:144    .text.lv_array_deinit:00000000 $t
+C:\Users\w1785\AppData\Local\Temp\ccLbFRdq.s:150    .text.lv_array_deinit:00000000 lv_array_deinit
+C:\Users\w1785\AppData\Local\Temp\ccLbFRdq.s:200    .text.lv_array_copy:00000000 $t
+C:\Users\w1785\AppData\Local\Temp\ccLbFRdq.s:206    .text.lv_array_copy:00000000 lv_array_copy
+C:\Users\w1785\AppData\Local\Temp\ccLbFRdq.s:276    .text.lv_array_resize:00000000 $t
+C:\Users\w1785\AppData\Local\Temp\ccLbFRdq.s:282    .text.lv_array_resize:00000000 lv_array_resize
+C:\Users\w1785\AppData\Local\Temp\ccLbFRdq.s:356    .text.lv_array_shrink:00000000 $t
+C:\Users\w1785\AppData\Local\Temp\ccLbFRdq.s:362    .text.lv_array_shrink:00000000 lv_array_shrink
+C:\Users\w1785\AppData\Local\Temp\ccLbFRdq.s:398    .text.lv_array_concat:00000000 $t
+C:\Users\w1785\AppData\Local\Temp\ccLbFRdq.s:404    .text.lv_array_concat:00000000 lv_array_concat
+C:\Users\w1785\AppData\Local\Temp\ccLbFRdq.s:508    .text.lv_array_push_back:00000000 $t
+C:\Users\w1785\AppData\Local\Temp\ccLbFRdq.s:514    .text.lv_array_push_back:00000000 lv_array_push_back
+C:\Users\w1785\AppData\Local\Temp\ccLbFRdq.s:620    .text.lv_array_at:00000000 $t
+C:\Users\w1785\AppData\Local\Temp\ccLbFRdq.s:626    .text.lv_array_at:00000000 lv_array_at
+C:\Users\w1785\AppData\Local\Temp\ccLbFRdq.s:671    .text.lv_array_remove:00000000 $t
+C:\Users\w1785\AppData\Local\Temp\ccLbFRdq.s:677    .text.lv_array_remove:00000000 lv_array_remove
+C:\Users\w1785\AppData\Local\Temp\ccLbFRdq.s:791    .text.lv_array_remove_unordered:00000000 $t
+C:\Users\w1785\AppData\Local\Temp\ccLbFRdq.s:797    .text.lv_array_remove_unordered:00000000 lv_array_remove_unordered
+C:\Users\w1785\AppData\Local\Temp\ccLbFRdq.s:911    .text.lv_array_erase:00000000 $t
+C:\Users\w1785\AppData\Local\Temp\ccLbFRdq.s:917    .text.lv_array_erase:00000000 lv_array_erase
+C:\Users\w1785\AppData\Local\Temp\ccLbFRdq.s:1030   .text.lv_array_assign:00000000 $t
+C:\Users\w1785\AppData\Local\Temp\ccLbFRdq.s:1036   .text.lv_array_assign:00000000 lv_array_assign
 
 UNDEFINED SYMBOLS
 lv_malloc

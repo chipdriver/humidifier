@@ -1,4 +1,4 @@
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccJWWRL1.s 			page 1
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\cclYcovy.s 			page 1
 
 
    1              		.cpu cortex-m4
@@ -58,7 +58,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccJWWRL1.s 			page 1
   27:Middlewares/LVGL/lvgl/src/core/../misc/lv_style.h **** /*********************
   28:Middlewares/LVGL/lvgl/src/core/../misc/lv_style.h ****  *      DEFINES
   29:Middlewares/LVGL/lvgl/src/core/../misc/lv_style.h ****  *********************/
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccJWWRL1.s 			page 2
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\cclYcovy.s 			page 2
 
 
   30:Middlewares/LVGL/lvgl/src/core/../misc/lv_style.h **** 
@@ -118,7 +118,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccJWWRL1.s 			page 1
   84:Middlewares/LVGL/lvgl/src/core/../misc/lv_style.h ****  **********************/
   85:Middlewares/LVGL/lvgl/src/core/../misc/lv_style.h **** 
   86:Middlewares/LVGL/lvgl/src/core/../misc/lv_style.h **** /**
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccJWWRL1.s 			page 3
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\cclYcovy.s 			page 3
 
 
   87:Middlewares/LVGL/lvgl/src/core/../misc/lv_style.h ****  * Possible options for blending opaque drawings
@@ -178,7 +178,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccJWWRL1.s 			page 1
  141:Middlewares/LVGL/lvgl/src/core/../misc/lv_style.h ****     lv_color_t color;    /**< Colors*/
  142:Middlewares/LVGL/lvgl/src/core/../misc/lv_style.h **** } lv_style_value_t;
  143:Middlewares/LVGL/lvgl/src/core/../misc/lv_style.h **** 
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccJWWRL1.s 			page 4
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\cclYcovy.s 			page 4
 
 
  144:Middlewares/LVGL/lvgl/src/core/../misc/lv_style.h **** /**
@@ -238,7 +238,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccJWWRL1.s 			page 1
  198:Middlewares/LVGL/lvgl/src/core/../misc/lv_style.h ****     LV_STYLE_PAD_COLUMN,
  199:Middlewares/LVGL/lvgl/src/core/../misc/lv_style.h **** 
  200:Middlewares/LVGL/lvgl/src/core/../misc/lv_style.h ****     /*Margin related properties*/
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccJWWRL1.s 			page 5
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\cclYcovy.s 			page 5
 
 
  201:Middlewares/LVGL/lvgl/src/core/../misc/lv_style.h ****     LV_STYLE_MARGIN_TOP = 32,
@@ -298,7 +298,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccJWWRL1.s 			page 1
  255:Middlewares/LVGL/lvgl/src/core/../misc/lv_style.h **** 
  256:Middlewares/LVGL/lvgl/src/core/../misc/lv_style.h ****     LV_STYLE_ARC_IMAGE_SRC = 96,
  257:Middlewares/LVGL/lvgl/src/core/../misc/lv_style.h ****     LV_STYLE_SHADOW_OFFSET_X,
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccJWWRL1.s 			page 6
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\cclYcovy.s 			page 6
 
 
  258:Middlewares/LVGL/lvgl/src/core/../misc/lv_style.h ****     LV_STYLE_SHADOW_OFFSET_Y,
@@ -358,7 +358,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccJWWRL1.s 			page 1
  312:Middlewares/LVGL/lvgl/src/core/../misc/lv_style.h ****     LV_STYLE_TRANSFORM_SCALE_Y,
  313:Middlewares/LVGL/lvgl/src/core/../misc/lv_style.h ****     LV_STYLE_TRANSFORM_PIVOT_X,
  314:Middlewares/LVGL/lvgl/src/core/../misc/lv_style.h ****     LV_STYLE_TRANSFORM_PIVOT_Y,
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccJWWRL1.s 			page 7
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\cclYcovy.s 			page 7
 
 
  315:Middlewares/LVGL/lvgl/src/core/../misc/lv_style.h ****     LV_STYLE_TRANSFORM_ROTATION,
@@ -418,7 +418,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccJWWRL1.s 			page 1
  369:Middlewares/LVGL/lvgl/src/core/../misc/lv_style.h ****  * Descriptor of a style (a collection of properties and values).
  370:Middlewares/LVGL/lvgl/src/core/../misc/lv_style.h ****  */
  371:Middlewares/LVGL/lvgl/src/core/../misc/lv_style.h **** typedef struct {
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccJWWRL1.s 			page 8
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\cclYcovy.s 			page 8
 
 
  372:Middlewares/LVGL/lvgl/src/core/../misc/lv_style.h **** 
@@ -478,7 +478,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccJWWRL1.s 			page 1
  426:Middlewares/LVGL/lvgl/src/core/../misc/lv_style.h **** void lv_style_merge(lv_style_t * dst, const lv_style_t * src);
  427:Middlewares/LVGL/lvgl/src/core/../misc/lv_style.h **** 
  428:Middlewares/LVGL/lvgl/src/core/../misc/lv_style.h **** 
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccJWWRL1.s 			page 9
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\cclYcovy.s 			page 9
 
 
  429:Middlewares/LVGL/lvgl/src/core/../misc/lv_style.h **** /**
@@ -538,7 +538,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccJWWRL1.s 			page 1
  483:Middlewares/LVGL/lvgl/src/core/../misc/lv_style.h ****  * Get the value of a property
  484:Middlewares/LVGL/lvgl/src/core/../misc/lv_style.h ****  * @param style pointer to a style
  485:Middlewares/LVGL/lvgl/src/core/../misc/lv_style.h ****  * @param prop  the ID of a property
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccJWWRL1.s 			page 10
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\cclYcovy.s 			page 10
 
 
  486:Middlewares/LVGL/lvgl/src/core/../misc/lv_style.h ****  * @param value pointer to a `lv_style_value_t` variable to store the value
@@ -598,7 +598,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccJWWRL1.s 			page 1
   38              		.cfi_offset 4, -8
   39              		.cfi_offset 14, -4
  532:Middlewares/LVGL/lvgl/src/core/../misc/lv_style.h ****     if(lv_style_is_const(style)) {
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccJWWRL1.s 			page 11
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\cclYcovy.s 			page 11
 
 
   40              		.loc 2 532 5 is_stmt 1 view .LVU2
@@ -658,7 +658,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccJWWRL1.s 			page 1
   75 001c C05C     		ldrb	r0, [r0, r3]	@ zero_extendqisi2
   76              		.loc 2 546 15 view .LVU17
   77 001e 8842     		cmp	r0, r1
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccJWWRL1.s 			page 12
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\cclYcovy.s 			page 12
 
 
   78 0020 11D0     		beq	.L12
@@ -718,7 +718,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccJWWRL1.s 			page 1
  535:Middlewares/LVGL/lvgl/src/core/../misc/lv_style.h ****             if(props[i].prop == prop) {
  116              		.loc 2 535 57 is_stmt 1 discriminator 2 view .LVU34
  117 0038 0133     		adds	r3, r3, #1
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccJWWRL1.s 			page 13
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\cclYcovy.s 			page 13
 
 
  118              	.LVL9:
@@ -778,7 +778,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccJWWRL1.s 			page 1
  158              	.L6:
  554:Middlewares/LVGL/lvgl/src/core/../misc/lv_style.h **** }
  159              		.loc 2 554 1 view .LVU50
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccJWWRL1.s 			page 14
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\cclYcovy.s 			page 14
 
 
  160 0052 10BD     		pop	{r4, pc}
@@ -838,7 +838,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccJWWRL1.s 			page 1
   44:Middlewares/LVGL/lvgl/src/core/lv_obj_style.c ****     int32_t value;
   45:Middlewares/LVGL/lvgl/src/core/lv_obj_style.c **** } bind_style_t;
   46:Middlewares/LVGL/lvgl/src/core/lv_obj_style.c **** 
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccJWWRL1.s 			page 15
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\cclYcovy.s 			page 15
 
 
   47:Middlewares/LVGL/lvgl/src/core/lv_obj_style.c **** typedef struct {
@@ -898,7 +898,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccJWWRL1.s 			page 1
  101:Middlewares/LVGL/lvgl/src/core/lv_obj_style.c ****     lv_ll_clear(style_trans_ll_p);
  102:Middlewares/LVGL/lvgl/src/core/lv_obj_style.c ****     if(_style_custom_prop_flag_lookup_table != NULL) {
  103:Middlewares/LVGL/lvgl/src/core/lv_obj_style.c ****         lv_free(_style_custom_prop_flag_lookup_table);
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccJWWRL1.s 			page 16
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\cclYcovy.s 			page 16
 
 
  104:Middlewares/LVGL/lvgl/src/core/lv_obj_style.c ****         _style_custom_prop_flag_lookup_table = NULL;
@@ -958,7 +958,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccJWWRL1.s 			page 1
  158:Middlewares/LVGL/lvgl/src/core/lv_obj_style.c ****         for(i = 0; i < style->prop_cnt; i++) {
  159:Middlewares/LVGL/lvgl/src/core/lv_obj_style.c ****             (*prop_is_set) |= STYLE_PROP_SHIFTED(props[i]);
  160:Middlewares/LVGL/lvgl/src/core/lv_obj_style.c ****         }
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccJWWRL1.s 			page 17
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\cclYcovy.s 			page 17
 
 
  161:Middlewares/LVGL/lvgl/src/core/lv_obj_style.c ****     }
@@ -1018,7 +1018,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccJWWRL1.s 			page 1
  215:Middlewares/LVGL/lvgl/src/core/lv_obj_style.c ****     remove_style_core(obj, style, selector, false);
  216:Middlewares/LVGL/lvgl/src/core/lv_obj_style.c **** }
  217:Middlewares/LVGL/lvgl/src/core/lv_obj_style.c **** 
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccJWWRL1.s 			page 18
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\cclYcovy.s 			page 18
 
 
  218:Middlewares/LVGL/lvgl/src/core/lv_obj_style.c **** void lv_obj_remove_theme(lv_obj_t * obj, lv_style_selector_t selector)
@@ -1078,7 +1078,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccJWWRL1.s 			page 1
  272:Middlewares/LVGL/lvgl/src/core/lv_obj_style.c ****     if((part == LV_PART_ANY || part == LV_PART_MAIN) && is_layer_refr) {
  273:Middlewares/LVGL/lvgl/src/core/lv_obj_style.c ****         lv_obj_update_layer_type(obj);
  274:Middlewares/LVGL/lvgl/src/core/lv_obj_style.c ****     }
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccJWWRL1.s 			page 19
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\cclYcovy.s 			page 19
 
 
  275:Middlewares/LVGL/lvgl/src/core/lv_obj_style.c **** 
@@ -1138,7 +1138,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccJWWRL1.s 			page 1
  329:Middlewares/LVGL/lvgl/src/core/lv_obj_style.c **** 
  330:Middlewares/LVGL/lvgl/src/core/lv_obj_style.c ****     lv_style_selector_t selector = part | obj->state;
  331:Middlewares/LVGL/lvgl/src/core/lv_obj_style.c ****     lv_style_value_t value_act = { .ptr = NULL };
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccJWWRL1.s 			page 20
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\cclYcovy.s 			page 20
 
 
  332:Middlewares/LVGL/lvgl/src/core/lv_obj_style.c ****     lv_style_res_t found;
@@ -1198,7 +1198,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccJWWRL1.s 			page 1
  386:Middlewares/LVGL/lvgl/src/core/lv_obj_style.c ****     for(i = 0; i < obj->style_cnt; i++) {
  387:Middlewares/LVGL/lvgl/src/core/lv_obj_style.c ****         if(obj->styles[i].is_local &&
  388:Middlewares/LVGL/lvgl/src/core/lv_obj_style.c ****            obj->styles[i].selector == selector) {
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccJWWRL1.s 			page 21
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\cclYcovy.s 			page 21
 
 
  389:Middlewares/LVGL/lvgl/src/core/lv_obj_style.c ****             return lv_style_get_prop(obj->styles[i].style, prop, value);
@@ -1258,7 +1258,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccJWWRL1.s 			page 1
  443:Middlewares/LVGL/lvgl/src/core/lv_obj_style.c ****     if(tr_dsc->prop == LV_STYLE_RADIUS) {
  444:Middlewares/LVGL/lvgl/src/core/lv_obj_style.c ****         if(v1.num == LV_RADIUS_CIRCLE || v2.num == LV_RADIUS_CIRCLE) {
  445:Middlewares/LVGL/lvgl/src/core/lv_obj_style.c ****             int32_t whalf = lv_obj_get_width(obj) / 2;
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccJWWRL1.s 			page 22
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\cclYcovy.s 			page 22
 
 
  446:Middlewares/LVGL/lvgl/src/core/lv_obj_style.c ****             int32_t hhalf = lv_obj_get_height(obj) / 2;
@@ -1318,7 +1318,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccJWWRL1.s 			page 1
  500:Middlewares/LVGL/lvgl/src/core/lv_obj_style.c ****         if(obj->styles[i].is_trans) continue;
  501:Middlewares/LVGL/lvgl/src/core/lv_obj_style.c **** 
  502:Middlewares/LVGL/lvgl/src/core/lv_obj_style.c ****         lv_state_t state_act = lv_obj_style_get_selector_state(obj->styles[i].selector);
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccJWWRL1.s 			page 23
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\cclYcovy.s 			page 23
 
 
  503:Middlewares/LVGL/lvgl/src/core/lv_obj_style.c ****         /*The style is valid for a state but not the other*/
@@ -1378,7 +1378,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccJWWRL1.s 			page 1
  557:Middlewares/LVGL/lvgl/src/core/lv_obj_style.c ****     lv_anim_init(&a);
  558:Middlewares/LVGL/lvgl/src/core/lv_obj_style.c ****     lv_anim_set_var(&a, obj);
  559:Middlewares/LVGL/lvgl/src/core/lv_obj_style.c ****     lv_anim_set_values(&a, 0, LV_OPA_COVER);
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccJWWRL1.s 			page 24
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\cclYcovy.s 			page 24
 
 
  560:Middlewares/LVGL/lvgl/src/core/lv_obj_style.c ****     lv_anim_set_exec_cb(&a, fade_anim_cb);
@@ -1438,7 +1438,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccJWWRL1.s 			page 1
  614:Middlewares/LVGL/lvgl/src/core/lv_obj_style.c ****         if(opa_obj < LV_OPA_MAX) {
  615:Middlewares/LVGL/lvgl/src/core/lv_obj_style.c ****             opa_final = LV_OPA_MIX2(opa_final, opa_obj);
  616:Middlewares/LVGL/lvgl/src/core/lv_obj_style.c ****         }
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccJWWRL1.s 			page 25
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\cclYcovy.s 			page 25
 
 
  617:Middlewares/LVGL/lvgl/src/core/lv_obj_style.c **** 
@@ -1498,7 +1498,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccJWWRL1.s 			page 1
  671:Middlewares/LVGL/lvgl/src/core/lv_obj_style.c **** 
  672:Middlewares/LVGL/lvgl/src/core/lv_obj_style.c ****     while(obj) {
  673:Middlewares/LVGL/lvgl/src/core/lv_obj_style.c ****         result = lv_obj_style_apply_recolor(obj, part, result);
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccJWWRL1.s 			page 26
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\cclYcovy.s 			page 26
 
 
  674:Middlewares/LVGL/lvgl/src/core/lv_obj_style.c ****         obj = lv_obj_get_parent(obj);
@@ -1558,7 +1558,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccJWWRL1.s 			page 1
  728:Middlewares/LVGL/lvgl/src/core/lv_obj_style.c ****     }
  729:Middlewares/LVGL/lvgl/src/core/lv_obj_style.c **** 
  730:Middlewares/LVGL/lvgl/src/core/lv_obj_style.c ****     p->prop = prop;
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccJWWRL1.s 			page 27
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\cclYcovy.s 			page 27
 
 
  731:Middlewares/LVGL/lvgl/src/core/lv_obj_style.c ****     p->selector = selector;
@@ -1618,7 +1618,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccJWWRL1.s 			page 1
  785:Middlewares/LVGL/lvgl/src/core/lv_obj_style.c ****  * Get the transition style of an object for a given part and for a given state.
  786:Middlewares/LVGL/lvgl/src/core/lv_obj_style.c ****  * If the transition style for the part-state pair doesn't exist allocate and return it.
  787:Middlewares/LVGL/lvgl/src/core/lv_obj_style.c ****  * @param obj   pointer to an object
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccJWWRL1.s 			page 28
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\cclYcovy.s 			page 28
 
 
  788:Middlewares/LVGL/lvgl/src/core/lv_obj_style.c ****  * @param selector OR-ed value of parts and state for which the style should be get
@@ -1678,7 +1678,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccJWWRL1.s 			page 1
  194 0008 9046     		mov	r8, r2
  195 000a 0093     		str	r3, [sp]
  821:Middlewares/LVGL/lvgl/src/core/lv_obj_style.c **** 
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccJWWRL1.s 			page 29
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\cclYcovy.s 			page 29
 
 
  822:Middlewares/LVGL/lvgl/src/core/lv_obj_style.c ****     const uint32_t group = (uint32_t)1 << lv_style_get_prop_group(prop);
@@ -1738,7 +1738,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccJWWRL1.s 			page 1
    6:Middlewares/LVGL/lvgl/src/core/lv_obj_style.h **** #ifndef LV_OBJ_STYLE_H
    7:Middlewares/LVGL/lvgl/src/core/lv_obj_style.h **** #define LV_OBJ_STYLE_H
    8:Middlewares/LVGL/lvgl/src/core/lv_obj_style.h **** 
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccJWWRL1.s 			page 30
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\cclYcovy.s 			page 30
 
 
    9:Middlewares/LVGL/lvgl/src/core/lv_obj_style.h **** #ifdef __cplusplus
@@ -1798,7 +1798,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccJWWRL1.s 			page 1
   63:Middlewares/LVGL/lvgl/src/core/lv_obj_style.h ****     LV_PART_INDICATOR    = 0x020000,  /**< Indicator, e.g. for slider, bar, switch, or the tick box
   64:Middlewares/LVGL/lvgl/src/core/lv_obj_style.h ****     LV_PART_KNOB         = 0x030000,  /**< Like handle to grab to adjust the value*/
   65:Middlewares/LVGL/lvgl/src/core/lv_obj_style.h ****     LV_PART_SELECTED     = 0x040000,  /**< Indicate the currently selected option or section*/
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccJWWRL1.s 			page 31
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\cclYcovy.s 			page 31
 
 
   66:Middlewares/LVGL/lvgl/src/core/lv_obj_style.h ****     LV_PART_ITEMS        = 0x050000,  /**< Used if the widget has multiple similar elements (e.g. t
@@ -1858,7 +1858,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccJWWRL1.s 			page 1
  120:Middlewares/LVGL/lvgl/src/core/lv_obj_style.h ****  * lv_obj_replace_style(obj, &yellow_style, &blue_style, LV_PART_MAIN | LV_STATE_PRESSED); //Replac
  121:Middlewares/LVGL/lvgl/src/core/lv_obj_style.h ****  * @endcode
  122:Middlewares/LVGL/lvgl/src/core/lv_obj_style.h ****  */
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccJWWRL1.s 			page 32
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\cclYcovy.s 			page 32
 
 
  123:Middlewares/LVGL/lvgl/src/core/lv_obj_style.h **** bool lv_obj_replace_style(lv_obj_t * obj, const lv_style_t * old_style, const lv_style_t * new_styl
@@ -1918,7 +1918,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccJWWRL1.s 			page 1
  177:Middlewares/LVGL/lvgl/src/core/lv_obj_style.h ****  * @param obj       pointer to an object
  178:Middlewares/LVGL/lvgl/src/core/lv_obj_style.h ****  * @param style     pointer to a style
  179:Middlewares/LVGL/lvgl/src/core/lv_obj_style.h ****  * @param selector  the selector of a style (e.g. LV_STATE_PRESSED | LV_PART_KNOB)
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccJWWRL1.s 			page 33
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\cclYcovy.s 			page 33
 
 
  180:Middlewares/LVGL/lvgl/src/core/lv_obj_style.h ****  * @param dis       true: disable the style, false: enable the style
@@ -1978,7 +1978,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccJWWRL1.s 			page 1
  234:Middlewares/LVGL/lvgl/src/core/lv_obj_style.h **** /**
  235:Middlewares/LVGL/lvgl/src/core/lv_obj_style.h ****  * Remove a local style property from a part of an object with a given state.
  236:Middlewares/LVGL/lvgl/src/core/lv_obj_style.h ****  * @param obj       pointer to an object
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccJWWRL1.s 			page 34
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\cclYcovy.s 			page 34
 
 
  237:Middlewares/LVGL/lvgl/src/core/lv_obj_style.h ****  * @param prop      a style property to remove.
@@ -2038,7 +2038,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccJWWRL1.s 			page 1
  239              		.loc 3 266 12 is_stmt 0 view .LVU70
  240 001a 8BB2     		uxth	r3, r1
  241 001c 0193     		str	r3, [sp, #4]
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccJWWRL1.s 			page 35
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\cclYcovy.s 			page 35
 
 
  242              	.LVL22:
@@ -2098,7 +2098,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccJWWRL1.s 			page 1
  286              		.loc 1 830 37 is_stmt 1 discriminator 2 view .LVU87
  287 003c 0134     		adds	r4, r4, #1
  288              	.LVL31:
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccJWWRL1.s 			page 36
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\cclYcovy.s 			page 36
 
 
  289              	.L16:
@@ -2158,7 +2158,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccJWWRL1.s 			page 1
  334              		.loc 1 838 11 is_stmt 0 view .LVU108
  335 0066 BB42     		cmp	r3, r7
  336 0068 E8D1     		bne	.L18
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccJWWRL1.s 			page 37
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\cclYcovy.s 			page 37
 
 
  839:Middlewares/LVGL/lvgl/src/core/lv_obj_style.c ****         if((obj_style->style->has_group & group) == 0) continue;
@@ -2218,7 +2218,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccJWWRL1.s 			page 1
  383              	.LBB145:
  847:Middlewares/LVGL/lvgl/src/core/lv_obj_style.c ****         if((obj->styles[i].style->has_group & group) == 0) continue;
  384              		.loc 1 847 9 is_stmt 1 view .LVU125
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccJWWRL1.s 			page 38
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\cclYcovy.s 			page 38
 
 
  385              		.loc 1 847 16 is_stmt 0 view .LVU126
@@ -2278,7 +2278,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccJWWRL1.s 			page 1
  429              	.LBB149:
  266:Middlewares/LVGL/lvgl/src/core/lv_obj_style.h **** }
  430              		.loc 3 266 5 view .LVU145
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccJWWRL1.s 			page 39
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\cclYcovy.s 			page 39
 
 
  266:Middlewares/LVGL/lvgl/src/core/lv_obj_style.h **** }
@@ -2338,7 +2338,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccJWWRL1.s 			page 1
  472 00e4 4FF0FF3B 		mov	fp, #-1
  473 00e8 D1E7     		b	.L22
  474              	.LVL52:
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccJWWRL1.s 			page 40
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\cclYcovy.s 			page 40
 
 
  475              	.L32:
@@ -2398,7 +2398,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccJWWRL1.s 			page 1
  885:Middlewares/LVGL/lvgl/src/core/lv_obj_style.c ****             lv_obj_refresh_style(obj, LV_PART_ANY, LV_STYLE_PROP_ANY);
  886:Middlewares/LVGL/lvgl/src/core/lv_obj_style.c ****             break;
  887:Middlewares/LVGL/lvgl/src/core/lv_obj_style.c ****         }
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccJWWRL1.s 			page 41
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\cclYcovy.s 			page 41
 
 
  888:Middlewares/LVGL/lvgl/src/core/lv_obj_style.c ****     }
@@ -2458,7 +2458,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccJWWRL1.s 			page 1
  942:Middlewares/LVGL/lvgl/src/core/lv_obj_style.c ****                     lv_style_remove_prop((lv_style_t *)obj->styles[i].style, tr->prop);
  943:Middlewares/LVGL/lvgl/src/core/lv_obj_style.c ****                 }
  944:Middlewares/LVGL/lvgl/src/core/lv_obj_style.c ****             }
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccJWWRL1.s 			page 42
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\cclYcovy.s 			page 42
 
 
  945:Middlewares/LVGL/lvgl/src/core/lv_obj_style.c **** 
@@ -2518,7 +2518,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccJWWRL1.s 			page 1
  999:Middlewares/LVGL/lvgl/src/core/lv_obj_style.c **** 
 1000:Middlewares/LVGL/lvgl/src/core/lv_obj_style.c ****             default:
 1001:Middlewares/LVGL/lvgl/src/core/lv_obj_style.c ****                 if(v == 0) value_final.num = tr->start_value.num;
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccJWWRL1.s 			page 43
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\cclYcovy.s 			page 43
 
 
 1002:Middlewares/LVGL/lvgl/src/core/lv_obj_style.c ****                 else if(v == 255) value_final.num = tr->end_value.num;
@@ -2578,7 +2578,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccJWWRL1.s 			page 1
 1056:Middlewares/LVGL/lvgl/src/core/lv_obj_style.c ****     trans_t * tr_i;
 1057:Middlewares/LVGL/lvgl/src/core/lv_obj_style.c ****     LV_LL_READ(style_trans_ll_p, tr_i) {
 1058:Middlewares/LVGL/lvgl/src/core/lv_obj_style.c ****         if(tr_i != tr && tr_i->obj == tr->obj && tr_i->selector == tr->selector && tr_i->prop == tr
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccJWWRL1.s 			page 44
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\cclYcovy.s 			page 44
 
 
 1059:Middlewares/LVGL/lvgl/src/core/lv_obj_style.c ****             running = true;
@@ -2638,7 +2638,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccJWWRL1.s 			page 1
 1113:Middlewares/LVGL/lvgl/src/core/lv_obj_style.c ****                 for(j = 0; props[j].prop != LV_STYLE_PROP_INV; j++) {
 1114:Middlewares/LVGL/lvgl/src/core/lv_obj_style.c ****                     obj->style_main_prop_is_set |= STYLE_PROP_SHIFTED(props[j].prop);
 1115:Middlewares/LVGL/lvgl/src/core/lv_obj_style.c ****                 }
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccJWWRL1.s 			page 45
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\cclYcovy.s 			page 45
 
 
 1116:Middlewares/LVGL/lvgl/src/core/lv_obj_style.c ****             }
@@ -2698,7 +2698,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccJWWRL1.s 			page 1
 1170:Middlewares/LVGL/lvgl/src/core/lv_obj_style.c ****                 return true;
 1171:Middlewares/LVGL/lvgl/src/core/lv_obj_style.c ****             }
 1172:Middlewares/LVGL/lvgl/src/core/lv_obj_style.c ****         }
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccJWWRL1.s 			page 46
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\cclYcovy.s 			page 46
 
 
 1173:Middlewares/LVGL/lvgl/src/core/lv_obj_style.c ****     }
@@ -2758,7 +2758,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccJWWRL1.s 			page 1
 1195:Middlewares/LVGL/lvgl/src/core/lv_obj_style.c ****     if((part == LV_PART_MAIN ? obj->style_main_prop_is_set : obj->style_other_prop_is_set) & prop_s
 1196:Middlewares/LVGL/lvgl/src/core/lv_obj_style.c **** #endif
 1197:Middlewares/LVGL/lvgl/src/core/lv_obj_style.c ****     {
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccJWWRL1.s 			page 47
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\cclYcovy.s 			page 47
 
 
 1198:Middlewares/LVGL/lvgl/src/core/lv_obj_style.c ****         found = get_prop_core(obj, selector, prop, value_act);
@@ -2818,7 +2818,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccJWWRL1.s 			page 1
 1218:Middlewares/LVGL/lvgl/src/core/lv_obj_style.c **** 
 1219:Middlewares/LVGL/lvgl/src/core/lv_obj_style.c ****         while(obj) {
  577              		.loc 1 1219 15 is_stmt 1 view .LVU193
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccJWWRL1.s 			page 48
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\cclYcovy.s 			page 48
 
 
  578 0026 94B1     		cbz	r4, .L48
@@ -2878,7 +2878,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccJWWRL1.s 			page 1
  616 0048 03F00103 		and	r3, r3, #1
  617 004c E8E7     		b	.L36
  618              	.LVL69:
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccJWWRL1.s 			page 49
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\cclYcovy.s 			page 49
 
 
  619              	.L48:
@@ -2938,7 +2938,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccJWWRL1.s 			page 1
  643              	.LBB152:
 1236:Middlewares/LVGL/lvgl/src/core/lv_obj_style.c ****             while(cls) {
  644              		.loc 1 1236 13 is_stmt 1 view .LVU218
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccJWWRL1.s 			page 50
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\cclYcovy.s 			page 50
 
 
 1236:Middlewares/LVGL/lvgl/src/core/lv_obj_style.c ****             while(cls) {
@@ -2998,7 +2998,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccJWWRL1.s 			page 1
  681              	.LVL76:
 1247:Middlewares/LVGL/lvgl/src/core/lv_obj_style.c ****                     }
  682              		.loc 1 1247 32 view .LVU237
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccJWWRL1.s 			page 51
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\cclYcovy.s 			page 51
 
 
  683 007a 05E0     		b	.L34
@@ -3058,7 +3058,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccJWWRL1.s 			page 1
  732              	.LFB234:
  925:Middlewares/LVGL/lvgl/src/core/lv_obj_style.c ****     trans_t * tr;
  733              		.loc 1 925 1 is_stmt 1 view -0
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccJWWRL1.s 			page 52
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\cclYcovy.s 			page 52
 
 
  734              		.cfi_startproc
@@ -3118,7 +3118,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccJWWRL1.s 			page 1
  936:Middlewares/LVGL/lvgl/src/core/lv_obj_style.c ****             /*Remove any transitioned properties from the trans. style
  776              		.loc 1 936 76 discriminator 4 view .LVU262
  777 001a 5345     		cmp	r3, r10
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccJWWRL1.s 			page 53
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\cclYcovy.s 			page 53
 
 
  778 001c 31D0     		beq	.L66
@@ -3178,7 +3178,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccJWWRL1.s 			page 1
  818              		.loc 1 936 52 discriminator 3 view .LVU276
  819 0044 B9F5702F 		cmp	r9, #983040
  820 0048 ECD1     		bne	.L58
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccJWWRL1.s 			page 54
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\cclYcovy.s 			page 54
 
 
  821 004a E5E7     		b	.L59
@@ -3238,7 +3238,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccJWWRL1.s 			page 1
  862 0080 E4E7     		b	.L62
  863              	.LVL98:
  864              	.L66:
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccJWWRL1.s 			page 55
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\cclYcovy.s 			page 55
 
 
  941:Middlewares/LVGL/lvgl/src/core/lv_obj_style.c ****                     lv_style_remove_prop((lv_style_t *)obj->styles[i].style, tr->prop);
@@ -3298,7 +3298,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccJWWRL1.s 			page 1
  906              		.loc 1 956 1 is_stmt 0 view .LVU302
  907 00a4 3846     		mov	r0, r7
  908 00a6 BDE8F087 		pop	{r4, r5, r6, r7, r8, r9, r10, pc}
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccJWWRL1.s 			page 56
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\cclYcovy.s 			page 56
 
 
  909              	.LVL108:
@@ -3358,7 +3358,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccJWWRL1.s 			page 1
  957              	.LVL111:
  436:Middlewares/LVGL/lvgl/src/core/../misc/lv_style.h ****     return false;
  958              		.loc 2 436 7 view .LVU311
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccJWWRL1.s 			page 57
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\cclYcovy.s 			page 57
 
 
  959              	.LBE158:
@@ -3418,7 +3418,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccJWWRL1.s 			page 1
  587:Middlewares/LVGL/lvgl/src/core/../misc/lv_style.h **** /**
  588:Middlewares/LVGL/lvgl/src/core/../misc/lv_style.h ****  * Set `style`s width and height.
  589:Middlewares/LVGL/lvgl/src/core/../misc/lv_style.h ****  * @param  style   pointer to style to be modified
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccJWWRL1.s 			page 58
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\cclYcovy.s 			page 58
 
 
  590:Middlewares/LVGL/lvgl/src/core/../misc/lv_style.h ****  * @param  width   width in pixels
@@ -3478,7 +3478,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccJWWRL1.s 			page 1
  644:Middlewares/LVGL/lvgl/src/core/../misc/lv_style.h **** 
  645:Middlewares/LVGL/lvgl/src/core/../misc/lv_style.h **** /**
  646:Middlewares/LVGL/lvgl/src/core/../misc/lv_style.h ****  * Set `style`s left and right margin values.
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccJWWRL1.s 			page 59
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\cclYcovy.s 			page 59
 
 
  647:Middlewares/LVGL/lvgl/src/core/../misc/lv_style.h ****  * @param  style   pointer to style to be modified
@@ -3538,7 +3538,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccJWWRL1.s 			page 1
  701:Middlewares/LVGL/lvgl/src/core/../misc/lv_style.h ****  *
  702:Middlewares/LVGL/lvgl/src/core/../misc/lv_style.h ****  * @param prop Property ID
  703:Middlewares/LVGL/lvgl/src/core/../misc/lv_style.h ****  * @param flag Flag
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccJWWRL1.s 			page 60
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\cclYcovy.s 			page 60
 
 
  704:Middlewares/LVGL/lvgl/src/core/../misc/lv_style.h ****  * @return true if the flag is set for this property
@@ -3598,7 +3598,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccJWWRL1.s 			page 1
  1026              	.L76:
 1168:Middlewares/LVGL/lvgl/src/core/lv_obj_style.c ****             if(lv_style_prop_has_flag(props[i].prop, flag)) {
  1027              		.loc 1 1168 34 is_stmt 1 discriminator 1 view .LVU339
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccJWWRL1.s 			page 61
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\cclYcovy.s 			page 61
 
 
 1168:Middlewares/LVGL/lvgl/src/core/lv_obj_style.c ****             if(lv_style_prop_has_flag(props[i].prop, flag)) {
@@ -3658,7 +3658,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccJWWRL1.s 			page 1
  1070 0058 FBE7     		b	.L77
  1071              	.LVL126:
  1072              	.L81:
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccJWWRL1.s 			page 62
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\cclYcovy.s 			page 62
 
 
 1170:Middlewares/LVGL/lvgl/src/core/lv_obj_style.c ****             }
@@ -3718,7 +3718,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccJWWRL1.s 			page 1
  1119              	.L85:
  905:Middlewares/LVGL/lvgl/src/core/lv_obj_style.c ****         lv_obj_t * child = obj->spec_attr->children[i];
  1120              		.loc 1 905 18 is_stmt 1 discriminator 1 view .LVU365
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccJWWRL1.s 			page 63
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\cclYcovy.s 			page 63
 
 
  1121 000c AC42     		cmp	r4, r5
@@ -3778,7 +3778,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccJWWRL1.s 			page 1
  1164              		.section	.text.get_local_style,"ax",%progbits
  1165              		.align	1
  1166              		.syntax unified
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccJWWRL1.s 			page 64
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\cclYcovy.s 			page 64
 
 
  1167              		.thumb
@@ -3838,7 +3838,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccJWWRL1.s 			page 1
  1210              		.loc 1 757 15 is_stmt 0 view .LVU389
  1211 0018 E168     		ldr	r1, [r4, #12]
  757:Middlewares/LVGL/lvgl/src/core/lv_obj_style.c ****            obj->styles[i].selector == selector) {
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccJWWRL1.s 			page 65
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\cclYcovy.s 			page 65
 
 
  1212              		.loc 1 757 23 view .LVU390
@@ -3898,7 +3898,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccJWWRL1.s 			page 1
  764:Middlewares/LVGL/lvgl/src/core/lv_obj_style.c ****     obj->styles = lv_realloc(obj->styles, obj->style_cnt * sizeof(lv_obj_style_t));
  1251              		.loc 1 764 5 view .LVU406
  764:Middlewares/LVGL/lvgl/src/core/lv_obj_style.c ****     obj->styles = lv_realloc(obj->styles, obj->style_cnt * sizeof(lv_obj_style_t));
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccJWWRL1.s 			page 66
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\cclYcovy.s 			page 66
 
 
  1252              		.loc 1 764 5 view .LVU407
@@ -3958,7 +3958,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccJWWRL1.s 			page 1
  1289 0072 11F0030F 		tst	r1, #3
  1290 0076 08D1     		bne	.L99
  772:Middlewares/LVGL/lvgl/src/core/lv_obj_style.c ****     }
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccJWWRL1.s 			page 67
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\cclYcovy.s 			page 67
 
 
  1291              		.loc 1 772 9 is_stmt 1 view .LVU425
@@ -4018,7 +4018,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccJWWRL1.s 			page 1
   13:Middlewares/LVGL/lvgl/src/core/../misc/../font/../draw/../misc/../stdlib/lv_string.h **** /*********************
   14:Middlewares/LVGL/lvgl/src/core/../misc/../font/../draw/../misc/../stdlib/lv_string.h ****  *      INCLUDES
   15:Middlewares/LVGL/lvgl/src/core/../misc/../font/../draw/../misc/../stdlib/lv_string.h ****  *********************/
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccJWWRL1.s 			page 68
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\cclYcovy.s 			page 68
 
 
   16:Middlewares/LVGL/lvgl/src/core/../misc/../font/../draw/../misc/../stdlib/lv_string.h **** #include "../lv_conf_internal.h"
@@ -4078,7 +4078,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccJWWRL1.s 			page 1
   70:Middlewares/LVGL/lvgl/src/core/../misc/../font/../draw/../misc/../stdlib/lv_string.h ****  * @param dst pointer to the destination buffer
   71:Middlewares/LVGL/lvgl/src/core/../misc/../font/../draw/../misc/../stdlib/lv_string.h ****  * @param len number of byte to set
   72:Middlewares/LVGL/lvgl/src/core/../misc/../font/../draw/../misc/../stdlib/lv_string.h ****  */
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccJWWRL1.s 			page 69
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\cclYcovy.s 			page 69
 
 
   73:Middlewares/LVGL/lvgl/src/core/../misc/../font/../draw/../misc/../stdlib/lv_string.h **** static inline void lv_memzero(void * dst, size_t len)
@@ -4138,7 +4138,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccJWWRL1.s 			page 1
  780:Middlewares/LVGL/lvgl/src/core/lv_obj_style.c ****     return (lv_style_t *)obj->styles[i].style;
  1360              		.loc 1 780 8 is_stmt 0 view .LVU454
  1361 00be E368     		ldr	r3, [r4, #12]
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccJWWRL1.s 			page 70
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\cclYcovy.s 			page 70
 
 
  780:Middlewares/LVGL/lvgl/src/core/lv_obj_style.c ****     return (lv_style_t *)obj->styles[i].style;
@@ -4198,7 +4198,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccJWWRL1.s 			page 1
  1407              	.LVL158:
  794:Middlewares/LVGL/lvgl/src/core/lv_obj_style.c ****         if(obj->styles[i].is_trans && obj->styles[i].selector == selector) break;
  1408              		.loc 1 794 5 view .LVU466
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccJWWRL1.s 			page 71
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\cclYcovy.s 			page 71
 
 
  1409 0008 00E0     		b	.L104
@@ -4258,7 +4258,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccJWWRL1.s 			page 1
  1447              		.loc 1 799 36 discriminator 1 view .LVU482
  1448 0034 00EBC100 		add	r0, r0, r1, lsl #3
  1449              	.LVL161:
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccJWWRL1.s 			page 72
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\cclYcovy.s 			page 72
 
 
  1450              	.L103:
@@ -4318,7 +4318,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccJWWRL1.s 			page 1
  1487 005a 668D     		ldrh	r6, [r4, #42]
  1488 005c C6F30516 		ubfx	r6, r6, #4, #6
  805:Middlewares/LVGL/lvgl/src/core/lv_obj_style.c ****         obj->styles[i] = obj->styles[i - 1];
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccJWWRL1.s 			page 73
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\cclYcovy.s 			page 73
 
 
  1489              		.loc 1 805 28 view .LVU500
@@ -4378,7 +4378,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccJWWRL1.s 			page 1
  1531 008c E668     		ldr	r6, [r4, #12]
  1532              	.LVL169:
  810:Middlewares/LVGL/lvgl/src/core/lv_obj_style.c ****     lv_style_init((lv_style_t *)obj->styles[0].style);
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccJWWRL1.s 			page 74
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\cclYcovy.s 			page 74
 
 
  1533              		.loc 1 810 28 view .LVU515
@@ -4438,7 +4438,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccJWWRL1.s 			page 1
  1576              	.LVL173:
  1577              	.LFB240:
 1154:Middlewares/LVGL/lvgl/src/core/lv_obj_style.c ****     lv_obj_set_style_opa(obj, v, 0);
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccJWWRL1.s 			page 75
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\cclYcovy.s 			page 75
 
 
  1578              		.loc 1 1154 1 is_stmt 1 view -0
@@ -4498,7 +4498,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccJWWRL1.s 			page 1
  1627              	.L119:
  1628 000c 1C000000 		.word	lv_global+28
  1629              		.cfi_endproc
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccJWWRL1.s 			page 76
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\cclYcovy.s 			page 76
 
 
  1630              	.LFE200:
@@ -4558,7 +4558,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccJWWRL1.s 			page 1
  1678              		.section	.text.lv_obj_style_get_disabled,"ax",%progbits
  1679              		.align	1
  1680              		.global	lv_obj_style_get_disabled
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccJWWRL1.s 			page 77
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\cclYcovy.s 			page 77
 
 
  1681              		.syntax unified
@@ -4618,7 +4618,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccJWWRL1.s 			page 1
  1723              		.loc 1 311 9 is_stmt 1 view .LVU558
  311:Middlewares/LVGL/lvgl/src/core/lv_obj_style.c ****             return obj->styles[i].is_disabled;
  1724              		.loc 1 311 15 is_stmt 0 view .LVU559
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccJWWRL1.s 			page 78
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\cclYcovy.s 			page 78
 
 
  1725 0020 C468     		ldr	r4, [r0, #12]
@@ -4678,7 +4678,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccJWWRL1.s 			page 1
  1768              		.section	.text.lv_obj_enable_style_refresh,"ax",%progbits
  1769              		.align	1
  1770              		.global	lv_obj_enable_style_refresh
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccJWWRL1.s 			page 79
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\cclYcovy.s 			page 79
 
 
  1771              		.syntax unified
@@ -4738,7 +4738,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccJWWRL1.s 			page 1
  1820              	.LCFI17:
  1821              		.cfi_def_cfa_offset 16
  1822 0006 1446     		mov	r4, r2
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccJWWRL1.s 			page 80
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\cclYcovy.s 			page 80
 
 
  1823 0008 8446     		mov	ip, r0
@@ -4798,7 +4798,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccJWWRL1.s 			page 1
  1862 002a 10BD     		pop	{r4, pc}
  1863              	.LVL194:
  1864              	.L143:
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccJWWRL1.s 			page 81
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\cclYcovy.s 			page 81
 
 
  1865              	.LCFI19:
@@ -4858,7 +4858,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccJWWRL1.s 			page 1
  1911              		.cfi_def_cfa_offset 16
  1912 0004 0446     		mov	r4, r0
 1089:Middlewares/LVGL/lvgl/src/core/lv_obj_style.c ****     if(lv_obj_get_style_transform_scale_x(obj, LV_PART_MAIN) != 256) return LV_LAYER_TYPE_TRANSFORM
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccJWWRL1.s 			page 82
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\cclYcovy.s 			page 82
 
 
  1913              		.loc 1 1089 5 is_stmt 1 view .LVU605
@@ -4918,7 +4918,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccJWWRL1.s 			page 1
   50:Middlewares/LVGL/lvgl/src/core/lv_obj_style_gen.h ****  * Gets a maximal width. Pixel and percentage values can be used. Percentage values
   51:Middlewares/LVGL/lvgl/src/core/lv_obj_style_gen.h ****  * are relative to the width of the parent's content area.
   52:Middlewares/LVGL/lvgl/src/core/lv_obj_style_gen.h ****  * Default: LV_COORD_MAX, inherited: No, layout: Yes, ext. draw: No.
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccJWWRL1.s 			page 83
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\cclYcovy.s 			page 83
 
 
   53:Middlewares/LVGL/lvgl/src/core/lv_obj_style_gen.h ****  * @param  obj    Pointer to Widget
@@ -4978,7 +4978,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccJWWRL1.s 			page 1
  107:Middlewares/LVGL/lvgl/src/core/lv_obj_style_gen.h ****  */
  108:Middlewares/LVGL/lvgl/src/core/lv_obj_style_gen.h **** static inline int32_t lv_obj_get_style_length(const lv_obj_t * obj, lv_part_t part)
  109:Middlewares/LVGL/lvgl/src/core/lv_obj_style_gen.h **** {
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccJWWRL1.s 			page 84
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\cclYcovy.s 			page 84
 
 
  110:Middlewares/LVGL/lvgl/src/core/lv_obj_style_gen.h ****     lv_style_value_t v = lv_obj_get_style_prop(obj, part, LV_STYLE_LENGTH);
@@ -5038,7 +5038,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccJWWRL1.s 			page 1
  164:Middlewares/LVGL/lvgl/src/core/lv_obj_style_gen.h ****  * @param  part   One of the `LV_PART_...` enum values
  165:Middlewares/LVGL/lvgl/src/core/lv_obj_style_gen.h ****  */
  166:Middlewares/LVGL/lvgl/src/core/lv_obj_style_gen.h **** static inline int32_t lv_obj_get_style_transform_width(const lv_obj_t * obj, lv_part_t part)
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccJWWRL1.s 			page 85
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\cclYcovy.s 			page 85
 
 
  167:Middlewares/LVGL/lvgl/src/core/lv_obj_style_gen.h **** {
@@ -5098,7 +5098,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccJWWRL1.s 			page 1
  221:Middlewares/LVGL/lvgl/src/core/lv_obj_style_gen.h **** {
  222:Middlewares/LVGL/lvgl/src/core/lv_obj_style_gen.h ****     lv_style_value_t v = lv_obj_get_style_prop(obj, part, LV_STYLE_TRANSLATE_RADIAL);
  223:Middlewares/LVGL/lvgl/src/core/lv_obj_style_gen.h ****     return (int32_t)v.num;
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccJWWRL1.s 			page 86
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\cclYcovy.s 			page 86
 
 
  224:Middlewares/LVGL/lvgl/src/core/lv_obj_style_gen.h **** }
@@ -5158,7 +5158,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccJWWRL1.s 			page 1
  1933              		.loc 1 1089 7 discriminator 1 view .LVU612
  1934 0010 0028     		cmp	r0, #0
  1935 0012 42D1     		bne	.L151
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccJWWRL1.s 			page 87
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\cclYcovy.s 			page 87
 
 
 1090:Middlewares/LVGL/lvgl/src/core/lv_obj_style.c ****     if(lv_obj_get_style_transform_scale_y(obj, LV_PART_MAIN) != 256) return LV_LAYER_TYPE_TRANSFORM
@@ -5218,7 +5218,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccJWWRL1.s 			page 1
  1977              	.LVL205:
  249:Middlewares/LVGL/lvgl/src/core/lv_obj_style_gen.h **** }
  1978              		.loc 5 249 5 is_stmt 0 view .LVU626
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccJWWRL1.s 			page 88
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\cclYcovy.s 			page 88
 
 
  1979              	.LBE179:
@@ -5278,7 +5278,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccJWWRL1.s 			page 1
  1994              		.loc 5 297 5 view .LVU631
  1995              		.loc 5 297 26 is_stmt 0 view .LVU632
  1996 0040 9D22     		movs	r2, #157
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccJWWRL1.s 			page 89
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\cclYcovy.s 			page 89
 
 
  1997 0042 0021     		movs	r1, #0
@@ -5338,7 +5338,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccJWWRL1.s 			page 1
  2033              	.LBI184:
  312:Middlewares/LVGL/lvgl/src/core/lv_obj_style_gen.h **** }
  313:Middlewares/LVGL/lvgl/src/core/lv_obj_style_gen.h **** 
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccJWWRL1.s 			page 90
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\cclYcovy.s 			page 90
 
 
  314:Middlewares/LVGL/lvgl/src/core/lv_obj_style_gen.h **** /**
@@ -5398,7 +5398,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccJWWRL1.s 			page 1
  368:Middlewares/LVGL/lvgl/src/core/lv_obj_style_gen.h **** static inline int32_t lv_obj_get_style_pad_row(const lv_obj_t * obj, lv_part_t part)
  369:Middlewares/LVGL/lvgl/src/core/lv_obj_style_gen.h **** {
  370:Middlewares/LVGL/lvgl/src/core/lv_obj_style_gen.h ****     lv_style_value_t v = lv_obj_get_style_prop(obj, part, LV_STYLE_PAD_ROW);
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccJWWRL1.s 			page 91
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\cclYcovy.s 			page 91
 
 
  371:Middlewares/LVGL/lvgl/src/core/lv_obj_style_gen.h ****     return (int32_t)v.num;
@@ -5458,7 +5458,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccJWWRL1.s 			page 1
  425:Middlewares/LVGL/lvgl/src/core/lv_obj_style_gen.h ****  * @param  obj    Pointer to Widget
  426:Middlewares/LVGL/lvgl/src/core/lv_obj_style_gen.h ****  * @param  part   One of the `LV_PART_...` enum values
  427:Middlewares/LVGL/lvgl/src/core/lv_obj_style_gen.h ****  */
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccJWWRL1.s 			page 92
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\cclYcovy.s 			page 92
 
 
  428:Middlewares/LVGL/lvgl/src/core/lv_obj_style_gen.h **** static inline int32_t lv_obj_get_style_margin_left(const lv_obj_t * obj, lv_part_t part)
@@ -5518,7 +5518,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccJWWRL1.s 			page 1
  482:Middlewares/LVGL/lvgl/src/core/lv_obj_style_gen.h **** }
  483:Middlewares/LVGL/lvgl/src/core/lv_obj_style_gen.h **** 
  484:Middlewares/LVGL/lvgl/src/core/lv_obj_style_gen.h **** /**
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccJWWRL1.s 			page 93
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\cclYcovy.s 			page 93
 
 
  485:Middlewares/LVGL/lvgl/src/core/lv_obj_style_gen.h ****  * Get gradient color of the background. Used only if `grad_dir` is not `LV_GRAD_DIR_NONE`.
@@ -5578,7 +5578,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccJWWRL1.s 			page 1
  539:Middlewares/LVGL/lvgl/src/core/lv_obj_style_gen.h ****  * @param  part   One of the `LV_PART_...` enum values
  540:Middlewares/LVGL/lvgl/src/core/lv_obj_style_gen.h ****  */
  541:Middlewares/LVGL/lvgl/src/core/lv_obj_style_gen.h **** static inline int32_t lv_obj_get_style_bg_grad_stop(const lv_obj_t * obj, lv_part_t part)
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccJWWRL1.s 			page 94
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\cclYcovy.s 			page 94
 
 
  542:Middlewares/LVGL/lvgl/src/core/lv_obj_style_gen.h **** {
@@ -5638,7 +5638,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccJWWRL1.s 			page 1
  596:Middlewares/LVGL/lvgl/src/core/lv_obj_style_gen.h ****     return (const void *)v.ptr;
  597:Middlewares/LVGL/lvgl/src/core/lv_obj_style_gen.h **** }
  598:Middlewares/LVGL/lvgl/src/core/lv_obj_style_gen.h **** 
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccJWWRL1.s 			page 95
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\cclYcovy.s 			page 95
 
 
  599:Middlewares/LVGL/lvgl/src/core/lv_obj_style_gen.h **** /**
@@ -5698,7 +5698,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccJWWRL1.s 			page 1
  653:Middlewares/LVGL/lvgl/src/core/lv_obj_style_gen.h ****  * If enabled the background image will be tiled. Possible values are `true` or `false`.
  654:Middlewares/LVGL/lvgl/src/core/lv_obj_style_gen.h ****  * Default: 0, inherited: No, layout: No, ext. draw: No.
  655:Middlewares/LVGL/lvgl/src/core/lv_obj_style_gen.h ****  * @param  obj    Pointer to Widget
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccJWWRL1.s 			page 96
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\cclYcovy.s 			page 96
 
 
  656:Middlewares/LVGL/lvgl/src/core/lv_obj_style_gen.h ****  * @param  part   One of the `LV_PART_...` enum values
@@ -5758,7 +5758,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccJWWRL1.s 			page 1
  710:Middlewares/LVGL/lvgl/src/core/lv_obj_style_gen.h ****     lv_style_value_t v = lv_obj_get_style_prop(obj, part, LV_STYLE_BORDER_WIDTH);
  711:Middlewares/LVGL/lvgl/src/core/lv_obj_style_gen.h ****     return (int32_t)v.num;
  712:Middlewares/LVGL/lvgl/src/core/lv_obj_style_gen.h **** }
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccJWWRL1.s 			page 97
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\cclYcovy.s 			page 97
 
 
  713:Middlewares/LVGL/lvgl/src/core/lv_obj_style_gen.h **** 
@@ -5818,7 +5818,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccJWWRL1.s 			page 1
  767:Middlewares/LVGL/lvgl/src/core/lv_obj_style_gen.h ****  * Default: `0x000000`, inherited: No, layout: No, ext. draw: No.
  768:Middlewares/LVGL/lvgl/src/core/lv_obj_style_gen.h ****  * @param  obj    Pointer to Widget
  769:Middlewares/LVGL/lvgl/src/core/lv_obj_style_gen.h ****  * @param  part   One of the `LV_PART_...` enum values
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccJWWRL1.s 			page 98
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\cclYcovy.s 			page 98
 
 
  770:Middlewares/LVGL/lvgl/src/core/lv_obj_style_gen.h ****  */
@@ -5878,7 +5878,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccJWWRL1.s 			page 1
  824:Middlewares/LVGL/lvgl/src/core/lv_obj_style_gen.h ****     return (int32_t)v.num;
  825:Middlewares/LVGL/lvgl/src/core/lv_obj_style_gen.h **** }
  826:Middlewares/LVGL/lvgl/src/core/lv_obj_style_gen.h **** 
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccJWWRL1.s 			page 99
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\cclYcovy.s 			page 99
 
 
  827:Middlewares/LVGL/lvgl/src/core/lv_obj_style_gen.h **** /**
@@ -5938,7 +5938,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccJWWRL1.s 			page 1
  881:Middlewares/LVGL/lvgl/src/core/lv_obj_style_gen.h ****  * @param  obj    Pointer to Widget
  882:Middlewares/LVGL/lvgl/src/core/lv_obj_style_gen.h ****  * @param  part   One of the `LV_PART_...` enum values
  883:Middlewares/LVGL/lvgl/src/core/lv_obj_style_gen.h ****  */
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccJWWRL1.s 			page 100
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\cclYcovy.s 			page 100
 
 
  884:Middlewares/LVGL/lvgl/src/core/lv_obj_style_gen.h **** static inline lv_opa_t lv_obj_get_style_shadow_opa(const lv_obj_t * obj, lv_part_t part)
@@ -5998,7 +5998,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccJWWRL1.s 			page 1
  938:Middlewares/LVGL/lvgl/src/core/lv_obj_style_gen.h ****     lv_style_value_t v = lv_obj_get_style_prop(obj, part, LV_STYLE_IMAGE_RECOLOR_OPA);
  939:Middlewares/LVGL/lvgl/src/core/lv_obj_style_gen.h ****     return (lv_opa_t)v.num;
  940:Middlewares/LVGL/lvgl/src/core/lv_obj_style_gen.h **** }
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccJWWRL1.s 			page 101
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\cclYcovy.s 			page 101
 
 
  941:Middlewares/LVGL/lvgl/src/core/lv_obj_style_gen.h **** 
@@ -6058,7 +6058,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccJWWRL1.s 			page 1
  995:Middlewares/LVGL/lvgl/src/core/lv_obj_style_gen.h ****  * Default: 0, inherited: No, layout: No, ext. draw: No.
  996:Middlewares/LVGL/lvgl/src/core/lv_obj_style_gen.h ****  * @param  obj    Pointer to Widget
  997:Middlewares/LVGL/lvgl/src/core/lv_obj_style_gen.h ****  * @param  part   One of the `LV_PART_...` enum values
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccJWWRL1.s 			page 102
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\cclYcovy.s 			page 102
 
 
  998:Middlewares/LVGL/lvgl/src/core/lv_obj_style_gen.h ****  */
@@ -6118,7 +6118,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccJWWRL1.s 			page 1
 1052:Middlewares/LVGL/lvgl/src/core/lv_obj_style_gen.h **** 
 1053:Middlewares/LVGL/lvgl/src/core/lv_obj_style_gen.h **** /**
 1054:Middlewares/LVGL/lvgl/src/core/lv_obj_style_gen.h ****  * Make end points of arcs rounded. `true`: rounded, `false`: perpendicular line ending.
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccJWWRL1.s 			page 103
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\cclYcovy.s 			page 103
 
 
 1055:Middlewares/LVGL/lvgl/src/core/lv_obj_style_gen.h ****  * Default: 0, inherited: No, layout: No, ext. draw: No.
@@ -6178,7 +6178,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccJWWRL1.s 			page 1
 1109:Middlewares/LVGL/lvgl/src/core/lv_obj_style_gen.h **** {
 1110:Middlewares/LVGL/lvgl/src/core/lv_obj_style_gen.h ****     lv_style_value_t v = lv_obj_get_style_prop(obj, part, LV_STYLE_ARC_IMAGE_SRC);
 1111:Middlewares/LVGL/lvgl/src/core/lv_obj_style_gen.h ****     return (const void *)v.ptr;
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccJWWRL1.s 			page 104
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\cclYcovy.s 			page 104
 
 
 1112:Middlewares/LVGL/lvgl/src/core/lv_obj_style_gen.h **** }
@@ -6238,7 +6238,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccJWWRL1.s 			page 1
 1166:Middlewares/LVGL/lvgl/src/core/lv_obj_style_gen.h ****  * Default: 0, inherited: Yes, layout: Yes, ext. draw: No.
 1167:Middlewares/LVGL/lvgl/src/core/lv_obj_style_gen.h ****  * @param  obj    Pointer to Widget
 1168:Middlewares/LVGL/lvgl/src/core/lv_obj_style_gen.h ****  * @param  part   One of the `LV_PART_...` enum values
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccJWWRL1.s 			page 105
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\cclYcovy.s 			page 105
 
 
 1169:Middlewares/LVGL/lvgl/src/core/lv_obj_style_gen.h ****  */
@@ -6298,7 +6298,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccJWWRL1.s 			page 1
 1223:Middlewares/LVGL/lvgl/src/core/lv_obj_style_gen.h **** {
 1224:Middlewares/LVGL/lvgl/src/core/lv_obj_style_gen.h ****     lv_style_value_t v = lv_obj_get_style_prop(obj, part, LV_STYLE_TEXT_OUTLINE_STROKE_COLOR);
 1225:Middlewares/LVGL/lvgl/src/core/lv_obj_style_gen.h ****     return v.color;
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccJWWRL1.s 			page 106
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\cclYcovy.s 			page 106
 
 
 1226:Middlewares/LVGL/lvgl/src/core/lv_obj_style_gen.h **** }
@@ -6358,7 +6358,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccJWWRL1.s 			page 1
 1280:Middlewares/LVGL/lvgl/src/core/lv_obj_style_gen.h ****  * If `true` the background of the widget will be blurred. The part should have < 100%
 1281:Middlewares/LVGL/lvgl/src/core/lv_obj_style_gen.h ****  * opacity to make it visible. If `false` the given part will be blurred when it's
 1282:Middlewares/LVGL/lvgl/src/core/lv_obj_style_gen.h ****  * rendered but before drawing the children.
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccJWWRL1.s 			page 107
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\cclYcovy.s 			page 107
 
 
 1283:Middlewares/LVGL/lvgl/src/core/lv_obj_style_gen.h ****  * Default: `false`, inherited: No, layout: No, ext. draw: No.
@@ -6418,7 +6418,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccJWWRL1.s 			page 1
 1337:Middlewares/LVGL/lvgl/src/core/lv_obj_style_gen.h ****  */
 1338:Middlewares/LVGL/lvgl/src/core/lv_obj_style_gen.h **** static inline int32_t lv_obj_get_style_drop_shadow_offset_y(const lv_obj_t * obj, lv_part_t part)
 1339:Middlewares/LVGL/lvgl/src/core/lv_obj_style_gen.h **** {
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccJWWRL1.s 			page 108
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\cclYcovy.s 			page 108
 
 
 1340:Middlewares/LVGL/lvgl/src/core/lv_obj_style_gen.h ****     lv_style_value_t v = lv_obj_get_style_prop(obj, part, LV_STYLE_DROP_SHADOW_OFFSET_Y);
@@ -6478,7 +6478,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccJWWRL1.s 			page 1
 1394:Middlewares/LVGL/lvgl/src/core/lv_obj_style_gen.h **** /**
 1395:Middlewares/LVGL/lvgl/src/core/lv_obj_style_gen.h ****  * Get radius on every corner. The value is interpreted in pixels (>= 0) or
 1396:Middlewares/LVGL/lvgl/src/core/lv_obj_style_gen.h ****  * `LV_RADIUS_CIRCLE` for max radius.
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccJWWRL1.s 			page 109
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\cclYcovy.s 			page 109
 
 
 1397:Middlewares/LVGL/lvgl/src/core/lv_obj_style_gen.h ****  * Default: 0, inherited: No, layout: No, ext. draw: No.
@@ -6538,7 +6538,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccJWWRL1.s 			page 1
 1451:Middlewares/LVGL/lvgl/src/core/lv_obj_style_gen.h ****  * Default: `LV_OPA_COVER`, inherited: Yes, layout: No, ext. draw: No.
 1452:Middlewares/LVGL/lvgl/src/core/lv_obj_style_gen.h ****  * @param  obj    Pointer to Widget
 1453:Middlewares/LVGL/lvgl/src/core/lv_obj_style_gen.h ****  * @param  part   One of the `LV_PART_...` enum values
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccJWWRL1.s 			page 110
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\cclYcovy.s 			page 110
 
 
 1454:Middlewares/LVGL/lvgl/src/core/lv_obj_style_gen.h ****  */
@@ -6598,7 +6598,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccJWWRL1.s 			page 1
 1477:Middlewares/LVGL/lvgl/src/core/lv_obj_style_gen.h ****  * @param  part   One of the `LV_PART_...` enum values
 1478:Middlewares/LVGL/lvgl/src/core/lv_obj_style_gen.h ****  */
 1479:Middlewares/LVGL/lvgl/src/core/lv_obj_style_gen.h **** static inline lv_opa_t lv_obj_get_style_color_filter_opa(const lv_obj_t * obj, lv_part_t part)
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccJWWRL1.s 			page 111
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\cclYcovy.s 			page 111
 
 
 1480:Middlewares/LVGL/lvgl/src/core/lv_obj_style_gen.h **** {
@@ -6658,7 +6658,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccJWWRL1.s 			page 1
 1534:Middlewares/LVGL/lvgl/src/core/lv_obj_style_gen.h ****  */
 1535:Middlewares/LVGL/lvgl/src/core/lv_obj_style_gen.h **** static inline uint32_t lv_obj_get_style_anim_duration(const lv_obj_t * obj, lv_part_t part)
 1536:Middlewares/LVGL/lvgl/src/core/lv_obj_style_gen.h **** {
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccJWWRL1.s 			page 112
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\cclYcovy.s 			page 112
 
 
 1537:Middlewares/LVGL/lvgl/src/core/lv_obj_style_gen.h ****     lv_style_value_t v = lv_obj_get_style_prop(obj, part, LV_STYLE_ANIM_DURATION);
@@ -6718,7 +6718,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccJWWRL1.s 			page 1
 1591:Middlewares/LVGL/lvgl/src/core/lv_obj_style_gen.h **** /**
 1592:Middlewares/LVGL/lvgl/src/core/lv_obj_style_gen.h ****  * If set, a layer will be created for the widget and the layer will be masked with
 1593:Middlewares/LVGL/lvgl/src/core/lv_obj_style_gen.h ****  * this A8 bitmap mask.
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccJWWRL1.s 			page 113
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\cclYcovy.s 			page 113
 
 
 1594:Middlewares/LVGL/lvgl/src/core/lv_obj_style_gen.h ****  * Default: `NULL`, inherited: No, layout: No, ext. draw: No.
@@ -6778,7 +6778,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccJWWRL1.s 			page 1
  2100              	.LBE189:
  2101              	.LBE188:
 1096:Middlewares/LVGL/lvgl/src/core/lv_obj_style.c ****     return LV_LAYER_TYPE_NONE;
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccJWWRL1.s 			page 114
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\cclYcovy.s 			page 114
 
 
  2102              		.loc 1 1096 7 discriminator 1 view .LVU666
@@ -6838,7 +6838,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccJWWRL1.s 			page 1
  341:Middlewares/LVGL/lvgl/src/core/lv_obj_style.c ****     LV_ASSERT_NULL(obj)
  2150              		.loc 1 341 1 is_stmt 0 view .LVU675
  2151 0002 00B5     		push	{lr}
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccJWWRL1.s 			page 115
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\cclYcovy.s 			page 115
 
 
  2152              	.LCFI25:
@@ -6898,7 +6898,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccJWWRL1.s 			page 1
  342:Middlewares/LVGL/lvgl/src/core/lv_obj_style.c **** 
  2192              		.loc 1 342 5 view .LVU690
  2193 001a FEE7     		b	.L166
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccJWWRL1.s 			page 116
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\cclYcovy.s 			page 116
 
 
  2194              	.LVL226:
@@ -6958,7 +6958,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccJWWRL1.s 			page 1
  2241              	.L172:
  386:Middlewares/LVGL/lvgl/src/core/lv_obj_style.c ****         if(obj->styles[i].is_local &&
  2242              		.loc 1 386 18 discriminator 1 view .LVU700
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccJWWRL1.s 			page 117
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\cclYcovy.s 			page 117
 
 
  386:Middlewares/LVGL/lvgl/src/core/lv_obj_style.c ****         if(obj->styles[i].is_local &&
@@ -7018,7 +7018,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccJWWRL1.s 			page 1
  2282              		.cfi_endproc
  2283              	.LFE215:
  2285              		.section	.text.lv_obj_style_apply_color_filter,"ax",%progbits
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccJWWRL1.s 			page 118
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\cclYcovy.s 			page 118
 
 
  2286              		.align	1
@@ -7078,7 +7078,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccJWWRL1.s 			page 1
  2333              		.loc 1 494 1 is_stmt 1 view -0
  2334              		.cfi_startproc
  2335              		@ args = 0, pretend = 0, frame = 8
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccJWWRL1.s 			page 119
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\cclYcovy.s 			page 119
 
 
  2336              		@ frame_needed = 0, uses_anonymous_args = 0
@@ -7138,7 +7138,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccJWWRL1.s 			page 1
  2379              	.LCFI35:
  2380              		.cfi_remember_state
  2381              		.cfi_def_cfa_offset 28
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccJWWRL1.s 			page 120
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\cclYcovy.s 			page 120
 
 
  2382              		@ sp needed
@@ -7198,7 +7198,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccJWWRL1.s 			page 1
  500:Middlewares/LVGL/lvgl/src/core/lv_obj_style.c **** 
  2424              		.loc 1 500 12 view .LVU749
  2425 0044 DA79     		ldrb	r2, [r3, #7]	@ zero_extendqisi2
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccJWWRL1.s 			page 121
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\cclYcovy.s 			page 121
 
 
  500:Middlewares/LVGL/lvgl/src/core/lv_obj_style.c **** 
@@ -7258,7 +7258,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccJWWRL1.s 			page 1
  2464 0066 51F83490 		ldr	r9, [r1, r4, lsl #3]
  2465              	.LVL251:
  508:Middlewares/LVGL/lvgl/src/core/lv_obj_style.c ****             /*If there is layout difference on the main part, return immediately. There is no more 
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccJWWRL1.s 			page 122
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\cclYcovy.s 			page 122
 
 
  2466              		.loc 1 508 13 is_stmt 1 view .LVU766
@@ -7318,7 +7318,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccJWWRL1.s 			page 1
  2506 0098 4846     		mov	r0, r9
  2507 009a FFF7FEFF 		bl	lv_style_get_prop
  2508              	.LVL257:
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccJWWRL1.s 			page 123
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\cclYcovy.s 			page 123
 
 
  514:Middlewares/LVGL/lvgl/src/core/lv_obj_style.c ****             else if(lv_style_get_prop(style, LV_STYLE_PAD_COLUMN, &v)) layout_diff = true;
@@ -7378,7 +7378,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccJWWRL1.s 			page 1
  2550 00d6 0028     		cmp	r0, #0
  2551 00d8 9BD1     		bne	.L183
  519:Middlewares/LVGL/lvgl/src/core/lv_obj_style.c ****             else if(lv_style_get_prop(style, LV_STYLE_WIDTH, &v)) layout_diff = true;
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccJWWRL1.s 			page 124
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\cclYcovy.s 			page 124
 
 
  2552              		.loc 1 519 18 is_stmt 1 view .LVU794
@@ -7438,7 +7438,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccJWWRL1.s 			page 1
  2593              		.loc 1 523 21 is_stmt 0 view .LVU807
  2594 0114 01AA     		add	r2, sp, #4
  2595 0116 0921     		movs	r1, #9
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccJWWRL1.s 			page 125
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\cclYcovy.s 			page 125
 
 
  2596 0118 4846     		mov	r0, r9
@@ -7498,7 +7498,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccJWWRL1.s 			page 1
  2637 0158 4846     		mov	r0, r9
  2638 015a FFF7FEFF 		bl	lv_style_get_prop
  2639              	.LVL270:
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccJWWRL1.s 			page 126
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\cclYcovy.s 			page 126
 
 
  533:Middlewares/LVGL/lvgl/src/core/lv_obj_style.c ****             else if(lv_style_get_prop(style, LV_STYLE_TRANSFORM_HEIGHT, &v)) res = LV_STYLE_STATE_C
@@ -7558,7 +7558,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccJWWRL1.s 			page 1
  2681              	.L208:
  537:Middlewares/LVGL/lvgl/src/core/lv_obj_style.c ****             else if(lv_style_get_prop(style, LV_STYLE_OUTLINE_OPA, &v)) res = LV_STYLE_STATE_CMP_DI
  2682              		.loc 1 537 18 is_stmt 1 view .LVU834
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccJWWRL1.s 			page 127
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\cclYcovy.s 			page 127
 
 
  537:Middlewares/LVGL/lvgl/src/core/lv_obj_style.c ****             else if(lv_style_get_prop(style, LV_STYLE_OUTLINE_OPA, &v)) res = LV_STYLE_STATE_CMP_DI
@@ -7618,7 +7618,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccJWWRL1.s 			page 1
  2724 01be 4FF00208 		mov	r8, #2
  2725              	.LVL286:
  539:Middlewares/LVGL/lvgl/src/core/lv_obj_style.c ****             else if(lv_style_get_prop(style, LV_STYLE_OUTLINE_WIDTH, &v)) res = LV_STYLE_STATE_CMP_
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccJWWRL1.s 			page 128
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\cclYcovy.s 			page 128
 
 
  2726              		.loc 1 539 77 discriminator 1 view .LVU848
@@ -7678,7 +7678,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccJWWRL1.s 			page 1
  2768              	.LVL294:
  542:Middlewares/LVGL/lvgl/src/core/lv_obj_style.c ****             else if(lv_style_get_prop(style, LV_STYLE_SHADOW_OFFSET_X, &v)) res = LV_STYLE_STATE_CM
  2769              		.loc 1 542 20 discriminator 1 view .LVU861
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccJWWRL1.s 			page 129
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\cclYcovy.s 			page 129
 
 
  2770 01f2 10B1     		cbz	r0, .L214
@@ -7738,7 +7738,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccJWWRL1.s 			page 1
  545:Middlewares/LVGL/lvgl/src/core/lv_obj_style.c ****             else if(lv_style_get_prop(style, LV_STYLE_LINE_WIDTH, &v)) res = LV_STYLE_STATE_CMP_DIF
  2811              		.loc 1 545 21 is_stmt 0 view .LVU875
  2812 021e 01AA     		add	r2, sp, #4
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccJWWRL1.s 			page 130
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\cclYcovy.s 			page 130
 
 
  2813 0220 6321     		movs	r1, #99
@@ -7798,7 +7798,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccJWWRL1.s 			page 1
  2856              		.section	.text.lv_obj_fade_in,"ax",%progbits
  2857              		.align	1
  2858              		.global	lv_obj_fade_in
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccJWWRL1.s 			page 131
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\cclYcovy.s 			page 131
 
 
  2859              		.syntax unified
@@ -7858,7 +7858,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccJWWRL1.s 			page 1
  2906 0026 FFF7FEFF 		bl	lv_anim_set_exec_cb
  2907              	.LVL315:
  561:Middlewares/LVGL/lvgl/src/core/lv_obj_style.c ****     lv_anim_set_duration(&a, time);
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccJWWRL1.s 			page 132
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\cclYcovy.s 			page 132
 
 
  2908              		.loc 1 561 5 view .LVU896
@@ -7918,7 +7918,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccJWWRL1.s 			page 1
  2957              		.loc 1 568 1 is_stmt 0 view .LVU903
  2958 0000 F0B5     		push	{r4, r5, r6, r7, lr}
  2959              	.LCFI40:
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccJWWRL1.s 			page 133
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\cclYcovy.s 			page 133
 
 
  2960              		.cfi_def_cfa_offset 20
@@ -7978,7 +7978,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccJWWRL1.s 			page 1
  3003              		.loc 1 572 5 discriminator 1 view .LVU914
  3004 0026 0022     		movs	r2, #0
  3005 0028 C1B2     		uxtb	r1, r0
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccJWWRL1.s 			page 134
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\cclYcovy.s 			page 134
 
 
  3006 002a 2046     		mov	r0, r4
@@ -8038,7 +8038,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccJWWRL1.s 			page 1
  3055              		@ args = 0, pretend = 0, frame = 8
  3056              		@ frame_needed = 0, uses_anonymous_args = 0
  580:Middlewares/LVGL/lvgl/src/core/lv_obj_style.c ****     lv_text_align_t align = lv_obj_get_style_text_align(obj, part);
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccJWWRL1.s 			page 135
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\cclYcovy.s 			page 135
 
 
  3057              		.loc 1 580 1 is_stmt 0 view .LVU922
@@ -8098,7 +8098,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccJWWRL1.s 			page 1
  3098              		.loc 5 1587 26 is_stmt 0 view .LVU935
  3099 0012 8122     		movs	r2, #129
  3100 0014 3146     		mov	r1, r6
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccJWWRL1.s 			page 136
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\cclYcovy.s 			page 136
 
 
  3101 0016 2846     		mov	r0, r5
@@ -8158,7 +8158,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccJWWRL1.s 			page 1
   39:Middlewares/LVGL/lvgl/src/core/../misc/lv_bidi.h **** 
   40:Middlewares/LVGL/lvgl/src/core/../misc/lv_bidi.h **** /**********************
   41:Middlewares/LVGL/lvgl/src/core/../misc/lv_bidi.h ****  * GLOBAL PROTOTYPES
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccJWWRL1.s 			page 137
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\cclYcovy.s 			page 137
 
 
   42:Middlewares/LVGL/lvgl/src/core/../misc/lv_bidi.h ****  **********************/
@@ -8218,7 +8218,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccJWWRL1.s 			page 1
  3132              	.LCFI45:
  3133              		.cfi_def_cfa_offset 16
  3134              		@ sp needed
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccJWWRL1.s 			page 138
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\cclYcovy.s 			page 138
 
 
  3135 0026 70BD     		pop	{r4, r5, r6, pc}
@@ -8278,7 +8278,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccJWWRL1.s 			page 1
  3181              		.loc 5 1443 5 is_stmt 1 view .LVU957
 1443:Middlewares/LVGL/lvgl/src/core/lv_obj_style_gen.h **** }
  3182              		.loc 5 1443 12 is_stmt 0 view .LVU958
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccJWWRL1.s 			page 139
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\cclYcovy.s 			page 139
 
 
  3183 0010 C3B2     		uxtb	r3, r0
@@ -8338,7 +8338,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccJWWRL1.s 			page 1
  3221 002e FF25     		movs	r5, #255
  3222 0030 F7E7     		b	.L232
  3223              	.LVL350:
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccJWWRL1.s 			page 140
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\cclYcovy.s 			page 140
 
 
  3224              	.L234:
@@ -8398,7 +8398,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccJWWRL1.s 			page 1
  3263              		.loc 1 614 9 is_stmt 1 view .LVU989
  614:Middlewares/LVGL/lvgl/src/core/lv_obj_style.c ****             opa_final = LV_OPA_MIX2(opa_final, opa_obj);
  3264              		.loc 1 614 11 is_stmt 0 view .LVU990
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccJWWRL1.s 			page 141
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\cclYcovy.s 			page 141
 
 
  3265 004e FC2B     		cmp	r3, #252
@@ -8458,7 +8458,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccJWWRL1.s 			page 1
  3307              	.LCFI49:
  3308              		.cfi_restore_state
  612:Middlewares/LVGL/lvgl/src/core/lv_obj_style.c ****         }
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccJWWRL1.s 			page 142
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\cclYcovy.s 			page 142
 
 
  3309              		.loc 1 612 20 view .LVU1003
@@ -8518,7 +8518,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccJWWRL1.s 			page 1
  3355              		.loc 1 638 11 is_stmt 0 view .LVU1013
  3356 000a A368     		ldr	r3, [r4, #8]
  638:Middlewares/LVGL/lvgl/src/core/lv_obj_style.c ****     else if(layer_type != LV_LAYER_TYPE_NONE) {
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccJWWRL1.s 			page 143
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\cclYcovy.s 			page 143
 
 
  3357              		.loc 1 638 7 view .LVU1014
@@ -8578,7 +8578,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccJWWRL1.s 			page 1
  3399              		.thumb
  3400              		.thumb_func
  3402              	lv_obj_refresh_style:
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccJWWRL1.s 			page 144
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\cclYcovy.s 			page 144
 
 
  3403              	.LVL375:
@@ -8638,7 +8638,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccJWWRL1.s 			page 1
  3447              	.L250:
  3448              	.LCFI54:
  3449              		.cfi_def_cfa_offset 0
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccJWWRL1.s 			page 145
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\cclYcovy.s 			page 145
 
 
  3450              		.cfi_restore 4
@@ -8698,7 +8698,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccJWWRL1.s 			page 1
  253:Middlewares/LVGL/lvgl/src/core/lv_obj_style.c ****     bool is_inheritable = lv_style_prop_has_flag(prop, LV_STYLE_PROP_FLAG_INHERITABLE);
  3495              		.loc 1 253 5 is_stmt 1 view .LVU1051
  3496              	.LBB212:
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccJWWRL1.s 			page 146
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\cclYcovy.s 			page 146
 
 
  3497              	.LBI212:
@@ -8758,7 +8758,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccJWWRL1.s 			page 1
  3544              		.loc 1 257 7 is_stmt 0 view .LVU1070
  3545 004a 5FB1     		cbz	r7, .L252
  258:Middlewares/LVGL/lvgl/src/core/lv_obj_style.c ****            part == LV_PART_MAIN ||
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccJWWRL1.s 			page 147
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\cclYcovy.s 			page 147
 
 
  3546              		.loc 1 258 9 is_stmt 1 view .LVU1071
@@ -8818,7 +8818,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccJWWRL1.s 			page 1
  3586              		.loc 1 268 20 is_stmt 1 discriminator 1 view .LVU1085
  3587 007a FFF7FEFF 		bl	lv_obj_mark_layout_as_dirty
  3588              	.LVL390:
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccJWWRL1.s 			page 148
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\cclYcovy.s 			page 148
 
 
  3589              	.L255:
@@ -8878,7 +8878,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccJWWRL1.s 			page 1
  3629 00b0 01D1     		bne	.L261
  281:Middlewares/LVGL/lvgl/src/core/lv_obj_style.c ****         if(part != LV_PART_SCROLLBAR) {
  3630              		.loc 1 281 69 discriminator 3 view .LVU1100
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccJWWRL1.s 			page 149
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\cclYcovy.s 			page 149
 
 
  3631 00b2 002F     		cmp	r7, #0
@@ -8938,7 +8938,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccJWWRL1.s 			page 1
   32:Middlewares/LVGL/lvgl/src/core/lv_obj_style_gen.h ****     return (int32_t)v.num;
  3673              		.loc 5 32 26 is_stmt 0 view .LVU1113
  3674 00d8 0122     		movs	r2, #1
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccJWWRL1.s 			page 150
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\cclYcovy.s 			page 150
 
 
  3675 00da 0021     		movs	r1, #0
@@ -8998,7 +8998,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccJWWRL1.s 			page 1
  3725              		.cfi_offset 8, -20
  3726              		.cfi_offset 9, -16
  3727              		.cfi_offset 10, -12
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccJWWRL1.s 			page 151
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\cclYcovy.s 			page 151
 
 
  3728              		.cfi_offset 11, -8
@@ -9058,7 +9058,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccJWWRL1.s 			page 1
  3770              		.loc 1 174 41 discriminator 3 view .LVU1133
  3771 0022 9142     		cmp	r1, r2
  3772 0024 52D0     		beq	.L279
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccJWWRL1.s 			page 152
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\cclYcovy.s 			page 152
 
 
  179:Middlewares/LVGL/lvgl/src/core/lv_obj_style.c **** 
@@ -9118,7 +9118,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccJWWRL1.s 			page 1
  183:Middlewares/LVGL/lvgl/src/core/lv_obj_style.c ****         lv_state_t state_act = lv_obj_style_get_selector_state(obj->styles[i].selector);
  3812              		.loc 1 183 23 is_stmt 0 discriminator 1 view .LVU1149
  3813 0040 6B8D     		ldrh	r3, [r5, #42]
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccJWWRL1.s 			page 153
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\cclYcovy.s 			page 153
 
 
  3814 0042 C3F30513 		ubfx	r3, r3, #4, #6
@@ -9178,7 +9178,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccJWWRL1.s 			page 1
  3854              		.loc 1 188 11 view .LVU1166
  3855 0060 11F0030F 		tst	r1, #3
  3856 0064 EBD1     		bne	.L272
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccJWWRL1.s 			page 154
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\cclYcovy.s 			page 154
 
 
  193:Middlewares/LVGL/lvgl/src/core/lv_obj_style.c ****            (part != LV_PART_ANY && part_act != part) ||
@@ -9238,7 +9238,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccJWWRL1.s 			page 1
  3898 0090 4344     		add	r3, r3, r8
  201:Middlewares/LVGL/lvgl/src/core/lv_obj_style.c **** 
  3899              		.loc 1 201 33 view .LVU1182
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccJWWRL1.s 			page 155
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\cclYcovy.s 			page 155
 
 
  3900 0092 5A68     		ldr	r2, [r3, #4]
@@ -9298,7 +9298,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccJWWRL1.s 			page 1
  175:Middlewares/LVGL/lvgl/src/core/lv_obj_style.c ****     }
  3945              		.loc 1 175 16 view .LVU1192
  3946 00c0 4FF0000B 		mov	fp, #0
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccJWWRL1.s 			page 156
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\cclYcovy.s 			page 156
 
 
  3947 00c4 EFE7     		b	.L270
@@ -9358,7 +9358,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccJWWRL1.s 			page 1
  266:Middlewares/LVGL/lvgl/src/core/lv_obj_style.h **** }
  3996              		.loc 3 266 12 view .LVU1199
  3997              	.LBE236:
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccJWWRL1.s 			page 157
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\cclYcovy.s 			page 157
 
 
  3998              	.LBE235:
@@ -9418,7 +9418,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccJWWRL1.s 			page 1
  4037 0026 16E0     		b	.L287
  4038              	.LVL430:
  4039              	.L303:
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccJWWRL1.s 			page 158
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\cclYcovy.s 			page 158
 
 
 1265:Middlewares/LVGL/lvgl/src/core/lv_obj_style.c ****         lv_obj_invalidate(obj);
@@ -9478,7 +9478,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccJWWRL1.s 			page 1
  4079 0050 4B45     		cmp	r3, r9
  4080 0052 23D0     		beq	.L293
  4081              	.L291:
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccJWWRL1.s 			page 159
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\cclYcovy.s 			page 159
 
 
 1281:Middlewares/LVGL/lvgl/src/core/lv_obj_style.c ****             i++;
@@ -9538,7 +9538,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccJWWRL1.s 			page 1
  4121              		.loc 3 269 25 view .LVU1246
  4122              	.LBB243:
  4123              		.loc 3 271 5 view .LVU1247
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccJWWRL1.s 			page 160
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\cclYcovy.s 			page 160
 
 
  4124              		.loc 3 271 12 is_stmt 0 view .LVU1248
@@ -9598,7 +9598,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccJWWRL1.s 			page 1
 1286:Middlewares/LVGL/lvgl/src/core/lv_obj_style.c ****             trans_delete(obj, part, LV_STYLE_PROP_ANY, NULL);
 1287:Middlewares/LVGL/lvgl/src/core/lv_obj_style.c ****         }
 1288:Middlewares/LVGL/lvgl/src/core/lv_obj_style.c **** 
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccJWWRL1.s 			page 161
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\cclYcovy.s 			page 161
 
 
 1289:Middlewares/LVGL/lvgl/src/core/lv_obj_style.c ****         if(obj->styles[i].is_local || obj->styles[i].is_trans) {
@@ -9658,7 +9658,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccJWWRL1.s 			page 1
  4213              	.LVL449:
 1286:Middlewares/LVGL/lvgl/src/core/lv_obj_style.c ****         }
  4214              		.loc 1 1286 13 view .LVU1281
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccJWWRL1.s 			page 162
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\cclYcovy.s 			page 162
 
 
  4215 00d8 2046     		mov	r0, r4
@@ -9718,7 +9718,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccJWWRL1.s 			page 1
  4252 0102 3F31     		adds	r1, r1, #63
  4253 0104 01F03F01 		and	r1, r1, #63
  4254 0108 638D     		ldrh	r3, [r4, #42]
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccJWWRL1.s 			page 163
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\cclYcovy.s 			page 163
 
 
  4255              	.LVL455:
@@ -9778,7 +9778,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccJWWRL1.s 			page 1
  4294              		.loc 1 1311 9 is_stmt 0 view .LVU1310
  4295 0130 FFF7FEFF 		bl	lv_obj_refresh_style
  4296              	.LVL462:
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccJWWRL1.s 			page 164
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\cclYcovy.s 			page 164
 
 
  4297              		.loc 1 1313 1 view .LVU1311
@@ -9838,7 +9838,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccJWWRL1.s 			page 1
  4349              		.cfi_offset 3, -8
  4350              		.cfi_offset 14, -4
  225:Middlewares/LVGL/lvgl/src/core/lv_obj_style.c **** }
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccJWWRL1.s 			page 165
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\cclYcovy.s 			page 165
 
 
  4351              		.loc 1 225 5 is_stmt 1 view .LVU1318
@@ -9898,7 +9898,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccJWWRL1.s 			page 1
  4398 0008 2779     		ldrb	r7, [r4, #4]	@ zero_extendqisi2
  4399              	.LVL470:
 1055:Middlewares/LVGL/lvgl/src/core/lv_obj_style.c ****     trans_t * tr_i;
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccJWWRL1.s 			page 166
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\cclYcovy.s 			page 166
 
 
  4400              		.loc 1 1055 5 is_stmt 1 view .LVU1328
@@ -9958,7 +9958,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccJWWRL1.s 			page 1
  4439              		.loc 1 1058 47 discriminator 2 view .LVU1343
  4440 002e 9A42     		cmp	r2, r3
  4441 0030 F0D1     		bne	.L316
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccJWWRL1.s 			page 167
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\cclYcovy.s 			page 167
 
 
 1058:Middlewares/LVGL/lvgl/src/core/lv_obj_style.c ****             running = true;
@@ -10018,7 +10018,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccJWWRL1.s 			page 1
  4483              	.LVL481:
  4484              	.L320:
 1066:Middlewares/LVGL/lvgl/src/core/lv_obj_style.c ****             if(obj->styles[i].is_trans && obj->styles[i].selector == tr->selector) {
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccJWWRL1.s 			page 168
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\cclYcovy.s 			page 168
 
 
  4485              		.loc 1 1066 22 discriminator 1 view .LVU1357
@@ -10078,7 +10078,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccJWWRL1.s 			page 1
  4524              		.loc 1 1071 50 is_stmt 0 view .LVU1372
  4525 0092 F468     		ldr	r4, [r6, #12]
  4526              	.LVL485:
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccJWWRL1.s 			page 169
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\cclYcovy.s 			page 169
 
 
 1071:Middlewares/LVGL/lvgl/src/core/lv_obj_style.c ****                 lv_style_remove_prop((lv_style_t *)obj_style->style, prop);
@@ -10138,7 +10138,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccJWWRL1.s 			page 1
  4573              		@ args = 0, pretend = 0, frame = 0
  4574              		@ frame_needed = 0, uses_anonymous_args = 0
  219:Middlewares/LVGL/lvgl/src/core/lv_obj_style.c ****     remove_style_core(obj, NULL, selector, true);
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccJWWRL1.s 			page 170
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\cclYcovy.s 			page 170
 
 
  4575              		.loc 1 219 1 is_stmt 0 view .LVU1383
@@ -10198,7 +10198,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccJWWRL1.s 			page 1
  4620 000c FEE7     		b	.L333
  4621              	.L332:
  109:Middlewares/LVGL/lvgl/src/core/lv_obj_style.c ****     LV_ASSERT(obj->style_cnt < 63);
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccJWWRL1.s 			page 171
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\cclYcovy.s 			page 171
 
 
  4622              		.loc 1 109 1 is_stmt 0 view .LVU1395
@@ -10258,7 +10258,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccJWWRL1.s 			page 1
  4666 002a 3246     		mov	r2, r6
  4667 002c 3946     		mov	r1, r7
  4668 002e 2046     		mov	r0, r4
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccJWWRL1.s 			page 172
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\cclYcovy.s 			page 172
 
 
  4669 0030 FFF7FEFF 		bl	lv_obj_remove_style
@@ -10318,7 +10318,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccJWWRL1.s 			page 1
  4709 005a 02EBC502 		add	r2, r2, r5, lsl #3
  126:Middlewares/LVGL/lvgl/src/core/lv_obj_style.c ****         if(obj->styles[i].is_local) continue;
  4710              		.loc 1 126 12 view .LVU1423
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccJWWRL1.s 			page 173
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\cclYcovy.s 			page 173
 
 
  4711 005e D279     		ldrb	r2, [r2, #7]	@ zero_extendqisi2
@@ -10378,7 +10378,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccJWWRL1.s 			page 1
  4748              		.loc 1 137 5 is_stmt 1 view .LVU1440
  137:Middlewares/LVGL/lvgl/src/core/lv_obj_style.c **** 
  4749              		.loc 1 137 5 view .LVU1441
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccJWWRL1.s 			page 174
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\cclYcovy.s 			page 174
 
 
  4750 008c 30B1     		cbz	r0, .L342
@@ -10438,7 +10438,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccJWWRL1.s 			page 1
  4786 00b6 0CF1FF3C 		add	ip, ip, #-1
  4787              	.LVL510:
  4788              	.L343:
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccJWWRL1.s 			page 175
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\cclYcovy.s 			page 175
 
 
  140:Middlewares/LVGL/lvgl/src/core/lv_obj_style.c ****         obj->styles[j] = obj->styles[j - 1];
@@ -10498,7 +10498,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccJWWRL1.s 			page 1
  4829              		.loc 1 164 5 is_stmt 1 view .LVU1476
  4830 00e2 FF22     		movs	r2, #255
  4831 00e4 3146     		mov	r1, r6
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccJWWRL1.s 			page 176
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\cclYcovy.s 			page 176
 
 
  4832 00e6 2046     		mov	r0, r4
@@ -10558,7 +10558,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccJWWRL1.s 			page 1
  4878              	.LVL519:
  4879              	.L349:
  882:Middlewares/LVGL/lvgl/src/core/lv_obj_style.c ****         if(style == NULL || obj->styles[i].style == style) {
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccJWWRL1.s 			page 177
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\cclYcovy.s 			page 177
 
 
  4880              		.loc 1 882 18 is_stmt 1 discriminator 1 view .LVU1487
@@ -10618,7 +10618,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccJWWRL1.s 			page 1
  891:Middlewares/LVGL/lvgl/src/core/lv_obj_style.c ****         report_style_change_core(style, obj->spec_attr->children[i]);
  4919              		.loc 1 891 11 is_stmt 0 view .LVU1503
  4920 0036 0026     		movs	r6, #0
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccJWWRL1.s 			page 178
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\cclYcovy.s 			page 178
 
 
  4921              	.LVL525:
@@ -10678,7 +10678,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccJWWRL1.s 			page 1
  4965 0000 0F4B     		ldr	r3, .L370
  4966 0002 93F82830 		ldrb	r3, [r3, #40]	@ zero_extendqisi2
  230:Middlewares/LVGL/lvgl/src/core/lv_obj_style.c ****     lv_display_t * d = lv_display_get_next(NULL);
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccJWWRL1.s 			page 179
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\cclYcovy.s 			page 179
 
 
  4967              		.loc 1 230 7 view .LVU1516
@@ -10738,7 +10738,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccJWWRL1.s 			page 1
  5009 0028 D5F8D832 		ldr	r3, [r5, #728]
  235:Middlewares/LVGL/lvgl/src/core/lv_obj_style.c ****             report_style_change_core(style, d->screens[i]);
  5010              		.loc 1 235 22 discriminator 1 view .LVU1529
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccJWWRL1.s 			page 180
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\cclYcovy.s 			page 180
 
 
  5011 002c A342     		cmp	r3, r4
@@ -10798,7 +10798,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccJWWRL1.s 			page 1
  5058              	.LCFI68:
  5059              		.cfi_def_cfa_offset 16
  5060              		.cfi_offset 3, -16
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccJWWRL1.s 			page 181
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\cclYcovy.s 			page 181
 
 
  5061              		.cfi_offset 4, -12
@@ -10858,7 +10858,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccJWWRL1.s 			page 1
  293:Middlewares/LVGL/lvgl/src/core/lv_obj_style.c ****         if(obj->styles[i].style == style && obj->styles[i].selector == selector) {
  5101              		.loc 1 293 18 discriminator 1 view .LVU1553
  5102 002c E645     		cmp	lr, ip
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccJWWRL1.s 			page 182
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\cclYcovy.s 			page 182
 
 
  5103 002e 12D9     		bls	.L372
@@ -10918,7 +10918,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccJWWRL1.s 			page 1
 1314:Middlewares/LVGL/lvgl/src/core/lv_obj_style.c **** 
 1315:Middlewares/LVGL/lvgl/src/core/lv_obj_style.c **** 
 1316:Middlewares/LVGL/lvgl/src/core/lv_obj_style.c **** 
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccJWWRL1.s 			page 183
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\cclYcovy.s 			page 183
 
 
 1317:Middlewares/LVGL/lvgl/src/core/lv_obj_style.c **** #if LV_USE_OBSERVER
@@ -10978,7 +10978,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccJWWRL1.s 			page 1
  5190              		.cfi_endproc
  5191              	.LFE245:
  5193              		.section	.text.lv_obj_set_local_style_prop,"ax",%progbits
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccJWWRL1.s 			page 184
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\cclYcovy.s 			page 184
 
 
  5194              		.align	1
@@ -11038,7 +11038,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccJWWRL1.s 			page 1
  5241              		.loc 1 359 5 discriminator 1 view .LVU1590
  5242 0014 FFF7FEFF 		bl	trans_delete
  5243              	.LVL561:
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccJWWRL1.s 			page 185
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\cclYcovy.s 			page 185
 
 
  361:Middlewares/LVGL/lvgl/src/core/lv_obj_style.c ****     if(selector == LV_PART_MAIN && lv_style_prop_has_flag(prop, LV_STYLE_PROP_FLAG_TRANSFORM)) {
@@ -11098,7 +11098,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccJWWRL1.s 			page 1
  5289              		.loc 2 708 12 view .LVU1602
  5290 003e FFF7FEFF 		bl	lv_style_prop_lookup_flags
  5291              	.LVL569:
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccJWWRL1.s 			page 186
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\cclYcovy.s 			page 186
 
 
  5292              		.loc 2 708 12 view .LVU1603
@@ -11158,7 +11158,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccJWWRL1.s 			page 1
  5339 000a 91F82030 		ldrb	r3, [r1, #32]	@ zero_extendqisi2
  5340 000e 03F00F03 		and	r3, r3, #15
  5341              		.loc 1 1333 7 view .LVU1613
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccJWWRL1.s 			page 187
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\cclYcovy.s 			page 187
 
 
  5342 0012 022B     		cmp	r3, #2
@@ -11218,7 +11218,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccJWWRL1.s 			page 1
  5384 003a F3E7     		b	.L387
  5385              	.LVL578:
  5386              	.L393:
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccJWWRL1.s 			page 188
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\cclYcovy.s 			page 188
 
 
 1334:Middlewares/LVGL/lvgl/src/core/lv_obj_style.c ****     else if(subject->type == LV_SUBJECT_TYPE_POINTER) style_v.ptr = lv_subject_get_pointer(subject)
@@ -11278,7 +11278,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccJWWRL1.s 			page 1
  5435              	.LCFI79:
  5436              		.cfi_def_cfa_offset 0
  5437              		.cfi_restore 3
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccJWWRL1.s 			page 189
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\cclYcovy.s 			page 189
 
 
  5438              		.cfi_restore 4
@@ -11338,7 +11338,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccJWWRL1.s 			page 1
  5478 0028 12F0010F 		tst	r2, #1
  5479 002c F1D0     		beq	.L397
  404:Middlewares/LVGL/lvgl/src/core/lv_obj_style.c ****             break;
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccJWWRL1.s 			page 190
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\cclYcovy.s 			page 190
 
 
  5480              		.loc 1 404 26 view .LVU1648
@@ -11398,7 +11398,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccJWWRL1.s 			page 1
  5521 005a F7E7     		b	.L400
  5522              	.LVL589:
  5523              	.L402:
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccJWWRL1.s 			page 191
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\cclYcovy.s 			page 191
 
 
  410:Middlewares/LVGL/lvgl/src/core/lv_obj_style.c **** 
@@ -11458,7 +11458,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccJWWRL1.s 			page 1
  5575              		@ frame_needed = 0, uses_anonymous_args = 0
  423:Middlewares/LVGL/lvgl/src/core/lv_obj_style.c ****     trans_t * tr;
  5576              		.loc 1 423 1 is_stmt 0 view .LVU1669
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccJWWRL1.s 			page 192
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\cclYcovy.s 			page 192
 
 
  5577 0000 2DE9F043 		push	{r4, r5, r6, r7, r8, r9, lr}
@@ -11518,7 +11518,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccJWWRL1.s 			page 1
  5618              		.loc 1 431 5 is_stmt 1 view .LVU1682
  431:Middlewares/LVGL/lvgl/src/core/lv_obj_style.c ****     obj->skip_trans = 0;
  5619              		.loc 1 431 27 is_stmt 0 view .LVU1683
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccJWWRL1.s 			page 193
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\cclYcovy.s 			page 193
 
 
  5620 002a 2A7A     		ldrb	r2, [r5, #8]	@ zero_extendqisi2
@@ -11578,7 +11578,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccJWWRL1.s 			page 1
  5660 0066 199A     		ldr	r2, [sp, #100]
  5661 0068 297A     		ldrb	r1, [r5, #8]	@ zero_extendqisi2
  5662 006a 0068     		ldr	r0, [r0]
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccJWWRL1.s 			page 194
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\cclYcovy.s 			page 194
 
 
  5663              	.LVL600:
@@ -11638,7 +11638,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccJWWRL1.s 			page 1
  5701 0092 0361     		str	r3, [r0, #16]
  457:Middlewares/LVGL/lvgl/src/core/lv_obj_style.c ****     tr->prop = tr_dsc->prop;
  5702              		.loc 1 457 5 is_stmt 1 view .LVU1714
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccJWWRL1.s 			page 195
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\cclYcovy.s 			page 195
 
 
  457:Middlewares/LVGL/lvgl/src/core/lv_obj_style.c ****     tr->prop = tr_dsc->prop;
@@ -11698,7 +11698,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccJWWRL1.s 			page 1
  5743 00c6 6846     		mov	r0, sp
  5744 00c8 FFF7FEFF 		bl	lv_anim_set_values
  5745              	.LVL611:
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccJWWRL1.s 			page 196
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\cclYcovy.s 			page 196
 
 
  468:Middlewares/LVGL/lvgl/src/core/lv_obj_style.c ****     lv_anim_set_delay(&a, tr_dsc->delay);
@@ -11758,7 +11758,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccJWWRL1.s 			page 1
  5791 0104 1846     		mov	r0, r3
  5792 0106 FFF7FEFF 		bl	lv_color_eq
  5793              	.LVL619:
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccJWWRL1.s 			page 197
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\cclYcovy.s 			page 197
 
 
  434:Middlewares/LVGL/lvgl/src/core/lv_obj_style.c ****     obj->state = prev_state;
@@ -11818,7 +11818,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccJWWRL1.s 			page 1
  5835              	.L413:
  448:Middlewares/LVGL/lvgl/src/core/lv_obj_style.c ****         }
  5836              		.loc 1 448 13 is_stmt 1 view .LVU1751
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccJWWRL1.s 			page 198
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\cclYcovy.s 			page 198
 
 
  448:Middlewares/LVGL/lvgl/src/core/lv_obj_style.c ****         }
@@ -11878,7 +11878,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccJWWRL1.s 			page 1
  453:Middlewares/LVGL/lvgl/src/core/lv_obj_style.c ****     if(tr == NULL) return;
  5878              		.loc 1 453 5 is_stmt 1 view .LVU1765
  453:Middlewares/LVGL/lvgl/src/core/lv_obj_style.c ****     if(tr == NULL) return;
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccJWWRL1.s 			page 199
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\cclYcovy.s 			page 199
 
 
  5879              		.loc 1 453 5 view .LVU1766
@@ -11938,7 +11938,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccJWWRL1.s 			page 1
  5925              		.loc 3 269 25 is_stmt 1 view .LVU1776
  5926              	.LBB261:
  5927              		.loc 3 271 5 view .LVU1777
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccJWWRL1.s 			page 200
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\cclYcovy.s 			page 200
 
 
  5928              		.loc 3 271 12 is_stmt 0 view .LVU1778
@@ -11998,7 +11998,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccJWWRL1.s 			page 1
  5969 0032 E268     		ldr	r2, [r4, #12]
  5970 0034 2179     		ldrb	r1, [r4, #4]	@ zero_extendqisi2
  5971 0036 0068     		ldr	r0, [r0]
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccJWWRL1.s 			page 201
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\cclYcovy.s 			page 201
 
 
  5972              	.LVL638:
@@ -12058,7 +12058,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccJWWRL1.s 			page 1
  6019 0008 0568     		ldr	r5, [r0]
  6020              	.LVL643:
  963:Middlewares/LVGL/lvgl/src/core/lv_obj_style.c ****     for(i = 0; i < obj->style_cnt; i++) {
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccJWWRL1.s 			page 202
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\cclYcovy.s 			page 202
 
 
  6021              		.loc 1 963 5 is_stmt 1 view .LVU1802
@@ -12118,7 +12118,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccJWWRL1.s 			page 1
  6060 003a 9042     		cmp	r0, r2
  6061 003c E7D1     		bne	.L430
  967:Middlewares/LVGL/lvgl/src/core/lv_obj_style.c ****         switch(tr->prop) {
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccJWWRL1.s 			page 203
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\cclYcovy.s 			page 203
 
 
  6062              		.loc 1 967 9 is_stmt 1 view .LVU1818
@@ -12178,7 +12178,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccJWWRL1.s 			page 1
  6111 0070 6D       		.byte	(.L432-.L434)/2
  6112 0071 6D       		.byte	(.L432-.L434)/2
  6113 0072 6D       		.byte	(.L432-.L434)/2
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccJWWRL1.s 			page 204
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\cclYcovy.s 			page 204
 
 
  6114 0073 6D       		.byte	(.L432-.L434)/2
@@ -12238,7 +12238,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccJWWRL1.s 			page 1
  973:Middlewares/LVGL/lvgl/src/core/lv_obj_style.c ****                 else value_final.num = tr->end_value.num;
  6167              		.loc 1 973 19 is_stmt 0 view .LVU1825
  6168 00a6 FE29     		cmp	r1, #254
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccJWWRL1.s 			page 205
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\cclYcovy.s 			page 205
 
 
  6169 00a8 02DC     		bgt	.L438
@@ -12298,7 +12298,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccJWWRL1.s 			page 1
  6206 00c8 2BB1     		cbz	r3, .L457
  983:Middlewares/LVGL/lvgl/src/core/lv_obj_style.c ****                 else if(v < 128) value_final.ptr = tr->start_value.ptr;
  6207              		.loc 1 983 22 is_stmt 1 view .LVU1843
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccJWWRL1.s 			page 206
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\cclYcovy.s 			page 206
 
 
  983:Middlewares/LVGL/lvgl/src/core/lv_obj_style.c ****                 else if(v < 128) value_final.ptr = tr->start_value.ptr;
@@ -12358,7 +12358,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccJWWRL1.s 			page 1
  6245 00ea 0DDD     		ble	.L445
  996:Middlewares/LVGL/lvgl/src/core/lv_obj_style.c ****                 else value_final.color = lv_color_mix(tr->end_value.color, tr->start_value.color, v
  6246              		.loc 1 996 35 is_stmt 1 discriminator 1 view .LVU1861
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccJWWRL1.s 			page 207
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\cclYcovy.s 			page 207
 
 
  996:Middlewares/LVGL/lvgl/src/core/lv_obj_style.c ****                 else value_final.color = lv_color_mix(tr->end_value.color, tr->start_value.color, v
@@ -12418,7 +12418,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccJWWRL1.s 			page 1
  6289              		.loc 1 1007 9 is_stmt 1 view .LVU1873
 1007:Middlewares/LVGL/lvgl/src/core/lv_obj_style.c ****         bool refr = true;
  6290              		.loc 1 1007 26 is_stmt 0 view .LVU1874
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccJWWRL1.s 			page 208
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\cclYcovy.s 			page 208
 
 
  6291 012e 0023     		movs	r3, #0
@@ -12478,7 +12478,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccJWWRL1.s 			page 1
  6329 0156 9B1A     		subs	r3, r3, r2
 1003:Middlewares/LVGL/lvgl/src/core/lv_obj_style.c ****                 break;
  6330              		.loc 1 1003 63 view .LVU1891
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccJWWRL1.s 			page 209
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\cclYcovy.s 			page 209
 
 
  6331 0158 01FB03F3 		mul	r3, r1, r3
@@ -12538,7 +12538,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccJWWRL1.s 			page 1
  6371 0184 009A     		ldr	r2, [sp]
  6372 0186 2179     		ldrb	r1, [r4, #4]	@ zero_extendqisi2
  6373 0188 9859     		ldr	r0, [r3, r6]
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccJWWRL1.s 			page 210
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\cclYcovy.s 			page 210
 
 
  6374 018a FFF7FEFF 		bl	lv_style_set_prop
@@ -12598,7 +12598,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccJWWRL1.s 			page 1
  6422              		.loc 1 646 1 view -0
  6423              		.cfi_startproc
  6424              		@ args = 0, pretend = 0, frame = 24
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccJWWRL1.s 			page 211
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\cclYcovy.s 			page 211
 
 
  6425              		@ frame_needed = 0, uses_anonymous_args = 0
@@ -12658,7 +12658,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccJWWRL1.s 			page 1
  6467 001a 0493     		str	r3, [sp, #16]
  653:Middlewares/LVGL/lvgl/src/core/lv_obj_style.c **** }
  6468              		.loc 1 653 12 discriminator 1 view .LVU1926
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccJWWRL1.s 			page 212
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\cclYcovy.s 			page 212
 
 
  6469 001c 0020     		movs	r0, #0
@@ -12718,7 +12718,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccJWWRL1.s 			page 1
  6514 0060 8DF80A30 		strb	r3, [sp, #10]
  6515              	.LVL670:
 1494:Middlewares/LVGL/lvgl/src/core/lv_obj_style_gen.h **** }
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccJWWRL1.s 			page 213
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\cclYcovy.s 			page 213
 
 
  6516              		.loc 5 1494 13 view .LVU1936
@@ -12778,7 +12778,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccJWWRL1.s 			page 1
  6565              	.LVL674:
  6566              	.LBB270:
  6567              	.LBI270:
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccJWWRL1.s 			page 214
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\cclYcovy.s 			page 214
 
 
 1491:Middlewares/LVGL/lvgl/src/core/lv_obj_style_gen.h **** {
@@ -12838,7 +12838,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccJWWRL1.s 			page 1
  6608              		.loc 1 663 5 is_stmt 1 view .LVU1957
  663:Middlewares/LVGL/lvgl/src/core/lv_obj_style.c **** 
  6609              		.loc 1 663 14 is_stmt 0 view .LVU1958
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccJWWRL1.s 			page 215
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\cclYcovy.s 			page 215
 
 
  6610 0032 C1B2     		uxtb	r1, r0
@@ -12898,7 +12898,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccJWWRL1.s 			page 1
  6651              		.loc 1 677 5 view .LVU1971
  677:Middlewares/LVGL/lvgl/src/core/lv_obj_style.c **** }
  6652              		.loc 1 677 12 is_stmt 0 view .LVU1972
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccJWWRL1.s 			page 216
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\cclYcovy.s 			page 216
 
 
  6653 0060 039B     		ldr	r3, [sp, #12]
@@ -12958,7 +12958,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccJWWRL1.s 			page 1
  6703 0008 1546     		mov	r5, r2
  6704 000a 1F46     		mov	r7, r3
  685:Middlewares/LVGL/lvgl/src/core/lv_obj_style.c ****     LV_ASSERT_NULL(obj);
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccJWWRL1.s 			page 217
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\cclYcovy.s 			page 217
 
 
  6705              		.loc 1 685 5 is_stmt 1 view .LVU1979
@@ -13018,7 +13018,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccJWWRL1.s 			page 1
  6739              		.loc 1 703 5 is_stmt 1 view .LVU1999
  703:Middlewares/LVGL/lvgl/src/core/lv_obj_style.c ****     p->value = ref_value;
  6740              		.loc 1 703 17 is_stmt 0 view .LVU2000
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccJWWRL1.s 			page 218
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\cclYcovy.s 			page 218
 
 
  6741 002a 4560     		str	r5, [r0, #4]
@@ -13078,7 +13078,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccJWWRL1.s 			page 1
  6781              		.cfi_def_cfa_offset 24
  6782              		.cfi_offset 3, -24
  6783              		.cfi_offset 4, -20
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccJWWRL1.s 			page 219
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\cclYcovy.s 			page 219
 
 
  6784              		.cfi_offset 5, -16
@@ -13138,7 +13138,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccJWWRL1.s 			page 1
  6827              	.LVL698:
  6828              	.LFB228:
  713:Middlewares/LVGL/lvgl/src/core/lv_obj_style.c ****     LV_ASSERT_NULL(subject);
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccJWWRL1.s 			page 220
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\cclYcovy.s 			page 220
 
 
  6829              		.loc 1 713 1 is_stmt 1 view -0
@@ -13198,7 +13198,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccJWWRL1.s 			page 1
  717:Middlewares/LVGL/lvgl/src/core/lv_obj_style.c ****        subject->type != LV_SUBJECT_TYPE_POINTER) {
  6869              		.loc 1 717 87 discriminator 2 view .LVU2043
  6870 001e 042B     		cmp	r3, #4
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccJWWRL1.s 			page 221
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\cclYcovy.s 			page 221
 
 
  6871 0020 13D1     		bne	.L494
@@ -13258,7 +13258,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccJWWRL1.s 			page 1
  6907              		.loc 1 735 5 is_stmt 1 view .LVU2061
  6908              	.LVL704:
  6909              	.L485:
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccJWWRL1.s 			page 222
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\cclYcovy.s 			page 222
 
 
  736:Middlewares/LVGL/lvgl/src/core/lv_obj_style.c **** 
@@ -13318,7 +13318,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccJWWRL1.s 			page 1
  724:Middlewares/LVGL/lvgl/src/core/lv_obj_style.c ****     if(p == NULL) {
  6949              		.loc 1 724 5 view .LVU2077
  6950 0048 FEE7     		b	.L493
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccJWWRL1.s 			page 223
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\cclYcovy.s 			page 223
 
 
  6951              	.LVL707:
@@ -13378,133 +13378,133 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccJWWRL1.s 			page 1
  7004              		.file 44 "Middlewares/LVGL/lvgl/src/core/../core/lv_global.h"
  7005              		.file 45 "Middlewares/LVGL/lvgl/src/core/../misc/../font/../draw/../misc/lv_color_op.h"
  7006              		.file 46 "Middlewares/LVGL/lvgl/src/core/../misc/../font/../draw/../misc/../stdlib/lv_mem.h"
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccJWWRL1.s 			page 224
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\cclYcovy.s 			page 224
 
 
  7007              		.file 47 "Middlewares/LVGL/lvgl/src/core/lv_obj_pos.h"
  7008              		.file 48 "Middlewares/LVGL/lvgl/src/core/lv_obj_tree.h"
  7009              		.file 49 "Middlewares/LVGL/lvgl/src/core/lv_obj_event.h"
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccJWWRL1.s 			page 225
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\cclYcovy.s 			page 225
 
 
 DEFINED SYMBOLS
                             *ABS*:00000000 lv_obj_style.c
-C:\Users\w1785\AppData\Local\Temp\ccJWWRL1.s:21     .text.lv_style_get_prop_inlined:00000000 $t
-C:\Users\w1785\AppData\Local\Temp\ccJWWRL1.s:26     .text.lv_style_get_prop_inlined:00000000 lv_style_get_prop_inlined
-C:\Users\w1785\AppData\Local\Temp\ccJWWRL1.s:165    .text.get_prop_core:00000000 $t
-C:\Users\w1785\AppData\Local\Temp\ccJWWRL1.s:170    .text.get_prop_core:00000000 get_prop_core
-C:\Users\w1785\AppData\Local\Temp\ccJWWRL1.s:504    .text.get_selector_style_prop:00000000 $t
-C:\Users\w1785\AppData\Local\Temp\ccJWWRL1.s:509    .text.get_selector_style_prop:00000000 get_selector_style_prop
-C:\Users\w1785\AppData\Local\Temp\ccJWWRL1.s:719    .text.get_selector_style_prop:0000008c $d
-C:\Users\w1785\AppData\Local\Temp\ccJWWRL1.s:725    .text.trans_delete:00000000 $t
-C:\Users\w1785\AppData\Local\Temp\ccJWWRL1.s:730    .text.trans_delete:00000000 trans_delete
-C:\Users\w1785\AppData\Local\Temp\ccJWWRL1.s:914    .text.trans_delete:000000ac $d
-C:\Users\w1785\AppData\Local\Temp\ccJWWRL1.s:919    .text.style_has_flag:00000000 $t
-C:\Users\w1785\AppData\Local\Temp\ccJWWRL1.s:924    .text.style_has_flag:00000000 style_has_flag
-C:\Users\w1785\AppData\Local\Temp\ccJWWRL1.s:1084   .text.refresh_children_style:00000000 $t
-C:\Users\w1785\AppData\Local\Temp\ccJWWRL1.s:1089   .text.refresh_children_style:00000000 refresh_children_style
-C:\Users\w1785\AppData\Local\Temp\ccJWWRL1.s:1165   .text.get_local_style:00000000 $t
-C:\Users\w1785\AppData\Local\Temp\ccJWWRL1.s:1170   .text.get_local_style:00000000 get_local_style
-C:\Users\w1785\AppData\Local\Temp\ccJWWRL1.s:1380   .text.get_trans_style:00000000 $t
-C:\Users\w1785\AppData\Local\Temp\ccJWWRL1.s:1385   .text.get_trans_style:00000000 get_trans_style
-C:\Users\w1785\AppData\Local\Temp\ccJWWRL1.s:1570   .text.fade_anim_cb:00000000 $t
-C:\Users\w1785\AppData\Local\Temp\ccJWWRL1.s:1575   .text.fade_anim_cb:00000000 fade_anim_cb
-C:\Users\w1785\AppData\Local\Temp\ccJWWRL1.s:1601   .text.lv_obj_style_init:00000000 $t
-C:\Users\w1785\AppData\Local\Temp\ccJWWRL1.s:1607   .text.lv_obj_style_init:00000000 lv_obj_style_init
-C:\Users\w1785\AppData\Local\Temp\ccJWWRL1.s:1628   .text.lv_obj_style_init:0000000c $d
-C:\Users\w1785\AppData\Local\Temp\ccJWWRL1.s:1633   .text.lv_obj_style_deinit:00000000 $t
-C:\Users\w1785\AppData\Local\Temp\ccJWWRL1.s:1639   .text.lv_obj_style_deinit:00000000 lv_obj_style_deinit
-C:\Users\w1785\AppData\Local\Temp\ccJWWRL1.s:1674   .text.lv_obj_style_deinit:0000001c $d
-C:\Users\w1785\AppData\Local\Temp\ccJWWRL1.s:1679   .text.lv_obj_style_get_disabled:00000000 $t
-C:\Users\w1785\AppData\Local\Temp\ccJWWRL1.s:1685   .text.lv_obj_style_get_disabled:00000000 lv_obj_style_get_disabled
-C:\Users\w1785\AppData\Local\Temp\ccJWWRL1.s:1769   .text.lv_obj_enable_style_refresh:00000000 $t
-C:\Users\w1785\AppData\Local\Temp\ccJWWRL1.s:1775   .text.lv_obj_enable_style_refresh:00000000 lv_obj_enable_style_refresh
-C:\Users\w1785\AppData\Local\Temp\ccJWWRL1.s:1792   .text.lv_obj_enable_style_refresh:00000008 $d
-C:\Users\w1785\AppData\Local\Temp\ccJWWRL1.s:1797   .text.lv_obj_get_style_prop:00000000 $t
-C:\Users\w1785\AppData\Local\Temp\ccJWWRL1.s:1803   .text.lv_obj_get_style_prop:00000000 lv_obj_get_style_prop
-C:\Users\w1785\AppData\Local\Temp\ccJWWRL1.s:1891   .text.calculate_layer_type:00000000 $t
-C:\Users\w1785\AppData\Local\Temp\ccJWWRL1.s:1896   .text.calculate_layer_type:00000000 calculate_layer_type
-C:\Users\w1785\AppData\Local\Temp\ccJWWRL1.s:2134   .text.lv_obj_has_style_prop:00000000 $t
-C:\Users\w1785\AppData\Local\Temp\ccJWWRL1.s:2140   .text.lv_obj_has_style_prop:00000000 lv_obj_has_style_prop
-C:\Users\w1785\AppData\Local\Temp\ccJWWRL1.s:2208   .text.lv_obj_get_local_style_prop:00000000 $t
-C:\Users\w1785\AppData\Local\Temp\ccJWWRL1.s:2214   .text.lv_obj_get_local_style_prop:00000000 lv_obj_get_local_style_prop
-C:\Users\w1785\AppData\Local\Temp\ccJWWRL1.s:2286   .text.lv_obj_style_apply_color_filter:00000000 $t
-C:\Users\w1785\AppData\Local\Temp\ccJWWRL1.s:2292   .text.lv_obj_style_apply_color_filter:00000000 lv_obj_style_apply_color_filter
-C:\Users\w1785\AppData\Local\Temp\ccJWWRL1.s:2324   .text.lv_obj_style_state_compare:00000000 $t
-C:\Users\w1785\AppData\Local\Temp\ccJWWRL1.s:2330   .text.lv_obj_style_state_compare:00000000 lv_obj_style_state_compare
-C:\Users\w1785\AppData\Local\Temp\ccJWWRL1.s:2857   .text.lv_obj_fade_in:00000000 $t
-C:\Users\w1785\AppData\Local\Temp\ccJWWRL1.s:2863   .text.lv_obj_fade_in:00000000 lv_obj_fade_in
-C:\Users\w1785\AppData\Local\Temp\ccJWWRL1.s:2938   .text.lv_obj_fade_in:0000004c $d
-C:\Users\w1785\AppData\Local\Temp\ccJWWRL1.s:5536   .text.fade_in_anim_completed:00000000 fade_in_anim_completed
-C:\Users\w1785\AppData\Local\Temp\ccJWWRL1.s:2944   .text.lv_obj_fade_out:00000000 $t
-C:\Users\w1785\AppData\Local\Temp\ccJWWRL1.s:2950   .text.lv_obj_fade_out:00000000 lv_obj_fade_out
-C:\Users\w1785\AppData\Local\Temp\ccJWWRL1.s:3039   .text.lv_obj_fade_out:00000054 $d
-C:\Users\w1785\AppData\Local\Temp\ccJWWRL1.s:3044   .text.lv_obj_calculate_style_text_align:00000000 $t
-C:\Users\w1785\AppData\Local\Temp\ccJWWRL1.s:3050   .text.lv_obj_calculate_style_text_align:00000000 lv_obj_calculate_style_text_align
-C:\Users\w1785\AppData\Local\Temp\ccJWWRL1.s:3141   .text.lv_obj_get_style_opa_recursive:00000000 $t
-C:\Users\w1785\AppData\Local\Temp\ccJWWRL1.s:3147   .text.lv_obj_get_style_opa_recursive:00000000 lv_obj_get_style_opa_recursive
-C:\Users\w1785\AppData\Local\Temp\ccJWWRL1.s:3325   .text.lv_obj_update_layer_type:00000000 $t
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccJWWRL1.s 			page 226
+C:\Users\w1785\AppData\Local\Temp\cclYcovy.s:21     .text.lv_style_get_prop_inlined:00000000 $t
+C:\Users\w1785\AppData\Local\Temp\cclYcovy.s:26     .text.lv_style_get_prop_inlined:00000000 lv_style_get_prop_inlined
+C:\Users\w1785\AppData\Local\Temp\cclYcovy.s:165    .text.get_prop_core:00000000 $t
+C:\Users\w1785\AppData\Local\Temp\cclYcovy.s:170    .text.get_prop_core:00000000 get_prop_core
+C:\Users\w1785\AppData\Local\Temp\cclYcovy.s:504    .text.get_selector_style_prop:00000000 $t
+C:\Users\w1785\AppData\Local\Temp\cclYcovy.s:509    .text.get_selector_style_prop:00000000 get_selector_style_prop
+C:\Users\w1785\AppData\Local\Temp\cclYcovy.s:719    .text.get_selector_style_prop:0000008c $d
+C:\Users\w1785\AppData\Local\Temp\cclYcovy.s:725    .text.trans_delete:00000000 $t
+C:\Users\w1785\AppData\Local\Temp\cclYcovy.s:730    .text.trans_delete:00000000 trans_delete
+C:\Users\w1785\AppData\Local\Temp\cclYcovy.s:914    .text.trans_delete:000000ac $d
+C:\Users\w1785\AppData\Local\Temp\cclYcovy.s:919    .text.style_has_flag:00000000 $t
+C:\Users\w1785\AppData\Local\Temp\cclYcovy.s:924    .text.style_has_flag:00000000 style_has_flag
+C:\Users\w1785\AppData\Local\Temp\cclYcovy.s:1084   .text.refresh_children_style:00000000 $t
+C:\Users\w1785\AppData\Local\Temp\cclYcovy.s:1089   .text.refresh_children_style:00000000 refresh_children_style
+C:\Users\w1785\AppData\Local\Temp\cclYcovy.s:1165   .text.get_local_style:00000000 $t
+C:\Users\w1785\AppData\Local\Temp\cclYcovy.s:1170   .text.get_local_style:00000000 get_local_style
+C:\Users\w1785\AppData\Local\Temp\cclYcovy.s:1380   .text.get_trans_style:00000000 $t
+C:\Users\w1785\AppData\Local\Temp\cclYcovy.s:1385   .text.get_trans_style:00000000 get_trans_style
+C:\Users\w1785\AppData\Local\Temp\cclYcovy.s:1570   .text.fade_anim_cb:00000000 $t
+C:\Users\w1785\AppData\Local\Temp\cclYcovy.s:1575   .text.fade_anim_cb:00000000 fade_anim_cb
+C:\Users\w1785\AppData\Local\Temp\cclYcovy.s:1601   .text.lv_obj_style_init:00000000 $t
+C:\Users\w1785\AppData\Local\Temp\cclYcovy.s:1607   .text.lv_obj_style_init:00000000 lv_obj_style_init
+C:\Users\w1785\AppData\Local\Temp\cclYcovy.s:1628   .text.lv_obj_style_init:0000000c $d
+C:\Users\w1785\AppData\Local\Temp\cclYcovy.s:1633   .text.lv_obj_style_deinit:00000000 $t
+C:\Users\w1785\AppData\Local\Temp\cclYcovy.s:1639   .text.lv_obj_style_deinit:00000000 lv_obj_style_deinit
+C:\Users\w1785\AppData\Local\Temp\cclYcovy.s:1674   .text.lv_obj_style_deinit:0000001c $d
+C:\Users\w1785\AppData\Local\Temp\cclYcovy.s:1679   .text.lv_obj_style_get_disabled:00000000 $t
+C:\Users\w1785\AppData\Local\Temp\cclYcovy.s:1685   .text.lv_obj_style_get_disabled:00000000 lv_obj_style_get_disabled
+C:\Users\w1785\AppData\Local\Temp\cclYcovy.s:1769   .text.lv_obj_enable_style_refresh:00000000 $t
+C:\Users\w1785\AppData\Local\Temp\cclYcovy.s:1775   .text.lv_obj_enable_style_refresh:00000000 lv_obj_enable_style_refresh
+C:\Users\w1785\AppData\Local\Temp\cclYcovy.s:1792   .text.lv_obj_enable_style_refresh:00000008 $d
+C:\Users\w1785\AppData\Local\Temp\cclYcovy.s:1797   .text.lv_obj_get_style_prop:00000000 $t
+C:\Users\w1785\AppData\Local\Temp\cclYcovy.s:1803   .text.lv_obj_get_style_prop:00000000 lv_obj_get_style_prop
+C:\Users\w1785\AppData\Local\Temp\cclYcovy.s:1891   .text.calculate_layer_type:00000000 $t
+C:\Users\w1785\AppData\Local\Temp\cclYcovy.s:1896   .text.calculate_layer_type:00000000 calculate_layer_type
+C:\Users\w1785\AppData\Local\Temp\cclYcovy.s:2134   .text.lv_obj_has_style_prop:00000000 $t
+C:\Users\w1785\AppData\Local\Temp\cclYcovy.s:2140   .text.lv_obj_has_style_prop:00000000 lv_obj_has_style_prop
+C:\Users\w1785\AppData\Local\Temp\cclYcovy.s:2208   .text.lv_obj_get_local_style_prop:00000000 $t
+C:\Users\w1785\AppData\Local\Temp\cclYcovy.s:2214   .text.lv_obj_get_local_style_prop:00000000 lv_obj_get_local_style_prop
+C:\Users\w1785\AppData\Local\Temp\cclYcovy.s:2286   .text.lv_obj_style_apply_color_filter:00000000 $t
+C:\Users\w1785\AppData\Local\Temp\cclYcovy.s:2292   .text.lv_obj_style_apply_color_filter:00000000 lv_obj_style_apply_color_filter
+C:\Users\w1785\AppData\Local\Temp\cclYcovy.s:2324   .text.lv_obj_style_state_compare:00000000 $t
+C:\Users\w1785\AppData\Local\Temp\cclYcovy.s:2330   .text.lv_obj_style_state_compare:00000000 lv_obj_style_state_compare
+C:\Users\w1785\AppData\Local\Temp\cclYcovy.s:2857   .text.lv_obj_fade_in:00000000 $t
+C:\Users\w1785\AppData\Local\Temp\cclYcovy.s:2863   .text.lv_obj_fade_in:00000000 lv_obj_fade_in
+C:\Users\w1785\AppData\Local\Temp\cclYcovy.s:2938   .text.lv_obj_fade_in:0000004c $d
+C:\Users\w1785\AppData\Local\Temp\cclYcovy.s:5536   .text.fade_in_anim_completed:00000000 fade_in_anim_completed
+C:\Users\w1785\AppData\Local\Temp\cclYcovy.s:2944   .text.lv_obj_fade_out:00000000 $t
+C:\Users\w1785\AppData\Local\Temp\cclYcovy.s:2950   .text.lv_obj_fade_out:00000000 lv_obj_fade_out
+C:\Users\w1785\AppData\Local\Temp\cclYcovy.s:3039   .text.lv_obj_fade_out:00000054 $d
+C:\Users\w1785\AppData\Local\Temp\cclYcovy.s:3044   .text.lv_obj_calculate_style_text_align:00000000 $t
+C:\Users\w1785\AppData\Local\Temp\cclYcovy.s:3050   .text.lv_obj_calculate_style_text_align:00000000 lv_obj_calculate_style_text_align
+C:\Users\w1785\AppData\Local\Temp\cclYcovy.s:3141   .text.lv_obj_get_style_opa_recursive:00000000 $t
+C:\Users\w1785\AppData\Local\Temp\cclYcovy.s:3147   .text.lv_obj_get_style_opa_recursive:00000000 lv_obj_get_style_opa_recursive
+C:\Users\w1785\AppData\Local\Temp\cclYcovy.s:3325   .text.lv_obj_update_layer_type:00000000 $t
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\cclYcovy.s 			page 226
 
 
-C:\Users\w1785\AppData\Local\Temp\ccJWWRL1.s:3331   .text.lv_obj_update_layer_type:00000000 lv_obj_update_layer_type
-C:\Users\w1785\AppData\Local\Temp\ccJWWRL1.s:3396   .text.lv_obj_refresh_style:00000000 $t
-C:\Users\w1785\AppData\Local\Temp\ccJWWRL1.s:3402   .text.lv_obj_refresh_style:00000000 lv_obj_refresh_style
-C:\Users\w1785\AppData\Local\Temp\ccJWWRL1.s:3699   .text.lv_obj_refresh_style:000000f8 $d
-C:\Users\w1785\AppData\Local\Temp\ccJWWRL1.s:3704   .text.lv_obj_replace_style:00000000 $t
-C:\Users\w1785\AppData\Local\Temp\ccJWWRL1.s:3710   .text.lv_obj_replace_style:00000000 lv_obj_replace_style
-C:\Users\w1785\AppData\Local\Temp\ccJWWRL1.s:3958   .text.remove_style_core:00000000 $t
-C:\Users\w1785\AppData\Local\Temp\ccJWWRL1.s:3963   .text.remove_style_core:00000000 remove_style_core
-C:\Users\w1785\AppData\Local\Temp\ccJWWRL1.s:4303   .text.lv_obj_remove_style:00000000 $t
-C:\Users\w1785\AppData\Local\Temp\ccJWWRL1.s:4309   .text.lv_obj_remove_style:00000000 lv_obj_remove_style
-C:\Users\w1785\AppData\Local\Temp\ccJWWRL1.s:4332   .text.lv_obj_remove_style_all:00000000 $t
-C:\Users\w1785\AppData\Local\Temp\ccJWWRL1.s:4338   .text.lv_obj_remove_style_all:00000000 lv_obj_remove_style_all
-C:\Users\w1785\AppData\Local\Temp\ccJWWRL1.s:4361   .text.lv_obj_remove_style_all:0000000c $d
-C:\Users\w1785\AppData\Local\Temp\ccJWWRL1.s:4366   .text.trans_anim_completed_cb:00000000 $t
-C:\Users\w1785\AppData\Local\Temp\ccJWWRL1.s:4371   .text.trans_anim_completed_cb:00000000 trans_anim_completed_cb
-C:\Users\w1785\AppData\Local\Temp\ccJWWRL1.s:4557   .text.trans_anim_completed_cb:000000b4 $d
-C:\Users\w1785\AppData\Local\Temp\ccJWWRL1.s:4562   .text.lv_obj_remove_theme:00000000 $t
-C:\Users\w1785\AppData\Local\Temp\ccJWWRL1.s:4568   .text.lv_obj_remove_theme:00000000 lv_obj_remove_theme
-C:\Users\w1785\AppData\Local\Temp\ccJWWRL1.s:4595   .text.lv_obj_add_style:00000000 $t
-C:\Users\w1785\AppData\Local\Temp\ccJWWRL1.s:4601   .text.lv_obj_add_style:00000000 lv_obj_add_style
-C:\Users\w1785\AppData\Local\Temp\ccJWWRL1.s:4842   .text.report_style_change_core:00000000 $t
-C:\Users\w1785\AppData\Local\Temp\ccJWWRL1.s:4847   .text.report_style_change_core:00000000 report_style_change_core
-C:\Users\w1785\AppData\Local\Temp\ccJWWRL1.s:4950   .text.lv_obj_report_style_change:00000000 $t
-C:\Users\w1785\AppData\Local\Temp\ccJWWRL1.s:4956   .text.lv_obj_report_style_change:00000000 lv_obj_report_style_change
-C:\Users\w1785\AppData\Local\Temp\ccJWWRL1.s:5038   .text.lv_obj_report_style_change:00000040 $d
-C:\Users\w1785\AppData\Local\Temp\ccJWWRL1.s:5043   .text.lv_obj_style_set_disabled:00000000 $t
-C:\Users\w1785\AppData\Local\Temp\ccJWWRL1.s:5049   .text.lv_obj_style_set_disabled:00000000 lv_obj_style_set_disabled
-C:\Users\w1785\AppData\Local\Temp\ccJWWRL1.s:5138   .text.bind_style_observer_cb:00000000 $t
-C:\Users\w1785\AppData\Local\Temp\ccJWWRL1.s:5143   .text.bind_style_observer_cb:00000000 bind_style_observer_cb
-C:\Users\w1785\AppData\Local\Temp\ccJWWRL1.s:5194   .text.lv_obj_set_local_style_prop:00000000 $t
-C:\Users\w1785\AppData\Local\Temp\ccJWWRL1.s:5200   .text.lv_obj_set_local_style_prop:00000000 lv_obj_set_local_style_prop
-C:\Users\w1785\AppData\Local\Temp\ccJWWRL1.s:5307   .text.bind_style_prop_observer_cb:00000000 $t
-C:\Users\w1785\AppData\Local\Temp\ccJWWRL1.s:5312   .text.bind_style_prop_observer_cb:00000000 bind_style_prop_observer_cb
-C:\Users\w1785\AppData\Local\Temp\ccJWWRL1.s:5402   .text.lv_obj_remove_local_style_prop:00000000 $t
-C:\Users\w1785\AppData\Local\Temp\ccJWWRL1.s:5408   .text.lv_obj_remove_local_style_prop:00000000 lv_obj_remove_local_style_prop
-C:\Users\w1785\AppData\Local\Temp\ccJWWRL1.s:5531   .text.fade_in_anim_completed:00000000 $t
-C:\Users\w1785\AppData\Local\Temp\ccJWWRL1.s:5563   .text.lv_obj_style_create_transition:00000000 $t
-C:\Users\w1785\AppData\Local\Temp\ccJWWRL1.s:5569   .text.lv_obj_style_create_transition:00000000 lv_obj_style_create_transition
-C:\Users\w1785\AppData\Local\Temp\ccJWWRL1.s:5887   .text.lv_obj_style_create_transition:0000016c $d
-C:\Users\w1785\AppData\Local\Temp\ccJWWRL1.s:5994   .text.trans_anim_cb:00000000 trans_anim_cb
-C:\Users\w1785\AppData\Local\Temp\ccJWWRL1.s:5900   .text.trans_anim_start_cb:00000000 trans_anim_start_cb
-C:\Users\w1785\AppData\Local\Temp\ccJWWRL1.s:5895   .text.trans_anim_start_cb:00000000 $t
-C:\Users\w1785\AppData\Local\Temp\ccJWWRL1.s:5989   .text.trans_anim_cb:00000000 $t
-C:\Users\w1785\AppData\Local\Temp\ccJWWRL1.s:6077   .text.trans_anim_cb:0000004e $d
-C:\Users\w1785\AppData\Local\Temp\ccJWWRL1.s:6413   .text.lv_obj_style_apply_recolor:00000000 $t
-C:\Users\w1785\AppData\Local\Temp\ccJWWRL1.s:6419   .text.lv_obj_style_apply_recolor:00000000 lv_obj_style_apply_recolor
-C:\Users\w1785\AppData\Local\Temp\ccJWWRL1.s:6538   .text.lv_obj_get_style_recolor_recursive:00000000 $t
-C:\Users\w1785\AppData\Local\Temp\ccJWWRL1.s:6544   .text.lv_obj_get_style_recolor_recursive:00000000 lv_obj_get_style_recolor_recursive
-C:\Users\w1785\AppData\Local\Temp\ccJWWRL1.s:6675   .text.lv_obj_bind_style:00000000 $t
-C:\Users\w1785\AppData\Local\Temp\ccJWWRL1.s:6681   .text.lv_obj_bind_style:00000000 lv_obj_bind_style
-C:\Users\w1785\AppData\Local\Temp\ccJWWRL1.s:6815   .text.lv_obj_bind_style:00000050 $d
-C:\Users\w1785\AppData\Local\Temp\ccJWWRL1.s:6820   .text.lv_obj_bind_style_prop:00000000 $t
-C:\Users\w1785\AppData\Local\Temp\ccJWWRL1.s:6826   .text.lv_obj_bind_style_prop:00000000 lv_obj_bind_style_prop
-C:\Users\w1785\AppData\Local\Temp\ccJWWRL1.s:6961   .text.lv_obj_bind_style_prop:00000050 $d
-C:\Users\w1785\AppData\Local\Temp\ccJWWRL1.s:6164   .text.trans_anim_cb:000000a5 $d
-C:\Users\w1785\AppData\Local\Temp\ccJWWRL1.s:6164   .text.trans_anim_cb:000000a6 $t
+C:\Users\w1785\AppData\Local\Temp\cclYcovy.s:3331   .text.lv_obj_update_layer_type:00000000 lv_obj_update_layer_type
+C:\Users\w1785\AppData\Local\Temp\cclYcovy.s:3396   .text.lv_obj_refresh_style:00000000 $t
+C:\Users\w1785\AppData\Local\Temp\cclYcovy.s:3402   .text.lv_obj_refresh_style:00000000 lv_obj_refresh_style
+C:\Users\w1785\AppData\Local\Temp\cclYcovy.s:3699   .text.lv_obj_refresh_style:000000f8 $d
+C:\Users\w1785\AppData\Local\Temp\cclYcovy.s:3704   .text.lv_obj_replace_style:00000000 $t
+C:\Users\w1785\AppData\Local\Temp\cclYcovy.s:3710   .text.lv_obj_replace_style:00000000 lv_obj_replace_style
+C:\Users\w1785\AppData\Local\Temp\cclYcovy.s:3958   .text.remove_style_core:00000000 $t
+C:\Users\w1785\AppData\Local\Temp\cclYcovy.s:3963   .text.remove_style_core:00000000 remove_style_core
+C:\Users\w1785\AppData\Local\Temp\cclYcovy.s:4303   .text.lv_obj_remove_style:00000000 $t
+C:\Users\w1785\AppData\Local\Temp\cclYcovy.s:4309   .text.lv_obj_remove_style:00000000 lv_obj_remove_style
+C:\Users\w1785\AppData\Local\Temp\cclYcovy.s:4332   .text.lv_obj_remove_style_all:00000000 $t
+C:\Users\w1785\AppData\Local\Temp\cclYcovy.s:4338   .text.lv_obj_remove_style_all:00000000 lv_obj_remove_style_all
+C:\Users\w1785\AppData\Local\Temp\cclYcovy.s:4361   .text.lv_obj_remove_style_all:0000000c $d
+C:\Users\w1785\AppData\Local\Temp\cclYcovy.s:4366   .text.trans_anim_completed_cb:00000000 $t
+C:\Users\w1785\AppData\Local\Temp\cclYcovy.s:4371   .text.trans_anim_completed_cb:00000000 trans_anim_completed_cb
+C:\Users\w1785\AppData\Local\Temp\cclYcovy.s:4557   .text.trans_anim_completed_cb:000000b4 $d
+C:\Users\w1785\AppData\Local\Temp\cclYcovy.s:4562   .text.lv_obj_remove_theme:00000000 $t
+C:\Users\w1785\AppData\Local\Temp\cclYcovy.s:4568   .text.lv_obj_remove_theme:00000000 lv_obj_remove_theme
+C:\Users\w1785\AppData\Local\Temp\cclYcovy.s:4595   .text.lv_obj_add_style:00000000 $t
+C:\Users\w1785\AppData\Local\Temp\cclYcovy.s:4601   .text.lv_obj_add_style:00000000 lv_obj_add_style
+C:\Users\w1785\AppData\Local\Temp\cclYcovy.s:4842   .text.report_style_change_core:00000000 $t
+C:\Users\w1785\AppData\Local\Temp\cclYcovy.s:4847   .text.report_style_change_core:00000000 report_style_change_core
+C:\Users\w1785\AppData\Local\Temp\cclYcovy.s:4950   .text.lv_obj_report_style_change:00000000 $t
+C:\Users\w1785\AppData\Local\Temp\cclYcovy.s:4956   .text.lv_obj_report_style_change:00000000 lv_obj_report_style_change
+C:\Users\w1785\AppData\Local\Temp\cclYcovy.s:5038   .text.lv_obj_report_style_change:00000040 $d
+C:\Users\w1785\AppData\Local\Temp\cclYcovy.s:5043   .text.lv_obj_style_set_disabled:00000000 $t
+C:\Users\w1785\AppData\Local\Temp\cclYcovy.s:5049   .text.lv_obj_style_set_disabled:00000000 lv_obj_style_set_disabled
+C:\Users\w1785\AppData\Local\Temp\cclYcovy.s:5138   .text.bind_style_observer_cb:00000000 $t
+C:\Users\w1785\AppData\Local\Temp\cclYcovy.s:5143   .text.bind_style_observer_cb:00000000 bind_style_observer_cb
+C:\Users\w1785\AppData\Local\Temp\cclYcovy.s:5194   .text.lv_obj_set_local_style_prop:00000000 $t
+C:\Users\w1785\AppData\Local\Temp\cclYcovy.s:5200   .text.lv_obj_set_local_style_prop:00000000 lv_obj_set_local_style_prop
+C:\Users\w1785\AppData\Local\Temp\cclYcovy.s:5307   .text.bind_style_prop_observer_cb:00000000 $t
+C:\Users\w1785\AppData\Local\Temp\cclYcovy.s:5312   .text.bind_style_prop_observer_cb:00000000 bind_style_prop_observer_cb
+C:\Users\w1785\AppData\Local\Temp\cclYcovy.s:5402   .text.lv_obj_remove_local_style_prop:00000000 $t
+C:\Users\w1785\AppData\Local\Temp\cclYcovy.s:5408   .text.lv_obj_remove_local_style_prop:00000000 lv_obj_remove_local_style_prop
+C:\Users\w1785\AppData\Local\Temp\cclYcovy.s:5531   .text.fade_in_anim_completed:00000000 $t
+C:\Users\w1785\AppData\Local\Temp\cclYcovy.s:5563   .text.lv_obj_style_create_transition:00000000 $t
+C:\Users\w1785\AppData\Local\Temp\cclYcovy.s:5569   .text.lv_obj_style_create_transition:00000000 lv_obj_style_create_transition
+C:\Users\w1785\AppData\Local\Temp\cclYcovy.s:5887   .text.lv_obj_style_create_transition:0000016c $d
+C:\Users\w1785\AppData\Local\Temp\cclYcovy.s:5994   .text.trans_anim_cb:00000000 trans_anim_cb
+C:\Users\w1785\AppData\Local\Temp\cclYcovy.s:5900   .text.trans_anim_start_cb:00000000 trans_anim_start_cb
+C:\Users\w1785\AppData\Local\Temp\cclYcovy.s:5895   .text.trans_anim_start_cb:00000000 $t
+C:\Users\w1785\AppData\Local\Temp\cclYcovy.s:5989   .text.trans_anim_cb:00000000 $t
+C:\Users\w1785\AppData\Local\Temp\cclYcovy.s:6077   .text.trans_anim_cb:0000004e $d
+C:\Users\w1785\AppData\Local\Temp\cclYcovy.s:6413   .text.lv_obj_style_apply_recolor:00000000 $t
+C:\Users\w1785\AppData\Local\Temp\cclYcovy.s:6419   .text.lv_obj_style_apply_recolor:00000000 lv_obj_style_apply_recolor
+C:\Users\w1785\AppData\Local\Temp\cclYcovy.s:6538   .text.lv_obj_get_style_recolor_recursive:00000000 $t
+C:\Users\w1785\AppData\Local\Temp\cclYcovy.s:6544   .text.lv_obj_get_style_recolor_recursive:00000000 lv_obj_get_style_recolor_recursive
+C:\Users\w1785\AppData\Local\Temp\cclYcovy.s:6675   .text.lv_obj_bind_style:00000000 $t
+C:\Users\w1785\AppData\Local\Temp\cclYcovy.s:6681   .text.lv_obj_bind_style:00000000 lv_obj_bind_style
+C:\Users\w1785\AppData\Local\Temp\cclYcovy.s:6815   .text.lv_obj_bind_style:00000050 $d
+C:\Users\w1785\AppData\Local\Temp\cclYcovy.s:6820   .text.lv_obj_bind_style_prop:00000000 $t
+C:\Users\w1785\AppData\Local\Temp\cclYcovy.s:6826   .text.lv_obj_bind_style_prop:00000000 lv_obj_bind_style_prop
+C:\Users\w1785\AppData\Local\Temp\cclYcovy.s:6961   .text.lv_obj_bind_style_prop:00000050 $d
+C:\Users\w1785\AppData\Local\Temp\cclYcovy.s:6164   .text.trans_anim_cb:000000a5 $d
+C:\Users\w1785\AppData\Local\Temp\cclYcovy.s:6164   .text.trans_anim_cb:000000a6 $t
 
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccJWWRL1.s 			page 227
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\cclYcovy.s 			page 227
 
 
 UNDEFINED SYMBOLS

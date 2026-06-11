@@ -41,6 +41,8 @@ Core/Src/gpio.c \
 Core/Src/lv_port_disp.c \
 Application/Src/app_main.c \
 Services/Src/display_service.c \
+Services/Src/display_ui_format.c \
+Services/Src/humidifier_symbol_font.c \
 Services/Src/sensor_service.c \
 DeviceDrivers/LCD/Src/st7789.c \
 DeviceDrivers/Sensor/Src/aht20.c \
@@ -157,6 +159,7 @@ C_INCLUDES =  \
 ASFLAGS = $(MCU) $(AS_DEFS) $(AS_INCLUDES) $(OPT) -Wall -fdata-sections -ffunction-sections
 
 CFLAGS += $(MCU) $(C_DEFS) $(C_INCLUDES) $(OPT) -Wall -fdata-sections -ffunction-sections
+CFLAGS += -finput-charset=UTF-8 -fexec-charset=UTF-8
 
 ifeq ($(DEBUG), 1)
 CFLAGS += -g -gdwarf-2

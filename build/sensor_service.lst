@@ -1,4 +1,4 @@
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccGkzTA2.s 			page 1
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccpiDRHu.s 			page 1
 
 
    1              		.cpu cortex-m4
@@ -58,7 +58,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccGkzTA2.s 			page 1
   42 0006 1360     		str	r3, [r2]	@ float
   15:Services/Src/sensor_service.c **** 
   16:Services/Src/sensor_service.c ****   /* 初始化前先清空缓存湿度。 */
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccGkzTA2.s 			page 2
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccpiDRHu.s 			page 2
 
 
   17:Services/Src/sensor_service.c ****   s_sensor_data.humidity = 0.0f;
@@ -118,7 +118,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccGkzTA2.s 			page 1
   73              	.L3:
   32:Services/Src/sensor_service.c ****   }
   74              		.loc 1 32 12 view .LVU18
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccGkzTA2.s 			page 3
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccpiDRHu.s 			page 3
 
 
   75 0024 0120     		movs	r0, #1
@@ -178,7 +178,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccGkzTA2.s 			page 1
   55:Services/Src/sensor_service.c ****     return SENSOR_SERVICE_NOT_INIT;
   56:Services/Src/sensor_service.c ****   }
   57:Services/Src/sensor_service.c **** 
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccGkzTA2.s 			page 4
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccpiDRHu.s 			page 4
 
 
   58:Services/Src/sensor_service.c ****   /* 调用 AHT20 设备驱动层读取一次温湿度数据。 */
@@ -238,7 +238,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccGkzTA2.s 			page 1
  149              		.cfi_restore_state
   62:Services/Src/sensor_service.c **** 
  150              		.loc 1 62 5 is_stmt 1 view .LVU37
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccGkzTA2.s 			page 5
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccpiDRHu.s 			page 5
 
 
   62:Services/Src/sensor_service.c **** 
@@ -298,7 +298,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccGkzTA2.s 			page 1
   90:Services/Src/sensor_service.c ****   /* 如果服务还没有初始化成功，不允许进入周期读取。 */
   91:Services/Src/sensor_service.c ****   if (s_sensor_initialized == 0U)
  193              		.loc 1 91 3 is_stmt 1 view .LVU45
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccGkzTA2.s 			page 6
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccpiDRHu.s 			page 6
 
 
  194              		.loc 1 91 28 is_stmt 0 view .LVU46
@@ -358,7 +358,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccGkzTA2.s 			page 1
  225              	.LVL6:
  226              	.L17:
   94:Services/Src/sensor_service.c ****   }
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccGkzTA2.s 			page 7
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccpiDRHu.s 			page 7
 
 
  227              		.loc 1 94 12 view .LVU58
@@ -418,7 +418,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccGkzTA2.s 			page 1
  127:Services/Src/sensor_service.c ****   {
  128:Services/Src/sensor_service.c ****     /* 当前没有有效数据，返回错误。 */
  129:Services/Src/sensor_service.c ****     return SENSOR_SERVICE_ERROR;
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccGkzTA2.s 			page 8
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccpiDRHu.s 			page 8
 
 
  130:Services/Src/sensor_service.c ****   }
@@ -478,7 +478,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccGkzTA2.s 			page 1
  302              		.cfi_endproc
  303              	.LFE135:
  305              		.section	.text.SensorService_GetTemperature,"ax",%progbits
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccGkzTA2.s 			page 9
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccpiDRHu.s 			page 9
 
 
  306              		.align	1
@@ -538,7 +538,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccGkzTA2.s 			page 1
  344              		.align	1
  345              		.global	SensorService_GetHumidity
  346              		.syntax unified
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccGkzTA2.s 			page 10
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccpiDRHu.s 			page 10
 
 
  347              		.thumb
@@ -598,7 +598,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccGkzTA2.s 			page 1
  385              		.thumb
  386              		.thumb_func
  388              	SensorService_IsDataValid:
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccGkzTA2.s 			page 11
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccpiDRHu.s 			page 11
 
 
  389              	.LFB138:
@@ -658,7 +658,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccGkzTA2.s 			page 1
  198:Services/Src/sensor_service.c ****  * @retval 1 表示已经初始化成功，0 表示未初始化或初始化失败。
  199:Services/Src/sensor_service.c ****  */
  200:Services/Src/sensor_service.c **** uint8_t SensorService_IsInitialized(void)
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccGkzTA2.s 			page 12
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccpiDRHu.s 			page 12
 
 
  201:Services/Src/sensor_service.c **** {
@@ -718,7 +718,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccGkzTA2.s 			page 1
  459              		.loc 1 220 1 is_stmt 1 view -0
  460              		.cfi_startproc
  461              		@ args = 0, pretend = 0, frame = 0
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccGkzTA2.s 			page 13
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccpiDRHu.s 			page 13
 
 
  462              		@ frame_needed = 0, uses_anonymous_args = 0
@@ -778,7 +778,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccGkzTA2.s 			page 1
  249:Services/Src/sensor_service.c ****   *temperature = s_sensor_data.temperature;
  487              		.loc 1 249 3 is_stmt 1 view .LVU119
  488              		.loc 1 249 31 is_stmt 0 view .LVU120
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccGkzTA2.s 			page 14
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccpiDRHu.s 			page 14
 
 
  489 0010 044B     		ldr	r3, .L59
@@ -838,7 +838,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccGkzTA2.s 			page 1
  533              		.cfi_endproc
  534              	.LFE140:
  536              		.section	.bss.s_last_update_tick,"aw",%nobits
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccGkzTA2.s 			page 15
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccpiDRHu.s 			page 15
 
 
  537              		.align	2
@@ -860,44 +860,44 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccGkzTA2.s 			page 1
  557              		.file 4 "DeviceDrivers/Sensor/Inc/aht20.h"
  558              		.file 5 "Services/Inc/sensor_service.h"
  559              		.file 6 "Drivers/STM32G4xx_HAL_Driver/Inc/stm32g4xx_hal.h"
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccGkzTA2.s 			page 16
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccpiDRHu.s 			page 16
 
 
 DEFINED SYMBOLS
                             *ABS*:00000000 sensor_service.c
-C:\Users\w1785\AppData\Local\Temp\ccGkzTA2.s:21     .text.SensorService_Init:00000000 $t
-C:\Users\w1785\AppData\Local\Temp\ccGkzTA2.s:27     .text.SensorService_Init:00000000 SensorService_Init
-C:\Users\w1785\AppData\Local\Temp\ccGkzTA2.s:80     .text.SensorService_Init:00000028 $d
-C:\Users\w1785\AppData\Local\Temp\ccGkzTA2.s:551    .bss.s_sensor_data:00000000 s_sensor_data
-C:\Users\w1785\AppData\Local\Temp\ccGkzTA2.s:545    .bss.s_sensor_initialized:00000000 s_sensor_initialized
-C:\Users\w1785\AppData\Local\Temp\ccGkzTA2.s:540    .bss.s_last_update_tick:00000000 s_last_update_tick
-C:\Users\w1785\AppData\Local\Temp\ccGkzTA2.s:87     .text.SensorService_Update:00000000 $t
-C:\Users\w1785\AppData\Local\Temp\ccGkzTA2.s:93     .text.SensorService_Update:00000000 SensorService_Update
-C:\Users\w1785\AppData\Local\Temp\ccGkzTA2.s:166    .text.SensorService_Update:00000038 $d
-C:\Users\w1785\AppData\Local\Temp\ccGkzTA2.s:172    .text.SensorService_UpdatePeriodic:00000000 $t
-C:\Users\w1785\AppData\Local\Temp\ccGkzTA2.s:178    .text.SensorService_UpdatePeriodic:00000000 SensorService_UpdatePeriodic
-C:\Users\w1785\AppData\Local\Temp\ccGkzTA2.s:235    .text.SensorService_UpdatePeriodic:0000002c $d
-C:\Users\w1785\AppData\Local\Temp\ccGkzTA2.s:241    .text.SensorService_GetData:00000000 $t
-C:\Users\w1785\AppData\Local\Temp\ccGkzTA2.s:247    .text.SensorService_GetData:00000000 SensorService_GetData
-C:\Users\w1785\AppData\Local\Temp\ccGkzTA2.s:301    .text.SensorService_GetData:00000024 $d
-C:\Users\w1785\AppData\Local\Temp\ccGkzTA2.s:306    .text.SensorService_GetTemperature:00000000 $t
-C:\Users\w1785\AppData\Local\Temp\ccGkzTA2.s:312    .text.SensorService_GetTemperature:00000000 SensorService_GetTemperature
-C:\Users\w1785\AppData\Local\Temp\ccGkzTA2.s:338    .text.SensorService_GetTemperature:00000014 $d
-C:\Users\w1785\AppData\Local\Temp\ccGkzTA2.s:344    .text.SensorService_GetHumidity:00000000 $t
-C:\Users\w1785\AppData\Local\Temp\ccGkzTA2.s:350    .text.SensorService_GetHumidity:00000000 SensorService_GetHumidity
-C:\Users\w1785\AppData\Local\Temp\ccGkzTA2.s:376    .text.SensorService_GetHumidity:00000014 $d
-C:\Users\w1785\AppData\Local\Temp\ccGkzTA2.s:382    .text.SensorService_IsDataValid:00000000 $t
-C:\Users\w1785\AppData\Local\Temp\ccGkzTA2.s:388    .text.SensorService_IsDataValid:00000000 SensorService_IsDataValid
-C:\Users\w1785\AppData\Local\Temp\ccGkzTA2.s:411    .text.SensorService_IsDataValid:0000000c $d
-C:\Users\w1785\AppData\Local\Temp\ccGkzTA2.s:416    .text.SensorService_IsInitialized:00000000 $t
-C:\Users\w1785\AppData\Local\Temp\ccGkzTA2.s:422    .text.SensorService_IsInitialized:00000000 SensorService_IsInitialized
-C:\Users\w1785\AppData\Local\Temp\ccGkzTA2.s:445    .text.SensorService_IsInitialized:0000000c $d
-C:\Users\w1785\AppData\Local\Temp\ccGkzTA2.s:450    .text.SensorService_TestRead:00000000 $t
-C:\Users\w1785\AppData\Local\Temp\ccGkzTA2.s:456    .text.SensorService_TestRead:00000000 SensorService_TestRead
-C:\Users\w1785\AppData\Local\Temp\ccGkzTA2.s:532    .text.SensorService_TestRead:00000024 $d
-C:\Users\w1785\AppData\Local\Temp\ccGkzTA2.s:537    .bss.s_last_update_tick:00000000 $d
-C:\Users\w1785\AppData\Local\Temp\ccGkzTA2.s:546    .bss.s_sensor_initialized:00000000 $d
-C:\Users\w1785\AppData\Local\Temp\ccGkzTA2.s:548    .bss.s_sensor_data:00000000 $d
+C:\Users\w1785\AppData\Local\Temp\ccpiDRHu.s:21     .text.SensorService_Init:00000000 $t
+C:\Users\w1785\AppData\Local\Temp\ccpiDRHu.s:27     .text.SensorService_Init:00000000 SensorService_Init
+C:\Users\w1785\AppData\Local\Temp\ccpiDRHu.s:80     .text.SensorService_Init:00000028 $d
+C:\Users\w1785\AppData\Local\Temp\ccpiDRHu.s:551    .bss.s_sensor_data:00000000 s_sensor_data
+C:\Users\w1785\AppData\Local\Temp\ccpiDRHu.s:545    .bss.s_sensor_initialized:00000000 s_sensor_initialized
+C:\Users\w1785\AppData\Local\Temp\ccpiDRHu.s:540    .bss.s_last_update_tick:00000000 s_last_update_tick
+C:\Users\w1785\AppData\Local\Temp\ccpiDRHu.s:87     .text.SensorService_Update:00000000 $t
+C:\Users\w1785\AppData\Local\Temp\ccpiDRHu.s:93     .text.SensorService_Update:00000000 SensorService_Update
+C:\Users\w1785\AppData\Local\Temp\ccpiDRHu.s:166    .text.SensorService_Update:00000038 $d
+C:\Users\w1785\AppData\Local\Temp\ccpiDRHu.s:172    .text.SensorService_UpdatePeriodic:00000000 $t
+C:\Users\w1785\AppData\Local\Temp\ccpiDRHu.s:178    .text.SensorService_UpdatePeriodic:00000000 SensorService_UpdatePeriodic
+C:\Users\w1785\AppData\Local\Temp\ccpiDRHu.s:235    .text.SensorService_UpdatePeriodic:0000002c $d
+C:\Users\w1785\AppData\Local\Temp\ccpiDRHu.s:241    .text.SensorService_GetData:00000000 $t
+C:\Users\w1785\AppData\Local\Temp\ccpiDRHu.s:247    .text.SensorService_GetData:00000000 SensorService_GetData
+C:\Users\w1785\AppData\Local\Temp\ccpiDRHu.s:301    .text.SensorService_GetData:00000024 $d
+C:\Users\w1785\AppData\Local\Temp\ccpiDRHu.s:306    .text.SensorService_GetTemperature:00000000 $t
+C:\Users\w1785\AppData\Local\Temp\ccpiDRHu.s:312    .text.SensorService_GetTemperature:00000000 SensorService_GetTemperature
+C:\Users\w1785\AppData\Local\Temp\ccpiDRHu.s:338    .text.SensorService_GetTemperature:00000014 $d
+C:\Users\w1785\AppData\Local\Temp\ccpiDRHu.s:344    .text.SensorService_GetHumidity:00000000 $t
+C:\Users\w1785\AppData\Local\Temp\ccpiDRHu.s:350    .text.SensorService_GetHumidity:00000000 SensorService_GetHumidity
+C:\Users\w1785\AppData\Local\Temp\ccpiDRHu.s:376    .text.SensorService_GetHumidity:00000014 $d
+C:\Users\w1785\AppData\Local\Temp\ccpiDRHu.s:382    .text.SensorService_IsDataValid:00000000 $t
+C:\Users\w1785\AppData\Local\Temp\ccpiDRHu.s:388    .text.SensorService_IsDataValid:00000000 SensorService_IsDataValid
+C:\Users\w1785\AppData\Local\Temp\ccpiDRHu.s:411    .text.SensorService_IsDataValid:0000000c $d
+C:\Users\w1785\AppData\Local\Temp\ccpiDRHu.s:416    .text.SensorService_IsInitialized:00000000 $t
+C:\Users\w1785\AppData\Local\Temp\ccpiDRHu.s:422    .text.SensorService_IsInitialized:00000000 SensorService_IsInitialized
+C:\Users\w1785\AppData\Local\Temp\ccpiDRHu.s:445    .text.SensorService_IsInitialized:0000000c $d
+C:\Users\w1785\AppData\Local\Temp\ccpiDRHu.s:450    .text.SensorService_TestRead:00000000 $t
+C:\Users\w1785\AppData\Local\Temp\ccpiDRHu.s:456    .text.SensorService_TestRead:00000000 SensorService_TestRead
+C:\Users\w1785\AppData\Local\Temp\ccpiDRHu.s:532    .text.SensorService_TestRead:00000024 $d
+C:\Users\w1785\AppData\Local\Temp\ccpiDRHu.s:537    .bss.s_last_update_tick:00000000 $d
+C:\Users\w1785\AppData\Local\Temp\ccpiDRHu.s:546    .bss.s_sensor_initialized:00000000 $d
+C:\Users\w1785\AppData\Local\Temp\ccpiDRHu.s:548    .bss.s_sensor_data:00000000 $d
 
 UNDEFINED SYMBOLS
 AHT20_Init

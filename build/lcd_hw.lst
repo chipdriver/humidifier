@@ -1,4 +1,4 @@
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccvS8o6v.s 			page 1
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccdif095.s 			page 1
 
 
    1              		.cpu cortex-m4
@@ -58,7 +58,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccvS8o6v.s 			page 1
   43              	.L3:
   14:HardwareDrivers/LCD/Src/lcd_hw.c ****   {
   15:HardwareDrivers/LCD/Src/lcd_hw.c ****     /* 执行一条 CPU 空操作指令。 */
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccvS8o6v.s 			page 2
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccdif095.s 			page 2
 
 
   16:HardwareDrivers/LCD/Src/lcd_hw.c ****     __NOP();
@@ -118,7 +118,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccvS8o6v.s 			page 1
   36:HardwareDrivers/LCD/Src/lcd_hw.c ****   GPIO_InitStruct.Pin = LCD_RESET_PIN | LCD_DC_PIN | LCD_CS_PIN;
   37:HardwareDrivers/LCD/Src/lcd_hw.c **** 
   38:HardwareDrivers/LCD/Src/lcd_hw.c ****   /* 将选中的引脚配置为推挽输出模式。 */
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccvS8o6v.s 			page 3
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccdif095.s 			page 3
 
 
   39:HardwareDrivers/LCD/Src/lcd_hw.c ****   GPIO_InitStruct.Mode = GPIO_MODE_OUTPUT_PP;
@@ -178,7 +178,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccvS8o6v.s 			page 1
   85              		.cfi_def_cfa_offset 8
   86              		.cfi_offset 3, -8
   87              		.cfi_offset 14, -4
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccvS8o6v.s 			page 4
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccdif095.s 			page 4
 
 
   87:HardwareDrivers/LCD/Src/lcd_hw.c ****   /* 输出 RESET 高电平。 */
@@ -238,7 +238,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccvS8o6v.s 			page 1
  131              	.L11:
  132 0010 00040048 		.word	1207960576
  133              		.cfi_endproc
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccvS8o6v.s 			page 5
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccdif095.s 			page 5
 
 
  134              	.LFE135:
@@ -298,7 +298,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccvS8o6v.s 			page 1
  114:HardwareDrivers/LCD/Src/lcd_hw.c ****  */
  115:HardwareDrivers/LCD/Src/lcd_hw.c **** void LCD_DC_Low(void)
  116:HardwareDrivers/LCD/Src/lcd_hw.c **** {
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccvS8o6v.s 			page 6
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccdif095.s 			page 6
 
 
  178              		.loc 1 116 1 is_stmt 1 view -0
@@ -358,7 +358,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccvS8o6v.s 			page 1
  222 0004 4FF48051 		mov	r1, #4096
  223 0008 0148     		ldr	r0, .L23
  224 000a FFF7FEFF 		bl	HAL_GPIO_WritePin
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccvS8o6v.s 			page 7
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccdif095.s 			page 7
 
 
  225              	.LVL4:
@@ -418,7 +418,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccvS8o6v.s 			page 1
  271              		.syntax unified
  272              		.thumb
  273              		.thumb_func
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccvS8o6v.s 			page 8
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccdif095.s 			page 8
 
 
  275              	LCD_SCK_High:
@@ -478,7 +478,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccvS8o6v.s 			page 1
  314 0000 08B5     		push	{r3, lr}
  315              	.LCFI9:
  316              		.cfi_def_cfa_offset 8
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccvS8o6v.s 			page 9
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccdif095.s 			page 9
 
 
  317              		.cfi_offset 3, -8
@@ -538,7 +538,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccvS8o6v.s 			page 1
  360              	.L40:
  361              		.align	2
  362              	.L39:
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccvS8o6v.s 			page 10
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccdif095.s 			page 10
 
 
  363 0010 00040048 		.word	1207960576
@@ -598,7 +598,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccvS8o6v.s 			page 1
  410              		.cfi_startproc
  411              		@ args = 0, pretend = 0, frame = 24
  412              		@ frame_needed = 0, uses_anonymous_args = 0
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccvS8o6v.s 			page 11
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccdif095.s 			page 11
 
 
  413 0000 F0B5     		push	{r4, r5, r6, r7, lr}
@@ -658,7 +658,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccvS8o6v.s 			page 1
  455 002c 0126     		movs	r6, #1
  456 002e 0296     		str	r6, [sp, #8]
   42:HardwareDrivers/LCD/Src/lcd_hw.c **** 
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccvS8o6v.s 			page 12
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccdif095.s 			page 12
 
 
  457              		.loc 1 42 3 is_stmt 1 view .LVU53
@@ -718,7 +718,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccvS8o6v.s 			page 1
  495              		.loc 1 75 3 view .LVU69
  496 005e FFF7FEFF 		bl	LCD_SCK_Low
  497              	.LVL15:
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccvS8o6v.s 			page 13
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccdif095.s 			page 13
 
 
   78:HardwareDrivers/LCD/Src/lcd_hw.c **** }
@@ -778,7 +778,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccvS8o6v.s 			page 1
  539 0004 FFF7FEFF 		bl	LCD_MOSI_High
  540              	.LVL18:
  541              	.L51:
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccvS8o6v.s 			page 14
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccdif095.s 			page 14
 
 
  193:HardwareDrivers/LCD/Src/lcd_hw.c ****   }
@@ -838,7 +838,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccvS8o6v.s 			page 1
  213:HardwareDrivers/LCD/Src/lcd_hw.c **** /**
  214:HardwareDrivers/LCD/Src/lcd_hw.c ****  * @brief 通过软件 SPI 向 LCD 写入 1 个字节。
  215:HardwareDrivers/LCD/Src/lcd_hw.c ****  * @param data 要发送的字节，按高位在前的顺序发送。
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccvS8o6v.s 			page 15
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccdif095.s 			page 15
 
 
  216:HardwareDrivers/LCD/Src/lcd_hw.c ****  * @retval 无
@@ -898,7 +898,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccvS8o6v.s 			page 1
  616              	.L54:
  221:HardwareDrivers/LCD/Src/lcd_hw.c ****   {
  617              		.loc 1 221 42 is_stmt 1 discriminator 1 view .LVU96
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccvS8o6v.s 			page 16
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccdif095.s 			page 16
 
 
  618 0018 072D     		cmp	r5, #7
@@ -958,7 +958,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccvS8o6v.s 			page 1
  247:HardwareDrivers/LCD/Src/lcd_hw.c ****   HAL_Delay(120U);
  655              		.loc 1 247 3 view .LVU103
  656 0010 7820     		movs	r0, #120
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccvS8o6v.s 			page 17
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccdif095.s 			page 17
 
 
  657 0012 FFF7FEFF 		bl	HAL_Delay
@@ -1018,7 +1018,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccvS8o6v.s 			page 1
  266:HardwareDrivers/LCD/Src/lcd_hw.c ****   /* 拉高 CS，取消选中屏幕。 */
  267:HardwareDrivers/LCD/Src/lcd_hw.c ****   LCD_CS_High();
  695              		.loc 1 267 3 view .LVU110
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccvS8o6v.s 			page 18
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccdif095.s 			page 18
 
 
  696 0012 FFF7FEFF 		bl	LCD_CS_High
@@ -1078,7 +1078,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccvS8o6v.s 			page 1
  285:HardwareDrivers/LCD/Src/lcd_hw.c **** 
  286:HardwareDrivers/LCD/Src/lcd_hw.c ****   /* 拉高 CS，取消选中屏幕。 */
  287:HardwareDrivers/LCD/Src/lcd_hw.c ****   LCD_CS_High();
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccvS8o6v.s 			page 19
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccdif095.s 			page 19
 
 
  735              		.loc 1 287 3 view .LVU118
@@ -1138,7 +1138,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccvS8o6v.s 			page 1
  305:HardwareDrivers/LCD/Src/lcd_hw.c ****   for (uint32_t index = 0U; index < len; index++)
  774              		.loc 1 305 3 view .LVU125
  775              	.LBB4:
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccvS8o6v.s 			page 20
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccdif095.s 			page 20
 
 
  776              		.loc 1 305 8 view .LVU126
@@ -1185,58 +1185,58 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccvS8o6v.s 			page 1
  808              		.file 4 "Drivers/CMSIS/Device/ST/STM32G4xx/Include/stm32g474xx.h"
  809              		.file 5 "Drivers/STM32G4xx_HAL_Driver/Inc/stm32g4xx_hal_gpio.h"
  810              		.file 6 "Drivers/STM32G4xx_HAL_Driver/Inc/stm32g4xx_hal.h"
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccvS8o6v.s 			page 21
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccdif095.s 			page 21
 
 
 DEFINED SYMBOLS
                             *ABS*:00000000 lcd_hw.c
-C:\Users\w1785\AppData\Local\Temp\ccvS8o6v.s:21     .text.LCD_SPI_Delay:00000000 $t
-C:\Users\w1785\AppData\Local\Temp\ccvS8o6v.s:26     .text.LCD_SPI_Delay:00000000 LCD_SPI_Delay
-C:\Users\w1785\AppData\Local\Temp\ccvS8o6v.s:71     .text.LCD_RESET_High:00000000 $t
-C:\Users\w1785\AppData\Local\Temp\ccvS8o6v.s:77     .text.LCD_RESET_High:00000000 LCD_RESET_High
-C:\Users\w1785\AppData\Local\Temp\ccvS8o6v.s:99     .text.LCD_RESET_High:00000010 $d
-C:\Users\w1785\AppData\Local\Temp\ccvS8o6v.s:104    .text.LCD_RESET_Low:00000000 $t
-C:\Users\w1785\AppData\Local\Temp\ccvS8o6v.s:110    .text.LCD_RESET_Low:00000000 LCD_RESET_Low
-C:\Users\w1785\AppData\Local\Temp\ccvS8o6v.s:132    .text.LCD_RESET_Low:00000010 $d
-C:\Users\w1785\AppData\Local\Temp\ccvS8o6v.s:137    .text.LCD_DC_High:00000000 $t
-C:\Users\w1785\AppData\Local\Temp\ccvS8o6v.s:143    .text.LCD_DC_High:00000000 LCD_DC_High
-C:\Users\w1785\AppData\Local\Temp\ccvS8o6v.s:165    .text.LCD_DC_High:00000010 $d
-C:\Users\w1785\AppData\Local\Temp\ccvS8o6v.s:170    .text.LCD_DC_Low:00000000 $t
-C:\Users\w1785\AppData\Local\Temp\ccvS8o6v.s:176    .text.LCD_DC_Low:00000000 LCD_DC_Low
-C:\Users\w1785\AppData\Local\Temp\ccvS8o6v.s:198    .text.LCD_DC_Low:00000010 $d
-C:\Users\w1785\AppData\Local\Temp\ccvS8o6v.s:203    .text.LCD_CS_High:00000000 $t
-C:\Users\w1785\AppData\Local\Temp\ccvS8o6v.s:209    .text.LCD_CS_High:00000000 LCD_CS_High
-C:\Users\w1785\AppData\Local\Temp\ccvS8o6v.s:231    .text.LCD_CS_High:00000010 $d
-C:\Users\w1785\AppData\Local\Temp\ccvS8o6v.s:236    .text.LCD_CS_Low:00000000 $t
-C:\Users\w1785\AppData\Local\Temp\ccvS8o6v.s:242    .text.LCD_CS_Low:00000000 LCD_CS_Low
-C:\Users\w1785\AppData\Local\Temp\ccvS8o6v.s:264    .text.LCD_CS_Low:00000010 $d
-C:\Users\w1785\AppData\Local\Temp\ccvS8o6v.s:269    .text.LCD_SCK_High:00000000 $t
-C:\Users\w1785\AppData\Local\Temp\ccvS8o6v.s:275    .text.LCD_SCK_High:00000000 LCD_SCK_High
-C:\Users\w1785\AppData\Local\Temp\ccvS8o6v.s:297    .text.LCD_SCK_High:00000010 $d
-C:\Users\w1785\AppData\Local\Temp\ccvS8o6v.s:302    .text.LCD_SCK_Low:00000000 $t
-C:\Users\w1785\AppData\Local\Temp\ccvS8o6v.s:308    .text.LCD_SCK_Low:00000000 LCD_SCK_Low
-C:\Users\w1785\AppData\Local\Temp\ccvS8o6v.s:330    .text.LCD_SCK_Low:00000010 $d
-C:\Users\w1785\AppData\Local\Temp\ccvS8o6v.s:335    .text.LCD_MOSI_High:00000000 $t
-C:\Users\w1785\AppData\Local\Temp\ccvS8o6v.s:341    .text.LCD_MOSI_High:00000000 LCD_MOSI_High
-C:\Users\w1785\AppData\Local\Temp\ccvS8o6v.s:363    .text.LCD_MOSI_High:00000010 $d
-C:\Users\w1785\AppData\Local\Temp\ccvS8o6v.s:368    .text.LCD_MOSI_Low:00000000 $t
-C:\Users\w1785\AppData\Local\Temp\ccvS8o6v.s:374    .text.LCD_MOSI_Low:00000000 LCD_MOSI_Low
-C:\Users\w1785\AppData\Local\Temp\ccvS8o6v.s:396    .text.LCD_MOSI_Low:00000010 $d
-C:\Users\w1785\AppData\Local\Temp\ccvS8o6v.s:401    .text.LCD_HW_GPIO_Init:00000000 $t
-C:\Users\w1785\AppData\Local\Temp\ccvS8o6v.s:407    .text.LCD_HW_GPIO_Init:00000000 LCD_HW_GPIO_Init
-C:\Users\w1785\AppData\Local\Temp\ccvS8o6v.s:510    .text.LCD_HW_GPIO_Init:0000006c $d
-C:\Users\w1785\AppData\Local\Temp\ccvS8o6v.s:516    .text.LCD_SPI_WriteBit:00000000 $t
-C:\Users\w1785\AppData\Local\Temp\ccvS8o6v.s:522    .text.LCD_SPI_WriteBit:00000000 LCD_SPI_WriteBit
-C:\Users\w1785\AppData\Local\Temp\ccvS8o6v.s:567    .text.LCD_SPI_WriteByte:00000000 $t
-C:\Users\w1785\AppData\Local\Temp\ccvS8o6v.s:573    .text.LCD_SPI_WriteByte:00000000 LCD_SPI_WriteByte
-C:\Users\w1785\AppData\Local\Temp\ccvS8o6v.s:628    .text.LCD_Reset:00000000 $t
-C:\Users\w1785\AppData\Local\Temp\ccvS8o6v.s:634    .text.LCD_Reset:00000000 LCD_Reset
-C:\Users\w1785\AppData\Local\Temp\ccvS8o6v.s:665    .text.LCD_WriteCmd:00000000 $t
-C:\Users\w1785\AppData\Local\Temp\ccvS8o6v.s:671    .text.LCD_WriteCmd:00000000 LCD_WriteCmd
-C:\Users\w1785\AppData\Local\Temp\ccvS8o6v.s:705    .text.LCD_WriteData:00000000 $t
-C:\Users\w1785\AppData\Local\Temp\ccvS8o6v.s:711    .text.LCD_WriteData:00000000 LCD_WriteData
-C:\Users\w1785\AppData\Local\Temp\ccvS8o6v.s:745    .text.LCD_WriteDataBuffer:00000000 $t
-C:\Users\w1785\AppData\Local\Temp\ccvS8o6v.s:751    .text.LCD_WriteDataBuffer:00000000 LCD_WriteDataBuffer
+C:\Users\w1785\AppData\Local\Temp\ccdif095.s:21     .text.LCD_SPI_Delay:00000000 $t
+C:\Users\w1785\AppData\Local\Temp\ccdif095.s:26     .text.LCD_SPI_Delay:00000000 LCD_SPI_Delay
+C:\Users\w1785\AppData\Local\Temp\ccdif095.s:71     .text.LCD_RESET_High:00000000 $t
+C:\Users\w1785\AppData\Local\Temp\ccdif095.s:77     .text.LCD_RESET_High:00000000 LCD_RESET_High
+C:\Users\w1785\AppData\Local\Temp\ccdif095.s:99     .text.LCD_RESET_High:00000010 $d
+C:\Users\w1785\AppData\Local\Temp\ccdif095.s:104    .text.LCD_RESET_Low:00000000 $t
+C:\Users\w1785\AppData\Local\Temp\ccdif095.s:110    .text.LCD_RESET_Low:00000000 LCD_RESET_Low
+C:\Users\w1785\AppData\Local\Temp\ccdif095.s:132    .text.LCD_RESET_Low:00000010 $d
+C:\Users\w1785\AppData\Local\Temp\ccdif095.s:137    .text.LCD_DC_High:00000000 $t
+C:\Users\w1785\AppData\Local\Temp\ccdif095.s:143    .text.LCD_DC_High:00000000 LCD_DC_High
+C:\Users\w1785\AppData\Local\Temp\ccdif095.s:165    .text.LCD_DC_High:00000010 $d
+C:\Users\w1785\AppData\Local\Temp\ccdif095.s:170    .text.LCD_DC_Low:00000000 $t
+C:\Users\w1785\AppData\Local\Temp\ccdif095.s:176    .text.LCD_DC_Low:00000000 LCD_DC_Low
+C:\Users\w1785\AppData\Local\Temp\ccdif095.s:198    .text.LCD_DC_Low:00000010 $d
+C:\Users\w1785\AppData\Local\Temp\ccdif095.s:203    .text.LCD_CS_High:00000000 $t
+C:\Users\w1785\AppData\Local\Temp\ccdif095.s:209    .text.LCD_CS_High:00000000 LCD_CS_High
+C:\Users\w1785\AppData\Local\Temp\ccdif095.s:231    .text.LCD_CS_High:00000010 $d
+C:\Users\w1785\AppData\Local\Temp\ccdif095.s:236    .text.LCD_CS_Low:00000000 $t
+C:\Users\w1785\AppData\Local\Temp\ccdif095.s:242    .text.LCD_CS_Low:00000000 LCD_CS_Low
+C:\Users\w1785\AppData\Local\Temp\ccdif095.s:264    .text.LCD_CS_Low:00000010 $d
+C:\Users\w1785\AppData\Local\Temp\ccdif095.s:269    .text.LCD_SCK_High:00000000 $t
+C:\Users\w1785\AppData\Local\Temp\ccdif095.s:275    .text.LCD_SCK_High:00000000 LCD_SCK_High
+C:\Users\w1785\AppData\Local\Temp\ccdif095.s:297    .text.LCD_SCK_High:00000010 $d
+C:\Users\w1785\AppData\Local\Temp\ccdif095.s:302    .text.LCD_SCK_Low:00000000 $t
+C:\Users\w1785\AppData\Local\Temp\ccdif095.s:308    .text.LCD_SCK_Low:00000000 LCD_SCK_Low
+C:\Users\w1785\AppData\Local\Temp\ccdif095.s:330    .text.LCD_SCK_Low:00000010 $d
+C:\Users\w1785\AppData\Local\Temp\ccdif095.s:335    .text.LCD_MOSI_High:00000000 $t
+C:\Users\w1785\AppData\Local\Temp\ccdif095.s:341    .text.LCD_MOSI_High:00000000 LCD_MOSI_High
+C:\Users\w1785\AppData\Local\Temp\ccdif095.s:363    .text.LCD_MOSI_High:00000010 $d
+C:\Users\w1785\AppData\Local\Temp\ccdif095.s:368    .text.LCD_MOSI_Low:00000000 $t
+C:\Users\w1785\AppData\Local\Temp\ccdif095.s:374    .text.LCD_MOSI_Low:00000000 LCD_MOSI_Low
+C:\Users\w1785\AppData\Local\Temp\ccdif095.s:396    .text.LCD_MOSI_Low:00000010 $d
+C:\Users\w1785\AppData\Local\Temp\ccdif095.s:401    .text.LCD_HW_GPIO_Init:00000000 $t
+C:\Users\w1785\AppData\Local\Temp\ccdif095.s:407    .text.LCD_HW_GPIO_Init:00000000 LCD_HW_GPIO_Init
+C:\Users\w1785\AppData\Local\Temp\ccdif095.s:510    .text.LCD_HW_GPIO_Init:0000006c $d
+C:\Users\w1785\AppData\Local\Temp\ccdif095.s:516    .text.LCD_SPI_WriteBit:00000000 $t
+C:\Users\w1785\AppData\Local\Temp\ccdif095.s:522    .text.LCD_SPI_WriteBit:00000000 LCD_SPI_WriteBit
+C:\Users\w1785\AppData\Local\Temp\ccdif095.s:567    .text.LCD_SPI_WriteByte:00000000 $t
+C:\Users\w1785\AppData\Local\Temp\ccdif095.s:573    .text.LCD_SPI_WriteByte:00000000 LCD_SPI_WriteByte
+C:\Users\w1785\AppData\Local\Temp\ccdif095.s:628    .text.LCD_Reset:00000000 $t
+C:\Users\w1785\AppData\Local\Temp\ccdif095.s:634    .text.LCD_Reset:00000000 LCD_Reset
+C:\Users\w1785\AppData\Local\Temp\ccdif095.s:665    .text.LCD_WriteCmd:00000000 $t
+C:\Users\w1785\AppData\Local\Temp\ccdif095.s:671    .text.LCD_WriteCmd:00000000 LCD_WriteCmd
+C:\Users\w1785\AppData\Local\Temp\ccdif095.s:705    .text.LCD_WriteData:00000000 $t
+C:\Users\w1785\AppData\Local\Temp\ccdif095.s:711    .text.LCD_WriteData:00000000 LCD_WriteData
+C:\Users\w1785\AppData\Local\Temp\ccdif095.s:745    .text.LCD_WriteDataBuffer:00000000 $t
+C:\Users\w1785\AppData\Local\Temp\ccdif095.s:751    .text.LCD_WriteDataBuffer:00000000 LCD_WriteDataBuffer
 
 UNDEFINED SYMBOLS
 HAL_GPIO_WritePin

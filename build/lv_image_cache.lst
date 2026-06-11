@@ -1,4 +1,4 @@
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccpNa80b.s 			page 1
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccXxRDzV.s 			page 1
 
 
    1              		.cpu cortex-m4
@@ -58,7 +58,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccpNa80b.s 			page 1
   28:Middlewares/LVGL/lvgl/src/misc/cache/instance/lv_image_cache.c ****  **********************/
   29:Middlewares/LVGL/lvgl/src/misc/cache/instance/lv_image_cache.c **** 
   30:Middlewares/LVGL/lvgl/src/misc/cache/instance/lv_image_cache.c **** /**********************
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccpNa80b.s 			page 2
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccXxRDzV.s 			page 2
 
 
   31:Middlewares/LVGL/lvgl/src/misc/cache/instance/lv_image_cache.c ****  *  STATIC PROTOTYPES
@@ -118,7 +118,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccpNa80b.s 			page 1
   85:Middlewares/LVGL/lvgl/src/misc/cache/instance/lv_image_cache.c ****     /*Notify draw units to invalidate any cached resources (e.g., GPU textures) for this image sour
   86:Middlewares/LVGL/lvgl/src/misc/cache/instance/lv_image_cache.c ****     lv_draw_unit_send_event(NULL, LV_EVENT_INVALIDATE_AREA, (void *)src);
   87:Middlewares/LVGL/lvgl/src/misc/cache/instance/lv_image_cache.c **** 
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccpNa80b.s 			page 3
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccXxRDzV.s 			page 3
 
 
   88:Middlewares/LVGL/lvgl/src/misc/cache/instance/lv_image_cache.c ****     if(src == NULL) {
@@ -178,7 +178,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccpNa80b.s 			page 1
  142:Middlewares/LVGL/lvgl/src/misc/cache/instance/lv_image_cache.c ****     }
  143:Middlewares/LVGL/lvgl/src/misc/cache/instance/lv_image_cache.c ****     return lhs_src_type > rhs_src_type ? 1 : -1;
  144:Middlewares/LVGL/lvgl/src/misc/cache/instance/lv_image_cache.c **** }
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccpNa80b.s 			page 4
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccXxRDzV.s 			page 4
 
 
  145:Middlewares/LVGL/lvgl/src/misc/cache/instance/lv_image_cache.c **** 
@@ -238,7 +238,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccpNa80b.s 			page 1
   20:Middlewares/LVGL/lvgl/src/misc/cache/instance/../../../draw/lv_draw_buf.h **** #include "lv_image_dsc.h"
   21:Middlewares/LVGL/lvgl/src/misc/cache/instance/../../../draw/lv_draw_buf.h **** 
   22:Middlewares/LVGL/lvgl/src/misc/cache/instance/../../../draw/lv_draw_buf.h **** /*********************
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccpNa80b.s 			page 5
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccXxRDzV.s 			page 5
 
 
   23:Middlewares/LVGL/lvgl/src/misc/cache/instance/../../../draw/lv_draw_buf.h ****  *      DEFINES
@@ -298,7 +298,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccpNa80b.s 			page 1
   77:Middlewares/LVGL/lvgl/src/misc/cache/instance/../../../draw/lv_draw_buf.h **** 
   78:Middlewares/LVGL/lvgl/src/misc/cache/instance/../../../draw/lv_draw_buf.h **** typedef void * (*lv_draw_buf_malloc_cb_t)(size_t size, lv_color_format_t color_format);
   79:Middlewares/LVGL/lvgl/src/misc/cache/instance/../../../draw/lv_draw_buf.h **** 
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccpNa80b.s 			page 6
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccXxRDzV.s 			page 6
 
 
   80:Middlewares/LVGL/lvgl/src/misc/cache/instance/../../../draw/lv_draw_buf.h **** typedef void (*lv_draw_buf_free_cb_t)(void * draw_buf);
@@ -358,7 +358,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccpNa80b.s 			page 1
  134:Middlewares/LVGL/lvgl/src/misc/cache/instance/../../../draw/lv_draw_buf.h ****  * @return                  pointer to the struct of handlers
  135:Middlewares/LVGL/lvgl/src/misc/cache/instance/../../../draw/lv_draw_buf.h ****  */
  136:Middlewares/LVGL/lvgl/src/misc/cache/instance/../../../draw/lv_draw_buf.h **** lv_draw_buf_handlers_t * lv_draw_buf_get_handlers(void);
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccpNa80b.s 			page 7
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccXxRDzV.s 			page 7
 
 
  137:Middlewares/LVGL/lvgl/src/misc/cache/instance/../../../draw/lv_draw_buf.h **** lv_draw_buf_handlers_t * lv_draw_buf_get_font_handlers(void);
@@ -418,7 +418,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccpNa80b.s 			page 1
  191:Middlewares/LVGL/lvgl/src/misc/cache/instance/../../../draw/lv_draw_buf.h ****                                         lv_color_format_t color_format);
  192:Middlewares/LVGL/lvgl/src/misc/cache/instance/../../../draw/lv_draw_buf.h **** 
  193:Middlewares/LVGL/lvgl/src/misc/cache/instance/../../../draw/lv_draw_buf.h **** /**
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccpNa80b.s 			page 8
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccXxRDzV.s 			page 8
 
 
  194:Middlewares/LVGL/lvgl/src/misc/cache/instance/../../../draw/lv_draw_buf.h ****  * Clear an area on the buffer
@@ -478,7 +478,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccpNa80b.s 			page 1
  248:Middlewares/LVGL/lvgl/src/misc/cache/instance/../../../draw/lv_draw_buf.h **** /**
  249:Middlewares/LVGL/lvgl/src/misc/cache/instance/../../../draw/lv_draw_buf.h ****  * Initialize a draw buf with the given buffer and parameters. Clear draw buffer flag to zero.
  250:Middlewares/LVGL/lvgl/src/misc/cache/instance/../../../draw/lv_draw_buf.h ****  * @param draw_buf  the draw buf to initialize
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccpNa80b.s 			page 9
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccXxRDzV.s 			page 9
 
 
  251:Middlewares/LVGL/lvgl/src/misc/cache/instance/../../../draw/lv_draw_buf.h ****  * @param w         the buffer width in pixels
@@ -538,7 +538,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccpNa80b.s 			page 1
  305:Middlewares/LVGL/lvgl/src/misc/cache/instance/../../../draw/lv_draw_buf.h ****  */
  306:Middlewares/LVGL/lvgl/src/misc/cache/instance/../../../draw/lv_draw_buf.h **** lv_result_t lv_draw_buf_adjust_stride(lv_draw_buf_t * src, uint32_t stride);
  307:Middlewares/LVGL/lvgl/src/misc/cache/instance/../../../draw/lv_draw_buf.h **** 
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccpNa80b.s 			page 10
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccXxRDzV.s 			page 10
 
 
  308:Middlewares/LVGL/lvgl/src/misc/cache/instance/../../../draw/lv_draw_buf.h **** /**
@@ -598,7 +598,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccpNa80b.s 			page 1
  160:Middlewares/LVGL/lvgl/src/misc/cache/instance/lv_image_cache.c ****         lv_draw_buf_destroy(decoded);
   77              		.loc 1 160 9 is_stmt 0 view .LVU16
   78 001a F8E7     		b	.L2
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccpNa80b.s 			page 11
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccXxRDzV.s 			page 11
 
 
   79              	.L6:
@@ -658,7 +658,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccpNa80b.s 			page 1
  123 0010 C1B9     		cbnz	r1, .L18
  137:Middlewares/LVGL/lvgl/src/misc/cache/instance/lv_image_cache.c ****                 return lhs_src > rhs_src ? 1 : -1;
  124              		.loc 1 137 13 is_stmt 1 view .LVU30
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccpNa80b.s 			page 12
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccXxRDzV.s 			page 12
 
 
  137:Middlewares/LVGL/lvgl/src/misc/cache/instance/lv_image_cache.c ****                 return lhs_src > rhs_src ? 1 : -1;
@@ -718,7 +718,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccpNa80b.s 			page 1
  164              	.LVL15:
  165              	.L14:
  133:Middlewares/LVGL/lvgl/src/misc/cache/instance/lv_image_cache.c ****             }
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccpNa80b.s 			page 13
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccXxRDzV.s 			page 13
 
 
  166              		.loc 1 133 40 discriminator 2 view .LVU46
@@ -778,7 +778,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccpNa80b.s 			page 1
  210              		.loc 1 141 9 is_stmt 1 view .LVU56
  141:Middlewares/LVGL/lvgl/src/misc/cache/instance/lv_image_cache.c ****     }
  211              		.loc 1 141 16 is_stmt 0 view .LVU57
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccpNa80b.s 			page 14
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccXxRDzV.s 			page 14
 
 
  212 0044 0020     		movs	r0, #0
@@ -838,7 +838,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccpNa80b.s 			page 1
  262              	.LVL29:
  263              	.LFB209:
  166:Middlewares/LVGL/lvgl/src/misc/cache/instance/lv_image_cache.c **** 
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccpNa80b.s 			page 15
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccXxRDzV.s 			page 15
 
 
  167:Middlewares/LVGL/lvgl/src/misc/cache/instance/lv_image_cache.c **** static void iter_inspect_cb(void * elem)
@@ -898,7 +898,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccpNa80b.s 			page 1
  192:Middlewares/LVGL/lvgl/src/misc/cache/instance/lv_image_cache.c ****             break;
  293              		.loc 1 192 13 view .LVU81
  193:Middlewares/LVGL/lvgl/src/misc/cache/instance/lv_image_cache.c ****     }
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccpNa80b.s 			page 16
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccXxRDzV.s 			page 16
 
 
  194:Middlewares/LVGL/lvgl/src/misc/cache/instance/lv_image_cache.c **** }
@@ -958,7 +958,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccpNa80b.s 			page 1
  341              	.LCFI8:
  342              		.cfi_def_cfa_offset 32
  343 0010 8446     		mov	ip, r0
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccpNa80b.s 			page 17
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccXxRDzV.s 			page 17
 
 
   61:Middlewares/LVGL/lvgl/src/misc/cache/instance/lv_image_cache.c ****     sizeof(lv_image_cache_data_t), size, (lv_cache_ops_t) {
@@ -1018,7 +1018,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccpNa80b.s 			page 1
  388              		.cfi_endproc
  389              	.LFE200:
  391              		.section	.text.lv_image_cache_resize,"ax",%progbits
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccpNa80b.s 			page 18
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccXxRDzV.s 			page 18
 
 
  392              		.align	1
@@ -1078,7 +1078,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccpNa80b.s 			page 1
  438 001e D3F82C01 		ldr	r0, [r3, #300]
  439 0022 FFF7FEFF 		bl	lv_cache_reserve
  440              	.LVL43:
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccpNa80b.s 			page 19
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccXxRDzV.s 			page 19
 
 
   78:Middlewares/LVGL/lvgl/src/misc/cache/instance/lv_image_cache.c **** 
@@ -1138,7 +1138,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccpNa80b.s 			page 1
   93:Middlewares/LVGL/lvgl/src/misc/cache/instance/lv_image_cache.c ****         .src = src,
  489              		.loc 1 93 27 is_stmt 0 view .LVU117
  490 0016 0025     		movs	r5, #0
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccpNa80b.s 			page 20
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccXxRDzV.s 			page 20
 
 
  491 0018 0095     		str	r5, [sp]
@@ -1198,7 +1198,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccpNa80b.s 			page 1
  540              		.global	lv_image_cache_is_enabled
  541              		.syntax unified
  542              		.thumb
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccpNa80b.s 			page 21
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccXxRDzV.s 			page 21
 
 
  543              		.thumb_func
@@ -1258,7 +1258,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccpNa80b.s 			page 1
  593 0008 FFF7FEFF 		bl	lv_cache_iter_create
  594              	.LVL52:
  109:Middlewares/LVGL/lvgl/src/misc/cache/instance/lv_image_cache.c **** 
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccpNa80b.s 			page 22
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccXxRDzV.s 			page 22
 
 
  595              		.loc 1 109 1 view .LVU131
@@ -1318,7 +1318,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccpNa80b.s 			page 1
  639              	.LVL54:
  119:Middlewares/LVGL/lvgl/src/misc/cache/instance/lv_image_cache.c **** }
  640              		.loc 1 119 5 view .LVU144
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccpNa80b.s 			page 23
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccXxRDzV.s 			page 23
 
 
  641 0010 2046     		mov	r0, r4
@@ -1378,45 +1378,45 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccpNa80b.s 			page 1
  695              		.file 35 "Middlewares/LVGL/lvgl/src/misc/cache/instance/../../../draw/../misc/cache/lv_cache_entry
  696              		.file 36 "Middlewares/LVGL/lvgl/src/misc/cache/instance/../../../draw/../misc/cache/lv_cache.h"
  697              		.file 37 "Middlewares/LVGL/lvgl/src/misc/cache/instance/../../../draw/../misc/cache/instance/lv_im
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccpNa80b.s 			page 24
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccXxRDzV.s 			page 24
 
 
  698              		.file 38 "Middlewares/LVGL/lvgl/src/misc/cache/instance/../../../draw/../misc/../stdlib/lv_string.
  699              		.file 39 "Middlewares/LVGL/lvgl/src/misc/cache/instance/../../../draw/../misc/../stdlib/lv_mem.h"
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccpNa80b.s 			page 25
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccXxRDzV.s 			page 25
 
 
 DEFINED SYMBOLS
                             *ABS*:00000000 lv_image_cache.c
-C:\Users\w1785\AppData\Local\Temp\ccpNa80b.s:21     .text.image_cache_free_cb:00000000 $t
-C:\Users\w1785\AppData\Local\Temp\ccpNa80b.s:26     .text.image_cache_free_cb:00000000 image_cache_free_cb
-C:\Users\w1785\AppData\Local\Temp\ccpNa80b.s:90     .text.image_cache_common_compare:00000000 $t
-C:\Users\w1785\AppData\Local\Temp\ccpNa80b.s:95     .text.image_cache_common_compare:00000000 image_cache_common_compare
-C:\Users\w1785\AppData\Local\Temp\ccpNa80b.s:220    .text.image_cache_compare_cb:00000000 $t
-C:\Users\w1785\AppData\Local\Temp\ccpNa80b.s:225    .text.image_cache_compare_cb:00000000 image_cache_compare_cb
-C:\Users\w1785\AppData\Local\Temp\ccpNa80b.s:256    .text.iter_inspect_cb:00000000 $t
-C:\Users\w1785\AppData\Local\Temp\ccpNa80b.s:261    .text.iter_inspect_cb:00000000 iter_inspect_cb
-C:\Users\w1785\AppData\Local\Temp\ccpNa80b.s:299    .text.iter_inspect_cb:00000010 $d
-C:\Users\w1785\AppData\Local\Temp\ccpNa80b.s:304    .rodata.lv_image_cache_init.str1.4:00000000 $d
-C:\Users\w1785\AppData\Local\Temp\ccpNa80b.s:308    .text.lv_image_cache_init:00000000 $t
-C:\Users\w1785\AppData\Local\Temp\ccpNa80b.s:314    .text.lv_image_cache_init:00000000 lv_image_cache_init
-C:\Users\w1785\AppData\Local\Temp\ccpNa80b.s:384    .text.lv_image_cache_init:0000004c $d
-C:\Users\w1785\AppData\Local\Temp\ccpNa80b.s:392    .text.lv_image_cache_resize:00000000 $t
-C:\Users\w1785\AppData\Local\Temp\ccpNa80b.s:398    .text.lv_image_cache_resize:00000000 lv_image_cache_resize
-C:\Users\w1785\AppData\Local\Temp\ccpNa80b.s:446    .text.lv_image_cache_resize:00000028 $d
-C:\Users\w1785\AppData\Local\Temp\ccpNa80b.s:451    .text.lv_image_cache_drop:00000000 $t
-C:\Users\w1785\AppData\Local\Temp\ccpNa80b.s:457    .text.lv_image_cache_drop:00000000 lv_image_cache_drop
-C:\Users\w1785\AppData\Local\Temp\ccpNa80b.s:534    .text.lv_image_cache_drop:00000050 $d
-C:\Users\w1785\AppData\Local\Temp\ccpNa80b.s:539    .text.lv_image_cache_is_enabled:00000000 $t
-C:\Users\w1785\AppData\Local\Temp\ccpNa80b.s:545    .text.lv_image_cache_is_enabled:00000000 lv_image_cache_is_enabled
-C:\Users\w1785\AppData\Local\Temp\ccpNa80b.s:567    .text.lv_image_cache_is_enabled:00000010 $d
-C:\Users\w1785\AppData\Local\Temp\ccpNa80b.s:572    .text.lv_image_cache_iter_create:00000000 $t
-C:\Users\w1785\AppData\Local\Temp\ccpNa80b.s:578    .text.lv_image_cache_iter_create:00000000 lv_image_cache_iter_create
-C:\Users\w1785\AppData\Local\Temp\ccpNa80b.s:600    .text.lv_image_cache_iter_create:00000010 $d
-C:\Users\w1785\AppData\Local\Temp\ccpNa80b.s:605    .text.lv_image_cache_dump:00000000 $t
-C:\Users\w1785\AppData\Local\Temp\ccpNa80b.s:611    .text.lv_image_cache_dump:00000000 lv_image_cache_dump
-C:\Users\w1785\AppData\Local\Temp\ccpNa80b.s:650    .text.lv_image_cache_dump:00000018 $d
-C:\Users\w1785\AppData\Local\Temp\ccpNa80b.s:655    .rodata:00000000 $d
+C:\Users\w1785\AppData\Local\Temp\ccXxRDzV.s:21     .text.image_cache_free_cb:00000000 $t
+C:\Users\w1785\AppData\Local\Temp\ccXxRDzV.s:26     .text.image_cache_free_cb:00000000 image_cache_free_cb
+C:\Users\w1785\AppData\Local\Temp\ccXxRDzV.s:90     .text.image_cache_common_compare:00000000 $t
+C:\Users\w1785\AppData\Local\Temp\ccXxRDzV.s:95     .text.image_cache_common_compare:00000000 image_cache_common_compare
+C:\Users\w1785\AppData\Local\Temp\ccXxRDzV.s:220    .text.image_cache_compare_cb:00000000 $t
+C:\Users\w1785\AppData\Local\Temp\ccXxRDzV.s:225    .text.image_cache_compare_cb:00000000 image_cache_compare_cb
+C:\Users\w1785\AppData\Local\Temp\ccXxRDzV.s:256    .text.iter_inspect_cb:00000000 $t
+C:\Users\w1785\AppData\Local\Temp\ccXxRDzV.s:261    .text.iter_inspect_cb:00000000 iter_inspect_cb
+C:\Users\w1785\AppData\Local\Temp\ccXxRDzV.s:299    .text.iter_inspect_cb:00000010 $d
+C:\Users\w1785\AppData\Local\Temp\ccXxRDzV.s:304    .rodata.lv_image_cache_init.str1.4:00000000 $d
+C:\Users\w1785\AppData\Local\Temp\ccXxRDzV.s:308    .text.lv_image_cache_init:00000000 $t
+C:\Users\w1785\AppData\Local\Temp\ccXxRDzV.s:314    .text.lv_image_cache_init:00000000 lv_image_cache_init
+C:\Users\w1785\AppData\Local\Temp\ccXxRDzV.s:384    .text.lv_image_cache_init:0000004c $d
+C:\Users\w1785\AppData\Local\Temp\ccXxRDzV.s:392    .text.lv_image_cache_resize:00000000 $t
+C:\Users\w1785\AppData\Local\Temp\ccXxRDzV.s:398    .text.lv_image_cache_resize:00000000 lv_image_cache_resize
+C:\Users\w1785\AppData\Local\Temp\ccXxRDzV.s:446    .text.lv_image_cache_resize:00000028 $d
+C:\Users\w1785\AppData\Local\Temp\ccXxRDzV.s:451    .text.lv_image_cache_drop:00000000 $t
+C:\Users\w1785\AppData\Local\Temp\ccXxRDzV.s:457    .text.lv_image_cache_drop:00000000 lv_image_cache_drop
+C:\Users\w1785\AppData\Local\Temp\ccXxRDzV.s:534    .text.lv_image_cache_drop:00000050 $d
+C:\Users\w1785\AppData\Local\Temp\ccXxRDzV.s:539    .text.lv_image_cache_is_enabled:00000000 $t
+C:\Users\w1785\AppData\Local\Temp\ccXxRDzV.s:545    .text.lv_image_cache_is_enabled:00000000 lv_image_cache_is_enabled
+C:\Users\w1785\AppData\Local\Temp\ccXxRDzV.s:567    .text.lv_image_cache_is_enabled:00000010 $d
+C:\Users\w1785\AppData\Local\Temp\ccXxRDzV.s:572    .text.lv_image_cache_iter_create:00000000 $t
+C:\Users\w1785\AppData\Local\Temp\ccXxRDzV.s:578    .text.lv_image_cache_iter_create:00000000 lv_image_cache_iter_create
+C:\Users\w1785\AppData\Local\Temp\ccXxRDzV.s:600    .text.lv_image_cache_iter_create:00000010 $d
+C:\Users\w1785\AppData\Local\Temp\ccXxRDzV.s:605    .text.lv_image_cache_dump:00000000 $t
+C:\Users\w1785\AppData\Local\Temp\ccXxRDzV.s:611    .text.lv_image_cache_dump:00000000 lv_image_cache_dump
+C:\Users\w1785\AppData\Local\Temp\ccXxRDzV.s:650    .text.lv_image_cache_dump:00000018 $d
+C:\Users\w1785\AppData\Local\Temp\ccXxRDzV.s:655    .rodata:00000000 $d
 
 UNDEFINED SYMBOLS
 lv_draw_buf_destroy
