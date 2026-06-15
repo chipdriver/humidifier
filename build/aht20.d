@@ -23,6 +23,8 @@ build/aht20.o: DeviceDrivers/Sensor/Src/aht20.c \
  Drivers/STM32G4xx_HAL_Driver/Inc/stm32g4xx_hal_flash_ramfunc.h \
  Drivers/STM32G4xx_HAL_Driver/Inc/stm32g4xx_hal_pwr.h \
  Drivers/STM32G4xx_HAL_Driver/Inc/stm32g4xx_hal_pwr_ex.h \
+ Drivers/STM32G4xx_HAL_Driver/Inc/stm32g4xx_hal_uart.h \
+ Drivers/STM32G4xx_HAL_Driver/Inc/stm32g4xx_hal_uart_ex.h \
  HardwareDrivers/I2C/Inc/i2c_sw.h
 DeviceDrivers/Sensor/Inc/aht20.h:
 Core/Inc/main.h:
@@ -51,4 +53,6 @@ Drivers/STM32G4xx_HAL_Driver/Inc/stm32g4xx_hal_flash_ex.h:
 Drivers/STM32G4xx_HAL_Driver/Inc/stm32g4xx_hal_flash_ramfunc.h:
 Drivers/STM32G4xx_HAL_Driver/Inc/stm32g4xx_hal_pwr.h:
 Drivers/STM32G4xx_HAL_Driver/Inc/stm32g4xx_hal_pwr_ex.h:
+Drivers/STM32G4xx_HAL_Driver/Inc/stm32g4xx_hal_uart.h:
+Drivers/STM32G4xx_HAL_Driver/Inc/stm32g4xx_hal_uart_ex.h:
 HardwareDrivers/I2C/Inc/i2c_sw.h:

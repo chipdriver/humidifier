@@ -1,4 +1,4 @@
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccKSMgob.s 			page 1
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\cciRscTd.s 			page 1
 
 
    1              		.cpu cortex-m4
@@ -58,7 +58,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccKSMgob.s 			page 1
   28:Core/Src/gpio.c **** /*----------------------------------------------------------------------------*/
   29:Core/Src/gpio.c **** /* Configure GPIO                                                             */
   30:Core/Src/gpio.c **** /*----------------------------------------------------------------------------*/
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccKSMgob.s 			page 2
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\cciRscTd.s 			page 2
 
 
   31:Core/Src/gpio.c **** /* USER CODE BEGIN 1 */
@@ -76,60 +76,105 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccKSMgob.s 			page 1
   43:Core/Src/gpio.c **** {
   29              		.loc 1 43 1 view -0
   30              		.cfi_startproc
-  31              		@ args = 0, pretend = 0, frame = 8
+  31              		@ args = 0, pretend = 0, frame = 32
   32              		@ frame_needed = 0, uses_anonymous_args = 0
-  33              		@ link register save eliminated.
-  34 0000 82B0     		sub	sp, sp, #8
-  35              	.LCFI0:
-  36              		.cfi_def_cfa_offset 8
-  44:Core/Src/gpio.c **** 
-  45:Core/Src/gpio.c ****   /* GPIO Ports Clock Enable */
-  46:Core/Src/gpio.c ****   __HAL_RCC_GPIOA_CLK_ENABLE();
-  37              		.loc 1 46 3 view .LVU1
-  38              	.LBB2:
-  39              		.loc 1 46 3 view .LVU2
-  40              		.loc 1 46 3 view .LVU3
-  41 0002 064B     		ldr	r3, .L3
-  42 0004 DA6C     		ldr	r2, [r3, #76]
-  43 0006 42F00102 		orr	r2, r2, #1
-  44 000a DA64     		str	r2, [r3, #76]
-  45              		.loc 1 46 3 view .LVU4
-  46 000c DB6C     		ldr	r3, [r3, #76]
-  47 000e 03F00103 		and	r3, r3, #1
-  48 0012 0193     		str	r3, [sp, #4]
-  49              		.loc 1 46 3 view .LVU5
-  50 0014 019B     		ldr	r3, [sp, #4]
-  51              	.LBE2:
-  52              		.loc 1 46 3 view .LVU6
-  47:Core/Src/gpio.c **** 
-  48:Core/Src/gpio.c **** }
-  53              		.loc 1 48 1 is_stmt 0 view .LVU7
-  54 0016 02B0     		add	sp, sp, #8
-  55              	.LCFI1:
-  56              		.cfi_def_cfa_offset 0
-  57              		@ sp needed
-  58 0018 7047     		bx	lr
-  59              	.L4:
-  60 001a 00BF     		.align	2
-  61              	.L3:
-  62 001c 00100240 		.word	1073876992
-  63              		.cfi_endproc
-  64              	.LFE132:
-  66              		.text
-  67              	.Letext0:
-  68              		.file 2 "D:\\STM32CubeIDE\\STM32CubeIDE_2.1.1\\STM32CubeIDE\\plugins\\com.st.stm32cube.ide.mcu.ext
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccKSMgob.s 			page 3
+  33 0000 00B5     		push	{lr}
+  34              	.LCFI0:
+  35              		.cfi_def_cfa_offset 4
+  36              		.cfi_offset 14, -4
+  37 0002 89B0     		sub	sp, sp, #36
+  38              	.LCFI1:
+  39              		.cfi_def_cfa_offset 40
+  44:Core/Src/gpio.c ****   GPIO_InitTypeDef GPIO_InitStruct = {0};
+  40              		.loc 1 44 3 view .LVU1
+  41              		.loc 1 44 20 is_stmt 0 view .LVU2
+  42 0004 03A9     		add	r1, sp, #12
+  43 0006 0023     		movs	r3, #0
+  44 0008 0393     		str	r3, [sp, #12]
+  45 000a 4B60     		str	r3, [r1, #4]
+  46 000c 8B60     		str	r3, [r1, #8]
+  47 000e CB60     		str	r3, [r1, #12]
+  48 0010 0B61     		str	r3, [r1, #16]
+  45:Core/Src/gpio.c **** 
+  46:Core/Src/gpio.c ****   /* GPIO Ports Clock Enable */
+  47:Core/Src/gpio.c ****   __HAL_RCC_GPIOA_CLK_ENABLE();
+  49              		.loc 1 47 3 is_stmt 1 view .LVU3
+  50              	.LBB2:
+  51              		.loc 1 47 3 view .LVU4
+  52              		.loc 1 47 3 view .LVU5
+  53 0012 03F18043 		add	r3, r3, #1073741824
+  54 0016 03F50433 		add	r3, r3, #135168
+  55 001a DA6C     		ldr	r2, [r3, #76]
+  56 001c 42F00102 		orr	r2, r2, #1
+  57 0020 DA64     		str	r2, [r3, #76]
+  58              		.loc 1 47 3 view .LVU6
+  59 0022 DA6C     		ldr	r2, [r3, #76]
+  60 0024 02F00102 		and	r2, r2, #1
+  61 0028 0192     		str	r2, [sp, #4]
+  62              		.loc 1 47 3 view .LVU7
+  63 002a 019A     		ldr	r2, [sp, #4]
+  64              	.LBE2:
+  65              		.loc 1 47 3 view .LVU8
+  48:Core/Src/gpio.c ****   __HAL_RCC_GPIOB_CLK_ENABLE();
+  66              		.loc 1 48 3 view .LVU9
+  67              	.LBB3:
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\cciRscTd.s 			page 3
 
 
-  69              		.file 3 "D:\\STM32CubeIDE\\STM32CubeIDE_2.1.1\\STM32CubeIDE\\plugins\\com.st.stm32cube.ide.mcu.ext
-  70              		.file 4 "Drivers/CMSIS/Device/ST/STM32G4xx/Include/stm32g474xx.h"
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccKSMgob.s 			page 4
+  68              		.loc 1 48 3 view .LVU10
+  69              		.loc 1 48 3 view .LVU11
+  70 002c DA6C     		ldr	r2, [r3, #76]
+  71 002e 42F00202 		orr	r2, r2, #2
+  72 0032 DA64     		str	r2, [r3, #76]
+  73              		.loc 1 48 3 view .LVU12
+  74 0034 DB6C     		ldr	r3, [r3, #76]
+  75 0036 03F00203 		and	r3, r3, #2
+  76 003a 0293     		str	r3, [sp, #8]
+  77              		.loc 1 48 3 view .LVU13
+  78 003c 029B     		ldr	r3, [sp, #8]
+  79              	.LBE3:
+  80              		.loc 1 48 3 view .LVU14
+  49:Core/Src/gpio.c **** 
+  50:Core/Src/gpio.c ****   /* PA0 连接浮球开关，开启内部上拉；开关闭合到 GND 时读到低电平。 */
+  51:Core/Src/gpio.c ****   GPIO_InitStruct.Pin = GPIO_PIN_0;
+  81              		.loc 1 51 3 view .LVU15
+  82              		.loc 1 51 23 is_stmt 0 view .LVU16
+  83 003e 0123     		movs	r3, #1
+  84 0040 0393     		str	r3, [sp, #12]
+  52:Core/Src/gpio.c ****   GPIO_InitStruct.Mode = GPIO_MODE_INPUT;
+  85              		.loc 1 52 3 is_stmt 1 view .LVU17
+  53:Core/Src/gpio.c ****   GPIO_InitStruct.Pull = GPIO_PULLUP;
+  86              		.loc 1 53 3 view .LVU18
+  87              		.loc 1 53 24 is_stmt 0 view .LVU19
+  88 0042 0593     		str	r3, [sp, #20]
+  54:Core/Src/gpio.c ****   HAL_GPIO_Init(GPIOA, &GPIO_InitStruct);
+  89              		.loc 1 54 3 is_stmt 1 view .LVU20
+  90 0044 4FF09040 		mov	r0, #1207959552
+  91 0048 FFF7FEFF 		bl	HAL_GPIO_Init
+  92              	.LVL0:
+  55:Core/Src/gpio.c **** 
+  56:Core/Src/gpio.c **** }
+  93              		.loc 1 56 1 is_stmt 0 view .LVU21
+  94 004c 09B0     		add	sp, sp, #36
+  95              	.LCFI2:
+  96              		.cfi_def_cfa_offset 4
+  97              		@ sp needed
+  98 004e 00BD     		pop	{pc}
+  99              		.cfi_endproc
+ 100              	.LFE132:
+ 102              		.text
+ 103              	.Letext0:
+ 104              		.file 2 "D:\\STM32CubeIDE\\STM32CubeIDE_2.1.1\\STM32CubeIDE\\plugins\\com.st.stm32cube.ide.mcu.ext
+ 105              		.file 3 "D:\\STM32CubeIDE\\STM32CubeIDE_2.1.1\\STM32CubeIDE\\plugins\\com.st.stm32cube.ide.mcu.ext
+ 106              		.file 4 "Drivers/CMSIS/Device/ST/STM32G4xx/Include/stm32g474xx.h"
+ 107              		.file 5 "Drivers/STM32G4xx_HAL_Driver/Inc/stm32g4xx_hal_gpio.h"
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\cciRscTd.s 			page 4
 
 
 DEFINED SYMBOLS
                             *ABS*:00000000 gpio.c
-C:\Users\w1785\AppData\Local\Temp\ccKSMgob.s:21     .text.MX_GPIO_Init:00000000 $t
-C:\Users\w1785\AppData\Local\Temp\ccKSMgob.s:27     .text.MX_GPIO_Init:00000000 MX_GPIO_Init
-C:\Users\w1785\AppData\Local\Temp\ccKSMgob.s:62     .text.MX_GPIO_Init:0000001c $d
+C:\Users\w1785\AppData\Local\Temp\cciRscTd.s:21     .text.MX_GPIO_Init:00000000 $t
+C:\Users\w1785\AppData\Local\Temp\cciRscTd.s:27     .text.MX_GPIO_Init:00000000 MX_GPIO_Init
 
-NO UNDEFINED SYMBOLS
+UNDEFINED SYMBOLS
+HAL_GPIO_Init

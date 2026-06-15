@@ -1,4 +1,4 @@
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccBpZWCX.s 			page 1
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccsrdFUa.s 			page 1
 
 
    1              		.cpu cortex-m4
@@ -58,7 +58,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccBpZWCX.s 			page 1
   15:Application/Src/app_main.c ****   if (SensorService_Init() != SENSOR_SERVICE_OK)
   42              		.loc 1 15 3 view .LVU2
   43              		.loc 1 15 7 is_stmt 0 view .LVU3
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccBpZWCX.s 			page 2
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccsrdFUa.s 			page 2
 
 
   44 0006 FFF7FEFF 		bl	SensorService_Init
@@ -118,7 +118,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccBpZWCX.s 			page 1
   75              	.LVL7:
   38:Application/Src/app_main.c **** 
   39:Application/Src/app_main.c ****     /* LVGL 需要高频调用 timer handler，真实传感器读取周期仍由 SensorService 控�
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccBpZWCX.s 			page 3
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccsrdFUa.s 			page 3
 
 
   40:Application/Src/app_main.c ****     HAL_Delay(5U);
@@ -138,13 +138,13 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccBpZWCX.s 			page 1
   89              		.file 4 "Services/Inc/sensor_service.h"
   90              		.file 5 "Services/Inc/display_service.h"
   91              		.file 6 "Drivers/STM32G4xx_HAL_Driver/Inc/stm32g4xx_hal.h"
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccBpZWCX.s 			page 4
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccsrdFUa.s 			page 4
 
 
 DEFINED SYMBOLS
                             *ABS*:00000000 app_main.c
-C:\Users\w1785\AppData\Local\Temp\ccBpZWCX.s:21     .text.App_Main:00000000 $t
-C:\Users\w1785\AppData\Local\Temp\ccBpZWCX.s:27     .text.App_Main:00000000 App_Main
+C:\Users\w1785\AppData\Local\Temp\ccsrdFUa.s:21     .text.App_Main:00000000 $t
+C:\Users\w1785\AppData\Local\Temp\ccsrdFUa.s:27     .text.App_Main:00000000 App_Main
 
 UNDEFINED SYMBOLS
 DisplayService_Init

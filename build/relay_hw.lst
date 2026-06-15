@@ -1,0 +1,599 @@
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccEEC5hV.s 			page 1
+
+
+   1              		.cpu cortex-m4
+   2              		.arch armv7e-m
+   3              		.fpu fpv4-sp-d16
+   4              		.eabi_attribute 27, 1
+   5              		.eabi_attribute 28, 1
+   6              		.eabi_attribute 20, 1
+   7              		.eabi_attribute 21, 1
+   8              		.eabi_attribute 23, 3
+   9              		.eabi_attribute 24, 1
+  10              		.eabi_attribute 25, 1
+  11              		.eabi_attribute 26, 1
+  12              		.eabi_attribute 30, 1
+  13              		.eabi_attribute 34, 1
+  14              		.eabi_attribute 18, 4
+  15              		.file	"relay_hw.c"
+  16              		.text
+  17              	.Ltext0:
+  18              		.cfi_sections	.debug_frame
+  19              		.file 1 "HardwareDrivers/Relay/Src/relay_hw.c"
+  20              		.section	.text.MistRelay_On,"ax",%progbits
+  21              		.align	1
+  22              		.global	MistRelay_On
+  23              		.syntax unified
+  24              		.thumb
+  25              		.thumb_func
+  27              	MistRelay_On:
+  28              	.LFB133:
+   1:HardwareDrivers/Relay/Src/relay_hw.c **** #include "relay_hw.h"
+   2:HardwareDrivers/Relay/Src/relay_hw.c **** 
+   3:HardwareDrivers/Relay/Src/relay_hw.c **** /**
+   4:HardwareDrivers/Relay/Src/relay_hw.c ****  * @brief 初始化继电器控制侧 GPIO，并确保两个继电器默认关闭。
+   5:HardwareDrivers/Relay/Src/relay_hw.c ****  * @retval None
+   6:HardwareDrivers/Relay/Src/relay_hw.c ****  */
+   7:HardwareDrivers/Relay/Src/relay_hw.c **** void Relay_HW_Init(void)
+   8:HardwareDrivers/Relay/Src/relay_hw.c **** {
+   9:HardwareDrivers/Relay/Src/relay_hw.c ****   /* 定义并清零 HAL GPIO 初始化结构体。 */
+  10:HardwareDrivers/Relay/Src/relay_hw.c ****   GPIO_InitTypeDef GPIO_InitStruct = {0};
+  11:HardwareDrivers/Relay/Src/relay_hw.c **** 
+  12:HardwareDrivers/Relay/Src/relay_hw.c ****   /* 使用 PA1 之前，先使能 GPIOA 外设时钟。 */
+  13:HardwareDrivers/Relay/Src/relay_hw.c ****   __HAL_RCC_GPIOA_CLK_ENABLE();
+  14:HardwareDrivers/Relay/Src/relay_hw.c **** 
+  15:HardwareDrivers/Relay/Src/relay_hw.c ****   /* 使用 PB0 之前，先使能 GPIOB 外设时钟。 */
+  16:HardwareDrivers/Relay/Src/relay_hw.c ****   __HAL_RCC_GPIOB_CLK_ENABLE();
+  17:HardwareDrivers/Relay/Src/relay_hw.c **** 
+  18:HardwareDrivers/Relay/Src/relay_hw.c ****   /* 在配置为输出前，先把 PA1 的输出锁存值设置为释放电平。 */
+  19:HardwareDrivers/Relay/Src/relay_hw.c ****   HAL_GPIO_WritePin(MIST_RELAY_PORT, MIST_RELAY_PIN, RELAY_INACTIVE_LEVEL);
+  20:HardwareDrivers/Relay/Src/relay_hw.c **** 
+  21:HardwareDrivers/Relay/Src/relay_hw.c ****   /* 在配置为输出前，先把 PB0 的输出锁存值设置为释放电平。 */
+  22:HardwareDrivers/Relay/Src/relay_hw.c ****   HAL_GPIO_WritePin(FAN_RELAY_PORT, FAN_RELAY_PIN, RELAY_INACTIVE_LEVEL);
+  23:HardwareDrivers/Relay/Src/relay_hw.c **** 
+  24:HardwareDrivers/Relay/Src/relay_hw.c ****   /* 选择雾化继电器控制引脚 PA1。 */
+  25:HardwareDrivers/Relay/Src/relay_hw.c ****   GPIO_InitStruct.Pin = MIST_RELAY_PIN;
+  26:HardwareDrivers/Relay/Src/relay_hw.c **** 
+  27:HardwareDrivers/Relay/Src/relay_hw.c ****   /* 将 PA1 配置为推挽输出模式。 */
+  28:HardwareDrivers/Relay/Src/relay_hw.c ****   GPIO_InitStruct.Mode = GPIO_MODE_OUTPUT_PP;
+  29:HardwareDrivers/Relay/Src/relay_hw.c **** 
+  30:HardwareDrivers/Relay/Src/relay_hw.c ****   /* PA1 不使用内部上拉或下拉电阻。 */
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccEEC5hV.s 			page 2
+
+
+  31:HardwareDrivers/Relay/Src/relay_hw.c ****   GPIO_InitStruct.Pull = GPIO_NOPULL;
+  32:HardwareDrivers/Relay/Src/relay_hw.c **** 
+  33:HardwareDrivers/Relay/Src/relay_hw.c ****   /* 继电器控制不需要高速翻转，使用低速即可。 */
+  34:HardwareDrivers/Relay/Src/relay_hw.c ****   GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_LOW;
+  35:HardwareDrivers/Relay/Src/relay_hw.c **** 
+  36:HardwareDrivers/Relay/Src/relay_hw.c ****   /* 将 PA1 的配置写入 GPIOA。 */
+  37:HardwareDrivers/Relay/Src/relay_hw.c ****   HAL_GPIO_Init(MIST_RELAY_PORT, &GPIO_InitStruct);
+  38:HardwareDrivers/Relay/Src/relay_hw.c **** 
+  39:HardwareDrivers/Relay/Src/relay_hw.c ****   /* 选择风扇继电器控制引脚 PB0。 */
+  40:HardwareDrivers/Relay/Src/relay_hw.c ****   GPIO_InitStruct.Pin = FAN_RELAY_PIN;
+  41:HardwareDrivers/Relay/Src/relay_hw.c **** 
+  42:HardwareDrivers/Relay/Src/relay_hw.c ****   /* 将 PB0 配置为推挽输出模式。 */
+  43:HardwareDrivers/Relay/Src/relay_hw.c ****   GPIO_InitStruct.Mode = GPIO_MODE_OUTPUT_PP;
+  44:HardwareDrivers/Relay/Src/relay_hw.c **** 
+  45:HardwareDrivers/Relay/Src/relay_hw.c ****   /* PB0 不使用内部上拉或下拉电阻。 */
+  46:HardwareDrivers/Relay/Src/relay_hw.c ****   GPIO_InitStruct.Pull = GPIO_NOPULL;
+  47:HardwareDrivers/Relay/Src/relay_hw.c **** 
+  48:HardwareDrivers/Relay/Src/relay_hw.c ****   /* 继电器控制不需要高速翻转，使用低速即可。 */
+  49:HardwareDrivers/Relay/Src/relay_hw.c ****   GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_LOW;
+  50:HardwareDrivers/Relay/Src/relay_hw.c **** 
+  51:HardwareDrivers/Relay/Src/relay_hw.c ****   /* 将 PB0 的配置写入 GPIOB。 */
+  52:HardwareDrivers/Relay/Src/relay_hw.c ****   HAL_GPIO_Init(FAN_RELAY_PORT, &GPIO_InitStruct);
+  53:HardwareDrivers/Relay/Src/relay_hw.c **** 
+  54:HardwareDrivers/Relay/Src/relay_hw.c ****   /* 初始化完成后，再统一关闭一次，确保两个继电器默认释放。 */
+  55:HardwareDrivers/Relay/Src/relay_hw.c ****   Relay_HW_AllOff();
+  56:HardwareDrivers/Relay/Src/relay_hw.c **** }
+  57:HardwareDrivers/Relay/Src/relay_hw.c **** 
+  58:HardwareDrivers/Relay/Src/relay_hw.c **** /**
+  59:HardwareDrivers/Relay/Src/relay_hw.c ****  * @brief 开启雾化继电器，使继电器吸合。
+  60:HardwareDrivers/Relay/Src/relay_hw.c ****  * @retval None
+  61:HardwareDrivers/Relay/Src/relay_hw.c ****  */
+  62:HardwareDrivers/Relay/Src/relay_hw.c **** void MistRelay_On(void)
+  63:HardwareDrivers/Relay/Src/relay_hw.c **** {
+  29              		.loc 1 63 1 view -0
+  30              		.cfi_startproc
+  31              		@ args = 0, pretend = 0, frame = 0
+  32              		@ frame_needed = 0, uses_anonymous_args = 0
+  33 0000 08B5     		push	{r3, lr}
+  34              	.LCFI0:
+  35              		.cfi_def_cfa_offset 8
+  36              		.cfi_offset 3, -8
+  37              		.cfi_offset 14, -4
+  64:HardwareDrivers/Relay/Src/relay_hw.c ****   /* PA1 输出有效电平，高电平触发雾化继电器吸合。 */
+  65:HardwareDrivers/Relay/Src/relay_hw.c ****   HAL_GPIO_WritePin(MIST_RELAY_PORT, MIST_RELAY_PIN, RELAY_ACTIVE_LEVEL);
+  38              		.loc 1 65 3 view .LVU1
+  39 0002 0122     		movs	r2, #1
+  40 0004 0221     		movs	r1, #2
+  41 0006 4FF09040 		mov	r0, #1207959552
+  42 000a FFF7FEFF 		bl	HAL_GPIO_WritePin
+  43              	.LVL0:
+  66:HardwareDrivers/Relay/Src/relay_hw.c **** }
+  44              		.loc 1 66 1 is_stmt 0 view .LVU2
+  45 000e 08BD     		pop	{r3, pc}
+  46              		.cfi_endproc
+  47              	.LFE133:
+  49              		.section	.text.MistRelay_Off,"ax",%progbits
+  50              		.align	1
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccEEC5hV.s 			page 3
+
+
+  51              		.global	MistRelay_Off
+  52              		.syntax unified
+  53              		.thumb
+  54              		.thumb_func
+  56              	MistRelay_Off:
+  57              	.LFB134:
+  67:HardwareDrivers/Relay/Src/relay_hw.c **** 
+  68:HardwareDrivers/Relay/Src/relay_hw.c **** /**
+  69:HardwareDrivers/Relay/Src/relay_hw.c ****  * @brief 关闭雾化继电器，使继电器释放。
+  70:HardwareDrivers/Relay/Src/relay_hw.c ****  * @retval None
+  71:HardwareDrivers/Relay/Src/relay_hw.c ****  */
+  72:HardwareDrivers/Relay/Src/relay_hw.c **** void MistRelay_Off(void)
+  73:HardwareDrivers/Relay/Src/relay_hw.c **** {
+  58              		.loc 1 73 1 is_stmt 1 view -0
+  59              		.cfi_startproc
+  60              		@ args = 0, pretend = 0, frame = 0
+  61              		@ frame_needed = 0, uses_anonymous_args = 0
+  62 0000 08B5     		push	{r3, lr}
+  63              	.LCFI1:
+  64              		.cfi_def_cfa_offset 8
+  65              		.cfi_offset 3, -8
+  66              		.cfi_offset 14, -4
+  74:HardwareDrivers/Relay/Src/relay_hw.c ****   /* PA1 输出无效电平，低电平让雾化继电器释放。 */
+  75:HardwareDrivers/Relay/Src/relay_hw.c ****   HAL_GPIO_WritePin(MIST_RELAY_PORT, MIST_RELAY_PIN, RELAY_INACTIVE_LEVEL);
+  67              		.loc 1 75 3 view .LVU4
+  68 0002 0022     		movs	r2, #0
+  69 0004 0221     		movs	r1, #2
+  70 0006 4FF09040 		mov	r0, #1207959552
+  71 000a FFF7FEFF 		bl	HAL_GPIO_WritePin
+  72              	.LVL1:
+  76:HardwareDrivers/Relay/Src/relay_hw.c **** }
+  73              		.loc 1 76 1 is_stmt 0 view .LVU5
+  74 000e 08BD     		pop	{r3, pc}
+  75              		.cfi_endproc
+  76              	.LFE134:
+  78              		.section	.text.FanRelay_On,"ax",%progbits
+  79              		.align	1
+  80              		.global	FanRelay_On
+  81              		.syntax unified
+  82              		.thumb
+  83              		.thumb_func
+  85              	FanRelay_On:
+  86              	.LFB135:
+  77:HardwareDrivers/Relay/Src/relay_hw.c **** 
+  78:HardwareDrivers/Relay/Src/relay_hw.c **** /**
+  79:HardwareDrivers/Relay/Src/relay_hw.c ****  * @brief 开启风扇继电器，使继电器吸合。
+  80:HardwareDrivers/Relay/Src/relay_hw.c ****  * @retval None
+  81:HardwareDrivers/Relay/Src/relay_hw.c ****  */
+  82:HardwareDrivers/Relay/Src/relay_hw.c **** void FanRelay_On(void)
+  83:HardwareDrivers/Relay/Src/relay_hw.c **** {
+  87              		.loc 1 83 1 is_stmt 1 view -0
+  88              		.cfi_startproc
+  89              		@ args = 0, pretend = 0, frame = 0
+  90              		@ frame_needed = 0, uses_anonymous_args = 0
+  91 0000 08B5     		push	{r3, lr}
+  92              	.LCFI2:
+  93              		.cfi_def_cfa_offset 8
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccEEC5hV.s 			page 4
+
+
+  94              		.cfi_offset 3, -8
+  95              		.cfi_offset 14, -4
+  84:HardwareDrivers/Relay/Src/relay_hw.c ****   /* PB0 输出有效电平，高电平触发风扇继电器吸合。 */
+  85:HardwareDrivers/Relay/Src/relay_hw.c ****   HAL_GPIO_WritePin(FAN_RELAY_PORT, FAN_RELAY_PIN, RELAY_ACTIVE_LEVEL);
+  96              		.loc 1 85 3 view .LVU7
+  97 0002 0122     		movs	r2, #1
+  98 0004 1146     		mov	r1, r2
+  99 0006 0248     		ldr	r0, .L7
+ 100 0008 FFF7FEFF 		bl	HAL_GPIO_WritePin
+ 101              	.LVL2:
+  86:HardwareDrivers/Relay/Src/relay_hw.c **** }
+ 102              		.loc 1 86 1 is_stmt 0 view .LVU8
+ 103 000c 08BD     		pop	{r3, pc}
+ 104              	.L8:
+ 105 000e 00BF     		.align	2
+ 106              	.L7:
+ 107 0010 00040048 		.word	1207960576
+ 108              		.cfi_endproc
+ 109              	.LFE135:
+ 111              		.section	.text.FanRelay_Off,"ax",%progbits
+ 112              		.align	1
+ 113              		.global	FanRelay_Off
+ 114              		.syntax unified
+ 115              		.thumb
+ 116              		.thumb_func
+ 118              	FanRelay_Off:
+ 119              	.LFB136:
+  87:HardwareDrivers/Relay/Src/relay_hw.c **** 
+  88:HardwareDrivers/Relay/Src/relay_hw.c **** /**
+  89:HardwareDrivers/Relay/Src/relay_hw.c ****  * @brief 关闭风扇继电器，使继电器释放。
+  90:HardwareDrivers/Relay/Src/relay_hw.c ****  * @retval None
+  91:HardwareDrivers/Relay/Src/relay_hw.c ****  */
+  92:HardwareDrivers/Relay/Src/relay_hw.c **** void FanRelay_Off(void)
+  93:HardwareDrivers/Relay/Src/relay_hw.c **** {
+ 120              		.loc 1 93 1 is_stmt 1 view -0
+ 121              		.cfi_startproc
+ 122              		@ args = 0, pretend = 0, frame = 0
+ 123              		@ frame_needed = 0, uses_anonymous_args = 0
+ 124 0000 08B5     		push	{r3, lr}
+ 125              	.LCFI3:
+ 126              		.cfi_def_cfa_offset 8
+ 127              		.cfi_offset 3, -8
+ 128              		.cfi_offset 14, -4
+  94:HardwareDrivers/Relay/Src/relay_hw.c ****   /* PB0 输出无效电平，低电平让风扇继电器释放。 */
+  95:HardwareDrivers/Relay/Src/relay_hw.c ****   HAL_GPIO_WritePin(FAN_RELAY_PORT, FAN_RELAY_PIN, RELAY_INACTIVE_LEVEL);
+ 129              		.loc 1 95 3 view .LVU10
+ 130 0002 0022     		movs	r2, #0
+ 131 0004 0121     		movs	r1, #1
+ 132 0006 0248     		ldr	r0, .L11
+ 133 0008 FFF7FEFF 		bl	HAL_GPIO_WritePin
+ 134              	.LVL3:
+  96:HardwareDrivers/Relay/Src/relay_hw.c **** }
+ 135              		.loc 1 96 1 is_stmt 0 view .LVU11
+ 136 000c 08BD     		pop	{r3, pc}
+ 137              	.L12:
+ 138 000e 00BF     		.align	2
+ 139              	.L11:
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccEEC5hV.s 			page 5
+
+
+ 140 0010 00040048 		.word	1207960576
+ 141              		.cfi_endproc
+ 142              	.LFE136:
+ 144              		.section	.text.Relay_HW_AllOff,"ax",%progbits
+ 145              		.align	1
+ 146              		.global	Relay_HW_AllOff
+ 147              		.syntax unified
+ 148              		.thumb
+ 149              		.thumb_func
+ 151              	Relay_HW_AllOff:
+ 152              	.LFB137:
+  97:HardwareDrivers/Relay/Src/relay_hw.c **** 
+  98:HardwareDrivers/Relay/Src/relay_hw.c **** /**
+  99:HardwareDrivers/Relay/Src/relay_hw.c ****  * @brief 关闭所有继电器。
+ 100:HardwareDrivers/Relay/Src/relay_hw.c ****  * @retval None
+ 101:HardwareDrivers/Relay/Src/relay_hw.c ****  */
+ 102:HardwareDrivers/Relay/Src/relay_hw.c **** void Relay_HW_AllOff(void)
+ 103:HardwareDrivers/Relay/Src/relay_hw.c **** {
+ 153              		.loc 1 103 1 is_stmt 1 view -0
+ 154              		.cfi_startproc
+ 155              		@ args = 0, pretend = 0, frame = 0
+ 156              		@ frame_needed = 0, uses_anonymous_args = 0
+ 157 0000 08B5     		push	{r3, lr}
+ 158              	.LCFI4:
+ 159              		.cfi_def_cfa_offset 8
+ 160              		.cfi_offset 3, -8
+ 161              		.cfi_offset 14, -4
+ 104:HardwareDrivers/Relay/Src/relay_hw.c ****   /* 关闭雾化继电器。 */
+ 105:HardwareDrivers/Relay/Src/relay_hw.c ****   MistRelay_Off();
+ 162              		.loc 1 105 3 view .LVU13
+ 163 0002 FFF7FEFF 		bl	MistRelay_Off
+ 164              	.LVL4:
+ 106:HardwareDrivers/Relay/Src/relay_hw.c **** 
+ 107:HardwareDrivers/Relay/Src/relay_hw.c ****   /* 关闭风扇继电器。 */
+ 108:HardwareDrivers/Relay/Src/relay_hw.c ****   FanRelay_Off();
+ 165              		.loc 1 108 3 view .LVU14
+ 166 0006 FFF7FEFF 		bl	FanRelay_Off
+ 167              	.LVL5:
+ 109:HardwareDrivers/Relay/Src/relay_hw.c **** }
+ 168              		.loc 1 109 1 is_stmt 0 view .LVU15
+ 169 000a 08BD     		pop	{r3, pc}
+ 170              		.cfi_endproc
+ 171              	.LFE137:
+ 173              		.section	.text.Relay_HW_Init,"ax",%progbits
+ 174              		.align	1
+ 175              		.global	Relay_HW_Init
+ 176              		.syntax unified
+ 177              		.thumb
+ 178              		.thumb_func
+ 180              	Relay_HW_Init:
+ 181              	.LFB132:
+   8:HardwareDrivers/Relay/Src/relay_hw.c ****   /* 定义并清零 HAL GPIO 初始化结构体。 */
+ 182              		.loc 1 8 1 is_stmt 1 view -0
+ 183              		.cfi_startproc
+ 184              		@ args = 0, pretend = 0, frame = 32
+ 185              		@ frame_needed = 0, uses_anonymous_args = 0
+ 186 0000 F0B5     		push	{r4, r5, r6, r7, lr}
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccEEC5hV.s 			page 6
+
+
+ 187              	.LCFI5:
+ 188              		.cfi_def_cfa_offset 20
+ 189              		.cfi_offset 4, -20
+ 190              		.cfi_offset 5, -16
+ 191              		.cfi_offset 6, -12
+ 192              		.cfi_offset 7, -8
+ 193              		.cfi_offset 14, -4
+ 194 0002 89B0     		sub	sp, sp, #36
+ 195              	.LCFI6:
+ 196              		.cfi_def_cfa_offset 56
+  10:HardwareDrivers/Relay/Src/relay_hw.c **** 
+ 197              		.loc 1 10 3 view .LVU17
+  10:HardwareDrivers/Relay/Src/relay_hw.c **** 
+ 198              		.loc 1 10 20 is_stmt 0 view .LVU18
+ 199 0004 03AD     		add	r5, sp, #12
+ 200 0006 0024     		movs	r4, #0
+ 201 0008 0394     		str	r4, [sp, #12]
+ 202 000a 0494     		str	r4, [sp, #16]
+ 203 000c 0594     		str	r4, [sp, #20]
+ 204 000e 0694     		str	r4, [sp, #24]
+ 205 0010 0794     		str	r4, [sp, #28]
+  13:HardwareDrivers/Relay/Src/relay_hw.c **** 
+ 206              		.loc 1 13 3 is_stmt 1 view .LVU19
+ 207              	.LBB2:
+  13:HardwareDrivers/Relay/Src/relay_hw.c **** 
+ 208              		.loc 1 13 3 view .LVU20
+  13:HardwareDrivers/Relay/Src/relay_hw.c **** 
+ 209              		.loc 1 13 3 view .LVU21
+ 210 0012 1B4B     		ldr	r3, .L17
+ 211 0014 DA6C     		ldr	r2, [r3, #76]
+ 212 0016 42F00102 		orr	r2, r2, #1
+ 213 001a DA64     		str	r2, [r3, #76]
+  13:HardwareDrivers/Relay/Src/relay_hw.c **** 
+ 214              		.loc 1 13 3 view .LVU22
+ 215 001c DA6C     		ldr	r2, [r3, #76]
+ 216 001e 02F00102 		and	r2, r2, #1
+ 217 0022 0192     		str	r2, [sp, #4]
+  13:HardwareDrivers/Relay/Src/relay_hw.c **** 
+ 218              		.loc 1 13 3 view .LVU23
+ 219 0024 019A     		ldr	r2, [sp, #4]
+ 220              	.LBE2:
+  13:HardwareDrivers/Relay/Src/relay_hw.c **** 
+ 221              		.loc 1 13 3 view .LVU24
+  16:HardwareDrivers/Relay/Src/relay_hw.c **** 
+ 222              		.loc 1 16 3 view .LVU25
+ 223              	.LBB3:
+  16:HardwareDrivers/Relay/Src/relay_hw.c **** 
+ 224              		.loc 1 16 3 view .LVU26
+  16:HardwareDrivers/Relay/Src/relay_hw.c **** 
+ 225              		.loc 1 16 3 view .LVU27
+ 226 0026 DA6C     		ldr	r2, [r3, #76]
+ 227 0028 42F00202 		orr	r2, r2, #2
+ 228 002c DA64     		str	r2, [r3, #76]
+  16:HardwareDrivers/Relay/Src/relay_hw.c **** 
+ 229              		.loc 1 16 3 view .LVU28
+ 230 002e DB6C     		ldr	r3, [r3, #76]
+ 231 0030 03F00203 		and	r3, r3, #2
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccEEC5hV.s 			page 7
+
+
+ 232 0034 0293     		str	r3, [sp, #8]
+  16:HardwareDrivers/Relay/Src/relay_hw.c **** 
+ 233              		.loc 1 16 3 view .LVU29
+ 234 0036 029B     		ldr	r3, [sp, #8]
+ 235              	.LBE3:
+  16:HardwareDrivers/Relay/Src/relay_hw.c **** 
+ 236              		.loc 1 16 3 view .LVU30
+  19:HardwareDrivers/Relay/Src/relay_hw.c **** 
+ 237              		.loc 1 19 3 view .LVU31
+ 238 0038 2246     		mov	r2, r4
+ 239 003a 0221     		movs	r1, #2
+ 240 003c 4FF09040 		mov	r0, #1207959552
+ 241 0040 FFF7FEFF 		bl	HAL_GPIO_WritePin
+ 242              	.LVL6:
+  22:HardwareDrivers/Relay/Src/relay_hw.c **** 
+ 243              		.loc 1 22 3 view .LVU32
+ 244 0044 0F4F     		ldr	r7, .L17+4
+ 245 0046 2246     		mov	r2, r4
+ 246 0048 0121     		movs	r1, #1
+ 247 004a 3846     		mov	r0, r7
+ 248 004c FFF7FEFF 		bl	HAL_GPIO_WritePin
+ 249              	.LVL7:
+  25:HardwareDrivers/Relay/Src/relay_hw.c **** 
+ 250              		.loc 1 25 3 view .LVU33
+  25:HardwareDrivers/Relay/Src/relay_hw.c **** 
+ 251              		.loc 1 25 23 is_stmt 0 view .LVU34
+ 252 0050 0223     		movs	r3, #2
+ 253 0052 0393     		str	r3, [sp, #12]
+  28:HardwareDrivers/Relay/Src/relay_hw.c **** 
+ 254              		.loc 1 28 3 is_stmt 1 view .LVU35
+  28:HardwareDrivers/Relay/Src/relay_hw.c **** 
+ 255              		.loc 1 28 24 is_stmt 0 view .LVU36
+ 256 0054 0126     		movs	r6, #1
+ 257 0056 0496     		str	r6, [sp, #16]
+  31:HardwareDrivers/Relay/Src/relay_hw.c **** 
+ 258              		.loc 1 31 3 is_stmt 1 view .LVU37
+  31:HardwareDrivers/Relay/Src/relay_hw.c **** 
+ 259              		.loc 1 31 24 is_stmt 0 view .LVU38
+ 260 0058 0594     		str	r4, [sp, #20]
+  34:HardwareDrivers/Relay/Src/relay_hw.c **** 
+ 261              		.loc 1 34 3 is_stmt 1 view .LVU39
+  34:HardwareDrivers/Relay/Src/relay_hw.c **** 
+ 262              		.loc 1 34 25 is_stmt 0 view .LVU40
+ 263 005a 0694     		str	r4, [sp, #24]
+  37:HardwareDrivers/Relay/Src/relay_hw.c **** 
+ 264              		.loc 1 37 3 is_stmt 1 view .LVU41
+ 265 005c 2946     		mov	r1, r5
+ 266 005e 4FF09040 		mov	r0, #1207959552
+ 267 0062 FFF7FEFF 		bl	HAL_GPIO_Init
+ 268              	.LVL8:
+  40:HardwareDrivers/Relay/Src/relay_hw.c **** 
+ 269              		.loc 1 40 3 view .LVU42
+  40:HardwareDrivers/Relay/Src/relay_hw.c **** 
+ 270              		.loc 1 40 23 is_stmt 0 view .LVU43
+ 271 0066 0396     		str	r6, [sp, #12]
+  43:HardwareDrivers/Relay/Src/relay_hw.c **** 
+ 272              		.loc 1 43 3 is_stmt 1 view .LVU44
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccEEC5hV.s 			page 8
+
+
+  43:HardwareDrivers/Relay/Src/relay_hw.c **** 
+ 273              		.loc 1 43 24 is_stmt 0 view .LVU45
+ 274 0068 0496     		str	r6, [sp, #16]
+  46:HardwareDrivers/Relay/Src/relay_hw.c **** 
+ 275              		.loc 1 46 3 is_stmt 1 view .LVU46
+  46:HardwareDrivers/Relay/Src/relay_hw.c **** 
+ 276              		.loc 1 46 24 is_stmt 0 view .LVU47
+ 277 006a 0594     		str	r4, [sp, #20]
+  49:HardwareDrivers/Relay/Src/relay_hw.c **** 
+ 278              		.loc 1 49 3 is_stmt 1 view .LVU48
+  49:HardwareDrivers/Relay/Src/relay_hw.c **** 
+ 279              		.loc 1 49 25 is_stmt 0 view .LVU49
+ 280 006c 0694     		str	r4, [sp, #24]
+  52:HardwareDrivers/Relay/Src/relay_hw.c **** 
+ 281              		.loc 1 52 3 is_stmt 1 view .LVU50
+ 282 006e 2946     		mov	r1, r5
+ 283 0070 3846     		mov	r0, r7
+ 284 0072 FFF7FEFF 		bl	HAL_GPIO_Init
+ 285              	.LVL9:
+  55:HardwareDrivers/Relay/Src/relay_hw.c **** }
+ 286              		.loc 1 55 3 view .LVU51
+ 287 0076 FFF7FEFF 		bl	Relay_HW_AllOff
+ 288              	.LVL10:
+  56:HardwareDrivers/Relay/Src/relay_hw.c **** 
+ 289              		.loc 1 56 1 is_stmt 0 view .LVU52
+ 290 007a 09B0     		add	sp, sp, #36
+ 291              	.LCFI7:
+ 292              		.cfi_def_cfa_offset 20
+ 293              		@ sp needed
+ 294 007c F0BD     		pop	{r4, r5, r6, r7, pc}
+ 295              	.L18:
+ 296 007e 00BF     		.align	2
+ 297              	.L17:
+ 298 0080 00100240 		.word	1073876992
+ 299 0084 00040048 		.word	1207960576
+ 300              		.cfi_endproc
+ 301              	.LFE132:
+ 303              		.section	.text.Relay_HW_TestControlSide,"ax",%progbits
+ 304              		.align	1
+ 305              		.global	Relay_HW_TestControlSide
+ 306              		.syntax unified
+ 307              		.thumb
+ 308              		.thumb_func
+ 310              	Relay_HW_TestControlSide:
+ 311              	.LFB138:
+ 110:HardwareDrivers/Relay/Src/relay_hw.c **** 
+ 111:HardwareDrivers/Relay/Src/relay_hw.c **** /**
+ 112:HardwareDrivers/Relay/Src/relay_hw.c ****  * @brief 只测试继电器控制侧的吸合和释放动作。
+ 113:HardwareDrivers/Relay/Src/relay_hw.c ****  * @retval None
+ 114:HardwareDrivers/Relay/Src/relay_hw.c ****  */
+ 115:HardwareDrivers/Relay/Src/relay_hw.c **** void Relay_HW_TestControlSide(void)
+ 116:HardwareDrivers/Relay/Src/relay_hw.c **** {
+ 312              		.loc 1 116 1 is_stmt 1 view -0
+ 313              		.cfi_startproc
+ 314              		@ args = 0, pretend = 0, frame = 0
+ 315              		@ frame_needed = 0, uses_anonymous_args = 0
+ 316 0000 08B5     		push	{r3, lr}
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccEEC5hV.s 			page 9
+
+
+ 317              	.LCFI8:
+ 318              		.cfi_def_cfa_offset 8
+ 319              		.cfi_offset 3, -8
+ 320              		.cfi_offset 14, -4
+ 117:HardwareDrivers/Relay/Src/relay_hw.c ****   /* 测试开始前先关闭全部继电器。 */
+ 118:HardwareDrivers/Relay/Src/relay_hw.c ****   Relay_HW_AllOff();
+ 321              		.loc 1 118 3 view .LVU54
+ 322 0002 FFF7FEFF 		bl	Relay_HW_AllOff
+ 323              	.LVL11:
+ 119:HardwareDrivers/Relay/Src/relay_hw.c **** 
+ 120:HardwareDrivers/Relay/Src/relay_hw.c ****   /* 保持全部关闭 1000ms，便于观察默认释放状态。 */
+ 121:HardwareDrivers/Relay/Src/relay_hw.c ****   HAL_Delay(1000U);
+ 324              		.loc 1 121 3 view .LVU55
+ 325 0006 4FF47A70 		mov	r0, #1000
+ 326 000a FFF7FEFF 		bl	HAL_Delay
+ 327              	.LVL12:
+ 122:HardwareDrivers/Relay/Src/relay_hw.c **** 
+ 123:HardwareDrivers/Relay/Src/relay_hw.c ****   /* 开启雾化继电器，观察继电器是否吸合或指示灯是否变化。 */
+ 124:HardwareDrivers/Relay/Src/relay_hw.c ****   MistRelay_On();
+ 328              		.loc 1 124 3 view .LVU56
+ 329 000e FFF7FEFF 		bl	MistRelay_On
+ 330              	.LVL13:
+ 125:HardwareDrivers/Relay/Src/relay_hw.c **** 
+ 126:HardwareDrivers/Relay/Src/relay_hw.c ****   /* 雾化继电器保持吸合 1000ms。 */
+ 127:HardwareDrivers/Relay/Src/relay_hw.c ****   HAL_Delay(1000U);
+ 331              		.loc 1 127 3 view .LVU57
+ 332 0012 4FF47A70 		mov	r0, #1000
+ 333 0016 FFF7FEFF 		bl	HAL_Delay
+ 334              	.LVL14:
+ 128:HardwareDrivers/Relay/Src/relay_hw.c **** 
+ 129:HardwareDrivers/Relay/Src/relay_hw.c ****   /* 关闭雾化继电器，观察继电器是否释放。 */
+ 130:HardwareDrivers/Relay/Src/relay_hw.c ****   MistRelay_Off();
+ 335              		.loc 1 130 3 view .LVU58
+ 336 001a FFF7FEFF 		bl	MistRelay_Off
+ 337              	.LVL15:
+ 131:HardwareDrivers/Relay/Src/relay_hw.c **** 
+ 132:HardwareDrivers/Relay/Src/relay_hw.c ****   /* 雾化继电器保持释放 1000ms。 */
+ 133:HardwareDrivers/Relay/Src/relay_hw.c ****   HAL_Delay(1000U);
+ 338              		.loc 1 133 3 view .LVU59
+ 339 001e 4FF47A70 		mov	r0, #1000
+ 340 0022 FFF7FEFF 		bl	HAL_Delay
+ 341              	.LVL16:
+ 134:HardwareDrivers/Relay/Src/relay_hw.c **** 
+ 135:HardwareDrivers/Relay/Src/relay_hw.c ****   /* 开启风扇继电器，观察继电器是否吸合或指示灯是否变化。 */
+ 136:HardwareDrivers/Relay/Src/relay_hw.c ****   FanRelay_On();
+ 342              		.loc 1 136 3 view .LVU60
+ 343 0026 FFF7FEFF 		bl	FanRelay_On
+ 344              	.LVL17:
+ 137:HardwareDrivers/Relay/Src/relay_hw.c **** 
+ 138:HardwareDrivers/Relay/Src/relay_hw.c ****   /* 风扇继电器保持吸合 1000ms。 */
+ 139:HardwareDrivers/Relay/Src/relay_hw.c ****   HAL_Delay(1000U);
+ 345              		.loc 1 139 3 view .LVU61
+ 346 002a 4FF47A70 		mov	r0, #1000
+ 347 002e FFF7FEFF 		bl	HAL_Delay
+ 348              	.LVL18:
+ 140:HardwareDrivers/Relay/Src/relay_hw.c **** 
+ 141:HardwareDrivers/Relay/Src/relay_hw.c ****   /* 关闭风扇继电器，观察继电器是否释放。 */
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccEEC5hV.s 			page 10
+
+
+ 142:HardwareDrivers/Relay/Src/relay_hw.c ****   FanRelay_Off();
+ 349              		.loc 1 142 3 view .LVU62
+ 350 0032 FFF7FEFF 		bl	FanRelay_Off
+ 351              	.LVL19:
+ 143:HardwareDrivers/Relay/Src/relay_hw.c **** 
+ 144:HardwareDrivers/Relay/Src/relay_hw.c ****   /* 风扇继电器保持释放 1000ms。 */
+ 145:HardwareDrivers/Relay/Src/relay_hw.c ****   HAL_Delay(1000U);
+ 352              		.loc 1 145 3 view .LVU63
+ 353 0036 4FF47A70 		mov	r0, #1000
+ 354 003a FFF7FEFF 		bl	HAL_Delay
+ 355              	.LVL20:
+ 146:HardwareDrivers/Relay/Src/relay_hw.c **** 
+ 147:HardwareDrivers/Relay/Src/relay_hw.c ****   /* 测试结束后再次关闭全部继电器。 */
+ 148:HardwareDrivers/Relay/Src/relay_hw.c ****   Relay_HW_AllOff();
+ 356              		.loc 1 148 3 view .LVU64
+ 357 003e FFF7FEFF 		bl	Relay_HW_AllOff
+ 358              	.LVL21:
+ 149:HardwareDrivers/Relay/Src/relay_hw.c **** }
+ 359              		.loc 1 149 1 is_stmt 0 view .LVU65
+ 360 0042 08BD     		pop	{r3, pc}
+ 361              		.cfi_endproc
+ 362              	.LFE138:
+ 364              		.text
+ 365              	.Letext0:
+ 366              		.file 2 "D:\\STM32CubeIDE\\STM32CubeIDE_2.1.1\\STM32CubeIDE\\plugins\\com.st.stm32cube.ide.mcu.ext
+ 367              		.file 3 "D:\\STM32CubeIDE\\STM32CubeIDE_2.1.1\\STM32CubeIDE\\plugins\\com.st.stm32cube.ide.mcu.ext
+ 368              		.file 4 "Drivers/CMSIS/Device/ST/STM32G4xx/Include/stm32g474xx.h"
+ 369              		.file 5 "Drivers/STM32G4xx_HAL_Driver/Inc/stm32g4xx_hal_gpio.h"
+ 370              		.file 6 "Drivers/STM32G4xx_HAL_Driver/Inc/stm32g4xx_hal.h"
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccEEC5hV.s 			page 11
+
+
+DEFINED SYMBOLS
+                            *ABS*:00000000 relay_hw.c
+C:\Users\w1785\AppData\Local\Temp\ccEEC5hV.s:21     .text.MistRelay_On:00000000 $t
+C:\Users\w1785\AppData\Local\Temp\ccEEC5hV.s:27     .text.MistRelay_On:00000000 MistRelay_On
+C:\Users\w1785\AppData\Local\Temp\ccEEC5hV.s:50     .text.MistRelay_Off:00000000 $t
+C:\Users\w1785\AppData\Local\Temp\ccEEC5hV.s:56     .text.MistRelay_Off:00000000 MistRelay_Off
+C:\Users\w1785\AppData\Local\Temp\ccEEC5hV.s:79     .text.FanRelay_On:00000000 $t
+C:\Users\w1785\AppData\Local\Temp\ccEEC5hV.s:85     .text.FanRelay_On:00000000 FanRelay_On
+C:\Users\w1785\AppData\Local\Temp\ccEEC5hV.s:107    .text.FanRelay_On:00000010 $d
+C:\Users\w1785\AppData\Local\Temp\ccEEC5hV.s:112    .text.FanRelay_Off:00000000 $t
+C:\Users\w1785\AppData\Local\Temp\ccEEC5hV.s:118    .text.FanRelay_Off:00000000 FanRelay_Off
+C:\Users\w1785\AppData\Local\Temp\ccEEC5hV.s:140    .text.FanRelay_Off:00000010 $d
+C:\Users\w1785\AppData\Local\Temp\ccEEC5hV.s:145    .text.Relay_HW_AllOff:00000000 $t
+C:\Users\w1785\AppData\Local\Temp\ccEEC5hV.s:151    .text.Relay_HW_AllOff:00000000 Relay_HW_AllOff
+C:\Users\w1785\AppData\Local\Temp\ccEEC5hV.s:174    .text.Relay_HW_Init:00000000 $t
+C:\Users\w1785\AppData\Local\Temp\ccEEC5hV.s:180    .text.Relay_HW_Init:00000000 Relay_HW_Init
+C:\Users\w1785\AppData\Local\Temp\ccEEC5hV.s:298    .text.Relay_HW_Init:00000080 $d
+C:\Users\w1785\AppData\Local\Temp\ccEEC5hV.s:304    .text.Relay_HW_TestControlSide:00000000 $t
+C:\Users\w1785\AppData\Local\Temp\ccEEC5hV.s:310    .text.Relay_HW_TestControlSide:00000000 Relay_HW_TestControlSide
+
+UNDEFINED SYMBOLS
+HAL_GPIO_WritePin
+HAL_GPIO_Init
+HAL_Delay

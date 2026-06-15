@@ -1,4 +1,4 @@
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccxsIfz0.s 			page 1
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccIE8ukO.s 			page 1
 
 
    1              		.cpu cortex-m4
@@ -58,7 +58,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccxsIfz0.s 			page 1
   28:Middlewares/LVGL/lvgl/src/widgets/dropdown/lv_dropdown.c **** /*********************
   29:Middlewares/LVGL/lvgl/src/widgets/dropdown/lv_dropdown.c ****  *      DEFINES
   30:Middlewares/LVGL/lvgl/src/widgets/dropdown/lv_dropdown.c ****  *********************/
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccxsIfz0.s 			page 2
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccIE8ukO.s 			page 2
 
 
   31:Middlewares/LVGL/lvgl/src/widgets/dropdown/lv_dropdown.c **** #define MY_CLASS (&lv_dropdown_class)
@@ -118,7 +118,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccxsIfz0.s 			page 1
   85:Middlewares/LVGL/lvgl/src/widgets/dropdown/lv_dropdown.c ****         .setter = NULL,
   86:Middlewares/LVGL/lvgl/src/widgets/dropdown/lv_dropdown.c ****         .getter = lv_dropdown_get_option_count,
   87:Middlewares/LVGL/lvgl/src/widgets/dropdown/lv_dropdown.c ****     },
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccxsIfz0.s 			page 3
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccIE8ukO.s 			page 3
 
 
   88:Middlewares/LVGL/lvgl/src/widgets/dropdown/lv_dropdown.c ****     {
@@ -178,7 +178,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccxsIfz0.s 			page 1
  142:Middlewares/LVGL/lvgl/src/widgets/dropdown/lv_dropdown.c **** };
  143:Middlewares/LVGL/lvgl/src/widgets/dropdown/lv_dropdown.c **** 
  144:Middlewares/LVGL/lvgl/src/widgets/dropdown/lv_dropdown.c **** /**********************
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccxsIfz0.s 			page 4
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccIE8ukO.s 			page 4
 
 
  145:Middlewares/LVGL/lvgl/src/widgets/dropdown/lv_dropdown.c ****  *      MACROS
@@ -238,7 +238,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccxsIfz0.s 			page 1
  199:Middlewares/LVGL/lvgl/src/widgets/dropdown/lv_dropdown.c ****     lv_dropdown_t * dropdown = (lv_dropdown_t *)obj;
  200:Middlewares/LVGL/lvgl/src/widgets/dropdown/lv_dropdown.c **** 
  201:Middlewares/LVGL/lvgl/src/widgets/dropdown/lv_dropdown.c ****     /*Count the '\n'-s to determine the number of options*/
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccxsIfz0.s 			page 5
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccIE8ukO.s 			page 5
 
 
  202:Middlewares/LVGL/lvgl/src/widgets/dropdown/lv_dropdown.c ****     dropdown->option_cnt = 0;
@@ -298,7 +298,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccxsIfz0.s 			page 1
  256:Middlewares/LVGL/lvgl/src/widgets/dropdown/lv_dropdown.c ****     dropdown->sel_opt_id_orig = 0;
  257:Middlewares/LVGL/lvgl/src/widgets/dropdown/lv_dropdown.c **** 
  258:Middlewares/LVGL/lvgl/src/widgets/dropdown/lv_dropdown.c ****     if(dropdown->static_options == 0 && dropdown->options != NULL) {
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccxsIfz0.s 			page 6
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccIE8ukO.s 			page 6
 
 
  259:Middlewares/LVGL/lvgl/src/widgets/dropdown/lv_dropdown.c ****         lv_free(dropdown->options);
@@ -358,7 +358,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccxsIfz0.s 			page 1
  313:Middlewares/LVGL/lvgl/src/widgets/dropdown/lv_dropdown.c ****             if(dropdown->options[insert_pos] == '\n')
  314:Middlewares/LVGL/lvgl/src/widgets/dropdown/lv_dropdown.c ****                 opcnt++;
  315:Middlewares/LVGL/lvgl/src/widgets/dropdown/lv_dropdown.c ****         }
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccxsIfz0.s 			page 7
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccIE8ukO.s 			page 7
 
 
  316:Middlewares/LVGL/lvgl/src/widgets/dropdown/lv_dropdown.c ****     }
@@ -418,7 +418,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccxsIfz0.s 			page 1
  370:Middlewares/LVGL/lvgl/src/widgets/dropdown/lv_dropdown.c ****         position_to_selected(obj, LV_ANIM_OFF);
  371:Middlewares/LVGL/lvgl/src/widgets/dropdown/lv_dropdown.c ****     }
  372:Middlewares/LVGL/lvgl/src/widgets/dropdown/lv_dropdown.c **** 
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccxsIfz0.s 			page 8
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccIE8ukO.s 			page 8
 
 
  373:Middlewares/LVGL/lvgl/src/widgets/dropdown/lv_dropdown.c ****     lv_obj_invalidate(obj);
@@ -478,7 +478,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccxsIfz0.s 			page 1
  427:Middlewares/LVGL/lvgl/src/widgets/dropdown/lv_dropdown.c **** {
  428:Middlewares/LVGL/lvgl/src/widgets/dropdown/lv_dropdown.c ****     LV_ASSERT_OBJ(obj, MY_CLASS);
  429:Middlewares/LVGL/lvgl/src/widgets/dropdown/lv_dropdown.c **** 
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccxsIfz0.s 			page 9
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccIE8ukO.s 			page 9
 
 
  430:Middlewares/LVGL/lvgl/src/widgets/dropdown/lv_dropdown.c ****     lv_dropdown_t * dropdown = (lv_dropdown_t *)obj;
@@ -538,7 +538,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccxsIfz0.s 			page 1
  484:Middlewares/LVGL/lvgl/src/widgets/dropdown/lv_dropdown.c **** }
  485:Middlewares/LVGL/lvgl/src/widgets/dropdown/lv_dropdown.c **** 
  486:Middlewares/LVGL/lvgl/src/widgets/dropdown/lv_dropdown.c **** int32_t lv_dropdown_get_option_index(lv_obj_t * obj, const char * option)
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccxsIfz0.s 			page 10
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccIE8ukO.s 			page 10
 
 
  487:Middlewares/LVGL/lvgl/src/widgets/dropdown/lv_dropdown.c **** {
@@ -598,7 +598,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccxsIfz0.s 			page 1
  541:Middlewares/LVGL/lvgl/src/widgets/dropdown/lv_dropdown.c ****     lv_obj_add_state(dropdown_obj, LV_STATE_CHECKED);
  542:Middlewares/LVGL/lvgl/src/widgets/dropdown/lv_dropdown.c ****     lv_obj_set_parent(dropdown->list, lv_obj_get_screen(dropdown_obj));
  543:Middlewares/LVGL/lvgl/src/widgets/dropdown/lv_dropdown.c ****     lv_obj_move_to_index(dropdown->list, -1);
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccxsIfz0.s 			page 11
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccIE8ukO.s 			page 11
 
 
  544:Middlewares/LVGL/lvgl/src/widgets/dropdown/lv_dropdown.c ****     lv_obj_remove_flag(dropdown->list, LV_OBJ_FLAG_HIDDEN);
@@ -658,7 +658,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccxsIfz0.s 			page 1
  598:Middlewares/LVGL/lvgl/src/widgets/dropdown/lv_dropdown.c **** 
  599:Middlewares/LVGL/lvgl/src/widgets/dropdown/lv_dropdown.c ****     position_to_selected(dropdown_obj, LV_ANIM_OFF);
  600:Middlewares/LVGL/lvgl/src/widgets/dropdown/lv_dropdown.c **** 
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccxsIfz0.s 			page 12
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccIE8ukO.s 			page 12
 
 
  601:Middlewares/LVGL/lvgl/src/widgets/dropdown/lv_dropdown.c ****     if(dir == LV_DIR_BOTTOM)     lv_obj_align_to(dropdown->list, dropdown_obj, LV_ALIGN_OUT_BOTTOM_
@@ -718,7 +718,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccxsIfz0.s 			page 1
  655:Middlewares/LVGL/lvgl/src/widgets/dropdown/lv_dropdown.c **** 
  656:Middlewares/LVGL/lvgl/src/widgets/dropdown/lv_dropdown.c **** lv_observer_t * lv_dropdown_bind_value(lv_obj_t * obj, lv_subject_t * subject)
  657:Middlewares/LVGL/lvgl/src/widgets/dropdown/lv_dropdown.c **** {
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccxsIfz0.s 			page 13
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccIE8ukO.s 			page 13
 
 
  658:Middlewares/LVGL/lvgl/src/widgets/dropdown/lv_dropdown.c ****     LV_ASSERT_NULL(subject);
@@ -778,7 +778,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccxsIfz0.s 			page 1
  712:Middlewares/LVGL/lvgl/src/widgets/dropdown/lv_dropdown.c **** 
  713:Middlewares/LVGL/lvgl/src/widgets/dropdown/lv_dropdown.c ****     dropdown->list = lv_dropdown_list_create(lv_obj_get_screen(obj));
  714:Middlewares/LVGL/lvgl/src/widgets/dropdown/lv_dropdown.c ****     lv_dropdown_list_t * list = (lv_dropdown_list_t *)dropdown->list;
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccxsIfz0.s 			page 14
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccIE8ukO.s 			page 14
 
 
  715:Middlewares/LVGL/lvgl/src/widgets/dropdown/lv_dropdown.c ****     list->dropdown = obj;
@@ -838,7 +838,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccxsIfz0.s 			page 1
   40              		.loc 1 757 5 is_stmt 1 view .LVU5
  758:Middlewares/LVGL/lvgl/src/widgets/dropdown/lv_dropdown.c ****     dropdown->list = NULL;
   41              		.loc 1 758 5 view .LVU6
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccxsIfz0.s 			page 15
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccIE8ukO.s 			page 15
 
 
   42              		.loc 1 758 20 is_stmt 0 view .LVU7
@@ -898,7 +898,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccxsIfz0.s 			page 1
  798:Middlewares/LVGL/lvgl/src/widgets/dropdown/lv_dropdown.c ****         if(res != LV_RESULT_OK) return;
  799:Middlewares/LVGL/lvgl/src/widgets/dropdown/lv_dropdown.c ****     }
  800:Middlewares/LVGL/lvgl/src/widgets/dropdown/lv_dropdown.c ****     else if(code == LV_EVENT_STYLE_CHANGED) {
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccxsIfz0.s 			page 16
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccIE8ukO.s 			page 16
 
 
  801:Middlewares/LVGL/lvgl/src/widgets/dropdown/lv_dropdown.c ****         lv_obj_refresh_self_size(obj);
@@ -958,7 +958,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccxsIfz0.s 			page 1
  855:Middlewares/LVGL/lvgl/src/widgets/dropdown/lv_dropdown.c ****             dropdown->sel_opt_id = new_id;
  856:Middlewares/LVGL/lvgl/src/widgets/dropdown/lv_dropdown.c ****             position_to_selected(obj, LV_ANIM_ON);
  857:Middlewares/LVGL/lvgl/src/widgets/dropdown/lv_dropdown.c ****         }
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccxsIfz0.s 			page 17
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccIE8ukO.s 			page 17
 
 
  858:Middlewares/LVGL/lvgl/src/widgets/dropdown/lv_dropdown.c ****     }
@@ -1018,7 +1018,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccxsIfz0.s 			page 1
  912:Middlewares/LVGL/lvgl/src/widgets/dropdown/lv_dropdown.c ****     symbol_dsc.base.layer = layer;
  913:Middlewares/LVGL/lvgl/src/widgets/dropdown/lv_dropdown.c ****     lv_obj_init_draw_label_dsc(obj, LV_PART_INDICATOR, &symbol_dsc);
  914:Middlewares/LVGL/lvgl/src/widgets/dropdown/lv_dropdown.c **** 
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccxsIfz0.s 			page 18
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccIE8ukO.s 			page 18
 
 
  915:Middlewares/LVGL/lvgl/src/widgets/dropdown/lv_dropdown.c ****     /*If no text specified use the selected option*/
@@ -1078,7 +1078,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccxsIfz0.s 			page 1
  969:Middlewares/LVGL/lvgl/src/widgets/dropdown/lv_dropdown.c ****         if(symbol_type == LV_IMAGE_SRC_SYMBOL) {
  970:Middlewares/LVGL/lvgl/src/widgets/dropdown/lv_dropdown.c ****             symbol_dsc.text = dropdown->symbol;
  971:Middlewares/LVGL/lvgl/src/widgets/dropdown/lv_dropdown.c ****             lv_draw_label(layer, &symbol_dsc, &symbol_area);
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccxsIfz0.s 			page 19
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccIE8ukO.s 			page 19
 
 
  972:Middlewares/LVGL/lvgl/src/widgets/dropdown/lv_dropdown.c ****         }
@@ -1138,7 +1138,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccxsIfz0.s 			page 1
 1026:Middlewares/LVGL/lvgl/src/widgets/dropdown/lv_dropdown.c **** 
 1027:Middlewares/LVGL/lvgl/src/widgets/dropdown/lv_dropdown.c ****     label_dsc.text = opt_txt;
 1028:Middlewares/LVGL/lvgl/src/widgets/dropdown/lv_dropdown.c ****     if(dropdown->text == NULL) {
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccxsIfz0.s 			page 20
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccIE8ukO.s 			page 20
 
 
 1029:Middlewares/LVGL/lvgl/src/widgets/dropdown/lv_dropdown.c ****         label_dsc.text_local = true;
@@ -1198,7 +1198,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccxsIfz0.s 			page 1
 1083:Middlewares/LVGL/lvgl/src/widgets/dropdown/lv_dropdown.c **** 
 1084:Middlewares/LVGL/lvgl/src/widgets/dropdown/lv_dropdown.c ****     /*Draw a rectangle under the selected item*/
 1085:Middlewares/LVGL/lvgl/src/widgets/dropdown/lv_dropdown.c ****     const lv_font_t * font    = lv_obj_get_style_text_font(list_obj, LV_PART_SELECTED);
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccxsIfz0.s 			page 21
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccIE8ukO.s 			page 21
 
 
 1086:Middlewares/LVGL/lvgl/src/widgets/dropdown/lv_dropdown.c ****     int32_t line_space = lv_obj_get_style_text_line_space(list_obj,  LV_PART_SELECTED);
@@ -1258,7 +1258,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccxsIfz0.s 			page 1
 1140:Middlewares/LVGL/lvgl/src/widgets/dropdown/lv_dropdown.c ****     area_sel.y1 -= label_dsc.line_space / 2;
 1141:Middlewares/LVGL/lvgl/src/widgets/dropdown/lv_dropdown.c **** 
 1142:Middlewares/LVGL/lvgl/src/widgets/dropdown/lv_dropdown.c ****     area_sel.y2 = area_sel.y1 + font_h + label_dsc.line_space - 1;
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccxsIfz0.s 			page 22
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccIE8ukO.s 			page 22
 
 
 1143:Middlewares/LVGL/lvgl/src/widgets/dropdown/lv_dropdown.c ****     area_sel.x1 = list_obj->coords.x1;
@@ -1318,7 +1318,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccxsIfz0.s 			page 1
 1197:Middlewares/LVGL/lvgl/src/widgets/dropdown/lv_dropdown.c ****     lv_dropdown_list_t * list = (lv_dropdown_list_t *) list_obj;
 1198:Middlewares/LVGL/lvgl/src/widgets/dropdown/lv_dropdown.c ****     lv_obj_t * dropdown_obj = list->dropdown;
 1199:Middlewares/LVGL/lvgl/src/widgets/dropdown/lv_dropdown.c ****     lv_dropdown_t * dropdown = (lv_dropdown_t *)dropdown_obj;
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccxsIfz0.s 			page 23
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccIE8ukO.s 			page 23
 
 
 1200:Middlewares/LVGL/lvgl/src/widgets/dropdown/lv_dropdown.c **** 
@@ -1378,7 +1378,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccxsIfz0.s 			page 1
 1254:Middlewares/LVGL/lvgl/src/widgets/dropdown/lv_dropdown.c ****     int32_t font_h              = lv_font_get_line_height(font);
 1255:Middlewares/LVGL/lvgl/src/widgets/dropdown/lv_dropdown.c ****     int32_t line_space = lv_obj_get_style_text_line_space(label, LV_PART_MAIN);
 1256:Middlewares/LVGL/lvgl/src/widgets/dropdown/lv_dropdown.c **** 
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccxsIfz0.s 			page 24
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccIE8ukO.s 			page 24
 
 
 1257:Middlewares/LVGL/lvgl/src/widgets/dropdown/lv_dropdown.c ****     y += line_space / 2;
@@ -1438,7 +1438,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccxsIfz0.s 			page 1
   75              		.cfi_offset 14, -4
 1294:Middlewares/LVGL/lvgl/src/widgets/dropdown/lv_dropdown.c **** 
 1295:Middlewares/LVGL/lvgl/src/widgets/dropdown/lv_dropdown.c ****     return lv_obj_get_child(dropdown->list, 0);
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccxsIfz0.s 			page 25
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccIE8ukO.s 			page 25
 
 
   76              		.loc 1 1295 5 is_stmt 1 view .LVU15
@@ -1498,7 +1498,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccxsIfz0.s 			page 1
  125              		.loc 1 1275 5 is_stmt 1 view .LVU23
 1275:Middlewares/LVGL/lvgl/src/widgets/dropdown/lv_dropdown.c **** 
  126              		.loc 1 1275 7 is_stmt 0 view .LVU24
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccxsIfz0.s 			page 26
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccIE8ukO.s 			page 26
 
 
  127 000c 40B1     		cbz	r0, .L8
@@ -1558,7 +1558,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccxsIfz0.s 			page 1
   16:Middlewares/LVGL/lvgl/src/widgets/dropdown/../../core/lv_obj_style_gen.h **** #endif
   17:Middlewares/LVGL/lvgl/src/widgets/dropdown/../../core/lv_obj_style_gen.h **** 
   18:Middlewares/LVGL/lvgl/src/widgets/dropdown/../../core/lv_obj_style_gen.h **** #include "../misc/lv_area.h"
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccxsIfz0.s 			page 27
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccIE8ukO.s 			page 27
 
 
   19:Middlewares/LVGL/lvgl/src/widgets/dropdown/../../core/lv_obj_style_gen.h **** #include "../misc/lv_style.h"
@@ -1618,7 +1618,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccxsIfz0.s 			page 1
   73:Middlewares/LVGL/lvgl/src/widgets/dropdown/../../core/lv_obj_style_gen.h **** }
   74:Middlewares/LVGL/lvgl/src/widgets/dropdown/../../core/lv_obj_style_gen.h **** 
   75:Middlewares/LVGL/lvgl/src/widgets/dropdown/../../core/lv_obj_style_gen.h **** /**
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccxsIfz0.s 			page 28
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccIE8ukO.s 			page 28
 
 
   76:Middlewares/LVGL/lvgl/src/widgets/dropdown/../../core/lv_obj_style_gen.h ****  * Gets a minimal height. Pixel and percentage values can be used. Percentage values
@@ -1678,7 +1678,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccxsIfz0.s 			page 1
  130:Middlewares/LVGL/lvgl/src/widgets/dropdown/../../core/lv_obj_style_gen.h ****  * values can be used. Percentage values are relative to the height of the parent's
  131:Middlewares/LVGL/lvgl/src/widgets/dropdown/../../core/lv_obj_style_gen.h ****  * content area.
  132:Middlewares/LVGL/lvgl/src/widgets/dropdown/../../core/lv_obj_style_gen.h ****  * Default: 0, inherited: No, layout: Yes, ext. draw: No.
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccxsIfz0.s 			page 29
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccIE8ukO.s 			page 29
 
 
  133:Middlewares/LVGL/lvgl/src/widgets/dropdown/../../core/lv_obj_style_gen.h ****  * @param  obj    Pointer to Widget
@@ -1738,7 +1738,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccxsIfz0.s 			page 1
  187:Middlewares/LVGL/lvgl/src/widgets/dropdown/../../core/lv_obj_style_gen.h ****  * positioning. Pixel and percentage (with `lv_pct(x)`) values can be used. Percentage
  188:Middlewares/LVGL/lvgl/src/widgets/dropdown/../../core/lv_obj_style_gen.h ****  * values are relative to Widget's width.
  189:Middlewares/LVGL/lvgl/src/widgets/dropdown/../../core/lv_obj_style_gen.h ****  * Default: 0, inherited: No, layout: Yes, ext. draw: No.
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccxsIfz0.s 			page 30
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccIE8ukO.s 			page 30
 
 
  190:Middlewares/LVGL/lvgl/src/widgets/dropdown/../../core/lv_obj_style_gen.h ****  * @param  obj    Pointer to Widget
@@ -1798,7 +1798,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccxsIfz0.s 			page 1
  244:Middlewares/LVGL/lvgl/src/widgets/dropdown/../../core/lv_obj_style_gen.h ****  * @param  part   One of the `LV_PART_...` enum values
  245:Middlewares/LVGL/lvgl/src/widgets/dropdown/../../core/lv_obj_style_gen.h ****  */
  246:Middlewares/LVGL/lvgl/src/widgets/dropdown/../../core/lv_obj_style_gen.h **** static inline int32_t lv_obj_get_style_transform_scale_y(const lv_obj_t * obj, lv_part_t part)
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccxsIfz0.s 			page 31
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccIE8ukO.s 			page 31
 
 
  247:Middlewares/LVGL/lvgl/src/widgets/dropdown/../../core/lv_obj_style_gen.h **** {
@@ -1858,7 +1858,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccxsIfz0.s 			page 1
  301:Middlewares/LVGL/lvgl/src/widgets/dropdown/../../core/lv_obj_style_gen.h **** /**
  302:Middlewares/LVGL/lvgl/src/widgets/dropdown/../../core/lv_obj_style_gen.h ****  * Skew Widget vertically. The value is interpreted in 0.1 degree units. E.g. 450
  303:Middlewares/LVGL/lvgl/src/widgets/dropdown/../../core/lv_obj_style_gen.h ****  * means 45 deg.
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccxsIfz0.s 			page 32
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccIE8ukO.s 			page 32
 
 
  304:Middlewares/LVGL/lvgl/src/widgets/dropdown/../../core/lv_obj_style_gen.h ****  * Default: 0, inherited: No, layout: Yes, ext. draw: Yes.
@@ -1918,7 +1918,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccxsIfz0.s 			page 1
  358:Middlewares/LVGL/lvgl/src/widgets/dropdown/../../core/lv_obj_style_gen.h ****     lv_style_value_t v = lv_obj_get_style_prop(obj, part, LV_STYLE_PAD_RIGHT);
  359:Middlewares/LVGL/lvgl/src/widgets/dropdown/../../core/lv_obj_style_gen.h ****     return (int32_t)v.num;
  360:Middlewares/LVGL/lvgl/src/widgets/dropdown/../../core/lv_obj_style_gen.h **** }
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccxsIfz0.s 			page 33
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccIE8ukO.s 			page 33
 
 
  361:Middlewares/LVGL/lvgl/src/widgets/dropdown/../../core/lv_obj_style_gen.h **** 
@@ -1978,7 +1978,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccxsIfz0.s 			page 1
  415:Middlewares/LVGL/lvgl/src/widgets/dropdown/../../core/lv_obj_style_gen.h ****  */
  416:Middlewares/LVGL/lvgl/src/widgets/dropdown/../../core/lv_obj_style_gen.h **** static inline int32_t lv_obj_get_style_margin_bottom(const lv_obj_t * obj, lv_part_t part)
  417:Middlewares/LVGL/lvgl/src/widgets/dropdown/../../core/lv_obj_style_gen.h **** {
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccxsIfz0.s 			page 34
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccIE8ukO.s 			page 34
 
 
  418:Middlewares/LVGL/lvgl/src/widgets/dropdown/../../core/lv_obj_style_gen.h ****     lv_style_value_t v = lv_obj_get_style_prop(obj, part, LV_STYLE_MARGIN_BOTTOM);
@@ -2038,7 +2038,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccxsIfz0.s 			page 1
  472:Middlewares/LVGL/lvgl/src/widgets/dropdown/../../core/lv_obj_style_gen.h ****  * transparent, 255, `LV_OPA_100` or `LV_OPA_COVER` means fully covering, other values
  473:Middlewares/LVGL/lvgl/src/widgets/dropdown/../../core/lv_obj_style_gen.h ****  * or LV_OPA_10, LV_OPA_20, etc means semi transparency.
  474:Middlewares/LVGL/lvgl/src/widgets/dropdown/../../core/lv_obj_style_gen.h ****  * Default: `LV_OPA_TRANSP`, inherited: No, layout: No, ext. draw: No.
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccxsIfz0.s 			page 35
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccIE8ukO.s 			page 35
 
 
  475:Middlewares/LVGL/lvgl/src/widgets/dropdown/../../core/lv_obj_style_gen.h ****  * @param  obj    Pointer to Widget
@@ -2098,7 +2098,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccxsIfz0.s 			page 1
  529:Middlewares/LVGL/lvgl/src/widgets/dropdown/../../core/lv_obj_style_gen.h **** {
  530:Middlewares/LVGL/lvgl/src/widgets/dropdown/../../core/lv_obj_style_gen.h ****     lv_style_value_t v = lv_obj_get_style_prop(obj, part, LV_STYLE_BG_MAIN_STOP);
  531:Middlewares/LVGL/lvgl/src/widgets/dropdown/../../core/lv_obj_style_gen.h ****     return (int32_t)v.num;
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccxsIfz0.s 			page 36
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccIE8ukO.s 			page 36
 
 
  532:Middlewares/LVGL/lvgl/src/widgets/dropdown/../../core/lv_obj_style_gen.h **** }
@@ -2158,7 +2158,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccxsIfz0.s 			page 1
  586:Middlewares/LVGL/lvgl/src/widgets/dropdown/../../core/lv_obj_style_gen.h **** /**
  587:Middlewares/LVGL/lvgl/src/widgets/dropdown/../../core/lv_obj_style_gen.h ****  * Get a background image. Can be a pointer to `lv_image_dsc_t`, a path to a file or
  588:Middlewares/LVGL/lvgl/src/widgets/dropdown/../../core/lv_obj_style_gen.h ****  * an `LV_SYMBOL_...`.
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccxsIfz0.s 			page 37
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccIE8ukO.s 			page 37
 
 
  589:Middlewares/LVGL/lvgl/src/widgets/dropdown/../../core/lv_obj_style_gen.h ****  * Default: `NULL`, inherited: No, layout: No, ext. draw: Yes.
@@ -2218,7 +2218,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccxsIfz0.s 			page 1
  643:Middlewares/LVGL/lvgl/src/widgets/dropdown/../../core/lv_obj_style_gen.h ****  * @param  obj    Pointer to Widget
  644:Middlewares/LVGL/lvgl/src/widgets/dropdown/../../core/lv_obj_style_gen.h ****  * @param  part   One of the `LV_PART_...` enum values
  645:Middlewares/LVGL/lvgl/src/widgets/dropdown/../../core/lv_obj_style_gen.h ****  */
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccxsIfz0.s 			page 38
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccIE8ukO.s 			page 38
 
 
  646:Middlewares/LVGL/lvgl/src/widgets/dropdown/../../core/lv_obj_style_gen.h **** static inline lv_opa_t lv_obj_get_style_bg_image_recolor_opa(const lv_obj_t * obj, lv_part_t part)
@@ -2278,7 +2278,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccxsIfz0.s 			page 1
  700:Middlewares/LVGL/lvgl/src/widgets/dropdown/../../core/lv_obj_style_gen.h **** }
  701:Middlewares/LVGL/lvgl/src/widgets/dropdown/../../core/lv_obj_style_gen.h **** 
  702:Middlewares/LVGL/lvgl/src/widgets/dropdown/../../core/lv_obj_style_gen.h **** /**
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccxsIfz0.s 			page 39
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccIE8ukO.s 			page 39
 
 
  703:Middlewares/LVGL/lvgl/src/widgets/dropdown/../../core/lv_obj_style_gen.h ****  * Get width of the border. Only pixel values can be used.
@@ -2338,7 +2338,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccxsIfz0.s 			page 1
  757:Middlewares/LVGL/lvgl/src/widgets/dropdown/../../core/lv_obj_style_gen.h ****  * @param  part   One of the `LV_PART_...` enum values
  758:Middlewares/LVGL/lvgl/src/widgets/dropdown/../../core/lv_obj_style_gen.h ****  */
  759:Middlewares/LVGL/lvgl/src/widgets/dropdown/../../core/lv_obj_style_gen.h **** static inline lv_color_t lv_obj_get_style_outline_color(const lv_obj_t * obj, lv_part_t part)
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccxsIfz0.s 			page 40
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccIE8ukO.s 			page 40
 
 
  760:Middlewares/LVGL/lvgl/src/widgets/dropdown/../../core/lv_obj_style_gen.h **** {
@@ -2398,7 +2398,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccxsIfz0.s 			page 1
  814:Middlewares/LVGL/lvgl/src/widgets/dropdown/../../core/lv_obj_style_gen.h **** 
  815:Middlewares/LVGL/lvgl/src/widgets/dropdown/../../core/lv_obj_style_gen.h **** /**
  816:Middlewares/LVGL/lvgl/src/widgets/dropdown/../../core/lv_obj_style_gen.h ****  * Get an offset on the shadow in pixels in X direction.
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccxsIfz0.s 			page 41
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccIE8ukO.s 			page 41
 
 
  817:Middlewares/LVGL/lvgl/src/widgets/dropdown/../../core/lv_obj_style_gen.h ****  * Default: 0, inherited: No, layout: No, ext. draw: Yes.
@@ -2458,7 +2458,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccxsIfz0.s 			page 1
  871:Middlewares/LVGL/lvgl/src/widgets/dropdown/../../core/lv_obj_style_gen.h **** {
  872:Middlewares/LVGL/lvgl/src/widgets/dropdown/../../core/lv_obj_style_gen.h ****     lv_style_value_t v = lv_obj_style_apply_color_filter(obj, part, lv_obj_get_style_prop(obj, part
  873:Middlewares/LVGL/lvgl/src/widgets/dropdown/../../core/lv_obj_style_gen.h ****     return v.color;
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccxsIfz0.s 			page 42
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccIE8ukO.s 			page 42
 
 
  874:Middlewares/LVGL/lvgl/src/widgets/dropdown/../../core/lv_obj_style_gen.h **** }
@@ -2518,7 +2518,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccxsIfz0.s 			page 1
  928:Middlewares/LVGL/lvgl/src/widgets/dropdown/../../core/lv_obj_style_gen.h **** /**
  929:Middlewares/LVGL/lvgl/src/widgets/dropdown/../../core/lv_obj_style_gen.h ****  * Get intensity of color mixing. Value 0, `LV_OPA_0` or `LV_OPA_TRANSP` means fully
  930:Middlewares/LVGL/lvgl/src/widgets/dropdown/../../core/lv_obj_style_gen.h ****  * transparent, 255, `LV_OPA_100` or `LV_OPA_COVER` means fully covering, other values
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccxsIfz0.s 			page 43
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccIE8ukO.s 			page 43
 
 
  931:Middlewares/LVGL/lvgl/src/widgets/dropdown/../../core/lv_obj_style_gen.h ****  * or LV_OPA_10, LV_OPA_20, etc means semi transparency.
@@ -2578,7 +2578,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccxsIfz0.s 			page 1
  985:Middlewares/LVGL/lvgl/src/widgets/dropdown/../../core/lv_obj_style_gen.h ****  * @param  part   One of the `LV_PART_...` enum values
  986:Middlewares/LVGL/lvgl/src/widgets/dropdown/../../core/lv_obj_style_gen.h ****  */
  987:Middlewares/LVGL/lvgl/src/widgets/dropdown/../../core/lv_obj_style_gen.h **** static inline int32_t lv_obj_get_style_line_dash_gap(const lv_obj_t * obj, lv_part_t part)
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccxsIfz0.s 			page 44
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccIE8ukO.s 			page 44
 
 
  988:Middlewares/LVGL/lvgl/src/widgets/dropdown/../../core/lv_obj_style_gen.h **** {
@@ -2638,7 +2638,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccxsIfz0.s 			page 1
 1042:Middlewares/LVGL/lvgl/src/widgets/dropdown/../../core/lv_obj_style_gen.h ****  * Get width (thickness) of arcs in pixels.
 1043:Middlewares/LVGL/lvgl/src/widgets/dropdown/../../core/lv_obj_style_gen.h ****  * Default: 0, inherited: No, layout: No, ext. draw: Yes.
 1044:Middlewares/LVGL/lvgl/src/widgets/dropdown/../../core/lv_obj_style_gen.h ****  * @param  obj    Pointer to Widget
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccxsIfz0.s 			page 45
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccIE8ukO.s 			page 45
 
 
 1045:Middlewares/LVGL/lvgl/src/widgets/dropdown/../../core/lv_obj_style_gen.h ****  * @param  part   One of the `LV_PART_...` enum values
@@ -2698,7 +2698,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccxsIfz0.s 			page 1
 1099:Middlewares/LVGL/lvgl/src/widgets/dropdown/../../core/lv_obj_style_gen.h **** }
 1100:Middlewares/LVGL/lvgl/src/widgets/dropdown/../../core/lv_obj_style_gen.h **** 
 1101:Middlewares/LVGL/lvgl/src/widgets/dropdown/../../core/lv_obj_style_gen.h **** /**
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccxsIfz0.s 			page 46
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccIE8ukO.s 			page 46
 
 
 1102:Middlewares/LVGL/lvgl/src/widgets/dropdown/../../core/lv_obj_style_gen.h ****  * Get an image from which arc will be masked out. It's useful to display complex
@@ -2758,7 +2758,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccxsIfz0.s 			page 1
 1156:Middlewares/LVGL/lvgl/src/widgets/dropdown/../../core/lv_obj_style_gen.h ****  * @param  part   One of the `LV_PART_...` enum values
 1157:Middlewares/LVGL/lvgl/src/widgets/dropdown/../../core/lv_obj_style_gen.h ****  */
 1158:Middlewares/LVGL/lvgl/src/widgets/dropdown/../../core/lv_obj_style_gen.h **** static inline const lv_font_t * lv_obj_get_style_text_font(const lv_obj_t * obj, lv_part_t part)
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccxsIfz0.s 			page 47
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccIE8ukO.s 			page 47
 
 
  159              		.loc 2 1158 33 view .LVU32
@@ -2818,7 +2818,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccxsIfz0.s 			page 1
  185              	.LBB50:
 1183:Middlewares/LVGL/lvgl/src/widgets/dropdown/../../core/lv_obj_style_gen.h **** {
 1184:Middlewares/LVGL/lvgl/src/widgets/dropdown/../../core/lv_obj_style_gen.h ****     lv_style_value_t v = lv_obj_get_style_prop(obj, part, LV_STYLE_TEXT_LINE_SPACE);
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccxsIfz0.s 			page 48
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccIE8ukO.s 			page 48
 
 
  186              		.loc 2 1184 5 view .LVU42
@@ -2878,7 +2878,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccxsIfz0.s 			page 1
  233              	get_id_on_point:
  234              	.LVL25:
  235              	.LFB242:
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccxsIfz0.s 			page 49
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccIE8ukO.s 			page 49
 
 
 1247:Middlewares/LVGL/lvgl/src/widgets/dropdown/lv_dropdown.c ****     lv_dropdown_t * dropdown = (lv_dropdown_t *)dropdown_obj;
@@ -2938,7 +2938,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccxsIfz0.s 			page 1
  276              		.loc 2 1160 26 is_stmt 0 view .LVU68
  277 0014 4D22     		movs	r2, #77
  278 0016 0021     		movs	r1, #0
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccxsIfz0.s 			page 50
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccIE8ukO.s 			page 50
 
 
  279 0018 FFF7FEFF 		bl	lv_obj_get_style_prop
@@ -2998,7 +2998,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccxsIfz0.s 			page 1
  319 0034 06EB6303 		add	r3, r6, r3, asr #1
  320              	.LVL36:
 1258:Middlewares/LVGL/lvgl/src/widgets/dropdown/lv_dropdown.c **** 
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccxsIfz0.s 			page 51
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccIE8ukO.s 			page 51
 
 
  321              		.loc 1 1258 5 is_stmt 1 view .LVU85
@@ -3058,7 +3058,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccxsIfz0.s 			page 1
  366              	lv_dropdown_destructor:
  367              	.LVL43:
  368              	.LFB230:
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccxsIfz0.s 			page 52
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccIE8ukO.s 			page 52
 
 
  721:Middlewares/LVGL/lvgl/src/widgets/dropdown/lv_dropdown.c ****     LV_UNUSED(class_p);
@@ -3118,7 +3118,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccxsIfz0.s 			page 1
  733:Middlewares/LVGL/lvgl/src/widgets/dropdown/lv_dropdown.c ****     dropdown->text = NULL;
  408              		.loc 1 733 5 is_stmt 1 view .LVU112
  733:Middlewares/LVGL/lvgl/src/widgets/dropdown/lv_dropdown.c ****     dropdown->text = NULL;
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccxsIfz0.s 			page 53
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccIE8ukO.s 			page 53
 
 
  409              		.loc 1 733 8 is_stmt 0 view .LVU113
@@ -3178,7 +3178,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccxsIfz0.s 			page 1
  681:Middlewares/LVGL/lvgl/src/widgets/dropdown/lv_dropdown.c ****     lv_obj_t * obj = lv_obj_class_create_obj(&lv_dropdownlist_class, parent);
  457              		.loc 1 681 5 is_stmt 1 view .LVU122
  681:Middlewares/LVGL/lvgl/src/widgets/dropdown/lv_dropdown.c ****     lv_obj_t * obj = lv_obj_class_create_obj(&lv_dropdownlist_class, parent);
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccxsIfz0.s 			page 54
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccIE8ukO.s 			page 54
 
 
  458              		.loc 1 681 5 view .LVU123
@@ -3238,7 +3238,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccxsIfz0.s 			page 1
  503              		.cfi_offset 4, -16
  504              		.cfi_offset 5, -12
  505              		.cfi_offset 6, -8
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccxsIfz0.s 			page 55
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccIE8ukO.s 			page 55
 
 
  506              		.cfi_offset 14, -4
@@ -3298,7 +3298,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccxsIfz0.s 			page 1
  546              	.LVL62:
 1241:Middlewares/LVGL/lvgl/src/widgets/dropdown/lv_dropdown.c ****         lv_obj_invalidate(list_obj);
  547              		.loc 1 1241 9 view .LVU149
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccxsIfz0.s 			page 56
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccIE8ukO.s 			page 56
 
 
 1241:Middlewares/LVGL/lvgl/src/widgets/dropdown/lv_dropdown.c ****         lv_obj_invalidate(list_obj);
@@ -3358,7 +3358,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccxsIfz0.s 			page 1
  596              		.cfi_offset 14, -4
  597 0004 AEB0     		sub	sp, sp, #184
  598              	.LCFI16:
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccxsIfz0.s 			page 57
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccIE8ukO.s 			page 57
 
 
  599              		.cfi_def_cfa_offset 216
@@ -3418,7 +3418,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccxsIfz0.s 			page 1
  637              	.LBB56:
  638              	.LBI56:
 1158:Middlewares/LVGL/lvgl/src/widgets/dropdown/../../core/lv_obj_style_gen.h **** {
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccxsIfz0.s 			page 58
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccIE8ukO.s 			page 58
 
 
  639              		.loc 2 1158 33 view .LVU174
@@ -3478,7 +3478,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccxsIfz0.s 			page 1
 1087:Middlewares/LVGL/lvgl/src/widgets/dropdown/lv_dropdown.c **** 
  681              		.loc 1 1087 30 is_stmt 0 view .LVU189
  682 004c 4046     		mov	r0, r8
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccxsIfz0.s 			page 59
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccIE8ukO.s 			page 59
 
 
  683              	.LVL79:
@@ -3538,7 +3538,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccxsIfz0.s 			page 1
 1097:Middlewares/LVGL/lvgl/src/widgets/dropdown/lv_dropdown.c ****     rect_area.x1 = dropdown->list->coords.x1;
  719              		.loc 1 1097 5 is_stmt 1 view .LVU208
 1097:Middlewares/LVGL/lvgl/src/widgets/dropdown/lv_dropdown.c ****     rect_area.x1 = dropdown->list->coords.x1;
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccxsIfz0.s 			page 60
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccIE8ukO.s 			page 60
 
 
  720              		.loc 1 1097 33 is_stmt 0 view .LVU209
@@ -3598,7 +3598,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccxsIfz0.s 			page 1
  757 0098 FFF7FEFF 		bl	lv_obj_init_draw_rect_dsc
  758              	.LVL87:
 1105:Middlewares/LVGL/lvgl/src/widgets/dropdown/lv_dropdown.c **** 
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccxsIfz0.s 			page 61
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccIE8ukO.s 			page 61
 
 
  759              		.loc 1 1105 5 view .LVU227
@@ -3658,7 +3658,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccxsIfz0.s 			page 1
  804              		.loc 1 1112 1 view -0
  805              		.cfi_startproc
  806              		@ args = 0, pretend = 0, frame = 168
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccxsIfz0.s 			page 62
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccIE8ukO.s 			page 62
 
 
  807              		@ frame_needed = 0, uses_anonymous_args = 0
@@ -3718,7 +3718,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccxsIfz0.s 			page 1
  848 001c 2385     		strh	r3, [r4, #40]	@ movhi
 1121:Middlewares/LVGL/lvgl/src/widgets/dropdown/lv_dropdown.c ****     }
  849              		.loc 1 1121 9 is_stmt 1 view .LVU252
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccxsIfz0.s 			page 63
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccIE8ukO.s 			page 63
 
 
 1121:Middlewares/LVGL/lvgl/src/widgets/dropdown/lv_dropdown.c ****     }
@@ -3778,7 +3778,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccxsIfz0.s 			page 1
  892              	.LBE60:
 1129:Middlewares/LVGL/lvgl/src/widgets/dropdown/lv_dropdown.c ****                                                             LV_PART_SELECTED);  /*Line space should
  893              		.loc 1 1129 26 discriminator 1 view .LVU267
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccxsIfz0.s 			page 64
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccIE8ukO.s 			page 64
 
 
  894 0050 1B90     		str	r0, [sp, #108]
@@ -3838,7 +3838,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccxsIfz0.s 			page 1
 1140:Middlewares/LVGL/lvgl/src/widgets/dropdown/lv_dropdown.c **** 
  930              		.loc 1 1140 17 view .LVU286
  931 0074 A2EB6302 		sub	r2, r2, r3, asr #1
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccxsIfz0.s 			page 65
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccIE8ukO.s 			page 65
 
 
  932 0078 0992     		str	r2, [sp, #36]
@@ -3898,7 +3898,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccxsIfz0.s 			page 1
 1155:Middlewares/LVGL/lvgl/src/widgets/dropdown/lv_dropdown.c ****     list_obj->skip_trans = 0;
  968              		.loc 1 1155 5 is_stmt 1 view .LVU305
 1155:Middlewares/LVGL/lvgl/src/widgets/dropdown/lv_dropdown.c ****     list_obj->skip_trans = 0;
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccxsIfz0.s 			page 66
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccIE8ukO.s 			page 66
 
 
  969              		.loc 1 1155 21 is_stmt 0 view .LVU306
@@ -3958,7 +3958,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccxsIfz0.s 			page 1
 1152:Middlewares/LVGL/lvgl/src/widgets/dropdown/lv_dropdown.c ****         layer->_clip_area = clip_area_ori;
  1011              		.loc 1 1152 9 is_stmt 1 view .LVU319
  1012 00c8 07F11402 		add	r2, r7, #20
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccxsIfz0.s 			page 67
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccIE8ukO.s 			page 67
 
 
  1013 00cc 0CA9     		add	r1, sp, #48
@@ -4018,7 +4018,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccxsIfz0.s 			page 1
  1059              		.loc 1 1040 5 is_stmt 1 view .LVU329
 1041:Middlewares/LVGL/lvgl/src/widgets/dropdown/lv_dropdown.c **** 
  1060              		.loc 1 1041 5 view .LVU330
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccxsIfz0.s 			page 68
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccIE8ukO.s 			page 68
 
 
 1041:Middlewares/LVGL/lvgl/src/widgets/dropdown/lv_dropdown.c **** 
@@ -4078,7 +4078,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccxsIfz0.s 			page 1
 1051:Middlewares/LVGL/lvgl/src/widgets/dropdown/lv_dropdown.c ****             if(dropdown->pr_opt_id == dropdown->sel_opt_id) {
  1099              		.loc 1 1051 12 is_stmt 0 view .LVU347
  1100 003a 95F85030 		ldrb	r3, [r5, #80]	@ zero_extendqisi2
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccxsIfz0.s 			page 69
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccIE8ukO.s 			page 69
 
 
 1051:Middlewares/LVGL/lvgl/src/widgets/dropdown/lv_dropdown.c ****             if(dropdown->pr_opt_id == dropdown->sel_opt_id) {
@@ -4138,7 +4138,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccxsIfz0.s 			page 1
 1067:Middlewares/LVGL/lvgl/src/widgets/dropdown/lv_dropdown.c ****     }
  1144              		.loc 1 1067 27 view .LVU359
  1145 007c 9DE80F00 		ldm	sp, {r0, r1, r2, r3}
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccxsIfz0.s 			page 70
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccIE8ukO.s 			page 70
 
 
  1146 0080 84E80F00 		stm	r4, {r0, r1, r2, r3}
@@ -4198,7 +4198,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccxsIfz0.s 			page 1
  1194              		.cfi_endproc
  1195              	.LFE236:
  1197              		.section	.text.lv_dropdownlist_constructor,"ax",%progbits
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccxsIfz0.s 			page 71
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccIE8ukO.s 			page 71
 
 
  1198              		.align	1
@@ -4258,7 +4258,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccxsIfz0.s 			page 1
  747:Middlewares/LVGL/lvgl/src/widgets/dropdown/lv_dropdown.c **** 
  1243              		.loc 1 747 5 view .LVU376
  1244 0028 2046     		mov	r0, r4
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccxsIfz0.s 			page 72
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccIE8ukO.s 			page 72
 
 
  1245 002a FFF7FEFF 		bl	lv_label_create
@@ -4318,7 +4318,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccxsIfz0.s 			page 1
  1288              		.loc 1 156 5 is_stmt 1 view .LVU389
  1289 000c FFF7FEFF 		bl	lv_obj_class_init_obj
  1290              	.LVL148:
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccxsIfz0.s 			page 73
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccIE8ukO.s 			page 73
 
 
  157:Middlewares/LVGL/lvgl/src/widgets/dropdown/lv_dropdown.c **** }
@@ -4378,7 +4378,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccxsIfz0.s 			page 1
  170:Middlewares/LVGL/lvgl/src/widgets/dropdown/lv_dropdown.c ****         copied_text = lv_strdup(text);
  1336              		.loc 1 170 5 view .LVU401
  170:Middlewares/LVGL/lvgl/src/widgets/dropdown/lv_dropdown.c ****         copied_text = lv_strdup(text);
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccxsIfz0.s 			page 74
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccIE8ukO.s 			page 74
 
 
  1337              		.loc 1 170 7 is_stmt 0 view .LVU402
@@ -4438,7 +4438,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccxsIfz0.s 			page 1
  180:Middlewares/LVGL/lvgl/src/widgets/dropdown/lv_dropdown.c **** 
  1375              		.loc 1 180 1 is_stmt 0 view .LVU419
  1376 0032 38BD     		pop	{r3, r4, r5, pc}
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccxsIfz0.s 			page 75
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccIE8ukO.s 			page 75
 
 
  1377              	.LVL157:
@@ -4498,7 +4498,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccxsIfz0.s 			page 1
  1422              	lv_dropdown_set_text_static:
  1423              	.LVL161:
  1424              	.LFB205:
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccxsIfz0.s 			page 76
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccIE8ukO.s 			page 76
 
 
  183:Middlewares/LVGL/lvgl/src/widgets/dropdown/lv_dropdown.c ****     LV_ASSERT_OBJ(obj, MY_CLASS);
@@ -4558,7 +4558,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccxsIfz0.s 			page 1
  1464 0022 FFF7FEFF 		bl	lv_obj_invalidate
  1465              	.LVL164:
  192:Middlewares/LVGL/lvgl/src/widgets/dropdown/lv_dropdown.c **** 
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccxsIfz0.s 			page 77
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccIE8ukO.s 			page 77
 
 
  1466              		.loc 1 192 1 is_stmt 0 view .LVU446
@@ -4618,7 +4618,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccxsIfz0.s 			page 1
  1513              		@ args = 0, pretend = 0, frame = 0
  1514              		@ frame_needed = 0, uses_anonymous_args = 0
  196:Middlewares/LVGL/lvgl/src/widgets/dropdown/lv_dropdown.c ****     LV_ASSERT_NULL(options);
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccxsIfz0.s 			page 78
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccIE8ukO.s 			page 78
 
 
  1515              		.loc 1 196 5 view .LVU456
@@ -4678,7 +4678,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccxsIfz0.s 			page 1
  1554              		.loc 1 196 5 is_stmt 1 view .LVU471
  196:Middlewares/LVGL/lvgl/src/widgets/dropdown/lv_dropdown.c ****     LV_ASSERT_NULL(options);
  1555              		.loc 1 196 5 view .LVU472
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccxsIfz0.s 			page 79
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccIE8ukO.s 			page 79
 
 
  196:Middlewares/LVGL/lvgl/src/widgets/dropdown/lv_dropdown.c ****     LV_ASSERT_NULL(options);
@@ -4738,7 +4738,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccxsIfz0.s 			page 1
  1593 0022 2A64     		str	r2, [r5, #64]
  1594 0024 F6E7     		b	.L80
  1595              	.L88:
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccxsIfz0.s 			page 80
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccIE8ukO.s 			page 80
 
 
  207:Middlewares/LVGL/lvgl/src/widgets/dropdown/lv_dropdown.c ****     dropdown->sel_opt_id      = 0;
@@ -4798,7 +4798,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccxsIfz0.s 			page 1
  1632              		.loc 1 223 25 is_stmt 0 view .LVU507
  1633 0048 3046     		mov	r0, r6
  1634 004a FFF7FEFF 		bl	lv_malloc
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccxsIfz0.s 			page 81
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccIE8ukO.s 			page 81
 
 
  1635              	.LVL179:
@@ -4858,7 +4858,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccxsIfz0.s 			page 1
  220:Middlewares/LVGL/lvgl/src/widgets/dropdown/lv_dropdown.c ****     }
  1673              		.loc 1 220 9 view .LVU524
  220:Middlewares/LVGL/lvgl/src/widgets/dropdown/lv_dropdown.c ****     }
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccxsIfz0.s 			page 82
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccIE8ukO.s 			page 82
 
 
  1674              		.loc 1 220 27 is_stmt 0 view .LVU525
@@ -4918,7 +4918,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccxsIfz0.s 			page 1
  244:Middlewares/LVGL/lvgl/src/widgets/dropdown/lv_dropdown.c **** 
  1718              		.loc 1 244 5 view .LVU538
  1719 0008 19B1     		cbz	r1, .L94
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccxsIfz0.s 			page 83
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccIE8ukO.s 			page 83
 
 
  244:Middlewares/LVGL/lvgl/src/widgets/dropdown/lv_dropdown.c **** 
@@ -4978,7 +4978,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccxsIfz0.s 			page 1
  1757              		.loc 1 244 5 view .LVU555
  244:Middlewares/LVGL/lvgl/src/widgets/dropdown/lv_dropdown.c **** 
  1758              		.loc 1 244 5 view .LVU556
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccxsIfz0.s 			page 84
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccIE8ukO.s 			page 84
 
 
  1759 0012 FEE7     		b	.L94
@@ -5038,7 +5038,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccxsIfz0.s 			page 1
  258:Middlewares/LVGL/lvgl/src/widgets/dropdown/lv_dropdown.c ****         lv_free(dropdown->options);
  1797              		.loc 1 258 5 is_stmt 1 view .LVU573
  258:Middlewares/LVGL/lvgl/src/widgets/dropdown/lv_dropdown.c ****         lv_free(dropdown->options);
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccxsIfz0.s 			page 85
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccIE8ukO.s 			page 85
 
 
  1798              		.loc 1 258 33 is_stmt 0 view .LVU574
@@ -5098,7 +5098,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccxsIfz0.s 			page 1
  268:Middlewares/LVGL/lvgl/src/widgets/dropdown/lv_dropdown.c **** 
  1837              		.loc 1 268 1 is_stmt 0 view .LVU590
  1838 0064 38BD     		pop	{r3, r4, r5, pc}
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccxsIfz0.s 			page 86
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccIE8ukO.s 			page 86
 
 
  268:Middlewares/LVGL/lvgl/src/widgets/dropdown/lv_dropdown.c **** 
@@ -5158,7 +5158,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccxsIfz0.s 			page 1
  697:Middlewares/LVGL/lvgl/src/widgets/dropdown/lv_dropdown.c ****     dropdown->text         = NULL;
  1881              		.loc 1 697 5 is_stmt 1 view .LVU601
  697:Middlewares/LVGL/lvgl/src/widgets/dropdown/lv_dropdown.c ****     dropdown->text         = NULL;
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccxsIfz0.s 			page 87
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccIE8ukO.s 			page 87
 
 
  1882              		.loc 1 697 30 is_stmt 0 view .LVU602
@@ -5218,7 +5218,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccxsIfz0.s 			page 1
  1918 003c 91F85030 		ldrb	r3, [r1, #80]	@ zero_extendqisi2
  1919 0040 0822     		movs	r2, #8
  1920 0042 62F30303 		bfi	r3, r2, #0, #4
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccxsIfz0.s 			page 88
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccIE8ukO.s 			page 88
 
 
  1921 0046 81F85030 		strb	r3, [r1, #80]
@@ -5278,7 +5278,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccxsIfz0.s 			page 1
  1961              		.cfi_endproc
  1962              	.LFE229:
  1964              		.section	.rodata.lv_dropdown_add_option.str1.4,"aMS",%progbits,1
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccxsIfz0.s 			page 89
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccIE8ukO.s 			page 89
 
 
  1965              		.align	2
@@ -5338,7 +5338,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccxsIfz0.s 			page 1
  278:Middlewares/LVGL/lvgl/src/widgets/dropdown/lv_dropdown.c ****         char * static_options = dropdown->options;
  2009              		.loc 1 278 5 view .LVU646
  278:Middlewares/LVGL/lvgl/src/widgets/dropdown/lv_dropdown.c ****         char * static_options = dropdown->options;
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccxsIfz0.s 			page 90
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccIE8ukO.s 			page 90
 
 
  2010              		.loc 1 278 33 is_stmt 0 view .LVU647
@@ -5398,7 +5398,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccxsIfz0.s 			page 1
  292:Middlewares/LVGL/lvgl/src/widgets/dropdown/lv_dropdown.c **** #if LV_USE_ARABIC_PERSIAN_CHARS == 0
  2047              		.loc 1 292 22 is_stmt 0 view .LVU665
  2048 0032 E86B     		ldr	r0, [r5, #60]
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccxsIfz0.s 			page 91
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccIE8ukO.s 			page 91
 
 
  2049 0034 FFF7FEFF 		bl	lv_strlen
@@ -5458,7 +5458,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccxsIfz0.s 			page 1
  2086              		.loc 1 304 5 view .LVU682
  304:Middlewares/LVGL/lvgl/src/widgets/dropdown/lv_dropdown.c **** 
  2087              		.loc 1 304 32 is_stmt 0 view .LVU683
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccxsIfz0.s 			page 92
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccIE8ukO.s 			page 92
 
 
  2088 0052 0023     		movs	r3, #0
@@ -5518,7 +5518,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccxsIfz0.s 			page 1
  2130              		.cfi_offset 6, -24
  2131              		.cfi_offset 7, -20
  2132              		.cfi_offset 8, -16
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccxsIfz0.s 			page 93
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccIE8ukO.s 			page 93
 
 
  2133              		.cfi_offset 9, -12
@@ -5578,7 +5578,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccxsIfz0.s 			page 1
  301:Middlewares/LVGL/lvgl/src/widgets/dropdown/lv_dropdown.c ****     if(dropdown->options == NULL) return;
  2170              		.loc 1 301 5 view .LVU713
  301:Middlewares/LVGL/lvgl/src/widgets/dropdown/lv_dropdown.c ****     if(dropdown->options == NULL) return;
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccxsIfz0.s 			page 94
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccIE8ukO.s 			page 94
 
 
  2171              		.loc 1 301 5 view .LVU714
@@ -5638,7 +5638,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccxsIfz0.s 			page 1
  2208              		.loc 1 319 7 is_stmt 0 view .LVU731
  2209 008c 8CB1     		cbz	r4, .L123
  319:Middlewares/LVGL/lvgl/src/widgets/dropdown/lv_dropdown.c ****         lv_text_ins(dropdown->options, lv_text_encoded_get_char_id(dropdown->options, insert_pos++)
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccxsIfz0.s 			page 95
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccIE8ukO.s 			page 95
 
 
  2210              		.loc 1 319 44 discriminator 1 view .LVU732
@@ -5698,7 +5698,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccxsIfz0.s 			page 1
  2250              		.loc 1 327 5 view .LVU746
  2251 00be 3946     		mov	r1, r7
  2252 00c0 FFF7FEFF 		bl	lv_strcpy
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccxsIfz0.s 			page 96
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccIE8ukO.s 			page 96
 
 
  2253              	.LVL238:
@@ -5758,7 +5758,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccxsIfz0.s 			page 1
  339:Middlewares/LVGL/lvgl/src/widgets/dropdown/lv_dropdown.c **** }
  2294              		.loc 1 339 7 view .LVU760
  2295 00f4 08B1     		cbz	r0, .L107
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccxsIfz0.s 			page 97
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccIE8ukO.s 			page 97
 
 
  339:Middlewares/LVGL/lvgl/src/widgets/dropdown/lv_dropdown.c **** }
@@ -5818,7 +5818,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccxsIfz0.s 			page 1
  2341              		.loc 1 344 5 view .LVU771
  2342 0000 C8B1     		cbz	r0, .L136
  343:Middlewares/LVGL/lvgl/src/widgets/dropdown/lv_dropdown.c ****     LV_ASSERT_OBJ(obj, MY_CLASS);
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccxsIfz0.s 			page 98
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccIE8ukO.s 			page 98
 
 
  2343              		.loc 1 343 1 is_stmt 0 view .LVU772
@@ -5878,7 +5878,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccxsIfz0.s 			page 1
  2381 0028 FFF7FEFF 		bl	lv_obj_invalidate
  2382              	.LVL251:
  356:Middlewares/LVGL/lvgl/src/widgets/dropdown/lv_dropdown.c **** }
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccxsIfz0.s 			page 99
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccIE8ukO.s 			page 99
 
 
  2383              		.loc 1 356 5 view .LVU789
@@ -5938,7 +5938,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccxsIfz0.s 			page 1
  360:Middlewares/LVGL/lvgl/src/widgets/dropdown/lv_dropdown.c ****     LV_ASSERT_OBJ(obj, MY_CLASS);
  2429              		.loc 1 360 1 view -0
  2430              		.cfi_startproc
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccxsIfz0.s 			page 100
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccIE8ukO.s 			page 100
 
 
  2431              		@ args = 0, pretend = 0, frame = 0
@@ -5998,7 +5998,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccxsIfz0.s 			page 1
  2468              		.loc 1 369 5 is_stmt 1 view .LVU817
  369:Middlewares/LVGL/lvgl/src/widgets/dropdown/lv_dropdown.c ****         position_to_selected(obj, LV_ANIM_OFF);
  2469              		.loc 1 369 16 is_stmt 0 view .LVU818
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccxsIfz0.s 			page 101
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccIE8ukO.s 			page 101
 
 
  2470 0018 236B     		ldr	r3, [r4, #48]
@@ -6058,7 +6058,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccxsIfz0.s 			page 1
 1301:Middlewares/LVGL/lvgl/src/widgets/dropdown/lv_dropdown.c **** {
 1302:Middlewares/LVGL/lvgl/src/widgets/dropdown/lv_dropdown.c ****     lv_obj_t * dropdown = lv_event_get_current_target(e);
 1303:Middlewares/LVGL/lvgl/src/widgets/dropdown/lv_dropdown.c ****     lv_subject_t * subject = lv_event_get_user_data(e);
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccxsIfz0.s 			page 102
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccIE8ukO.s 			page 102
 
 
 1304:Middlewares/LVGL/lvgl/src/widgets/dropdown/lv_dropdown.c **** 
@@ -6118,7 +6118,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccxsIfz0.s 			page 1
  2556              		.cfi_def_cfa_offset 8
  2557              		.cfi_offset 3, -8
  2558              		.cfi_offset 14, -4
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccxsIfz0.s 			page 103
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccIE8ukO.s 			page 103
 
 
  378:Middlewares/LVGL/lvgl/src/widgets/dropdown/lv_dropdown.c **** 
@@ -6178,7 +6178,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccxsIfz0.s 			page 1
  2599              		.syntax unified
  2600              		.thumb
  2601              		.thumb_func
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccxsIfz0.s 			page 104
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccIE8ukO.s 			page 104
 
 
  2603              	lv_dropdown_set_symbol:
@@ -6238,7 +6238,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccxsIfz0.s 			page 1
  2641              		.loc 1 390 5 view .LVU869
  2642 000c FEE7     		b	.L160
  2643              		.cfi_endproc
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccxsIfz0.s 			page 105
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccIE8ukO.s 			page 105
 
 
  2644              	.LFE212:
@@ -6298,7 +6298,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccxsIfz0.s 			page 1
  2687              	.L163:
  404:Middlewares/LVGL/lvgl/src/widgets/dropdown/lv_dropdown.c **** 
  2688              		.loc 1 404 1 is_stmt 0 view .LVU883
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccxsIfz0.s 			page 106
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccIE8ukO.s 			page 106
 
 
  2689 0018 08BD     		pop	{r3, pc}
@@ -6358,7 +6358,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccxsIfz0.s 			page 1
  2731              		.loc 1 416 1 view .LVU897
  2732 0004 7047     		bx	lr
  2733              	.LVL283:
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccxsIfz0.s 			page 107
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccIE8ukO.s 			page 107
 
 
  2734              	.L171:
@@ -6418,7 +6418,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccxsIfz0.s 			page 1
  420:Middlewares/LVGL/lvgl/src/widgets/dropdown/lv_dropdown.c ****     lv_dropdown_t * dropdown = (lv_dropdown_t *)obj;
  2775              		.loc 1 420 5 view .LVU913
  420:Middlewares/LVGL/lvgl/src/widgets/dropdown/lv_dropdown.c ****     lv_dropdown_t * dropdown = (lv_dropdown_t *)obj;
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccxsIfz0.s 			page 108
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccIE8ukO.s 			page 108
 
 
  2776              		.loc 1 420 5 view .LVU914
@@ -6478,7 +6478,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccxsIfz0.s 			page 1
  428:Middlewares/LVGL/lvgl/src/widgets/dropdown/lv_dropdown.c **** 
  2820              		.loc 1 428 5 is_stmt 1 view .LVU927
  428:Middlewares/LVGL/lvgl/src/widgets/dropdown/lv_dropdown.c **** 
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccxsIfz0.s 			page 109
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccIE8ukO.s 			page 109
 
 
  2821              		.loc 1 428 5 view .LVU928
@@ -6538,7 +6538,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccxsIfz0.s 			page 1
  2864              	.LVL295:
  441:Middlewares/LVGL/lvgl/src/widgets/dropdown/lv_dropdown.c **** 
  2865              		.loc 1 441 1 view .LVU942
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccxsIfz0.s 			page 110
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccIE8ukO.s 			page 110
 
 
  2866 0004 7047     		bx	lr
@@ -6598,7 +6598,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccxsIfz0.s 			page 1
  2910              	.LVL300:
 1303:Middlewares/LVGL/lvgl/src/widgets/dropdown/lv_dropdown.c **** 
  2911              		.loc 1 1303 30 view .LVU955
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccxsIfz0.s 			page 111
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccIE8ukO.s 			page 111
 
 
  2912 000c FFF7FEFF 		bl	lv_event_get_user_data
@@ -6658,7 +6658,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccxsIfz0.s 			page 1
  449:Middlewares/LVGL/lvgl/src/widgets/dropdown/lv_dropdown.c **** }
  2956              		.loc 1 449 5 view .LVU968
  450:Middlewares/LVGL/lvgl/src/widgets/dropdown/lv_dropdown.c **** 
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccxsIfz0.s 			page 112
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccIE8ukO.s 			page 112
 
 
  2957              		.loc 1 450 1 is_stmt 0 view .LVU969
@@ -6718,7 +6718,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccxsIfz0.s 			page 1
  454:Middlewares/LVGL/lvgl/src/widgets/dropdown/lv_dropdown.c **** 
  3002              		.loc 1 454 33 view .LVU981
  456:Middlewares/LVGL/lvgl/src/widgets/dropdown/lv_dropdown.c **** 
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccxsIfz0.s 			page 113
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccIE8ukO.s 			page 113
 
 
  3003              		.loc 1 456 5 view .LVU982
@@ -6778,7 +6778,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccxsIfz0.s 			page 1
  3040              	.L193:
  3041              	.LCFI60:
  3042              		.cfi_def_cfa_offset 16
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccxsIfz0.s 			page 114
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccIE8ukO.s 			page 114
 
 
  3043              		.cfi_offset 4, -16
@@ -6838,7 +6838,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccxsIfz0.s 			page 1
  471:Middlewares/LVGL/lvgl/src/widgets/dropdown/lv_dropdown.c ****     }
  3083              		.loc 1 471 46 discriminator 1 view .LVU1014
  3084 0038 4FF0000C 		mov	ip, #0
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccxsIfz0.s 			page 115
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccIE8ukO.s 			page 115
 
 
  3085 003c 04E0     		b	.L201
@@ -6898,7 +6898,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccxsIfz0.s 			page 1
  3123              		.loc 1 483 12 view .LVU1030
  3124 0064 06F80C30 		strb	r3, [r6, ip]
  3125              	.LVL324:
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccxsIfz0.s 			page 116
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccIE8ukO.s 			page 116
 
 
  3126              	.L190:
@@ -6958,7 +6958,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccxsIfz0.s 			page 1
  3174              		.loc 1 902 5 is_stmt 1 view .LVU1038
  903:Middlewares/LVGL/lvgl/src/widgets/dropdown/lv_dropdown.c **** 
  3175              		.loc 1 903 5 view .LVU1039
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccxsIfz0.s 			page 117
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccIE8ukO.s 			page 117
 
 
  903:Middlewares/LVGL/lvgl/src/widgets/dropdown/lv_dropdown.c **** 
@@ -7018,7 +7018,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccxsIfz0.s 			page 1
  3216 002a 2046     		mov	r0, r4
  3217              	.LVL336:
  346:Middlewares/LVGL/lvgl/src/widgets/dropdown/../../core/lv_obj_style_gen.h ****     return (int32_t)v.num;
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccxsIfz0.s 			page 118
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccIE8ukO.s 			page 118
 
 
  3218              		.loc 2 346 26 view .LVU1054
@@ -7078,7 +7078,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccxsIfz0.s 			page 1
  911:Middlewares/LVGL/lvgl/src/widgets/dropdown/lv_dropdown.c ****     symbol_dsc.base.layer = layer;
  3259              		.loc 1 911 5 view .LVU1068
  3260 004c 6CAD     		add	r5, sp, #432
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccxsIfz0.s 			page 119
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccIE8ukO.s 			page 119
 
 
  3261              	.LVL343:
@@ -7138,7 +7138,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccxsIfz0.s 			page 1
  3300              	.LBI75:
 1186:Middlewares/LVGL/lvgl/src/widgets/dropdown/../../core/lv_obj_style_gen.h **** }
 1187:Middlewares/LVGL/lvgl/src/widgets/dropdown/../../core/lv_obj_style_gen.h **** 
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccxsIfz0.s 			page 120
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccIE8ukO.s 			page 120
 
 
 1188:Middlewares/LVGL/lvgl/src/widgets/dropdown/../../core/lv_obj_style_gen.h **** /**
@@ -7198,7 +7198,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccxsIfz0.s 			page 1
 1242:Middlewares/LVGL/lvgl/src/widgets/dropdown/../../core/lv_obj_style_gen.h ****  * Default: 0, inherited: Yes, layout: Yes, ext. draw: No.
 1243:Middlewares/LVGL/lvgl/src/widgets/dropdown/../../core/lv_obj_style_gen.h ****  * @param  obj    Pointer to Widget
 1244:Middlewares/LVGL/lvgl/src/widgets/dropdown/../../core/lv_obj_style_gen.h ****  * @param  part   One of the `LV_PART_...` enum values
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccxsIfz0.s 			page 121
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccIE8ukO.s 			page 121
 
 
 1245:Middlewares/LVGL/lvgl/src/widgets/dropdown/../../core/lv_obj_style_gen.h ****  */
@@ -7258,7 +7258,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccxsIfz0.s 			page 1
 1299:Middlewares/LVGL/lvgl/src/widgets/dropdown/../../core/lv_obj_style_gen.h ****  * @param  part   One of the `LV_PART_...` enum values
 1300:Middlewares/LVGL/lvgl/src/widgets/dropdown/../../core/lv_obj_style_gen.h ****  */
 1301:Middlewares/LVGL/lvgl/src/widgets/dropdown/../../core/lv_obj_style_gen.h **** static inline lv_blur_quality_t lv_obj_get_style_blur_quality(const lv_obj_t * obj, lv_part_t part)
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccxsIfz0.s 			page 122
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccIE8ukO.s 			page 122
 
 
 1302:Middlewares/LVGL/lvgl/src/widgets/dropdown/../../core/lv_obj_style_gen.h **** {
@@ -7318,7 +7318,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccxsIfz0.s 			page 1
 1356:Middlewares/LVGL/lvgl/src/widgets/dropdown/../../core/lv_obj_style_gen.h **** /**
 1357:Middlewares/LVGL/lvgl/src/widgets/dropdown/../../core/lv_obj_style_gen.h ****  * Get the color of the shadow.
 1358:Middlewares/LVGL/lvgl/src/widgets/dropdown/../../core/lv_obj_style_gen.h ****  * Default: `0`, inherited: No, layout: No, ext. draw: No.
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccxsIfz0.s 			page 123
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccIE8ukO.s 			page 123
 
 
 1359:Middlewares/LVGL/lvgl/src/widgets/dropdown/../../core/lv_obj_style_gen.h ****  * @param  obj    Pointer to Widget
@@ -7378,7 +7378,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccxsIfz0.s 			page 1
 1413:Middlewares/LVGL/lvgl/src/widgets/dropdown/../../core/lv_obj_style_gen.h **** static inline int32_t lv_obj_get_style_radial_offset(const lv_obj_t * obj, lv_part_t part)
 1414:Middlewares/LVGL/lvgl/src/widgets/dropdown/../../core/lv_obj_style_gen.h **** {
 1415:Middlewares/LVGL/lvgl/src/widgets/dropdown/../../core/lv_obj_style_gen.h ****     lv_style_value_t v = lv_obj_get_style_prop(obj, part, LV_STYLE_RADIAL_OFFSET);
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccxsIfz0.s 			page 124
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccIE8ukO.s 			page 124
 
 
 1416:Middlewares/LVGL/lvgl/src/widgets/dropdown/../../core/lv_obj_style_gen.h ****     return (int32_t)v.num;
@@ -7438,7 +7438,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccxsIfz0.s 			page 1
 1470:Middlewares/LVGL/lvgl/src/widgets/dropdown/../../core/lv_obj_style_gen.h ****     return (const lv_color_filter_dsc_t *)v.ptr;
 1471:Middlewares/LVGL/lvgl/src/widgets/dropdown/../../core/lv_obj_style_gen.h **** }
 1472:Middlewares/LVGL/lvgl/src/widgets/dropdown/../../core/lv_obj_style_gen.h **** 
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccxsIfz0.s 			page 125
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccIE8ukO.s 			page 125
 
 
 1473:Middlewares/LVGL/lvgl/src/widgets/dropdown/../../core/lv_obj_style_gen.h **** /**
@@ -7498,7 +7498,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccxsIfz0.s 			page 1
 1527:Middlewares/LVGL/lvgl/src/widgets/dropdown/../../core/lv_obj_style_gen.h **** /**
 1528:Middlewares/LVGL/lvgl/src/widgets/dropdown/../../core/lv_obj_style_gen.h ****  * Animation duration in milliseconds. Its meaning is widget specific. E.g. blink time
 1529:Middlewares/LVGL/lvgl/src/widgets/dropdown/../../core/lv_obj_style_gen.h ****  * of the cursor on the Text Area or scroll time of a roller. See Widgets'
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccxsIfz0.s 			page 126
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccIE8ukO.s 			page 126
 
 
 1530:Middlewares/LVGL/lvgl/src/widgets/dropdown/../../core/lv_obj_style_gen.h ****  * documentation to learn more.
@@ -7558,7 +7558,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccxsIfz0.s 			page 1
 1584:Middlewares/LVGL/lvgl/src/widgets/dropdown/../../core/lv_obj_style_gen.h ****  */
 1585:Middlewares/LVGL/lvgl/src/widgets/dropdown/../../core/lv_obj_style_gen.h **** static inline lv_base_dir_t lv_obj_get_style_base_dir(const lv_obj_t * obj, lv_part_t part)
  3301              		.loc 2 1585 29 view .LVU1084
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccxsIfz0.s 			page 127
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccIE8ukO.s 			page 127
 
 
  3302              	.LBB76:
@@ -7618,7 +7618,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccxsIfz0.s 			page 1
  945:Middlewares/LVGL/lvgl/src/widgets/dropdown/lv_dropdown.c ****             lv_result_t res = lv_image_decoder_get_info(dropdown->symbol, &header);
  3343              		.loc 1 945 13 is_stmt 1 view .LVU1100
  946:Middlewares/LVGL/lvgl/src/widgets/dropdown/lv_dropdown.c ****             if(res == LV_RESULT_OK) {
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccxsIfz0.s 			page 128
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccIE8ukO.s 			page 128
 
 
  3344              		.loc 1 946 13 view .LVU1101
@@ -7678,7 +7678,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccxsIfz0.s 			page 1
  3380              		.loc 1 960 24 view .LVU1119
  3381 00c0 0593     		str	r3, [sp, #20]
  961:Middlewares/LVGL/lvgl/src/widgets/dropdown/lv_dropdown.c ****         if(symbol_to_left) {
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccxsIfz0.s 			page 129
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccIE8ukO.s 			page 129
 
 
  3382              		.loc 1 961 9 is_stmt 1 view .LVU1120
@@ -7738,7 +7738,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccxsIfz0.s 			page 1
  3423              	.LVL358:
  978:Middlewares/LVGL/lvgl/src/widgets/dropdown/lv_dropdown.c ****             img_dsc.rotation = lv_obj_get_style_transform_rotation(obj, LV_PART_INDICATOR);
  3424              		.loc 1 978 13 view .LVU1134
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccxsIfz0.s 			page 130
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccIE8ukO.s 			page 130
 
 
  978:Middlewares/LVGL/lvgl/src/widgets/dropdown/lv_dropdown.c ****             img_dsc.rotation = lv_obj_get_style_transform_rotation(obj, LV_PART_INDICATOR);
@@ -7798,7 +7798,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccxsIfz0.s 			page 1
  3465 012a FFF7FEFF 		bl	lv_draw_image
  3466              	.LVL363:
  3467 012e 40E0     		b	.L211
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccxsIfz0.s 			page 131
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccIE8ukO.s 			page 131
 
 
  3468              	.LVL364:
@@ -7858,7 +7858,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccxsIfz0.s 			page 1
  3509 0150 7B9B     		ldr	r3, [sp, #492]
  936:Middlewares/LVGL/lvgl/src/widgets/dropdown/lv_dropdown.c ****             attributes.max_width = LV_COORD_MAX;
  3510              		.loc 1 936 35 view .LVU1162
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccxsIfz0.s 			page 132
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccIE8ukO.s 			page 132
 
 
  3511 0152 8B93     		str	r3, [sp, #556]
@@ -7918,7 +7918,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccxsIfz0.s 			page 1
  3550              		.loc 1 949 17 is_stmt 1 view .LVU1177
  949:Middlewares/LVGL/lvgl/src/widgets/dropdown/lv_dropdown.c ****             }
  3551              		.loc 1 949 34 is_stmt 0 view .LVU1178
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccxsIfz0.s 			page 133
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccIE8ukO.s 			page 133
 
 
  3552 0184 BDF82AB0 		ldrh	fp, [sp, #42]
@@ -7978,7 +7978,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccxsIfz0.s 			page 1
  3595 01b6 FFF7FEFF 		bl	lv_draw_label_dsc_init
  3596              	.LVL382:
  987:Middlewares/LVGL/lvgl/src/widgets/dropdown/lv_dropdown.c ****     lv_obj_init_draw_label_dsc(obj, LV_PART_MAIN, &label_dsc);
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccxsIfz0.s 			page 134
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccIE8ukO.s 			page 134
 
 
  3597              		.loc 1 987 5 view .LVU1190
@@ -8038,7 +8038,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccxsIfz0.s 			page 1
  3634 01f0 8AAB     		add	r3, sp, #552
  3635 01f2 3B9A     		ldr	r2, [sp, #236]
  3636 01f4 4946     		mov	r1, r9
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccxsIfz0.s 			page 135
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccIE8ukO.s 			page 135
 
 
  3637 01f6 5846     		mov	r0, fp
@@ -8098,7 +8098,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccxsIfz0.s 			page 1
  3672 0216 04F11405 		add	r5, r4, #20
 1004:Middlewares/LVGL/lvgl/src/widgets/dropdown/lv_dropdown.c **** 
  3673              		.loc 1 1004 5 view .LVU1227
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccxsIfz0.s 			page 136
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccIE8ukO.s 			page 136
 
 
  3674 021a 0023     		movs	r3, #0
@@ -8158,7 +8158,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccxsIfz0.s 			page 1
  3714 023c 9DF81C31 		ldrb	r3, [sp, #284]	@ zero_extendqisi2
 1016:Middlewares/LVGL/lvgl/src/widgets/dropdown/lv_dropdown.c ****             txt_area.x1 += symbol_w;
  3715              		.loc 1 1016 15 view .LVU1242
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccxsIfz0.s 			page 137
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccIE8ukO.s 			page 137
 
 
  3716 0240 13B9     		cbnz	r3, .L222
@@ -8218,7 +8218,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccxsIfz0.s 			page 1
  3756 0270 0DF50F7D 		add	sp, sp, #572
  3757              	.LCFI63:
  3758              		.cfi_remember_state
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccxsIfz0.s 			page 138
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccIE8ukO.s 			page 138
 
 
  3759              		.cfi_def_cfa_offset 36
@@ -8278,7 +8278,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccxsIfz0.s 			page 1
  3800 02a4 2846     		mov	r0, r5
  3801              	.LVL395:
 1023:Middlewares/LVGL/lvgl/src/widgets/dropdown/lv_dropdown.c ****         }
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccxsIfz0.s 			page 139
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccIE8ukO.s 			page 139
 
 
  3802              		.loc 1 1023 13 is_stmt 0 view .LVU1270
@@ -8338,7 +8338,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccxsIfz0.s 			page 1
  489:Middlewares/LVGL/lvgl/src/widgets/dropdown/lv_dropdown.c ****     uint32_t opt_i = 0;
  3850              		.loc 1 489 5 is_stmt 1 view .LVU1279
  490:Middlewares/LVGL/lvgl/src/widgets/dropdown/lv_dropdown.c ****     const char * start = opts;
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccxsIfz0.s 			page 140
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccIE8ukO.s 			page 140
 
 
  3851              		.loc 1 490 5 view .LVU1280
@@ -8398,7 +8398,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccxsIfz0.s 			page 1
  3890              		.loc 1 501 9 is_stmt 1 view .LVU1295
  502:Middlewares/LVGL/lvgl/src/widgets/dropdown/lv_dropdown.c ****         char_i = 0;
  3891              		.loc 1 502 9 view .LVU1296
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccxsIfz0.s 			page 141
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccIE8ukO.s 			page 141
 
 
  502:Middlewares/LVGL/lvgl/src/widgets/dropdown/lv_dropdown.c ****         char_i = 0;
@@ -8458,7 +8458,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccxsIfz0.s 			page 1
  498:Middlewares/LVGL/lvgl/src/widgets/dropdown/lv_dropdown.c ****         }
  3932              		.loc 1 498 20 is_stmt 0 view .LVU1311
  3933 004e 3046     		mov	r0, r6
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccxsIfz0.s 			page 142
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccIE8ukO.s 			page 142
 
 
  3934 0050 03E0     		b	.L237
@@ -8518,7 +8518,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccxsIfz0.s 			page 1
  3977              		.loc 1 514 5 view .LVU1324
  515:Middlewares/LVGL/lvgl/src/widgets/dropdown/lv_dropdown.c **** 
  3978              		.loc 1 515 1 is_stmt 0 view .LVU1325
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccxsIfz0.s 			page 143
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccIE8ukO.s 			page 143
 
 
  3979 0002 806B     		ldr	r0, [r0, #56]
@@ -8578,7 +8578,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccxsIfz0.s 			page 1
  4020              		.loc 1 522 1 view .LVU1340
  4021 0006 C0F34010 		ubfx	r0, r0, #5, #1
  4022 000a 7047     		bx	lr
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccxsIfz0.s 			page 144
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccIE8ukO.s 			page 144
 
 
  4023              	.LVL424:
@@ -8638,7 +8638,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccxsIfz0.s 			page 1
  526:Middlewares/LVGL/lvgl/src/widgets/dropdown/lv_dropdown.c ****     lv_dropdown_t * dropdown = (lv_dropdown_t *)obj;
  4065              		.loc 1 526 5 is_stmt 1 view .LVU1355
  526:Middlewares/LVGL/lvgl/src/widgets/dropdown/lv_dropdown.c ****     lv_dropdown_t * dropdown = (lv_dropdown_t *)obj;
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccxsIfz0.s 			page 145
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccIE8ukO.s 			page 145
 
 
  4066              		.loc 1 526 5 view .LVU1356
@@ -8698,7 +8698,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccxsIfz0.s 			page 1
  4111 000c 0421     		movs	r1, #4
  4112 000e FFF7FEFF 		bl	lv_obj_add_state
  4113              	.LVL431:
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccxsIfz0.s 			page 146
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccIE8ukO.s 			page 146
 
 
  542:Middlewares/LVGL/lvgl/src/widgets/dropdown/lv_dropdown.c ****     lv_obj_move_to_index(dropdown->list, -1);
@@ -8758,7 +8758,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccxsIfz0.s 			page 1
  4158 0058 FFF7FEFF 		bl	lv_obj_update_layout
  4159              	.LVL441:
  555:Middlewares/LVGL/lvgl/src/widgets/dropdown/lv_dropdown.c ****        (dropdown->dir == LV_DIR_TOP || dropdown->dir == LV_DIR_BOTTOM)) {
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccxsIfz0.s 			page 147
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccIE8ukO.s 			page 147
 
 
  4160              		.loc 1 555 5 view .LVU1378
@@ -8818,7 +8818,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccxsIfz0.s 			page 1
  4201              		.loc 2 710 26 view .LVU1391
  4202 008c FFF7FEFF 		bl	lv_obj_get_style_prop
  4203              	.LVL447:
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccxsIfz0.s 			page 148
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccIE8ukO.s 			page 148
 
 
  710:Middlewares/LVGL/lvgl/src/widgets/dropdown/../../core/lv_obj_style_gen.h ****     return (int32_t)v.num;
@@ -8878,7 +8878,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccxsIfz0.s 			page 1
  4242              		.loc 2 334 26 is_stmt 0 view .LVU1407
  4243 00a4 1922     		movs	r2, #25
  4244 00a6 0021     		movs	r1, #0
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccxsIfz0.s 			page 149
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccIE8ukO.s 			page 149
 
 
  4245 00a8 206B     		ldr	r0, [r4, #48]
@@ -8938,7 +8938,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccxsIfz0.s 			page 1
  4283              		.loc 1 596 5 is_stmt 1 view .LVU1423
  596:Middlewares/LVGL/lvgl/src/widgets/dropdown/lv_dropdown.c ****     lv_obj_set_height(dropdown->list, list_h);
  4284              		.loc 1 596 7 is_stmt 0 view .LVU1424
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccxsIfz0.s 			page 150
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccIE8ukO.s 			page 150
 
 
  4285 00c8 AB42     		cmp	r3, r5
@@ -8998,7 +8998,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccxsIfz0.s 			page 1
  4330              		.loc 1 537 5 view .LVU1433
  4331 00f0 FEE7     		b	.L261
  4332              	.LVL464:
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccxsIfz0.s 			page 151
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccIE8ukO.s 			page 151
 
 
  4333              	.L263:
@@ -9058,7 +9058,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccxsIfz0.s 			page 1
  4376              		.loc 1 572 36 is_stmt 0 view .LVU1444
  4377 011a D4F81880 		ldr	r8, [r4, #24]
  572:Middlewares/LVGL/lvgl/src/widgets/dropdown/lv_dropdown.c ****                 /*There is more space on the top, so make it drop up*/
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccxsIfz0.s 			page 152
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccIE8ukO.s 			page 152
 
 
  4378              		.loc 1 572 42 view .LVU1445
@@ -9118,7 +9118,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccxsIfz0.s 			page 1
  4417              	.LVL479:
  578:Middlewares/LVGL/lvgl/src/widgets/dropdown/lv_dropdown.c ****             }
  4418              		.loc 1 578 24 discriminator 2 view .LVU1461
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccxsIfz0.s 			page 153
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccIE8ukO.s 			page 153
 
 
  4419 0144 C0E7     		b	.L265
@@ -9178,7 +9178,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccxsIfz0.s 			page 1
  4458              		.loc 1 587 17 is_stmt 1 view .LVU1476
  588:Middlewares/LVGL/lvgl/src/widgets/dropdown/lv_dropdown.c ****             }
  4459              		.loc 1 588 17 view .LVU1477
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccxsIfz0.s 			page 154
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccIE8ukO.s 			page 154
 
 
  588:Middlewares/LVGL/lvgl/src/widgets/dropdown/lv_dropdown.c ****             }
@@ -9238,7 +9238,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccxsIfz0.s 			page 1
  616:Middlewares/LVGL/lvgl/src/widgets/dropdown/lv_dropdown.c **** 
  4502              		.loc 1 616 29 is_stmt 0 view .LVU1490
  4503 019e E26B     		ldr	r2, [r4, #60]
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccxsIfz0.s 			page 155
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccIE8ukO.s 			page 155
 
 
  4504 01a0 0021     		movs	r1, #0
@@ -9298,7 +9298,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccxsIfz0.s 			page 1
  4551 01dc FFF7FEFF 		bl	lv_obj_align_to
  4552              	.LVL499:
  4553 01e0 D2E7     		b	.L269
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccxsIfz0.s 			page 156
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccIE8ukO.s 			page 156
 
 
  4554              	.L273:
@@ -9358,7 +9358,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccxsIfz0.s 			page 1
  4596              	.LVL508:
  612:Middlewares/LVGL/lvgl/src/widgets/dropdown/lv_dropdown.c ****         }
  4597              		.loc 1 612 53 discriminator 1 view .LVU1510
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccxsIfz0.s 			page 157
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccIE8ukO.s 			page 157
 
 
  4598 0216 FFF7FEFF 		bl	lv_display_get_vertical_resolution
@@ -9418,7 +9418,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccxsIfz0.s 			page 1
  4641              	.LFE224:
  4643              		.section	.text.lv_dropdown_close,"ax",%progbits
  4644              		.align	1
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccxsIfz0.s 			page 158
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccIE8ukO.s 			page 158
 
 
  4645              		.global	lv_dropdown_close
@@ -9478,7 +9478,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccxsIfz0.s 			page 1
  4688              	.LVL521:
  644:Middlewares/LVGL/lvgl/src/widgets/dropdown/lv_dropdown.c **** 
  4689              		.loc 1 644 1 is_stmt 0 view .LVU1534
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccxsIfz0.s 			page 159
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccIE8ukO.s 			page 159
 
 
  4690 0024 10BD     		pop	{r4, pc}
@@ -9538,7 +9538,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccxsIfz0.s 			page 1
 1199:Middlewares/LVGL/lvgl/src/widgets/dropdown/lv_dropdown.c **** 
  4736              		.loc 1 1199 5 is_stmt 1 view .LVU1545
 1201:Middlewares/LVGL/lvgl/src/widgets/dropdown/lv_dropdown.c ****     /*Leave edit mode once a new item is selected*/
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccxsIfz0.s 			page 160
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccIE8ukO.s 			page 160
 
 
  4737              		.loc 1 1201 5 view .LVU1546
@@ -9598,7 +9598,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccxsIfz0.s 			page 1
  4777 0030 0299     		ldr	r1, [sp, #8]
  4778 0032 2046     		mov	r0, r4
  4779 0034 FFF7FEFF 		bl	get_id_on_point
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccxsIfz0.s 			page 161
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccIE8ukO.s 			page 161
 
 
  4780              	.LVL532:
@@ -9658,7 +9658,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccxsIfz0.s 			page 1
  4819              	.LVL535:
  4820              	.L302:
  4821              	.LCFI77:
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccxsIfz0.s 			page 162
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccIE8ukO.s 			page 162
 
 
  4822              		.cfi_restore_state
@@ -9718,7 +9718,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccxsIfz0.s 			page 1
  4867              	lv_dropdown_list_event:
  4868              	.LVL542:
  4869              	.LFB234:
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccxsIfz0.s 			page 163
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccIE8ukO.s 			page 163
 
 
  865:Middlewares/LVGL/lvgl/src/widgets/dropdown/lv_dropdown.c ****     LV_UNUSED(class_p);
@@ -9778,7 +9778,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccxsIfz0.s 			page 1
  4909 0018 0128     		cmp	r0, #1
  4910 001a 24D1     		bne	.L304
  4911              	.LVL548:
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccxsIfz0.s 			page 164
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccIE8ukO.s 			page 164
 
 
  4912              	.L305:
@@ -9838,7 +9838,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccxsIfz0.s 			page 1
  4959 004a 1B       		.byte	(.L304-.L308)/2
  4960 004b 1B       		.byte	(.L304-.L308)/2
  4961 004c 1B       		.byte	(.L304-.L308)/2
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccxsIfz0.s 			page 165
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccIE8ukO.s 			page 165
 
 
  4962 004d 1B       		.byte	(.L304-.L308)/2
@@ -9898,7 +9898,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccxsIfz0.s 			page 1
  5004              	.LVL561:
  893:Middlewares/LVGL/lvgl/src/widgets/dropdown/lv_dropdown.c ****         res = lv_obj_event_base(MY_CLASS_LIST, e);
  5005              		.loc 1 893 9 is_stmt 0 view .LVU1621
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccxsIfz0.s 			page 166
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccIE8ukO.s 			page 166
 
 
  5006 0076 FFF7FEFF 		bl	draw_list
@@ -9958,7 +9958,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccxsIfz0.s 			page 1
  651:Middlewares/LVGL/lvgl/src/widgets/dropdown/lv_dropdown.c **** }
  5051              		.loc 1 651 5 view .LVU1633
  651:Middlewares/LVGL/lvgl/src/widgets/dropdown/lv_dropdown.c **** }
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccxsIfz0.s 			page 167
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccIE8ukO.s 			page 167
 
 
  5052              		.loc 1 651 12 is_stmt 0 view .LVU1634
@@ -10018,7 +10018,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccxsIfz0.s 			page 1
  5098              		.cfi_offset 14, -4
  5099 0002 83B0     		sub	sp, sp, #12
  5100              	.LCFI82:
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccxsIfz0.s 			page 168
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccIE8ukO.s 			page 168
 
 
  5101              		.cfi_def_cfa_offset 24
@@ -10078,7 +10078,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccxsIfz0.s 			page 1
  5141              		.loc 1 1164 9 is_stmt 1 view .LVU1658
 1164:Middlewares/LVGL/lvgl/src/widgets/dropdown/lv_dropdown.c ****             lv_dropdown_close(obj);
  5142              		.loc 1 1164 12 is_stmt 0 view .LVU1659
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccxsIfz0.s 			page 169
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccIE8ukO.s 			page 169
 
 
  5143 0022 2046     		mov	r0, r4
@@ -10138,7 +10138,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccxsIfz0.s 			page 1
  5181 004a 2046     		mov	r0, r4
  5182              	.LVL579:
 1172:Middlewares/LVGL/lvgl/src/widgets/dropdown/lv_dropdown.c ****             }
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccxsIfz0.s 			page 170
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccIE8ukO.s 			page 170
 
 
  5183              		.loc 1 1172 17 is_stmt 0 view .LVU1676
@@ -10198,7 +10198,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccxsIfz0.s 			page 1
  5225 0070 FFF7FEFF 		bl	lv_dropdown_open
  5226              	.LVL588:
 1187:Middlewares/LVGL/lvgl/src/widgets/dropdown/lv_dropdown.c **** }
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccxsIfz0.s 			page 171
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccIE8ukO.s 			page 171
 
 
  5227              		.loc 1 1187 12 is_stmt 0 view .LVU1689
@@ -10258,7 +10258,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccxsIfz0.s 			page 1
  5273              		.loc 1 862 1 view .LVU1699
  5274 0010 02B0     		add	sp, sp, #8
  5275              	.LCFI87:
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccxsIfz0.s 			page 172
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccIE8ukO.s 			page 172
 
 
  5276              		.cfi_remember_state
@@ -10318,7 +10318,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccxsIfz0.s 			page 1
  5322 0060 11000000 		.word	.L331+1
  5323 0064 11000000 		.word	.L331+1
  5324 0068 11000000 		.word	.L331+1
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccxsIfz0.s 			page 173
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccIE8ukO.s 			page 173
 
 
  5325 006c 11000000 		.word	.L331+1
@@ -10378,7 +10378,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccxsIfz0.s 			page 1
  778:Middlewares/LVGL/lvgl/src/widgets/dropdown/lv_dropdown.c **** 
  5372              		.loc 1 778 38 discriminator 1 view .LVU1715
  5373 00ee FFF7FEFF 		bl	lv_indev_get_type
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccxsIfz0.s 			page 174
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccIE8ukO.s 			page 174
 
 
  5374              	.LVL604:
@@ -10438,7 +10438,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccxsIfz0.s 			page 1
  797:Middlewares/LVGL/lvgl/src/widgets/dropdown/lv_dropdown.c ****         if(res != LV_RESULT_OK) return;
  5414              		.loc 1 797 9 is_stmt 1 view .LVU1730
  797:Middlewares/LVGL/lvgl/src/widgets/dropdown/lv_dropdown.c ****         if(res != LV_RESULT_OK) return;
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccxsIfz0.s 			page 175
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccIE8ukO.s 			page 175
 
 
  5415              		.loc 1 797 15 is_stmt 0 view .LVU1731
@@ -10498,7 +10498,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccxsIfz0.s 			page 1
  5456 0130 3046     		mov	r0, r6
  5457              	.LVL622:
 1160:Middlewares/LVGL/lvgl/src/widgets/dropdown/../../core/lv_obj_style_gen.h ****     return (const lv_font_t *)v.ptr;
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccxsIfz0.s 			page 176
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccIE8ukO.s 			page 176
 
 
  5458              		.loc 2 1160 26 view .LVU1745
@@ -10558,7 +10558,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccxsIfz0.s 			page 1
  5503 0180 C9010000 		.word	.L346+1
  5504 0184 11000000 		.word	.L331+1
  5505 0188 11000000 		.word	.L331+1
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccxsIfz0.s 			page 177
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccIE8ukO.s 			page 177
 
 
  5506 018c 11000000 		.word	.L331+1
@@ -10618,7 +10618,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccxsIfz0.s 			page 1
  5547              	.LVL633:
  5548              	.L346:
  824:Middlewares/LVGL/lvgl/src/widgets/dropdown/lv_dropdown.c ****                 lv_dropdown_open(obj);
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccxsIfz0.s 			page 178
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccIE8ukO.s 			page 178
 
 
  5549              		.loc 1 824 13 view .LVU1768
@@ -10678,7 +10678,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccxsIfz0.s 			page 1
  5589              	.LVL639:
  834:Middlewares/LVGL/lvgl/src/widgets/dropdown/lv_dropdown.c ****         }
  5590              		.loc 1 834 13 is_stmt 0 view .LVU1783
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccxsIfz0.s 			page 179
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccIE8ukO.s 			page 179
 
 
  5591 01f4 FFF7FEFF 		bl	lv_dropdown_close
@@ -10738,7 +10738,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccxsIfz0.s 			page 1
  5631              	.L351:
  5632              	.LBB105:
  851:Middlewares/LVGL/lvgl/src/widgets/dropdown/lv_dropdown.c ****             int32_t new_id = dropdown->sel_opt_id + r;
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccxsIfz0.s 			page 180
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccIE8ukO.s 			page 180
 
 
  5633              		.loc 1 851 13 view .LVU1798
@@ -10798,7 +10798,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccxsIfz0.s 			page 1
  860:Middlewares/LVGL/lvgl/src/widgets/dropdown/lv_dropdown.c ****     }
  5673              		.loc 1 860 9 is_stmt 0 view .LVU1813
  5674 0240 FFF7FEFF 		bl	draw_main
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccxsIfz0.s 			page 181
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccIE8ukO.s 			page 181
 
 
  5675              	.LVL655:
@@ -10858,7 +10858,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccxsIfz0.s 			page 1
  5719              		.loc 1 661 22 is_stmt 0 view .LVU1825
  5720 000a 91F82030 		ldrb	r3, [r1, #32]	@ zero_extendqisi2
  5721 000e 03F00F03 		and	r3, r3, #15
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccxsIfz0.s 			page 182
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccIE8ukO.s 			page 182
 
 
  661:Middlewares/LVGL/lvgl/src/widgets/dropdown/lv_dropdown.c ****         LV_LOG_WARN("Incompatible subject type: %d", subject->type);
@@ -10918,7 +10918,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccxsIfz0.s 			page 1
  5764              		.cfi_offset 5, -8
  5765              		.cfi_offset 14, -4
  659:Middlewares/LVGL/lvgl/src/widgets/dropdown/lv_dropdown.c **** 
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccxsIfz0.s 			page 183
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccIE8ukO.s 			page 183
 
 
  5766              		.loc 1 659 5 view .LVU1838
@@ -10978,7 +10978,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccxsIfz0.s 			page 1
  5811      726F7064 
  5811      6F776E00 
  5812              		.section	.rodata.lv_dropdown_class,"a"
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccxsIfz0.s 			page 184
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccIE8ukO.s 			page 184
 
 
  5813              		.align	2
@@ -11038,134 +11038,134 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccxsIfz0.s 			page 1
  5869              		.file 41 "Middlewares/LVGL/lvgl/src/widgets/dropdown/../label/lv_label.h"
  5870              		.file 42 "Middlewares/LVGL/lvgl/src/widgets/dropdown/../../core/lv_obj_tree.h"
  5871              		.file 43 "Middlewares/LVGL/lvgl/src/widgets/dropdown/../../core/../misc/../font/../draw/../misc/..
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccxsIfz0.s 			page 185
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccIE8ukO.s 			page 185
 
 
  5872              		.file 44 "Middlewares/LVGL/lvgl/src/widgets/dropdown/../../core/../misc/../font/../draw/../misc/..
  5873              		.file 45 "Middlewares/LVGL/lvgl/src/widgets/dropdown/../../core/lv_obj_draw.h"
  5874              		.file 46 "Middlewares/LVGL/lvgl/src/widgets/dropdown/../../misc/lv_area_private.h"
  5875              		.file 47 "Middlewares/LVGL/lvgl/src/widgets/dropdown/../../core/lv_obj_scroll.h"
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccxsIfz0.s 			page 186
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccIE8ukO.s 			page 186
 
 
 DEFINED SYMBOLS
                             *ABS*:00000000 lv_dropdown.c
-C:\Users\w1785\AppData\Local\Temp\ccxsIfz0.s:21     .text.lv_dropdownlist_destructor:00000000 $t
-C:\Users\w1785\AppData\Local\Temp\ccxsIfz0.s:26     .text.lv_dropdownlist_destructor:00000000 lv_dropdownlist_destructor
-C:\Users\w1785\AppData\Local\Temp\ccxsIfz0.s:51     .text.get_label:00000000 $t
-C:\Users\w1785\AppData\Local\Temp\ccxsIfz0.s:56     .text.get_label:00000000 get_label
-C:\Users\w1785\AppData\Local\Temp\ccxsIfz0.s:93     .text.position_to_selected:00000000 $t
-C:\Users\w1785\AppData\Local\Temp\ccxsIfz0.s:98     .text.position_to_selected:00000000 position_to_selected
-C:\Users\w1785\AppData\Local\Temp\ccxsIfz0.s:228    .text.get_id_on_point:00000000 $t
-C:\Users\w1785\AppData\Local\Temp\ccxsIfz0.s:233    .text.get_id_on_point:00000000 get_id_on_point
-C:\Users\w1785\AppData\Local\Temp\ccxsIfz0.s:361    .text.lv_dropdown_destructor:00000000 $t
-C:\Users\w1785\AppData\Local\Temp\ccxsIfz0.s:366    .text.lv_dropdown_destructor:00000000 lv_dropdown_destructor
-C:\Users\w1785\AppData\Local\Temp\ccxsIfz0.s:438    .text.lv_dropdown_list_create:00000000 $t
-C:\Users\w1785\AppData\Local\Temp\ccxsIfz0.s:443    .text.lv_dropdown_list_create:00000000 lv_dropdown_list_create
-C:\Users\w1785\AppData\Local\Temp\ccxsIfz0.s:482    .text.lv_dropdown_list_create:00000014 $d
-C:\Users\w1785\AppData\Local\Temp\ccxsIfz0.s:5795   .rodata.lv_dropdownlist_class:00000000 lv_dropdownlist_class
-C:\Users\w1785\AppData\Local\Temp\ccxsIfz0.s:487    .text.list_press_handler:00000000 $t
-C:\Users\w1785\AppData\Local\Temp\ccxsIfz0.s:492    .text.list_press_handler:00000000 list_press_handler
-C:\Users\w1785\AppData\Local\Temp\ccxsIfz0.s:573    .text.draw_box:00000000 $t
-C:\Users\w1785\AppData\Local\Temp\ccxsIfz0.s:578    .text.draw_box:00000000 draw_box
-C:\Users\w1785\AppData\Local\Temp\ccxsIfz0.s:796    .text.draw_box_label:00000000 $t
-C:\Users\w1785\AppData\Local\Temp\ccxsIfz0.s:801    .text.draw_box_label:00000000 draw_box_label
-C:\Users\w1785\AppData\Local\Temp\ccxsIfz0.s:1027   .text.draw_list:00000000 $t
-C:\Users\w1785\AppData\Local\Temp\ccxsIfz0.s:1032   .text.draw_list:00000000 draw_list
-C:\Users\w1785\AppData\Local\Temp\ccxsIfz0.s:1198   .text.lv_dropdownlist_constructor:00000000 $t
-C:\Users\w1785\AppData\Local\Temp\ccxsIfz0.s:1203   .text.lv_dropdownlist_constructor:00000000 lv_dropdownlist_constructor
-C:\Users\w1785\AppData\Local\Temp\ccxsIfz0.s:1255   .text.lv_dropdown_create:00000000 $t
-C:\Users\w1785\AppData\Local\Temp\ccxsIfz0.s:1261   .text.lv_dropdown_create:00000000 lv_dropdown_create
-C:\Users\w1785\AppData\Local\Temp\ccxsIfz0.s:1300   .text.lv_dropdown_create:00000014 $d
-C:\Users\w1785\AppData\Local\Temp\ccxsIfz0.s:5816   .rodata.lv_dropdown_class:00000000 lv_dropdown_class
-C:\Users\w1785\AppData\Local\Temp\ccxsIfz0.s:1305   .text.lv_dropdown_set_text:00000000 $t
-C:\Users\w1785\AppData\Local\Temp\ccxsIfz0.s:1311   .text.lv_dropdown_set_text:00000000 lv_dropdown_set_text
-C:\Users\w1785\AppData\Local\Temp\ccxsIfz0.s:1416   .text.lv_dropdown_set_text_static:00000000 $t
-C:\Users\w1785\AppData\Local\Temp\ccxsIfz0.s:1422   .text.lv_dropdown_set_text_static:00000000 lv_dropdown_set_text_static
-C:\Users\w1785\AppData\Local\Temp\ccxsIfz0.s:1502   .text.lv_dropdown_set_options:00000000 $t
-C:\Users\w1785\AppData\Local\Temp\ccxsIfz0.s:1508   .text.lv_dropdown_set_options:00000000 lv_dropdown_set_options
-C:\Users\w1785\AppData\Local\Temp\ccxsIfz0.s:1689   .text.lv_dropdown_set_options_static:00000000 $t
-C:\Users\w1785\AppData\Local\Temp\ccxsIfz0.s:1695   .text.lv_dropdown_set_options_static:00000000 lv_dropdown_set_options_static
-C:\Users\w1785\AppData\Local\Temp\ccxsIfz0.s:1844   .rodata.lv_dropdown_constructor.str1.4:00000000 $d
-C:\Users\w1785\AppData\Local\Temp\ccxsIfz0.s:1851   .text.lv_dropdown_constructor:00000000 $t
-C:\Users\w1785\AppData\Local\Temp\ccxsIfz0.s:1856   .text.lv_dropdown_constructor:00000000 lv_dropdown_constructor
-C:\Users\w1785\AppData\Local\Temp\ccxsIfz0.s:1959   .text.lv_dropdown_constructor:0000006c $d
-C:\Users\w1785\AppData\Local\Temp\ccxsIfz0.s:1965   .rodata.lv_dropdown_add_option.str1.4:00000000 $d
-C:\Users\w1785\AppData\Local\Temp\ccxsIfz0.s:1969   .text.lv_dropdown_add_option:00000000 $t
-C:\Users\w1785\AppData\Local\Temp\ccxsIfz0.s:1975   .text.lv_dropdown_add_option:00000000 lv_dropdown_add_option
-C:\Users\w1785\AppData\Local\Temp\ccxsIfz0.s:2321   .text.lv_dropdown_add_option:0000010c $d
-C:\Users\w1785\AppData\Local\Temp\ccxsIfz0.s:2327   .text.lv_dropdown_clear_options:00000000 $t
-C:\Users\w1785\AppData\Local\Temp\ccxsIfz0.s:2333   .text.lv_dropdown_clear_options:00000000 lv_dropdown_clear_options
-C:\Users\w1785\AppData\Local\Temp\ccxsIfz0.s:2420   .text.lv_dropdown_set_selected:00000000 $t
-C:\Users\w1785\AppData\Local\Temp\ccxsIfz0.s:2426   .text.lv_dropdown_set_selected:00000000 lv_dropdown_set_selected
-C:\Users\w1785\AppData\Local\Temp\ccxsIfz0.s:2504   .text.dropdown_value_observer_cb:00000000 $t
-C:\Users\w1785\AppData\Local\Temp\ccxsIfz0.s:2509   .text.dropdown_value_observer_cb:00000000 dropdown_value_observer_cb
-C:\Users\w1785\AppData\Local\Temp\ccxsIfz0.s:2537   .text.lv_dropdown_set_dir:00000000 $t
-C:\Users\w1785\AppData\Local\Temp\ccxsIfz0.s:2543   .text.lv_dropdown_set_dir:00000000 lv_dropdown_set_dir
-C:\Users\w1785\AppData\Local\Temp\ccxsIfz0.s:2597   .text.lv_dropdown_set_symbol:00000000 $t
-C:\Users\w1785\AppData\Local\Temp\ccxsIfz0.s:2603   .text.lv_dropdown_set_symbol:00000000 lv_dropdown_set_symbol
-C:\Users\w1785\AppData\Local\Temp\ccxsIfz0.s:2647   .text.lv_dropdown_set_selected_highlight:00000000 $t
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccxsIfz0.s 			page 187
+C:\Users\w1785\AppData\Local\Temp\ccIE8ukO.s:21     .text.lv_dropdownlist_destructor:00000000 $t
+C:\Users\w1785\AppData\Local\Temp\ccIE8ukO.s:26     .text.lv_dropdownlist_destructor:00000000 lv_dropdownlist_destructor
+C:\Users\w1785\AppData\Local\Temp\ccIE8ukO.s:51     .text.get_label:00000000 $t
+C:\Users\w1785\AppData\Local\Temp\ccIE8ukO.s:56     .text.get_label:00000000 get_label
+C:\Users\w1785\AppData\Local\Temp\ccIE8ukO.s:93     .text.position_to_selected:00000000 $t
+C:\Users\w1785\AppData\Local\Temp\ccIE8ukO.s:98     .text.position_to_selected:00000000 position_to_selected
+C:\Users\w1785\AppData\Local\Temp\ccIE8ukO.s:228    .text.get_id_on_point:00000000 $t
+C:\Users\w1785\AppData\Local\Temp\ccIE8ukO.s:233    .text.get_id_on_point:00000000 get_id_on_point
+C:\Users\w1785\AppData\Local\Temp\ccIE8ukO.s:361    .text.lv_dropdown_destructor:00000000 $t
+C:\Users\w1785\AppData\Local\Temp\ccIE8ukO.s:366    .text.lv_dropdown_destructor:00000000 lv_dropdown_destructor
+C:\Users\w1785\AppData\Local\Temp\ccIE8ukO.s:438    .text.lv_dropdown_list_create:00000000 $t
+C:\Users\w1785\AppData\Local\Temp\ccIE8ukO.s:443    .text.lv_dropdown_list_create:00000000 lv_dropdown_list_create
+C:\Users\w1785\AppData\Local\Temp\ccIE8ukO.s:482    .text.lv_dropdown_list_create:00000014 $d
+C:\Users\w1785\AppData\Local\Temp\ccIE8ukO.s:5795   .rodata.lv_dropdownlist_class:00000000 lv_dropdownlist_class
+C:\Users\w1785\AppData\Local\Temp\ccIE8ukO.s:487    .text.list_press_handler:00000000 $t
+C:\Users\w1785\AppData\Local\Temp\ccIE8ukO.s:492    .text.list_press_handler:00000000 list_press_handler
+C:\Users\w1785\AppData\Local\Temp\ccIE8ukO.s:573    .text.draw_box:00000000 $t
+C:\Users\w1785\AppData\Local\Temp\ccIE8ukO.s:578    .text.draw_box:00000000 draw_box
+C:\Users\w1785\AppData\Local\Temp\ccIE8ukO.s:796    .text.draw_box_label:00000000 $t
+C:\Users\w1785\AppData\Local\Temp\ccIE8ukO.s:801    .text.draw_box_label:00000000 draw_box_label
+C:\Users\w1785\AppData\Local\Temp\ccIE8ukO.s:1027   .text.draw_list:00000000 $t
+C:\Users\w1785\AppData\Local\Temp\ccIE8ukO.s:1032   .text.draw_list:00000000 draw_list
+C:\Users\w1785\AppData\Local\Temp\ccIE8ukO.s:1198   .text.lv_dropdownlist_constructor:00000000 $t
+C:\Users\w1785\AppData\Local\Temp\ccIE8ukO.s:1203   .text.lv_dropdownlist_constructor:00000000 lv_dropdownlist_constructor
+C:\Users\w1785\AppData\Local\Temp\ccIE8ukO.s:1255   .text.lv_dropdown_create:00000000 $t
+C:\Users\w1785\AppData\Local\Temp\ccIE8ukO.s:1261   .text.lv_dropdown_create:00000000 lv_dropdown_create
+C:\Users\w1785\AppData\Local\Temp\ccIE8ukO.s:1300   .text.lv_dropdown_create:00000014 $d
+C:\Users\w1785\AppData\Local\Temp\ccIE8ukO.s:5816   .rodata.lv_dropdown_class:00000000 lv_dropdown_class
+C:\Users\w1785\AppData\Local\Temp\ccIE8ukO.s:1305   .text.lv_dropdown_set_text:00000000 $t
+C:\Users\w1785\AppData\Local\Temp\ccIE8ukO.s:1311   .text.lv_dropdown_set_text:00000000 lv_dropdown_set_text
+C:\Users\w1785\AppData\Local\Temp\ccIE8ukO.s:1416   .text.lv_dropdown_set_text_static:00000000 $t
+C:\Users\w1785\AppData\Local\Temp\ccIE8ukO.s:1422   .text.lv_dropdown_set_text_static:00000000 lv_dropdown_set_text_static
+C:\Users\w1785\AppData\Local\Temp\ccIE8ukO.s:1502   .text.lv_dropdown_set_options:00000000 $t
+C:\Users\w1785\AppData\Local\Temp\ccIE8ukO.s:1508   .text.lv_dropdown_set_options:00000000 lv_dropdown_set_options
+C:\Users\w1785\AppData\Local\Temp\ccIE8ukO.s:1689   .text.lv_dropdown_set_options_static:00000000 $t
+C:\Users\w1785\AppData\Local\Temp\ccIE8ukO.s:1695   .text.lv_dropdown_set_options_static:00000000 lv_dropdown_set_options_static
+C:\Users\w1785\AppData\Local\Temp\ccIE8ukO.s:1844   .rodata.lv_dropdown_constructor.str1.4:00000000 $d
+C:\Users\w1785\AppData\Local\Temp\ccIE8ukO.s:1851   .text.lv_dropdown_constructor:00000000 $t
+C:\Users\w1785\AppData\Local\Temp\ccIE8ukO.s:1856   .text.lv_dropdown_constructor:00000000 lv_dropdown_constructor
+C:\Users\w1785\AppData\Local\Temp\ccIE8ukO.s:1959   .text.lv_dropdown_constructor:0000006c $d
+C:\Users\w1785\AppData\Local\Temp\ccIE8ukO.s:1965   .rodata.lv_dropdown_add_option.str1.4:00000000 $d
+C:\Users\w1785\AppData\Local\Temp\ccIE8ukO.s:1969   .text.lv_dropdown_add_option:00000000 $t
+C:\Users\w1785\AppData\Local\Temp\ccIE8ukO.s:1975   .text.lv_dropdown_add_option:00000000 lv_dropdown_add_option
+C:\Users\w1785\AppData\Local\Temp\ccIE8ukO.s:2321   .text.lv_dropdown_add_option:0000010c $d
+C:\Users\w1785\AppData\Local\Temp\ccIE8ukO.s:2327   .text.lv_dropdown_clear_options:00000000 $t
+C:\Users\w1785\AppData\Local\Temp\ccIE8ukO.s:2333   .text.lv_dropdown_clear_options:00000000 lv_dropdown_clear_options
+C:\Users\w1785\AppData\Local\Temp\ccIE8ukO.s:2420   .text.lv_dropdown_set_selected:00000000 $t
+C:\Users\w1785\AppData\Local\Temp\ccIE8ukO.s:2426   .text.lv_dropdown_set_selected:00000000 lv_dropdown_set_selected
+C:\Users\w1785\AppData\Local\Temp\ccIE8ukO.s:2504   .text.dropdown_value_observer_cb:00000000 $t
+C:\Users\w1785\AppData\Local\Temp\ccIE8ukO.s:2509   .text.dropdown_value_observer_cb:00000000 dropdown_value_observer_cb
+C:\Users\w1785\AppData\Local\Temp\ccIE8ukO.s:2537   .text.lv_dropdown_set_dir:00000000 $t
+C:\Users\w1785\AppData\Local\Temp\ccIE8ukO.s:2543   .text.lv_dropdown_set_dir:00000000 lv_dropdown_set_dir
+C:\Users\w1785\AppData\Local\Temp\ccIE8ukO.s:2597   .text.lv_dropdown_set_symbol:00000000 $t
+C:\Users\w1785\AppData\Local\Temp\ccIE8ukO.s:2603   .text.lv_dropdown_set_symbol:00000000 lv_dropdown_set_symbol
+C:\Users\w1785\AppData\Local\Temp\ccIE8ukO.s:2647   .text.lv_dropdown_set_selected_highlight:00000000 $t
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccIE8ukO.s 			page 187
 
 
-C:\Users\w1785\AppData\Local\Temp\ccxsIfz0.s:2653   .text.lv_dropdown_set_selected_highlight:00000000 lv_dropdown_set_selected_highlight
-C:\Users\w1785\AppData\Local\Temp\ccxsIfz0.s:2706   .text.lv_dropdown_get_list:00000000 $t
-C:\Users\w1785\AppData\Local\Temp\ccxsIfz0.s:2712   .text.lv_dropdown_get_list:00000000 lv_dropdown_get_list
-C:\Users\w1785\AppData\Local\Temp\ccxsIfz0.s:2745   .text.lv_dropdown_get_text:00000000 $t
-C:\Users\w1785\AppData\Local\Temp\ccxsIfz0.s:2751   .text.lv_dropdown_get_text:00000000 lv_dropdown_get_text
-C:\Users\w1785\AppData\Local\Temp\ccxsIfz0.s:2784   .rodata.lv_dropdown_get_options.str1.4:00000000 $d
-C:\Users\w1785\AppData\Local\Temp\ccxsIfz0.s:2788   .text.lv_dropdown_get_options:00000000 $t
-C:\Users\w1785\AppData\Local\Temp\ccxsIfz0.s:2794   .text.lv_dropdown_get_options:00000000 lv_dropdown_get_options
-C:\Users\w1785\AppData\Local\Temp\ccxsIfz0.s:2835   .text.lv_dropdown_get_options:00000010 $d
-C:\Users\w1785\AppData\Local\Temp\ccxsIfz0.s:2840   .text.lv_dropdown_get_selected:00000000 $t
-C:\Users\w1785\AppData\Local\Temp\ccxsIfz0.s:2846   .text.lv_dropdown_get_selected:00000000 lv_dropdown_get_selected
-C:\Users\w1785\AppData\Local\Temp\ccxsIfz0.s:2879   .text.dropdown_value_changed_event_cb:00000000 $t
-C:\Users\w1785\AppData\Local\Temp\ccxsIfz0.s:2884   .text.dropdown_value_changed_event_cb:00000000 dropdown_value_changed_event_cb
-C:\Users\w1785\AppData\Local\Temp\ccxsIfz0.s:2935   .text.lv_dropdown_get_option_count:00000000 $t
-C:\Users\w1785\AppData\Local\Temp\ccxsIfz0.s:2941   .text.lv_dropdown_get_option_count:00000000 lv_dropdown_get_option_count
-C:\Users\w1785\AppData\Local\Temp\ccxsIfz0.s:2974   .text.lv_dropdown_get_selected_str:00000000 $t
-C:\Users\w1785\AppData\Local\Temp\ccxsIfz0.s:2980   .text.lv_dropdown_get_selected_str:00000000 lv_dropdown_get_selected_str
-C:\Users\w1785\AppData\Local\Temp\ccxsIfz0.s:3138   .text.draw_main:00000000 $t
-C:\Users\w1785\AppData\Local\Temp\ccxsIfz0.s:3143   .text.draw_main:00000000 draw_main
-C:\Users\w1785\AppData\Local\Temp\ccxsIfz0.s:3819   .text.lv_dropdown_get_option_index:00000000 $t
-C:\Users\w1785\AppData\Local\Temp\ccxsIfz0.s:3825   .text.lv_dropdown_get_option_index:00000000 lv_dropdown_get_option_index
-C:\Users\w1785\AppData\Local\Temp\ccxsIfz0.s:3956   .text.lv_dropdown_get_symbol:00000000 $t
-C:\Users\w1785\AppData\Local\Temp\ccxsIfz0.s:3962   .text.lv_dropdown_get_symbol:00000000 lv_dropdown_get_symbol
-C:\Users\w1785\AppData\Local\Temp\ccxsIfz0.s:3995   .text.lv_dropdown_get_selected_highlight:00000000 $t
-C:\Users\w1785\AppData\Local\Temp\ccxsIfz0.s:4001   .text.lv_dropdown_get_selected_highlight:00000000 lv_dropdown_get_selected_highlight
-C:\Users\w1785\AppData\Local\Temp\ccxsIfz0.s:4035   .text.lv_dropdown_get_dir:00000000 $t
-C:\Users\w1785\AppData\Local\Temp\ccxsIfz0.s:4041   .text.lv_dropdown_get_dir:00000000 lv_dropdown_get_dir
-C:\Users\w1785\AppData\Local\Temp\ccxsIfz0.s:4075   .text.lv_dropdown_open:00000000 $t
-C:\Users\w1785\AppData\Local\Temp\ccxsIfz0.s:4081   .text.lv_dropdown_open:00000000 lv_dropdown_open
-C:\Users\w1785\AppData\Local\Temp\ccxsIfz0.s:4307   .text.lv_dropdown_open:000000e8 $d
-C:\Users\w1785\AppData\Local\Temp\ccxsIfz0.s:4316   .text.lv_dropdown_open:000000f0 $t
-C:\Users\w1785\AppData\Local\Temp\ccxsIfz0.s:4644   .text.lv_dropdown_close:00000000 $t
-C:\Users\w1785\AppData\Local\Temp\ccxsIfz0.s:4650   .text.lv_dropdown_close:00000000 lv_dropdown_close
-C:\Users\w1785\AppData\Local\Temp\ccxsIfz0.s:4707   .text.list_release_handler:00000000 $t
-C:\Users\w1785\AppData\Local\Temp\ccxsIfz0.s:4712   .text.list_release_handler:00000000 list_release_handler
-C:\Users\w1785\AppData\Local\Temp\ccxsIfz0.s:4862   .text.lv_dropdown_list_event:00000000 $t
-C:\Users\w1785\AppData\Local\Temp\ccxsIfz0.s:4867   .text.lv_dropdown_list_event:00000000 lv_dropdown_list_event
-C:\Users\w1785\AppData\Local\Temp\ccxsIfz0.s:4933   .text.lv_dropdown_list_event:00000030 $d
-C:\Users\w1785\AppData\Local\Temp\ccxsIfz0.s:4965   .text.lv_dropdown_list_event:00000050 $t
-C:\Users\w1785\AppData\Local\Temp\ccxsIfz0.s:5020   .text.lv_dropdown_list_event:00000084 $d
-C:\Users\w1785\AppData\Local\Temp\ccxsIfz0.s:5025   .text.lv_dropdown_is_open:00000000 $t
-C:\Users\w1785\AppData\Local\Temp\ccxsIfz0.s:5031   .text.lv_dropdown_is_open:00000000 lv_dropdown_is_open
-C:\Users\w1785\AppData\Local\Temp\ccxsIfz0.s:5080   .text.btn_release_handler:00000000 $t
-C:\Users\w1785\AppData\Local\Temp\ccxsIfz0.s:5085   .text.btn_release_handler:00000000 btn_release_handler
-C:\Users\w1785\AppData\Local\Temp\ccxsIfz0.s:5234   .text.lv_dropdown_event:00000000 $t
-C:\Users\w1785\AppData\Local\Temp\ccxsIfz0.s:5239   .text.lv_dropdown_event:00000000 lv_dropdown_event
-C:\Users\w1785\AppData\Local\Temp\ccxsIfz0.s:5311   .text.lv_dropdown_event:00000034 $d
-C:\Users\w1785\AppData\Local\Temp\ccxsIfz0.s:5354   .text.lv_dropdown_event:000000e0 $t
-C:\Users\w1785\AppData\Local\Temp\ccxsIfz0.s:5493   .text.lv_dropdown_event:00000158 $d
-C:\Users\w1785\AppData\Local\Temp\ccxsIfz0.s:5511   .text.lv_dropdown_event:000001a0 $t
-C:\Users\w1785\AppData\Local\Temp\ccxsIfz0.s:5680   .text.lv_dropdown_event:00000248 $d
-C:\Users\w1785\AppData\Local\Temp\ccxsIfz0.s:5685   .text.lv_dropdown_bind_value:00000000 $t
-C:\Users\w1785\AppData\Local\Temp\ccxsIfz0.s:5691   .text.lv_dropdown_bind_value:00000000 lv_dropdown_bind_value
-C:\Users\w1785\AppData\Local\Temp\ccxsIfz0.s:5781   .text.lv_dropdown_bind_value:00000038 $d
-C:\Users\w1785\AppData\Local\Temp\ccxsIfz0.s:5788   .rodata.str1.4:00000000 $d
-C:\Users\w1785\AppData\Local\Temp\ccxsIfz0.s:5792   .rodata.lv_dropdownlist_class:00000000 $d
-C:\Users\w1785\AppData\Local\Temp\ccxsIfz0.s:5813   .rodata.lv_dropdown_class:00000000 $d
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccxsIfz0.s 			page 188
+C:\Users\w1785\AppData\Local\Temp\ccIE8ukO.s:2653   .text.lv_dropdown_set_selected_highlight:00000000 lv_dropdown_set_selected_highlight
+C:\Users\w1785\AppData\Local\Temp\ccIE8ukO.s:2706   .text.lv_dropdown_get_list:00000000 $t
+C:\Users\w1785\AppData\Local\Temp\ccIE8ukO.s:2712   .text.lv_dropdown_get_list:00000000 lv_dropdown_get_list
+C:\Users\w1785\AppData\Local\Temp\ccIE8ukO.s:2745   .text.lv_dropdown_get_text:00000000 $t
+C:\Users\w1785\AppData\Local\Temp\ccIE8ukO.s:2751   .text.lv_dropdown_get_text:00000000 lv_dropdown_get_text
+C:\Users\w1785\AppData\Local\Temp\ccIE8ukO.s:2784   .rodata.lv_dropdown_get_options.str1.4:00000000 $d
+C:\Users\w1785\AppData\Local\Temp\ccIE8ukO.s:2788   .text.lv_dropdown_get_options:00000000 $t
+C:\Users\w1785\AppData\Local\Temp\ccIE8ukO.s:2794   .text.lv_dropdown_get_options:00000000 lv_dropdown_get_options
+C:\Users\w1785\AppData\Local\Temp\ccIE8ukO.s:2835   .text.lv_dropdown_get_options:00000010 $d
+C:\Users\w1785\AppData\Local\Temp\ccIE8ukO.s:2840   .text.lv_dropdown_get_selected:00000000 $t
+C:\Users\w1785\AppData\Local\Temp\ccIE8ukO.s:2846   .text.lv_dropdown_get_selected:00000000 lv_dropdown_get_selected
+C:\Users\w1785\AppData\Local\Temp\ccIE8ukO.s:2879   .text.dropdown_value_changed_event_cb:00000000 $t
+C:\Users\w1785\AppData\Local\Temp\ccIE8ukO.s:2884   .text.dropdown_value_changed_event_cb:00000000 dropdown_value_changed_event_cb
+C:\Users\w1785\AppData\Local\Temp\ccIE8ukO.s:2935   .text.lv_dropdown_get_option_count:00000000 $t
+C:\Users\w1785\AppData\Local\Temp\ccIE8ukO.s:2941   .text.lv_dropdown_get_option_count:00000000 lv_dropdown_get_option_count
+C:\Users\w1785\AppData\Local\Temp\ccIE8ukO.s:2974   .text.lv_dropdown_get_selected_str:00000000 $t
+C:\Users\w1785\AppData\Local\Temp\ccIE8ukO.s:2980   .text.lv_dropdown_get_selected_str:00000000 lv_dropdown_get_selected_str
+C:\Users\w1785\AppData\Local\Temp\ccIE8ukO.s:3138   .text.draw_main:00000000 $t
+C:\Users\w1785\AppData\Local\Temp\ccIE8ukO.s:3143   .text.draw_main:00000000 draw_main
+C:\Users\w1785\AppData\Local\Temp\ccIE8ukO.s:3819   .text.lv_dropdown_get_option_index:00000000 $t
+C:\Users\w1785\AppData\Local\Temp\ccIE8ukO.s:3825   .text.lv_dropdown_get_option_index:00000000 lv_dropdown_get_option_index
+C:\Users\w1785\AppData\Local\Temp\ccIE8ukO.s:3956   .text.lv_dropdown_get_symbol:00000000 $t
+C:\Users\w1785\AppData\Local\Temp\ccIE8ukO.s:3962   .text.lv_dropdown_get_symbol:00000000 lv_dropdown_get_symbol
+C:\Users\w1785\AppData\Local\Temp\ccIE8ukO.s:3995   .text.lv_dropdown_get_selected_highlight:00000000 $t
+C:\Users\w1785\AppData\Local\Temp\ccIE8ukO.s:4001   .text.lv_dropdown_get_selected_highlight:00000000 lv_dropdown_get_selected_highlight
+C:\Users\w1785\AppData\Local\Temp\ccIE8ukO.s:4035   .text.lv_dropdown_get_dir:00000000 $t
+C:\Users\w1785\AppData\Local\Temp\ccIE8ukO.s:4041   .text.lv_dropdown_get_dir:00000000 lv_dropdown_get_dir
+C:\Users\w1785\AppData\Local\Temp\ccIE8ukO.s:4075   .text.lv_dropdown_open:00000000 $t
+C:\Users\w1785\AppData\Local\Temp\ccIE8ukO.s:4081   .text.lv_dropdown_open:00000000 lv_dropdown_open
+C:\Users\w1785\AppData\Local\Temp\ccIE8ukO.s:4307   .text.lv_dropdown_open:000000e8 $d
+C:\Users\w1785\AppData\Local\Temp\ccIE8ukO.s:4316   .text.lv_dropdown_open:000000f0 $t
+C:\Users\w1785\AppData\Local\Temp\ccIE8ukO.s:4644   .text.lv_dropdown_close:00000000 $t
+C:\Users\w1785\AppData\Local\Temp\ccIE8ukO.s:4650   .text.lv_dropdown_close:00000000 lv_dropdown_close
+C:\Users\w1785\AppData\Local\Temp\ccIE8ukO.s:4707   .text.list_release_handler:00000000 $t
+C:\Users\w1785\AppData\Local\Temp\ccIE8ukO.s:4712   .text.list_release_handler:00000000 list_release_handler
+C:\Users\w1785\AppData\Local\Temp\ccIE8ukO.s:4862   .text.lv_dropdown_list_event:00000000 $t
+C:\Users\w1785\AppData\Local\Temp\ccIE8ukO.s:4867   .text.lv_dropdown_list_event:00000000 lv_dropdown_list_event
+C:\Users\w1785\AppData\Local\Temp\ccIE8ukO.s:4933   .text.lv_dropdown_list_event:00000030 $d
+C:\Users\w1785\AppData\Local\Temp\ccIE8ukO.s:4965   .text.lv_dropdown_list_event:00000050 $t
+C:\Users\w1785\AppData\Local\Temp\ccIE8ukO.s:5020   .text.lv_dropdown_list_event:00000084 $d
+C:\Users\w1785\AppData\Local\Temp\ccIE8ukO.s:5025   .text.lv_dropdown_is_open:00000000 $t
+C:\Users\w1785\AppData\Local\Temp\ccIE8ukO.s:5031   .text.lv_dropdown_is_open:00000000 lv_dropdown_is_open
+C:\Users\w1785\AppData\Local\Temp\ccIE8ukO.s:5080   .text.btn_release_handler:00000000 $t
+C:\Users\w1785\AppData\Local\Temp\ccIE8ukO.s:5085   .text.btn_release_handler:00000000 btn_release_handler
+C:\Users\w1785\AppData\Local\Temp\ccIE8ukO.s:5234   .text.lv_dropdown_event:00000000 $t
+C:\Users\w1785\AppData\Local\Temp\ccIE8ukO.s:5239   .text.lv_dropdown_event:00000000 lv_dropdown_event
+C:\Users\w1785\AppData\Local\Temp\ccIE8ukO.s:5311   .text.lv_dropdown_event:00000034 $d
+C:\Users\w1785\AppData\Local\Temp\ccIE8ukO.s:5354   .text.lv_dropdown_event:000000e0 $t
+C:\Users\w1785\AppData\Local\Temp\ccIE8ukO.s:5493   .text.lv_dropdown_event:00000158 $d
+C:\Users\w1785\AppData\Local\Temp\ccIE8ukO.s:5511   .text.lv_dropdown_event:000001a0 $t
+C:\Users\w1785\AppData\Local\Temp\ccIE8ukO.s:5680   .text.lv_dropdown_event:00000248 $d
+C:\Users\w1785\AppData\Local\Temp\ccIE8ukO.s:5685   .text.lv_dropdown_bind_value:00000000 $t
+C:\Users\w1785\AppData\Local\Temp\ccIE8ukO.s:5691   .text.lv_dropdown_bind_value:00000000 lv_dropdown_bind_value
+C:\Users\w1785\AppData\Local\Temp\ccIE8ukO.s:5781   .text.lv_dropdown_bind_value:00000038 $d
+C:\Users\w1785\AppData\Local\Temp\ccIE8ukO.s:5788   .rodata.str1.4:00000000 $d
+C:\Users\w1785\AppData\Local\Temp\ccIE8ukO.s:5792   .rodata.lv_dropdownlist_class:00000000 $d
+C:\Users\w1785\AppData\Local\Temp\ccIE8ukO.s:5813   .rodata.lv_dropdown_class:00000000 $d
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccIE8ukO.s 			page 188
 
 
 
@@ -11225,7 +11225,7 @@ lv_obj_send_event
 lv_label_set_text_static
 lv_obj_set_width
 lv_obj_update_layout
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccxsIfz0.s 			page 189
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccIE8ukO.s 			page 189
 
 
 lv_obj_get_width

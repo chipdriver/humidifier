@@ -23,6 +23,8 @@ build/display_service.o: Services/Src/display_service.c \
  Drivers/STM32G4xx_HAL_Driver/Inc/stm32g4xx_hal_flash_ramfunc.h \
  Drivers/STM32G4xx_HAL_Driver/Inc/stm32g4xx_hal_pwr.h \
  Drivers/STM32G4xx_HAL_Driver/Inc/stm32g4xx_hal_pwr_ex.h \
+ Drivers/STM32G4xx_HAL_Driver/Inc/stm32g4xx_hal_uart.h \
+ Drivers/STM32G4xx_HAL_Driver/Inc/stm32g4xx_hal_uart_ex.h \
  Services/Inc/display_ui_format.h Services/Inc/display_ui_layout.h \
  Services/Inc/humidifier_symbol_font.h Middlewares/LVGL/lvgl/lvgl.h \
  Middlewares/LVGL/lvgl/lv_version.h Middlewares/LVGL/lvgl/src/lv_init.h \
@@ -500,6 +502,8 @@ Drivers/STM32G4xx_HAL_Driver/Inc/stm32g4xx_hal_flash_ex.h:
 Drivers/STM32G4xx_HAL_Driver/Inc/stm32g4xx_hal_flash_ramfunc.h:
 Drivers/STM32G4xx_HAL_Driver/Inc/stm32g4xx_hal_pwr.h:
 Drivers/STM32G4xx_HAL_Driver/Inc/stm32g4xx_hal_pwr_ex.h:
+Drivers/STM32G4xx_HAL_Driver/Inc/stm32g4xx_hal_uart.h:
+Drivers/STM32G4xx_HAL_Driver/Inc/stm32g4xx_hal_uart_ex.h:
 Services/Inc/display_ui_format.h:
 Services/Inc/display_ui_layout.h:
 Services/Inc/humidifier_symbol_font.h:

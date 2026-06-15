@@ -1,4 +1,4 @@
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccAEpoQf.s 			page 1
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccceZFlW.s 			page 1
 
 
    1              		.cpu cortex-m4
@@ -58,7 +58,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccAEpoQf.s 			page 1
   28:Middlewares/LVGL/lvgl/src/widgets/spinner/lv_spinner.c **** /**********************
   29:Middlewares/LVGL/lvgl/src/widgets/spinner/lv_spinner.c ****  *  STATIC PROTOTYPES
   30:Middlewares/LVGL/lvgl/src/widgets/spinner/lv_spinner.c ****  **********************/
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccAEpoQf.s 			page 2
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccceZFlW.s 			page 2
 
 
   31:Middlewares/LVGL/lvgl/src/widgets/spinner/lv_spinner.c **** static void lv_spinner_constructor(const lv_obj_class_t * class_p, lv_obj_t * obj);
@@ -118,7 +118,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccAEpoQf.s 			page 1
   85:Middlewares/LVGL/lvgl/src/widgets/spinner/lv_spinner.c ****     /*Delete the current animation*/
   86:Middlewares/LVGL/lvgl/src/widgets/spinner/lv_spinner.c ****     lv_anim_delete(obj, NULL);
   87:Middlewares/LVGL/lvgl/src/widgets/spinner/lv_spinner.c **** 
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccAEpoQf.s 			page 3
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccceZFlW.s 			page 3
 
 
   88:Middlewares/LVGL/lvgl/src/widgets/spinner/lv_spinner.c ****     lv_anim_t a;
@@ -178,7 +178,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccAEpoQf.s 			page 1
  142:Middlewares/LVGL/lvgl/src/widgets/spinner/lv_spinner.c **** static void lv_spinner_constructor(const lv_obj_class_t * class_p, lv_obj_t * obj)
  143:Middlewares/LVGL/lvgl/src/widgets/spinner/lv_spinner.c **** {
  144:Middlewares/LVGL/lvgl/src/widgets/spinner/lv_spinner.c ****     LV_TRACE_OBJ_CREATE("begin");
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccAEpoQf.s 			page 4
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccceZFlW.s 			page 4
 
 
  145:Middlewares/LVGL/lvgl/src/widgets/spinner/lv_spinner.c **** 
@@ -238,7 +238,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccAEpoQf.s 			page 1
  161:Middlewares/LVGL/lvgl/src/widgets/spinner/lv_spinner.c **** }
   69              		.loc 1 161 1 is_stmt 0 view .LVU7
   70 0006 08BD     		pop	{r3, pc}
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccAEpoQf.s 			page 5
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccceZFlW.s 			page 5
 
 
   71              		.cfi_endproc
@@ -298,7 +298,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccAEpoQf.s 			page 1
  117 0014 00000000 		.word	lv_spinner_class
  118              		.cfi_endproc
  119              	.LFE188:
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccAEpoQf.s 			page 6
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccceZFlW.s 			page 6
 
 
  121              		.section	.text.lv_spinner_set_anim_params,"ax",%progbits
@@ -358,7 +358,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccAEpoQf.s 			page 1
  164              		.loc 1 86 5 is_stmt 1 view .LVU29
  165 0012 0021     		movs	r1, #0
  166              	.LVL12:
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccAEpoQf.s 			page 7
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccceZFlW.s 			page 7
 
 
   86:Middlewares/LVGL/lvgl/src/widgets/spinner/lv_spinner.c **** 
@@ -418,7 +418,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccAEpoQf.s 			page 1
   98:Middlewares/LVGL/lvgl/src/widgets/spinner/lv_spinner.c ****                               LV_BEZIER_VAL_FLOAT(0), LV_BEZIER_VAL_FLOAT(1));
  211              		.loc 1 98 5 view .LVU40
  212 005c 4FF48063 		mov	r3, #1024
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccAEpoQf.s 			page 8
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccceZFlW.s 			page 8
 
 
  213 0060 0093     		str	r3, [sp]
@@ -478,7 +478,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccAEpoQf.s 			page 1
   79:Middlewares/LVGL/lvgl/src/widgets/spinner/lv_spinner.c ****     lv_spinner_t * spinner = (lv_spinner_t *)obj;
  261              		.loc 1 79 5 is_stmt 1 view .LVU47
   79:Middlewares/LVGL/lvgl/src/widgets/spinner/lv_spinner.c ****     lv_spinner_t * spinner = (lv_spinner_t *)obj;
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccAEpoQf.s 			page 9
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccceZFlW.s 			page 9
 
 
  262              		.loc 1 79 5 view .LVU48
@@ -538,7 +538,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccAEpoQf.s 			page 1
  307              		.loc 1 150 5 is_stmt 1 view .LVU59
  308 000c C822     		movs	r2, #200
  309 000e 4FF47A71 		mov	r1, #1000
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccAEpoQf.s 			page 10
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccceZFlW.s 			page 10
 
 
  310 0012 2046     		mov	r0, r4
@@ -598,7 +598,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccAEpoQf.s 			page 1
  355              		.cfi_def_cfa_offset 0
  356              		.cfi_restore 3
  357              		.cfi_restore 14
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccAEpoQf.s 			page 11
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccceZFlW.s 			page 11
 
 
  110:Middlewares/LVGL/lvgl/src/widgets/spinner/lv_spinner.c ****     lv_spinner_t * spinner = (lv_spinner_t *)obj;
@@ -658,7 +658,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccAEpoQf.s 			page 1
  400              	.LVL41:
  122:Middlewares/LVGL/lvgl/src/widgets/spinner/lv_spinner.c **** 
  401              		.loc 1 122 1 view .LVU85
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccAEpoQf.s 			page 12
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccceZFlW.s 			page 12
 
 
  402 000c 08BD     		pop	{r3, pc}
@@ -718,7 +718,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccAEpoQf.s 			page 1
  444              		.loc 1 129 1 view .LVU99
  445 0004 7047     		bx	lr
  446              	.LVL46:
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccAEpoQf.s 			page 13
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccceZFlW.s 			page 13
 
 
  447              	.L30:
@@ -778,7 +778,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccAEpoQf.s 			page 1
  133:Middlewares/LVGL/lvgl/src/widgets/spinner/lv_spinner.c ****     lv_spinner_t * spinner = (lv_spinner_t *)obj;
  488              		.loc 1 133 5 view .LVU115
  133:Middlewares/LVGL/lvgl/src/widgets/spinner/lv_spinner.c ****     lv_spinner_t * spinner = (lv_spinner_t *)obj;
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccAEpoQf.s 			page 14
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccceZFlW.s 			page 14
 
 
  489              		.loc 1 133 5 view .LVU116
@@ -829,34 +829,34 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccAEpoQf.s 			page 1
  530              		.file 15 "Middlewares/LVGL/lvgl/src/widgets/spinner/lv_spinner.h"
  531              		.file 16 "Middlewares/LVGL/lvgl/src/widgets/spinner/../arc/lv_arc.h"
  532              		.file 17 "Middlewares/LVGL/lvgl/src/widgets/spinner/../arc/../../core/lv_obj_class.h"
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccAEpoQf.s 			page 15
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccceZFlW.s 			page 15
 
 
 DEFINED SYMBOLS
                             *ABS*:00000000 lv_spinner.c
-C:\Users\w1785\AppData\Local\Temp\ccAEpoQf.s:21     .text.arc_anim_start_angle:00000000 $t
-C:\Users\w1785\AppData\Local\Temp\ccAEpoQf.s:26     .text.arc_anim_start_angle:00000000 arc_anim_start_angle
-C:\Users\w1785\AppData\Local\Temp\ccAEpoQf.s:48     .text.arc_anim_end_angle:00000000 $t
-C:\Users\w1785\AppData\Local\Temp\ccAEpoQf.s:53     .text.arc_anim_end_angle:00000000 arc_anim_end_angle
-C:\Users\w1785\AppData\Local\Temp\ccAEpoQf.s:75     .text.lv_spinner_create:00000000 $t
-C:\Users\w1785\AppData\Local\Temp\ccAEpoQf.s:81     .text.lv_spinner_create:00000000 lv_spinner_create
-C:\Users\w1785\AppData\Local\Temp\ccAEpoQf.s:117    .text.lv_spinner_create:00000014 $d
-C:\Users\w1785\AppData\Local\Temp\ccAEpoQf.s:505    .rodata.lv_spinner_class:00000000 lv_spinner_class
-C:\Users\w1785\AppData\Local\Temp\ccAEpoQf.s:122    .text.lv_spinner_set_anim_params:00000000 $t
-C:\Users\w1785\AppData\Local\Temp\ccAEpoQf.s:128    .text.lv_spinner_set_anim_params:00000000 lv_spinner_set_anim_params
-C:\Users\w1785\AppData\Local\Temp\ccAEpoQf.s:270    .text.lv_spinner_set_anim_params:000000a8 $d
-C:\Users\w1785\AppData\Local\Temp\ccAEpoQf.s:277    .text.lv_spinner_constructor:00000000 $t
-C:\Users\w1785\AppData\Local\Temp\ccAEpoQf.s:282    .text.lv_spinner_constructor:00000000 lv_spinner_constructor
-C:\Users\w1785\AppData\Local\Temp\ccAEpoQf.s:320    .text.lv_spinner_set_anim_duration:00000000 $t
-C:\Users\w1785\AppData\Local\Temp\ccAEpoQf.s:326    .text.lv_spinner_set_anim_duration:00000000 lv_spinner_set_anim_duration
-C:\Users\w1785\AppData\Local\Temp\ccAEpoQf.s:368    .text.lv_spinner_set_arc_sweep:00000000 $t
-C:\Users\w1785\AppData\Local\Temp\ccAEpoQf.s:374    .text.lv_spinner_set_arc_sweep:00000000 lv_spinner_set_arc_sweep
-C:\Users\w1785\AppData\Local\Temp\ccAEpoQf.s:419    .text.lv_spinner_get_anim_duration:00000000 $t
-C:\Users\w1785\AppData\Local\Temp\ccAEpoQf.s:425    .text.lv_spinner_get_anim_duration:00000000 lv_spinner_get_anim_duration
-C:\Users\w1785\AppData\Local\Temp\ccAEpoQf.s:458    .text.lv_spinner_get_arc_sweep:00000000 $t
-C:\Users\w1785\AppData\Local\Temp\ccAEpoQf.s:464    .text.lv_spinner_get_arc_sweep:00000000 lv_spinner_get_arc_sweep
-C:\Users\w1785\AppData\Local\Temp\ccAEpoQf.s:498    .rodata.str1.4:00000000 $d
-C:\Users\w1785\AppData\Local\Temp\ccAEpoQf.s:502    .rodata.lv_spinner_class:00000000 $d
+C:\Users\w1785\AppData\Local\Temp\ccceZFlW.s:21     .text.arc_anim_start_angle:00000000 $t
+C:\Users\w1785\AppData\Local\Temp\ccceZFlW.s:26     .text.arc_anim_start_angle:00000000 arc_anim_start_angle
+C:\Users\w1785\AppData\Local\Temp\ccceZFlW.s:48     .text.arc_anim_end_angle:00000000 $t
+C:\Users\w1785\AppData\Local\Temp\ccceZFlW.s:53     .text.arc_anim_end_angle:00000000 arc_anim_end_angle
+C:\Users\w1785\AppData\Local\Temp\ccceZFlW.s:75     .text.lv_spinner_create:00000000 $t
+C:\Users\w1785\AppData\Local\Temp\ccceZFlW.s:81     .text.lv_spinner_create:00000000 lv_spinner_create
+C:\Users\w1785\AppData\Local\Temp\ccceZFlW.s:117    .text.lv_spinner_create:00000014 $d
+C:\Users\w1785\AppData\Local\Temp\ccceZFlW.s:505    .rodata.lv_spinner_class:00000000 lv_spinner_class
+C:\Users\w1785\AppData\Local\Temp\ccceZFlW.s:122    .text.lv_spinner_set_anim_params:00000000 $t
+C:\Users\w1785\AppData\Local\Temp\ccceZFlW.s:128    .text.lv_spinner_set_anim_params:00000000 lv_spinner_set_anim_params
+C:\Users\w1785\AppData\Local\Temp\ccceZFlW.s:270    .text.lv_spinner_set_anim_params:000000a8 $d
+C:\Users\w1785\AppData\Local\Temp\ccceZFlW.s:277    .text.lv_spinner_constructor:00000000 $t
+C:\Users\w1785\AppData\Local\Temp\ccceZFlW.s:282    .text.lv_spinner_constructor:00000000 lv_spinner_constructor
+C:\Users\w1785\AppData\Local\Temp\ccceZFlW.s:320    .text.lv_spinner_set_anim_duration:00000000 $t
+C:\Users\w1785\AppData\Local\Temp\ccceZFlW.s:326    .text.lv_spinner_set_anim_duration:00000000 lv_spinner_set_anim_duration
+C:\Users\w1785\AppData\Local\Temp\ccceZFlW.s:368    .text.lv_spinner_set_arc_sweep:00000000 $t
+C:\Users\w1785\AppData\Local\Temp\ccceZFlW.s:374    .text.lv_spinner_set_arc_sweep:00000000 lv_spinner_set_arc_sweep
+C:\Users\w1785\AppData\Local\Temp\ccceZFlW.s:419    .text.lv_spinner_get_anim_duration:00000000 $t
+C:\Users\w1785\AppData\Local\Temp\ccceZFlW.s:425    .text.lv_spinner_get_anim_duration:00000000 lv_spinner_get_anim_duration
+C:\Users\w1785\AppData\Local\Temp\ccceZFlW.s:458    .text.lv_spinner_get_arc_sweep:00000000 $t
+C:\Users\w1785\AppData\Local\Temp\ccceZFlW.s:464    .text.lv_spinner_get_arc_sweep:00000000 lv_spinner_get_arc_sweep
+C:\Users\w1785\AppData\Local\Temp\ccceZFlW.s:498    .rodata.str1.4:00000000 $d
+C:\Users\w1785\AppData\Local\Temp\ccceZFlW.s:502    .rodata.lv_spinner_class:00000000 $d
 
 UNDEFINED SYMBOLS
 lv_arc_set_start_angle

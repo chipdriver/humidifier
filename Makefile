@@ -38,6 +38,7 @@ BUILD_DIR = build
 C_SOURCES =  \
 Core/Src/main.c \
 Core/Src/gpio.c \
+Core/Src/usart.c \
 Core/Src/lv_port_disp.c \
 Application/Src/app_main.c \
 Services/Src/display_service.c \
@@ -48,6 +49,7 @@ DeviceDrivers/LCD/Src/st7789.c \
 DeviceDrivers/Sensor/Src/aht20.c \
 HardwareDrivers/LCD/Src/lcd_hw.c \
 HardwareDrivers/I2C/Src/i2c_sw.c \
+HardwareDrivers/Relay/Src/relay_hw.c \
 Core/Src/stm32g4xx_it.c \
 Core/Src/stm32g4xx_hal_msp.c \
 Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_pwr_ex.c \
@@ -58,6 +60,8 @@ Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_flash.c \
 Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_flash_ex.c \
 Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_flash_ramfunc.c \
 Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_gpio.c \
+Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_uart.c \
+Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_uart_ex.c \
 Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_exti.c \
 Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_dma.c \
 Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_dma_ex.c \
@@ -146,6 +150,7 @@ C_INCLUDES =  \
 -IDeviceDrivers/Sensor/Inc \
 -IHardwareDrivers/LCD/Inc \
 -IHardwareDrivers/I2C/Inc \
+-IHardwareDrivers/Relay/Inc \
 -IMiddlewares/LVGL \
 -IMiddlewares/LVGL/lvgl \
 -IMiddlewares/LVGL/lvgl/src \

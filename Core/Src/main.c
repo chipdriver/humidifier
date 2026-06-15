@@ -19,9 +19,11 @@
 /* Includes ------------------------------------------------------------------*/
 #include "main.h"
 #include "gpio.h"
-#include "app_main.h"
+#include "usart.h"
+
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
+#include "relay_hw.h"
 
 /* USER CODE END Includes */
 
@@ -86,8 +88,10 @@ int main(void)
 
   /* Initialize all configured peripherals */
   MX_GPIO_Init();
+  MX_USART1_UART_Init();
   /* USER CODE BEGIN 2 */
-  App_Main();
+  Relay_HW_Init();
+
   /* USER CODE END 2 */
 
   /* Infinite loop */
@@ -97,6 +101,8 @@ int main(void)
     /* USER CODE END WHILE */
 
     /* USER CODE BEGIN 3 */
+    Relay_HW_TestControlSide();
+    HAL_Delay(1000U);
   }
   /* USER CODE END 3 */
 }
@@ -159,6 +165,7 @@ void Error_Handler(void)
   }
   /* USER CODE END Error_Handler_Debug */
 }
+
 #ifdef USE_FULL_ASSERT
 /**
   * @brief  Reports the name of the source file and the source line number

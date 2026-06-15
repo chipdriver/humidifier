@@ -469,6 +469,8 @@ build/lv_port_disp.o: Core/Src/lv_port_disp.c Core/Inc/lv_port_disp.h \
  Drivers/STM32G4xx_HAL_Driver/Inc/stm32g4xx_hal_flash_ramfunc.h \
  Drivers/STM32G4xx_HAL_Driver/Inc/stm32g4xx_hal_pwr.h \
  Drivers/STM32G4xx_HAL_Driver/Inc/stm32g4xx_hal_pwr_ex.h \
+ Drivers/STM32G4xx_HAL_Driver/Inc/stm32g4xx_hal_uart.h \
+ Drivers/STM32G4xx_HAL_Driver/Inc/stm32g4xx_hal_uart_ex.h \
  HardwareDrivers/LCD/Inc/lcd_hw.h
 Core/Inc/lv_port_disp.h:
 Middlewares/LVGL/lvgl/lvgl.h:
@@ -946,4 +948,6 @@ Drivers/STM32G4xx_HAL_Driver/Inc/stm32g4xx_hal_flash_ex.h:
 Drivers/STM32G4xx_HAL_Driver/Inc/stm32g4xx_hal_flash_ramfunc.h:
 Drivers/STM32G4xx_HAL_Driver/Inc/stm32g4xx_hal_pwr.h:
 Drivers/STM32G4xx_HAL_Driver/Inc/stm32g4xx_hal_pwr_ex.h:
+Drivers/STM32G4xx_HAL_Driver/Inc/stm32g4xx_hal_uart.h:
+Drivers/STM32G4xx_HAL_Driver/Inc/stm32g4xx_hal_uart_ex.h:
 HardwareDrivers/LCD/Inc/lcd_hw.h:

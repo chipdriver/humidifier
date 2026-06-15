@@ -1,4 +1,4 @@
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccVWvM3C.s 			page 1
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccRDIR1l.s 			page 1
 
 
    1              		.cpu cortex-m4
@@ -58,7 +58,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccVWvM3C.s 			page 1
   28:Middlewares/LVGL/lvgl/src/display/lv_display.c ****  *********************/
   29:Middlewares/LVGL/lvgl/src/display/lv_display.c **** #define disp_def LV_GLOBAL_DEFAULT()->disp_default
   30:Middlewares/LVGL/lvgl/src/display/lv_display.c **** #define disp_ll_p &(LV_GLOBAL_DEFAULT()->disp_ll)
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccVWvM3C.s 			page 2
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccRDIR1l.s 			page 2
 
 
   31:Middlewares/LVGL/lvgl/src/display/lv_display.c **** 
@@ -118,7 +118,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccVWvM3C.s 			page 1
   85:Middlewares/LVGL/lvgl/src/display/lv_display.c ****     disp->physical_ver_res = -1;
   86:Middlewares/LVGL/lvgl/src/display/lv_display.c ****     disp->offset_x         = 0;
   87:Middlewares/LVGL/lvgl/src/display/lv_display.c ****     disp->offset_y         = 0;
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccVWvM3C.s 			page 3
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccRDIR1l.s 			page 3
 
 
   88:Middlewares/LVGL/lvgl/src/display/lv_display.c ****     disp->antialiasing     = LV_COLOR_DEPTH > 8 ? 1 : 0;
@@ -178,7 +178,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccVWvM3C.s 			page 1
  142:Middlewares/LVGL/lvgl/src/display/lv_display.c ****     else {
  143:Middlewares/LVGL/lvgl/src/display/lv_display.c ****         disp->theme = lv_theme_simple_get();
  144:Middlewares/LVGL/lvgl/src/display/lv_display.c ****     }
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccVWvM3C.s 			page 4
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccRDIR1l.s 			page 4
 
 
  145:Middlewares/LVGL/lvgl/src/display/lv_display.c **** #elif LV_USE_THEME_MONO
@@ -238,7 +238,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccVWvM3C.s 			page 1
  199:Middlewares/LVGL/lvgl/src/display/lv_display.c ****     if(disp == lv_display_get_default()) was_default = true;
  200:Middlewares/LVGL/lvgl/src/display/lv_display.c ****     if(disp == lv_refr_get_disp_refreshing()) was_refr = true;
  201:Middlewares/LVGL/lvgl/src/display/lv_display.c **** 
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccVWvM3C.s 			page 5
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccRDIR1l.s 			page 5
 
 
  202:Middlewares/LVGL/lvgl/src/display/lv_display.c ****     lv_display_send_event(disp, LV_EVENT_DELETE, NULL);
@@ -298,7 +298,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccVWvM3C.s 			page 1
  256:Middlewares/LVGL/lvgl/src/display/lv_display.c ****     if(was_refr) lv_refr_set_disp_refreshing(NULL);
  257:Middlewares/LVGL/lvgl/src/display/lv_display.c **** }
  258:Middlewares/LVGL/lvgl/src/display/lv_display.c **** 
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccVWvM3C.s 			page 6
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccRDIR1l.s 			page 6
 
 
  259:Middlewares/LVGL/lvgl/src/display/lv_display.c **** void lv_display_set_default(lv_display_t * disp)
@@ -358,7 +358,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccVWvM3C.s 			page 1
  313:Middlewares/LVGL/lvgl/src/display/lv_display.c **** 
  314:Middlewares/LVGL/lvgl/src/display/lv_display.c ****     lv_obj_invalidate(disp->sys_layer);
  315:Middlewares/LVGL/lvgl/src/display/lv_display.c **** 
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccVWvM3C.s 			page 7
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccRDIR1l.s 			page 7
 
 
  316:Middlewares/LVGL/lvgl/src/display/lv_display.c **** }
@@ -418,7 +418,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccVWvM3C.s 			page 1
  370:Middlewares/LVGL/lvgl/src/display/lv_display.c **** }
  371:Middlewares/LVGL/lvgl/src/display/lv_display.c **** 
  372:Middlewares/LVGL/lvgl/src/display/lv_display.c **** int32_t lv_display_get_original_vertical_resolution(const lv_display_t * disp)
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccVWvM3C.s 			page 8
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccRDIR1l.s 			page 8
 
 
  373:Middlewares/LVGL/lvgl/src/display/lv_display.c **** {
@@ -478,7 +478,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccVWvM3C.s 			page 1
  427:Middlewares/LVGL/lvgl/src/display/lv_display.c ****             case LV_DISPLAY_ROTATION_90:
  428:Middlewares/LVGL/lvgl/src/display/lv_display.c ****                 return disp->offset_y;
  429:Middlewares/LVGL/lvgl/src/display/lv_display.c ****             case LV_DISPLAY_ROTATION_180:
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccVWvM3C.s 			page 9
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccRDIR1l.s 			page 9
 
 
  430:Middlewares/LVGL/lvgl/src/display/lv_display.c ****                 return lv_display_get_physical_horizontal_resolution(disp) - disp->offset_x;
@@ -538,7 +538,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccVWvM3C.s 			page 1
  484:Middlewares/LVGL/lvgl/src/display/lv_display.c **** {
  485:Middlewares/LVGL/lvgl/src/display/lv_display.c ****     if(disp == NULL) disp = lv_display_get_default();
  486:Middlewares/LVGL/lvgl/src/display/lv_display.c ****     if(disp == NULL) return;
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccVWvM3C.s 			page 10
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccRDIR1l.s 			page 10
 
 
  487:Middlewares/LVGL/lvgl/src/display/lv_display.c **** 
@@ -598,7 +598,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccVWvM3C.s 			page 1
  541:Middlewares/LVGL/lvgl/src/display/lv_display.c **** 
  542:Middlewares/LVGL/lvgl/src/display/lv_display.c ****     if(render_mode == LV_DISPLAY_RENDER_MODE_PARTIAL) {
  543:Middlewares/LVGL/lvgl/src/display/lv_display.c ****         /* for partial mode, we calculate the height based on the buf_size and stride */
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccVWvM3C.s 			page 11
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccRDIR1l.s 			page 11
 
 
  544:Middlewares/LVGL/lvgl/src/display/lv_display.c ****         h = buf_size / stride;
@@ -658,7 +658,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccVWvM3C.s 			page 1
  598:Middlewares/LVGL/lvgl/src/display/lv_display.c ****         lv_obj_set_style_bg_opa(disp->bottom_layer, 255, 0);
  599:Middlewares/LVGL/lvgl/src/display/lv_display.c ****     }
  600:Middlewares/LVGL/lvgl/src/display/lv_display.c **** 
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccVWvM3C.s 			page 12
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccRDIR1l.s 			page 12
 
 
  601:Middlewares/LVGL/lvgl/src/display/lv_display.c ****     lv_display_send_event(disp, LV_EVENT_COLOR_FORMAT_CHANGED, NULL);
@@ -718,7 +718,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccVWvM3C.s 			page 1
  655:Middlewares/LVGL/lvgl/src/display/lv_display.c **** 
  656:Middlewares/LVGL/lvgl/src/display/lv_display.c **** LV_ATTRIBUTE_FLUSH_READY void lv_display_flush_ready(lv_display_t * disp)
  657:Middlewares/LVGL/lvgl/src/display/lv_display.c **** {
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccVWvM3C.s 			page 13
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccRDIR1l.s 			page 13
 
 
  658:Middlewares/LVGL/lvgl/src/display/lv_display.c ****     disp->flushing = 0;
@@ -778,7 +778,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccVWvM3C.s 			page 1
  712:Middlewares/LVGL/lvgl/src/display/lv_display.c ****         LV_LOG_WARN("lv_layer_top: no display registered to get its top layer");
  713:Middlewares/LVGL/lvgl/src/display/lv_display.c ****         return NULL;
  714:Middlewares/LVGL/lvgl/src/display/lv_display.c ****     }
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccVWvM3C.s 			page 14
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccRDIR1l.s 			page 14
 
 
  715:Middlewares/LVGL/lvgl/src/display/lv_display.c **** 
@@ -838,7 +838,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccVWvM3C.s 			page 1
  769:Middlewares/LVGL/lvgl/src/display/lv_display.c ****                          bool auto_del)
  770:Middlewares/LVGL/lvgl/src/display/lv_display.c **** {
  771:Middlewares/LVGL/lvgl/src/display/lv_display.c ****     lv_display_t * d = lv_obj_get_display(new_scr);
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccVWvM3C.s 			page 15
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccRDIR1l.s 			page 15
 
 
  772:Middlewares/LVGL/lvgl/src/display/lv_display.c ****     lv_obj_t * act_scr = d->act_scr;
@@ -898,7 +898,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccVWvM3C.s 			page 1
  826:Middlewares/LVGL/lvgl/src/display/lv_display.c ****             d->act_scr = NULL;
  827:Middlewares/LVGL/lvgl/src/display/lv_display.c ****         }
  828:Middlewares/LVGL/lvgl/src/display/lv_display.c ****         if(!old_screen_deleted(res) && auto_del && act_scr) {
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccVWvM3C.s 			page 16
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccRDIR1l.s 			page 16
 
 
  829:Middlewares/LVGL/lvgl/src/display/lv_display.c ****             lv_obj_delete(act_scr);
@@ -958,7 +958,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccVWvM3C.s 			page 1
  883:Middlewares/LVGL/lvgl/src/display/lv_display.c ****             break;
  884:Middlewares/LVGL/lvgl/src/display/lv_display.c ****         case LV_SCREEN_LOAD_ANIM_MOVE_TOP:
  885:Middlewares/LVGL/lvgl/src/display/lv_display.c ****             lv_anim_set_exec_cb(&a_new, set_y_anim);
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccVWvM3C.s 			page 17
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccRDIR1l.s 			page 17
 
 
  886:Middlewares/LVGL/lvgl/src/display/lv_display.c ****             lv_anim_set_values(&a_new, lv_display_get_vertical_resolution(d), 0);
@@ -1018,7 +1018,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccVWvM3C.s 			page 1
  940:Middlewares/LVGL/lvgl/src/display/lv_display.c **** 
  941:Middlewares/LVGL/lvgl/src/display/lv_display.c **** uint32_t lv_display_get_event_count(lv_display_t * disp)
  942:Middlewares/LVGL/lvgl/src/display/lv_display.c **** {
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccVWvM3C.s 			page 18
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccRDIR1l.s 			page 18
 
 
  943:Middlewares/LVGL/lvgl/src/display/lv_display.c ****     LV_ASSERT_NULL(disp);
@@ -1078,7 +1078,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccVWvM3C.s 			page 1
  997:Middlewares/LVGL/lvgl/src/display/lv_display.c **** {
  998:Middlewares/LVGL/lvgl/src/display/lv_display.c ****     if(disp == NULL) disp = lv_display_get_default();
  999:Middlewares/LVGL/lvgl/src/display/lv_display.c ****     if(disp == NULL) return;
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccVWvM3C.s 			page 19
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccRDIR1l.s 			page 19
 
 
 1000:Middlewares/LVGL/lvgl/src/display/lv_display.c **** 
@@ -1138,7 +1138,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccVWvM3C.s 			page 1
 1054:Middlewares/LVGL/lvgl/src/display/lv_display.c ****         if(!th) {
 1055:Middlewares/LVGL/lvgl/src/display/lv_display.c ****             /* When th is NULL, clear all styles */
 1056:Middlewares/LVGL/lvgl/src/display/lv_display.c ****             for(uint32_t i = 1; i < disp->screen_cnt; i++) {
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccVWvM3C.s 			page 20
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccRDIR1l.s 			page 20
 
 
 1057:Middlewares/LVGL/lvgl/src/display/lv_display.c ****                 lv_theme_apply(disp->screens[i]);
@@ -1198,7 +1198,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccVWvM3C.s 			page 1
 1111:Middlewares/LVGL/lvgl/src/display/lv_display.c ****         LV_LOG_WARN("no display registered");
 1112:Middlewares/LVGL/lvgl/src/display/lv_display.c ****         return false;
 1113:Middlewares/LVGL/lvgl/src/display/lv_display.c ****     }
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccVWvM3C.s 			page 21
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccRDIR1l.s 			page 21
 
 
 1114:Middlewares/LVGL/lvgl/src/display/lv_display.c **** 
@@ -1258,7 +1258,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccVWvM3C.s 			page 1
 1168:Middlewares/LVGL/lvgl/src/display/lv_display.c ****         return false;
 1169:Middlewares/LVGL/lvgl/src/display/lv_display.c **** 
 1170:Middlewares/LVGL/lvgl/src/display/lv_display.c ****     disp->vsync_count -= removed_count;
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccVWvM3C.s 			page 22
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccRDIR1l.s 			page 22
 
 
 1171:Middlewares/LVGL/lvgl/src/display/lv_display.c ****     /*only send once*/
@@ -1318,7 +1318,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccVWvM3C.s 			page 1
 1225:Middlewares/LVGL/lvgl/src/display/lv_display.c ****         case LV_DISPLAY_ROTATION_90:
 1226:Middlewares/LVGL/lvgl/src/display/lv_display.c ****             area->y2 = disp->ver_res - area->x1 - 1;
 1227:Middlewares/LVGL/lvgl/src/display/lv_display.c ****             area->x1 = area->y1;
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccVWvM3C.s 			page 23
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccRDIR1l.s 			page 23
 
 
 1228:Middlewares/LVGL/lvgl/src/display/lv_display.c ****             area->x2 = area->x1 + h - 1;
@@ -1378,7 +1378,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccVWvM3C.s 			page 1
 1282:Middlewares/LVGL/lvgl/src/display/lv_display.c ****     }
 1283:Middlewares/LVGL/lvgl/src/display/lv_display.c ****     return 0;
 1284:Middlewares/LVGL/lvgl/src/display/lv_display.c **** }
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccVWvM3C.s 			page 24
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccRDIR1l.s 			page 24
 
 
 1285:Middlewares/LVGL/lvgl/src/display/lv_display.c **** 
@@ -1438,7 +1438,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccVWvM3C.s 			page 1
 1339:Middlewares/LVGL/lvgl/src/display/lv_display.c **** {
 1340:Middlewares/LVGL/lvgl/src/display/lv_display.c ****     if(!disp) {
 1341:Middlewares/LVGL/lvgl/src/display/lv_display.c ****         LV_LOG_WARN("Can't attach external user data and destructor callback to a NULL display");
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccVWvM3C.s 			page 25
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccRDIR1l.s 			page 25
 
 
 1342:Middlewares/LVGL/lvgl/src/display/lv_display.c ****         return;
@@ -1498,7 +1498,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccVWvM3C.s 			page 1
   67              	.LFB281:
 1358:Middlewares/LVGL/lvgl/src/display/lv_display.c **** static bool new_screen_deleted(lv_load_screen_result_t res)
 1359:Middlewares/LVGL/lvgl/src/display/lv_display.c **** {
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccVWvM3C.s 			page 26
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccRDIR1l.s 			page 26
 
 
   68              		.loc 1 1359 1 is_stmt 1 view -0
@@ -1558,7 +1558,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccVWvM3C.s 			page 1
 1386:Middlewares/LVGL/lvgl/src/display/lv_display.c ****     lv_area_set_height(&disp->bottom_layer->coords, ver_res);
 1387:Middlewares/LVGL/lvgl/src/display/lv_display.c ****     lv_obj_send_event(disp->bottom_layer, LV_EVENT_SIZE_CHANGED, &prev_coords);
 1388:Middlewares/LVGL/lvgl/src/display/lv_display.c **** 
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccVWvM3C.s 			page 27
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccRDIR1l.s 			page 27
 
 
 1389:Middlewares/LVGL/lvgl/src/display/lv_display.c ****     lv_memzero(disp->inv_areas, sizeof(disp->inv_areas));
@@ -1618,7 +1618,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccVWvM3C.s 			page 1
 1443:Middlewares/LVGL/lvgl/src/display/lv_display.c **** 
 1444:Middlewares/LVGL/lvgl/src/display/lv_display.c ****     if(old_scr) {
 1445:Middlewares/LVGL/lvgl/src/display/lv_display.c ****         if(lv_display_send_event(d, LV_EVENT_SCREEN_UNLOAD_START, old_scr) == LV_RESULT_INVALID) {
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccVWvM3C.s 			page 28
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccRDIR1l.s 			page 28
 
 
 1446:Middlewares/LVGL/lvgl/src/display/lv_display.c ****             return LV_LOAD_SCREEN_RESULT_DISPLAY_DELETED;
@@ -1678,7 +1678,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccVWvM3C.s 			page 1
 1500:Middlewares/LVGL/lvgl/src/display/lv_display.c **** 
 1501:Middlewares/LVGL/lvgl/src/display/lv_display.c ****     lv_obj_send_event(d->act_scr, LV_EVENT_SCREEN_LOAD_START, NULL);
 1502:Middlewares/LVGL/lvgl/src/display/lv_display.c **** }
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccVWvM3C.s 			page 29
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccRDIR1l.s 			page 29
 
 
 1503:Middlewares/LVGL/lvgl/src/display/lv_display.c **** 
@@ -1738,7 +1738,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccVWvM3C.s 			page 1
  108 0002 C0B2     		uxtb	r0, r0
  109              	.LVL9:
 1547:Middlewares/LVGL/lvgl/src/display/lv_display.c ****            anim_type == LV_SCREEN_LOAD_ANIM_OUT_BOTTOM;
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccVWvM3C.s 			page 30
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccRDIR1l.s 			page 30
 
 
 1548:Middlewares/LVGL/lvgl/src/display/lv_display.c **** }
@@ -1798,7 +1798,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccVWvM3C.s 			page 1
  159              	.L8:
 1555:Middlewares/LVGL/lvgl/src/display/lv_display.c ****         case LV_EVENT_REFR_REQUEST:
 1556:Middlewares/LVGL/lvgl/src/display/lv_display.c ****             if(disp->refr_timer) lv_timer_resume(disp->refr_timer);
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccVWvM3C.s 			page 31
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccRDIR1l.s 			page 31
 
 
 1557:Middlewares/LVGL/lvgl/src/display/lv_display.c ****             break;
@@ -1858,7 +1858,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccVWvM3C.s 			page 1
 1403:Middlewares/LVGL/lvgl/src/display/lv_display.c **** }
  202              		.loc 1 1403 5 view .LVU38
 1404:Middlewares/LVGL/lvgl/src/display/lv_display.c **** 
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccVWvM3C.s 			page 32
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccRDIR1l.s 			page 32
 
 
  203              		.loc 1 1404 1 is_stmt 0 view .LVU39
@@ -1918,7 +1918,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccVWvM3C.s 			page 1
  250 0018 10B9     		cbnz	r0, .L15
 1524:Middlewares/LVGL/lvgl/src/display/lv_display.c ****     }
  251              		.loc 1 1524 9 is_stmt 1 view .LVU49
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccVWvM3C.s 			page 33
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccRDIR1l.s 			page 33
 
 
 1524:Middlewares/LVGL/lvgl/src/display/lv_display.c ****     }
@@ -1978,7 +1978,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccVWvM3C.s 			page 1
  290 0054 FFF7FEFF 		bl	lv_obj_remove_local_style_prop
  291              	.LVL28:
 1536:Middlewares/LVGL/lvgl/src/display/lv_display.c ****         lv_obj_invalidate(d->act_scr);
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccVWvM3C.s 			page 34
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccRDIR1l.s 			page 34
 
 
  292              		.loc 1 1536 5 view .LVU66
@@ -2038,7 +2038,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccVWvM3C.s 			page 1
  338 0006 FFF7FEFF 		bl	lv_obj_get_display
  339              	.LVL34:
  340 000a 0346     		mov	r3, r0
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccVWvM3C.s 			page 35
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccRDIR1l.s 			page 35
 
 
  341              	.LVL35:
@@ -2098,7 +2098,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccVWvM3C.s 			page 1
  385 0004 C9B2     		uxtb	r1, r1
  386              	.LVL39:
 1506:Middlewares/LVGL/lvgl/src/display/lv_display.c **** }
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccVWvM3C.s 			page 36
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccRDIR1l.s 			page 36
 
 
  387              		.loc 1 1506 5 is_stmt 0 view .LVU89
@@ -2158,7 +2158,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccVWvM3C.s 			page 1
  438              		.cfi_def_cfa_offset 8
  439              		.cfi_offset 3, -8
  440              		.cfi_offset 14, -4
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccVWvM3C.s 			page 37
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccRDIR1l.s 			page 37
 
 
 1511:Middlewares/LVGL/lvgl/src/display/lv_display.c **** }
@@ -2218,7 +2218,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccVWvM3C.s 			page 1
  490              	.LFB202:
  260:Middlewares/LVGL/lvgl/src/display/lv_display.c ****     disp_def = disp;
  491              		.loc 1 260 1 is_stmt 1 view -0
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccVWvM3C.s 			page 38
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccRDIR1l.s 			page 38
 
 
  492              		.cfi_startproc
@@ -2278,7 +2278,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccVWvM3C.s 			page 1
  544              	.LFB204:
  270:Middlewares/LVGL/lvgl/src/display/lv_display.c ****     if(disp == NULL)
  545              		.loc 1 270 1 is_stmt 1 view -0
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccVWvM3C.s 			page 39
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccRDIR1l.s 			page 39
 
 
  546              		.cfi_startproc
@@ -2338,7 +2338,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccVWvM3C.s 			page 1
  591              		.thumb_func
  593              	lv_display_set_physical_resolution:
  594              	.LVL54:
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccVWvM3C.s 			page 40
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccRDIR1l.s 			page 40
 
 
  595              	.LFB206:
@@ -2398,7 +2398,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccVWvM3C.s 			page 1
  297:Middlewares/LVGL/lvgl/src/display/lv_display.c **** 
  636              		.loc 1 297 7 is_stmt 0 view .LVU137
  637 001c 0346     		mov	r3, r0
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccVWvM3C.s 			page 41
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccRDIR1l.s 			page 41
 
 
  638 001e 0028     		cmp	r0, #0
@@ -2458,7 +2458,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccVWvM3C.s 			page 1
  316:Middlewares/LVGL/lvgl/src/display/lv_display.c **** 
  685              		.loc 1 316 1 is_stmt 0 view .LVU147
  686 0016 38BD     		pop	{r3, r4, r5, pc}
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccVWvM3C.s 			page 42
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccRDIR1l.s 			page 42
 
 
  687              	.LVL62:
@@ -2518,7 +2518,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccVWvM3C.s 			page 1
  324:Middlewares/LVGL/lvgl/src/display/lv_display.c **** 
  733              		.loc 1 324 1 view .LVU158
  734 000a 10BD     		pop	{r4, pc}
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccVWvM3C.s 			page 43
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccRDIR1l.s 			page 43
 
 
  735              	.LVL66:
@@ -2578,7 +2578,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccVWvM3C.s 			page 1
  780              		.loc 1 334 9 view .LVU169
  781 000e 012B     		cmp	r3, #1
  782 0010 0AD0     		beq	.L61
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccVWvM3C.s 			page 44
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccRDIR1l.s 			page 44
 
 
  783 0012 032B     		cmp	r3, #3
@@ -2638,7 +2638,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccVWvM3C.s 			page 1
  827              		.cfi_startproc
  828              		@ args = 0, pretend = 0, frame = 0
  829              		@ frame_needed = 0, uses_anonymous_args = 0
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccVWvM3C.s 			page 45
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccRDIR1l.s 			page 45
 
 
  345:Middlewares/LVGL/lvgl/src/display/lv_display.c ****     if(disp == NULL) disp = lv_display_get_default();
@@ -2698,7 +2698,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccVWvM3C.s 			page 1
  870 0026 00E0     		b	.L66
  871              	.LVL79:
  872              	.L69:
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccVWvM3C.s 			page 46
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccRDIR1l.s 			page 46
 
 
  355:Middlewares/LVGL/lvgl/src/display/lv_display.c ****             default:
@@ -2758,7 +2758,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccVWvM3C.s 			page 1
  917              		.loc 1 364 29 is_stmt 0 discriminator 1 view .LVU207
  918 000a FFF7FEFF 		bl	lv_display_get_default
  919              	.LVL83:
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccVWvM3C.s 			page 47
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccRDIR1l.s 			page 47
 
 
  365:Middlewares/LVGL/lvgl/src/display/lv_display.c ****         return 0;
@@ -2818,7 +2818,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccVWvM3C.s 			page 1
  965              	.LVL87:
  966              	.L85:
  374:Middlewares/LVGL/lvgl/src/display/lv_display.c ****     if(disp == NULL) {
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccVWvM3C.s 			page 48
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccRDIR1l.s 			page 48
 
 
  967              		.loc 1 374 22 is_stmt 1 discriminator 1 view .LVU219
@@ -2878,7 +2878,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccVWvM3C.s 			page 1
  1012 0006 92F80033 		ldrb	r3, [r2, #768]	@ zero_extendqisi2
  1013 000a 03F00703 		and	r3, r3, #7
  390:Middlewares/LVGL/lvgl/src/display/lv_display.c ****             case LV_DISPLAY_ROTATION_90:
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccVWvM3C.s 			page 49
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccRDIR1l.s 			page 49
 
 
  1014              		.loc 1 390 9 view .LVU231
@@ -2938,7 +2938,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccVWvM3C.s 			page 1
  398:Middlewares/LVGL/lvgl/src/display/lv_display.c **** 
  1054              		.loc 1 398 1 view .LVU246
  1055 0034 08BD     		pop	{r3, pc}
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccVWvM3C.s 			page 50
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccRDIR1l.s 			page 50
 
 
  1056              	.L96:
@@ -2998,7 +2998,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccVWvM3C.s 			page 1
  1101 0016 D068     		ldr	r0, [r2, #12]
  413:Middlewares/LVGL/lvgl/src/display/lv_display.c ****         }
  1102              		.loc 1 413 76 view .LVU258
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccVWvM3C.s 			page 51
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccRDIR1l.s 			page 51
 
 
  1103 0018 0028     		cmp	r0, #0
@@ -3058,7 +3058,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccVWvM3C.s 			page 1
  1144              		.section	.text.lv_display_get_offset_x,"ax",%progbits
  1145              		.align	1
  1146              		.global	lv_display_get_offset_x
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccVWvM3C.s 			page 52
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccRDIR1l.s 			page 52
 
 
  1147              		.syntax unified
@@ -3118,7 +3118,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccVWvM3C.s 			page 1
  1190              		.loc 1 420 29 is_stmt 0 discriminator 1 view .LVU284
  1191 001e FFF7FEFF 		bl	lv_display_get_default
  1192              	.LVL105:
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccVWvM3C.s 			page 53
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccRDIR1l.s 			page 53
 
 
  422:Middlewares/LVGL/lvgl/src/display/lv_display.c ****         return 0;
@@ -3178,7 +3178,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccVWvM3C.s 			page 1
  1231 0044 2069     		ldr	r0, [r4, #16]
  1232 0046 E9E7     		b	.L108
  1233              		.cfi_endproc
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccVWvM3C.s 			page 54
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccRDIR1l.s 			page 54
 
 
  1234              	.LFE215:
@@ -3238,7 +3238,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccVWvM3C.s 			page 1
  1280              	.L125:
  441:Middlewares/LVGL/lvgl/src/display/lv_display.c **** 
  1281              		.loc 1 441 22 is_stmt 1 discriminator 1 view .LVU311
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccVWvM3C.s 			page 55
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccRDIR1l.s 			page 55
 
 
  441:Middlewares/LVGL/lvgl/src/display/lv_display.c **** 
@@ -3298,7 +3298,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccVWvM3C.s 			page 1
  455:Middlewares/LVGL/lvgl/src/display/lv_display.c ****         }
  1321              		.loc 1 455 17 is_stmt 1 view .LVU327
  455:Middlewares/LVGL/lvgl/src/display/lv_display.c ****         }
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccVWvM3C.s 			page 56
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccRDIR1l.s 			page 56
 
 
  1322              		.loc 1 455 28 is_stmt 0 view .LVU328
@@ -3358,7 +3358,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccVWvM3C.s 			page 1
  1367              		.loc 1 463 7 is_stmt 0 view .LVU339
  1368 000e 0346     		mov	r3, r0
  1369 0010 0028     		cmp	r0, #0
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccVWvM3C.s 			page 57
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccRDIR1l.s 			page 57
 
 
  1370 0012 F8D1     		bne	.L127
@@ -3418,7 +3418,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccVWvM3C.s 			page 1
  1415              		.loc 1 478 5 is_stmt 1 view .LVU350
  478:Middlewares/LVGL/lvgl/src/display/lv_display.c **** 
  1416              		.loc 1 478 19 is_stmt 0 view .LVU351
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccVWvM3C.s 			page 58
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccRDIR1l.s 			page 58
 
 
  1417 000e 9C62     		str	r4, [r3, #40]
@@ -3478,7 +3478,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccVWvM3C.s 			page 1
  485:Middlewares/LVGL/lvgl/src/display/lv_display.c ****     if(disp == NULL) return;
  1463              		.loc 1 485 7 is_stmt 0 view .LVU362
  1464 0004 0346     		mov	r3, r0
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccVWvM3C.s 			page 59
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccRDIR1l.s 			page 59
 
 
  1465 0006 28B1     		cbz	r0, .L145
@@ -3538,7 +3538,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccVWvM3C.s 			page 1
  488:Middlewares/LVGL/lvgl/src/display/lv_display.c ****     LV_ASSERT_MSG(disp->buf_2 != NULL, "buf2 is null");
  1502              		.loc 1 488 5 view .LVU380
  1503 0020 FEE7     		b	.L141
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccVWvM3C.s 			page 60
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccRDIR1l.s 			page 60
 
 
  1504              	.L143:
@@ -3598,7 +3598,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccVWvM3C.s 			page 1
  1548              	.L150:
  562:Middlewares/LVGL/lvgl/src/display/lv_display.c ****     if(disp == NULL) return;
  1549              		.loc 1 562 22 is_stmt 1 discriminator 1 view .LVU393
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccVWvM3C.s 			page 61
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccRDIR1l.s 			page 61
 
 
  562:Middlewares/LVGL/lvgl/src/display/lv_display.c ****     if(disp == NULL) return;
@@ -3658,7 +3658,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccVWvM3C.s 			page 1
  1596              	.L155:
  569:Middlewares/LVGL/lvgl/src/display/lv_display.c ****     if(disp == NULL) return;
  1597              		.loc 1 569 22 is_stmt 1 discriminator 1 view .LVU404
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccVWvM3C.s 			page 62
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccRDIR1l.s 			page 62
 
 
  569:Middlewares/LVGL/lvgl/src/display/lv_display.c ****     if(disp == NULL) return;
@@ -3718,7 +3718,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccVWvM3C.s 			page 1
  1644              	.L160:
  577:Middlewares/LVGL/lvgl/src/display/lv_display.c ****     if(disp == NULL) return;
  1645              		.loc 1 577 22 is_stmt 1 discriminator 1 view .LVU415
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccVWvM3C.s 			page 63
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccRDIR1l.s 			page 63
 
 
  577:Middlewares/LVGL/lvgl/src/display/lv_display.c ****     if(disp == NULL) return;
@@ -3778,7 +3778,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccVWvM3C.s 			page 1
  606:Middlewares/LVGL/lvgl/src/display/lv_display.c ****     if(disp == NULL) return LV_COLOR_FORMAT_UNKNOWN;
  1692              		.loc 1 606 22 is_stmt 1 discriminator 1 view .LVU426
  606:Middlewares/LVGL/lvgl/src/display/lv_display.c ****     if(disp == NULL) return LV_COLOR_FORMAT_UNKNOWN;
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccVWvM3C.s 			page 64
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccRDIR1l.s 			page 64
 
 
  1693              		.loc 1 606 29 is_stmt 0 discriminator 1 view .LVU427
@@ -3838,7 +3838,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccVWvM3C.s 			page 1
  1741              		.loc 1 497 5 view .LVU435
  1742 000a 89B1     		cbz	r1, .L169
  1743 000c 0446     		mov	r4, r0
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccVWvM3C.s 			page 65
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccRDIR1l.s 			page 65
 
 
  1744 000e 1546     		mov	r5, r2
@@ -3898,7 +3898,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccVWvM3C.s 			page 1
  1781              		.loc 1 501 5 view .LVU452
  1782 002e FEE7     		b	.L170
  1783              	.LVL157:
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccVWvM3C.s 			page 66
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccRDIR1l.s 			page 66
 
 
  1784              	.L169:
@@ -3958,7 +3958,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccVWvM3C.s 			page 1
  1819 0044 2846     		mov	r0, r5
  1820 0046 FFF7FEFF 		bl	lv_draw_buf_align
  1821              	.LVL161:
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccVWvM3C.s 			page 67
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccRDIR1l.s 			page 67
 
 
  1822 004a 8542     		cmp	r5, r0
@@ -4018,7 +4018,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccVWvM3C.s 			page 1
  1857              		.loc 1 511 9 view .LVU490
  511:Middlewares/LVGL/lvgl/src/display/lv_display.c ****         LV_ASSERT_MSG(h != 0, "the buffer is too small");
  1858              		.loc 1 511 11 is_stmt 0 view .LVU491
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccVWvM3C.s 			page 68
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccRDIR1l.s 			page 68
 
 
  1859 0064 049B     		ldr	r3, [sp, #16]
@@ -4078,7 +4078,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccVWvM3C.s 			page 1
  1896 0088 049B     		ldr	r3, [sp, #16]
  1897 008a 0093     		str	r3, [sp]
  1898 008c 5B46     		mov	r3, fp
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccVWvM3C.s 			page 69
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccRDIR1l.s 			page 69
 
 
  1899 008e 4246     		mov	r2, r8
@@ -4138,7 +4138,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccVWvM3C.s 			page 1
  1945              	.L184:
  1946              	.LCFI30:
  1947              		.cfi_restore_state
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccVWvM3C.s 			page 70
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccRDIR1l.s 			page 70
 
 
  521:Middlewares/LVGL/lvgl/src/display/lv_display.c ****     lv_display_set_render_mode(disp, render_mode);
@@ -4198,7 +4198,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccVWvM3C.s 			page 1
  1996              		.loc 1 536 5 view .LVU524
  537:Middlewares/LVGL/lvgl/src/display/lv_display.c ****     uint32_t w = lv_display_get_original_horizontal_resolution(disp);
  1997              		.loc 1 537 5 view .LVU525
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccVWvM3C.s 			page 71
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccRDIR1l.s 			page 71
 
 
  537:Middlewares/LVGL/lvgl/src/display/lv_display.c ****     uint32_t w = lv_display_get_original_horizontal_resolution(disp);
@@ -4258,7 +4258,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccVWvM3C.s 			page 1
  2036 0038 CDF800B0 		str	fp, [sp]
  2037 003c FFF7FEFF 		bl	lv_display_set_buffers
  2038              	.LVL182:
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccVWvM3C.s 			page 72
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccRDIR1l.s 			page 72
 
 
  533:Middlewares/LVGL/lvgl/src/display/lv_display.c ****     }
@@ -4318,7 +4318,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccVWvM3C.s 			page 1
  2076              		.loc 1 545 9 view .LVU558
  545:Middlewares/LVGL/lvgl/src/display/lv_display.c ****     }
  2077              		.loc 1 545 9 view .LVU559
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccVWvM3C.s 			page 73
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccRDIR1l.s 			page 73
 
 
  545:Middlewares/LVGL/lvgl/src/display/lv_display.c ****     }
@@ -4378,7 +4378,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccVWvM3C.s 			page 1
  2120              	.LVL190:
  554:Middlewares/LVGL/lvgl/src/display/lv_display.c ****     lv_display_set_render_mode(disp, render_mode);
  2121              		.loc 1 554 5 is_stmt 1 view .LVU572
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccVWvM3C.s 			page 74
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccRDIR1l.s 			page 74
 
 
  2122 0090 B8F1000F 		cmp	r8, #0
@@ -4438,7 +4438,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccVWvM3C.s 			page 1
  2169 0002 00D9     		bls	.L201
  2170              	.L202:
  614:Middlewares/LVGL/lvgl/src/display/lv_display.c **** 
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccVWvM3C.s 			page 75
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccRDIR1l.s 			page 75
 
 
  2171              		.loc 1 614 5 view .LVU582
@@ -4498,7 +4498,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccVWvM3C.s 			page 1
  2209 001a 0028     		cmp	r0, #0
  2210 001c F6D1     		bne	.L203
  2211 001e F9E7     		b	.L200
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccVWvM3C.s 			page 76
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccRDIR1l.s 			page 76
 
 
  2212              		.cfi_endproc
@@ -4558,7 +4558,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccVWvM3C.s 			page 1
  2257 0014 0028     		cmp	r0, #0
  2258 0016 F6D1     		bne	.L209
  625:Middlewares/LVGL/lvgl/src/display/lv_display.c **** 
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccVWvM3C.s 			page 77
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccRDIR1l.s 			page 77
 
 
  2259              		.loc 1 625 29 discriminator 1 view .LVU610
@@ -4618,7 +4618,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccVWvM3C.s 			page 1
  2304 0014 10BD     		pop	{r4, pc}
  2305              	.LVL207:
  2306              	.L218:
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccVWvM3C.s 			page 78
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccRDIR1l.s 			page 78
 
 
  634:Middlewares/LVGL/lvgl/src/display/lv_display.c ****     if(disp == NULL) return;
@@ -4678,7 +4678,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccVWvM3C.s 			page 1
  2352 000e 08BD     		pop	{r3, pc}
  2353              	.LVL211:
  2354              	.L224:
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccVWvM3C.s 			page 79
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccRDIR1l.s 			page 79
 
 
  642:Middlewares/LVGL/lvgl/src/display/lv_display.c ****     if(disp == NULL) return false;
@@ -4738,7 +4738,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccVWvM3C.s 			page 1
  2399              		.loc 1 653 5 view .LVU644
  654:Middlewares/LVGL/lvgl/src/display/lv_display.c **** 
  2400              		.loc 1 654 1 is_stmt 0 view .LVU645
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccVWvM3C.s 			page 80
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccRDIR1l.s 			page 80
 
 
  2401 0006 93F83D00 		ldrb	r0, [r3, #61]	@ zero_extendqisi2
@@ -4798,7 +4798,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccVWvM3C.s 			page 1
  2444 0004 7047     		bx	lr
  2445              		.cfi_endproc
  2446              	.LFE232:
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccVWvM3C.s 			page 81
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccRDIR1l.s 			page 81
 
 
  2448              		.section	.text.lv_display_flush_is_last,"ax",%progbits
@@ -4858,7 +4858,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccVWvM3C.s 			page 1
  2497 0006 0120     		movne	r0, #1
  2498 0008 7047     		bx	lr
  2499              		.cfi_endproc
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccVWvM3C.s 			page 82
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccRDIR1l.s 			page 82
 
 
  2500              	.LFE234:
@@ -4918,7 +4918,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccVWvM3C.s 			page 1
  2545 0016 F8E7     		b	.L233
  2546              		.cfi_endproc
  2547              	.LFE235:
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccVWvM3C.s 			page 83
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccRDIR1l.s 			page 83
 
 
  2549              		.section	.text.lv_display_get_screen_loading,"ax",%progbits
@@ -4978,7 +4978,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccVWvM3C.s 			page 1
  2593              		.cfi_endproc
  2594              	.LFE236:
  2596              		.section	.text.lv_display_get_screen_prev,"ax",%progbits
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccVWvM3C.s 			page 84
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccRDIR1l.s 			page 84
 
 
  2597              		.align	1
@@ -5038,7 +5038,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccVWvM3C.s 			page 1
  2641              	.LFE237:
  2643              		.section	.text.lv_display_get_layer_top,"ax",%progbits
  2644              		.align	1
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccVWvM3C.s 			page 85
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccRDIR1l.s 			page 85
 
 
  2645              		.global	lv_display_get_layer_top
@@ -5098,7 +5098,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccVWvM3C.s 			page 1
  2690              		.section	.text.lv_display_get_layer_sys,"ax",%progbits
  2691              		.align	1
  2692              		.global	lv_display_get_layer_sys
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccVWvM3C.s 			page 86
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccRDIR1l.s 			page 86
 
 
  2693              		.syntax unified
@@ -5158,7 +5158,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccVWvM3C.s 			page 1
  2738              		.align	1
  2739              		.global	lv_display_get_layer_bottom
  2740              		.syntax unified
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccVWvM3C.s 			page 87
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccRDIR1l.s 			page 87
 
 
  2741              		.thumb
@@ -5218,7 +5218,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccVWvM3C.s 			page 1
  2786              		.global	lv_display_add_event_cb
  2787              		.syntax unified
  2788              		.thumb
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccVWvM3C.s 			page 88
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccRDIR1l.s 			page 88
 
 
  2789              		.thumb_func
@@ -5278,7 +5278,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccVWvM3C.s 			page 1
  2830              	.LFE243:
  2832              		.section	.text.lv_display_create,"ax",%progbits
  2833              		.align	1
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccVWvM3C.s 			page 89
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccRDIR1l.s 			page 89
 
 
  2834              		.global	lv_display_create
@@ -5338,7 +5338,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccVWvM3C.s 			page 1
  2878              		.file 2 "Middlewares/LVGL/lvgl/src/display/../display/../core/../misc/../font/../draw/../misc/../s
    1:Middlewares/LVGL/lvgl/src/display/../display/../core/../misc/../font/../draw/../misc/../stdlib/lv_string.h **** /**
    2:Middlewares/LVGL/lvgl/src/display/../display/../core/../misc/../font/../draw/../misc/../stdlib/lv_string.h ****  * @file lv_string.h
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccVWvM3C.s 			page 90
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccRDIR1l.s 			page 90
 
 
    3:Middlewares/LVGL/lvgl/src/display/../display/../core/../misc/../font/../draw/../misc/../stdlib/lv_string.h ****  *
@@ -5398,7 +5398,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccVWvM3C.s 			page 1
   57:Middlewares/LVGL/lvgl/src/display/../display/../core/../misc/../font/../draw/../misc/../stdlib/lv_string.h **** void * lv_memmove(void * dst, const void * src, size_t len);
   58:Middlewares/LVGL/lvgl/src/display/../display/../core/../misc/../font/../draw/../misc/../stdlib/lv_string.h **** 
   59:Middlewares/LVGL/lvgl/src/display/../display/../core/../misc/../font/../draw/../misc/../stdlib/lv_string.h **** /**
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccVWvM3C.s 			page 91
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccRDIR1l.s 			page 91
 
 
   60:Middlewares/LVGL/lvgl/src/display/../display/../core/../misc/../font/../draw/../misc/../stdlib/lv_string.h ****  * @brief This function will compare two memory blocks
@@ -5458,7 +5458,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccVWvM3C.s 			page 1
  2906              		.loc 1 87 5 is_stmt 1 view .LVU771
   87:Middlewares/LVGL/lvgl/src/display/lv_display.c ****     disp->antialiasing     = LV_COLOR_DEPTH > 8 ? 1 : 0;
  2907              		.loc 1 87 28 is_stmt 0 view .LVU772
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccVWvM3C.s 			page 92
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccRDIR1l.s 			page 92
 
 
  2908 0030 6361     		str	r3, [r4, #20]
@@ -5518,7 +5518,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccVWvM3C.s 			page 1
  107:Middlewares/LVGL/lvgl/src/display/lv_display.c ****     disp->layer_head->buf_area.x1 = 0;
  2945              		.loc 1 107 5 view .LVU790
  107:Middlewares/LVGL/lvgl/src/display/lv_display.c ****     disp->layer_head->buf_area.x1 = 0;
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccVWvM3C.s 			page 93
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccRDIR1l.s 			page 93
 
 
  2946              		.loc 1 107 12 is_stmt 0 view .LVU791
@@ -5578,7 +5578,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccVWvM3C.s 			page 1
  2983              		.loc 1 112 5 is_stmt 1 view .LVU808
  112:Middlewares/LVGL/lvgl/src/display/lv_display.c **** 
  2984              		.loc 1 112 9 is_stmt 0 view .LVU809
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccVWvM3C.s 			page 94
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccRDIR1l.s 			page 94
 
 
  2985 0092 D4F8B032 		ldr	r3, [r4, #688]
@@ -5638,7 +5638,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccVWvM3C.s 			page 1
  124:Middlewares/LVGL/lvgl/src/display/lv_display.c ****     if(disp->refr_timer == NULL) {
  3023              		.loc 1 124 5 view .LVU826
  3024 00ca 0028     		cmp	r0, #0
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccVWvM3C.s 			page 95
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccRDIR1l.s 			page 95
 
 
  3025 00cc 00F08280 		beq	.L281
@@ -5698,7 +5698,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccVWvM3C.s 			page 1
  3067              		.loc 1 154 5 is_stmt 1 view .LVU838
  154:Middlewares/LVGL/lvgl/src/display/lv_display.c ****     disp->act_scr   = lv_obj_create(NULL); /*Create a default screen on the display*/
  3068              		.loc 1 154 26 is_stmt 0 view .LVU839
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccVWvM3C.s 			page 96
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccRDIR1l.s 			page 96
 
 
  3069 0120 0020     		movs	r0, #0
@@ -5758,7 +5758,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccVWvM3C.s 			page 1
  3109 0162 D4F8C402 		ldr	r0, [r4, #708]
  3110 0166 FFF7FEFF 		bl	lv_obj_remove_flag
  3111              	.LVL276:
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccVWvM3C.s 			page 97
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccRDIR1l.s 			page 97
 
 
  162:Middlewares/LVGL/lvgl/src/display/lv_display.c **** 
@@ -5818,7 +5818,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccVWvM3C.s 			page 1
  3154              		.loc 1 178 5 is_stmt 1 view .LVU865
  178:Middlewares/LVGL/lvgl/src/display/lv_display.c **** 
  3155              		.loc 1 178 7 is_stmt 0 view .LVU866
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccVWvM3C.s 			page 98
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccRDIR1l.s 			page 98
 
 
  3156 01b4 DDB1     		cbz	r5, .L288
@@ -5878,7 +5878,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccVWvM3C.s 			page 1
  3196              	.LVL288:
  3197              	.L281:
  124:Middlewares/LVGL/lvgl/src/display/lv_display.c ****     if(disp->refr_timer == NULL) {
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccVWvM3C.s 			page 99
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccRDIR1l.s 			page 99
 
 
  3198              		.loc 1 124 5 view .LVU881
@@ -5938,7 +5938,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccVWvM3C.s 			page 1
  3244              	.LVL291:
  3245              	.LFB244:
  942:Middlewares/LVGL/lvgl/src/display/lv_display.c ****     LV_ASSERT_NULL(disp);
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccVWvM3C.s 			page 100
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccRDIR1l.s 			page 100
 
 
  3246              		.loc 1 942 1 is_stmt 1 view -0
@@ -5998,7 +5998,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccVWvM3C.s 			page 1
  3287              		.global	lv_display_get_event_dsc
  3288              		.syntax unified
  3289              		.thumb
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccVWvM3C.s 			page 101
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccRDIR1l.s 			page 101
 
 
  3290              		.thumb_func
@@ -6058,7 +6058,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccVWvM3C.s 			page 1
  3330 000e FEE7     		b	.L298
  3331              		.cfi_endproc
  3332              	.LFE245:
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccVWvM3C.s 			page 102
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccRDIR1l.s 			page 102
 
 
  3334              		.section	.text.lv_display_delete_event,"ax",%progbits
@@ -6118,7 +6118,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccVWvM3C.s 			page 1
  3376              		.loc 1 956 5 view .LVU934
  956:Middlewares/LVGL/lvgl/src/display/lv_display.c **** 
  3377              		.loc 1 956 5 view .LVU935
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccVWvM3C.s 			page 103
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccRDIR1l.s 			page 103
 
 
  956:Middlewares/LVGL/lvgl/src/display/lv_display.c **** 
@@ -6178,7 +6178,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccVWvM3C.s 			page 1
  969:Middlewares/LVGL/lvgl/src/display/lv_display.c ****         lv_event_dsc_t * dsc = lv_display_get_event_dsc(disp, i);
  3422              		.loc 1 969 23 is_stmt 0 view .LVU948
  3423 0010 441E     		subs	r4, r0, #1
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccVWvM3C.s 			page 104
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccRDIR1l.s 			page 104
 
 
  3424              	.LVL305:
@@ -6238,7 +6238,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccVWvM3C.s 			page 1
  3467 0024 FFF7FEFF 		bl	lv_display_get_event_dsc
  3468              	.LVL309:
  971:Middlewares/LVGL/lvgl/src/display/lv_display.c ****             lv_display_delete_event(disp, i);
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccVWvM3C.s 			page 105
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccRDIR1l.s 			page 105
 
 
  3469              		.loc 1 971 9 is_stmt 1 view .LVU960
@@ -6298,7 +6298,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccVWvM3C.s 			page 1
  3511              		.global	lv_display_send_event
  3512              		.syntax unified
  3513              		.thumb
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccVWvM3C.s 			page 106
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccRDIR1l.s 			page 106
 
 
  3514              		.thumb_func
@@ -6358,7 +6358,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccVWvM3C.s 			page 1
  3562              		.cfi_def_cfa_offset 24
  3563              		.cfi_offset 3, -24
  3564              		.cfi_offset 4, -20
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccVWvM3C.s 			page 107
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccRDIR1l.s 			page 107
 
 
  3565              		.cfi_offset 5, -16
@@ -6418,7 +6418,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccVWvM3C.s 			page 1
  3606 0028 05F53A70 		add	r0, r5, #744
  3607 002c FFF7FEFF 		bl	lv_event_remove_all
  3608              	.LVL327:
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccVWvM3C.s 			page 108
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccRDIR1l.s 			page 108
 
 
  207:Middlewares/LVGL/lvgl/src/display/lv_display.c ****     indev = lv_indev_get_next(NULL);
@@ -6478,7 +6478,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccVWvM3C.s 			page 1
  211:Middlewares/LVGL/lvgl/src/display/lv_display.c ****         }
  3650              		.loc 1 211 13 is_stmt 1 view .LVU1009
  3651 0056 0021     		movs	r1, #0
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccVWvM3C.s 			page 109
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccRDIR1l.s 			page 109
 
 
  3652 0058 2046     		mov	r0, r4
@@ -6538,7 +6538,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccVWvM3C.s 			page 1
  3690              	.LVL339:
  228:Middlewares/LVGL/lvgl/src/display/lv_display.c ****     }
  3691              		.loc 1 228 9 view .LVU1026
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccVWvM3C.s 			page 110
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccRDIR1l.s 			page 110
 
 
  228:Middlewares/LVGL/lvgl/src/display/lv_display.c ****     }
@@ -6598,7 +6598,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccVWvM3C.s 			page 1
  3730              		.loc 1 240 7 view .LVU1042
  3731 00be 08B1     		cbz	r0, .L328
  240:Middlewares/LVGL/lvgl/src/display/lv_display.c **** 
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccVWvM3C.s 			page 111
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccRDIR1l.s 			page 111
 
 
  3732              		.loc 1 240 26 is_stmt 1 discriminator 1 view .LVU1043
@@ -6658,7 +6658,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccVWvM3C.s 			page 1
  3772              		.loc 1 254 21 discriminator 1 view .LVU1057
  3773 00ec FFF7FEFF 		bl	lv_display_set_default
  3774              	.LVL349:
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccVWvM3C.s 			page 112
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccRDIR1l.s 			page 112
 
 
  3775 00f0 F7E7     		b	.L330
@@ -6718,7 +6718,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccVWvM3C.s 			page 1
  3823              		.loc 1 1366 5 is_stmt 1 view .LVU1065
 1366:Middlewares/LVGL/lvgl/src/display/lv_display.c **** 
  3824              		.loc 1 1366 23 is_stmt 0 view .LVU1066
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccVWvM3C.s 			page 113
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccRDIR1l.s 			page 113
 
 
  3825 000c 2046     		mov	r0, r4
@@ -6778,7 +6778,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccVWvM3C.s 			page 1
  3863              		.loc 1 1373 9 view .LVU1082
  3864 003a 3146     		mov	r1, r6
  3865 003c 1430     		adds	r0, r0, #20
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccVWvM3C.s 			page 114
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccRDIR1l.s 			page 114
 
 
  3866 003e FFF7FEFF 		bl	lv_area_set_height
@@ -6838,7 +6838,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccVWvM3C.s 			page 1
  3906 0078 D4F8C402 		ldr	r0, [r4, #708]
  3907 007c FFF7FEFF 		bl	lv_obj_send_event
  3908              	.LVL366:
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccVWvM3C.s 			page 115
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccRDIR1l.s 			page 115
 
 
 1381:Middlewares/LVGL/lvgl/src/display/lv_display.c ****     lv_area_set_height(&disp->sys_layer->coords, ver_res);
@@ -6898,7 +6898,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccVWvM3C.s 			page 1
  3949 00be 3221     		movs	r1, #50
  3950 00c0 D4F8CC02 		ldr	r0, [r4, #716]
  3951 00c4 FFF7FEFF 		bl	lv_obj_send_event
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccVWvM3C.s 			page 116
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccRDIR1l.s 			page 116
 
 
  3952              	.LVL372:
@@ -6958,7 +6958,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccVWvM3C.s 			page 1
  3997 00f2 0549     		ldr	r1, .L344
  3998 00f4 2846     		mov	r0, r5
  3999 00f6 FFF7FEFF 		bl	lv_obj_tree_walk
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccVWvM3C.s 			page 117
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccRDIR1l.s 			page 117
 
 
  4000              	.LVL379:
@@ -7018,7 +7018,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccVWvM3C.s 			page 1
  4049 0008 58B1     		cbz	r0, .L351
  4050              	.LVL383:
  4051              	.L347:
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccVWvM3C.s 			page 118
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccRDIR1l.s 			page 118
 
 
  286:Middlewares/LVGL/lvgl/src/display/lv_display.c **** 
@@ -7078,7 +7078,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccVWvM3C.s 			page 1
  4092              		.section	.text.lv_display_set_color_format,"ax",%progbits
  4093              		.align	1
  4094              		.global	lv_display_set_color_format
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccVWvM3C.s 			page 119
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccRDIR1l.s 			page 119
 
 
  4095              		.syntax unified
@@ -7138,7 +7138,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccVWvM3C.s 			page 1
  4136 0018 5D70     		strb	r5, [r3, #1]
  4137              	.L355:
  591:Middlewares/LVGL/lvgl/src/display/lv_display.c ****     if(disp->buf_3) disp->buf_3->header.cf = color_format;
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccVWvM3C.s 			page 120
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccRDIR1l.s 			page 120
 
 
  4138              		.loc 1 591 5 is_stmt 1 view .LVU1162
@@ -7198,7 +7198,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccVWvM3C.s 			page 1
  4177              		.loc 1 602 1 is_stmt 0 view .LVU1177
  4178 0046 38BD     		pop	{r3, r4, r5, pc}
  4179              	.LVL392:
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccVWvM3C.s 			page 121
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccRDIR1l.s 			page 121
 
 
  4180              	.L361:
@@ -7258,7 +7258,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccVWvM3C.s 			page 1
  4227              		.loc 1 1431 5 view .LVU1186
  4228 0006 0028     		cmp	r0, #0
  4229 0008 6ED0     		beq	.L364
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccVWvM3C.s 			page 122
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccRDIR1l.s 			page 122
 
 
 1431:Middlewares/LVGL/lvgl/src/display/lv_display.c ****     if(scr == NULL) return false;
@@ -7318,7 +7318,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccVWvM3C.s 			page 1
  4267              		.loc 1 1444 5 view .LVU1203
 1444:Middlewares/LVGL/lvgl/src/display/lv_display.c ****         if(lv_display_send_event(d, LV_EVENT_SCREEN_UNLOAD_START, old_scr) == LV_RESULT_INVALID) {
  4268              		.loc 1 1444 8 is_stmt 0 view .LVU1204
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccVWvM3C.s 			page 123
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccRDIR1l.s 			page 123
 
 
  4269 0032 039A     		ldr	r2, [sp, #12]
@@ -7378,7 +7378,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccVWvM3C.s 			page 1
  4308              		.loc 1 1457 5 is_stmt 1 view .LVU1219
 1457:Middlewares/LVGL/lvgl/src/display/lv_display.c ****         scr = NULL;
  4309              		.loc 1 1457 8 is_stmt 0 view .LVU1220
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccVWvM3C.s 			page 124
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccRDIR1l.s 			page 124
 
 
  4310 0062 0198     		ldr	r0, [sp, #4]
@@ -7438,7 +7438,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccVWvM3C.s 			page 1
  4348              		.loc 1 1468 7 view .LVU1236
  4349 0090 40B1     		cbz	r0, .L372
 1468:Middlewares/LVGL/lvgl/src/display/lv_display.c ****         d->act_scr = NULL;
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccVWvM3C.s 			page 125
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccRDIR1l.s 			page 125
 
 
  4350              		.loc 1 1468 15 discriminator 1 view .LVU1237
@@ -7498,7 +7498,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccVWvM3C.s 			page 1
  4388              		.loc 1 1477 20 discriminator 1 view .LVU1253
  4389 00be 08B9     		cbnz	r0, .L373
 1478:Middlewares/LVGL/lvgl/src/display/lv_display.c ****         }
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccVWvM3C.s 			page 126
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccRDIR1l.s 			page 126
 
 
  4390              		.loc 1 1478 13 is_stmt 1 view .LVU1254
@@ -7558,7 +7558,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccVWvM3C.s 			page 1
  4429              		.cfi_remember_state
  4430              		.cfi_def_cfa_offset 8
  4431              		@ sp needed
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccVWvM3C.s 			page 127
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccRDIR1l.s 			page 127
 
 
  4432 00e6 10BD     		pop	{r4, pc}
@@ -7618,7 +7618,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccVWvM3C.s 			page 1
  4469 00fa F3E7     		b	.L369
  4470              	.L378:
 1454:Middlewares/LVGL/lvgl/src/display/lv_display.c ****     }
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccVWvM3C.s 			page 128
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccRDIR1l.s 			page 128
 
 
  4471              		.loc 1 1454 16 view .LVU1287
@@ -7678,7 +7678,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccVWvM3C.s 			page 1
  4522              		.cfi_def_cfa_offset 232
  4523 0006 0546     		mov	r5, r0
  4524 0008 0F46     		mov	r7, r1
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccVWvM3C.s 			page 129
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccRDIR1l.s 			page 129
 
 
  4525 000a 9046     		mov	r8, r2
@@ -7738,7 +7738,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccVWvM3C.s 			page 1
  4565 0044 0022     		movs	r2, #0
  4566 0046 7021     		movs	r1, #112
  4567 0048 D4F8D402 		ldr	r0, [r4, #724]
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccVWvM3C.s 			page 130
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccRDIR1l.s 			page 130
 
 
  4568 004c FFF7FEFF 		bl	lv_obj_remove_local_style_prop
@@ -7798,7 +7798,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccVWvM3C.s 			page 1
  794:Middlewares/LVGL/lvgl/src/display/lv_display.c ****             return;
  4606              		.loc 1 794 11 discriminator 1 view .LVU1323
  4607 007c 0028     		cmp	r0, #0
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccVWvM3C.s 			page 131
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccRDIR1l.s 			page 131
 
 
  4608 007e 40F0AE80 		bne	.L387
@@ -7858,7 +7858,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccVWvM3C.s 			page 1
  4647 00be FFF7FEFF 		bl	lv_anim_delete
  4648              	.LVL429:
  811:Middlewares/LVGL/lvgl/src/display/lv_display.c **** 
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccVWvM3C.s 			page 132
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccRDIR1l.s 			page 132
 
 
  4649              		.loc 1 811 5 view .LVU1339
@@ -7918,7 +7918,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccVWvM3C.s 			page 1
  4691              		.loc 1 820 7 is_stmt 0 view .LVU1351
  4692 00f8 B8F1000F 		cmp	r8, #0
  4693 00fc 02D1     		bne	.L395
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccVWvM3C.s 			page 133
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccRDIR1l.s 			page 133
 
 
  820:Middlewares/LVGL/lvgl/src/display/lv_display.c ****         lv_load_screen_result_t res = load_new_screen(new_scr);
@@ -7978,7 +7978,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccVWvM3C.s 			page 1
  4737 0140 FFF7FEFF 		bl	lv_anim_set_var
  4738              	.LVL442:
  845:Middlewares/LVGL/lvgl/src/display/lv_display.c ****     lv_anim_set_delay(&a_old, delay);
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccVWvM3C.s 			page 134
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccRDIR1l.s 			page 134
 
 
  4739              		.loc 1 845 5 view .LVU1363
@@ -8038,7 +8038,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccVWvM3C.s 			page 1
  4786 0188 0428     		cmp	r0, #4
  4787 018a 28D0     		beq	.L387
  825:Middlewares/LVGL/lvgl/src/display/lv_display.c ****             d->act_scr = NULL;
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccVWvM3C.s 			page 135
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccRDIR1l.s 			page 135
 
 
  4788              		.loc 1 825 9 is_stmt 1 view .LVU1371
@@ -8098,7 +8098,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccVWvM3C.s 			page 1
  4828              	.LVL453:
  852:Middlewares/LVGL/lvgl/src/display/lv_display.c ****             break;
  4829              		.loc 1 852 13 is_stmt 1 view .LVU1386
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccVWvM3C.s 			page 136
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccRDIR1l.s 			page 136
 
 
  4830 01ba 0022     		movs	r2, #0
@@ -8158,7 +8158,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccVWvM3C.s 			page 1
  4873              		.loc 1 855 13 is_stmt 0 view .LVU1397
  4874 01e6 7849     		ldr	r1, .L422+8
  4875 01e8 2846     		mov	r0, r5
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccVWvM3C.s 			page 137
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccRDIR1l.s 			page 137
 
 
  4876 01ea FFF7FEFF 		bl	lv_anim_set_exec_cb
@@ -8218,7 +8218,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccVWvM3C.s 			page 1
  4919 021e 6B49     		ldr	r1, .L422+12
  4920 0220 2846     		mov	r0, r5
  4921 0222 FFF7FEFF 		bl	lv_anim_set_exec_cb
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccVWvM3C.s 			page 138
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccRDIR1l.s 			page 138
 
 
  4922              	.LVL470:
@@ -8278,7 +8278,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccVWvM3C.s 			page 1
  4965 0258 3946     		mov	r1, r7
  4966 025a 2846     		mov	r0, r5
  4967 025c FFF7FEFF 		bl	lv_anim_set_exec_cb
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccVWvM3C.s 			page 139
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccRDIR1l.s 			page 139
 
 
  4968              	.LVL480:
@@ -8338,7 +8338,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccVWvM3C.s 			page 1
  5011 0298 FFF7FEFF 		bl	lv_display_get_horizontal_resolution
  5012              	.LVL489:
  879:Middlewares/LVGL/lvgl/src/display/lv_display.c **** 
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccVWvM3C.s 			page 140
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccRDIR1l.s 			page 140
 
 
  5013              		.loc 1 879 13 discriminator 1 view .LVU1431
@@ -8398,7 +8398,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccVWvM3C.s 			page 1
  5058 02dc 3946     		mov	r1, r7
  5059 02de 6846     		mov	r0, sp
  5060 02e0 FFF7FEFF 		bl	lv_anim_set_exec_cb
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccVWvM3C.s 			page 141
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccRDIR1l.s 			page 141
 
 
  5061              	.LVL499:
@@ -8458,7 +8458,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccVWvM3C.s 			page 1
  5104 031c FFF7FEFF 		bl	lv_display_get_vertical_resolution
  5105              	.LVL508:
  5106 0320 0246     		mov	r2, r0
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccVWvM3C.s 			page 142
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccRDIR1l.s 			page 142
 
 
  896:Middlewares/LVGL/lvgl/src/display/lv_display.c ****             break;
@@ -8518,7 +8518,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccVWvM3C.s 			page 1
  5151 035a FFF7FEFF 		bl	lv_anim_set_exec_cb
  5152              	.LVL517:
  908:Middlewares/LVGL/lvgl/src/display/lv_display.c ****             break;
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccVWvM3C.s 			page 143
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccRDIR1l.s 			page 143
 
 
  5153              		.loc 1 908 13 view .LVU1462
@@ -8578,7 +8578,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccVWvM3C.s 			page 1
  5196 0398 4242     		rsbs	r2, r0, #0
  5197 039a 0021     		movs	r1, #0
  5198 039c 6846     		mov	r0, sp
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccVWvM3C.s 			page 144
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccRDIR1l.s 			page 144
 
 
  5199 039e FFF7FEFF 		bl	lv_anim_set_values
@@ -8638,7 +8638,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccVWvM3C.s 			page 1
  5248              	.LCFI76:
  5249              		.cfi_def_cfa_offset 4
  5250              		.cfi_offset 14, -4
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccVWvM3C.s 			page 145
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccRDIR1l.s 			page 145
 
 
  5251 0002 83B0     		sub	sp, sp, #12
@@ -8698,7 +8698,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccVWvM3C.s 			page 1
  5299              	.L426:
  994:Middlewares/LVGL/lvgl/src/display/lv_display.c **** 
  5300              		.loc 1 994 1 view .LVU1489
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccVWvM3C.s 			page 146
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccRDIR1l.s 			page 146
 
 
  5301 000a 08BD     		pop	{r3, pc}
@@ -8758,7 +8758,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccVWvM3C.s 			page 1
  5347 0016 FFF7FEFF 		bl	update_resolution
  5348              	.LVL537:
  5349              	.L431:
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccVWvM3C.s 			page 147
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccRDIR1l.s 			page 147
 
 
 1003:Middlewares/LVGL/lvgl/src/display/lv_display.c **** 
@@ -8818,7 +8818,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccVWvM3C.s 			page 1
  5395 0006 93F80003 		ldrb	r0, [r3, #768]	@ zero_extendqisi2
  5396 000a 00F00700 		and	r0, r0, #7
  5397              	.L438:
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccVWvM3C.s 			page 148
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccRDIR1l.s 			page 148
 
 
 1010:Middlewares/LVGL/lvgl/src/display/lv_display.c **** 
@@ -8878,7 +8878,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccVWvM3C.s 			page 1
  5440 0000 7047     		bx	lr
  5441              		.cfi_endproc
  5442              	.LFE252:
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccVWvM3C.s 			page 149
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccRDIR1l.s 			page 149
 
 
  5444              		.section	.text.lv_display_get_matrix_rotation,"ax",%progbits
@@ -8938,7 +8938,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccVWvM3C.s 			page 1
 1034:Middlewares/LVGL/lvgl/src/display/lv_display.c ****     return disp->matrix_rotation;
  5488              		.loc 1 1034 29 discriminator 1 view .LVU1536
  5489 001a 0020     		movs	r0, #0
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccVWvM3C.s 			page 150
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccRDIR1l.s 			page 150
 
 
  5490              	.LVL550:
@@ -8998,7 +8998,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccVWvM3C.s 			page 1
 1061:Middlewares/LVGL/lvgl/src/display/lv_display.c **** 
  5536              		.loc 1 1061 1 view .LVU1547
  5537 0014 38BD     		pop	{r3, r4, r5, pc}
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccVWvM3C.s 			page 151
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccRDIR1l.s 			page 151
 
 
  5538              	.LVL554:
@@ -9058,7 +9058,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccVWvM3C.s 			page 1
 1052:Middlewares/LVGL/lvgl/src/display/lv_display.c **** 
  5579              		.loc 1 1052 9 is_stmt 1 view .LVU1561
 1052:Middlewares/LVGL/lvgl/src/display/lv_display.c **** 
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccVWvM3C.s 			page 152
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccRDIR1l.s 			page 152
 
 
  5580              		.loc 1 1052 28 is_stmt 0 view .LVU1562
@@ -9118,7 +9118,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccVWvM3C.s 			page 1
  5624              	lv_display_get_theme:
  5625              	.LVL564:
  5626              	.LFB255:
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccVWvM3C.s 			page 153
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccRDIR1l.s 			page 153
 
 
 1064:Middlewares/LVGL/lvgl/src/display/lv_display.c ****     if(disp == NULL) disp = lv_display_get_default();
@@ -9178,7 +9178,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccVWvM3C.s 			page 1
 1070:Middlewares/LVGL/lvgl/src/display/lv_display.c ****     if(disp) return lv_tick_elaps(disp->last_activity_time);
  5673              		.loc 1 1070 1 is_stmt 0 view .LVU1585
  5674 0000 38B5     		push	{r3, r4, r5, lr}
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccVWvM3C.s 			page 154
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccRDIR1l.s 			page 154
 
 
  5675              	.LCFI85:
@@ -9238,7 +9238,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccVWvM3C.s 			page 1
  5715              	.L466:
  5716              	.LBB18:
 1077:Middlewares/LVGL/lvgl/src/display/lv_display.c ****         t = LV_MIN(t, elaps);
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccVWvM3C.s 			page 155
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccRDIR1l.s 			page 155
 
 
  5717              		.loc 1 1077 9 is_stmt 1 view .LVU1600
@@ -9298,7 +9298,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccVWvM3C.s 			page 1
  5763              	.LCFI86:
  5764              		.cfi_def_cfa_offset 8
  5765              		.cfi_offset 4, -8
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccVWvM3C.s 			page 156
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccRDIR1l.s 			page 156
 
 
  5766              		.cfi_offset 14, -4
@@ -9358,7 +9358,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccVWvM3C.s 			page 1
 1097:Middlewares/LVGL/lvgl/src/display/lv_display.c ****     if(!disp) disp = lv_display_get_default();
  5811              		.loc 1 1097 1 is_stmt 0 view .LVU1622
  5812 0000 10B5     		push	{r4, lr}
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccVWvM3C.s 			page 157
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccRDIR1l.s 			page 157
 
 
  5813              	.LCFI87:
@@ -9418,7 +9418,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccVWvM3C.s 			page 1
  5854 0028 F2E7     		b	.L476
  5855              		.cfi_endproc
  5856              	.LFE258:
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccVWvM3C.s 			page 158
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccRDIR1l.s 			page 158
 
 
  5858              		.section	.text.lv_display_is_invalidation_enabled,"ax",%progbits
@@ -9478,7 +9478,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccVWvM3C.s 			page 1
 1110:Middlewares/LVGL/lvgl/src/display/lv_display.c ****         LV_LOG_WARN("no display registered");
  5902              		.loc 1 1110 7 is_stmt 0 view .LVU1647
  5903 0018 0346     		mov	r3, r0
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccVWvM3C.s 			page 159
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccRDIR1l.s 			page 159
 
 
  5904 001a 0028     		cmp	r0, #0
@@ -9538,7 +9538,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccVWvM3C.s 			page 1
  5949              		.loc 1 1120 22 is_stmt 0 discriminator 1 view .LVU1658
  5950 000c FFF7FEFF 		bl	lv_display_get_default
  5951              	.LVL599:
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccVWvM3C.s 			page 160
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccRDIR1l.s 			page 160
 
 
 1121:Middlewares/LVGL/lvgl/src/display/lv_display.c **** 
@@ -9598,7 +9598,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccVWvM3C.s 			page 1
  5997 0012 C4F80833 		str	r3, [r4, #776]
  5998              	.L492:
 1133:Middlewares/LVGL/lvgl/src/display/lv_display.c **** 
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccVWvM3C.s 			page 161
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccRDIR1l.s 			page 161
 
 
  5999              		.loc 1 1133 1 view .LVU1670
@@ -9658,7 +9658,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccVWvM3C.s 			page 1
  6045 0008 D3F82023 		ldr	r2, [r3, #800]
 1140:Middlewares/LVGL/lvgl/src/display/lv_display.c ****         return lv_display_send_event(disp, LV_EVENT_VSYNC, param);
  6046              		.loc 1 1140 7 view .LVU1681
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccVWvM3C.s 			page 162
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccRDIR1l.s 			page 162
 
 
  6047 000c 42B9     		cbnz	r2, .L504
@@ -9718,7 +9718,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccVWvM3C.s 			page 1
  6092              		.loc 1 1147 1 is_stmt 1 view -0
  6093              		.cfi_startproc
  6094              		@ args = 0, pretend = 0, frame = 0
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccVWvM3C.s 			page 163
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccRDIR1l.s 			page 163
 
 
  6095              		@ frame_needed = 0, uses_anonymous_args = 0
@@ -9778,7 +9778,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccVWvM3C.s 			page 1
  6136 0028 70BD     		pop	{r4, r5, r6, pc}
  6137              	.LVL615:
  6138              	.L511:
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccVWvM3C.s 			page 164
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccRDIR1l.s 			page 164
 
 
 1148:Middlewares/LVGL/lvgl/src/display/lv_display.c ****     if(!disp) return false;
@@ -9838,7 +9838,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccVWvM3C.s 			page 1
  6186              		.cfi_offset 14, -4
  6187 0002 0C46     		mov	r4, r1
  6188 0004 1546     		mov	r5, r2
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccVWvM3C.s 			page 165
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccRDIR1l.s 			page 165
 
 
 1163:Middlewares/LVGL/lvgl/src/display/lv_display.c ****     if(!disp) return false;
@@ -9898,7 +9898,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccVWvM3C.s 			page 1
 1164:Middlewares/LVGL/lvgl/src/display/lv_display.c **** 
  6227              		.loc 1 1164 7 is_stmt 0 view .LVU1731
  6228 002a 0646     		mov	r6, r0
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccVWvM3C.s 			page 166
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccRDIR1l.s 			page 166
 
 
  6229 002c 0028     		cmp	r0, #0
@@ -9958,7 +9958,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccVWvM3C.s 			page 1
  6276              		.cfi_def_cfa_offset 8
  6277              		.cfi_offset 4, -8
  6278              		.cfi_offset 14, -4
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccVWvM3C.s 			page 167
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccRDIR1l.s 			page 167
 
 
  6279 0002 0C46     		mov	r4, r1
@@ -10018,7 +10018,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccVWvM3C.s 			page 1
  6324              		.cfi_def_cfa_offset 8
  6325              		.cfi_offset 4, -8
  6326              		.cfi_offset 14, -4
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccVWvM3C.s 			page 168
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccRDIR1l.s 			page 168
 
 
  6327 0002 0C46     		mov	r4, r1
@@ -10078,7 +10078,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccVWvM3C.s 			page 1
  6372              		.cfi_def_cfa_offset 8
  6373              		.cfi_offset 3, -8
  6374              		.cfi_offset 14, -4
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccVWvM3C.s 			page 169
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccRDIR1l.s 			page 169
 
 
 1195:Middlewares/LVGL/lvgl/src/display/lv_display.c ****     if(!disp) return NULL;
@@ -10138,7 +10138,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccVWvM3C.s 			page 1
  6420              		.cfi_offset 3, -8
  6421              		.cfi_offset 14, -4
 1202:Middlewares/LVGL/lvgl/src/display/lv_display.c ****     if(!disp) return NULL;
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccVWvM3C.s 			page 170
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccRDIR1l.s 			page 170
 
 
  6422              		.loc 1 1202 5 is_stmt 1 view .LVU1774
@@ -10198,7 +10198,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccVWvM3C.s 			page 1
  6468              		.cfi_offset 14, -4
 1210:Middlewares/LVGL/lvgl/src/display/lv_display.c ****     if(!disp) return NULL;
  6469              		.loc 1 1210 5 is_stmt 1 view .LVU1785
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccVWvM3C.s 			page 171
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccRDIR1l.s 			page 171
 
 
 1210:Middlewares/LVGL/lvgl/src/display/lv_display.c ****     if(!disp) return NULL;
@@ -10258,7 +10258,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccVWvM3C.s 			page 1
  6516              		.cfi_offset 5, -16
  6517              		.cfi_offset 6, -12
  6518              		.cfi_offset 7, -8
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccVWvM3C.s 			page 172
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccRDIR1l.s 			page 172
 
 
  6519              		.cfi_offset 14, -4
@@ -10318,7 +10318,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccVWvM3C.s 			page 1
 1226:Middlewares/LVGL/lvgl/src/display/lv_display.c ****             area->x1 = area->y1;
  6560              		.loc 1 1226 13 view .LVU1809
 1226:Middlewares/LVGL/lvgl/src/display/lv_display.c ****             area->x1 = area->y1;
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccVWvM3C.s 			page 173
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccRDIR1l.s 			page 173
 
 
  6561              		.loc 1 1226 28 is_stmt 0 view .LVU1810
@@ -10378,7 +10378,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccVWvM3C.s 			page 1
  6596              		.loc 1 1232 44 view .LVU1829
  6597 0048 6268     		ldr	r2, [r4, #4]
 1232:Middlewares/LVGL/lvgl/src/display/lv_display.c ****             area->y1 = area->y2 - h + 1;
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccVWvM3C.s 			page 174
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccRDIR1l.s 			page 174
 
 
  6598              		.loc 1 1232 38 view .LVU1830
@@ -10438,7 +10438,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccVWvM3C.s 			page 1
  6633              		.loc 1 1238 28 is_stmt 0 view .LVU1849
  6634 0068 3368     		ldr	r3, [r6]
 1238:Middlewares/LVGL/lvgl/src/display/lv_display.c ****             area->y2 = area->x2;
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccVWvM3C.s 			page 175
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccRDIR1l.s 			page 175
 
 
  6635              		.loc 1 1238 44 view .LVU1850
@@ -10498,7 +10498,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccVWvM3C.s 			page 1
  6676              	.LFB271:
 1249:Middlewares/LVGL/lvgl/src/display/lv_display.c ****     lv_display_rotation_t rotation = lv_display_get_rotation(disp);
  6677              		.loc 1 1249 1 view -0
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccVWvM3C.s 			page 176
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccRDIR1l.s 			page 176
 
 
  6678              		.cfi_startproc
@@ -10558,7 +10558,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccVWvM3C.s 			page 1
  6718              		.loc 1 1259 42 view .LVU1880
  6719 0020 013B     		subs	r3, r3, #1
 1259:Middlewares/LVGL/lvgl/src/display/lv_display.c ****             point->y = x;
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccVWvM3C.s 			page 177
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccRDIR1l.s 			page 177
 
 
  6720              		.loc 1 1259 22 view .LVU1881
@@ -10618,7 +10618,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccVWvM3C.s 			page 1
  6756              		.loc 1 1268 13 is_stmt 1 view .LVU1899
 1268:Middlewares/LVGL/lvgl/src/display/lv_display.c ****             break;
  6757              		.loc 1 1268 28 is_stmt 0 view .LVU1900
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccVWvM3C.s 			page 178
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccRDIR1l.s 			page 178
 
 
  6758 003c 2B68     		ldr	r3, [r5]
@@ -10678,7 +10678,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccVWvM3C.s 			page 1
 1281:Middlewares/LVGL/lvgl/src/display/lv_display.c ****     }
  6802              		.loc 1 1281 27 is_stmt 0 view .LVU1913
  6803 000a D868     		ldr	r0, [r3, #12]
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccVWvM3C.s 			page 179
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccRDIR1l.s 			page 179
 
 
  6804              	.L561:
@@ -10738,7 +10738,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccVWvM3C.s 			page 1
  6850              		.cfi_offset 5, -12
  6851              		.cfi_offset 6, -8
  6852              		.cfi_offset 14, -4
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccVWvM3C.s 			page 180
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccRDIR1l.s 			page 180
 
 
  6853 0002 0E46     		mov	r6, r1
@@ -10798,7 +10798,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccVWvM3C.s 			page 1
  6893              	.L572:
 1300:Middlewares/LVGL/lvgl/src/display/lv_display.c ****     if(disp->buf_2) LV_ASSERT(disp->buf_2->data_size >= buf_size);
  6894              		.loc 1 1300 5 is_stmt 1 view .LVU1938
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccVWvM3C.s 			page 181
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccRDIR1l.s 			page 181
 
 
 1300:Middlewares/LVGL/lvgl/src/display/lv_display.c ****     if(disp->buf_2) LV_ASSERT(disp->buf_2->data_size >= buf_size);
@@ -10858,7 +10858,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccVWvM3C.s 			page 1
  6934              	.LVL688:
 1293:Middlewares/LVGL/lvgl/src/display/lv_display.c ****     }
  6935              		.loc 1 1293 18 view .LVU1954
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccVWvM3C.s 			page 182
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccRDIR1l.s 			page 182
 
 
  6936 004e E0E7     		b	.L571
@@ -10918,7 +10918,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccVWvM3C.s 			page 1
 1302:Middlewares/LVGL/lvgl/src/display/lv_display.c **** 
  6972              		.loc 1 1302 21 view .LVU1973
 1302:Middlewares/LVGL/lvgl/src/display/lv_display.c **** 
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccVWvM3C.s 			page 183
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccRDIR1l.s 			page 183
 
 
  6973              		.loc 1 1302 21 view .LVU1974
@@ -10978,7 +10978,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccVWvM3C.s 			page 1
  7023 0000 08B5     		push	{r3, lr}
  7024              	.LCFI104:
  7025              		.cfi_def_cfa_offset 8
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccVWvM3C.s 			page 184
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccRDIR1l.s 			page 184
 
 
  7026              		.cfi_offset 3, -8
@@ -11038,7 +11038,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccVWvM3C.s 			page 1
  7074              		.thumb
  7075              		.thumb_func
  7077              	lv_layer_bottom:
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccVWvM3C.s 			page 185
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccRDIR1l.s 			page 185
 
 
  7078              	.LFB277:
@@ -11098,7 +11098,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccVWvM3C.s 			page 1
  7124              		.loc 1 1329 12 discriminator 1 view .LVU2001
  7125 0006 0020     		movs	r0, #0
  7126              	.LVL699:
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccVWvM3C.s 			page 186
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccRDIR1l.s 			page 186
 
 
 1329:Middlewares/LVGL/lvgl/src/display/lv_display.c **** }
@@ -11158,7 +11158,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccVWvM3C.s 			page 1
  7176              		.cfi_offset 4, -8
  7177              		.cfi_offset 14, -4
 1334:Middlewares/LVGL/lvgl/src/display/lv_display.c **** }
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccVWvM3C.s 			page 187
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccRDIR1l.s 			page 187
 
 
  7178              		.loc 1 1334 5 is_stmt 1 view .LVU2009
@@ -11218,7 +11218,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccVWvM3C.s 			page 1
  7226              		.file 13 "Middlewares/LVGL/lvgl/src/display/../display/../core/../misc/lv_anim.h"
  7227              		.file 14 "Middlewares/LVGL/lvgl/src/display/../display/../core/../misc/../font/lv_font.h"
  7228              		.file 15 "Middlewares/LVGL/lvgl/src/display/../draw/../misc/cache/class/../lv_cache_private.h"
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccVWvM3C.s 			page 188
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccRDIR1l.s 			page 188
 
 
  7229              		.file 16 "Middlewares/LVGL/lvgl/src/display/../core/../draw/lv_draw_buf_private.h"
@@ -11256,218 +11256,218 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccVWvM3C.s 			page 1
  7261              		.file 48 "Middlewares/LVGL/lvgl/src/display/../themes/default/lv_theme_default.h"
  7262              		.file 49 "Middlewares/LVGL/lvgl/src/display/../display/../core/../misc/../font/../draw/../misc/../
  7263              		.file 50 "Middlewares/LVGL/lvgl/src/display/../core/lv_refr.h"
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccVWvM3C.s 			page 189
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccRDIR1l.s 			page 189
 
 
 DEFINED SYMBOLS
                             *ABS*:00000000 lv_display.c
-C:\Users\w1785\AppData\Local\Temp\ccVWvM3C.s:21     .text.old_screen_deleted:00000000 $t
-C:\Users\w1785\AppData\Local\Temp\ccVWvM3C.s:26     .text.old_screen_deleted:00000000 old_screen_deleted
-C:\Users\w1785\AppData\Local\Temp\ccVWvM3C.s:60     .text.new_screen_deleted:00000000 $t
-C:\Users\w1785\AppData\Local\Temp\ccVWvM3C.s:65     .text.new_screen_deleted:00000000 new_screen_deleted
-C:\Users\w1785\AppData\Local\Temp\ccVWvM3C.s:90     .text.is_out_anim:00000000 $t
-C:\Users\w1785\AppData\Local\Temp\ccVWvM3C.s:95     .text.is_out_anim:00000000 is_out_anim
-C:\Users\w1785\AppData\Local\Temp\ccVWvM3C.s:120    .text.disp_event_cb:00000000 $t
-C:\Users\w1785\AppData\Local\Temp\ccVWvM3C.s:125    .text.disp_event_cb:00000000 disp_event_cb
-C:\Users\w1785\AppData\Local\Temp\ccVWvM3C.s:180    .text.invalidate_layout_cb:00000000 $t
-C:\Users\w1785\AppData\Local\Temp\ccVWvM3C.s:185    .text.invalidate_layout_cb:00000000 invalidate_layout_cb
-C:\Users\w1785\AppData\Local\Temp\ccVWvM3C.s:210    .text.scr_anim_completed:00000000 $t
-C:\Users\w1785\AppData\Local\Temp\ccVWvM3C.s:215    .text.scr_anim_completed:00000000 scr_anim_completed
-C:\Users\w1785\AppData\Local\Temp\ccVWvM3C.s:314    .text.scr_load_anim_start:00000000 $t
-C:\Users\w1785\AppData\Local\Temp\ccVWvM3C.s:319    .text.scr_load_anim_start:00000000 scr_load_anim_start
-C:\Users\w1785\AppData\Local\Temp\ccVWvM3C.s:365    .text.opa_scale_anim:00000000 $t
-C:\Users\w1785\AppData\Local\Temp\ccVWvM3C.s:370    .text.opa_scale_anim:00000000 opa_scale_anim
-C:\Users\w1785\AppData\Local\Temp\ccVWvM3C.s:396    .text.set_y_anim:00000000 $t
-C:\Users\w1785\AppData\Local\Temp\ccVWvM3C.s:401    .text.set_y_anim:00000000 set_y_anim
-C:\Users\w1785\AppData\Local\Temp\ccVWvM3C.s:423    .text.set_x_anim:00000000 $t
-C:\Users\w1785\AppData\Local\Temp\ccVWvM3C.s:428    .text.set_x_anim:00000000 set_x_anim
-C:\Users\w1785\AppData\Local\Temp\ccVWvM3C.s:450    .text.screen_event_delete_cb:00000000 $t
-C:\Users\w1785\AppData\Local\Temp\ccVWvM3C.s:455    .text.screen_event_delete_cb:00000000 screen_event_delete_cb
-C:\Users\w1785\AppData\Local\Temp\ccVWvM3C.s:482    .text.lv_display_set_default:00000000 $t
-C:\Users\w1785\AppData\Local\Temp\ccVWvM3C.s:488    .text.lv_display_set_default:00000000 lv_display_set_default
-C:\Users\w1785\AppData\Local\Temp\ccVWvM3C.s:505    .text.lv_display_set_default:00000008 $d
-C:\Users\w1785\AppData\Local\Temp\ccVWvM3C.s:510    .text.lv_display_get_default:00000000 $t
-C:\Users\w1785\AppData\Local\Temp\ccVWvM3C.s:516    .text.lv_display_get_default:00000000 lv_display_get_default
-C:\Users\w1785\AppData\Local\Temp\ccVWvM3C.s:531    .text.lv_display_get_default:00000008 $d
-C:\Users\w1785\AppData\Local\Temp\ccVWvM3C.s:536    .text.lv_display_get_next:00000000 $t
-C:\Users\w1785\AppData\Local\Temp\ccVWvM3C.s:542    .text.lv_display_get_next:00000000 lv_display_get_next
-C:\Users\w1785\AppData\Local\Temp\ccVWvM3C.s:582    .text.lv_display_get_next:00000018 $d
-C:\Users\w1785\AppData\Local\Temp\ccVWvM3C.s:587    .text.lv_display_set_physical_resolution:00000000 $t
-C:\Users\w1785\AppData\Local\Temp\ccVWvM3C.s:593    .text.lv_display_set_physical_resolution:00000000 lv_display_set_physical_resolution
-C:\Users\w1785\AppData\Local\Temp\ccVWvM3C.s:645    .text.lv_display_set_offset:00000000 $t
-C:\Users\w1785\AppData\Local\Temp\ccVWvM3C.s:651    .text.lv_display_set_offset:00000000 lv_display_set_offset
-C:\Users\w1785\AppData\Local\Temp\ccVWvM3C.s:703    .text.lv_display_set_dpi:00000000 $t
-C:\Users\w1785\AppData\Local\Temp\ccVWvM3C.s:709    .text.lv_display_set_dpi:00000000 lv_display_set_dpi
-C:\Users\w1785\AppData\Local\Temp\ccVWvM3C.s:751    .text.lv_display_get_horizontal_resolution:00000000 $t
-C:\Users\w1785\AppData\Local\Temp\ccVWvM3C.s:757    .text.lv_display_get_horizontal_resolution:00000000 lv_display_get_horizontal_resolution
-C:\Users\w1785\AppData\Local\Temp\ccVWvM3C.s:817    .text.lv_display_get_vertical_resolution:00000000 $t
-C:\Users\w1785\AppData\Local\Temp\ccVWvM3C.s:823    .text.lv_display_get_vertical_resolution:00000000 lv_display_get_vertical_resolution
-C:\Users\w1785\AppData\Local\Temp\ccVWvM3C.s:883    .text.lv_display_get_original_horizontal_resolution:00000000 $t
-C:\Users\w1785\AppData\Local\Temp\ccVWvM3C.s:889    .text.lv_display_get_original_horizontal_resolution:00000000 lv_display_get_original_horizontal_resolution
-C:\Users\w1785\AppData\Local\Temp\ccVWvM3C.s:934    .text.lv_display_get_original_vertical_resolution:00000000 $t
-C:\Users\w1785\AppData\Local\Temp\ccVWvM3C.s:940    .text.lv_display_get_original_vertical_resolution:00000000 lv_display_get_original_vertical_resolution
-C:\Users\w1785\AppData\Local\Temp\ccVWvM3C.s:985    .text.lv_display_get_physical_horizontal_resolution:00000000 $t
-C:\Users\w1785\AppData\Local\Temp\ccVWvM3C.s:991    .text.lv_display_get_physical_horizontal_resolution:00000000 lv_display_get_physical_horizontal_resolution
-C:\Users\w1785\AppData\Local\Temp\ccVWvM3C.s:1065   .text.lv_display_get_physical_vertical_resolution:00000000 $t
-C:\Users\w1785\AppData\Local\Temp\ccVWvM3C.s:1071   .text.lv_display_get_physical_vertical_resolution:00000000 lv_display_get_physical_vertical_resolution
-C:\Users\w1785\AppData\Local\Temp\ccVWvM3C.s:1145   .text.lv_display_get_offset_x:00000000 $t
-C:\Users\w1785\AppData\Local\Temp\ccVWvM3C.s:1151   .text.lv_display_get_offset_x:00000000 lv_display_get_offset_x
-C:\Users\w1785\AppData\Local\Temp\ccVWvM3C.s:1237   .text.lv_display_get_offset_y:00000000 $t
-C:\Users\w1785\AppData\Local\Temp\ccVWvM3C.s:1243   .text.lv_display_get_offset_y:00000000 lv_display_get_offset_y
-C:\Users\w1785\AppData\Local\Temp\ccVWvM3C.s:1329   .text.lv_display_get_dpi:00000000 $t
-C:\Users\w1785\AppData\Local\Temp\ccVWvM3C.s:1335   .text.lv_display_get_dpi:00000000 lv_display_get_dpi
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccVWvM3C.s 			page 190
+C:\Users\w1785\AppData\Local\Temp\ccRDIR1l.s:21     .text.old_screen_deleted:00000000 $t
+C:\Users\w1785\AppData\Local\Temp\ccRDIR1l.s:26     .text.old_screen_deleted:00000000 old_screen_deleted
+C:\Users\w1785\AppData\Local\Temp\ccRDIR1l.s:60     .text.new_screen_deleted:00000000 $t
+C:\Users\w1785\AppData\Local\Temp\ccRDIR1l.s:65     .text.new_screen_deleted:00000000 new_screen_deleted
+C:\Users\w1785\AppData\Local\Temp\ccRDIR1l.s:90     .text.is_out_anim:00000000 $t
+C:\Users\w1785\AppData\Local\Temp\ccRDIR1l.s:95     .text.is_out_anim:00000000 is_out_anim
+C:\Users\w1785\AppData\Local\Temp\ccRDIR1l.s:120    .text.disp_event_cb:00000000 $t
+C:\Users\w1785\AppData\Local\Temp\ccRDIR1l.s:125    .text.disp_event_cb:00000000 disp_event_cb
+C:\Users\w1785\AppData\Local\Temp\ccRDIR1l.s:180    .text.invalidate_layout_cb:00000000 $t
+C:\Users\w1785\AppData\Local\Temp\ccRDIR1l.s:185    .text.invalidate_layout_cb:00000000 invalidate_layout_cb
+C:\Users\w1785\AppData\Local\Temp\ccRDIR1l.s:210    .text.scr_anim_completed:00000000 $t
+C:\Users\w1785\AppData\Local\Temp\ccRDIR1l.s:215    .text.scr_anim_completed:00000000 scr_anim_completed
+C:\Users\w1785\AppData\Local\Temp\ccRDIR1l.s:314    .text.scr_load_anim_start:00000000 $t
+C:\Users\w1785\AppData\Local\Temp\ccRDIR1l.s:319    .text.scr_load_anim_start:00000000 scr_load_anim_start
+C:\Users\w1785\AppData\Local\Temp\ccRDIR1l.s:365    .text.opa_scale_anim:00000000 $t
+C:\Users\w1785\AppData\Local\Temp\ccRDIR1l.s:370    .text.opa_scale_anim:00000000 opa_scale_anim
+C:\Users\w1785\AppData\Local\Temp\ccRDIR1l.s:396    .text.set_y_anim:00000000 $t
+C:\Users\w1785\AppData\Local\Temp\ccRDIR1l.s:401    .text.set_y_anim:00000000 set_y_anim
+C:\Users\w1785\AppData\Local\Temp\ccRDIR1l.s:423    .text.set_x_anim:00000000 $t
+C:\Users\w1785\AppData\Local\Temp\ccRDIR1l.s:428    .text.set_x_anim:00000000 set_x_anim
+C:\Users\w1785\AppData\Local\Temp\ccRDIR1l.s:450    .text.screen_event_delete_cb:00000000 $t
+C:\Users\w1785\AppData\Local\Temp\ccRDIR1l.s:455    .text.screen_event_delete_cb:00000000 screen_event_delete_cb
+C:\Users\w1785\AppData\Local\Temp\ccRDIR1l.s:482    .text.lv_display_set_default:00000000 $t
+C:\Users\w1785\AppData\Local\Temp\ccRDIR1l.s:488    .text.lv_display_set_default:00000000 lv_display_set_default
+C:\Users\w1785\AppData\Local\Temp\ccRDIR1l.s:505    .text.lv_display_set_default:00000008 $d
+C:\Users\w1785\AppData\Local\Temp\ccRDIR1l.s:510    .text.lv_display_get_default:00000000 $t
+C:\Users\w1785\AppData\Local\Temp\ccRDIR1l.s:516    .text.lv_display_get_default:00000000 lv_display_get_default
+C:\Users\w1785\AppData\Local\Temp\ccRDIR1l.s:531    .text.lv_display_get_default:00000008 $d
+C:\Users\w1785\AppData\Local\Temp\ccRDIR1l.s:536    .text.lv_display_get_next:00000000 $t
+C:\Users\w1785\AppData\Local\Temp\ccRDIR1l.s:542    .text.lv_display_get_next:00000000 lv_display_get_next
+C:\Users\w1785\AppData\Local\Temp\ccRDIR1l.s:582    .text.lv_display_get_next:00000018 $d
+C:\Users\w1785\AppData\Local\Temp\ccRDIR1l.s:587    .text.lv_display_set_physical_resolution:00000000 $t
+C:\Users\w1785\AppData\Local\Temp\ccRDIR1l.s:593    .text.lv_display_set_physical_resolution:00000000 lv_display_set_physical_resolution
+C:\Users\w1785\AppData\Local\Temp\ccRDIR1l.s:645    .text.lv_display_set_offset:00000000 $t
+C:\Users\w1785\AppData\Local\Temp\ccRDIR1l.s:651    .text.lv_display_set_offset:00000000 lv_display_set_offset
+C:\Users\w1785\AppData\Local\Temp\ccRDIR1l.s:703    .text.lv_display_set_dpi:00000000 $t
+C:\Users\w1785\AppData\Local\Temp\ccRDIR1l.s:709    .text.lv_display_set_dpi:00000000 lv_display_set_dpi
+C:\Users\w1785\AppData\Local\Temp\ccRDIR1l.s:751    .text.lv_display_get_horizontal_resolution:00000000 $t
+C:\Users\w1785\AppData\Local\Temp\ccRDIR1l.s:757    .text.lv_display_get_horizontal_resolution:00000000 lv_display_get_horizontal_resolution
+C:\Users\w1785\AppData\Local\Temp\ccRDIR1l.s:817    .text.lv_display_get_vertical_resolution:00000000 $t
+C:\Users\w1785\AppData\Local\Temp\ccRDIR1l.s:823    .text.lv_display_get_vertical_resolution:00000000 lv_display_get_vertical_resolution
+C:\Users\w1785\AppData\Local\Temp\ccRDIR1l.s:883    .text.lv_display_get_original_horizontal_resolution:00000000 $t
+C:\Users\w1785\AppData\Local\Temp\ccRDIR1l.s:889    .text.lv_display_get_original_horizontal_resolution:00000000 lv_display_get_original_horizontal_resolution
+C:\Users\w1785\AppData\Local\Temp\ccRDIR1l.s:934    .text.lv_display_get_original_vertical_resolution:00000000 $t
+C:\Users\w1785\AppData\Local\Temp\ccRDIR1l.s:940    .text.lv_display_get_original_vertical_resolution:00000000 lv_display_get_original_vertical_resolution
+C:\Users\w1785\AppData\Local\Temp\ccRDIR1l.s:985    .text.lv_display_get_physical_horizontal_resolution:00000000 $t
+C:\Users\w1785\AppData\Local\Temp\ccRDIR1l.s:991    .text.lv_display_get_physical_horizontal_resolution:00000000 lv_display_get_physical_horizontal_resolution
+C:\Users\w1785\AppData\Local\Temp\ccRDIR1l.s:1065   .text.lv_display_get_physical_vertical_resolution:00000000 $t
+C:\Users\w1785\AppData\Local\Temp\ccRDIR1l.s:1071   .text.lv_display_get_physical_vertical_resolution:00000000 lv_display_get_physical_vertical_resolution
+C:\Users\w1785\AppData\Local\Temp\ccRDIR1l.s:1145   .text.lv_display_get_offset_x:00000000 $t
+C:\Users\w1785\AppData\Local\Temp\ccRDIR1l.s:1151   .text.lv_display_get_offset_x:00000000 lv_display_get_offset_x
+C:\Users\w1785\AppData\Local\Temp\ccRDIR1l.s:1237   .text.lv_display_get_offset_y:00000000 $t
+C:\Users\w1785\AppData\Local\Temp\ccRDIR1l.s:1243   .text.lv_display_get_offset_y:00000000 lv_display_get_offset_y
+C:\Users\w1785\AppData\Local\Temp\ccRDIR1l.s:1329   .text.lv_display_get_dpi:00000000 $t
+C:\Users\w1785\AppData\Local\Temp\ccRDIR1l.s:1335   .text.lv_display_get_dpi:00000000 lv_display_get_dpi
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccRDIR1l.s 			page 190
 
 
-C:\Users\w1785\AppData\Local\Temp\ccVWvM3C.s:1380   .text.lv_display_set_draw_buffers:00000000 $t
-C:\Users\w1785\AppData\Local\Temp\ccVWvM3C.s:1386   .text.lv_display_set_draw_buffers:00000000 lv_display_set_draw_buffers
-C:\Users\w1785\AppData\Local\Temp\ccVWvM3C.s:1442   .text.lv_display_set_3rd_draw_buffer:00000000 $t
-C:\Users\w1785\AppData\Local\Temp\ccVWvM3C.s:1448   .text.lv_display_set_3rd_draw_buffer:00000000 lv_display_set_3rd_draw_buffer
-C:\Users\w1785\AppData\Local\Temp\ccVWvM3C.s:1515   .text.lv_display_set_render_mode:00000000 $t
-C:\Users\w1785\AppData\Local\Temp\ccVWvM3C.s:1521   .text.lv_display_set_render_mode:00000000 lv_display_set_render_mode
-C:\Users\w1785\AppData\Local\Temp\ccVWvM3C.s:1563   .text.lv_display_set_flush_cb:00000000 $t
-C:\Users\w1785\AppData\Local\Temp\ccVWvM3C.s:1569   .text.lv_display_set_flush_cb:00000000 lv_display_set_flush_cb
-C:\Users\w1785\AppData\Local\Temp\ccVWvM3C.s:1611   .text.lv_display_set_flush_wait_cb:00000000 $t
-C:\Users\w1785\AppData\Local\Temp\ccVWvM3C.s:1617   .text.lv_display_set_flush_wait_cb:00000000 lv_display_set_flush_wait_cb
-C:\Users\w1785\AppData\Local\Temp\ccVWvM3C.s:1659   .text.lv_display_get_color_format:00000000 $t
-C:\Users\w1785\AppData\Local\Temp\ccVWvM3C.s:1665   .text.lv_display_get_color_format:00000000 lv_display_get_color_format
-C:\Users\w1785\AppData\Local\Temp\ccVWvM3C.s:1710   .text.lv_display_set_buffers:00000000 $t
-C:\Users\w1785\AppData\Local\Temp\ccVWvM3C.s:1716   .text.lv_display_set_buffers:00000000 lv_display_set_buffers
-C:\Users\w1785\AppData\Local\Temp\ccVWvM3C.s:1955   .text.lv_display_set_buffers_with_stride:00000000 $t
-C:\Users\w1785\AppData\Local\Temp\ccVWvM3C.s:1961   .text.lv_display_set_buffers_with_stride:00000000 lv_display_set_buffers_with_stride
-C:\Users\w1785\AppData\Local\Temp\ccVWvM3C.s:2153   .text.lv_display_set_tile_cnt:00000000 $t
-C:\Users\w1785\AppData\Local\Temp\ccVWvM3C.s:2159   .text.lv_display_set_tile_cnt:00000000 lv_display_set_tile_cnt
-C:\Users\w1785\AppData\Local\Temp\ccVWvM3C.s:2216   .text.lv_display_get_tile_cnt:00000000 $t
-C:\Users\w1785\AppData\Local\Temp\ccVWvM3C.s:2222   .text.lv_display_get_tile_cnt:00000000 lv_display_get_tile_cnt
-C:\Users\w1785\AppData\Local\Temp\ccVWvM3C.s:2268   .text.lv_display_set_antialiasing:00000000 $t
-C:\Users\w1785\AppData\Local\Temp\ccVWvM3C.s:2274   .text.lv_display_set_antialiasing:00000000 lv_display_set_antialiasing
-C:\Users\w1785\AppData\Local\Temp\ccVWvM3C.s:2321   .text.lv_display_get_antialiasing:00000000 $t
-C:\Users\w1785\AppData\Local\Temp\ccVWvM3C.s:2327   .text.lv_display_get_antialiasing:00000000 lv_display_get_antialiasing
-C:\Users\w1785\AppData\Local\Temp\ccVWvM3C.s:2373   .text.lv_display_get_render_mode:00000000 $t
-C:\Users\w1785\AppData\Local\Temp\ccVWvM3C.s:2379   .text.lv_display_get_render_mode:00000000 lv_display_get_render_mode
-C:\Users\w1785\AppData\Local\Temp\ccVWvM3C.s:2425   .text.lv_display_flush_ready:00000000 $t
-C:\Users\w1785\AppData\Local\Temp\ccVWvM3C.s:2431   .text.lv_display_flush_ready:00000000 lv_display_flush_ready
-C:\Users\w1785\AppData\Local\Temp\ccVWvM3C.s:2449   .text.lv_display_flush_is_last:00000000 $t
-C:\Users\w1785\AppData\Local\Temp\ccVWvM3C.s:2455   .text.lv_display_flush_is_last:00000000 lv_display_flush_is_last
-C:\Users\w1785\AppData\Local\Temp\ccVWvM3C.s:2476   .text.lv_display_is_double_buffered:00000000 $t
-C:\Users\w1785\AppData\Local\Temp\ccVWvM3C.s:2482   .text.lv_display_is_double_buffered:00000000 lv_display_is_double_buffered
-C:\Users\w1785\AppData\Local\Temp\ccVWvM3C.s:2503   .text.lv_display_get_screen_active:00000000 $t
-C:\Users\w1785\AppData\Local\Temp\ccVWvM3C.s:2509   .text.lv_display_get_screen_active:00000000 lv_display_get_screen_active
-C:\Users\w1785\AppData\Local\Temp\ccVWvM3C.s:2550   .text.lv_display_get_screen_loading:00000000 $t
-C:\Users\w1785\AppData\Local\Temp\ccVWvM3C.s:2556   .text.lv_display_get_screen_loading:00000000 lv_display_get_screen_loading
-C:\Users\w1785\AppData\Local\Temp\ccVWvM3C.s:2597   .text.lv_display_get_screen_prev:00000000 $t
-C:\Users\w1785\AppData\Local\Temp\ccVWvM3C.s:2603   .text.lv_display_get_screen_prev:00000000 lv_display_get_screen_prev
-C:\Users\w1785\AppData\Local\Temp\ccVWvM3C.s:2644   .text.lv_display_get_layer_top:00000000 $t
-C:\Users\w1785\AppData\Local\Temp\ccVWvM3C.s:2650   .text.lv_display_get_layer_top:00000000 lv_display_get_layer_top
-C:\Users\w1785\AppData\Local\Temp\ccVWvM3C.s:2691   .text.lv_display_get_layer_sys:00000000 $t
-C:\Users\w1785\AppData\Local\Temp\ccVWvM3C.s:2697   .text.lv_display_get_layer_sys:00000000 lv_display_get_layer_sys
-C:\Users\w1785\AppData\Local\Temp\ccVWvM3C.s:2738   .text.lv_display_get_layer_bottom:00000000 $t
-C:\Users\w1785\AppData\Local\Temp\ccVWvM3C.s:2744   .text.lv_display_get_layer_bottom:00000000 lv_display_get_layer_bottom
-C:\Users\w1785\AppData\Local\Temp\ccVWvM3C.s:2785   .text.lv_display_add_event_cb:00000000 $t
-C:\Users\w1785\AppData\Local\Temp\ccVWvM3C.s:2791   .text.lv_display_add_event_cb:00000000 lv_display_add_event_cb
-C:\Users\w1785\AppData\Local\Temp\ccVWvM3C.s:2833   .text.lv_display_create:00000000 $t
-C:\Users\w1785\AppData\Local\Temp\ccVWvM3C.s:2839   .text.lv_display_create:00000000 lv_display_create
-C:\Users\w1785\AppData\Local\Temp\ccVWvM3C.s:3228   .text.lv_display_create:000001f4 $d
-C:\Users\w1785\AppData\Local\Temp\ccVWvM3C.s:3237   .text.lv_display_get_event_count:00000000 $t
-C:\Users\w1785\AppData\Local\Temp\ccVWvM3C.s:3243   .text.lv_display_get_event_count:00000000 lv_display_get_event_count
-C:\Users\w1785\AppData\Local\Temp\ccVWvM3C.s:3286   .text.lv_display_get_event_dsc:00000000 $t
-C:\Users\w1785\AppData\Local\Temp\ccVWvM3C.s:3292   .text.lv_display_get_event_dsc:00000000 lv_display_get_event_dsc
-C:\Users\w1785\AppData\Local\Temp\ccVWvM3C.s:3335   .text.lv_display_delete_event:00000000 $t
-C:\Users\w1785\AppData\Local\Temp\ccVWvM3C.s:3341   .text.lv_display_delete_event:00000000 lv_display_delete_event
-C:\Users\w1785\AppData\Local\Temp\ccVWvM3C.s:3384   .text.lv_display_remove_event_cb_with_user_data:00000000 $t
-C:\Users\w1785\AppData\Local\Temp\ccVWvM3C.s:3390   .text.lv_display_remove_event_cb_with_user_data:00000000 lv_display_remove_event_cb_with_user_data
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccVWvM3C.s 			page 191
+C:\Users\w1785\AppData\Local\Temp\ccRDIR1l.s:1380   .text.lv_display_set_draw_buffers:00000000 $t
+C:\Users\w1785\AppData\Local\Temp\ccRDIR1l.s:1386   .text.lv_display_set_draw_buffers:00000000 lv_display_set_draw_buffers
+C:\Users\w1785\AppData\Local\Temp\ccRDIR1l.s:1442   .text.lv_display_set_3rd_draw_buffer:00000000 $t
+C:\Users\w1785\AppData\Local\Temp\ccRDIR1l.s:1448   .text.lv_display_set_3rd_draw_buffer:00000000 lv_display_set_3rd_draw_buffer
+C:\Users\w1785\AppData\Local\Temp\ccRDIR1l.s:1515   .text.lv_display_set_render_mode:00000000 $t
+C:\Users\w1785\AppData\Local\Temp\ccRDIR1l.s:1521   .text.lv_display_set_render_mode:00000000 lv_display_set_render_mode
+C:\Users\w1785\AppData\Local\Temp\ccRDIR1l.s:1563   .text.lv_display_set_flush_cb:00000000 $t
+C:\Users\w1785\AppData\Local\Temp\ccRDIR1l.s:1569   .text.lv_display_set_flush_cb:00000000 lv_display_set_flush_cb
+C:\Users\w1785\AppData\Local\Temp\ccRDIR1l.s:1611   .text.lv_display_set_flush_wait_cb:00000000 $t
+C:\Users\w1785\AppData\Local\Temp\ccRDIR1l.s:1617   .text.lv_display_set_flush_wait_cb:00000000 lv_display_set_flush_wait_cb
+C:\Users\w1785\AppData\Local\Temp\ccRDIR1l.s:1659   .text.lv_display_get_color_format:00000000 $t
+C:\Users\w1785\AppData\Local\Temp\ccRDIR1l.s:1665   .text.lv_display_get_color_format:00000000 lv_display_get_color_format
+C:\Users\w1785\AppData\Local\Temp\ccRDIR1l.s:1710   .text.lv_display_set_buffers:00000000 $t
+C:\Users\w1785\AppData\Local\Temp\ccRDIR1l.s:1716   .text.lv_display_set_buffers:00000000 lv_display_set_buffers
+C:\Users\w1785\AppData\Local\Temp\ccRDIR1l.s:1955   .text.lv_display_set_buffers_with_stride:00000000 $t
+C:\Users\w1785\AppData\Local\Temp\ccRDIR1l.s:1961   .text.lv_display_set_buffers_with_stride:00000000 lv_display_set_buffers_with_stride
+C:\Users\w1785\AppData\Local\Temp\ccRDIR1l.s:2153   .text.lv_display_set_tile_cnt:00000000 $t
+C:\Users\w1785\AppData\Local\Temp\ccRDIR1l.s:2159   .text.lv_display_set_tile_cnt:00000000 lv_display_set_tile_cnt
+C:\Users\w1785\AppData\Local\Temp\ccRDIR1l.s:2216   .text.lv_display_get_tile_cnt:00000000 $t
+C:\Users\w1785\AppData\Local\Temp\ccRDIR1l.s:2222   .text.lv_display_get_tile_cnt:00000000 lv_display_get_tile_cnt
+C:\Users\w1785\AppData\Local\Temp\ccRDIR1l.s:2268   .text.lv_display_set_antialiasing:00000000 $t
+C:\Users\w1785\AppData\Local\Temp\ccRDIR1l.s:2274   .text.lv_display_set_antialiasing:00000000 lv_display_set_antialiasing
+C:\Users\w1785\AppData\Local\Temp\ccRDIR1l.s:2321   .text.lv_display_get_antialiasing:00000000 $t
+C:\Users\w1785\AppData\Local\Temp\ccRDIR1l.s:2327   .text.lv_display_get_antialiasing:00000000 lv_display_get_antialiasing
+C:\Users\w1785\AppData\Local\Temp\ccRDIR1l.s:2373   .text.lv_display_get_render_mode:00000000 $t
+C:\Users\w1785\AppData\Local\Temp\ccRDIR1l.s:2379   .text.lv_display_get_render_mode:00000000 lv_display_get_render_mode
+C:\Users\w1785\AppData\Local\Temp\ccRDIR1l.s:2425   .text.lv_display_flush_ready:00000000 $t
+C:\Users\w1785\AppData\Local\Temp\ccRDIR1l.s:2431   .text.lv_display_flush_ready:00000000 lv_display_flush_ready
+C:\Users\w1785\AppData\Local\Temp\ccRDIR1l.s:2449   .text.lv_display_flush_is_last:00000000 $t
+C:\Users\w1785\AppData\Local\Temp\ccRDIR1l.s:2455   .text.lv_display_flush_is_last:00000000 lv_display_flush_is_last
+C:\Users\w1785\AppData\Local\Temp\ccRDIR1l.s:2476   .text.lv_display_is_double_buffered:00000000 $t
+C:\Users\w1785\AppData\Local\Temp\ccRDIR1l.s:2482   .text.lv_display_is_double_buffered:00000000 lv_display_is_double_buffered
+C:\Users\w1785\AppData\Local\Temp\ccRDIR1l.s:2503   .text.lv_display_get_screen_active:00000000 $t
+C:\Users\w1785\AppData\Local\Temp\ccRDIR1l.s:2509   .text.lv_display_get_screen_active:00000000 lv_display_get_screen_active
+C:\Users\w1785\AppData\Local\Temp\ccRDIR1l.s:2550   .text.lv_display_get_screen_loading:00000000 $t
+C:\Users\w1785\AppData\Local\Temp\ccRDIR1l.s:2556   .text.lv_display_get_screen_loading:00000000 lv_display_get_screen_loading
+C:\Users\w1785\AppData\Local\Temp\ccRDIR1l.s:2597   .text.lv_display_get_screen_prev:00000000 $t
+C:\Users\w1785\AppData\Local\Temp\ccRDIR1l.s:2603   .text.lv_display_get_screen_prev:00000000 lv_display_get_screen_prev
+C:\Users\w1785\AppData\Local\Temp\ccRDIR1l.s:2644   .text.lv_display_get_layer_top:00000000 $t
+C:\Users\w1785\AppData\Local\Temp\ccRDIR1l.s:2650   .text.lv_display_get_layer_top:00000000 lv_display_get_layer_top
+C:\Users\w1785\AppData\Local\Temp\ccRDIR1l.s:2691   .text.lv_display_get_layer_sys:00000000 $t
+C:\Users\w1785\AppData\Local\Temp\ccRDIR1l.s:2697   .text.lv_display_get_layer_sys:00000000 lv_display_get_layer_sys
+C:\Users\w1785\AppData\Local\Temp\ccRDIR1l.s:2738   .text.lv_display_get_layer_bottom:00000000 $t
+C:\Users\w1785\AppData\Local\Temp\ccRDIR1l.s:2744   .text.lv_display_get_layer_bottom:00000000 lv_display_get_layer_bottom
+C:\Users\w1785\AppData\Local\Temp\ccRDIR1l.s:2785   .text.lv_display_add_event_cb:00000000 $t
+C:\Users\w1785\AppData\Local\Temp\ccRDIR1l.s:2791   .text.lv_display_add_event_cb:00000000 lv_display_add_event_cb
+C:\Users\w1785\AppData\Local\Temp\ccRDIR1l.s:2833   .text.lv_display_create:00000000 $t
+C:\Users\w1785\AppData\Local\Temp\ccRDIR1l.s:2839   .text.lv_display_create:00000000 lv_display_create
+C:\Users\w1785\AppData\Local\Temp\ccRDIR1l.s:3228   .text.lv_display_create:000001f4 $d
+C:\Users\w1785\AppData\Local\Temp\ccRDIR1l.s:3237   .text.lv_display_get_event_count:00000000 $t
+C:\Users\w1785\AppData\Local\Temp\ccRDIR1l.s:3243   .text.lv_display_get_event_count:00000000 lv_display_get_event_count
+C:\Users\w1785\AppData\Local\Temp\ccRDIR1l.s:3286   .text.lv_display_get_event_dsc:00000000 $t
+C:\Users\w1785\AppData\Local\Temp\ccRDIR1l.s:3292   .text.lv_display_get_event_dsc:00000000 lv_display_get_event_dsc
+C:\Users\w1785\AppData\Local\Temp\ccRDIR1l.s:3335   .text.lv_display_delete_event:00000000 $t
+C:\Users\w1785\AppData\Local\Temp\ccRDIR1l.s:3341   .text.lv_display_delete_event:00000000 lv_display_delete_event
+C:\Users\w1785\AppData\Local\Temp\ccRDIR1l.s:3384   .text.lv_display_remove_event_cb_with_user_data:00000000 $t
+C:\Users\w1785\AppData\Local\Temp\ccRDIR1l.s:3390   .text.lv_display_remove_event_cb_with_user_data:00000000 lv_display_remove_event_cb_with_user_data
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccRDIR1l.s 			page 191
 
 
-C:\Users\w1785\AppData\Local\Temp\ccVWvM3C.s:3510   .text.lv_display_send_event:00000000 $t
-C:\Users\w1785\AppData\Local\Temp\ccVWvM3C.s:3516   .text.lv_display_send_event:00000000 lv_display_send_event
-C:\Users\w1785\AppData\Local\Temp\ccVWvM3C.s:3546   .text.lv_display_delete:00000000 $t
-C:\Users\w1785\AppData\Local\Temp\ccVWvM3C.s:3552   .text.lv_display_delete:00000000 lv_display_delete
-C:\Users\w1785\AppData\Local\Temp\ccVWvM3C.s:3786   .text.lv_display_delete:000000fc $d
-C:\Users\w1785\AppData\Local\Temp\ccVWvM3C.s:3791   .text.update_resolution:00000000 $t
-C:\Users\w1785\AppData\Local\Temp\ccVWvM3C.s:3796   .text.update_resolution:00000000 update_resolution
-C:\Users\w1785\AppData\Local\Temp\ccVWvM3C.s:4018   .text.update_resolution:00000108 $d
-C:\Users\w1785\AppData\Local\Temp\ccVWvM3C.s:4023   .text.lv_display_set_resolution:00000000 $t
-C:\Users\w1785\AppData\Local\Temp\ccVWvM3C.s:4029   .text.lv_display_set_resolution:00000000 lv_display_set_resolution
-C:\Users\w1785\AppData\Local\Temp\ccVWvM3C.s:4093   .text.lv_display_set_color_format:00000000 $t
-C:\Users\w1785\AppData\Local\Temp\ccVWvM3C.s:4099   .text.lv_display_set_color_format:00000000 lv_display_set_color_format
-C:\Users\w1785\AppData\Local\Temp\ccVWvM3C.s:4204   .text.load_new_screen:00000000 $t
-C:\Users\w1785\AppData\Local\Temp\ccVWvM3C.s:4209   .text.load_new_screen:00000000 load_new_screen
-C:\Users\w1785\AppData\Local\Temp\ccVWvM3C.s:4489   .text.load_new_screen:0000010c $d
-C:\Users\w1785\AppData\Local\Temp\ccVWvM3C.s:4494   .text.lv_screen_load_anim:00000000 $t
-C:\Users\w1785\AppData\Local\Temp\ccVWvM3C.s:4500   .text.lv_screen_load_anim:00000000 lv_screen_load_anim
-C:\Users\w1785\AppData\Local\Temp\ccVWvM3C.s:4754   .text.lv_screen_load_anim:0000015c $d
-C:\Users\w1785\AppData\Local\Temp\ccVWvM3C.s:4769   .text.lv_screen_load_anim:0000017a $t
-C:\Users\w1785\AppData\Local\Temp\ccVWvM3C.s:5224   .text.lv_screen_load_anim:000003c0 $d
-C:\Users\w1785\AppData\Local\Temp\ccVWvM3C.s:5233   .text.lv_screen_load:00000000 $t
-C:\Users\w1785\AppData\Local\Temp\ccVWvM3C.s:5239   .text.lv_screen_load:00000000 lv_screen_load
-C:\Users\w1785\AppData\Local\Temp\ccVWvM3C.s:5271   .text.lv_event_get_invalidated_area:00000000 $t
-C:\Users\w1785\AppData\Local\Temp\ccVWvM3C.s:5277   .text.lv_event_get_invalidated_area:00000000 lv_event_get_invalidated_area
-C:\Users\w1785\AppData\Local\Temp\ccVWvM3C.s:5314   .text.lv_display_set_rotation:00000000 $t
-C:\Users\w1785\AppData\Local\Temp\ccVWvM3C.s:5320   .text.lv_display_set_rotation:00000000 lv_display_set_rotation
-C:\Users\w1785\AppData\Local\Temp\ccVWvM3C.s:5368   .text.lv_display_get_rotation:00000000 $t
-C:\Users\w1785\AppData\Local\Temp\ccVWvM3C.s:5374   .text.lv_display_get_rotation:00000000 lv_display_get_rotation
-C:\Users\w1785\AppData\Local\Temp\ccVWvM3C.s:5420   .text.lv_display_set_matrix_rotation:00000000 $t
-C:\Users\w1785\AppData\Local\Temp\ccVWvM3C.s:5426   .text.lv_display_set_matrix_rotation:00000000 lv_display_set_matrix_rotation
-C:\Users\w1785\AppData\Local\Temp\ccVWvM3C.s:5445   .text.lv_display_get_matrix_rotation:00000000 $t
-C:\Users\w1785\AppData\Local\Temp\ccVWvM3C.s:5451   .text.lv_display_get_matrix_rotation:00000000 lv_display_get_matrix_rotation
-C:\Users\w1785\AppData\Local\Temp\ccVWvM3C.s:5497   .text.lv_display_set_theme:00000000 $t
-C:\Users\w1785\AppData\Local\Temp\ccVWvM3C.s:5503   .text.lv_display_set_theme:00000000 lv_display_set_theme
-C:\Users\w1785\AppData\Local\Temp\ccVWvM3C.s:5618   .text.lv_display_get_theme:00000000 $t
-C:\Users\w1785\AppData\Local\Temp\ccVWvM3C.s:5624   .text.lv_display_get_theme:00000000 lv_display_get_theme
-C:\Users\w1785\AppData\Local\Temp\ccVWvM3C.s:5660   .text.lv_display_get_inactive_time:00000000 $t
-C:\Users\w1785\AppData\Local\Temp\ccVWvM3C.s:5666   .text.lv_display_get_inactive_time:00000000 lv_display_get_inactive_time
-C:\Users\w1785\AppData\Local\Temp\ccVWvM3C.s:5748   .text.lv_display_trigger_activity:00000000 $t
-C:\Users\w1785\AppData\Local\Temp\ccVWvM3C.s:5754   .text.lv_display_trigger_activity:00000000 lv_display_trigger_activity
-C:\Users\w1785\AppData\Local\Temp\ccVWvM3C.s:5798   .text.lv_display_enable_invalidation:00000000 $t
-C:\Users\w1785\AppData\Local\Temp\ccVWvM3C.s:5804   .text.lv_display_enable_invalidation:00000000 lv_display_enable_invalidation
-C:\Users\w1785\AppData\Local\Temp\ccVWvM3C.s:5859   .text.lv_display_is_invalidation_enabled:00000000 $t
-C:\Users\w1785\AppData\Local\Temp\ccVWvM3C.s:5865   .text.lv_display_is_invalidation_enabled:00000000 lv_display_is_invalidation_enabled
-C:\Users\w1785\AppData\Local\Temp\ccVWvM3C.s:5915   .text.lv_display_get_refr_timer:00000000 $t
-C:\Users\w1785\AppData\Local\Temp\ccVWvM3C.s:5921   .text.lv_display_get_refr_timer:00000000 lv_display_get_refr_timer
-C:\Users\w1785\AppData\Local\Temp\ccVWvM3C.s:5962   .text.lv_display_delete_refr_timer:00000000 $t
-C:\Users\w1785\AppData\Local\Temp\ccVWvM3C.s:5968   .text.lv_display_delete_refr_timer:00000000 lv_display_delete_refr_timer
-C:\Users\w1785\AppData\Local\Temp\ccVWvM3C.s:6017   .text.lv_display_send_vsync_event:00000000 $t
-C:\Users\w1785\AppData\Local\Temp\ccVWvM3C.s:6023   .text.lv_display_send_vsync_event:00000000 lv_display_send_vsync_event
-C:\Users\w1785\AppData\Local\Temp\ccVWvM3C.s:6083   .text.lv_display_register_vsync_event:00000000 $t
-C:\Users\w1785\AppData\Local\Temp\ccVWvM3C.s:6089   .text.lv_display_register_vsync_event:00000000 lv_display_register_vsync_event
-C:\Users\w1785\AppData\Local\Temp\ccVWvM3C.s:6166   .text.lv_display_unregister_vsync_event:00000000 $t
-C:\Users\w1785\AppData\Local\Temp\ccVWvM3C.s:6172   .text.lv_display_unregister_vsync_event:00000000 lv_display_unregister_vsync_event
-C:\Users\w1785\AppData\Local\Temp\ccVWvM3C.s:6260   .text.lv_display_set_user_data:00000000 $t
-C:\Users\w1785\AppData\Local\Temp\ccVWvM3C.s:6266   .text.lv_display_set_user_data:00000000 lv_display_set_user_data
-C:\Users\w1785\AppData\Local\Temp\ccVWvM3C.s:6308   .text.lv_display_set_driver_data:00000000 $t
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccVWvM3C.s 			page 192
+C:\Users\w1785\AppData\Local\Temp\ccRDIR1l.s:3510   .text.lv_display_send_event:00000000 $t
+C:\Users\w1785\AppData\Local\Temp\ccRDIR1l.s:3516   .text.lv_display_send_event:00000000 lv_display_send_event
+C:\Users\w1785\AppData\Local\Temp\ccRDIR1l.s:3546   .text.lv_display_delete:00000000 $t
+C:\Users\w1785\AppData\Local\Temp\ccRDIR1l.s:3552   .text.lv_display_delete:00000000 lv_display_delete
+C:\Users\w1785\AppData\Local\Temp\ccRDIR1l.s:3786   .text.lv_display_delete:000000fc $d
+C:\Users\w1785\AppData\Local\Temp\ccRDIR1l.s:3791   .text.update_resolution:00000000 $t
+C:\Users\w1785\AppData\Local\Temp\ccRDIR1l.s:3796   .text.update_resolution:00000000 update_resolution
+C:\Users\w1785\AppData\Local\Temp\ccRDIR1l.s:4018   .text.update_resolution:00000108 $d
+C:\Users\w1785\AppData\Local\Temp\ccRDIR1l.s:4023   .text.lv_display_set_resolution:00000000 $t
+C:\Users\w1785\AppData\Local\Temp\ccRDIR1l.s:4029   .text.lv_display_set_resolution:00000000 lv_display_set_resolution
+C:\Users\w1785\AppData\Local\Temp\ccRDIR1l.s:4093   .text.lv_display_set_color_format:00000000 $t
+C:\Users\w1785\AppData\Local\Temp\ccRDIR1l.s:4099   .text.lv_display_set_color_format:00000000 lv_display_set_color_format
+C:\Users\w1785\AppData\Local\Temp\ccRDIR1l.s:4204   .text.load_new_screen:00000000 $t
+C:\Users\w1785\AppData\Local\Temp\ccRDIR1l.s:4209   .text.load_new_screen:00000000 load_new_screen
+C:\Users\w1785\AppData\Local\Temp\ccRDIR1l.s:4489   .text.load_new_screen:0000010c $d
+C:\Users\w1785\AppData\Local\Temp\ccRDIR1l.s:4494   .text.lv_screen_load_anim:00000000 $t
+C:\Users\w1785\AppData\Local\Temp\ccRDIR1l.s:4500   .text.lv_screen_load_anim:00000000 lv_screen_load_anim
+C:\Users\w1785\AppData\Local\Temp\ccRDIR1l.s:4754   .text.lv_screen_load_anim:0000015c $d
+C:\Users\w1785\AppData\Local\Temp\ccRDIR1l.s:4769   .text.lv_screen_load_anim:0000017a $t
+C:\Users\w1785\AppData\Local\Temp\ccRDIR1l.s:5224   .text.lv_screen_load_anim:000003c0 $d
+C:\Users\w1785\AppData\Local\Temp\ccRDIR1l.s:5233   .text.lv_screen_load:00000000 $t
+C:\Users\w1785\AppData\Local\Temp\ccRDIR1l.s:5239   .text.lv_screen_load:00000000 lv_screen_load
+C:\Users\w1785\AppData\Local\Temp\ccRDIR1l.s:5271   .text.lv_event_get_invalidated_area:00000000 $t
+C:\Users\w1785\AppData\Local\Temp\ccRDIR1l.s:5277   .text.lv_event_get_invalidated_area:00000000 lv_event_get_invalidated_area
+C:\Users\w1785\AppData\Local\Temp\ccRDIR1l.s:5314   .text.lv_display_set_rotation:00000000 $t
+C:\Users\w1785\AppData\Local\Temp\ccRDIR1l.s:5320   .text.lv_display_set_rotation:00000000 lv_display_set_rotation
+C:\Users\w1785\AppData\Local\Temp\ccRDIR1l.s:5368   .text.lv_display_get_rotation:00000000 $t
+C:\Users\w1785\AppData\Local\Temp\ccRDIR1l.s:5374   .text.lv_display_get_rotation:00000000 lv_display_get_rotation
+C:\Users\w1785\AppData\Local\Temp\ccRDIR1l.s:5420   .text.lv_display_set_matrix_rotation:00000000 $t
+C:\Users\w1785\AppData\Local\Temp\ccRDIR1l.s:5426   .text.lv_display_set_matrix_rotation:00000000 lv_display_set_matrix_rotation
+C:\Users\w1785\AppData\Local\Temp\ccRDIR1l.s:5445   .text.lv_display_get_matrix_rotation:00000000 $t
+C:\Users\w1785\AppData\Local\Temp\ccRDIR1l.s:5451   .text.lv_display_get_matrix_rotation:00000000 lv_display_get_matrix_rotation
+C:\Users\w1785\AppData\Local\Temp\ccRDIR1l.s:5497   .text.lv_display_set_theme:00000000 $t
+C:\Users\w1785\AppData\Local\Temp\ccRDIR1l.s:5503   .text.lv_display_set_theme:00000000 lv_display_set_theme
+C:\Users\w1785\AppData\Local\Temp\ccRDIR1l.s:5618   .text.lv_display_get_theme:00000000 $t
+C:\Users\w1785\AppData\Local\Temp\ccRDIR1l.s:5624   .text.lv_display_get_theme:00000000 lv_display_get_theme
+C:\Users\w1785\AppData\Local\Temp\ccRDIR1l.s:5660   .text.lv_display_get_inactive_time:00000000 $t
+C:\Users\w1785\AppData\Local\Temp\ccRDIR1l.s:5666   .text.lv_display_get_inactive_time:00000000 lv_display_get_inactive_time
+C:\Users\w1785\AppData\Local\Temp\ccRDIR1l.s:5748   .text.lv_display_trigger_activity:00000000 $t
+C:\Users\w1785\AppData\Local\Temp\ccRDIR1l.s:5754   .text.lv_display_trigger_activity:00000000 lv_display_trigger_activity
+C:\Users\w1785\AppData\Local\Temp\ccRDIR1l.s:5798   .text.lv_display_enable_invalidation:00000000 $t
+C:\Users\w1785\AppData\Local\Temp\ccRDIR1l.s:5804   .text.lv_display_enable_invalidation:00000000 lv_display_enable_invalidation
+C:\Users\w1785\AppData\Local\Temp\ccRDIR1l.s:5859   .text.lv_display_is_invalidation_enabled:00000000 $t
+C:\Users\w1785\AppData\Local\Temp\ccRDIR1l.s:5865   .text.lv_display_is_invalidation_enabled:00000000 lv_display_is_invalidation_enabled
+C:\Users\w1785\AppData\Local\Temp\ccRDIR1l.s:5915   .text.lv_display_get_refr_timer:00000000 $t
+C:\Users\w1785\AppData\Local\Temp\ccRDIR1l.s:5921   .text.lv_display_get_refr_timer:00000000 lv_display_get_refr_timer
+C:\Users\w1785\AppData\Local\Temp\ccRDIR1l.s:5962   .text.lv_display_delete_refr_timer:00000000 $t
+C:\Users\w1785\AppData\Local\Temp\ccRDIR1l.s:5968   .text.lv_display_delete_refr_timer:00000000 lv_display_delete_refr_timer
+C:\Users\w1785\AppData\Local\Temp\ccRDIR1l.s:6017   .text.lv_display_send_vsync_event:00000000 $t
+C:\Users\w1785\AppData\Local\Temp\ccRDIR1l.s:6023   .text.lv_display_send_vsync_event:00000000 lv_display_send_vsync_event
+C:\Users\w1785\AppData\Local\Temp\ccRDIR1l.s:6083   .text.lv_display_register_vsync_event:00000000 $t
+C:\Users\w1785\AppData\Local\Temp\ccRDIR1l.s:6089   .text.lv_display_register_vsync_event:00000000 lv_display_register_vsync_event
+C:\Users\w1785\AppData\Local\Temp\ccRDIR1l.s:6166   .text.lv_display_unregister_vsync_event:00000000 $t
+C:\Users\w1785\AppData\Local\Temp\ccRDIR1l.s:6172   .text.lv_display_unregister_vsync_event:00000000 lv_display_unregister_vsync_event
+C:\Users\w1785\AppData\Local\Temp\ccRDIR1l.s:6260   .text.lv_display_set_user_data:00000000 $t
+C:\Users\w1785\AppData\Local\Temp\ccRDIR1l.s:6266   .text.lv_display_set_user_data:00000000 lv_display_set_user_data
+C:\Users\w1785\AppData\Local\Temp\ccRDIR1l.s:6308   .text.lv_display_set_driver_data:00000000 $t
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccRDIR1l.s 			page 192
 
 
-C:\Users\w1785\AppData\Local\Temp\ccVWvM3C.s:6314   .text.lv_display_set_driver_data:00000000 lv_display_set_driver_data
-C:\Users\w1785\AppData\Local\Temp\ccVWvM3C.s:6356   .text.lv_display_get_user_data:00000000 $t
-C:\Users\w1785\AppData\Local\Temp\ccVWvM3C.s:6362   .text.lv_display_get_user_data:00000000 lv_display_get_user_data
-C:\Users\w1785\AppData\Local\Temp\ccVWvM3C.s:6403   .text.lv_display_get_driver_data:00000000 $t
-C:\Users\w1785\AppData\Local\Temp\ccVWvM3C.s:6409   .text.lv_display_get_driver_data:00000000 lv_display_get_driver_data
-C:\Users\w1785\AppData\Local\Temp\ccVWvM3C.s:6450   .text.lv_display_get_buf_active:00000000 $t
-C:\Users\w1785\AppData\Local\Temp\ccVWvM3C.s:6456   .text.lv_display_get_buf_active:00000000 lv_display_get_buf_active
-C:\Users\w1785\AppData\Local\Temp\ccVWvM3C.s:6497   .text.lv_display_rotate_area:00000000 $t
-C:\Users\w1785\AppData\Local\Temp\ccVWvM3C.s:6503   .text.lv_display_rotate_area:00000000 lv_display_rotate_area
-C:\Users\w1785\AppData\Local\Temp\ccVWvM3C.s:6668   .text.lv_display_rotate_point:00000000 $t
-C:\Users\w1785\AppData\Local\Temp\ccVWvM3C.s:6674   .text.lv_display_rotate_point:00000000 lv_display_rotate_point
-C:\Users\w1785\AppData\Local\Temp\ccVWvM3C.s:6771   .text.lv_display_get_draw_buf_size:00000000 $t
-C:\Users\w1785\AppData\Local\Temp\ccVWvM3C.s:6777   .text.lv_display_get_draw_buf_size:00000000 lv_display_get_draw_buf_size
-C:\Users\w1785\AppData\Local\Temp\ccVWvM3C.s:6832   .text.lv_display_get_invalidated_draw_buf_size:00000000 $t
-C:\Users\w1785\AppData\Local\Temp\ccVWvM3C.s:6838   .text.lv_display_get_invalidated_draw_buf_size:00000000 lv_display_get_invalidated_draw_buf_size
-C:\Users\w1785\AppData\Local\Temp\ccVWvM3C.s:6981   .text.lv_screen_active:00000000 $t
-C:\Users\w1785\AppData\Local\Temp\ccVWvM3C.s:6987   .text.lv_screen_active:00000000 lv_screen_active
-C:\Users\w1785\AppData\Local\Temp\ccVWvM3C.s:7011   .text.lv_layer_top:00000000 $t
-C:\Users\w1785\AppData\Local\Temp\ccVWvM3C.s:7017   .text.lv_layer_top:00000000 lv_layer_top
-C:\Users\w1785\AppData\Local\Temp\ccVWvM3C.s:7041   .text.lv_layer_sys:00000000 $t
-C:\Users\w1785\AppData\Local\Temp\ccVWvM3C.s:7047   .text.lv_layer_sys:00000000 lv_layer_sys
-C:\Users\w1785\AppData\Local\Temp\ccVWvM3C.s:7071   .text.lv_layer_bottom:00000000 $t
-C:\Users\w1785\AppData\Local\Temp\ccVWvM3C.s:7077   .text.lv_layer_bottom:00000000 lv_layer_bottom
-C:\Users\w1785\AppData\Local\Temp\ccVWvM3C.s:7101   .text.lv_dpx:00000000 $t
-C:\Users\w1785\AppData\Local\Temp\ccVWvM3C.s:7107   .text.lv_dpx:00000000 lv_dpx
-C:\Users\w1785\AppData\Local\Temp\ccVWvM3C.s:7154   .text.lv_dpx:0000002c $d
-C:\Users\w1785\AppData\Local\Temp\ccVWvM3C.s:7159   .text.lv_display_dpx:00000000 $t
-C:\Users\w1785\AppData\Local\Temp\ccVWvM3C.s:7165   .text.lv_display_dpx:00000000 lv_display_dpx
-C:\Users\w1785\AppData\Local\Temp\ccVWvM3C.s:7210   .text.lv_display_dpx:00000028 $d
+C:\Users\w1785\AppData\Local\Temp\ccRDIR1l.s:6314   .text.lv_display_set_driver_data:00000000 lv_display_set_driver_data
+C:\Users\w1785\AppData\Local\Temp\ccRDIR1l.s:6356   .text.lv_display_get_user_data:00000000 $t
+C:\Users\w1785\AppData\Local\Temp\ccRDIR1l.s:6362   .text.lv_display_get_user_data:00000000 lv_display_get_user_data
+C:\Users\w1785\AppData\Local\Temp\ccRDIR1l.s:6403   .text.lv_display_get_driver_data:00000000 $t
+C:\Users\w1785\AppData\Local\Temp\ccRDIR1l.s:6409   .text.lv_display_get_driver_data:00000000 lv_display_get_driver_data
+C:\Users\w1785\AppData\Local\Temp\ccRDIR1l.s:6450   .text.lv_display_get_buf_active:00000000 $t
+C:\Users\w1785\AppData\Local\Temp\ccRDIR1l.s:6456   .text.lv_display_get_buf_active:00000000 lv_display_get_buf_active
+C:\Users\w1785\AppData\Local\Temp\ccRDIR1l.s:6497   .text.lv_display_rotate_area:00000000 $t
+C:\Users\w1785\AppData\Local\Temp\ccRDIR1l.s:6503   .text.lv_display_rotate_area:00000000 lv_display_rotate_area
+C:\Users\w1785\AppData\Local\Temp\ccRDIR1l.s:6668   .text.lv_display_rotate_point:00000000 $t
+C:\Users\w1785\AppData\Local\Temp\ccRDIR1l.s:6674   .text.lv_display_rotate_point:00000000 lv_display_rotate_point
+C:\Users\w1785\AppData\Local\Temp\ccRDIR1l.s:6771   .text.lv_display_get_draw_buf_size:00000000 $t
+C:\Users\w1785\AppData\Local\Temp\ccRDIR1l.s:6777   .text.lv_display_get_draw_buf_size:00000000 lv_display_get_draw_buf_size
+C:\Users\w1785\AppData\Local\Temp\ccRDIR1l.s:6832   .text.lv_display_get_invalidated_draw_buf_size:00000000 $t
+C:\Users\w1785\AppData\Local\Temp\ccRDIR1l.s:6838   .text.lv_display_get_invalidated_draw_buf_size:00000000 lv_display_get_invalidated_draw_buf_size
+C:\Users\w1785\AppData\Local\Temp\ccRDIR1l.s:6981   .text.lv_screen_active:00000000 $t
+C:\Users\w1785\AppData\Local\Temp\ccRDIR1l.s:6987   .text.lv_screen_active:00000000 lv_screen_active
+C:\Users\w1785\AppData\Local\Temp\ccRDIR1l.s:7011   .text.lv_layer_top:00000000 $t
+C:\Users\w1785\AppData\Local\Temp\ccRDIR1l.s:7017   .text.lv_layer_top:00000000 lv_layer_top
+C:\Users\w1785\AppData\Local\Temp\ccRDIR1l.s:7041   .text.lv_layer_sys:00000000 $t
+C:\Users\w1785\AppData\Local\Temp\ccRDIR1l.s:7047   .text.lv_layer_sys:00000000 lv_layer_sys
+C:\Users\w1785\AppData\Local\Temp\ccRDIR1l.s:7071   .text.lv_layer_bottom:00000000 $t
+C:\Users\w1785\AppData\Local\Temp\ccRDIR1l.s:7077   .text.lv_layer_bottom:00000000 lv_layer_bottom
+C:\Users\w1785\AppData\Local\Temp\ccRDIR1l.s:7101   .text.lv_dpx:00000000 $t
+C:\Users\w1785\AppData\Local\Temp\ccRDIR1l.s:7107   .text.lv_dpx:00000000 lv_dpx
+C:\Users\w1785\AppData\Local\Temp\ccRDIR1l.s:7154   .text.lv_dpx:0000002c $d
+C:\Users\w1785\AppData\Local\Temp\ccRDIR1l.s:7159   .text.lv_display_dpx:00000000 $t
+C:\Users\w1785\AppData\Local\Temp\ccRDIR1l.s:7165   .text.lv_display_dpx:00000000 lv_display_dpx
+C:\Users\w1785\AppData\Local\Temp\ccRDIR1l.s:7210   .text.lv_display_dpx:00000028 $d
 
 UNDEFINED SYMBOLS
 lv_event_get_code
@@ -11496,7 +11496,7 @@ lv_malloc
 lv_layer_init
 lv_tick_get
 lv_ll_init
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccVWvM3C.s 			page 193
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccRDIR1l.s 			page 193
 
 
 lv_timer_create

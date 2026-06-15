@@ -1,4 +1,4 @@
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\cct1M9Tb.s 			page 1
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccqeBC0o.s 			page 1
 
 
    1              		.cpu cortex-m4
@@ -58,7 +58,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\cct1M9Tb.s 			page 1
   29:Services/Src/display_service.c **** static lv_obj_t *s_humi_label;
   30:Services/Src/display_service.c **** static lv_obj_t *s_mode_first_label;
   31:Services/Src/display_service.c **** static lv_obj_t *s_mode_rest_label;
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\cct1M9Tb.s 			page 2
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccqeBC0o.s 			page 2
 
 
   32:Services/Src/display_service.c **** static lv_obj_t *s_target_first_label;
@@ -118,7 +118,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\cct1M9Tb.s 			page 1
   62              		.align	2
   63              	.L5:
   64 0004 00000000 		.word	s_num_font
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\cct1M9Tb.s 			page 3
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccqeBC0o.s 			page 3
 
 
   65              		.cfi_endproc
@@ -178,7 +178,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\cct1M9Tb.s 			page 1
  109 0020 0FCC     		ldmia	r4!, {r0, r1, r2, r3}
  110 0022 ACE80F00 		stmia	ip!, {r0, r1, r2, r3}
  111 0026 0FCC     		ldmia	r4!, {r0, r1, r2, r3}
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\cct1M9Tb.s 			page 4
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccqeBC0o.s 			page 4
 
 
  112 0028 ACE80F00 		stmia	ip!, {r0, r1, r2, r3}
@@ -238,7 +238,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\cct1M9Tb.s 			page 1
   21:Middlewares/LVGL/lvgl/src/core/lv_obj_style.h ****  *      DEFINES
   22:Middlewares/LVGL/lvgl/src/core/lv_obj_style.h ****  *********************/
   23:Middlewares/LVGL/lvgl/src/core/lv_obj_style.h **** 
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\cct1M9Tb.s 			page 5
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccqeBC0o.s 			page 5
 
 
   24:Middlewares/LVGL/lvgl/src/core/lv_obj_style.h **** /**********************
@@ -298,7 +298,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\cct1M9Tb.s 			page 1
   78:Middlewares/LVGL/lvgl/src/core/lv_obj_style.h ****     LV_STYLE_STATE_CMP_DIFF_LAYOUT,    /**< The differences can be shown with a simple redraw */
   79:Middlewares/LVGL/lvgl/src/core/lv_obj_style.h **** } lv_style_state_cmp_t;
   80:Middlewares/LVGL/lvgl/src/core/lv_obj_style.h **** 
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\cct1M9Tb.s 			page 6
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccqeBC0o.s 			page 6
 
 
   81:Middlewares/LVGL/lvgl/src/core/lv_obj_style.h **** /**
@@ -358,7 +358,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\cct1M9Tb.s 			page 1
  135:Middlewares/LVGL/lvgl/src/core/lv_obj_style.h ****  *
  136:Middlewares/LVGL/lvgl/src/core/lv_obj_style.h ****  * lv_obj_remove_style(obj, NULL, LV_PART_MAIN | LV_STATE_ANY); //Remove all styles from the main p
  137:Middlewares/LVGL/lvgl/src/core/lv_obj_style.h ****  *
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\cct1M9Tb.s 			page 7
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccqeBC0o.s 			page 7
 
 
  138:Middlewares/LVGL/lvgl/src/core/lv_obj_style.h ****  * lv_obj_remove_style(obj, NULL, LV_PART_ANY | LV_STATE_ANY); //Remove all styles
@@ -418,7 +418,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\cct1M9Tb.s 			page 1
  192:Middlewares/LVGL/lvgl/src/core/lv_obj_style.h **** 
  193:Middlewares/LVGL/lvgl/src/core/lv_obj_style.h **** /**
  194:Middlewares/LVGL/lvgl/src/core/lv_obj_style.h ****  * Enable or disable automatic style refreshing when a new style is added/removed to/from an object
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\cct1M9Tb.s 			page 8
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccqeBC0o.s 			page 8
 
 
  195:Middlewares/LVGL/lvgl/src/core/lv_obj_style.h ****  * or any other style change happens.
@@ -478,7 +478,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\cct1M9Tb.s 			page 1
  249:Middlewares/LVGL/lvgl/src/core/lv_obj_style.h ****  * Fade in an an object and all its children.
  250:Middlewares/LVGL/lvgl/src/core/lv_obj_style.h ****  * @param obj       the object to fade in
  251:Middlewares/LVGL/lvgl/src/core/lv_obj_style.h ****  * @param time      time of fade
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\cct1M9Tb.s 			page 9
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccqeBC0o.s 			page 9
 
 
  252:Middlewares/LVGL/lvgl/src/core/lv_obj_style.h ****  * @param delay     delay to start the animation
@@ -538,7 +538,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\cct1M9Tb.s 			page 1
  168 0016 3246     		mov	r2, r6
  169 0018 2946     		mov	r1, r5
  170 001a 2046     		mov	r0, r4
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\cct1M9Tb.s 			page 10
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccqeBC0o.s 			page 10
 
 
  171 001c FFF7FEFF 		bl	lv_obj_set_style_pad_top
@@ -598,7 +598,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\cct1M9Tb.s 			page 1
  219 0022 63F30700 		bfi	r0, r3, #0, #8
  220 0026 9DF80530 		ldrb	r3, [sp, #5]	@ zero_extendqisi2
  221 002a 63F30F20 		bfi	r0, r3, #8, #8
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\cct1M9Tb.s 			page 11
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccqeBC0o.s 			page 11
 
 
  222 002e 9DF80630 		ldrb	r3, [sp, #6]	@ zero_extendqisi2
@@ -658,7 +658,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\cct1M9Tb.s 			page 1
  270              		.cfi_endproc
  271              	.LFE333:
  273              		.section	.text.DisplayService_CreateCard,"ax",%progbits
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\cct1M9Tb.s 			page 12
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccqeBC0o.s 			page 12
 
 
  274              		.align	1
@@ -718,7 +718,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\cct1M9Tb.s 			page 1
  321 0024 FFF7FEFF 		bl	lv_obj_set_size
  322              	.LVL18:
   86:Services/Src/display_service.c ****   lv_obj_set_style_bg_color(card, DisplayService_Color(UI_COLOR_CARD_BG), 0);
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\cct1M9Tb.s 			page 13
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccqeBC0o.s 			page 13
 
 
  323              		.loc 1 86 3 view .LVU48
@@ -778,7 +778,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\cct1M9Tb.s 			page 1
  372 008e 0022     		movs	r2, #0
  373 0090 0821     		movs	r1, #8
  374 0092 2046     		mov	r0, r4
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\cct1M9Tb.s 			page 14
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccqeBC0o.s 			page 14
 
 
  375 0094 FFF7FEFF 		bl	lv_obj_set_style_radius
@@ -838,7 +838,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\cct1M9Tb.s 			page 1
  420              	.L20:
  421              		.loc 1 100 1 view .LVU64
  422 00d6 00BF     		.align	2
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\cct1M9Tb.s 			page 15
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccqeBC0o.s 			page 15
 
 
  423              	.L19:
@@ -898,7 +898,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\cct1M9Tb.s 			page 1
  114:Services/Src/display_service.c ****   lv_label_set_text(label, text);
  115:Services/Src/display_service.c ****   lv_label_set_long_mode(label, LV_LABEL_LONG_MODE_CLIP);
  116:Services/Src/display_service.c ****   lv_obj_set_pos(label, x, y);
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\cct1M9Tb.s 			page 16
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccqeBC0o.s 			page 16
 
 
  117:Services/Src/display_service.c ****   lv_obj_set_size(label, width, height);
@@ -958,7 +958,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\cct1M9Tb.s 			page 1
  492 0028 FFF7FEFF 		bl	lv_label_set_text
  493              	.LVL37:
  135:Services/Src/display_service.c ****   lv_obj_set_style_text_color(s_mode_first_label, DisplayService_Color(UI_COLOR_GREEN), 0);
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\cct1M9Tb.s 			page 17
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccqeBC0o.s 			page 17
 
 
  494              		.loc 1 135 3 view .LVU70
@@ -1018,7 +1018,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\cct1M9Tb.s 			page 1
  544 0096 FFF7FEFF 		bl	lv_bar_set_value
  545              	.LVL44:
  140:Services/Src/display_service.c **** }
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\cct1M9Tb.s 			page 18
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccqeBC0o.s 			page 18
 
 
  546              		.loc 1 140 1 is_stmt 0 view .LVU77
@@ -1078,7 +1078,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\cct1M9Tb.s 			page 1
  112:Services/Src/display_service.c **** 
  600              		.loc 1 112 3 is_stmt 1 view .LVU80
  112:Services/Src/display_service.c **** 
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\cct1M9Tb.s 			page 19
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccqeBC0o.s 			page 19
 
 
  601              		.loc 1 112 21 is_stmt 0 view .LVU81
@@ -1138,7 +1138,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\cct1M9Tb.s 			page 1
  647 005c FFF7FEFF 		bl	lv_obj_set_style_text_color
  648              	.LVL54:
  120:Services/Src/display_service.c ****   lv_obj_set_style_text_align(label, align, 0);
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\cct1M9Tb.s 			page 20
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccqeBC0o.s 			page 20
 
 
  649              		.loc 1 120 3 is_stmt 1 view .LVU90
@@ -1198,7 +1198,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\cct1M9Tb.s 			page 1
  694              		.align	2
  695              	.LC7:
  696 0010 33302500 		.ascii	"30%\000"
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\cct1M9Tb.s 			page 21
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccqeBC0o.s 			page 21
 
 
  697              		.align	2
@@ -1258,7 +1258,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\cct1M9Tb.s 			page 1
  742              		.loc 1 150 3 view .LVU105
  743 0010 4FF4A072 		mov	r2, #320
  744 0014 AC21     		movs	r1, #172
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\cct1M9Tb.s 			page 22
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccqeBC0o.s 			page 22
 
 
  745 0016 2046     		mov	r0, r4
@@ -1318,7 +1318,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\cct1M9Tb.s 			page 1
  793 0074 0193     		str	r3, [sp, #4]
  794 0076 0025     		movs	r5, #0
  795 0078 0095     		str	r5, [sp]
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\cct1M9Tb.s 			page 23
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccqeBC0o.s 			page 23
 
 
  796 007a 0346     		mov	r3, r0
@@ -1378,7 +1378,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\cct1M9Tb.s 			page 1
  174:Services/Src/display_service.c ****                                             DisplayService_GetUIFont(),
  175:Services/Src/display_service.c ****                                             DISPLAY_UI_TEMP_LINE_X,
  176:Services/Src/display_service.c ****                                             DISPLAY_UI_TEMP_LINE_Y,
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\cct1M9Tb.s 			page 24
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccqeBC0o.s 			page 24
 
 
  177:Services/Src/display_service.c ****                                             DISPLAY_UI_DATA_LINE_W,
@@ -1438,7 +1438,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\cct1M9Tb.s 			page 1
  868 00fc 4FF03C0A 		mov	r10, #60
  869              	.LVL77:
  870              		.loc 1 195 24 discriminator 1 view .LVU126
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\cct1M9Tb.s 			page 25
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccqeBC0o.s 			page 25
 
 
  871 0100 CDF808A0 		str	r10, [sp, #8]
@@ -1498,7 +1498,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\cct1M9Tb.s 			page 1
  906 0146 C822     		movs	r2, #200
  907 0148 0621     		movs	r1, #6
  908 014a 2046     		mov	r0, r4
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\cct1M9Tb.s 			page 26
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccqeBC0o.s 			page 26
 
 
  909 014c FFF7FEFF 		bl	DisplayService_CreateCard
@@ -1558,7 +1558,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\cct1M9Tb.s 			page 1
  230:Services/Src/display_service.c ****                                                    UI_COLOR_TEXT_MAIN,
  231:Services/Src/display_service.c ****                                                    DisplayService_GetUIFont(),
  232:Services/Src/display_service.c ****                                                    DISPLAY_UI_TARGET_REST_X,
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\cct1M9Tb.s 			page 27
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccqeBC0o.s 			page 27
 
 
  233:Services/Src/display_service.c ****                                                    DISPLAY_UI_TARGET_REST_Y,
@@ -1618,7 +1618,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\cct1M9Tb.s 			page 1
  991 01ea 0A99     		ldr	r1, [sp, #40]
  992 01ec 4046     		mov	r0, r8
  993 01ee FFF7FEFF 		bl	lv_obj_set_style_bg_color
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\cct1M9Tb.s 			page 28
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccqeBC0o.s 			page 28
 
 
  994              	.LVL90:
@@ -1678,7 +1678,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\cct1M9Tb.s 			page 1
  1040              		.loc 1 251 9 is_stmt 0 view .LVU156
  1041 024e FFF7FEFF 		bl	DisplayService_GetNumFont
  1042              	.LVL98:
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\cct1M9Tb.s 			page 29
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccqeBC0o.s 			page 29
 
 
  1043 0252 0546     		mov	r5, r0
@@ -1738,7 +1738,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\cct1M9Tb.s 			page 1
  1079 029e CDF80880 		str	r8, [sp, #8]
  1080 02a2 0196     		str	r6, [sp, #4]
  1081 02a4 6D23     		movs	r3, #109
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\cct1M9Tb.s 			page 30
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccqeBC0o.s 			page 30
 
 
  1082 02a6 0093     		str	r3, [sp]
@@ -1798,7 +1798,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\cct1M9Tb.s 			page 1
  1128              		.syntax unified
  1129              		.thumb
  1130              		.thumb_func
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\cct1M9Tb.s 			page 31
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccqeBC0o.s 			page 31
 
 
  1132              	DisplayService_Init:
@@ -1858,7 +1858,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\cct1M9Tb.s 			page 1
  1171              		.loc 1 293 9 is_stmt 0 view .LVU175
  1172 0026 FFF7FEFF 		bl	lv_timer_handler
  1173              	.LVL110:
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\cct1M9Tb.s 			page 32
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccqeBC0o.s 			page 32
 
 
  294:Services/Src/display_service.c **** }
@@ -1918,7 +1918,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\cct1M9Tb.s 			page 1
  1218              	.L39:
  1219 0010 00000000 		.word	s_display_ready
  1220              		.cfi_endproc
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\cct1M9Tb.s 			page 33
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccqeBC0o.s 			page 33
 
 
  1221              	.LFE339:
@@ -1978,7 +1978,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\cct1M9Tb.s 			page 1
  334:Services/Src/display_service.c ****   lv_bar_set_value(s_target_bar, UI_TARGET_HUMIDITY, LV_ANIM_OFF);
  335:Services/Src/display_service.c **** }
  336:Services/Src/display_service.c **** 
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\cct1M9Tb.s 			page 34
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccqeBC0o.s 			page 34
 
 
  337:Services/Src/display_service.c **** void DisplayService_ShowSensorError(void)
@@ -2038,7 +2038,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\cct1M9Tb.s 			page 1
  1284 002a 274D     		ldr	r5, .L48+28
  1285 002c 2E68     		ldr	r6, [r5]
  1286 002e FFF7FEFF 		bl	DisplayUI_GetSensorErrorText
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\cct1M9Tb.s 			page 35
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccqeBC0o.s 			page 35
 
 
  1287              	.LVL115:
@@ -2098,7 +2098,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\cct1M9Tb.s 			page 1
  1337              	.LVL122:
  352:Services/Src/display_service.c ****   lv_bar_set_value(s_target_bar, UI_TARGET_HUMIDITY, LV_ANIM_OFF);
  1338              		.loc 1 352 3 view .LVU199
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\cct1M9Tb.s 			page 36
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccqeBC0o.s 			page 36
 
 
  1339 009c 0022     		movs	r2, #0
@@ -2158,7 +2158,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\cct1M9Tb.s 			page 1
  1393              		.cfi_def_cfa_offset 88
  308:Services/Src/display_service.c ****   char temp_text[UI_LINE_TEXT_SIZE] = {0};
  1394              		.loc 1 308 3 view .LVU202
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\cct1M9Tb.s 			page 37
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccqeBC0o.s 			page 37
 
 
  308:Services/Src/display_service.c ****   char temp_text[UI_LINE_TEXT_SIZE] = {0};
@@ -2218,7 +2218,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\cct1M9Tb.s 			page 1
  317:Services/Src/display_service.c ****   {
  1438              		.loc 1 317 6 discriminator 1 view .LVU214
  1439 0034 0028     		cmp	r0, #0
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\cct1M9Tb.s 			page 38
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccqeBC0o.s 			page 38
 
 
  1440 0036 59D1     		bne	.L56
@@ -2278,7 +2278,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\cct1M9Tb.s 			page 1
  1487 008e 8DF84130 		strb	r3, [sp, #65]
  1488 0092 C0F30740 		ubfx	r0, r0, #16, #8
  1489 0096 8DF84200 		strb	r0, [sp, #66]
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\cct1M9Tb.s 			page 39
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccqeBC0o.s 			page 39
 
 
  330:Services/Src/display_service.c ****   lv_obj_set_style_text_color(s_mode_rest_label, DisplayService_Color(UI_COLOR_GREEN), 0);
@@ -2338,7 +2338,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\cct1M9Tb.s 			page 1
  1536              		.loc 1 320 5 view .LVU229
  1537 00f0 9BE7     		b	.L50
  1538              	.L58:
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\cct1M9Tb.s 			page 40
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccqeBC0o.s 			page 40
 
 
  1539 00f2 00BF     		.align	2
@@ -2398,7 +2398,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\cct1M9Tb.s 			page 1
  1584              	.L62:
  362:Services/Src/display_service.c ****   (void)lv_timer_handler();
  1585              		.loc 1 362 3 is_stmt 1 view .LVU235
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\cct1M9Tb.s 			page 41
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccqeBC0o.s 			page 41
 
 
  1586 000a FFF7FEFF 		bl	DisplayService_ShowSensorData
@@ -2458,7 +2458,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\cct1M9Tb.s 			page 1
  1630              	.L68:
  372:Services/Src/display_service.c ****   }
  1631              		.loc 1 372 5 is_stmt 1 view .LVU244
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\cct1M9Tb.s 			page 42
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccqeBC0o.s 			page 42
 
 
  372:Services/Src/display_service.c ****   }
@@ -2518,7 +2518,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\cct1M9Tb.s 			page 1
  1693 0000 00000000 		.space	4
  1694              		.section	.bss.s_humi_label,"aw",%nobits
  1695              		.align	2
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\cct1M9Tb.s 			page 43
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccqeBC0o.s 			page 43
 
 
  1698              	s_humi_label:
@@ -2555,81 +2555,81 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\cct1M9Tb.s 			page 1
  1731              		.file 26 "Core/Inc/lv_port_disp.h"
  1732              		.file 27 "Drivers/STM32G4xx_HAL_Driver/Inc/stm32g4xx_hal.h"
  1733              		.file 28 "Middlewares/LVGL/lvgl/src/lv_init.h"
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\cct1M9Tb.s 			page 44
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccqeBC0o.s 			page 44
 
 
 DEFINED SYMBOLS
                             *ABS*:00000000 display_service.c
-C:\Users\w1785\AppData\Local\Temp\cct1M9Tb.s:21     .text.DisplayService_GetUIFont:00000000 $t
-C:\Users\w1785\AppData\Local\Temp\cct1M9Tb.s:26     .text.DisplayService_GetUIFont:00000000 DisplayService_GetUIFont
-C:\Users\w1785\AppData\Local\Temp\cct1M9Tb.s:40     .text.DisplayService_GetUIFont:00000004 $d
-C:\Users\w1785\AppData\Local\Temp\cct1M9Tb.s:1662   .bss.s_ui_font_16:00000000 s_ui_font_16
-C:\Users\w1785\AppData\Local\Temp\cct1M9Tb.s:45     .text.DisplayService_GetNumFont:00000000 $t
-C:\Users\w1785\AppData\Local\Temp\cct1M9Tb.s:50     .text.DisplayService_GetNumFont:00000000 DisplayService_GetNumFont
-C:\Users\w1785\AppData\Local\Temp\cct1M9Tb.s:64     .text.DisplayService_GetNumFont:00000004 $d
-C:\Users\w1785\AppData\Local\Temp\cct1M9Tb.s:1656   .bss.s_num_font:00000000 s_num_font
-C:\Users\w1785\AppData\Local\Temp\cct1M9Tb.s:69     .text.DisplayService_InitFonts:00000000 $t
-C:\Users\w1785\AppData\Local\Temp\cct1M9Tb.s:74     .text.DisplayService_InitFonts:00000000 DisplayService_InitFonts
-C:\Users\w1785\AppData\Local\Temp\cct1M9Tb.s:126    .text.DisplayService_InitFonts:0000003c $d
-C:\Users\w1785\AppData\Local\Temp\cct1M9Tb.s:134    .text.lv_obj_set_style_pad_all:00000000 $t
-C:\Users\w1785\AppData\Local\Temp\cct1M9Tb.s:139    .text.lv_obj_set_style_pad_all:00000000 lv_obj_set_style_pad_all
-C:\Users\w1785\AppData\Local\Temp\cct1M9Tb.s:186    .text.DisplayService_Color:00000000 $t
-C:\Users\w1785\AppData\Local\Temp\cct1M9Tb.s:191    .text.DisplayService_Color:00000000 DisplayService_Color
-C:\Users\w1785\AppData\Local\Temp\cct1M9Tb.s:234    .text.DisplayService_PrepareObject:00000000 $t
-C:\Users\w1785\AppData\Local\Temp\cct1M9Tb.s:239    .text.DisplayService_PrepareObject:00000000 DisplayService_PrepareObject
-C:\Users\w1785\AppData\Local\Temp\cct1M9Tb.s:274    .text.DisplayService_CreateCard:00000000 $t
-C:\Users\w1785\AppData\Local\Temp\cct1M9Tb.s:279    .text.DisplayService_CreateCard:00000000 DisplayService_CreateCard
-C:\Users\w1785\AppData\Local\Temp\cct1M9Tb.s:424    .text.DisplayService_CreateCard:000000d8 $d
-C:\Users\w1785\AppData\Local\Temp\cct1M9Tb.s:430    .rodata.DisplayService_SetDefaultValues.str1.4:00000000 $d
-C:\Users\w1785\AppData\Local\Temp\cct1M9Tb.s:449    .text.DisplayService_SetDefaultValues:00000000 $t
-C:\Users\w1785\AppData\Local\Temp\cct1M9Tb.s:454    .text.DisplayService_SetDefaultValues:00000000 DisplayService_SetDefaultValues
-C:\Users\w1785\AppData\Local\Temp\cct1M9Tb.s:555    .text.DisplayService_SetDefaultValues:000000a0 $d
-C:\Users\w1785\AppData\Local\Temp\cct1M9Tb.s:1704   .bss.s_temp_label:00000000 s_temp_label
-C:\Users\w1785\AppData\Local\Temp\cct1M9Tb.s:1698   .bss.s_humi_label:00000000 s_humi_label
-C:\Users\w1785\AppData\Local\Temp\cct1M9Tb.s:1692   .bss.s_mode_first_label:00000000 s_mode_first_label
-C:\Users\w1785\AppData\Local\Temp\cct1M9Tb.s:1686   .bss.s_mode_rest_label:00000000 s_mode_rest_label
-C:\Users\w1785\AppData\Local\Temp\cct1M9Tb.s:1680   .bss.s_target_first_label:00000000 s_target_first_label
-C:\Users\w1785\AppData\Local\Temp\cct1M9Tb.s:1674   .bss.s_target_rest_label:00000000 s_target_rest_label
-C:\Users\w1785\AppData\Local\Temp\cct1M9Tb.s:1668   .bss.s_target_bar:00000000 s_target_bar
-C:\Users\w1785\AppData\Local\Temp\cct1M9Tb.s:573    .text.DisplayService_CreateLabel:00000000 $t
-C:\Users\w1785\AppData\Local\Temp\cct1M9Tb.s:578    .text.DisplayService_CreateLabel:00000000 DisplayService_CreateLabel
-C:\Users\w1785\AppData\Local\Temp\cct1M9Tb.s:690    .rodata.DisplayService_CreateUI.str1.4:00000000 $d
-C:\Users\w1785\AppData\Local\Temp\cct1M9Tb.s:704    .text.DisplayService_CreateUI:00000000 $t
-C:\Users\w1785\AppData\Local\Temp\cct1M9Tb.s:709    .text.DisplayService_CreateUI:00000000 DisplayService_CreateUI
-C:\Users\w1785\AppData\Local\Temp\cct1M9Tb.s:1100   .text.DisplayService_CreateUI:000002bc $d
-C:\Users\w1785\AppData\Local\Temp\cct1M9Tb.s:1126   .text.DisplayService_Init:00000000 $t
-C:\Users\w1785\AppData\Local\Temp\cct1M9Tb.s:1132   .text.DisplayService_Init:00000000 DisplayService_Init
-C:\Users\w1785\AppData\Local\Temp\cct1M9Tb.s:1179   .text.DisplayService_Init:0000002c $d
-C:\Users\w1785\AppData\Local\Temp\cct1M9Tb.s:1650   .bss.s_display_ready:00000000 s_display_ready
-C:\Users\w1785\AppData\Local\Temp\cct1M9Tb.s:1185   .text.DisplayService_ShowBootScreen:00000000 $t
-C:\Users\w1785\AppData\Local\Temp\cct1M9Tb.s:1191   .text.DisplayService_ShowBootScreen:00000000 DisplayService_ShowBootScreen
-C:\Users\w1785\AppData\Local\Temp\cct1M9Tb.s:1219   .text.DisplayService_ShowBootScreen:00000010 $d
-C:\Users\w1785\AppData\Local\Temp\cct1M9Tb.s:1224   .rodata.DisplayService_ShowSensorError.str1.4:00000000 $d
-C:\Users\w1785\AppData\Local\Temp\cct1M9Tb.s:1234   .text.DisplayService_ShowSensorError:00000000 $t
-C:\Users\w1785\AppData\Local\Temp\cct1M9Tb.s:1240   .text.DisplayService_ShowSensorError:00000000 DisplayService_ShowSensorError
-C:\Users\w1785\AppData\Local\Temp\cct1M9Tb.s:1354   .text.DisplayService_ShowSensorError:000000ac $d
-C:\Users\w1785\AppData\Local\Temp\cct1M9Tb.s:1372   .text.DisplayService_ShowSensorData:00000000 $t
-C:\Users\w1785\AppData\Local\Temp\cct1M9Tb.s:1378   .text.DisplayService_ShowSensorData:00000000 DisplayService_ShowSensorData
-C:\Users\w1785\AppData\Local\Temp\cct1M9Tb.s:1541   .text.DisplayService_ShowSensorData:000000f4 $d
-C:\Users\w1785\AppData\Local\Temp\cct1M9Tb.s:1558   .text.DisplayService_Update:00000000 $t
-C:\Users\w1785\AppData\Local\Temp\cct1M9Tb.s:1564   .text.DisplayService_Update:00000000 DisplayService_Update
-C:\Users\w1785\AppData\Local\Temp\cct1M9Tb.s:1596   .text.DisplayService_Update:00000014 $d
-C:\Users\w1785\AppData\Local\Temp\cct1M9Tb.s:1601   .text.DisplayService_TestColorCycle:00000000 $t
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\cct1M9Tb.s 			page 45
+C:\Users\w1785\AppData\Local\Temp\ccqeBC0o.s:21     .text.DisplayService_GetUIFont:00000000 $t
+C:\Users\w1785\AppData\Local\Temp\ccqeBC0o.s:26     .text.DisplayService_GetUIFont:00000000 DisplayService_GetUIFont
+C:\Users\w1785\AppData\Local\Temp\ccqeBC0o.s:40     .text.DisplayService_GetUIFont:00000004 $d
+C:\Users\w1785\AppData\Local\Temp\ccqeBC0o.s:1662   .bss.s_ui_font_16:00000000 s_ui_font_16
+C:\Users\w1785\AppData\Local\Temp\ccqeBC0o.s:45     .text.DisplayService_GetNumFont:00000000 $t
+C:\Users\w1785\AppData\Local\Temp\ccqeBC0o.s:50     .text.DisplayService_GetNumFont:00000000 DisplayService_GetNumFont
+C:\Users\w1785\AppData\Local\Temp\ccqeBC0o.s:64     .text.DisplayService_GetNumFont:00000004 $d
+C:\Users\w1785\AppData\Local\Temp\ccqeBC0o.s:1656   .bss.s_num_font:00000000 s_num_font
+C:\Users\w1785\AppData\Local\Temp\ccqeBC0o.s:69     .text.DisplayService_InitFonts:00000000 $t
+C:\Users\w1785\AppData\Local\Temp\ccqeBC0o.s:74     .text.DisplayService_InitFonts:00000000 DisplayService_InitFonts
+C:\Users\w1785\AppData\Local\Temp\ccqeBC0o.s:126    .text.DisplayService_InitFonts:0000003c $d
+C:\Users\w1785\AppData\Local\Temp\ccqeBC0o.s:134    .text.lv_obj_set_style_pad_all:00000000 $t
+C:\Users\w1785\AppData\Local\Temp\ccqeBC0o.s:139    .text.lv_obj_set_style_pad_all:00000000 lv_obj_set_style_pad_all
+C:\Users\w1785\AppData\Local\Temp\ccqeBC0o.s:186    .text.DisplayService_Color:00000000 $t
+C:\Users\w1785\AppData\Local\Temp\ccqeBC0o.s:191    .text.DisplayService_Color:00000000 DisplayService_Color
+C:\Users\w1785\AppData\Local\Temp\ccqeBC0o.s:234    .text.DisplayService_PrepareObject:00000000 $t
+C:\Users\w1785\AppData\Local\Temp\ccqeBC0o.s:239    .text.DisplayService_PrepareObject:00000000 DisplayService_PrepareObject
+C:\Users\w1785\AppData\Local\Temp\ccqeBC0o.s:274    .text.DisplayService_CreateCard:00000000 $t
+C:\Users\w1785\AppData\Local\Temp\ccqeBC0o.s:279    .text.DisplayService_CreateCard:00000000 DisplayService_CreateCard
+C:\Users\w1785\AppData\Local\Temp\ccqeBC0o.s:424    .text.DisplayService_CreateCard:000000d8 $d
+C:\Users\w1785\AppData\Local\Temp\ccqeBC0o.s:430    .rodata.DisplayService_SetDefaultValues.str1.4:00000000 $d
+C:\Users\w1785\AppData\Local\Temp\ccqeBC0o.s:449    .text.DisplayService_SetDefaultValues:00000000 $t
+C:\Users\w1785\AppData\Local\Temp\ccqeBC0o.s:454    .text.DisplayService_SetDefaultValues:00000000 DisplayService_SetDefaultValues
+C:\Users\w1785\AppData\Local\Temp\ccqeBC0o.s:555    .text.DisplayService_SetDefaultValues:000000a0 $d
+C:\Users\w1785\AppData\Local\Temp\ccqeBC0o.s:1704   .bss.s_temp_label:00000000 s_temp_label
+C:\Users\w1785\AppData\Local\Temp\ccqeBC0o.s:1698   .bss.s_humi_label:00000000 s_humi_label
+C:\Users\w1785\AppData\Local\Temp\ccqeBC0o.s:1692   .bss.s_mode_first_label:00000000 s_mode_first_label
+C:\Users\w1785\AppData\Local\Temp\ccqeBC0o.s:1686   .bss.s_mode_rest_label:00000000 s_mode_rest_label
+C:\Users\w1785\AppData\Local\Temp\ccqeBC0o.s:1680   .bss.s_target_first_label:00000000 s_target_first_label
+C:\Users\w1785\AppData\Local\Temp\ccqeBC0o.s:1674   .bss.s_target_rest_label:00000000 s_target_rest_label
+C:\Users\w1785\AppData\Local\Temp\ccqeBC0o.s:1668   .bss.s_target_bar:00000000 s_target_bar
+C:\Users\w1785\AppData\Local\Temp\ccqeBC0o.s:573    .text.DisplayService_CreateLabel:00000000 $t
+C:\Users\w1785\AppData\Local\Temp\ccqeBC0o.s:578    .text.DisplayService_CreateLabel:00000000 DisplayService_CreateLabel
+C:\Users\w1785\AppData\Local\Temp\ccqeBC0o.s:690    .rodata.DisplayService_CreateUI.str1.4:00000000 $d
+C:\Users\w1785\AppData\Local\Temp\ccqeBC0o.s:704    .text.DisplayService_CreateUI:00000000 $t
+C:\Users\w1785\AppData\Local\Temp\ccqeBC0o.s:709    .text.DisplayService_CreateUI:00000000 DisplayService_CreateUI
+C:\Users\w1785\AppData\Local\Temp\ccqeBC0o.s:1100   .text.DisplayService_CreateUI:000002bc $d
+C:\Users\w1785\AppData\Local\Temp\ccqeBC0o.s:1126   .text.DisplayService_Init:00000000 $t
+C:\Users\w1785\AppData\Local\Temp\ccqeBC0o.s:1132   .text.DisplayService_Init:00000000 DisplayService_Init
+C:\Users\w1785\AppData\Local\Temp\ccqeBC0o.s:1179   .text.DisplayService_Init:0000002c $d
+C:\Users\w1785\AppData\Local\Temp\ccqeBC0o.s:1650   .bss.s_display_ready:00000000 s_display_ready
+C:\Users\w1785\AppData\Local\Temp\ccqeBC0o.s:1185   .text.DisplayService_ShowBootScreen:00000000 $t
+C:\Users\w1785\AppData\Local\Temp\ccqeBC0o.s:1191   .text.DisplayService_ShowBootScreen:00000000 DisplayService_ShowBootScreen
+C:\Users\w1785\AppData\Local\Temp\ccqeBC0o.s:1219   .text.DisplayService_ShowBootScreen:00000010 $d
+C:\Users\w1785\AppData\Local\Temp\ccqeBC0o.s:1224   .rodata.DisplayService_ShowSensorError.str1.4:00000000 $d
+C:\Users\w1785\AppData\Local\Temp\ccqeBC0o.s:1234   .text.DisplayService_ShowSensorError:00000000 $t
+C:\Users\w1785\AppData\Local\Temp\ccqeBC0o.s:1240   .text.DisplayService_ShowSensorError:00000000 DisplayService_ShowSensorError
+C:\Users\w1785\AppData\Local\Temp\ccqeBC0o.s:1354   .text.DisplayService_ShowSensorError:000000ac $d
+C:\Users\w1785\AppData\Local\Temp\ccqeBC0o.s:1372   .text.DisplayService_ShowSensorData:00000000 $t
+C:\Users\w1785\AppData\Local\Temp\ccqeBC0o.s:1378   .text.DisplayService_ShowSensorData:00000000 DisplayService_ShowSensorData
+C:\Users\w1785\AppData\Local\Temp\ccqeBC0o.s:1541   .text.DisplayService_ShowSensorData:000000f4 $d
+C:\Users\w1785\AppData\Local\Temp\ccqeBC0o.s:1558   .text.DisplayService_Update:00000000 $t
+C:\Users\w1785\AppData\Local\Temp\ccqeBC0o.s:1564   .text.DisplayService_Update:00000000 DisplayService_Update
+C:\Users\w1785\AppData\Local\Temp\ccqeBC0o.s:1596   .text.DisplayService_Update:00000014 $d
+C:\Users\w1785\AppData\Local\Temp\ccqeBC0o.s:1601   .text.DisplayService_TestColorCycle:00000000 $t
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccqeBC0o.s 			page 45
 
 
-C:\Users\w1785\AppData\Local\Temp\cct1M9Tb.s:1607   .text.DisplayService_TestColorCycle:00000000 DisplayService_TestColorCycle
-C:\Users\w1785\AppData\Local\Temp\cct1M9Tb.s:1643   .text.DisplayService_TestColorCycle:00000018 $d
-C:\Users\w1785\AppData\Local\Temp\cct1M9Tb.s:1651   .bss.s_display_ready:00000000 $d
-C:\Users\w1785\AppData\Local\Temp\cct1M9Tb.s:1653   .bss.s_num_font:00000000 $d
-C:\Users\w1785\AppData\Local\Temp\cct1M9Tb.s:1659   .bss.s_ui_font_16:00000000 $d
-C:\Users\w1785\AppData\Local\Temp\cct1M9Tb.s:1665   .bss.s_target_bar:00000000 $d
-C:\Users\w1785\AppData\Local\Temp\cct1M9Tb.s:1671   .bss.s_target_rest_label:00000000 $d
-C:\Users\w1785\AppData\Local\Temp\cct1M9Tb.s:1677   .bss.s_target_first_label:00000000 $d
-C:\Users\w1785\AppData\Local\Temp\cct1M9Tb.s:1683   .bss.s_mode_rest_label:00000000 $d
-C:\Users\w1785\AppData\Local\Temp\cct1M9Tb.s:1689   .bss.s_mode_first_label:00000000 $d
-C:\Users\w1785\AppData\Local\Temp\cct1M9Tb.s:1695   .bss.s_humi_label:00000000 $d
-C:\Users\w1785\AppData\Local\Temp\cct1M9Tb.s:1701   .bss.s_temp_label:00000000 $d
+C:\Users\w1785\AppData\Local\Temp\ccqeBC0o.s:1607   .text.DisplayService_TestColorCycle:00000000 DisplayService_TestColorCycle
+C:\Users\w1785\AppData\Local\Temp\ccqeBC0o.s:1643   .text.DisplayService_TestColorCycle:00000018 $d
+C:\Users\w1785\AppData\Local\Temp\ccqeBC0o.s:1651   .bss.s_display_ready:00000000 $d
+C:\Users\w1785\AppData\Local\Temp\ccqeBC0o.s:1653   .bss.s_num_font:00000000 $d
+C:\Users\w1785\AppData\Local\Temp\ccqeBC0o.s:1659   .bss.s_ui_font_16:00000000 $d
+C:\Users\w1785\AppData\Local\Temp\ccqeBC0o.s:1665   .bss.s_target_bar:00000000 $d
+C:\Users\w1785\AppData\Local\Temp\ccqeBC0o.s:1671   .bss.s_target_rest_label:00000000 $d
+C:\Users\w1785\AppData\Local\Temp\ccqeBC0o.s:1677   .bss.s_target_first_label:00000000 $d
+C:\Users\w1785\AppData\Local\Temp\ccqeBC0o.s:1683   .bss.s_mode_rest_label:00000000 $d
+C:\Users\w1785\AppData\Local\Temp\ccqeBC0o.s:1689   .bss.s_mode_first_label:00000000 $d
+C:\Users\w1785\AppData\Local\Temp\ccqeBC0o.s:1695   .bss.s_humi_label:00000000 $d
+C:\Users\w1785\AppData\Local\Temp\ccqeBC0o.s:1701   .bss.s_temp_label:00000000 $d
 
 UNDEFINED SYMBOLS
 HumidifierSymbolFont_Get16
@@ -2675,7 +2675,7 @@ SensorService_GetData
 DisplayUI_FormatTemperature
 DisplayUI_FormatHumidity
 ST7789_TestColorCycle
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\cct1M9Tb.s 			page 46
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccqeBC0o.s 			page 46
 
 
 lv_obj_invalidate

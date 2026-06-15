@@ -1,4 +1,4 @@
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccXHAYgR.s 			page 1
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccYE8JTc.s 			page 1
 
 
    1              		.cpu cortex-m4
@@ -58,7 +58,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccXHAYgR.s 			page 1
   27:DeviceDrivers/Sensor/Src/aht20.c **** 
   28:DeviceDrivers/Sensor/Src/aht20.c ****   /* 初始化上一层软件 I2C 使用的 GPIO。 */
   29:DeviceDrivers/Sensor/Src/aht20.c ****   I2C_SW_GPIO_Init();
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccXHAYgR.s 			page 2
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccYE8JTc.s 			page 2
 
 
   30:DeviceDrivers/Sensor/Src/aht20.c **** 
@@ -118,7 +118,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccXHAYgR.s 			page 1
   84:DeviceDrivers/Sensor/Src/aht20.c ****  */
   85:DeviceDrivers/Sensor/Src/aht20.c **** AHT20_Status_t AHT20_ReadStatus(uint8_t *status)
   86:DeviceDrivers/Sensor/Src/aht20.c **** {
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccXHAYgR.s 			page 3
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccYE8JTc.s 			page 3
 
 
   30              		.loc 1 86 1 view -0
@@ -178,7 +178,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccXHAYgR.s 			page 1
  105:DeviceDrivers/Sensor/Src/aht20.c ****   if (I2C_SW_Read(AHT20_I2C_ADDR, status, 1U) != I2C_SW_OK)
  106:DeviceDrivers/Sensor/Src/aht20.c ****   {
  107:DeviceDrivers/Sensor/Src/aht20.c ****     /* 状态数据读取失败，返回错误。 */
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccXHAYgR.s 			page 4
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccYE8JTc.s 			page 4
 
 
  108:DeviceDrivers/Sensor/Src/aht20.c ****     return AHT20_ERROR;
@@ -238,7 +238,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccXHAYgR.s 			page 1
  114:DeviceDrivers/Sensor/Src/aht20.c **** 
  115:DeviceDrivers/Sensor/Src/aht20.c **** /**
  116:DeviceDrivers/Sensor/Src/aht20.c ****  * @brief 判断 AHT20 是否处于忙状态。
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccXHAYgR.s 			page 5
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccYE8JTc.s 			page 5
 
 
  117:DeviceDrivers/Sensor/Src/aht20.c ****  * @param status AHT20 状态字。
@@ -298,7 +298,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccXHAYgR.s 			page 1
  138:DeviceDrivers/Sensor/Src/aht20.c **** uint8_t AHT20_IsCalibrated(uint8_t status)
  139:DeviceDrivers/Sensor/Src/aht20.c **** {
  144              		.loc 1 139 1 is_stmt 1 view -0
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccXHAYgR.s 			page 6
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccYE8JTc.s 			page 6
 
 
  145              		.cfi_startproc
@@ -358,7 +358,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccXHAYgR.s 			page 1
  189              		.cfi_def_cfa_offset 16
   26:DeviceDrivers/Sensor/Src/aht20.c **** 
  190              		.loc 1 26 3 view .LVU32
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccXHAYgR.s 			page 7
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccYE8JTc.s 			page 7
 
 
   26:DeviceDrivers/Sensor/Src/aht20.c **** 
@@ -418,7 +418,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccXHAYgR.s 			page 1
  233 0034 ADF80430 		strh	r3, [sp, #4]	@ movhi
  234 0038 1B0C     		lsrs	r3, r3, #16
  235 003a 8DF80630 		strb	r3, [sp, #6]
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccXHAYgR.s 			page 8
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccYE8JTc.s 			page 8
 
 
   52:DeviceDrivers/Sensor/Src/aht20.c ****     {
@@ -478,7 +478,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccXHAYgR.s 			page 1
  278              		.align	2
  279              	.L22:
  280 0074 00000000 		.word	.LC0
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccXHAYgR.s 			page 9
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccYE8JTc.s 			page 9
 
 
  281              		.cfi_endproc
@@ -538,7 +538,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccXHAYgR.s 			page 1
  166:DeviceDrivers/Sensor/Src/aht20.c **** 
  167:DeviceDrivers/Sensor/Src/aht20.c ****   /* 软件复位后等待 AHT20 内部重新启动。 */
  168:DeviceDrivers/Sensor/Src/aht20.c ****   HAL_Delay(20U);
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccXHAYgR.s 			page 10
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccYE8JTc.s 			page 10
 
 
  169:DeviceDrivers/Sensor/Src/aht20.c **** 
@@ -598,7 +598,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccXHAYgR.s 			page 1
  363              		.cfi_offset 14, -4
  364 0002 83B0     		sub	sp, sp, #12
  365              	.LCFI13:
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccXHAYgR.s 			page 11
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccYE8JTc.s 			page 11
 
 
  366              		.cfi_def_cfa_offset 16
@@ -658,7 +658,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccXHAYgR.s 			page 1
  402              	.LFE137:
  404              		.section	.text.AHT20_ReadRaw,"ax",%progbits
  405              		.align	1
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccXHAYgR.s 			page 12
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccYE8JTc.s 			page 12
 
 
  406              		.global	AHT20_ReadRaw
@@ -718,7 +718,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccXHAYgR.s 			page 1
  220:DeviceDrivers/Sensor/Src/aht20.c ****   HAL_Delay(80U);
  221:DeviceDrivers/Sensor/Src/aht20.c **** 
  222:DeviceDrivers/Sensor/Src/aht20.c ****   /* 从 AHT20 连续读取 6 字节原始数据。 */
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccXHAYgR.s 			page 13
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccYE8JTc.s 			page 13
 
 
  223:DeviceDrivers/Sensor/Src/aht20.c ****   if (I2C_SW_Read(AHT20_I2C_ADDR, raw, 6U) != I2C_SW_OK)
@@ -778,7 +778,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccXHAYgR.s 			page 1
  467              	.LCFI17:
  468              		.cfi_def_cfa_offset 0
  469              		.cfi_restore 4
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccXHAYgR.s 			page 14
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccYE8JTc.s 			page 14
 
 
  470              		.cfi_restore 14
@@ -838,7 +838,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccXHAYgR.s 			page 1
  507 0000 80B3     		cbz	r0, .L49
  256:DeviceDrivers/Sensor/Src/aht20.c ****   {
  257:DeviceDrivers/Sensor/Src/aht20.c ****     /* 传入空指针，直接返回错误。 */
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccXHAYgR.s 			page 15
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccYE8JTc.s 			page 15
 
 
  258:DeviceDrivers/Sensor/Src/aht20.c ****     return AHT20_ERROR;
@@ -898,7 +898,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccXHAYgR.s 			page 1
  537              		.loc 1 275 19 view .LVU115
  538 0026 1343     		orrs	r3, r3, r2
  539 0028 07EE903A 		vmov	s15, r3	@ int
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccXHAYgR.s 			page 16
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccYE8JTc.s 			page 16
 
 
  540              	.LVL37:
@@ -958,7 +958,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccXHAYgR.s 			page 1
  582              		.loc 1 265 12 view .LVU132
  583 0068 0120     		movs	r0, #1
  584              	.LVL44:
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccXHAYgR.s 			page 17
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccYE8JTc.s 			page 17
 
 
  288:DeviceDrivers/Sensor/Src/aht20.c **** }
@@ -1018,7 +1018,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccXHAYgR.s 			page 1
  627 000c 78B1     		cbz	r0, .L55
  628 000e 0446     		mov	r4, r0
  302:DeviceDrivers/Sensor/Src/aht20.c ****   {
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccXHAYgR.s 			page 18
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccYE8JTc.s 			page 18
 
 
  303:DeviceDrivers/Sensor/Src/aht20.c ****     /* 传入空指针，直接返回错误。 */
@@ -1078,7 +1078,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccXHAYgR.s 			page 1
  659              		.loc 1 315 6 discriminator 1 view .LVU148
  660 0026 0028     		cmp	r0, #0
  661 0028 F7D0     		beq	.L54
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccXHAYgR.s 			page 19
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccYE8JTc.s 			page 19
 
 
  318:DeviceDrivers/Sensor/Src/aht20.c ****   }
@@ -1138,7 +1138,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccXHAYgR.s 			page 1
  335:DeviceDrivers/Sensor/Src/aht20.c **** 
  336:DeviceDrivers/Sensor/Src/aht20.c ****   /* 温度输出指针不能为空。 */
  337:DeviceDrivers/Sensor/Src/aht20.c ****   if (temperature == (float *)0)
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccXHAYgR.s 			page 20
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccYE8JTc.s 			page 20
 
 
  704              		.loc 1 337 3 is_stmt 1 view .LVU156
@@ -1198,7 +1198,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccXHAYgR.s 			page 1
  731              		.loc 1 364 3 is_stmt 1 view .LVU170
  732              	.LVL56:
  733              	.L61:
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccXHAYgR.s 			page 21
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccYE8JTc.s 			page 21
 
 
  365:DeviceDrivers/Sensor/Src/aht20.c **** }
@@ -1244,36 +1244,36 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccXHAYgR.s 			page 1
  769              		.file 4 "HardwareDrivers/I2C/Inc/i2c_sw.h"
  770              		.file 5 "DeviceDrivers/Sensor/Inc/aht20.h"
  771              		.file 6 "Drivers/STM32G4xx_HAL_Driver/Inc/stm32g4xx_hal.h"
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccXHAYgR.s 			page 22
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccYE8JTc.s 			page 22
 
 
 DEFINED SYMBOLS
                             *ABS*:00000000 aht20.c
-C:\Users\w1785\AppData\Local\Temp\ccXHAYgR.s:21     .text.AHT20_ReadStatus:00000000 $t
-C:\Users\w1785\AppData\Local\Temp\ccXHAYgR.s:27     .text.AHT20_ReadStatus:00000000 AHT20_ReadStatus
-C:\Users\w1785\AppData\Local\Temp\ccXHAYgR.s:101    .text.AHT20_IsBusy:00000000 $t
-C:\Users\w1785\AppData\Local\Temp\ccXHAYgR.s:107    .text.AHT20_IsBusy:00000000 AHT20_IsBusy
-C:\Users\w1785\AppData\Local\Temp\ccXHAYgR.s:135    .text.AHT20_IsCalibrated:00000000 $t
-C:\Users\w1785\AppData\Local\Temp\ccXHAYgR.s:141    .text.AHT20_IsCalibrated:00000000 AHT20_IsCalibrated
-C:\Users\w1785\AppData\Local\Temp\ccXHAYgR.s:166    .rodata.AHT20_Init.str1.4:00000000 $d
-C:\Users\w1785\AppData\Local\Temp\ccXHAYgR.s:170    .text.AHT20_Init:00000000 $t
-C:\Users\w1785\AppData\Local\Temp\ccXHAYgR.s:176    .text.AHT20_Init:00000000 AHT20_Init
-C:\Users\w1785\AppData\Local\Temp\ccXHAYgR.s:280    .text.AHT20_Init:00000074 $d
-C:\Users\w1785\AppData\Local\Temp\ccXHAYgR.s:285    .text.AHT20_SoftReset:00000000 $t
-C:\Users\w1785\AppData\Local\Temp\ccXHAYgR.s:291    .text.AHT20_SoftReset:00000000 AHT20_SoftReset
-C:\Users\w1785\AppData\Local\Temp\ccXHAYgR.s:344    .rodata.AHT20_TriggerMeasurement.str1.4:00000000 $d
-C:\Users\w1785\AppData\Local\Temp\ccXHAYgR.s:348    .text.AHT20_TriggerMeasurement:00000000 $t
-C:\Users\w1785\AppData\Local\Temp\ccXHAYgR.s:354    .text.AHT20_TriggerMeasurement:00000000 AHT20_TriggerMeasurement
-C:\Users\w1785\AppData\Local\Temp\ccXHAYgR.s:400    .text.AHT20_TriggerMeasurement:00000028 $d
-C:\Users\w1785\AppData\Local\Temp\ccXHAYgR.s:405    .text.AHT20_ReadRaw:00000000 $t
-C:\Users\w1785\AppData\Local\Temp\ccXHAYgR.s:411    .text.AHT20_ReadRaw:00000000 AHT20_ReadRaw
-C:\Users\w1785\AppData\Local\Temp\ccXHAYgR.s:489    .text.AHT20_ParseRaw:00000000 $t
-C:\Users\w1785\AppData\Local\Temp\ccXHAYgR.s:495    .text.AHT20_ParseRaw:00000000 AHT20_ParseRaw
-C:\Users\w1785\AppData\Local\Temp\ccXHAYgR.s:590    .text.AHT20_ParseRaw:0000006c $d
-C:\Users\w1785\AppData\Local\Temp\ccXHAYgR.s:598    .text.AHT20_ReadData:00000000 $t
-C:\Users\w1785\AppData\Local\Temp\ccXHAYgR.s:604    .text.AHT20_ReadData:00000000 AHT20_ReadData
-C:\Users\w1785\AppData\Local\Temp\ccXHAYgR.s:676    .text.AHT20_TestRead:00000000 $t
-C:\Users\w1785\AppData\Local\Temp\ccXHAYgR.s:682    .text.AHT20_TestRead:00000000 AHT20_TestRead
+C:\Users\w1785\AppData\Local\Temp\ccYE8JTc.s:21     .text.AHT20_ReadStatus:00000000 $t
+C:\Users\w1785\AppData\Local\Temp\ccYE8JTc.s:27     .text.AHT20_ReadStatus:00000000 AHT20_ReadStatus
+C:\Users\w1785\AppData\Local\Temp\ccYE8JTc.s:101    .text.AHT20_IsBusy:00000000 $t
+C:\Users\w1785\AppData\Local\Temp\ccYE8JTc.s:107    .text.AHT20_IsBusy:00000000 AHT20_IsBusy
+C:\Users\w1785\AppData\Local\Temp\ccYE8JTc.s:135    .text.AHT20_IsCalibrated:00000000 $t
+C:\Users\w1785\AppData\Local\Temp\ccYE8JTc.s:141    .text.AHT20_IsCalibrated:00000000 AHT20_IsCalibrated
+C:\Users\w1785\AppData\Local\Temp\ccYE8JTc.s:166    .rodata.AHT20_Init.str1.4:00000000 $d
+C:\Users\w1785\AppData\Local\Temp\ccYE8JTc.s:170    .text.AHT20_Init:00000000 $t
+C:\Users\w1785\AppData\Local\Temp\ccYE8JTc.s:176    .text.AHT20_Init:00000000 AHT20_Init
+C:\Users\w1785\AppData\Local\Temp\ccYE8JTc.s:280    .text.AHT20_Init:00000074 $d
+C:\Users\w1785\AppData\Local\Temp\ccYE8JTc.s:285    .text.AHT20_SoftReset:00000000 $t
+C:\Users\w1785\AppData\Local\Temp\ccYE8JTc.s:291    .text.AHT20_SoftReset:00000000 AHT20_SoftReset
+C:\Users\w1785\AppData\Local\Temp\ccYE8JTc.s:344    .rodata.AHT20_TriggerMeasurement.str1.4:00000000 $d
+C:\Users\w1785\AppData\Local\Temp\ccYE8JTc.s:348    .text.AHT20_TriggerMeasurement:00000000 $t
+C:\Users\w1785\AppData\Local\Temp\ccYE8JTc.s:354    .text.AHT20_TriggerMeasurement:00000000 AHT20_TriggerMeasurement
+C:\Users\w1785\AppData\Local\Temp\ccYE8JTc.s:400    .text.AHT20_TriggerMeasurement:00000028 $d
+C:\Users\w1785\AppData\Local\Temp\ccYE8JTc.s:405    .text.AHT20_ReadRaw:00000000 $t
+C:\Users\w1785\AppData\Local\Temp\ccYE8JTc.s:411    .text.AHT20_ReadRaw:00000000 AHT20_ReadRaw
+C:\Users\w1785\AppData\Local\Temp\ccYE8JTc.s:489    .text.AHT20_ParseRaw:00000000 $t
+C:\Users\w1785\AppData\Local\Temp\ccYE8JTc.s:495    .text.AHT20_ParseRaw:00000000 AHT20_ParseRaw
+C:\Users\w1785\AppData\Local\Temp\ccYE8JTc.s:590    .text.AHT20_ParseRaw:0000006c $d
+C:\Users\w1785\AppData\Local\Temp\ccYE8JTc.s:598    .text.AHT20_ReadData:00000000 $t
+C:\Users\w1785\AppData\Local\Temp\ccYE8JTc.s:604    .text.AHT20_ReadData:00000000 AHT20_ReadData
+C:\Users\w1785\AppData\Local\Temp\ccYE8JTc.s:676    .text.AHT20_TestRead:00000000 $t
+C:\Users\w1785\AppData\Local\Temp\ccYE8JTc.s:682    .text.AHT20_TestRead:00000000 AHT20_TestRead
 
 UNDEFINED SYMBOLS
 I2C_SW_Write

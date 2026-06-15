@@ -1,4 +1,4 @@
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\cc7vzobw.s 			page 1
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccHAIxCe.s 			page 1
 
 
    1              		.cpu cortex-m4
@@ -58,7 +58,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\cc7vzobw.s 			page 1
   28:Middlewares/LVGL/lvgl/src/draw/sw/lv_draw_sw.c ****     #include "arm2d/lv_draw_sw_helium.h"
   29:Middlewares/LVGL/lvgl/src/draw/sw/lv_draw_sw.c **** #elif LV_USE_DRAW_SW_ASM == LV_DRAW_SW_ASM_CUSTOM
   30:Middlewares/LVGL/lvgl/src/draw/sw/lv_draw_sw.c ****     #include LV_DRAW_SW_ASM_CUSTOM_INCLUDE
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\cc7vzobw.s 			page 2
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccHAIxCe.s 			page 2
 
 
   31:Middlewares/LVGL/lvgl/src/draw/sw/lv_draw_sw.c **** #endif
@@ -118,7 +118,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\cc7vzobw.s 			page 1
   85:Middlewares/LVGL/lvgl/src/draw/sw/lv_draw_sw.c ****     draw_sw_unit->base_unit.delete_cb = LV_USE_OS ? lv_draw_sw_delete : NULL;
   86:Middlewares/LVGL/lvgl/src/draw/sw/lv_draw_sw.c **** #if LV_USE_DRAW_ARM2D_SYNC
   87:Middlewares/LVGL/lvgl/src/draw/sw/lv_draw_sw.c ****     draw_sw_unit->base_unit.name = "SW_ARM2D";
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\cc7vzobw.s 			page 3
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccHAIxCe.s 			page 3
 
 
   88:Middlewares/LVGL/lvgl/src/draw/sw/lv_draw_sw.c **** #else
@@ -178,7 +178,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\cc7vzobw.s 			page 1
  142:Middlewares/LVGL/lvgl/src/draw/sw/lv_draw_sw.c ****     }
  143:Middlewares/LVGL/lvgl/src/draw/sw/lv_draw_sw.c **** 
  144:Middlewares/LVGL/lvgl/src/draw/sw/lv_draw_sw.c ****     return 0;
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\cc7vzobw.s 			page 4
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccHAIxCe.s 			page 4
 
 
  145:Middlewares/LVGL/lvgl/src/draw/sw/lv_draw_sw.c **** #else
@@ -238,7 +238,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\cc7vzobw.s 			page 1
  199:Middlewares/LVGL/lvgl/src/draw/sw/lv_draw_sw.c ****     }
  200:Middlewares/LVGL/lvgl/src/draw/sw/lv_draw_sw.c **** 
  201:Middlewares/LVGL/lvgl/src/draw/sw/lv_draw_sw.c ****     return NULL;
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\cc7vzobw.s 			page 5
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccHAIxCe.s 			page 5
 
 
  202:Middlewares/LVGL/lvgl/src/draw/sw/lv_draw_sw.c **** }
@@ -298,7 +298,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\cc7vzobw.s 			page 1
  242:Middlewares/LVGL/lvgl/src/draw/sw/lv_draw_sw.c ****     if(task->preference_score >= 100) {
   43              		.loc 1 242 5 is_stmt 1 view .LVU5
   44              		.loc 1 242 12 is_stmt 0 view .LVU6
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\cc7vzobw.s 			page 6
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccHAIxCe.s 			page 6
 
 
   45 0008 91F85A30 		ldrb	r3, [r1, #90]	@ zero_extendqisi2
@@ -358,7 +358,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\cc7vzobw.s 			page 1
   84              	.LVL4:
  224:Middlewares/LVGL/lvgl/src/draw/sw/lv_draw_sw.c ****                 if(masked && (cf == LV_COLOR_FORMAT_A8 || cf == LV_COLOR_FORMAT_RGB565A8)) {
   85              		.loc 1 224 17 is_stmt 1 view .LVU23
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\cc7vzobw.s 			page 7
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccHAIxCe.s 			page 7
 
 
  224:Middlewares/LVGL/lvgl/src/draw/sw/lv_draw_sw.c ****                 if(masked && (cf == LV_COLOR_FORMAT_A8 || cf == LV_COLOR_FORMAT_RGB565A8)) {
@@ -418,7 +418,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\cc7vzobw.s 			page 1
  267:Middlewares/LVGL/lvgl/src/draw/sw/lv_draw_sw.c ****             all_idle = false;
  268:Middlewares/LVGL/lvgl/src/draw/sw/lv_draw_sw.c ****             break;
  269:Middlewares/LVGL/lvgl/src/draw/sw/lv_draw_sw.c ****         }
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\cc7vzobw.s 			page 8
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccHAIxCe.s 			page 8
 
 
  270:Middlewares/LVGL/lvgl/src/draw/sw/lv_draw_sw.c ****     }
@@ -478,7 +478,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\cc7vzobw.s 			page 1
  324:Middlewares/LVGL/lvgl/src/draw/sw/lv_draw_sw.c ****     if(buf == NULL) {
  325:Middlewares/LVGL/lvgl/src/draw/sw/lv_draw_sw.c ****         LV_PROFILER_DRAW_END;
  326:Middlewares/LVGL/lvgl/src/draw/sw/lv_draw_sw.c ****         return LV_DRAW_UNIT_IDLE;  /*Couldn't start rendering*/
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\cc7vzobw.s 			page 9
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccHAIxCe.s 			page 9
 
 
  327:Middlewares/LVGL/lvgl/src/draw/sw/lv_draw_sw.c ****     }
@@ -538,7 +538,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\cc7vzobw.s 			page 1
  381:Middlewares/LVGL/lvgl/src/draw/sw/lv_draw_sw.c **** }
  382:Middlewares/LVGL/lvgl/src/draw/sw/lv_draw_sw.c **** #endif
  383:Middlewares/LVGL/lvgl/src/draw/sw/lv_draw_sw.c **** 
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\cc7vzobw.s 			page 10
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccHAIxCe.s 			page 10
 
 
  384:Middlewares/LVGL/lvgl/src/draw/sw/lv_draw_sw.c **** static void execute_drawing(lv_draw_task_t * t)
@@ -598,7 +598,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\cc7vzobw.s 			page 1
  396:Middlewares/LVGL/lvgl/src/draw/sw/lv_draw_sw.c ****             lv_draw_sw_box_shadow(t, t->draw_dsc, &t->area);
  397:Middlewares/LVGL/lvgl/src/draw/sw/lv_draw_sw.c ****             break;
  398:Middlewares/LVGL/lvgl/src/draw/sw/lv_draw_sw.c ****         case LV_DRAW_TASK_TYPE_LETTER:
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\cc7vzobw.s 			page 11
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccHAIxCe.s 			page 11
 
 
  399:Middlewares/LVGL/lvgl/src/draw/sw/lv_draw_sw.c ****             lv_draw_sw_letter(t, t->draw_dsc, &t->area);
@@ -658,7 +658,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\cc7vzobw.s 			page 1
  172              		.loc 1 396 13 view .LVU42
  173 0034 00F10802 		add	r2, r0, #8
  174 0038 416D     		ldr	r1, [r0, #84]
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\cc7vzobw.s 			page 12
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccHAIxCe.s 			page 12
 
 
  175 003a FFF7FEFF 		bl	lv_draw_sw_box_shadow
@@ -718,7 +718,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\cc7vzobw.s 			page 1
  219 0072 416D     		ldr	r1, [r0, #84]
  220 0074 FFF7FEFF 		bl	lv_draw_line_iterate
  221              	.LVL21:
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\cc7vzobw.s 			page 13
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccHAIxCe.s 			page 13
 
 
  412:Middlewares/LVGL/lvgl/src/draw/sw/lv_draw_sw.c ****         case LV_DRAW_TASK_TYPE_BLUR:
@@ -778,7 +778,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\cc7vzobw.s 			page 1
  267              		.section	.text.dispatch,"ax",%progbits
  268              		.align	1
  269              		.syntax unified
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\cc7vzobw.s 			page 14
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccHAIxCe.s 			page 14
 
 
  270              		.thumb
@@ -838,7 +838,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\cc7vzobw.s 			page 1
  312 0012 2846     		mov	r0, r5
  313              	.LVL35:
  317:Middlewares/LVGL/lvgl/src/draw/sw/lv_draw_sw.c ****     if(t == NULL) {
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\cc7vzobw.s 			page 15
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccHAIxCe.s 			page 15
 
 
  314              		.loc 1 317 9 view .LVU77
@@ -898,7 +898,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\cc7vzobw.s 			page 1
  334:Middlewares/LVGL/lvgl/src/draw/sw/lv_draw_sw.c **** 
  351              		.loc 1 334 28 is_stmt 0 view .LVU95
  352 0036 0023     		movs	r3, #0
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\cc7vzobw.s 			page 16
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccHAIxCe.s 			page 16
 
 
  353 0038 2362     		str	r3, [r4, #32]
@@ -958,7 +958,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\cc7vzobw.s 			page 1
  399 0000 08B5     		push	{r3, lr}
  400              	.LCFI2:
  401              		.cfi_def_cfa_offset 8
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\cc7vzobw.s 			page 17
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccHAIxCe.s 			page 17
 
 
  402              		.cfi_offset 3, -8
@@ -1018,7 +1018,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\cc7vzobw.s 			page 1
  442 0030 00000000 		.word	.LC0
  443 0034 4C010000 		.word	lv_global+332
  444              		.cfi_endproc
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\cc7vzobw.s 			page 18
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccHAIxCe.s 			page 18
 
 
  445              	.LFE200:
@@ -1078,7 +1078,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\cc7vzobw.s 			page 1
  496              		.loc 1 154 5 view .LVU126
  157:Middlewares/LVGL/lvgl/src/draw/sw/lv_draw_sw.c ****         if(existing_handler->dest_cf == handler->dest_cf) {
  497              		.loc 1 157 5 view .LVU127
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\cc7vzobw.s 			page 19
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccHAIxCe.s 			page 19
 
 
  498 0004 0C48     		ldr	r0, .L50
@@ -1138,7 +1138,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\cc7vzobw.s 			page 1
  538 0028 0120     		movs	r0, #1
  539 002a 10BD     		pop	{r4, pc}
  540              	.LVL61:
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\cc7vzobw.s 			page 20
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccHAIxCe.s 			page 20
 
 
  541              	.L49:
@@ -1198,7 +1198,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\cc7vzobw.s 			page 1
  585              		.cfi_offset 3, -16
  586              		.cfi_offset 4, -12
  587              		.cfi_offset 5, -8
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\cc7vzobw.s 			page 21
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccHAIxCe.s 			page 21
 
 
  588              		.cfi_offset 14, -4
@@ -1258,7 +1258,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\cc7vzobw.s 			page 1
  629              		.loc 1 184 20 is_stmt 0 view .LVU166
  630 002e 0120     		movs	r0, #1
  631 0030 00E0     		b	.L55
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\cc7vzobw.s 			page 22
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccHAIxCe.s 			page 22
 
 
  632              	.L58:
@@ -1318,7 +1318,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\cc7vzobw.s 			page 1
  679              	.LVL78:
  680              	.L63:
  195:Middlewares/LVGL/lvgl/src/draw/sw/lv_draw_sw.c ****         if(handler->dest_cf == dest_cf) {
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\cc7vzobw.s 			page 23
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccHAIxCe.s 			page 23
 
 
  681              		.loc 1 195 5 is_stmt 1 discriminator 2 view .LVU176
@@ -1378,7 +1378,7 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\cc7vzobw.s 			page 1
  726              		.file 10 "Middlewares/LVGL/lvgl/src/draw/sw/../../misc/../font/lv_font.h"
  727              		.file 11 "Middlewares/LVGL/lvgl/src/draw/sw/../lv_draw_image.h"
  728              		.file 12 "Middlewares/LVGL/lvgl/src/draw/sw/../../misc/cache/class/../lv_cache_private.h"
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\cc7vzobw.s 			page 24
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccHAIxCe.s 			page 24
 
 
  729              		.file 13 "Middlewares/LVGL/lvgl/src/draw/sw/../lv_draw_mask.h"
@@ -1418,36 +1418,36 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\cc7vzobw.s 			page 1
  763              		.file 47 "Middlewares/LVGL/lvgl/src/draw/sw/../../misc/../font/../draw/../misc/../stdlib/lv_string
  764              		.file 48 "Middlewares/LVGL/lvgl/src/draw/sw/lv_draw_sw.h"
  765              		.file 49 "Middlewares/LVGL/lvgl/src/draw/sw/blend/../lv_draw_sw_mask.h"
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\cc7vzobw.s 			page 25
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccHAIxCe.s 			page 25
 
 
 DEFINED SYMBOLS
                             *ABS*:00000000 lv_draw_sw.c
-C:\Users\w1785\AppData\Local\Temp\cc7vzobw.s:21     .text.evaluate:00000000 $t
-C:\Users\w1785\AppData\Local\Temp\cc7vzobw.s:26     .text.evaluate:00000000 evaluate
-C:\Users\w1785\AppData\Local\Temp\cc7vzobw.s:109    .text.execute_drawing:00000000 $t
-C:\Users\w1785\AppData\Local\Temp\cc7vzobw.s:114    .text.execute_drawing:00000000 execute_drawing
-C:\Users\w1785\AppData\Local\Temp\cc7vzobw.s:137    .text.execute_drawing:0000000e $d
-C:\Users\w1785\AppData\Local\Temp\cc7vzobw.s:263    .text.execute_drawing:000000a4 $d
-C:\Users\w1785\AppData\Local\Temp\cc7vzobw.s:268    .text.dispatch:00000000 $t
-C:\Users\w1785\AppData\Local\Temp\cc7vzobw.s:273    .text.dispatch:00000000 dispatch
-C:\Users\w1785\AppData\Local\Temp\cc7vzobw.s:383    .rodata.lv_draw_sw_init.str1.4:00000000 $d
-C:\Users\w1785\AppData\Local\Temp\cc7vzobw.s:387    .text.lv_draw_sw_init:00000000 $t
-C:\Users\w1785\AppData\Local\Temp\cc7vzobw.s:393    .text.lv_draw_sw_init:00000000 lv_draw_sw_init
-C:\Users\w1785\AppData\Local\Temp\cc7vzobw.s:440    .text.lv_draw_sw_init:00000028 $d
-C:\Users\w1785\AppData\Local\Temp\cc7vzobw.s:448    .text.lv_draw_sw_deinit:00000000 $t
-C:\Users\w1785\AppData\Local\Temp\cc7vzobw.s:454    .text.lv_draw_sw_deinit:00000000 lv_draw_sw_deinit
-C:\Users\w1785\AppData\Local\Temp\cc7vzobw.s:474    .text.lv_draw_sw_register_blend_handler:00000000 $t
-C:\Users\w1785\AppData\Local\Temp\cc7vzobw.s:480    .text.lv_draw_sw_register_blend_handler:00000000 lv_draw_sw_register_blend_handler
-C:\Users\w1785\AppData\Local\Temp\cc7vzobw.s:563    .text.lv_draw_sw_register_blend_handler:00000038 $d
-C:\Users\w1785\AppData\Local\Temp\cc7vzobw.s:568    .text.lv_draw_sw_unregister_blend_handler:00000000 $t
-C:\Users\w1785\AppData\Local\Temp\cc7vzobw.s:574    .text.lv_draw_sw_unregister_blend_handler:00000000 lv_draw_sw_unregister_blend_handler
-C:\Users\w1785\AppData\Local\Temp\cc7vzobw.s:643    .text.lv_draw_sw_unregister_blend_handler:00000038 $d
-C:\Users\w1785\AppData\Local\Temp\cc7vzobw.s:648    .text.lv_draw_sw_get_blend_handler:00000000 $t
-C:\Users\w1785\AppData\Local\Temp\cc7vzobw.s:654    .text.lv_draw_sw_get_blend_handler:00000000 lv_draw_sw_get_blend_handler
-C:\Users\w1785\AppData\Local\Temp\cc7vzobw.s:712    .text.lv_draw_sw_get_blend_handler:00000028 $d
-C:\Users\w1785\AppData\Local\Temp\cc7vzobw.s:150    .text.execute_drawing:0000001b $d
-C:\Users\w1785\AppData\Local\Temp\cc7vzobw.s:150    .text.execute_drawing:0000001c $t
+C:\Users\w1785\AppData\Local\Temp\ccHAIxCe.s:21     .text.evaluate:00000000 $t
+C:\Users\w1785\AppData\Local\Temp\ccHAIxCe.s:26     .text.evaluate:00000000 evaluate
+C:\Users\w1785\AppData\Local\Temp\ccHAIxCe.s:109    .text.execute_drawing:00000000 $t
+C:\Users\w1785\AppData\Local\Temp\ccHAIxCe.s:114    .text.execute_drawing:00000000 execute_drawing
+C:\Users\w1785\AppData\Local\Temp\ccHAIxCe.s:137    .text.execute_drawing:0000000e $d
+C:\Users\w1785\AppData\Local\Temp\ccHAIxCe.s:263    .text.execute_drawing:000000a4 $d
+C:\Users\w1785\AppData\Local\Temp\ccHAIxCe.s:268    .text.dispatch:00000000 $t
+C:\Users\w1785\AppData\Local\Temp\ccHAIxCe.s:273    .text.dispatch:00000000 dispatch
+C:\Users\w1785\AppData\Local\Temp\ccHAIxCe.s:383    .rodata.lv_draw_sw_init.str1.4:00000000 $d
+C:\Users\w1785\AppData\Local\Temp\ccHAIxCe.s:387    .text.lv_draw_sw_init:00000000 $t
+C:\Users\w1785\AppData\Local\Temp\ccHAIxCe.s:393    .text.lv_draw_sw_init:00000000 lv_draw_sw_init
+C:\Users\w1785\AppData\Local\Temp\ccHAIxCe.s:440    .text.lv_draw_sw_init:00000028 $d
+C:\Users\w1785\AppData\Local\Temp\ccHAIxCe.s:448    .text.lv_draw_sw_deinit:00000000 $t
+C:\Users\w1785\AppData\Local\Temp\ccHAIxCe.s:454    .text.lv_draw_sw_deinit:00000000 lv_draw_sw_deinit
+C:\Users\w1785\AppData\Local\Temp\ccHAIxCe.s:474    .text.lv_draw_sw_register_blend_handler:00000000 $t
+C:\Users\w1785\AppData\Local\Temp\ccHAIxCe.s:480    .text.lv_draw_sw_register_blend_handler:00000000 lv_draw_sw_register_blend_handler
+C:\Users\w1785\AppData\Local\Temp\ccHAIxCe.s:563    .text.lv_draw_sw_register_blend_handler:00000038 $d
+C:\Users\w1785\AppData\Local\Temp\ccHAIxCe.s:568    .text.lv_draw_sw_unregister_blend_handler:00000000 $t
+C:\Users\w1785\AppData\Local\Temp\ccHAIxCe.s:574    .text.lv_draw_sw_unregister_blend_handler:00000000 lv_draw_sw_unregister_blend_handler
+C:\Users\w1785\AppData\Local\Temp\ccHAIxCe.s:643    .text.lv_draw_sw_unregister_blend_handler:00000038 $d
+C:\Users\w1785\AppData\Local\Temp\ccHAIxCe.s:648    .text.lv_draw_sw_get_blend_handler:00000000 $t
+C:\Users\w1785\AppData\Local\Temp\ccHAIxCe.s:654    .text.lv_draw_sw_get_blend_handler:00000000 lv_draw_sw_get_blend_handler
+C:\Users\w1785\AppData\Local\Temp\ccHAIxCe.s:712    .text.lv_draw_sw_get_blend_handler:00000028 $d
+C:\Users\w1785\AppData\Local\Temp\ccHAIxCe.s:150    .text.execute_drawing:0000001b $d
+C:\Users\w1785\AppData\Local\Temp\ccHAIxCe.s:150    .text.execute_drawing:0000001c $t
 
 UNDEFINED SYMBOLS
 lv_draw_sw_fill
