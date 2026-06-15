@@ -27,8 +27,10 @@
 
 static lv_obj_t *s_temp_label;
 static lv_obj_t *s_humi_label;
-static lv_obj_t *s_mode_label;
-static lv_obj_t *s_target_label;
+static lv_obj_t *s_mode_first_label;
+static lv_obj_t *s_mode_rest_label;
+static lv_obj_t *s_target_first_label;
+static lv_obj_t *s_target_rest_label;
 static lv_obj_t *s_target_bar;
 
 static lv_font_t s_ui_font_16;
@@ -128,9 +130,12 @@ static void DisplayService_SetDefaultValues(void)
 {
   lv_label_set_text(s_temp_label, "温度: 25.6C");
   lv_label_set_text(s_humi_label, "湿度: 63.2%");
-  lv_label_set_text(s_mode_label, "工作: 自动");
-  lv_obj_set_style_text_color(s_mode_label, DisplayService_Color(UI_COLOR_GREEN), 0);
-  lv_label_set_text(s_target_label, "目标: 60%");
+  lv_label_set_text(s_mode_first_label, "工");
+  lv_label_set_text(s_mode_rest_label, "作: 自动");
+  lv_obj_set_style_text_color(s_mode_first_label, DisplayService_Color(UI_COLOR_GREEN), 0);
+  lv_obj_set_style_text_color(s_mode_rest_label, DisplayService_Color(UI_COLOR_GREEN), 0);
+  lv_label_set_text(s_target_first_label, "目");
+  lv_label_set_text(s_target_rest_label, "标: 60%");
   lv_bar_set_value(s_target_bar, UI_TARGET_HUMIDITY, LV_ANIM_OFF);
 }
 
@@ -187,30 +192,48 @@ static void DisplayService_CreateUI(void)
                                         DISPLAY_UI_MODE_Y,
                                         DISPLAY_UI_MODE_W,
                                         DISPLAY_UI_MODE_H);
-  s_mode_label = DisplayService_CreateLabel(mode_card,
-                                            "工作: 自动",
-                                            UI_COLOR_GREEN,
-                                            DisplayService_GetUIFont(),
-                                            DISPLAY_UI_MODE_LINE_X,
-                                            DISPLAY_UI_MODE_LINE_Y,
-                                            DISPLAY_UI_MODE_LINE_W,
-                                            DISPLAY_UI_MODE_LINE_H,
-                                            LV_TEXT_ALIGN_CENTER);
+  s_mode_first_label = DisplayService_CreateLabel(mode_card,
+                                                  "工",
+                                                  UI_COLOR_GREEN,
+                                                  DisplayService_GetUIFont(),
+                                                  DISPLAY_UI_MODE_FIRST_X,
+                                                  DISPLAY_UI_MODE_FIRST_Y,
+                                                  DISPLAY_UI_MODE_FIRST_W,
+                                                  DISPLAY_UI_MODE_FIRST_H,
+                                                  LV_TEXT_ALIGN_RIGHT);
+  s_mode_rest_label = DisplayService_CreateLabel(mode_card,
+                                                 "作: 自动",
+                                                 UI_COLOR_GREEN,
+                                                 DisplayService_GetUIFont(),
+                                                 DISPLAY_UI_MODE_REST_X,
+                                                 DISPLAY_UI_MODE_REST_Y,
+                                                 DISPLAY_UI_MODE_REST_W,
+                                                 DISPLAY_UI_MODE_REST_H,
+                                                 LV_TEXT_ALIGN_LEFT);
 
   target_card = DisplayService_CreateCard(screen,
                                           DISPLAY_UI_TARGET_X,
                                           DISPLAY_UI_TARGET_Y,
                                           DISPLAY_UI_TARGET_W,
                                           DISPLAY_UI_TARGET_H);
-  s_target_label = DisplayService_CreateLabel(target_card,
-                                              "目标: 60%",
-                                              UI_COLOR_TEXT_MAIN,
-                                              DisplayService_GetUIFont(),
-                                              DISPLAY_UI_TARGET_LABEL_X,
-                                              DISPLAY_UI_TARGET_LABEL_Y,
-                                              DISPLAY_UI_TARGET_LABEL_W,
-                                              DISPLAY_UI_TARGET_LABEL_H,
-                                              LV_TEXT_ALIGN_CENTER);
+  s_target_first_label = DisplayService_CreateLabel(target_card,
+                                                    "目",
+                                                    UI_COLOR_TEXT_MAIN,
+                                                    DisplayService_GetUIFont(),
+                                                    DISPLAY_UI_TARGET_FIRST_X,
+                                                    DISPLAY_UI_TARGET_FIRST_Y,
+                                                    DISPLAY_UI_TARGET_FIRST_W,
+                                                    DISPLAY_UI_TARGET_FIRST_H,
+                                                    LV_TEXT_ALIGN_RIGHT);
+  s_target_rest_label = DisplayService_CreateLabel(target_card,
+                                                   "标: 60%",
+                                                   UI_COLOR_TEXT_MAIN,
+                                                   DisplayService_GetUIFont(),
+                                                   DISPLAY_UI_TARGET_REST_X,
+                                                   DISPLAY_UI_TARGET_REST_Y,
+                                                   DISPLAY_UI_TARGET_REST_W,
+                                                   DISPLAY_UI_TARGET_REST_H,
+                                                   LV_TEXT_ALIGN_LEFT);
 
   s_target_bar = lv_bar_create(target_card);
   lv_obj_set_pos(s_target_bar, DISPLAY_UI_TARGET_BAR_X, DISPLAY_UI_TARGET_BAR_Y);
@@ -302,9 +325,12 @@ void DisplayService_ShowSensorData(void)
 
   lv_label_set_text(s_temp_label, temp_text);
   lv_label_set_text(s_humi_label, humi_text);
-  lv_label_set_text(s_mode_label, "工作: 自动");
-  lv_obj_set_style_text_color(s_mode_label, DisplayService_Color(UI_COLOR_GREEN), 0);
-  lv_label_set_text(s_target_label, "目标: 60%");
+  lv_label_set_text(s_mode_first_label, "工");
+  lv_label_set_text(s_mode_rest_label, "作: 自动");
+  lv_obj_set_style_text_color(s_mode_first_label, DisplayService_Color(UI_COLOR_GREEN), 0);
+  lv_obj_set_style_text_color(s_mode_rest_label, DisplayService_Color(UI_COLOR_GREEN), 0);
+  lv_label_set_text(s_target_first_label, "目");
+  lv_label_set_text(s_target_rest_label, "标: 60%");
   lv_bar_set_value(s_target_bar, UI_TARGET_HUMIDITY, LV_ANIM_OFF);
 }
 
@@ -317,9 +343,12 @@ void DisplayService_ShowSensorError(void)
 
   lv_label_set_text(s_temp_label, "温度: --.-C");
   lv_label_set_text(s_humi_label, "湿度: --.-%");
-  lv_label_set_text(s_mode_label, DisplayUI_GetSensorErrorText());
-  lv_obj_set_style_text_color(s_mode_label, DisplayService_Color(UI_COLOR_ERROR), 0);
-  lv_label_set_text(s_target_label, "目标: 60%");
+  lv_label_set_text(s_mode_first_label, "");
+  lv_label_set_text(s_mode_rest_label, DisplayUI_GetSensorErrorText());
+  lv_obj_set_style_text_color(s_mode_first_label, DisplayService_Color(UI_COLOR_ERROR), 0);
+  lv_obj_set_style_text_color(s_mode_rest_label, DisplayService_Color(UI_COLOR_ERROR), 0);
+  lv_label_set_text(s_target_first_label, "目");
+  lv_label_set_text(s_target_rest_label, "标: 60%");
   lv_bar_set_value(s_target_bar, UI_TARGET_HUMIDITY, LV_ANIM_OFF);
 }
 
