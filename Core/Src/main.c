@@ -23,7 +23,7 @@
 
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
-#include "relay_hw.h"
+#include "app_main.h"
 
 /* USER CODE END Includes */
 
@@ -90,7 +90,7 @@ int main(void)
   MX_GPIO_Init();
   MX_USART1_UART_Init();
   /* USER CODE BEGIN 2 */
-  Relay_HW_Init();
+  App_Main();
 
   /* USER CODE END 2 */
 
@@ -101,8 +101,6 @@ int main(void)
     /* USER CODE END WHILE */
 
     /* USER CODE BEGIN 3 */
-    Relay_HW_TestControlSide();
-    HAL_Delay(1000U);
   }
   /* USER CODE END 3 */
 }

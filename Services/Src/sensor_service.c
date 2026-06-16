@@ -95,7 +95,7 @@ SensorService_Status_t SensorService_UpdatePeriodic(void)
   }
 
   /* 如果距离上次读取还不到默认周期，就不访问传感器。 */
-  if ((current_tick - s_last_update_tick) < SENSOR_SERVICE_UPDATE_INTERVAL_MS)
+  if ((current_tick - s_last_update_tick) < APP_SENSOR_UPDATE_INTERVAL_MS)
   {
     /* 未到更新时间，不读取也不算错误。 */
     return SENSOR_SERVICE_OK;

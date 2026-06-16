@@ -25,7 +25,8 @@ build/sensor_service.o: Services/Src/sensor_service.c \
  Drivers/STM32G4xx_HAL_Driver/Inc/stm32g4xx_hal_pwr_ex.h \
  Drivers/STM32G4xx_HAL_Driver/Inc/stm32g4xx_hal_uart.h \
  Drivers/STM32G4xx_HAL_Driver/Inc/stm32g4xx_hal_uart_ex.h \
- DeviceDrivers/Sensor/Inc/aht20.h HardwareDrivers/I2C/Inc/i2c_sw.h
+ Config/Inc/app_config.h DeviceDrivers/Sensor/Inc/aht20.h \
+ HardwareDrivers/I2C/Inc/i2c_sw.h
 Services/Inc/sensor_service.h:
 Core/Inc/main.h:
 Drivers/STM32G4xx_HAL_Driver/Inc/stm32g4xx_hal.h:
@@ -55,5 +56,6 @@ Drivers/STM32G4xx_HAL_Driver/Inc/stm32g4xx_hal_pwr.h:
 Drivers/STM32G4xx_HAL_Driver/Inc/stm32g4xx_hal_pwr_ex.h:
 Drivers/STM32G4xx_HAL_Driver/Inc/stm32g4xx_hal_uart.h:
 Drivers/STM32G4xx_HAL_Driver/Inc/stm32g4xx_hal_uart_ex.h:
+Config/Inc/app_config.h:
 DeviceDrivers/Sensor/Inc/aht20.h:
 HardwareDrivers/I2C/Inc/i2c_sw.h:

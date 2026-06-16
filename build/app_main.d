@@ -24,8 +24,10 @@ build/app_main.o: Application/Src/app_main.c Application/Inc/app_main.h \
  Drivers/STM32G4xx_HAL_Driver/Inc/stm32g4xx_hal_pwr_ex.h \
  Drivers/STM32G4xx_HAL_Driver/Inc/stm32g4xx_hal_uart.h \
  Drivers/STM32G4xx_HAL_Driver/Inc/stm32g4xx_hal_uart_ex.h \
- Services/Inc/display_service.h Services/Inc/sensor_service.h \
- DeviceDrivers/Sensor/Inc/aht20.h HardwareDrivers/I2C/Inc/i2c_sw.h
+ Services/Inc/display_service.h Services/Inc/humidifier_service.h \
+ Services/Inc/sensor_service.h Config/Inc/app_config.h \
+ DeviceDrivers/Sensor/Inc/aht20.h HardwareDrivers/I2C/Inc/i2c_sw.h \
+ Services/Inc/water_level_service.h
 Application/Inc/app_main.h:
 Core/Inc/main.h:
 Drivers/STM32G4xx_HAL_Driver/Inc/stm32g4xx_hal.h:
@@ -56,6 +58,9 @@ Drivers/STM32G4xx_HAL_Driver/Inc/stm32g4xx_hal_pwr_ex.h:
 Drivers/STM32G4xx_HAL_Driver/Inc/stm32g4xx_hal_uart.h:
 Drivers/STM32G4xx_HAL_Driver/Inc/stm32g4xx_hal_uart_ex.h:
 Services/Inc/display_service.h:
+Services/Inc/humidifier_service.h:
 Services/Inc/sensor_service.h:
+Config/Inc/app_config.h:
 DeviceDrivers/Sensor/Inc/aht20.h:
 HardwareDrivers/I2C/Inc/i2c_sw.h:
+Services/Inc/water_level_service.h:

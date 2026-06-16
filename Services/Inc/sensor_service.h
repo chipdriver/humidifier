@@ -6,9 +6,8 @@ extern "C" {
 #endif
 
 #include "main.h"
+#include "app_config.h"
 #include "aht20.h"
-
-#define SENSOR_SERVICE_UPDATE_INTERVAL_MS    2000U
 
 typedef enum
 {

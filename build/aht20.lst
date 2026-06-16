@@ -1,4 +1,4 @@
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccYE8JTc.s 			page 1
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\cceSzzkS.s 			page 1
 
 
    1              		.cpu cortex-m4
@@ -31,101 +31,82 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccYE8JTc.s 			page 1
   29              	.LFB133:
    1:DeviceDrivers/Sensor/Src/aht20.c **** #include "aht20.h"
    2:DeviceDrivers/Sensor/Src/aht20.c **** 
-   3:DeviceDrivers/Sensor/Src/aht20.c **** #define AHT20_I2C_ADDR             0x38U
-   4:DeviceDrivers/Sensor/Src/aht20.c **** 
-   5:DeviceDrivers/Sensor/Src/aht20.c **** #define AHT20_CMD_STATUS           0x71U
-   6:DeviceDrivers/Sensor/Src/aht20.c **** #define AHT20_CMD_INIT             0xBEU
-   7:DeviceDrivers/Sensor/Src/aht20.c **** #define AHT20_CMD_TRIGGER          0xACU
-   8:DeviceDrivers/Sensor/Src/aht20.c **** #define AHT20_CMD_SOFT_RESET       0xBAU
-   9:DeviceDrivers/Sensor/Src/aht20.c **** 
-  10:DeviceDrivers/Sensor/Src/aht20.c **** #define AHT20_INIT_PARAM_1         0x08U
-  11:DeviceDrivers/Sensor/Src/aht20.c **** #define AHT20_INIT_PARAM_2         0x00U
-  12:DeviceDrivers/Sensor/Src/aht20.c **** 
-  13:DeviceDrivers/Sensor/Src/aht20.c **** #define AHT20_TRIGGER_PARAM_1      0x33U
-  14:DeviceDrivers/Sensor/Src/aht20.c **** #define AHT20_TRIGGER_PARAM_2      0x00U
-  15:DeviceDrivers/Sensor/Src/aht20.c **** 
-  16:DeviceDrivers/Sensor/Src/aht20.c **** #define AHT20_STATUS_BUSY_MASK     0x80U
-  17:DeviceDrivers/Sensor/Src/aht20.c **** #define AHT20_STATUS_CAL_MASK      0x08U
-  18:DeviceDrivers/Sensor/Src/aht20.c **** 
-  19:DeviceDrivers/Sensor/Src/aht20.c **** /**
-  20:DeviceDrivers/Sensor/Src/aht20.c ****  * @brief 初始化 AHT20 温湿度传感器。
-  21:DeviceDrivers/Sensor/Src/aht20.c ****  * @retval AHT20_OK 表示初始化成功，AHT20_ERROR 表示初始化失败。
-  22:DeviceDrivers/Sensor/Src/aht20.c ****  */
-  23:DeviceDrivers/Sensor/Src/aht20.c **** AHT20_Status_t AHT20_Init(void)
-  24:DeviceDrivers/Sensor/Src/aht20.c **** {
-  25:DeviceDrivers/Sensor/Src/aht20.c ****   /* 定义变量保存 AHT20 的状态字。 */
-  26:DeviceDrivers/Sensor/Src/aht20.c ****   uint8_t status = 0U;
-  27:DeviceDrivers/Sensor/Src/aht20.c **** 
-  28:DeviceDrivers/Sensor/Src/aht20.c ****   /* 初始化上一层软件 I2C 使用的 GPIO。 */
-  29:DeviceDrivers/Sensor/Src/aht20.c ****   I2C_SW_GPIO_Init();
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccYE8JTc.s 			page 2
+   3:DeviceDrivers/Sensor/Src/aht20.c **** /**
+   4:DeviceDrivers/Sensor/Src/aht20.c ****  * @brief 初始化 AHT20 温湿度传感器。
+   5:DeviceDrivers/Sensor/Src/aht20.c ****  * @retval AHT20_OK 表示初始化成功，AHT20_ERROR 表示初始化失败。
+   6:DeviceDrivers/Sensor/Src/aht20.c ****  */
+   7:DeviceDrivers/Sensor/Src/aht20.c **** AHT20_Status_t AHT20_Init(void)
+   8:DeviceDrivers/Sensor/Src/aht20.c **** {
+   9:DeviceDrivers/Sensor/Src/aht20.c ****   /* 定义变量保存 AHT20 的状态字。 */
+  10:DeviceDrivers/Sensor/Src/aht20.c ****   uint8_t status = 0U;
+  11:DeviceDrivers/Sensor/Src/aht20.c **** 
+  12:DeviceDrivers/Sensor/Src/aht20.c ****   /* 初始化上一层软件 I2C 使用的 GPIO。 */
+  13:DeviceDrivers/Sensor/Src/aht20.c ****   I2C_SW_GPIO_Init();
+  14:DeviceDrivers/Sensor/Src/aht20.c **** 
+  15:DeviceDrivers/Sensor/Src/aht20.c ****   /* AHT20 上电后需要等待一段时间，保证芯片内部稳定。 */
+  16:DeviceDrivers/Sensor/Src/aht20.c ****   HAL_Delay(40U);
+  17:DeviceDrivers/Sensor/Src/aht20.c **** 
+  18:DeviceDrivers/Sensor/Src/aht20.c ****   /* 读取 AHT20 当前状态字。 */
+  19:DeviceDrivers/Sensor/Src/aht20.c ****   if (AHT20_ReadStatus(&status) != AHT20_OK)
+  20:DeviceDrivers/Sensor/Src/aht20.c ****   {
+  21:DeviceDrivers/Sensor/Src/aht20.c ****     /* 状态字读取失败，说明当前总线通信不正常。 */
+  22:DeviceDrivers/Sensor/Src/aht20.c ****     return AHT20_ERROR;
+  23:DeviceDrivers/Sensor/Src/aht20.c ****   }
+  24:DeviceDrivers/Sensor/Src/aht20.c **** 
+  25:DeviceDrivers/Sensor/Src/aht20.c ****   /* 判断状态字中的校准使能位是否已经置 1。 */
+  26:DeviceDrivers/Sensor/Src/aht20.c ****   if (AHT20_IsCalibrated(status) == 0U)
+  27:DeviceDrivers/Sensor/Src/aht20.c ****   {
+  28:DeviceDrivers/Sensor/Src/aht20.c ****     /* AHT20 初始化命令固定为 0xBE 0x08 0x00。 */
+  29:DeviceDrivers/Sensor/Src/aht20.c ****     uint8_t init_cmd[3] = {
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\cceSzzkS.s 			page 2
 
 
-  30:DeviceDrivers/Sensor/Src/aht20.c **** 
-  31:DeviceDrivers/Sensor/Src/aht20.c ****   /* AHT20 上电后需要等待一段时间，保证芯片内部稳定。 */
-  32:DeviceDrivers/Sensor/Src/aht20.c ****   HAL_Delay(40U);
-  33:DeviceDrivers/Sensor/Src/aht20.c **** 
-  34:DeviceDrivers/Sensor/Src/aht20.c ****   /* 读取 AHT20 当前状态字。 */
-  35:DeviceDrivers/Sensor/Src/aht20.c ****   if (AHT20_ReadStatus(&status) != AHT20_OK)
-  36:DeviceDrivers/Sensor/Src/aht20.c ****   {
-  37:DeviceDrivers/Sensor/Src/aht20.c ****     /* 状态字读取失败，说明当前总线通信不正常。 */
-  38:DeviceDrivers/Sensor/Src/aht20.c ****     return AHT20_ERROR;
-  39:DeviceDrivers/Sensor/Src/aht20.c ****   }
-  40:DeviceDrivers/Sensor/Src/aht20.c **** 
-  41:DeviceDrivers/Sensor/Src/aht20.c ****   /* 判断状态字中的校准使能位是否已经置 1。 */
-  42:DeviceDrivers/Sensor/Src/aht20.c ****   if (AHT20_IsCalibrated(status) == 0U)
-  43:DeviceDrivers/Sensor/Src/aht20.c ****   {
-  44:DeviceDrivers/Sensor/Src/aht20.c ****     /* AHT20 初始化命令固定为 0xBE 0x08 0x00。 */
-  45:DeviceDrivers/Sensor/Src/aht20.c ****     uint8_t init_cmd[3] = {
-  46:DeviceDrivers/Sensor/Src/aht20.c ****       AHT20_CMD_INIT,
-  47:DeviceDrivers/Sensor/Src/aht20.c ****       AHT20_INIT_PARAM_1,
-  48:DeviceDrivers/Sensor/Src/aht20.c ****       AHT20_INIT_PARAM_2
-  49:DeviceDrivers/Sensor/Src/aht20.c ****     };
-  50:DeviceDrivers/Sensor/Src/aht20.c **** 
-  51:DeviceDrivers/Sensor/Src/aht20.c ****     /* 通过软件 I2C 发送初始化命令。 */
-  52:DeviceDrivers/Sensor/Src/aht20.c ****     if (I2C_SW_Write(AHT20_I2C_ADDR, init_cmd, 3U) != I2C_SW_OK)
-  53:DeviceDrivers/Sensor/Src/aht20.c ****     {
-  54:DeviceDrivers/Sensor/Src/aht20.c ****       /* 初始化命令发送失败，直接返回错误。 */
-  55:DeviceDrivers/Sensor/Src/aht20.c ****       return AHT20_ERROR;
-  56:DeviceDrivers/Sensor/Src/aht20.c ****     }
-  57:DeviceDrivers/Sensor/Src/aht20.c **** 
-  58:DeviceDrivers/Sensor/Src/aht20.c ****     /* 发送初始化命令后等待 AHT20 内部完成校准准备。 */
-  59:DeviceDrivers/Sensor/Src/aht20.c ****     HAL_Delay(10U);
-  60:DeviceDrivers/Sensor/Src/aht20.c **** 
-  61:DeviceDrivers/Sensor/Src/aht20.c ****     /* 再次读取状态字，用来确认校准使能位是否已经置 1。 */
-  62:DeviceDrivers/Sensor/Src/aht20.c ****     if (AHT20_ReadStatus(&status) != AHT20_OK)
-  63:DeviceDrivers/Sensor/Src/aht20.c ****     {
-  64:DeviceDrivers/Sensor/Src/aht20.c ****       /* 第二次状态字读取失败，返回错误。 */
-  65:DeviceDrivers/Sensor/Src/aht20.c ****       return AHT20_ERROR;
-  66:DeviceDrivers/Sensor/Src/aht20.c ****     }
-  67:DeviceDrivers/Sensor/Src/aht20.c **** 
-  68:DeviceDrivers/Sensor/Src/aht20.c ****     /* 如果校准使能位仍然不是 1，则认为初始化失败。 */
-  69:DeviceDrivers/Sensor/Src/aht20.c ****     if (AHT20_IsCalibrated(status) == 0U)
-  70:DeviceDrivers/Sensor/Src/aht20.c ****     {
-  71:DeviceDrivers/Sensor/Src/aht20.c ****       /* 校准使能位没有置位，返回错误给上层。 */
-  72:DeviceDrivers/Sensor/Src/aht20.c ****       return AHT20_ERROR;
-  73:DeviceDrivers/Sensor/Src/aht20.c ****     }
-  74:DeviceDrivers/Sensor/Src/aht20.c ****   }
-  75:DeviceDrivers/Sensor/Src/aht20.c **** 
-  76:DeviceDrivers/Sensor/Src/aht20.c ****   /* 状态检查通过，AHT20 初始化成功。 */
-  77:DeviceDrivers/Sensor/Src/aht20.c ****   return AHT20_OK;
-  78:DeviceDrivers/Sensor/Src/aht20.c **** }
-  79:DeviceDrivers/Sensor/Src/aht20.c **** 
-  80:DeviceDrivers/Sensor/Src/aht20.c **** /**
-  81:DeviceDrivers/Sensor/Src/aht20.c ****  * @brief 读取 AHT20 状态字。
-  82:DeviceDrivers/Sensor/Src/aht20.c ****  * @param status 指向状态字存储变量的指针。
-  83:DeviceDrivers/Sensor/Src/aht20.c ****  * @retval AHT20_OK 表示读取成功，AHT20_ERROR 表示读取失败或参数错误。
-  84:DeviceDrivers/Sensor/Src/aht20.c ****  */
-  85:DeviceDrivers/Sensor/Src/aht20.c **** AHT20_Status_t AHT20_ReadStatus(uint8_t *status)
-  86:DeviceDrivers/Sensor/Src/aht20.c **** {
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccYE8JTc.s 			page 3
-
-
-  30              		.loc 1 86 1 view -0
+  30:DeviceDrivers/Sensor/Src/aht20.c ****       AHT20_CMD_INIT,
+  31:DeviceDrivers/Sensor/Src/aht20.c ****       AHT20_INIT_PARAM_1,
+  32:DeviceDrivers/Sensor/Src/aht20.c ****       AHT20_INIT_PARAM_2
+  33:DeviceDrivers/Sensor/Src/aht20.c ****     };
+  34:DeviceDrivers/Sensor/Src/aht20.c **** 
+  35:DeviceDrivers/Sensor/Src/aht20.c ****     /* 通过软件 I2C 发送初始化命令。 */
+  36:DeviceDrivers/Sensor/Src/aht20.c ****     if (I2C_SW_Write(AHT20_I2C_ADDR, init_cmd, 3U) != I2C_SW_OK)
+  37:DeviceDrivers/Sensor/Src/aht20.c ****     {
+  38:DeviceDrivers/Sensor/Src/aht20.c ****       /* 初始化命令发送失败，直接返回错误。 */
+  39:DeviceDrivers/Sensor/Src/aht20.c ****       return AHT20_ERROR;
+  40:DeviceDrivers/Sensor/Src/aht20.c ****     }
+  41:DeviceDrivers/Sensor/Src/aht20.c **** 
+  42:DeviceDrivers/Sensor/Src/aht20.c ****     /* 发送初始化命令后等待 AHT20 内部完成校准准备。 */
+  43:DeviceDrivers/Sensor/Src/aht20.c ****     HAL_Delay(10U);
+  44:DeviceDrivers/Sensor/Src/aht20.c **** 
+  45:DeviceDrivers/Sensor/Src/aht20.c ****     /* 再次读取状态字，用来确认校准使能位是否已经置 1。 */
+  46:DeviceDrivers/Sensor/Src/aht20.c ****     if (AHT20_ReadStatus(&status) != AHT20_OK)
+  47:DeviceDrivers/Sensor/Src/aht20.c ****     {
+  48:DeviceDrivers/Sensor/Src/aht20.c ****       /* 第二次状态字读取失败，返回错误。 */
+  49:DeviceDrivers/Sensor/Src/aht20.c ****       return AHT20_ERROR;
+  50:DeviceDrivers/Sensor/Src/aht20.c ****     }
+  51:DeviceDrivers/Sensor/Src/aht20.c **** 
+  52:DeviceDrivers/Sensor/Src/aht20.c ****     /* 如果校准使能位仍然不是 1，则认为初始化失败。 */
+  53:DeviceDrivers/Sensor/Src/aht20.c ****     if (AHT20_IsCalibrated(status) == 0U)
+  54:DeviceDrivers/Sensor/Src/aht20.c ****     {
+  55:DeviceDrivers/Sensor/Src/aht20.c ****       /* 校准使能位没有置位，返回错误给上层。 */
+  56:DeviceDrivers/Sensor/Src/aht20.c ****       return AHT20_ERROR;
+  57:DeviceDrivers/Sensor/Src/aht20.c ****     }
+  58:DeviceDrivers/Sensor/Src/aht20.c ****   }
+  59:DeviceDrivers/Sensor/Src/aht20.c **** 
+  60:DeviceDrivers/Sensor/Src/aht20.c ****   /* 状态检查通过，AHT20 初始化成功。 */
+  61:DeviceDrivers/Sensor/Src/aht20.c ****   return AHT20_OK;
+  62:DeviceDrivers/Sensor/Src/aht20.c **** }
+  63:DeviceDrivers/Sensor/Src/aht20.c **** 
+  64:DeviceDrivers/Sensor/Src/aht20.c **** /**
+  65:DeviceDrivers/Sensor/Src/aht20.c ****  * @brief 读取 AHT20 状态字。
+  66:DeviceDrivers/Sensor/Src/aht20.c ****  * @param status 指向状态字存储变量的指针。
+  67:DeviceDrivers/Sensor/Src/aht20.c ****  * @retval AHT20_OK 表示读取成功，AHT20_ERROR 表示读取失败或参数错误。
+  68:DeviceDrivers/Sensor/Src/aht20.c ****  */
+  69:DeviceDrivers/Sensor/Src/aht20.c **** AHT20_Status_t AHT20_ReadStatus(uint8_t *status)
+  70:DeviceDrivers/Sensor/Src/aht20.c **** {
+  30              		.loc 1 70 1 view -0
   31              		.cfi_startproc
   32              		@ args = 0, pretend = 0, frame = 8
   33              		@ frame_needed = 0, uses_anonymous_args = 0
-  34              		.loc 1 86 1 is_stmt 0 view .LVU1
+  34              		.loc 1 70 1 is_stmt 0 view .LVU1
   35 0000 10B5     		push	{r4, lr}
   36              	.LCFI0:
   37              		.cfi_def_cfa_offset 8
@@ -134,60 +115,60 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccYE8JTc.s 			page 1
   40 0002 82B0     		sub	sp, sp, #8
   41              	.LCFI1:
   42              		.cfi_def_cfa_offset 16
-  87:DeviceDrivers/Sensor/Src/aht20.c ****   /* 定义状态读取命令。 */
-  88:DeviceDrivers/Sensor/Src/aht20.c ****   uint8_t cmd = AHT20_CMD_STATUS;
-  43              		.loc 1 88 3 is_stmt 1 view .LVU2
-  44              		.loc 1 88 11 is_stmt 0 view .LVU3
+  71:DeviceDrivers/Sensor/Src/aht20.c ****   /* 定义状态读取命令。 */
+  72:DeviceDrivers/Sensor/Src/aht20.c ****   uint8_t cmd = AHT20_CMD_STATUS;
+  43              		.loc 1 72 3 is_stmt 1 view .LVU2
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\cceSzzkS.s 			page 3
+
+
+  44              		.loc 1 72 11 is_stmt 0 view .LVU3
   45 0004 7123     		movs	r3, #113
   46 0006 8DF80730 		strb	r3, [sp, #7]
-  89:DeviceDrivers/Sensor/Src/aht20.c **** 
-  90:DeviceDrivers/Sensor/Src/aht20.c ****   /* 参数指针不能为空，否则后面无法保存读取结果。 */
-  91:DeviceDrivers/Sensor/Src/aht20.c ****   if (status == (uint8_t *)0)
-  47              		.loc 1 91 3 is_stmt 1 view .LVU4
-  48              		.loc 1 91 6 is_stmt 0 view .LVU5
+  73:DeviceDrivers/Sensor/Src/aht20.c **** 
+  74:DeviceDrivers/Sensor/Src/aht20.c ****   /* 参数指针不能为空，否则后面无法保存读取结果。 */
+  75:DeviceDrivers/Sensor/Src/aht20.c ****   if (status == (uint8_t *)0)
+  47              		.loc 1 75 3 is_stmt 1 view .LVU4
+  48              		.loc 1 75 6 is_stmt 0 view .LVU5
   49 000a 98B1     		cbz	r0, .L3
   50 000c 0446     		mov	r4, r0
-  92:DeviceDrivers/Sensor/Src/aht20.c ****   {
-  93:DeviceDrivers/Sensor/Src/aht20.c ****     /* 传入空指针，直接返回错误。 */
-  94:DeviceDrivers/Sensor/Src/aht20.c ****     return AHT20_ERROR;
-  95:DeviceDrivers/Sensor/Src/aht20.c ****   }
-  96:DeviceDrivers/Sensor/Src/aht20.c **** 
-  97:DeviceDrivers/Sensor/Src/aht20.c ****   /* 先向 AHT20 发送状态读取命令 0x71。 */
-  98:DeviceDrivers/Sensor/Src/aht20.c ****   if (I2C_SW_Write(AHT20_I2C_ADDR, &cmd, 1U) != I2C_SW_OK)
-  51              		.loc 1 98 3 is_stmt 1 view .LVU6
-  52              		.loc 1 98 7 is_stmt 0 view .LVU7
+  76:DeviceDrivers/Sensor/Src/aht20.c ****   {
+  77:DeviceDrivers/Sensor/Src/aht20.c ****     /* 传入空指针，直接返回错误。 */
+  78:DeviceDrivers/Sensor/Src/aht20.c ****     return AHT20_ERROR;
+  79:DeviceDrivers/Sensor/Src/aht20.c ****   }
+  80:DeviceDrivers/Sensor/Src/aht20.c **** 
+  81:DeviceDrivers/Sensor/Src/aht20.c ****   /* 先向 AHT20 发送状态读取命令 0x71。 */
+  82:DeviceDrivers/Sensor/Src/aht20.c ****   if (I2C_SW_Write(AHT20_I2C_ADDR, &cmd, 1U) != I2C_SW_OK)
+  51              		.loc 1 82 3 is_stmt 1 view .LVU6
+  52              		.loc 1 82 7 is_stmt 0 view .LVU7
   53 000e 0122     		movs	r2, #1
   54 0010 0DF10701 		add	r1, sp, #7
   55 0014 3820     		movs	r0, #56
   56              	.LVL1:
-  57              		.loc 1 98 7 view .LVU8
+  57              		.loc 1 82 7 view .LVU8
   58 0016 FFF7FEFF 		bl	I2C_SW_Write
   59              	.LVL2:
-  60              		.loc 1 98 6 discriminator 1 view .LVU9
+  60              		.loc 1 82 6 discriminator 1 view .LVU9
   61 001a 10B1     		cbz	r0, .L7
-  99:DeviceDrivers/Sensor/Src/aht20.c ****   {
- 100:DeviceDrivers/Sensor/Src/aht20.c ****     /* 命令发送失败，返回错误。 */
- 101:DeviceDrivers/Sensor/Src/aht20.c ****     return AHT20_ERROR;
-  62              		.loc 1 101 12 view .LVU10
+  83:DeviceDrivers/Sensor/Src/aht20.c ****   {
+  84:DeviceDrivers/Sensor/Src/aht20.c ****     /* 命令发送失败，返回错误。 */
+  85:DeviceDrivers/Sensor/Src/aht20.c ****     return AHT20_ERROR;
+  62              		.loc 1 85 12 view .LVU10
   63 001c 0120     		movs	r0, #1
   64              	.LVL3:
   65              	.L2:
- 102:DeviceDrivers/Sensor/Src/aht20.c ****   }
- 103:DeviceDrivers/Sensor/Src/aht20.c **** 
- 104:DeviceDrivers/Sensor/Src/aht20.c ****   /* 再从 AHT20 读取 1 个字节状态数据。 */
- 105:DeviceDrivers/Sensor/Src/aht20.c ****   if (I2C_SW_Read(AHT20_I2C_ADDR, status, 1U) != I2C_SW_OK)
- 106:DeviceDrivers/Sensor/Src/aht20.c ****   {
- 107:DeviceDrivers/Sensor/Src/aht20.c ****     /* 状态数据读取失败，返回错误。 */
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccYE8JTc.s 			page 4
-
-
- 108:DeviceDrivers/Sensor/Src/aht20.c ****     return AHT20_ERROR;
- 109:DeviceDrivers/Sensor/Src/aht20.c ****   }
- 110:DeviceDrivers/Sensor/Src/aht20.c **** 
- 111:DeviceDrivers/Sensor/Src/aht20.c ****   /* 命令发送和状态读取都成功。 */
- 112:DeviceDrivers/Sensor/Src/aht20.c ****   return AHT20_OK;
- 113:DeviceDrivers/Sensor/Src/aht20.c **** }
-  66              		.loc 1 113 1 view .LVU11
+  86:DeviceDrivers/Sensor/Src/aht20.c ****   }
+  87:DeviceDrivers/Sensor/Src/aht20.c **** 
+  88:DeviceDrivers/Sensor/Src/aht20.c ****   /* 再从 AHT20 读取 1 个字节状态数据。 */
+  89:DeviceDrivers/Sensor/Src/aht20.c ****   if (I2C_SW_Read(AHT20_I2C_ADDR, status, 1U) != I2C_SW_OK)
+  90:DeviceDrivers/Sensor/Src/aht20.c ****   {
+  91:DeviceDrivers/Sensor/Src/aht20.c ****     /* 状态数据读取失败，返回错误。 */
+  92:DeviceDrivers/Sensor/Src/aht20.c ****     return AHT20_ERROR;
+  93:DeviceDrivers/Sensor/Src/aht20.c ****   }
+  94:DeviceDrivers/Sensor/Src/aht20.c **** 
+  95:DeviceDrivers/Sensor/Src/aht20.c ****   /* 命令发送和状态读取都成功。 */
+  96:DeviceDrivers/Sensor/Src/aht20.c ****   return AHT20_OK;
+  97:DeviceDrivers/Sensor/Src/aht20.c **** }
+  66              		.loc 1 97 1 view .LVU11
   67 001e 02B0     		add	sp, sp, #8
   68              	.LCFI2:
   69              		.cfi_remember_state
@@ -197,32 +178,35 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccYE8JTc.s 			page 1
   73              	.LVL4:
   74              	.L7:
   75              	.LCFI3:
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\cceSzzkS.s 			page 4
+
+
   76              		.cfi_restore_state
- 105:DeviceDrivers/Sensor/Src/aht20.c ****   {
-  77              		.loc 1 105 3 is_stmt 1 view .LVU12
- 105:DeviceDrivers/Sensor/Src/aht20.c ****   {
-  78              		.loc 1 105 7 is_stmt 0 view .LVU13
+  89:DeviceDrivers/Sensor/Src/aht20.c ****   {
+  77              		.loc 1 89 3 is_stmt 1 view .LVU12
+  89:DeviceDrivers/Sensor/Src/aht20.c ****   {
+  78              		.loc 1 89 7 is_stmt 0 view .LVU13
   79 0022 0122     		movs	r2, #1
   80 0024 2146     		mov	r1, r4
   81 0026 3820     		movs	r0, #56
   82 0028 FFF7FEFF 		bl	I2C_SW_Read
   83              	.LVL5:
- 105:DeviceDrivers/Sensor/Src/aht20.c ****   {
-  84              		.loc 1 105 6 discriminator 1 view .LVU14
+  89:DeviceDrivers/Sensor/Src/aht20.c ****   {
+  84              		.loc 1 89 6 discriminator 1 view .LVU14
   85 002c 0028     		cmp	r0, #0
   86 002e F6D0     		beq	.L2
- 108:DeviceDrivers/Sensor/Src/aht20.c ****   }
-  87              		.loc 1 108 12 view .LVU15
+  92:DeviceDrivers/Sensor/Src/aht20.c ****   }
+  87              		.loc 1 92 12 view .LVU15
   88 0030 0120     		movs	r0, #1
   89 0032 F4E7     		b	.L2
   90              	.LVL6:
   91              	.L3:
-  94:DeviceDrivers/Sensor/Src/aht20.c ****   }
-  92              		.loc 1 94 12 view .LVU16
+  78:DeviceDrivers/Sensor/Src/aht20.c ****   }
+  92              		.loc 1 78 12 view .LVU16
   93 0034 0120     		movs	r0, #1
   94              	.LVL7:
-  94:DeviceDrivers/Sensor/Src/aht20.c ****   }
-  95              		.loc 1 94 12 view .LVU17
+  78:DeviceDrivers/Sensor/Src/aht20.c ****   }
+  95              		.loc 1 78 12 view .LVU17
   96 0036 F2E7     		b	.L2
   97              		.cfi_endproc
   98              	.LFE133:
@@ -235,48 +219,48 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccYE8JTc.s 			page 1
  107              	AHT20_IsBusy:
  108              	.LVL8:
  109              	.LFB134:
- 114:DeviceDrivers/Sensor/Src/aht20.c **** 
- 115:DeviceDrivers/Sensor/Src/aht20.c **** /**
- 116:DeviceDrivers/Sensor/Src/aht20.c ****  * @brief 判断 AHT20 是否处于忙状态。
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccYE8JTc.s 			page 5
-
-
- 117:DeviceDrivers/Sensor/Src/aht20.c ****  * @param status AHT20 状态字。
- 118:DeviceDrivers/Sensor/Src/aht20.c ****  * @retval 1 表示正在测量，0 表示空闲。
- 119:DeviceDrivers/Sensor/Src/aht20.c ****  */
- 120:DeviceDrivers/Sensor/Src/aht20.c **** uint8_t AHT20_IsBusy(uint8_t status)
- 121:DeviceDrivers/Sensor/Src/aht20.c **** {
- 110              		.loc 1 121 1 is_stmt 1 view -0
+  98:DeviceDrivers/Sensor/Src/aht20.c **** 
+  99:DeviceDrivers/Sensor/Src/aht20.c **** /**
+ 100:DeviceDrivers/Sensor/Src/aht20.c ****  * @brief 判断 AHT20 是否处于忙状态。
+ 101:DeviceDrivers/Sensor/Src/aht20.c ****  * @param status AHT20 状态字。
+ 102:DeviceDrivers/Sensor/Src/aht20.c ****  * @retval 1 表示正在测量，0 表示空闲。
+ 103:DeviceDrivers/Sensor/Src/aht20.c ****  */
+ 104:DeviceDrivers/Sensor/Src/aht20.c **** uint8_t AHT20_IsBusy(uint8_t status)
+ 105:DeviceDrivers/Sensor/Src/aht20.c **** {
+ 110              		.loc 1 105 1 is_stmt 1 view -0
  111              		.cfi_startproc
  112              		@ args = 0, pretend = 0, frame = 0
  113              		@ frame_needed = 0, uses_anonymous_args = 0
  114              		@ link register save eliminated.
- 122:DeviceDrivers/Sensor/Src/aht20.c ****   /* Busy 位是状态字 bit7，掩码为 0x80。 */
- 123:DeviceDrivers/Sensor/Src/aht20.c ****   if ((status & AHT20_STATUS_BUSY_MASK) != 0U)
- 115              		.loc 1 123 3 view .LVU19
- 116              		.loc 1 123 6 is_stmt 0 view .LVU20
+ 106:DeviceDrivers/Sensor/Src/aht20.c ****   /* Busy 位是状态字 bit7，掩码为 0x80。 */
+ 107:DeviceDrivers/Sensor/Src/aht20.c ****   if ((status & AHT20_STATUS_BUSY_MASK) != 0U)
+ 115              		.loc 1 107 3 view .LVU19
+ 116              		.loc 1 107 6 is_stmt 0 view .LVU20
  117 0000 10F0800F 		tst	r0, #128
  118 0004 01D1     		bne	.L10
- 124:DeviceDrivers/Sensor/Src/aht20.c ****   {
- 125:DeviceDrivers/Sensor/Src/aht20.c ****     /* Busy 位为 1，表示 AHT20 正在测量或内部处理。 */
- 126:DeviceDrivers/Sensor/Src/aht20.c ****     return 1U;
- 127:DeviceDrivers/Sensor/Src/aht20.c ****   }
- 128:DeviceDrivers/Sensor/Src/aht20.c **** 
- 129:DeviceDrivers/Sensor/Src/aht20.c ****   /* Busy 位为 0，表示 AHT20 当前空闲。 */
- 130:DeviceDrivers/Sensor/Src/aht20.c ****   return 0U;
- 119              		.loc 1 130 10 view .LVU21
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\cceSzzkS.s 			page 5
+
+
+ 108:DeviceDrivers/Sensor/Src/aht20.c ****   {
+ 109:DeviceDrivers/Sensor/Src/aht20.c ****     /* Busy 位为 1，表示 AHT20 正在测量或内部处理。 */
+ 110:DeviceDrivers/Sensor/Src/aht20.c ****     return 1U;
+ 111:DeviceDrivers/Sensor/Src/aht20.c ****   }
+ 112:DeviceDrivers/Sensor/Src/aht20.c **** 
+ 113:DeviceDrivers/Sensor/Src/aht20.c ****   /* Busy 位为 0，表示 AHT20 当前空闲。 */
+ 114:DeviceDrivers/Sensor/Src/aht20.c ****   return 0U;
+ 119              		.loc 1 114 10 view .LVU21
  120 0006 0020     		movs	r0, #0
  121              	.LVL9:
- 122              		.loc 1 130 10 view .LVU22
+ 122              		.loc 1 114 10 view .LVU22
  123 0008 7047     		bx	lr
  124              	.LVL10:
  125              	.L10:
- 126:DeviceDrivers/Sensor/Src/aht20.c ****   }
- 126              		.loc 1 126 12 view .LVU23
+ 110:DeviceDrivers/Sensor/Src/aht20.c ****   }
+ 126              		.loc 1 110 12 view .LVU23
  127 000a 0120     		movs	r0, #1
  128              	.LVL11:
- 131:DeviceDrivers/Sensor/Src/aht20.c **** }
- 129              		.loc 1 131 1 view .LVU24
+ 115:DeviceDrivers/Sensor/Src/aht20.c **** }
+ 129              		.loc 1 115 1 view .LVU24
  130 000c 7047     		bx	lr
  131              		.cfi_endproc
  132              	.LFE134:
@@ -289,44 +273,44 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccYE8JTc.s 			page 1
  141              	AHT20_IsCalibrated:
  142              	.LVL12:
  143              	.LFB135:
- 132:DeviceDrivers/Sensor/Src/aht20.c **** 
- 133:DeviceDrivers/Sensor/Src/aht20.c **** /**
- 134:DeviceDrivers/Sensor/Src/aht20.c ****  * @brief 判断 AHT20 是否已经校准使能。
- 135:DeviceDrivers/Sensor/Src/aht20.c ****  * @param status AHT20 状态字。
- 136:DeviceDrivers/Sensor/Src/aht20.c ****  * @retval 1 表示已校准，0 表示未校准。
- 137:DeviceDrivers/Sensor/Src/aht20.c ****  */
- 138:DeviceDrivers/Sensor/Src/aht20.c **** uint8_t AHT20_IsCalibrated(uint8_t status)
- 139:DeviceDrivers/Sensor/Src/aht20.c **** {
- 144              		.loc 1 139 1 is_stmt 1 view -0
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccYE8JTc.s 			page 6
-
-
+ 116:DeviceDrivers/Sensor/Src/aht20.c **** 
+ 117:DeviceDrivers/Sensor/Src/aht20.c **** /**
+ 118:DeviceDrivers/Sensor/Src/aht20.c ****  * @brief 判断 AHT20 是否已经校准使能。
+ 119:DeviceDrivers/Sensor/Src/aht20.c ****  * @param status AHT20 状态字。
+ 120:DeviceDrivers/Sensor/Src/aht20.c ****  * @retval 1 表示已校准，0 表示未校准。
+ 121:DeviceDrivers/Sensor/Src/aht20.c ****  */
+ 122:DeviceDrivers/Sensor/Src/aht20.c **** uint8_t AHT20_IsCalibrated(uint8_t status)
+ 123:DeviceDrivers/Sensor/Src/aht20.c **** {
+ 144              		.loc 1 123 1 is_stmt 1 view -0
  145              		.cfi_startproc
  146              		@ args = 0, pretend = 0, frame = 0
  147              		@ frame_needed = 0, uses_anonymous_args = 0
  148              		@ link register save eliminated.
- 140:DeviceDrivers/Sensor/Src/aht20.c ****   /* Calibration Enable 位是状态字 bit3，掩码为 0x08。 */
- 141:DeviceDrivers/Sensor/Src/aht20.c ****   if ((status & AHT20_STATUS_CAL_MASK) != 0U)
- 149              		.loc 1 141 3 view .LVU26
- 150              		.loc 1 141 6 is_stmt 0 view .LVU27
+ 124:DeviceDrivers/Sensor/Src/aht20.c ****   /* Calibration Enable 位是状态字 bit3，掩码为 0x08。 */
+ 125:DeviceDrivers/Sensor/Src/aht20.c ****   if ((status & AHT20_STATUS_CAL_MASK) != 0U)
+ 149              		.loc 1 125 3 view .LVU26
+ 150              		.loc 1 125 6 is_stmt 0 view .LVU27
  151 0000 10F00800 		ands	r0, r0, #8
  152              	.LVL13:
- 153              		.loc 1 141 6 view .LVU28
+ 153              		.loc 1 125 6 view .LVU28
  154 0004 00D1     		bne	.L14
  155              	.L12:
- 142:DeviceDrivers/Sensor/Src/aht20.c ****   {
- 143:DeviceDrivers/Sensor/Src/aht20.c ****     /* 校准使能位为 1，表示 AHT20 已经处于可正常测量状态。 */
- 144:DeviceDrivers/Sensor/Src/aht20.c ****     return 1U;
- 145:DeviceDrivers/Sensor/Src/aht20.c ****   }
- 146:DeviceDrivers/Sensor/Src/aht20.c **** 
- 147:DeviceDrivers/Sensor/Src/aht20.c ****   /* 校准使能位为 0，表示还需要发送初始化命令。 */
- 148:DeviceDrivers/Sensor/Src/aht20.c ****   return 0U;
- 149:DeviceDrivers/Sensor/Src/aht20.c **** }
- 156              		.loc 1 149 1 view .LVU29
+ 126:DeviceDrivers/Sensor/Src/aht20.c ****   {
+ 127:DeviceDrivers/Sensor/Src/aht20.c ****     /* 校准使能位为 1，表示 AHT20 已经处于可正常测量状态。 */
+ 128:DeviceDrivers/Sensor/Src/aht20.c ****     return 1U;
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\cceSzzkS.s 			page 6
+
+
+ 129:DeviceDrivers/Sensor/Src/aht20.c ****   }
+ 130:DeviceDrivers/Sensor/Src/aht20.c **** 
+ 131:DeviceDrivers/Sensor/Src/aht20.c ****   /* 校准使能位为 0，表示还需要发送初始化命令。 */
+ 132:DeviceDrivers/Sensor/Src/aht20.c ****   return 0U;
+ 133:DeviceDrivers/Sensor/Src/aht20.c **** }
+ 156              		.loc 1 133 1 view .LVU29
  157 0006 7047     		bx	lr
  158              	.L14:
- 144:DeviceDrivers/Sensor/Src/aht20.c ****   }
- 159              		.loc 1 144 12 view .LVU30
+ 128:DeviceDrivers/Sensor/Src/aht20.c ****   }
+ 159              		.loc 1 128 12 view .LVU30
  160 0008 0120     		movs	r0, #1
  161 000a FCE7     		b	.L12
  162              		.cfi_endproc
@@ -343,8 +327,8 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccYE8JTc.s 			page 1
  174              		.thumb_func
  176              	AHT20_Init:
  177              	.LFB132:
-  24:DeviceDrivers/Sensor/Src/aht20.c ****   /* 定义变量保存 AHT20 的状态字。 */
- 178              		.loc 1 24 1 is_stmt 1 view -0
+   8:DeviceDrivers/Sensor/Src/aht20.c ****   /* 定义变量保存 AHT20 的状态字。 */
+ 178              		.loc 1 8 1 is_stmt 1 view -0
  179              		.cfi_startproc
  180              		@ args = 0, pretend = 0, frame = 8
  181              		@ frame_needed = 0, uses_anonymous_args = 0
@@ -356,48 +340,48 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccYE8JTc.s 			page 1
  187 0002 82B0     		sub	sp, sp, #8
  188              	.LCFI5:
  189              		.cfi_def_cfa_offset 16
-  26:DeviceDrivers/Sensor/Src/aht20.c **** 
- 190              		.loc 1 26 3 view .LVU32
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccYE8JTc.s 			page 7
-
-
-  26:DeviceDrivers/Sensor/Src/aht20.c **** 
- 191              		.loc 1 26 11 is_stmt 0 view .LVU33
+  10:DeviceDrivers/Sensor/Src/aht20.c **** 
+ 190              		.loc 1 10 3 view .LVU32
+  10:DeviceDrivers/Sensor/Src/aht20.c **** 
+ 191              		.loc 1 10 11 is_stmt 0 view .LVU33
  192 0004 0023     		movs	r3, #0
  193 0006 8DF80730 		strb	r3, [sp, #7]
-  29:DeviceDrivers/Sensor/Src/aht20.c **** 
- 194              		.loc 1 29 3 is_stmt 1 view .LVU34
+  13:DeviceDrivers/Sensor/Src/aht20.c **** 
+ 194              		.loc 1 13 3 is_stmt 1 view .LVU34
  195 000a FFF7FEFF 		bl	I2C_SW_GPIO_Init
  196              	.LVL14:
-  32:DeviceDrivers/Sensor/Src/aht20.c **** 
- 197              		.loc 1 32 3 view .LVU35
+  16:DeviceDrivers/Sensor/Src/aht20.c **** 
+ 197              		.loc 1 16 3 view .LVU35
  198 000e 2820     		movs	r0, #40
  199 0010 FFF7FEFF 		bl	HAL_Delay
  200              	.LVL15:
-  35:DeviceDrivers/Sensor/Src/aht20.c ****   {
- 201              		.loc 1 35 3 view .LVU36
-  35:DeviceDrivers/Sensor/Src/aht20.c ****   {
- 202              		.loc 1 35 7 is_stmt 0 view .LVU37
+  19:DeviceDrivers/Sensor/Src/aht20.c ****   {
+ 201              		.loc 1 19 3 view .LVU36
+  19:DeviceDrivers/Sensor/Src/aht20.c ****   {
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\cceSzzkS.s 			page 7
+
+
+ 202              		.loc 1 19 7 is_stmt 0 view .LVU37
  203 0014 0DF10700 		add	r0, sp, #7
  204 0018 FFF7FEFF 		bl	AHT20_ReadStatus
  205              	.LVL16:
-  35:DeviceDrivers/Sensor/Src/aht20.c ****   {
- 206              		.loc 1 35 6 discriminator 1 view .LVU38
+  19:DeviceDrivers/Sensor/Src/aht20.c ****   {
+ 206              		.loc 1 19 6 discriminator 1 view .LVU38
  207 001c 40BB     		cbnz	r0, .L18
  208 001e 0446     		mov	r4, r0
-  42:DeviceDrivers/Sensor/Src/aht20.c ****   {
- 209              		.loc 1 42 3 is_stmt 1 view .LVU39
-  42:DeviceDrivers/Sensor/Src/aht20.c ****   {
- 210              		.loc 1 42 7 is_stmt 0 view .LVU40
+  26:DeviceDrivers/Sensor/Src/aht20.c ****   {
+ 209              		.loc 1 26 3 is_stmt 1 view .LVU39
+  26:DeviceDrivers/Sensor/Src/aht20.c ****   {
+ 210              		.loc 1 26 7 is_stmt 0 view .LVU40
  211 0020 9DF80700 		ldrb	r0, [sp, #7]	@ zero_extendqisi2
  212 0024 FFF7FEFF 		bl	AHT20_IsCalibrated
  213              	.LVL17:
-  42:DeviceDrivers/Sensor/Src/aht20.c ****   {
- 214              		.loc 1 42 6 discriminator 1 view .LVU41
+  26:DeviceDrivers/Sensor/Src/aht20.c ****   {
+ 214              		.loc 1 26 6 discriminator 1 view .LVU41
  215 0028 10B1     		cbz	r0, .L20
  216              	.L16:
-  78:DeviceDrivers/Sensor/Src/aht20.c **** 
- 217              		.loc 1 78 1 view .LVU42
+  62:DeviceDrivers/Sensor/Src/aht20.c **** 
+ 217              		.loc 1 62 1 view .LVU42
  218 002a 2046     		mov	r0, r4
  219 002c 02B0     		add	sp, sp, #8
  220              	.LCFI6:
@@ -409,78 +393,75 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccYE8JTc.s 			page 1
  226              	.LCFI7:
  227              		.cfi_restore_state
  228              	.LBB2:
-  45:DeviceDrivers/Sensor/Src/aht20.c ****       AHT20_CMD_INIT,
- 229              		.loc 1 45 5 is_stmt 1 view .LVU43
-  45:DeviceDrivers/Sensor/Src/aht20.c ****       AHT20_CMD_INIT,
- 230              		.loc 1 45 13 is_stmt 0 view .LVU44
+  29:DeviceDrivers/Sensor/Src/aht20.c ****       AHT20_CMD_INIT,
+ 229              		.loc 1 29 5 is_stmt 1 view .LVU43
+  29:DeviceDrivers/Sensor/Src/aht20.c ****       AHT20_CMD_INIT,
+ 230              		.loc 1 29 13 is_stmt 0 view .LVU44
  231 0030 104B     		ldr	r3, .L22
  232 0032 1B68     		ldr	r3, [r3]
  233 0034 ADF80430 		strh	r3, [sp, #4]	@ movhi
  234 0038 1B0C     		lsrs	r3, r3, #16
  235 003a 8DF80630 		strb	r3, [sp, #6]
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccYE8JTc.s 			page 8
-
-
-  52:DeviceDrivers/Sensor/Src/aht20.c ****     {
- 236              		.loc 1 52 5 is_stmt 1 view .LVU45
-  52:DeviceDrivers/Sensor/Src/aht20.c ****     {
- 237              		.loc 1 52 9 is_stmt 0 view .LVU46
+  36:DeviceDrivers/Sensor/Src/aht20.c ****     {
+ 236              		.loc 1 36 5 is_stmt 1 view .LVU45
+  36:DeviceDrivers/Sensor/Src/aht20.c ****     {
+ 237              		.loc 1 36 9 is_stmt 0 view .LVU46
  238 003e 0322     		movs	r2, #3
  239 0040 01A9     		add	r1, sp, #4
  240 0042 3820     		movs	r0, #56
  241 0044 FFF7FEFF 		bl	I2C_SW_Write
  242              	.LVL18:
-  52:DeviceDrivers/Sensor/Src/aht20.c ****     {
- 243              		.loc 1 52 8 discriminator 1 view .LVU47
+  36:DeviceDrivers/Sensor/Src/aht20.c ****     {
+ 243              		.loc 1 36 8 discriminator 1 view .LVU47
  244 0048 08B1     		cbz	r0, .L21
  245              	.L17:
-  55:DeviceDrivers/Sensor/Src/aht20.c ****     }
- 246              		.loc 1 55 14 discriminator 1 view .LVU48
+  39:DeviceDrivers/Sensor/Src/aht20.c ****     }
+ 246              		.loc 1 39 14 discriminator 1 view .LVU48
  247 004a 0124     		movs	r4, #1
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\cceSzzkS.s 			page 8
+
+
  248 004c EDE7     		b	.L16
  249              	.L21:
-  59:DeviceDrivers/Sensor/Src/aht20.c **** 
- 250              		.loc 1 59 5 is_stmt 1 view .LVU49
+  43:DeviceDrivers/Sensor/Src/aht20.c **** 
+ 250              		.loc 1 43 5 is_stmt 1 view .LVU49
  251 004e 0A20     		movs	r0, #10
  252 0050 FFF7FEFF 		bl	HAL_Delay
  253              	.LVL19:
-  62:DeviceDrivers/Sensor/Src/aht20.c ****     {
- 254              		.loc 1 62 5 view .LVU50
-  62:DeviceDrivers/Sensor/Src/aht20.c ****     {
- 255              		.loc 1 62 9 is_stmt 0 view .LVU51
+  46:DeviceDrivers/Sensor/Src/aht20.c ****     {
+ 254              		.loc 1 46 5 view .LVU50
+  46:DeviceDrivers/Sensor/Src/aht20.c ****     {
+ 255              		.loc 1 46 9 is_stmt 0 view .LVU51
  256 0054 0DF10700 		add	r0, sp, #7
  257 0058 FFF7FEFF 		bl	AHT20_ReadStatus
  258              	.LVL20:
-  62:DeviceDrivers/Sensor/Src/aht20.c ****     {
- 259              		.loc 1 62 8 discriminator 1 view .LVU52
+  46:DeviceDrivers/Sensor/Src/aht20.c ****     {
+ 259              		.loc 1 46 8 discriminator 1 view .LVU52
  260 005c 0446     		mov	r4, r0
  261 005e 0028     		cmp	r0, #0
  262 0060 F3D1     		bne	.L17
-  69:DeviceDrivers/Sensor/Src/aht20.c ****     {
- 263              		.loc 1 69 5 is_stmt 1 view .LVU53
-  69:DeviceDrivers/Sensor/Src/aht20.c ****     {
- 264              		.loc 1 69 9 is_stmt 0 view .LVU54
+  53:DeviceDrivers/Sensor/Src/aht20.c ****     {
+ 263              		.loc 1 53 5 is_stmt 1 view .LVU53
+  53:DeviceDrivers/Sensor/Src/aht20.c ****     {
+ 264              		.loc 1 53 9 is_stmt 0 view .LVU54
  265 0062 9DF80700 		ldrb	r0, [sp, #7]	@ zero_extendqisi2
  266 0066 FFF7FEFF 		bl	AHT20_IsCalibrated
  267              	.LVL21:
-  69:DeviceDrivers/Sensor/Src/aht20.c ****     {
- 268              		.loc 1 69 8 discriminator 1 view .LVU55
+  53:DeviceDrivers/Sensor/Src/aht20.c ****     {
+ 268              		.loc 1 53 8 discriminator 1 view .LVU55
  269 006a 0028     		cmp	r0, #0
  270 006c DDD1     		bne	.L16
  271 006e ECE7     		b	.L17
  272              	.L18:
  273              	.LBE2:
-  38:DeviceDrivers/Sensor/Src/aht20.c ****   }
- 274              		.loc 1 38 12 view .LVU56
+  22:DeviceDrivers/Sensor/Src/aht20.c ****   }
+ 274              		.loc 1 22 12 view .LVU56
  275 0070 0124     		movs	r4, #1
  276 0072 DAE7     		b	.L16
  277              	.L23:
  278              		.align	2
  279              	.L22:
  280 0074 00000000 		.word	.LC0
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccYE8JTc.s 			page 9
-
-
  281              		.cfi_endproc
  282              	.LFE132:
  284              		.section	.text.AHT20_SoftReset,"ax",%progbits
@@ -491,14 +472,17 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccYE8JTc.s 			page 1
  289              		.thumb_func
  291              	AHT20_SoftReset:
  292              	.LFB136:
- 150:DeviceDrivers/Sensor/Src/aht20.c **** 
- 151:DeviceDrivers/Sensor/Src/aht20.c **** /**
- 152:DeviceDrivers/Sensor/Src/aht20.c ****  * @brief 对 AHT20 发送软件复位命令。
- 153:DeviceDrivers/Sensor/Src/aht20.c ****  * @retval AHT20_OK 表示命令发送成功，AHT20_ERROR 表示命令发送失败。
- 154:DeviceDrivers/Sensor/Src/aht20.c ****  */
- 155:DeviceDrivers/Sensor/Src/aht20.c **** AHT20_Status_t AHT20_SoftReset(void)
- 156:DeviceDrivers/Sensor/Src/aht20.c **** {
- 293              		.loc 1 156 1 is_stmt 1 view -0
+ 134:DeviceDrivers/Sensor/Src/aht20.c **** 
+ 135:DeviceDrivers/Sensor/Src/aht20.c **** /**
+ 136:DeviceDrivers/Sensor/Src/aht20.c ****  * @brief 对 AHT20 发送软件复位命令。
+ 137:DeviceDrivers/Sensor/Src/aht20.c ****  * @retval AHT20_OK 表示命令发送成功，AHT20_ERROR 表示命令发送失败。
+ 138:DeviceDrivers/Sensor/Src/aht20.c ****  */
+ 139:DeviceDrivers/Sensor/Src/aht20.c **** AHT20_Status_t AHT20_SoftReset(void)
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\cceSzzkS.s 			page 9
+
+
+ 140:DeviceDrivers/Sensor/Src/aht20.c **** {
+ 293              		.loc 1 140 1 is_stmt 1 view -0
  294              		.cfi_startproc
  295              		@ args = 0, pretend = 0, frame = 8
  296              		@ frame_needed = 0, uses_anonymous_args = 0
@@ -510,42 +494,39 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccYE8JTc.s 			page 1
  302 0002 82B0     		sub	sp, sp, #8
  303              	.LCFI9:
  304              		.cfi_def_cfa_offset 16
- 157:DeviceDrivers/Sensor/Src/aht20.c ****   /* AHT20 软件复位命令为 0xBA。 */
- 158:DeviceDrivers/Sensor/Src/aht20.c ****   uint8_t cmd = AHT20_CMD_SOFT_RESET;
- 305              		.loc 1 158 3 view .LVU58
- 306              		.loc 1 158 11 is_stmt 0 view .LVU59
+ 141:DeviceDrivers/Sensor/Src/aht20.c ****   /* AHT20 软件复位命令为 0xBA。 */
+ 142:DeviceDrivers/Sensor/Src/aht20.c ****   uint8_t cmd = AHT20_CMD_SOFT_RESET;
+ 305              		.loc 1 142 3 view .LVU58
+ 306              		.loc 1 142 11 is_stmt 0 view .LVU59
  307 0004 BA23     		movs	r3, #186
  308 0006 8DF80730 		strb	r3, [sp, #7]
- 159:DeviceDrivers/Sensor/Src/aht20.c **** 
- 160:DeviceDrivers/Sensor/Src/aht20.c ****   /* 通过软件 I2C 发送软件复位命令。 */
- 161:DeviceDrivers/Sensor/Src/aht20.c ****   if (I2C_SW_Write(AHT20_I2C_ADDR, &cmd, 1U) != I2C_SW_OK)
- 309              		.loc 1 161 3 is_stmt 1 view .LVU60
- 310              		.loc 1 161 7 is_stmt 0 view .LVU61
+ 143:DeviceDrivers/Sensor/Src/aht20.c **** 
+ 144:DeviceDrivers/Sensor/Src/aht20.c ****   /* 通过软件 I2C 发送软件复位命令。 */
+ 145:DeviceDrivers/Sensor/Src/aht20.c ****   if (I2C_SW_Write(AHT20_I2C_ADDR, &cmd, 1U) != I2C_SW_OK)
+ 309              		.loc 1 145 3 is_stmt 1 view .LVU60
+ 310              		.loc 1 145 7 is_stmt 0 view .LVU61
  311 000a 0122     		movs	r2, #1
  312 000c 0DF10701 		add	r1, sp, #7
  313 0010 3820     		movs	r0, #56
  314 0012 FFF7FEFF 		bl	I2C_SW_Write
  315              	.LVL22:
- 316              		.loc 1 161 6 discriminator 1 view .LVU62
+ 316              		.loc 1 145 6 discriminator 1 view .LVU62
  317 0016 18B1     		cbz	r0, .L28
- 162:DeviceDrivers/Sensor/Src/aht20.c ****   {
- 163:DeviceDrivers/Sensor/Src/aht20.c ****     /* 命令发送失败，返回错误。 */
- 164:DeviceDrivers/Sensor/Src/aht20.c ****     return AHT20_ERROR;
- 318              		.loc 1 164 12 view .LVU63
+ 146:DeviceDrivers/Sensor/Src/aht20.c ****   {
+ 147:DeviceDrivers/Sensor/Src/aht20.c ****     /* 命令发送失败，返回错误。 */
+ 148:DeviceDrivers/Sensor/Src/aht20.c ****     return AHT20_ERROR;
+ 318              		.loc 1 148 12 view .LVU63
  319 0018 0124     		movs	r4, #1
  320              	.L25:
- 165:DeviceDrivers/Sensor/Src/aht20.c ****   }
- 166:DeviceDrivers/Sensor/Src/aht20.c **** 
- 167:DeviceDrivers/Sensor/Src/aht20.c ****   /* 软件复位后等待 AHT20 内部重新启动。 */
- 168:DeviceDrivers/Sensor/Src/aht20.c ****   HAL_Delay(20U);
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccYE8JTc.s 			page 10
-
-
- 169:DeviceDrivers/Sensor/Src/aht20.c **** 
- 170:DeviceDrivers/Sensor/Src/aht20.c ****   /* 命令发送成功，并且等待完成。 */
- 171:DeviceDrivers/Sensor/Src/aht20.c ****   return AHT20_OK;
- 172:DeviceDrivers/Sensor/Src/aht20.c **** }
- 321              		.loc 1 172 1 view .LVU64
+ 149:DeviceDrivers/Sensor/Src/aht20.c ****   }
+ 150:DeviceDrivers/Sensor/Src/aht20.c **** 
+ 151:DeviceDrivers/Sensor/Src/aht20.c ****   /* 软件复位后等待 AHT20 内部重新启动。 */
+ 152:DeviceDrivers/Sensor/Src/aht20.c ****   HAL_Delay(20U);
+ 153:DeviceDrivers/Sensor/Src/aht20.c **** 
+ 154:DeviceDrivers/Sensor/Src/aht20.c ****   /* 命令发送成功，并且等待完成。 */
+ 155:DeviceDrivers/Sensor/Src/aht20.c ****   return AHT20_OK;
+ 156:DeviceDrivers/Sensor/Src/aht20.c **** }
+ 321              		.loc 1 156 1 view .LVU64
  322 001a 2046     		mov	r0, r4
  323 001c 02B0     		add	sp, sp, #8
  324              	.LCFI10:
@@ -557,15 +538,18 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccYE8JTc.s 			page 1
  330              	.LCFI11:
  331              		.cfi_restore_state
  332 0020 0446     		mov	r4, r0
- 168:DeviceDrivers/Sensor/Src/aht20.c **** 
- 333              		.loc 1 168 3 is_stmt 1 view .LVU65
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\cceSzzkS.s 			page 10
+
+
+ 152:DeviceDrivers/Sensor/Src/aht20.c **** 
+ 333              		.loc 1 152 3 is_stmt 1 view .LVU65
  334 0022 1420     		movs	r0, #20
  335 0024 FFF7FEFF 		bl	HAL_Delay
  336              	.LVL23:
- 171:DeviceDrivers/Sensor/Src/aht20.c **** }
- 337              		.loc 1 171 3 view .LVU66
- 171:DeviceDrivers/Sensor/Src/aht20.c **** }
- 338              		.loc 1 171 10 is_stmt 0 view .LVU67
+ 155:DeviceDrivers/Sensor/Src/aht20.c **** }
+ 337              		.loc 1 155 3 view .LVU66
+ 155:DeviceDrivers/Sensor/Src/aht20.c **** }
+ 338              		.loc 1 155 10 is_stmt 0 view .LVU67
  339 0028 F7E7     		b	.L25
  340              		.cfi_endproc
  341              	.LFE136:
@@ -581,14 +565,14 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccYE8JTc.s 			page 1
  352              		.thumb_func
  354              	AHT20_TriggerMeasurement:
  355              	.LFB137:
- 173:DeviceDrivers/Sensor/Src/aht20.c **** 
- 174:DeviceDrivers/Sensor/Src/aht20.c **** /**
- 175:DeviceDrivers/Sensor/Src/aht20.c ****  * @brief 触发 AHT20 进行一次温湿度测量。
- 176:DeviceDrivers/Sensor/Src/aht20.c ****  * @retval AHT20_OK 表示命令发送成功，AHT20_ERROR 表示命令发送失败。
- 177:DeviceDrivers/Sensor/Src/aht20.c ****  */
- 178:DeviceDrivers/Sensor/Src/aht20.c **** AHT20_Status_t AHT20_TriggerMeasurement(void)
- 179:DeviceDrivers/Sensor/Src/aht20.c **** {
- 356              		.loc 1 179 1 is_stmt 1 view -0
+ 157:DeviceDrivers/Sensor/Src/aht20.c **** 
+ 158:DeviceDrivers/Sensor/Src/aht20.c **** /**
+ 159:DeviceDrivers/Sensor/Src/aht20.c ****  * @brief 触发 AHT20 进行一次温湿度测量。
+ 160:DeviceDrivers/Sensor/Src/aht20.c ****  * @retval AHT20_OK 表示命令发送成功，AHT20_ERROR 表示命令发送失败。
+ 161:DeviceDrivers/Sensor/Src/aht20.c ****  */
+ 162:DeviceDrivers/Sensor/Src/aht20.c **** AHT20_Status_t AHT20_TriggerMeasurement(void)
+ 163:DeviceDrivers/Sensor/Src/aht20.c **** {
+ 356              		.loc 1 163 1 is_stmt 1 view -0
  357              		.cfi_startproc
  358              		@ args = 0, pretend = 0, frame = 8
  359              		@ frame_needed = 0, uses_anonymous_args = 0
@@ -598,45 +582,45 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccYE8JTc.s 			page 1
  363              		.cfi_offset 14, -4
  364 0002 83B0     		sub	sp, sp, #12
  365              	.LCFI13:
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccYE8JTc.s 			page 11
-
-
  366              		.cfi_def_cfa_offset 16
- 180:DeviceDrivers/Sensor/Src/aht20.c ****   /* AHT20 触发测量命令固定为 0xAC 0x33 0x00。 */
- 181:DeviceDrivers/Sensor/Src/aht20.c ****   uint8_t trigger_cmd[3] = {
- 367              		.loc 1 181 3 view .LVU69
- 368              		.loc 1 181 11 is_stmt 0 view .LVU70
+ 164:DeviceDrivers/Sensor/Src/aht20.c ****   /* AHT20 触发测量命令固定为 0xAC 0x33 0x00。 */
+ 165:DeviceDrivers/Sensor/Src/aht20.c ****   uint8_t trigger_cmd[3] = {
+ 367              		.loc 1 165 3 view .LVU69
+ 368              		.loc 1 165 11 is_stmt 0 view .LVU70
  369 0004 084B     		ldr	r3, .L34
  370 0006 1B68     		ldr	r3, [r3]
  371 0008 ADF80430 		strh	r3, [sp, #4]	@ movhi
  372 000c 1B0C     		lsrs	r3, r3, #16
  373 000e 8DF80630 		strb	r3, [sp, #6]
- 182:DeviceDrivers/Sensor/Src/aht20.c ****     AHT20_CMD_TRIGGER,
- 183:DeviceDrivers/Sensor/Src/aht20.c ****     AHT20_TRIGGER_PARAM_1,
- 184:DeviceDrivers/Sensor/Src/aht20.c ****     AHT20_TRIGGER_PARAM_2
- 185:DeviceDrivers/Sensor/Src/aht20.c ****   };
- 186:DeviceDrivers/Sensor/Src/aht20.c **** 
- 187:DeviceDrivers/Sensor/Src/aht20.c ****   /* 通过软件 I2C 发送触发测量命令。 */
- 188:DeviceDrivers/Sensor/Src/aht20.c ****   if (I2C_SW_Write(AHT20_I2C_ADDR, trigger_cmd, 3U) != I2C_SW_OK)
- 374              		.loc 1 188 3 is_stmt 1 view .LVU71
- 375              		.loc 1 188 7 is_stmt 0 view .LVU72
+ 166:DeviceDrivers/Sensor/Src/aht20.c ****     AHT20_CMD_TRIGGER,
+ 167:DeviceDrivers/Sensor/Src/aht20.c ****     AHT20_TRIGGER_PARAM_1,
+ 168:DeviceDrivers/Sensor/Src/aht20.c ****     AHT20_TRIGGER_PARAM_2
+ 169:DeviceDrivers/Sensor/Src/aht20.c ****   };
+ 170:DeviceDrivers/Sensor/Src/aht20.c **** 
+ 171:DeviceDrivers/Sensor/Src/aht20.c ****   /* 通过软件 I2C 发送触发测量命令。 */
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\cceSzzkS.s 			page 11
+
+
+ 172:DeviceDrivers/Sensor/Src/aht20.c ****   if (I2C_SW_Write(AHT20_I2C_ADDR, trigger_cmd, 3U) != I2C_SW_OK)
+ 374              		.loc 1 172 3 is_stmt 1 view .LVU71
+ 375              		.loc 1 172 7 is_stmt 0 view .LVU72
  376 0012 0322     		movs	r2, #3
  377 0014 01A9     		add	r1, sp, #4
  378 0016 3820     		movs	r0, #56
  379 0018 FFF7FEFF 		bl	I2C_SW_Write
  380              	.LVL24:
- 381              		.loc 1 188 6 discriminator 1 view .LVU73
+ 381              		.loc 1 172 6 discriminator 1 view .LVU73
  382 001c 08B9     		cbnz	r0, .L33
  383              	.L30:
- 189:DeviceDrivers/Sensor/Src/aht20.c ****   {
- 190:DeviceDrivers/Sensor/Src/aht20.c ****     /* 命令发送失败，返回错误。 */
- 191:DeviceDrivers/Sensor/Src/aht20.c ****     return AHT20_ERROR;
- 192:DeviceDrivers/Sensor/Src/aht20.c ****   }
- 193:DeviceDrivers/Sensor/Src/aht20.c **** 
- 194:DeviceDrivers/Sensor/Src/aht20.c ****   /* 命令发送成功。 */
- 195:DeviceDrivers/Sensor/Src/aht20.c ****   return AHT20_OK;
- 196:DeviceDrivers/Sensor/Src/aht20.c **** }
- 384              		.loc 1 196 1 view .LVU74
+ 173:DeviceDrivers/Sensor/Src/aht20.c ****   {
+ 174:DeviceDrivers/Sensor/Src/aht20.c ****     /* 命令发送失败，返回错误。 */
+ 175:DeviceDrivers/Sensor/Src/aht20.c ****     return AHT20_ERROR;
+ 176:DeviceDrivers/Sensor/Src/aht20.c ****   }
+ 177:DeviceDrivers/Sensor/Src/aht20.c **** 
+ 178:DeviceDrivers/Sensor/Src/aht20.c ****   /* 命令发送成功。 */
+ 179:DeviceDrivers/Sensor/Src/aht20.c ****   return AHT20_OK;
+ 180:DeviceDrivers/Sensor/Src/aht20.c **** }
+ 384              		.loc 1 180 1 view .LVU74
  385 001e 03B0     		add	sp, sp, #12
  386              	.LCFI14:
  387              		.cfi_remember_state
@@ -646,8 +630,8 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccYE8JTc.s 			page 1
  391              	.L33:
  392              	.LCFI15:
  393              		.cfi_restore_state
- 191:DeviceDrivers/Sensor/Src/aht20.c ****   }
- 394              		.loc 1 191 12 view .LVU75
+ 175:DeviceDrivers/Sensor/Src/aht20.c ****   }
+ 394              		.loc 1 175 12 view .LVU75
  395 0022 0120     		movs	r0, #1
  396 0024 FBE7     		b	.L30
  397              	.L35:
@@ -658,9 +642,6 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccYE8JTc.s 			page 1
  402              	.LFE137:
  404              		.section	.text.AHT20_ReadRaw,"ax",%progbits
  405              		.align	1
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccYE8JTc.s 			page 12
-
-
  406              		.global	AHT20_ReadRaw
  407              		.syntax unified
  408              		.thumb
@@ -668,109 +649,112 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccYE8JTc.s 			page 1
  411              	AHT20_ReadRaw:
  412              	.LVL25:
  413              	.LFB138:
- 197:DeviceDrivers/Sensor/Src/aht20.c **** 
- 198:DeviceDrivers/Sensor/Src/aht20.c **** /**
- 199:DeviceDrivers/Sensor/Src/aht20.c ****  * @brief 触发测量并读取 AHT20 的 6 字节原始数据。
- 200:DeviceDrivers/Sensor/Src/aht20.c ****  * @param raw 指向 6 字节原始数据缓冲区的指针。
- 201:DeviceDrivers/Sensor/Src/aht20.c ****  * @retval AHT20_OK 表示读取成功，AHT20_ERROR 表示读取失败、忙状态或参数错误�
- 202:DeviceDrivers/Sensor/Src/aht20.c ****  */
- 203:DeviceDrivers/Sensor/Src/aht20.c **** AHT20_Status_t AHT20_ReadRaw(uint8_t raw[6])
- 204:DeviceDrivers/Sensor/Src/aht20.c **** {
- 414              		.loc 1 204 1 is_stmt 1 view -0
+ 181:DeviceDrivers/Sensor/Src/aht20.c **** 
+ 182:DeviceDrivers/Sensor/Src/aht20.c **** /**
+ 183:DeviceDrivers/Sensor/Src/aht20.c ****  * @brief 触发测量并读取 AHT20 的 6 字节原始数据。
+ 184:DeviceDrivers/Sensor/Src/aht20.c ****  * @param raw 指向 6 字节原始数据缓冲区的指针。
+ 185:DeviceDrivers/Sensor/Src/aht20.c ****  * @retval AHT20_OK 表示读取成功，AHT20_ERROR 表示读取失败、忙状态或参数错误�
+ 186:DeviceDrivers/Sensor/Src/aht20.c ****  */
+ 187:DeviceDrivers/Sensor/Src/aht20.c **** AHT20_Status_t AHT20_ReadRaw(uint8_t raw[6])
+ 188:DeviceDrivers/Sensor/Src/aht20.c **** {
+ 414              		.loc 1 188 1 is_stmt 1 view -0
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\cceSzzkS.s 			page 12
+
+
  415              		.cfi_startproc
  416              		@ args = 0, pretend = 0, frame = 0
  417              		@ frame_needed = 0, uses_anonymous_args = 0
- 205:DeviceDrivers/Sensor/Src/aht20.c ****   /* 原始数据缓冲区不能为空，否则无法保存 6 字节测量结果。 */
- 206:DeviceDrivers/Sensor/Src/aht20.c ****   if (raw == (uint8_t *)0)
- 418              		.loc 1 206 3 view .LVU77
- 419              		.loc 1 206 6 is_stmt 0 view .LVU78
+ 189:DeviceDrivers/Sensor/Src/aht20.c ****   /* 原始数据缓冲区不能为空，否则无法保存 6 字节测量结果。 */
+ 190:DeviceDrivers/Sensor/Src/aht20.c ****   if (raw == (uint8_t *)0)
+ 418              		.loc 1 190 3 view .LVU77
+ 419              		.loc 1 190 6 is_stmt 0 view .LVU78
  420 0000 B0B1     		cbz	r0, .L38
- 204:DeviceDrivers/Sensor/Src/aht20.c ****   /* 原始数据缓冲区不能为空，否则无法保存 6 字节测量结果。 */
- 421              		.loc 1 204 1 view .LVU79
+ 188:DeviceDrivers/Sensor/Src/aht20.c ****   /* 原始数据缓冲区不能为空，否则无法保存 6 字节测量结果。 */
+ 421              		.loc 1 188 1 view .LVU79
  422 0002 10B5     		push	{r4, lr}
  423              	.LCFI16:
  424              		.cfi_def_cfa_offset 8
  425              		.cfi_offset 4, -8
  426              		.cfi_offset 14, -4
  427 0004 0446     		mov	r4, r0
- 207:DeviceDrivers/Sensor/Src/aht20.c ****   {
- 208:DeviceDrivers/Sensor/Src/aht20.c ****     /* 传入空指针，直接返回错误。 */
- 209:DeviceDrivers/Sensor/Src/aht20.c ****     return AHT20_ERROR;
- 210:DeviceDrivers/Sensor/Src/aht20.c ****   }
- 211:DeviceDrivers/Sensor/Src/aht20.c **** 
- 212:DeviceDrivers/Sensor/Src/aht20.c ****   /* 先发送触发测量命令。 */
- 213:DeviceDrivers/Sensor/Src/aht20.c ****   if (AHT20_TriggerMeasurement() != AHT20_OK)
- 428              		.loc 1 213 3 is_stmt 1 view .LVU80
- 429              		.loc 1 213 7 is_stmt 0 view .LVU81
+ 191:DeviceDrivers/Sensor/Src/aht20.c ****   {
+ 192:DeviceDrivers/Sensor/Src/aht20.c ****     /* 传入空指针，直接返回错误。 */
+ 193:DeviceDrivers/Sensor/Src/aht20.c ****     return AHT20_ERROR;
+ 194:DeviceDrivers/Sensor/Src/aht20.c ****   }
+ 195:DeviceDrivers/Sensor/Src/aht20.c **** 
+ 196:DeviceDrivers/Sensor/Src/aht20.c ****   /* 先发送触发测量命令。 */
+ 197:DeviceDrivers/Sensor/Src/aht20.c ****   if (AHT20_TriggerMeasurement() != AHT20_OK)
+ 428              		.loc 1 197 3 is_stmt 1 view .LVU80
+ 429              		.loc 1 197 7 is_stmt 0 view .LVU81
  430 0006 FFF7FEFF 		bl	AHT20_TriggerMeasurement
  431              	.LVL26:
- 432              		.loc 1 213 6 discriminator 1 view .LVU82
+ 432              		.loc 1 197 6 discriminator 1 view .LVU82
  433 000a 08B1     		cbz	r0, .L46
- 214:DeviceDrivers/Sensor/Src/aht20.c ****   {
- 215:DeviceDrivers/Sensor/Src/aht20.c ****     /* 触发测量失败，直接返回错误。 */
- 216:DeviceDrivers/Sensor/Src/aht20.c ****     return AHT20_ERROR;
- 434              		.loc 1 216 12 view .LVU83
+ 198:DeviceDrivers/Sensor/Src/aht20.c ****   {
+ 199:DeviceDrivers/Sensor/Src/aht20.c ****     /* 触发测量失败，直接返回错误。 */
+ 200:DeviceDrivers/Sensor/Src/aht20.c ****     return AHT20_ERROR;
+ 434              		.loc 1 200 12 view .LVU83
  435 000c 0120     		movs	r0, #1
  436              	.L37:
- 217:DeviceDrivers/Sensor/Src/aht20.c ****   }
- 218:DeviceDrivers/Sensor/Src/aht20.c **** 
- 219:DeviceDrivers/Sensor/Src/aht20.c ****   /* 第一版使用固定 80 ms 等待，给 AHT20 留足测量时间。 */
- 220:DeviceDrivers/Sensor/Src/aht20.c ****   HAL_Delay(80U);
- 221:DeviceDrivers/Sensor/Src/aht20.c **** 
- 222:DeviceDrivers/Sensor/Src/aht20.c ****   /* 从 AHT20 连续读取 6 字节原始数据。 */
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccYE8JTc.s 			page 13
+ 201:DeviceDrivers/Sensor/Src/aht20.c ****   }
+ 202:DeviceDrivers/Sensor/Src/aht20.c **** 
+ 203:DeviceDrivers/Sensor/Src/aht20.c ****   /* 第一版使用固定 80 ms 等待，给 AHT20 留足测量时间。 */
+ 204:DeviceDrivers/Sensor/Src/aht20.c ****   HAL_Delay(80U);
+ 205:DeviceDrivers/Sensor/Src/aht20.c **** 
+ 206:DeviceDrivers/Sensor/Src/aht20.c ****   /* 从 AHT20 连续读取 6 字节原始数据。 */
+ 207:DeviceDrivers/Sensor/Src/aht20.c ****   if (I2C_SW_Read(AHT20_I2C_ADDR, raw, 6U) != I2C_SW_OK)
+ 208:DeviceDrivers/Sensor/Src/aht20.c ****   {
+ 209:DeviceDrivers/Sensor/Src/aht20.c ****     /* 原始数据读取失败，返回错误。 */
+ 210:DeviceDrivers/Sensor/Src/aht20.c ****     return AHT20_ERROR;
+ 211:DeviceDrivers/Sensor/Src/aht20.c ****   }
+ 212:DeviceDrivers/Sensor/Src/aht20.c **** 
+ 213:DeviceDrivers/Sensor/Src/aht20.c ****   /* raw[0] 是状态字，读完后再次检查 Busy 位。 */
+ 214:DeviceDrivers/Sensor/Src/aht20.c ****   if (AHT20_IsBusy(raw[0]) != 0U)
+ 215:DeviceDrivers/Sensor/Src/aht20.c ****   {
+ 216:DeviceDrivers/Sensor/Src/aht20.c ****     /* Busy 位仍然为 1，说明数据还没有准备好。 */
+ 217:DeviceDrivers/Sensor/Src/aht20.c ****     return AHT20_ERROR;
+ 218:DeviceDrivers/Sensor/Src/aht20.c ****   }
+ 219:DeviceDrivers/Sensor/Src/aht20.c **** 
+ 220:DeviceDrivers/Sensor/Src/aht20.c ****   /* 6 字节数据读取完成，并且状态字显示数据可用。 */
+ 221:DeviceDrivers/Sensor/Src/aht20.c ****   return AHT20_OK;
+ 222:DeviceDrivers/Sensor/Src/aht20.c **** }
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\cceSzzkS.s 			page 13
 
 
- 223:DeviceDrivers/Sensor/Src/aht20.c ****   if (I2C_SW_Read(AHT20_I2C_ADDR, raw, 6U) != I2C_SW_OK)
- 224:DeviceDrivers/Sensor/Src/aht20.c ****   {
- 225:DeviceDrivers/Sensor/Src/aht20.c ****     /* 原始数据读取失败，返回错误。 */
- 226:DeviceDrivers/Sensor/Src/aht20.c ****     return AHT20_ERROR;
- 227:DeviceDrivers/Sensor/Src/aht20.c ****   }
- 228:DeviceDrivers/Sensor/Src/aht20.c **** 
- 229:DeviceDrivers/Sensor/Src/aht20.c ****   /* raw[0] 是状态字，读完后再次检查 Busy 位。 */
- 230:DeviceDrivers/Sensor/Src/aht20.c ****   if (AHT20_IsBusy(raw[0]) != 0U)
- 231:DeviceDrivers/Sensor/Src/aht20.c ****   {
- 232:DeviceDrivers/Sensor/Src/aht20.c ****     /* Busy 位仍然为 1，说明数据还没有准备好。 */
- 233:DeviceDrivers/Sensor/Src/aht20.c ****     return AHT20_ERROR;
- 234:DeviceDrivers/Sensor/Src/aht20.c ****   }
- 235:DeviceDrivers/Sensor/Src/aht20.c **** 
- 236:DeviceDrivers/Sensor/Src/aht20.c ****   /* 6 字节数据读取完成，并且状态字显示数据可用。 */
- 237:DeviceDrivers/Sensor/Src/aht20.c ****   return AHT20_OK;
- 238:DeviceDrivers/Sensor/Src/aht20.c **** }
- 437              		.loc 1 238 1 view .LVU84
+ 437              		.loc 1 222 1 view .LVU84
  438 000e 10BD     		pop	{r4, pc}
  439              	.LVL27:
  440              	.L46:
- 220:DeviceDrivers/Sensor/Src/aht20.c **** 
- 441              		.loc 1 220 3 is_stmt 1 view .LVU85
+ 204:DeviceDrivers/Sensor/Src/aht20.c **** 
+ 441              		.loc 1 204 3 is_stmt 1 view .LVU85
  442 0010 5020     		movs	r0, #80
  443 0012 FFF7FEFF 		bl	HAL_Delay
  444              	.LVL28:
- 223:DeviceDrivers/Sensor/Src/aht20.c ****   {
- 445              		.loc 1 223 3 view .LVU86
- 223:DeviceDrivers/Sensor/Src/aht20.c ****   {
- 446              		.loc 1 223 7 is_stmt 0 view .LVU87
+ 207:DeviceDrivers/Sensor/Src/aht20.c ****   {
+ 445              		.loc 1 207 3 view .LVU86
+ 207:DeviceDrivers/Sensor/Src/aht20.c ****   {
+ 446              		.loc 1 207 7 is_stmt 0 view .LVU87
  447 0016 0622     		movs	r2, #6
  448 0018 2146     		mov	r1, r4
  449 001a 3820     		movs	r0, #56
  450 001c FFF7FEFF 		bl	I2C_SW_Read
  451              	.LVL29:
- 223:DeviceDrivers/Sensor/Src/aht20.c ****   {
- 452              		.loc 1 223 6 discriminator 1 view .LVU88
+ 207:DeviceDrivers/Sensor/Src/aht20.c ****   {
+ 452              		.loc 1 207 6 discriminator 1 view .LVU88
  453 0020 40B9     		cbnz	r0, .L40
- 230:DeviceDrivers/Sensor/Src/aht20.c ****   {
- 454              		.loc 1 230 3 is_stmt 1 view .LVU89
- 230:DeviceDrivers/Sensor/Src/aht20.c ****   {
- 455              		.loc 1 230 7 is_stmt 0 view .LVU90
+ 214:DeviceDrivers/Sensor/Src/aht20.c ****   {
+ 454              		.loc 1 214 3 is_stmt 1 view .LVU89
+ 214:DeviceDrivers/Sensor/Src/aht20.c ****   {
+ 455              		.loc 1 214 7 is_stmt 0 view .LVU90
  456 0022 2078     		ldrb	r0, [r4]	@ zero_extendqisi2
  457 0024 FFF7FEFF 		bl	AHT20_IsBusy
  458              	.LVL30:
- 230:DeviceDrivers/Sensor/Src/aht20.c ****   {
- 459              		.loc 1 230 6 discriminator 1 view .LVU91
+ 214:DeviceDrivers/Sensor/Src/aht20.c ****   {
+ 459              		.loc 1 214 6 discriminator 1 view .LVU91
  460 0028 0028     		cmp	r0, #0
  461 002a F0D0     		beq	.L37
- 233:DeviceDrivers/Sensor/Src/aht20.c ****   }
- 462              		.loc 1 233 12 view .LVU92
+ 217:DeviceDrivers/Sensor/Src/aht20.c ****   }
+ 462              		.loc 1 217 12 view .LVU92
  463 002c 0120     		movs	r0, #1
  464 002e EEE7     		b	.L37
  465              	.LVL31:
@@ -778,15 +762,12 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccYE8JTc.s 			page 1
  467              	.LCFI17:
  468              		.cfi_def_cfa_offset 0
  469              		.cfi_restore 4
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccYE8JTc.s 			page 14
-
-
  470              		.cfi_restore 14
- 209:DeviceDrivers/Sensor/Src/aht20.c ****   }
- 471              		.loc 1 209 12 view .LVU93
+ 193:DeviceDrivers/Sensor/Src/aht20.c ****   }
+ 471              		.loc 1 193 12 view .LVU93
  472 0030 0120     		movs	r0, #1
  473              	.LVL32:
- 474              		.loc 1 238 1 view .LVU94
+ 474              		.loc 1 222 1 view .LVU94
  475 0032 7047     		bx	lr
  476              	.LVL33:
  477              	.L40:
@@ -794,9 +775,12 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccYE8JTc.s 			page 1
  479              		.cfi_def_cfa_offset 8
  480              		.cfi_offset 4, -8
  481              		.cfi_offset 14, -4
- 226:DeviceDrivers/Sensor/Src/aht20.c ****   }
- 482              		.loc 1 226 12 view .LVU95
+ 210:DeviceDrivers/Sensor/Src/aht20.c ****   }
+ 482              		.loc 1 210 12 view .LVU95
  483 0034 0120     		movs	r0, #1
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\cceSzzkS.s 			page 14
+
+
  484 0036 EAE7     		b	.L37
  485              		.cfi_endproc
  486              	.LFE138:
@@ -809,160 +793,157 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccYE8JTc.s 			page 1
  495              	AHT20_ParseRaw:
  496              	.LVL34:
  497              	.LFB139:
- 239:DeviceDrivers/Sensor/Src/aht20.c **** 
- 240:DeviceDrivers/Sensor/Src/aht20.c **** /**
- 241:DeviceDrivers/Sensor/Src/aht20.c ****  * @brief 解析 AHT20 的 6 字节原始数据为温度和湿度。
- 242:DeviceDrivers/Sensor/Src/aht20.c ****  * @param raw 指向 6 字节原始数据缓冲区的指针。
- 243:DeviceDrivers/Sensor/Src/aht20.c ****  * @param data 指向温湿度结果结构体的指针。
- 244:DeviceDrivers/Sensor/Src/aht20.c ****  * @retval AHT20_OK 表示解析成功，AHT20_ERROR 表示参数错误。
- 245:DeviceDrivers/Sensor/Src/aht20.c ****  */
- 246:DeviceDrivers/Sensor/Src/aht20.c **** AHT20_Status_t AHT20_ParseRaw(const uint8_t raw[6], AHT20_Data_t *data)
- 247:DeviceDrivers/Sensor/Src/aht20.c **** {
- 498              		.loc 1 247 1 is_stmt 1 view -0
+ 223:DeviceDrivers/Sensor/Src/aht20.c **** 
+ 224:DeviceDrivers/Sensor/Src/aht20.c **** /**
+ 225:DeviceDrivers/Sensor/Src/aht20.c ****  * @brief 解析 AHT20 的 6 字节原始数据为温度和湿度。
+ 226:DeviceDrivers/Sensor/Src/aht20.c ****  * @param raw 指向 6 字节原始数据缓冲区的指针。
+ 227:DeviceDrivers/Sensor/Src/aht20.c ****  * @param data 指向温湿度结果结构体的指针。
+ 228:DeviceDrivers/Sensor/Src/aht20.c ****  * @retval AHT20_OK 表示解析成功，AHT20_ERROR 表示参数错误。
+ 229:DeviceDrivers/Sensor/Src/aht20.c ****  */
+ 230:DeviceDrivers/Sensor/Src/aht20.c **** AHT20_Status_t AHT20_ParseRaw(const uint8_t raw[6], AHT20_Data_t *data)
+ 231:DeviceDrivers/Sensor/Src/aht20.c **** {
+ 498              		.loc 1 231 1 is_stmt 1 view -0
  499              		.cfi_startproc
  500              		@ args = 0, pretend = 0, frame = 0
  501              		@ frame_needed = 0, uses_anonymous_args = 0
  502              		@ link register save eliminated.
- 248:DeviceDrivers/Sensor/Src/aht20.c ****   /* 定义变量保存 20 bit 湿度原始值。 */
- 249:DeviceDrivers/Sensor/Src/aht20.c ****   uint32_t humidity_raw;
- 503              		.loc 1 249 3 view .LVU97
- 250:DeviceDrivers/Sensor/Src/aht20.c **** 
- 251:DeviceDrivers/Sensor/Src/aht20.c ****   /* 定义变量保存 20 bit 温度原始值。 */
- 252:DeviceDrivers/Sensor/Src/aht20.c ****   uint32_t temperature_raw;
- 504              		.loc 1 252 3 view .LVU98
- 253:DeviceDrivers/Sensor/Src/aht20.c **** 
- 254:DeviceDrivers/Sensor/Src/aht20.c ****   /* 原始数据指针不能为空。 */
- 255:DeviceDrivers/Sensor/Src/aht20.c ****   if (raw == (const uint8_t *)0)
- 505              		.loc 1 255 3 view .LVU99
- 506              		.loc 1 255 6 is_stmt 0 view .LVU100
+ 232:DeviceDrivers/Sensor/Src/aht20.c ****   /* 定义变量保存 20 bit 湿度原始值。 */
+ 233:DeviceDrivers/Sensor/Src/aht20.c ****   uint32_t humidity_raw;
+ 503              		.loc 1 233 3 view .LVU97
+ 234:DeviceDrivers/Sensor/Src/aht20.c **** 
+ 235:DeviceDrivers/Sensor/Src/aht20.c ****   /* 定义变量保存 20 bit 温度原始值。 */
+ 236:DeviceDrivers/Sensor/Src/aht20.c ****   uint32_t temperature_raw;
+ 504              		.loc 1 236 3 view .LVU98
+ 237:DeviceDrivers/Sensor/Src/aht20.c **** 
+ 238:DeviceDrivers/Sensor/Src/aht20.c ****   /* 原始数据指针不能为空。 */
+ 239:DeviceDrivers/Sensor/Src/aht20.c ****   if (raw == (const uint8_t *)0)
+ 505              		.loc 1 239 3 view .LVU99
+ 506              		.loc 1 239 6 is_stmt 0 view .LVU100
  507 0000 80B3     		cbz	r0, .L49
- 256:DeviceDrivers/Sensor/Src/aht20.c ****   {
- 257:DeviceDrivers/Sensor/Src/aht20.c ****     /* 传入空指针，直接返回错误。 */
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccYE8JTc.s 			page 15
-
-
- 258:DeviceDrivers/Sensor/Src/aht20.c ****     return AHT20_ERROR;
- 259:DeviceDrivers/Sensor/Src/aht20.c ****   }
- 260:DeviceDrivers/Sensor/Src/aht20.c **** 
- 261:DeviceDrivers/Sensor/Src/aht20.c ****   /* 结果结构体指针不能为空。 */
- 262:DeviceDrivers/Sensor/Src/aht20.c ****   if (data == (AHT20_Data_t *)0)
- 508              		.loc 1 262 3 is_stmt 1 view .LVU101
- 509              		.loc 1 262 6 is_stmt 0 view .LVU102
+ 240:DeviceDrivers/Sensor/Src/aht20.c ****   {
+ 241:DeviceDrivers/Sensor/Src/aht20.c ****     /* 传入空指针，直接返回错误。 */
+ 242:DeviceDrivers/Sensor/Src/aht20.c ****     return AHT20_ERROR;
+ 243:DeviceDrivers/Sensor/Src/aht20.c ****   }
+ 244:DeviceDrivers/Sensor/Src/aht20.c **** 
+ 245:DeviceDrivers/Sensor/Src/aht20.c ****   /* 结果结构体指针不能为空。 */
+ 246:DeviceDrivers/Sensor/Src/aht20.c ****   if (data == (AHT20_Data_t *)0)
+ 508              		.loc 1 246 3 is_stmt 1 view .LVU101
+ 509              		.loc 1 246 6 is_stmt 0 view .LVU102
  510 0002 89B3     		cbz	r1, .L50
- 263:DeviceDrivers/Sensor/Src/aht20.c ****   {
- 264:DeviceDrivers/Sensor/Src/aht20.c ****     /* 传入空指针，直接返回错误。 */
- 265:DeviceDrivers/Sensor/Src/aht20.c ****     return AHT20_ERROR;
- 266:DeviceDrivers/Sensor/Src/aht20.c ****   }
- 267:DeviceDrivers/Sensor/Src/aht20.c **** 
- 268:DeviceDrivers/Sensor/Src/aht20.c ****   /* 湿度原始值由 raw[1]、raw[2] 和 raw[3] 高 4 位组成。 */
- 269:DeviceDrivers/Sensor/Src/aht20.c ****   humidity_raw =
- 511              		.loc 1 269 3 is_stmt 1 view .LVU103
- 270:DeviceDrivers/Sensor/Src/aht20.c ****     ((uint32_t)raw[1] << 12) |
- 512              		.loc 1 270 19 is_stmt 0 view .LVU104
+ 247:DeviceDrivers/Sensor/Src/aht20.c ****   {
+ 248:DeviceDrivers/Sensor/Src/aht20.c ****     /* 传入空指针，直接返回错误。 */
+ 249:DeviceDrivers/Sensor/Src/aht20.c ****     return AHT20_ERROR;
+ 250:DeviceDrivers/Sensor/Src/aht20.c ****   }
+ 251:DeviceDrivers/Sensor/Src/aht20.c **** 
+ 252:DeviceDrivers/Sensor/Src/aht20.c ****   /* 湿度原始值由 raw[1]、raw[2] 和 raw[3] 高 4 位组成。 */
+ 253:DeviceDrivers/Sensor/Src/aht20.c ****   humidity_raw =
+ 511              		.loc 1 253 3 is_stmt 1 view .LVU103
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\cceSzzkS.s 			page 15
+
+
+ 254:DeviceDrivers/Sensor/Src/aht20.c ****     ((uint32_t)raw[1] << 12) |
+ 512              		.loc 1 254 19 is_stmt 0 view .LVU104
  513 0004 4378     		ldrb	r3, [r0, #1]	@ zero_extendqisi2
- 271:DeviceDrivers/Sensor/Src/aht20.c ****     ((uint32_t)raw[2] << 4) |
- 514              		.loc 1 271 19 view .LVU105
+ 255:DeviceDrivers/Sensor/Src/aht20.c ****     ((uint32_t)raw[2] << 4) |
+ 514              		.loc 1 255 19 view .LVU105
  515 0006 8278     		ldrb	r2, [r0, #2]	@ zero_extendqisi2
- 516              		.loc 1 271 23 view .LVU106
+ 516              		.loc 1 255 23 view .LVU106
  517 0008 1201     		lsls	r2, r2, #4
- 270:DeviceDrivers/Sensor/Src/aht20.c ****     ((uint32_t)raw[1] << 12) |
- 518              		.loc 1 270 30 view .LVU107
+ 254:DeviceDrivers/Sensor/Src/aht20.c ****     ((uint32_t)raw[1] << 12) |
+ 518              		.loc 1 254 30 view .LVU107
  519 000a 42EA0332 		orr	r2, r2, r3, lsl #12
- 272:DeviceDrivers/Sensor/Src/aht20.c ****     ((uint32_t)(raw[3] >> 4));
- 520              		.loc 1 272 20 view .LVU108
+ 256:DeviceDrivers/Sensor/Src/aht20.c ****     ((uint32_t)(raw[3] >> 4));
+ 520              		.loc 1 256 20 view .LVU108
  521 000e C378     		ldrb	r3, [r0, #3]	@ zero_extendqisi2
- 269:DeviceDrivers/Sensor/Src/aht20.c ****     ((uint32_t)raw[1] << 12) |
- 522              		.loc 1 269 16 view .LVU109
+ 253:DeviceDrivers/Sensor/Src/aht20.c ****     ((uint32_t)raw[1] << 12) |
+ 522              		.loc 1 253 16 view .LVU109
  523 0010 42EA1312 		orr	r2, r2, r3, lsr #4
  524 0014 07EE102A 		vmov	s14, r2	@ int
  525              	.LVL35:
- 273:DeviceDrivers/Sensor/Src/aht20.c **** 
- 274:DeviceDrivers/Sensor/Src/aht20.c ****   /* 温度原始值由 raw[3] 低 4 位、raw[4] 和 raw[5] 组成。 */
- 275:DeviceDrivers/Sensor/Src/aht20.c ****   temperature_raw =
- 526              		.loc 1 275 3 is_stmt 1 view .LVU110
- 276:DeviceDrivers/Sensor/Src/aht20.c ****     (((uint32_t)raw[3] & 0x0FU) << 16) |
- 527              		.loc 1 276 33 is_stmt 0 view .LVU111
+ 257:DeviceDrivers/Sensor/Src/aht20.c **** 
+ 258:DeviceDrivers/Sensor/Src/aht20.c ****   /* 温度原始值由 raw[3] 低 4 位、raw[4] 和 raw[5] 组成。 */
+ 259:DeviceDrivers/Sensor/Src/aht20.c ****   temperature_raw =
+ 526              		.loc 1 259 3 is_stmt 1 view .LVU110
+ 260:DeviceDrivers/Sensor/Src/aht20.c ****     (((uint32_t)raw[3] & 0x0FU) << 16) |
+ 527              		.loc 1 260 33 is_stmt 0 view .LVU111
  528 0018 1B04     		lsls	r3, r3, #16
  529 001a 03F47023 		and	r3, r3, #983040
- 277:DeviceDrivers/Sensor/Src/aht20.c ****     ((uint32_t)raw[4] << 8) |
- 530              		.loc 1 277 19 view .LVU112
+ 261:DeviceDrivers/Sensor/Src/aht20.c ****     ((uint32_t)raw[4] << 8) |
+ 530              		.loc 1 261 19 view .LVU112
  531 001e 0279     		ldrb	r2, [r0, #4]	@ zero_extendqisi2
  532              	.LVL36:
- 276:DeviceDrivers/Sensor/Src/aht20.c ****     (((uint32_t)raw[3] & 0x0FU) << 16) |
- 533              		.loc 1 276 40 view .LVU113
+ 260:DeviceDrivers/Sensor/Src/aht20.c ****     (((uint32_t)raw[3] & 0x0FU) << 16) |
+ 533              		.loc 1 260 40 view .LVU113
  534 0020 43EA0223 		orr	r3, r3, r2, lsl #8
- 278:DeviceDrivers/Sensor/Src/aht20.c ****     ((uint32_t)raw[5]);
- 535              		.loc 1 278 19 view .LVU114
+ 262:DeviceDrivers/Sensor/Src/aht20.c ****     ((uint32_t)raw[5]);
+ 535              		.loc 1 262 19 view .LVU114
  536 0024 4279     		ldrb	r2, [r0, #5]	@ zero_extendqisi2
- 275:DeviceDrivers/Sensor/Src/aht20.c ****     (((uint32_t)raw[3] & 0x0FU) << 16) |
- 537              		.loc 1 275 19 view .LVU115
+ 259:DeviceDrivers/Sensor/Src/aht20.c ****     (((uint32_t)raw[3] & 0x0FU) << 16) |
+ 537              		.loc 1 259 19 view .LVU115
  538 0026 1343     		orrs	r3, r3, r2
  539 0028 07EE903A 		vmov	s15, r3	@ int
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccYE8JTc.s 			page 16
-
-
  540              	.LVL37:
- 279:DeviceDrivers/Sensor/Src/aht20.c **** 
- 280:DeviceDrivers/Sensor/Src/aht20.c ****   /* 1048576.0f 等于 2^20，湿度换算结果单位为 %RH。 */
- 281:DeviceDrivers/Sensor/Src/aht20.c ****   data->humidity = ((float)humidity_raw / 1048576.0f) * 100.0f;
- 541              		.loc 1 281 3 is_stmt 1 view .LVU116
- 542              		.loc 1 281 21 is_stmt 0 view .LVU117
+ 263:DeviceDrivers/Sensor/Src/aht20.c **** 
+ 264:DeviceDrivers/Sensor/Src/aht20.c ****   /* 1048576.0f 等于 2^20，湿度换算结果单位为 %RH。 */
+ 265:DeviceDrivers/Sensor/Src/aht20.c ****   data->humidity = ((float)humidity_raw / 1048576.0f) * 100.0f;
+ 541              		.loc 1 265 3 is_stmt 1 view .LVU116
+ 542              		.loc 1 265 21 is_stmt 0 view .LVU117
  543 002c B8EE477A 		vcvt.f32.u32	s14, s14
  544              	.LVL38:
- 545              		.loc 1 281 41 view .LVU118
+ 545              		.loc 1 265 41 view .LVU118
  546 0030 DFED0E6A 		vldr.32	s13, .L51
  547 0034 27EE267A 		vmul.f32	s14, s14, s13
- 548              		.loc 1 281 55 view .LVU119
+ 548              		.loc 1 265 55 view .LVU119
  549 0038 9FED0D6A 		vldr.32	s12, .L51+4
  550 003c 27EE067A 		vmul.f32	s14, s14, s12
- 551              		.loc 1 281 18 view .LVU120
+ 551              		.loc 1 265 18 view .LVU120
  552 0040 81ED017A 		vstr.32	s14, [r1, #4]
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\cceSzzkS.s 			page 16
+
+
  553              	.LVL39:
- 282:DeviceDrivers/Sensor/Src/aht20.c **** 
- 283:DeviceDrivers/Sensor/Src/aht20.c ****   /* 1048576.0f 等于 2^20，温度换算结果单位为摄氏度。 */
- 284:DeviceDrivers/Sensor/Src/aht20.c ****   data->temperature = ((float)temperature_raw / 1048576.0f) * 200.0f - 50.0f;
- 554              		.loc 1 284 3 is_stmt 1 view .LVU121
- 555              		.loc 1 284 24 is_stmt 0 view .LVU122
+ 266:DeviceDrivers/Sensor/Src/aht20.c **** 
+ 267:DeviceDrivers/Sensor/Src/aht20.c ****   /* 1048576.0f 等于 2^20，温度换算结果单位为摄氏度。 */
+ 268:DeviceDrivers/Sensor/Src/aht20.c ****   data->temperature = ((float)temperature_raw / 1048576.0f) * 200.0f - 50.0f;
+ 554              		.loc 1 268 3 is_stmt 1 view .LVU121
+ 555              		.loc 1 268 24 is_stmt 0 view .LVU122
  556 0044 F8EE677A 		vcvt.f32.u32	s15, s15
- 557              		.loc 1 284 47 view .LVU123
+ 557              		.loc 1 268 47 view .LVU123
  558 0048 67EEA67A 		vmul.f32	s15, s15, s13
- 559              		.loc 1 284 61 view .LVU124
+ 559              		.loc 1 268 61 view .LVU124
  560 004c 9FED097A 		vldr.32	s14, .L51+8
  561 0050 67EE877A 		vmul.f32	s15, s15, s14
- 562              		.loc 1 284 70 view .LVU125
+ 562              		.loc 1 268 70 view .LVU125
  563 0054 9FED087A 		vldr.32	s14, .L51+12
  564 0058 77EEC77A 		vsub.f32	s15, s15, s14
- 565              		.loc 1 284 21 view .LVU126
+ 565              		.loc 1 268 21 view .LVU126
  566 005c C1ED007A 		vstr.32	s15, [r1]
- 285:DeviceDrivers/Sensor/Src/aht20.c **** 
- 286:DeviceDrivers/Sensor/Src/aht20.c ****   /* 原始数据解析完成。 */
- 287:DeviceDrivers/Sensor/Src/aht20.c ****   return AHT20_OK;
- 567              		.loc 1 287 3 is_stmt 1 view .LVU127
- 568              		.loc 1 287 10 is_stmt 0 view .LVU128
+ 269:DeviceDrivers/Sensor/Src/aht20.c **** 
+ 270:DeviceDrivers/Sensor/Src/aht20.c ****   /* 原始数据解析完成。 */
+ 271:DeviceDrivers/Sensor/Src/aht20.c ****   return AHT20_OK;
+ 567              		.loc 1 271 3 is_stmt 1 view .LVU127
+ 568              		.loc 1 271 10 is_stmt 0 view .LVU128
  569 0060 0020     		movs	r0, #0
  570              	.LVL40:
- 571              		.loc 1 287 10 view .LVU129
+ 571              		.loc 1 271 10 view .LVU129
  572 0062 7047     		bx	lr
  573              	.LVL41:
  574              	.L49:
- 258:DeviceDrivers/Sensor/Src/aht20.c ****   }
- 575              		.loc 1 258 12 view .LVU130
+ 242:DeviceDrivers/Sensor/Src/aht20.c ****   }
+ 575              		.loc 1 242 12 view .LVU130
  576 0064 0120     		movs	r0, #1
  577              	.LVL42:
- 258:DeviceDrivers/Sensor/Src/aht20.c ****   }
- 578              		.loc 1 258 12 view .LVU131
+ 242:DeviceDrivers/Sensor/Src/aht20.c ****   }
+ 578              		.loc 1 242 12 view .LVU131
  579 0066 7047     		bx	lr
  580              	.LVL43:
  581              	.L50:
- 265:DeviceDrivers/Sensor/Src/aht20.c ****   }
- 582              		.loc 1 265 12 view .LVU132
+ 249:DeviceDrivers/Sensor/Src/aht20.c ****   }
+ 582              		.loc 1 249 12 view .LVU132
  583 0068 0120     		movs	r0, #1
  584              	.LVL44:
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccYE8JTc.s 			page 17
-
-
- 288:DeviceDrivers/Sensor/Src/aht20.c **** }
- 585              		.loc 1 288 1 view .LVU133
+ 272:DeviceDrivers/Sensor/Src/aht20.c **** }
+ 585              		.loc 1 272 1 view .LVU133
  586 006a 7047     		bx	lr
  587              	.L52:
  588              		.align	2
@@ -977,24 +958,27 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccYE8JTc.s 			page 1
  598              		.align	1
  599              		.global	AHT20_ReadData
  600              		.syntax unified
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\cceSzzkS.s 			page 17
+
+
  601              		.thumb
  602              		.thumb_func
  604              	AHT20_ReadData:
  605              	.LVL45:
  606              	.LFB140:
- 289:DeviceDrivers/Sensor/Src/aht20.c **** 
- 290:DeviceDrivers/Sensor/Src/aht20.c **** /**
- 291:DeviceDrivers/Sensor/Src/aht20.c ****  * @brief 读取并解析 AHT20 温湿度数据。
- 292:DeviceDrivers/Sensor/Src/aht20.c ****  * @param data 指向温湿度结果结构体的指针。
- 293:DeviceDrivers/Sensor/Src/aht20.c ****  * @retval AHT20_OK 表示读取成功，AHT20_ERROR 表示读取失败或参数错误。
- 294:DeviceDrivers/Sensor/Src/aht20.c ****  */
- 295:DeviceDrivers/Sensor/Src/aht20.c **** AHT20_Status_t AHT20_ReadData(AHT20_Data_t *data)
- 296:DeviceDrivers/Sensor/Src/aht20.c **** {
- 607              		.loc 1 296 1 is_stmt 1 view -0
+ 273:DeviceDrivers/Sensor/Src/aht20.c **** 
+ 274:DeviceDrivers/Sensor/Src/aht20.c **** /**
+ 275:DeviceDrivers/Sensor/Src/aht20.c ****  * @brief 读取并解析 AHT20 温湿度数据。
+ 276:DeviceDrivers/Sensor/Src/aht20.c ****  * @param data 指向温湿度结果结构体的指针。
+ 277:DeviceDrivers/Sensor/Src/aht20.c ****  * @retval AHT20_OK 表示读取成功，AHT20_ERROR 表示读取失败或参数错误。
+ 278:DeviceDrivers/Sensor/Src/aht20.c ****  */
+ 279:DeviceDrivers/Sensor/Src/aht20.c **** AHT20_Status_t AHT20_ReadData(AHT20_Data_t *data)
+ 280:DeviceDrivers/Sensor/Src/aht20.c **** {
+ 607              		.loc 1 280 1 is_stmt 1 view -0
  608              		.cfi_startproc
  609              		@ args = 0, pretend = 0, frame = 8
  610              		@ frame_needed = 0, uses_anonymous_args = 0
- 611              		.loc 1 296 1 is_stmt 0 view .LVU135
+ 611              		.loc 1 280 1 is_stmt 0 view .LVU135
  612 0000 10B5     		push	{r4, lr}
  613              	.LCFI19:
  614              		.cfi_def_cfa_offset 8
@@ -1003,59 +987,59 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccYE8JTc.s 			page 1
  617 0002 82B0     		sub	sp, sp, #8
  618              	.LCFI20:
  619              		.cfi_def_cfa_offset 16
- 297:DeviceDrivers/Sensor/Src/aht20.c ****   /* 定义 6 字节缓冲区保存 AHT20 原始数据。 */
- 298:DeviceDrivers/Sensor/Src/aht20.c ****   uint8_t raw[6] = {0U};
- 620              		.loc 1 298 3 is_stmt 1 view .LVU136
- 621              		.loc 1 298 11 is_stmt 0 view .LVU137
+ 281:DeviceDrivers/Sensor/Src/aht20.c ****   /* 定义 6 字节缓冲区保存 AHT20 原始数据。 */
+ 282:DeviceDrivers/Sensor/Src/aht20.c ****   uint8_t raw[6] = {0U};
+ 620              		.loc 1 282 3 is_stmt 1 view .LVU136
+ 621              		.loc 1 282 11 is_stmt 0 view .LVU137
  622 0004 0023     		movs	r3, #0
  623 0006 0093     		str	r3, [sp]
  624 0008 ADF80430 		strh	r3, [sp, #4]	@ movhi
- 299:DeviceDrivers/Sensor/Src/aht20.c **** 
- 300:DeviceDrivers/Sensor/Src/aht20.c ****   /* 结果结构体指针不能为空。 */
- 301:DeviceDrivers/Sensor/Src/aht20.c ****   if (data == (AHT20_Data_t *)0)
- 625              		.loc 1 301 3 is_stmt 1 view .LVU138
- 626              		.loc 1 301 6 is_stmt 0 view .LVU139
+ 283:DeviceDrivers/Sensor/Src/aht20.c **** 
+ 284:DeviceDrivers/Sensor/Src/aht20.c ****   /* 结果结构体指针不能为空。 */
+ 285:DeviceDrivers/Sensor/Src/aht20.c ****   if (data == (AHT20_Data_t *)0)
+ 625              		.loc 1 285 3 is_stmt 1 view .LVU138
+ 626              		.loc 1 285 6 is_stmt 0 view .LVU139
  627 000c 78B1     		cbz	r0, .L55
  628 000e 0446     		mov	r4, r0
- 302:DeviceDrivers/Sensor/Src/aht20.c ****   {
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccYE8JTc.s 			page 18
-
-
- 303:DeviceDrivers/Sensor/Src/aht20.c ****     /* 传入空指针，直接返回错误。 */
- 304:DeviceDrivers/Sensor/Src/aht20.c ****     return AHT20_ERROR;
- 305:DeviceDrivers/Sensor/Src/aht20.c ****   }
- 306:DeviceDrivers/Sensor/Src/aht20.c **** 
- 307:DeviceDrivers/Sensor/Src/aht20.c ****   /* 先读取 AHT20 原始数据。 */
- 308:DeviceDrivers/Sensor/Src/aht20.c ****   if (AHT20_ReadRaw(raw) != AHT20_OK)
- 629              		.loc 1 308 3 is_stmt 1 view .LVU140
- 630              		.loc 1 308 7 is_stmt 0 view .LVU141
+ 286:DeviceDrivers/Sensor/Src/aht20.c ****   {
+ 287:DeviceDrivers/Sensor/Src/aht20.c ****     /* 传入空指针，直接返回错误。 */
+ 288:DeviceDrivers/Sensor/Src/aht20.c ****     return AHT20_ERROR;
+ 289:DeviceDrivers/Sensor/Src/aht20.c ****   }
+ 290:DeviceDrivers/Sensor/Src/aht20.c **** 
+ 291:DeviceDrivers/Sensor/Src/aht20.c ****   /* 先读取 AHT20 原始数据。 */
+ 292:DeviceDrivers/Sensor/Src/aht20.c ****   if (AHT20_ReadRaw(raw) != AHT20_OK)
+ 629              		.loc 1 292 3 is_stmt 1 view .LVU140
+ 630              		.loc 1 292 7 is_stmt 0 view .LVU141
  631 0010 6846     		mov	r0, sp
  632              	.LVL46:
- 633              		.loc 1 308 7 view .LVU142
+ 633              		.loc 1 292 7 view .LVU142
  634 0012 FFF7FEFF 		bl	AHT20_ReadRaw
  635              	.LVL47:
- 636              		.loc 1 308 6 discriminator 1 view .LVU143
+ 636              		.loc 1 292 6 discriminator 1 view .LVU143
  637 0016 10B1     		cbz	r0, .L59
- 309:DeviceDrivers/Sensor/Src/aht20.c ****   {
- 310:DeviceDrivers/Sensor/Src/aht20.c ****     /* 原始数据读取失败，返回错误。 */
- 311:DeviceDrivers/Sensor/Src/aht20.c ****     return AHT20_ERROR;
- 638              		.loc 1 311 12 view .LVU144
+ 293:DeviceDrivers/Sensor/Src/aht20.c ****   {
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\cceSzzkS.s 			page 18
+
+
+ 294:DeviceDrivers/Sensor/Src/aht20.c ****     /* 原始数据读取失败，返回错误。 */
+ 295:DeviceDrivers/Sensor/Src/aht20.c ****     return AHT20_ERROR;
+ 638              		.loc 1 295 12 view .LVU144
  639 0018 0120     		movs	r0, #1
  640              	.LVL48:
  641              	.L54:
- 312:DeviceDrivers/Sensor/Src/aht20.c ****   }
- 313:DeviceDrivers/Sensor/Src/aht20.c **** 
- 314:DeviceDrivers/Sensor/Src/aht20.c ****   /* 再把原始数据解析为温度和湿度。 */
- 315:DeviceDrivers/Sensor/Src/aht20.c ****   if (AHT20_ParseRaw(raw, data) != AHT20_OK)
- 316:DeviceDrivers/Sensor/Src/aht20.c ****   {
- 317:DeviceDrivers/Sensor/Src/aht20.c ****     /* 解析失败，返回错误。 */
- 318:DeviceDrivers/Sensor/Src/aht20.c ****     return AHT20_ERROR;
- 319:DeviceDrivers/Sensor/Src/aht20.c ****   }
- 320:DeviceDrivers/Sensor/Src/aht20.c **** 
- 321:DeviceDrivers/Sensor/Src/aht20.c ****   /* 读取和解析都成功。 */
- 322:DeviceDrivers/Sensor/Src/aht20.c ****   return AHT20_OK;
- 323:DeviceDrivers/Sensor/Src/aht20.c **** }
- 642              		.loc 1 323 1 view .LVU145
+ 296:DeviceDrivers/Sensor/Src/aht20.c ****   }
+ 297:DeviceDrivers/Sensor/Src/aht20.c **** 
+ 298:DeviceDrivers/Sensor/Src/aht20.c ****   /* 再把原始数据解析为温度和湿度。 */
+ 299:DeviceDrivers/Sensor/Src/aht20.c ****   if (AHT20_ParseRaw(raw, data) != AHT20_OK)
+ 300:DeviceDrivers/Sensor/Src/aht20.c ****   {
+ 301:DeviceDrivers/Sensor/Src/aht20.c ****     /* 解析失败，返回错误。 */
+ 302:DeviceDrivers/Sensor/Src/aht20.c ****     return AHT20_ERROR;
+ 303:DeviceDrivers/Sensor/Src/aht20.c ****   }
+ 304:DeviceDrivers/Sensor/Src/aht20.c **** 
+ 305:DeviceDrivers/Sensor/Src/aht20.c ****   /* 读取和解析都成功。 */
+ 306:DeviceDrivers/Sensor/Src/aht20.c ****   return AHT20_OK;
+ 307:DeviceDrivers/Sensor/Src/aht20.c **** }
+ 642              		.loc 1 307 1 view .LVU145
  643 001a 02B0     		add	sp, sp, #8
  644              	.LCFI21:
  645              		.cfi_remember_state
@@ -1066,37 +1050,37 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccYE8JTc.s 			page 1
  650              	.L59:
  651              	.LCFI22:
  652              		.cfi_restore_state
- 315:DeviceDrivers/Sensor/Src/aht20.c ****   {
- 653              		.loc 1 315 3 is_stmt 1 view .LVU146
- 315:DeviceDrivers/Sensor/Src/aht20.c ****   {
- 654              		.loc 1 315 7 is_stmt 0 view .LVU147
+ 299:DeviceDrivers/Sensor/Src/aht20.c ****   {
+ 653              		.loc 1 299 3 is_stmt 1 view .LVU146
+ 299:DeviceDrivers/Sensor/Src/aht20.c ****   {
+ 654              		.loc 1 299 7 is_stmt 0 view .LVU147
  655 001e 2146     		mov	r1, r4
  656 0020 6846     		mov	r0, sp
  657 0022 FFF7FEFF 		bl	AHT20_ParseRaw
  658              	.LVL50:
- 315:DeviceDrivers/Sensor/Src/aht20.c ****   {
- 659              		.loc 1 315 6 discriminator 1 view .LVU148
+ 299:DeviceDrivers/Sensor/Src/aht20.c ****   {
+ 659              		.loc 1 299 6 discriminator 1 view .LVU148
  660 0026 0028     		cmp	r0, #0
  661 0028 F7D0     		beq	.L54
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccYE8JTc.s 			page 19
-
-
- 318:DeviceDrivers/Sensor/Src/aht20.c ****   }
- 662              		.loc 1 318 12 view .LVU149
+ 302:DeviceDrivers/Sensor/Src/aht20.c ****   }
+ 662              		.loc 1 302 12 view .LVU149
  663 002a 0120     		movs	r0, #1
  664 002c F5E7     		b	.L54
  665              	.LVL51:
  666              	.L55:
- 304:DeviceDrivers/Sensor/Src/aht20.c ****   }
- 667              		.loc 1 304 12 view .LVU150
+ 288:DeviceDrivers/Sensor/Src/aht20.c ****   }
+ 667              		.loc 1 288 12 view .LVU150
  668 002e 0120     		movs	r0, #1
  669              	.LVL52:
- 304:DeviceDrivers/Sensor/Src/aht20.c ****   }
- 670              		.loc 1 304 12 view .LVU151
+ 288:DeviceDrivers/Sensor/Src/aht20.c ****   }
+ 670              		.loc 1 288 12 view .LVU151
  671 0030 F3E7     		b	.L54
  672              		.cfi_endproc
  673              	.LFE140:
  675              		.section	.text.AHT20_TestRead,"ax",%progbits
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\cceSzzkS.s 			page 19
+
+
  676              		.align	1
  677              		.global	AHT20_TestRead
  678              		.syntax unified
@@ -1105,20 +1089,20 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccYE8JTc.s 			page 1
  682              	AHT20_TestRead:
  683              	.LVL53:
  684              	.LFB141:
- 324:DeviceDrivers/Sensor/Src/aht20.c **** 
- 325:DeviceDrivers/Sensor/Src/aht20.c **** /**
- 326:DeviceDrivers/Sensor/Src/aht20.c ****  * @brief 测试读取一次 AHT20 温湿度，并拆成两个 float 输出。
- 327:DeviceDrivers/Sensor/Src/aht20.c ****  * @param temperature 指向温度输出变量的指针，单位为摄氏度。
- 328:DeviceDrivers/Sensor/Src/aht20.c ****  * @param humidity 指向湿度输出变量的指针，单位为 %RH。
- 329:DeviceDrivers/Sensor/Src/aht20.c ****  * @retval AHT20_OK 表示读取成功，AHT20_ERROR 表示读取失败或参数错误。
- 330:DeviceDrivers/Sensor/Src/aht20.c ****  */
- 331:DeviceDrivers/Sensor/Src/aht20.c **** AHT20_Status_t AHT20_TestRead(float *temperature, float *humidity)
- 332:DeviceDrivers/Sensor/Src/aht20.c **** {
- 685              		.loc 1 332 1 is_stmt 1 view -0
+ 308:DeviceDrivers/Sensor/Src/aht20.c **** 
+ 309:DeviceDrivers/Sensor/Src/aht20.c **** /**
+ 310:DeviceDrivers/Sensor/Src/aht20.c ****  * @brief 测试读取一次 AHT20 温湿度，并拆成两个 float 输出。
+ 311:DeviceDrivers/Sensor/Src/aht20.c ****  * @param temperature 指向温度输出变量的指针，单位为摄氏度。
+ 312:DeviceDrivers/Sensor/Src/aht20.c ****  * @param humidity 指向湿度输出变量的指针，单位为 %RH。
+ 313:DeviceDrivers/Sensor/Src/aht20.c ****  * @retval AHT20_OK 表示读取成功，AHT20_ERROR 表示读取失败或参数错误。
+ 314:DeviceDrivers/Sensor/Src/aht20.c ****  */
+ 315:DeviceDrivers/Sensor/Src/aht20.c **** AHT20_Status_t AHT20_TestRead(float *temperature, float *humidity)
+ 316:DeviceDrivers/Sensor/Src/aht20.c **** {
+ 685              		.loc 1 316 1 is_stmt 1 view -0
  686              		.cfi_startproc
  687              		@ args = 0, pretend = 0, frame = 8
  688              		@ frame_needed = 0, uses_anonymous_args = 0
- 689              		.loc 1 332 1 is_stmt 0 view .LVU153
+ 689              		.loc 1 316 1 is_stmt 0 view .LVU153
  690 0000 30B5     		push	{r4, r5, lr}
  691              	.LCFI23:
  692              		.cfi_def_cfa_offset 12
@@ -1128,81 +1112,78 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccYE8JTc.s 			page 1
  696 0002 83B0     		sub	sp, sp, #12
  697              	.LCFI24:
  698              		.cfi_def_cfa_offset 24
- 333:DeviceDrivers/Sensor/Src/aht20.c ****   /* 定义结构体保存一次完整的温湿度读取结果。 */
- 334:DeviceDrivers/Sensor/Src/aht20.c ****   AHT20_Data_t data = {0};
- 699              		.loc 1 334 3 is_stmt 1 view .LVU154
- 700              		.loc 1 334 16 is_stmt 0 view .LVU155
+ 317:DeviceDrivers/Sensor/Src/aht20.c ****   /* 定义结构体保存一次完整的温湿度读取结果。 */
+ 318:DeviceDrivers/Sensor/Src/aht20.c ****   AHT20_Data_t data = {0};
+ 699              		.loc 1 318 3 is_stmt 1 view .LVU154
+ 700              		.loc 1 318 16 is_stmt 0 view .LVU155
  701 0004 0023     		movs	r3, #0
  702 0006 0093     		str	r3, [sp]
  703 0008 0193     		str	r3, [sp, #4]
- 335:DeviceDrivers/Sensor/Src/aht20.c **** 
- 336:DeviceDrivers/Sensor/Src/aht20.c ****   /* 温度输出指针不能为空。 */
- 337:DeviceDrivers/Sensor/Src/aht20.c ****   if (temperature == (float *)0)
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccYE8JTc.s 			page 20
-
-
- 704              		.loc 1 337 3 is_stmt 1 view .LVU156
- 705              		.loc 1 337 6 is_stmt 0 view .LVU157
+ 319:DeviceDrivers/Sensor/Src/aht20.c **** 
+ 320:DeviceDrivers/Sensor/Src/aht20.c ****   /* 温度输出指针不能为空。 */
+ 321:DeviceDrivers/Sensor/Src/aht20.c ****   if (temperature == (float *)0)
+ 704              		.loc 1 321 3 is_stmt 1 view .LVU156
+ 705              		.loc 1 321 6 is_stmt 0 view .LVU157
  706 000a 60B1     		cbz	r0, .L62
  707 000c 0C46     		mov	r4, r1
  708 000e 0546     		mov	r5, r0
- 338:DeviceDrivers/Sensor/Src/aht20.c ****   {
- 339:DeviceDrivers/Sensor/Src/aht20.c ****     /* 传入空指针，直接返回错误。 */
- 340:DeviceDrivers/Sensor/Src/aht20.c ****     return AHT20_ERROR;
- 341:DeviceDrivers/Sensor/Src/aht20.c ****   }
- 342:DeviceDrivers/Sensor/Src/aht20.c **** 
- 343:DeviceDrivers/Sensor/Src/aht20.c ****   /* 湿度输出指针不能为空。 */
- 344:DeviceDrivers/Sensor/Src/aht20.c ****   if (humidity == (float *)0)
- 709              		.loc 1 344 3 is_stmt 1 view .LVU158
- 710              		.loc 1 344 6 is_stmt 0 view .LVU159
+ 322:DeviceDrivers/Sensor/Src/aht20.c ****   {
+ 323:DeviceDrivers/Sensor/Src/aht20.c ****     /* 传入空指针，直接返回错误。 */
+ 324:DeviceDrivers/Sensor/Src/aht20.c ****     return AHT20_ERROR;
+ 325:DeviceDrivers/Sensor/Src/aht20.c ****   }
+ 326:DeviceDrivers/Sensor/Src/aht20.c **** 
+ 327:DeviceDrivers/Sensor/Src/aht20.c ****   /* 湿度输出指针不能为空。 */
+ 328:DeviceDrivers/Sensor/Src/aht20.c ****   if (humidity == (float *)0)
+ 709              		.loc 1 328 3 is_stmt 1 view .LVU158
+ 710              		.loc 1 328 6 is_stmt 0 view .LVU159
  711 0010 59B1     		cbz	r1, .L63
- 345:DeviceDrivers/Sensor/Src/aht20.c ****   {
- 346:DeviceDrivers/Sensor/Src/aht20.c ****     /* 传入空指针，直接返回错误。 */
- 347:DeviceDrivers/Sensor/Src/aht20.c ****     return AHT20_ERROR;
- 348:DeviceDrivers/Sensor/Src/aht20.c ****   }
- 349:DeviceDrivers/Sensor/Src/aht20.c **** 
- 350:DeviceDrivers/Sensor/Src/aht20.c ****   /* 调用标准读取接口，获取一次温湿度数据。 */
- 351:DeviceDrivers/Sensor/Src/aht20.c ****   if (AHT20_ReadData(&data) != AHT20_OK)
- 712              		.loc 1 351 3 is_stmt 1 view .LVU160
- 713              		.loc 1 351 7 is_stmt 0 view .LVU161
+ 329:DeviceDrivers/Sensor/Src/aht20.c ****   {
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\cceSzzkS.s 			page 20
+
+
+ 330:DeviceDrivers/Sensor/Src/aht20.c ****     /* 传入空指针，直接返回错误。 */
+ 331:DeviceDrivers/Sensor/Src/aht20.c ****     return AHT20_ERROR;
+ 332:DeviceDrivers/Sensor/Src/aht20.c ****   }
+ 333:DeviceDrivers/Sensor/Src/aht20.c **** 
+ 334:DeviceDrivers/Sensor/Src/aht20.c ****   /* 调用标准读取接口，获取一次温湿度数据。 */
+ 335:DeviceDrivers/Sensor/Src/aht20.c ****   if (AHT20_ReadData(&data) != AHT20_OK)
+ 712              		.loc 1 335 3 is_stmt 1 view .LVU160
+ 713              		.loc 1 335 7 is_stmt 0 view .LVU161
  714 0012 6846     		mov	r0, sp
  715              	.LVL54:
- 716              		.loc 1 351 7 view .LVU162
+ 716              		.loc 1 335 7 view .LVU162
  717 0014 FFF7FEFF 		bl	AHT20_ReadData
  718              	.LVL55:
- 719              		.loc 1 351 6 discriminator 1 view .LVU163
+ 719              		.loc 1 335 6 discriminator 1 view .LVU163
  720 0018 48B9     		cbnz	r0, .L64
- 352:DeviceDrivers/Sensor/Src/aht20.c ****   {
- 353:DeviceDrivers/Sensor/Src/aht20.c ****     /* 读取失败，返回错误。 */
- 354:DeviceDrivers/Sensor/Src/aht20.c ****     return AHT20_ERROR;
- 355:DeviceDrivers/Sensor/Src/aht20.c ****   }
- 356:DeviceDrivers/Sensor/Src/aht20.c **** 
- 357:DeviceDrivers/Sensor/Src/aht20.c ****   /* 把结构体中的温度复制到调用者传入的温度变量。 */
- 358:DeviceDrivers/Sensor/Src/aht20.c ****   *temperature = data.temperature;
- 721              		.loc 1 358 3 is_stmt 1 view .LVU164
- 722              		.loc 1 358 22 is_stmt 0 view .LVU165
+ 336:DeviceDrivers/Sensor/Src/aht20.c ****   {
+ 337:DeviceDrivers/Sensor/Src/aht20.c ****     /* 读取失败，返回错误。 */
+ 338:DeviceDrivers/Sensor/Src/aht20.c ****     return AHT20_ERROR;
+ 339:DeviceDrivers/Sensor/Src/aht20.c ****   }
+ 340:DeviceDrivers/Sensor/Src/aht20.c **** 
+ 341:DeviceDrivers/Sensor/Src/aht20.c ****   /* 把结构体中的温度复制到调用者传入的温度变量。 */
+ 342:DeviceDrivers/Sensor/Src/aht20.c ****   *temperature = data.temperature;
+ 721              		.loc 1 342 3 is_stmt 1 view .LVU164
+ 722              		.loc 1 342 22 is_stmt 0 view .LVU165
  723 001a 009B     		ldr	r3, [sp]	@ float
- 724              		.loc 1 358 16 view .LVU166
+ 724              		.loc 1 342 16 view .LVU166
  725 001c 2B60     		str	r3, [r5]	@ float
- 359:DeviceDrivers/Sensor/Src/aht20.c **** 
- 360:DeviceDrivers/Sensor/Src/aht20.c ****   /* 把结构体中的湿度复制到调用者传入的湿度变量。 */
- 361:DeviceDrivers/Sensor/Src/aht20.c ****   *humidity = data.humidity;
- 726              		.loc 1 361 3 is_stmt 1 view .LVU167
- 727              		.loc 1 361 19 is_stmt 0 view .LVU168
+ 343:DeviceDrivers/Sensor/Src/aht20.c **** 
+ 344:DeviceDrivers/Sensor/Src/aht20.c ****   /* 把结构体中的湿度复制到调用者传入的湿度变量。 */
+ 345:DeviceDrivers/Sensor/Src/aht20.c ****   *humidity = data.humidity;
+ 726              		.loc 1 345 3 is_stmt 1 view .LVU167
+ 727              		.loc 1 345 19 is_stmt 0 view .LVU168
  728 001e 019B     		ldr	r3, [sp, #4]	@ float
- 729              		.loc 1 361 13 view .LVU169
+ 729              		.loc 1 345 13 view .LVU169
  730 0020 2360     		str	r3, [r4]	@ float
- 362:DeviceDrivers/Sensor/Src/aht20.c **** 
- 363:DeviceDrivers/Sensor/Src/aht20.c ****   /* 温湿度读取和输出都成功。 */
- 364:DeviceDrivers/Sensor/Src/aht20.c ****   return AHT20_OK;
- 731              		.loc 1 364 3 is_stmt 1 view .LVU170
+ 346:DeviceDrivers/Sensor/Src/aht20.c **** 
+ 347:DeviceDrivers/Sensor/Src/aht20.c ****   /* 温湿度读取和输出都成功。 */
+ 348:DeviceDrivers/Sensor/Src/aht20.c ****   return AHT20_OK;
+ 731              		.loc 1 348 3 is_stmt 1 view .LVU170
  732              	.LVL56:
  733              	.L61:
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccYE8JTc.s 			page 21
-
-
- 365:DeviceDrivers/Sensor/Src/aht20.c **** }
- 734              		.loc 1 365 1 is_stmt 0 view .LVU171
+ 349:DeviceDrivers/Sensor/Src/aht20.c **** }
+ 734              		.loc 1 349 1 is_stmt 0 view .LVU171
  735 0022 03B0     		add	sp, sp, #12
  736              	.LCFI25:
  737              		.cfi_remember_state
@@ -1213,26 +1194,29 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccYE8JTc.s 			page 1
  742              	.L62:
  743              	.LCFI26:
  744              		.cfi_restore_state
- 340:DeviceDrivers/Sensor/Src/aht20.c ****   }
- 745              		.loc 1 340 12 view .LVU172
+ 324:DeviceDrivers/Sensor/Src/aht20.c ****   }
+ 745              		.loc 1 324 12 view .LVU172
  746 0026 0120     		movs	r0, #1
  747              	.LVL58:
- 340:DeviceDrivers/Sensor/Src/aht20.c ****   }
- 748              		.loc 1 340 12 view .LVU173
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\cceSzzkS.s 			page 21
+
+
+ 324:DeviceDrivers/Sensor/Src/aht20.c ****   }
+ 748              		.loc 1 324 12 view .LVU173
  749 0028 FBE7     		b	.L61
  750              	.LVL59:
  751              	.L63:
- 347:DeviceDrivers/Sensor/Src/aht20.c ****   }
- 752              		.loc 1 347 12 view .LVU174
+ 331:DeviceDrivers/Sensor/Src/aht20.c ****   }
+ 752              		.loc 1 331 12 view .LVU174
  753 002a 0120     		movs	r0, #1
  754              	.LVL60:
- 347:DeviceDrivers/Sensor/Src/aht20.c ****   }
- 755              		.loc 1 347 12 view .LVU175
+ 331:DeviceDrivers/Sensor/Src/aht20.c ****   }
+ 755              		.loc 1 331 12 view .LVU175
  756 002c F9E7     		b	.L61
  757              	.LVL61:
  758              	.L64:
- 354:DeviceDrivers/Sensor/Src/aht20.c ****   }
- 759              		.loc 1 354 12 view .LVU176
+ 338:DeviceDrivers/Sensor/Src/aht20.c ****   }
+ 759              		.loc 1 338 12 view .LVU176
  760 002e 0120     		movs	r0, #1
  761 0030 F7E7     		b	.L61
  762              		.cfi_endproc
@@ -1244,36 +1228,36 @@ ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccYE8JTc.s 			page 1
  769              		.file 4 "HardwareDrivers/I2C/Inc/i2c_sw.h"
  770              		.file 5 "DeviceDrivers/Sensor/Inc/aht20.h"
  771              		.file 6 "Drivers/STM32G4xx_HAL_Driver/Inc/stm32g4xx_hal.h"
-ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccYE8JTc.s 			page 22
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\cceSzzkS.s 			page 22
 
 
 DEFINED SYMBOLS
                             *ABS*:00000000 aht20.c
-C:\Users\w1785\AppData\Local\Temp\ccYE8JTc.s:21     .text.AHT20_ReadStatus:00000000 $t
-C:\Users\w1785\AppData\Local\Temp\ccYE8JTc.s:27     .text.AHT20_ReadStatus:00000000 AHT20_ReadStatus
-C:\Users\w1785\AppData\Local\Temp\ccYE8JTc.s:101    .text.AHT20_IsBusy:00000000 $t
-C:\Users\w1785\AppData\Local\Temp\ccYE8JTc.s:107    .text.AHT20_IsBusy:00000000 AHT20_IsBusy
-C:\Users\w1785\AppData\Local\Temp\ccYE8JTc.s:135    .text.AHT20_IsCalibrated:00000000 $t
-C:\Users\w1785\AppData\Local\Temp\ccYE8JTc.s:141    .text.AHT20_IsCalibrated:00000000 AHT20_IsCalibrated
-C:\Users\w1785\AppData\Local\Temp\ccYE8JTc.s:166    .rodata.AHT20_Init.str1.4:00000000 $d
-C:\Users\w1785\AppData\Local\Temp\ccYE8JTc.s:170    .text.AHT20_Init:00000000 $t
-C:\Users\w1785\AppData\Local\Temp\ccYE8JTc.s:176    .text.AHT20_Init:00000000 AHT20_Init
-C:\Users\w1785\AppData\Local\Temp\ccYE8JTc.s:280    .text.AHT20_Init:00000074 $d
-C:\Users\w1785\AppData\Local\Temp\ccYE8JTc.s:285    .text.AHT20_SoftReset:00000000 $t
-C:\Users\w1785\AppData\Local\Temp\ccYE8JTc.s:291    .text.AHT20_SoftReset:00000000 AHT20_SoftReset
-C:\Users\w1785\AppData\Local\Temp\ccYE8JTc.s:344    .rodata.AHT20_TriggerMeasurement.str1.4:00000000 $d
-C:\Users\w1785\AppData\Local\Temp\ccYE8JTc.s:348    .text.AHT20_TriggerMeasurement:00000000 $t
-C:\Users\w1785\AppData\Local\Temp\ccYE8JTc.s:354    .text.AHT20_TriggerMeasurement:00000000 AHT20_TriggerMeasurement
-C:\Users\w1785\AppData\Local\Temp\ccYE8JTc.s:400    .text.AHT20_TriggerMeasurement:00000028 $d
-C:\Users\w1785\AppData\Local\Temp\ccYE8JTc.s:405    .text.AHT20_ReadRaw:00000000 $t
-C:\Users\w1785\AppData\Local\Temp\ccYE8JTc.s:411    .text.AHT20_ReadRaw:00000000 AHT20_ReadRaw
-C:\Users\w1785\AppData\Local\Temp\ccYE8JTc.s:489    .text.AHT20_ParseRaw:00000000 $t
-C:\Users\w1785\AppData\Local\Temp\ccYE8JTc.s:495    .text.AHT20_ParseRaw:00000000 AHT20_ParseRaw
-C:\Users\w1785\AppData\Local\Temp\ccYE8JTc.s:590    .text.AHT20_ParseRaw:0000006c $d
-C:\Users\w1785\AppData\Local\Temp\ccYE8JTc.s:598    .text.AHT20_ReadData:00000000 $t
-C:\Users\w1785\AppData\Local\Temp\ccYE8JTc.s:604    .text.AHT20_ReadData:00000000 AHT20_ReadData
-C:\Users\w1785\AppData\Local\Temp\ccYE8JTc.s:676    .text.AHT20_TestRead:00000000 $t
-C:\Users\w1785\AppData\Local\Temp\ccYE8JTc.s:682    .text.AHT20_TestRead:00000000 AHT20_TestRead
+C:\Users\w1785\AppData\Local\Temp\cceSzzkS.s:21     .text.AHT20_ReadStatus:00000000 $t
+C:\Users\w1785\AppData\Local\Temp\cceSzzkS.s:27     .text.AHT20_ReadStatus:00000000 AHT20_ReadStatus
+C:\Users\w1785\AppData\Local\Temp\cceSzzkS.s:101    .text.AHT20_IsBusy:00000000 $t
+C:\Users\w1785\AppData\Local\Temp\cceSzzkS.s:107    .text.AHT20_IsBusy:00000000 AHT20_IsBusy
+C:\Users\w1785\AppData\Local\Temp\cceSzzkS.s:135    .text.AHT20_IsCalibrated:00000000 $t
+C:\Users\w1785\AppData\Local\Temp\cceSzzkS.s:141    .text.AHT20_IsCalibrated:00000000 AHT20_IsCalibrated
+C:\Users\w1785\AppData\Local\Temp\cceSzzkS.s:166    .rodata.AHT20_Init.str1.4:00000000 $d
+C:\Users\w1785\AppData\Local\Temp\cceSzzkS.s:170    .text.AHT20_Init:00000000 $t
+C:\Users\w1785\AppData\Local\Temp\cceSzzkS.s:176    .text.AHT20_Init:00000000 AHT20_Init
+C:\Users\w1785\AppData\Local\Temp\cceSzzkS.s:280    .text.AHT20_Init:00000074 $d
+C:\Users\w1785\AppData\Local\Temp\cceSzzkS.s:285    .text.AHT20_SoftReset:00000000 $t
+C:\Users\w1785\AppData\Local\Temp\cceSzzkS.s:291    .text.AHT20_SoftReset:00000000 AHT20_SoftReset
+C:\Users\w1785\AppData\Local\Temp\cceSzzkS.s:344    .rodata.AHT20_TriggerMeasurement.str1.4:00000000 $d
+C:\Users\w1785\AppData\Local\Temp\cceSzzkS.s:348    .text.AHT20_TriggerMeasurement:00000000 $t
+C:\Users\w1785\AppData\Local\Temp\cceSzzkS.s:354    .text.AHT20_TriggerMeasurement:00000000 AHT20_TriggerMeasurement
+C:\Users\w1785\AppData\Local\Temp\cceSzzkS.s:400    .text.AHT20_TriggerMeasurement:00000028 $d
+C:\Users\w1785\AppData\Local\Temp\cceSzzkS.s:405    .text.AHT20_ReadRaw:00000000 $t
+C:\Users\w1785\AppData\Local\Temp\cceSzzkS.s:411    .text.AHT20_ReadRaw:00000000 AHT20_ReadRaw
+C:\Users\w1785\AppData\Local\Temp\cceSzzkS.s:489    .text.AHT20_ParseRaw:00000000 $t
+C:\Users\w1785\AppData\Local\Temp\cceSzzkS.s:495    .text.AHT20_ParseRaw:00000000 AHT20_ParseRaw
+C:\Users\w1785\AppData\Local\Temp\cceSzzkS.s:590    .text.AHT20_ParseRaw:0000006c $d
+C:\Users\w1785\AppData\Local\Temp\cceSzzkS.s:598    .text.AHT20_ReadData:00000000 $t
+C:\Users\w1785\AppData\Local\Temp\cceSzzkS.s:604    .text.AHT20_ReadData:00000000 AHT20_ReadData
+C:\Users\w1785\AppData\Local\Temp\cceSzzkS.s:676    .text.AHT20_TestRead:00000000 $t
+C:\Users\w1785\AppData\Local\Temp\cceSzzkS.s:682    .text.AHT20_TestRead:00000000 AHT20_TestRead
 
 UNDEFINED SYMBOLS
 I2C_SW_Write

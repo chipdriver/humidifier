@@ -39,17 +39,17 @@ C_SOURCES =  \
 Core/Src/main.c \
 Core/Src/gpio.c \
 Core/Src/usart.c \
-Core/Src/lv_port_disp.c \
 Application/Src/app_main.c \
 Services/Src/display_service.c \
-Services/Src/display_ui_format.c \
-Services/Src/humidifier_symbol_font.c \
+Services/Src/humidifier_service.c \
 Services/Src/sensor_service.c \
+Services/Src/water_level_service.c \
 DeviceDrivers/LCD/Src/st7789.c \
 DeviceDrivers/Sensor/Src/aht20.c \
 HardwareDrivers/LCD/Src/lcd_hw.c \
 HardwareDrivers/I2C/Src/i2c_sw.c \
 HardwareDrivers/Relay/Src/relay_hw.c \
+HardwareDrivers/WaterLevel/Src/water_level_hw.c \
 Core/Src/stm32g4xx_it.c \
 Core/Src/stm32g4xx_hal_msp.c \
 Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_pwr_ex.c \
@@ -70,19 +70,6 @@ Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_cortex.c \
 Core/Src/system_stm32g4xx.c \
 Core/Src/sysmem.c \
 Core/Src/syscalls.c  
-
-LVGL_C_SOURCES = \
-$(wildcard Middlewares/LVGL/lvgl/src/*.c) \
-$(wildcard Middlewares/LVGL/lvgl/src/*/*.c) \
-$(wildcard Middlewares/LVGL/lvgl/src/*/*/*.c) \
-$(wildcard Middlewares/LVGL/lvgl/src/*/*/*/*.c)
-
-LVGL_C_SOURCES := $(filter-out \
-Middlewares/LVGL/lvgl/src/debugging/vg_lite_tvg/% \
-Middlewares/LVGL/lvgl/src/libs/vg_lite_driver/%, \
-$(LVGL_C_SOURCES))
-
-C_SOURCES += $(LVGL_C_SOURCES)
 
 # ASM sources
 ASM_SOURCES =  \
@@ -146,14 +133,13 @@ C_INCLUDES =  \
 -ICore/Inc \
 -IApplication/Inc \
 -IServices/Inc \
+-IConfig/Inc \
 -IDeviceDrivers/LCD/Inc \
 -IDeviceDrivers/Sensor/Inc \
 -IHardwareDrivers/LCD/Inc \
 -IHardwareDrivers/I2C/Inc \
 -IHardwareDrivers/Relay/Inc \
--IMiddlewares/LVGL \
--IMiddlewares/LVGL/lvgl \
--IMiddlewares/LVGL/lvgl/src \
+-IHardwareDrivers/WaterLevel/Inc \
 -IDrivers/STM32G4xx_HAL_Driver/Inc \
 -IDrivers/STM32G4xx_HAL_Driver/Inc/Legacy \
 -IDrivers/CMSIS/Device/ST/STM32G4xx/Include \

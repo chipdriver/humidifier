@@ -1,0 +1,179 @@
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\cc906CHq.s 			page 1
+
+
+   1              		.cpu cortex-m4
+   2              		.arch armv7e-m
+   3              		.fpu fpv4-sp-d16
+   4              		.eabi_attribute 27, 1
+   5              		.eabi_attribute 28, 1
+   6              		.eabi_attribute 20, 1
+   7              		.eabi_attribute 21, 1
+   8              		.eabi_attribute 23, 3
+   9              		.eabi_attribute 24, 1
+  10              		.eabi_attribute 25, 1
+  11              		.eabi_attribute 26, 1
+  12              		.eabi_attribute 30, 1
+  13              		.eabi_attribute 34, 1
+  14              		.eabi_attribute 18, 4
+  15              		.file	"water_level_hw.c"
+  16              		.text
+  17              	.Ltext0:
+  18              		.cfi_sections	.debug_frame
+  19              		.file 1 "HardwareDrivers/WaterLevel/Src/water_level_hw.c"
+  20              		.section	.text.WaterLevel_HW_Init,"ax",%progbits
+  21              		.align	1
+  22              		.global	WaterLevel_HW_Init
+  23              		.syntax unified
+  24              		.thumb
+  25              		.thumb_func
+  27              	WaterLevel_HW_Init:
+  28              	.LFB132:
+   1:HardwareDrivers/WaterLevel/Src/water_level_hw.c **** #include "water_level_hw.h"
+   2:HardwareDrivers/WaterLevel/Src/water_level_hw.c **** 
+   3:HardwareDrivers/WaterLevel/Src/water_level_hw.c **** /**
+   4:HardwareDrivers/WaterLevel/Src/water_level_hw.c ****  * @brief 初始化浮球水位开关 PA0，并启用内部上拉。
+   5:HardwareDrivers/WaterLevel/Src/water_level_hw.c ****  * @retval 无
+   6:HardwareDrivers/WaterLevel/Src/water_level_hw.c ****  */
+   7:HardwareDrivers/WaterLevel/Src/water_level_hw.c **** void WaterLevel_HW_Init(void)
+   8:HardwareDrivers/WaterLevel/Src/water_level_hw.c **** {
+  29              		.loc 1 8 1 view -0
+  30              		.cfi_startproc
+  31              		@ args = 0, pretend = 0, frame = 24
+  32              		@ frame_needed = 0, uses_anonymous_args = 0
+  33 0000 00B5     		push	{lr}
+  34              	.LCFI0:
+  35              		.cfi_def_cfa_offset 4
+  36              		.cfi_offset 14, -4
+  37 0002 87B0     		sub	sp, sp, #28
+  38              	.LCFI1:
+  39              		.cfi_def_cfa_offset 32
+   9:HardwareDrivers/WaterLevel/Src/water_level_hw.c ****   /* 定义并清零 HAL GPIO 初始化结构体。 */
+  10:HardwareDrivers/WaterLevel/Src/water_level_hw.c ****   GPIO_InitTypeDef GPIO_InitStruct = {0};
+  40              		.loc 1 10 3 view .LVU1
+  41              		.loc 1 10 20 is_stmt 0 view .LVU2
+  42 0004 01A9     		add	r1, sp, #4
+  43 0006 0023     		movs	r3, #0
+  44 0008 0193     		str	r3, [sp, #4]
+  45 000a 4B60     		str	r3, [r1, #4]
+  46 000c 8B60     		str	r3, [r1, #8]
+  47 000e CB60     		str	r3, [r1, #12]
+  48 0010 0B61     		str	r3, [r1, #16]
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\cc906CHq.s 			page 2
+
+
+  11:HardwareDrivers/WaterLevel/Src/water_level_hw.c **** 
+  12:HardwareDrivers/WaterLevel/Src/water_level_hw.c ****   /* 使用 PA0 之前，先使能 GPIOA 外设时钟。 */
+  13:HardwareDrivers/WaterLevel/Src/water_level_hw.c ****   __HAL_RCC_GPIOA_CLK_ENABLE();
+  49              		.loc 1 13 3 is_stmt 1 view .LVU3
+  50              	.LBB2:
+  51              		.loc 1 13 3 view .LVU4
+  52              		.loc 1 13 3 view .LVU5
+  53 0012 03F18043 		add	r3, r3, #1073741824
+  54 0016 03F50433 		add	r3, r3, #135168
+  55 001a DA6C     		ldr	r2, [r3, #76]
+  56 001c 42F00102 		orr	r2, r2, #1
+  57 0020 DA64     		str	r2, [r3, #76]
+  58              		.loc 1 13 3 view .LVU6
+  59 0022 DB6C     		ldr	r3, [r3, #76]
+  60 0024 03F00103 		and	r3, r3, #1
+  61 0028 0093     		str	r3, [sp]
+  62              		.loc 1 13 3 view .LVU7
+  63 002a 009B     		ldr	r3, [sp]
+  64              	.LBE2:
+  65              		.loc 1 13 3 view .LVU8
+  14:HardwareDrivers/WaterLevel/Src/water_level_hw.c **** 
+  15:HardwareDrivers/WaterLevel/Src/water_level_hw.c ****   /* 选择 PA0 作为浮球水位输入引脚。 */
+  16:HardwareDrivers/WaterLevel/Src/water_level_hw.c ****   GPIO_InitStruct.Pin = WATER_LEVEL_PIN;
+  66              		.loc 1 16 3 view .LVU9
+  67              		.loc 1 16 23 is_stmt 0 view .LVU10
+  68 002c 0123     		movs	r3, #1
+  69 002e 0193     		str	r3, [sp, #4]
+  17:HardwareDrivers/WaterLevel/Src/water_level_hw.c **** 
+  18:HardwareDrivers/WaterLevel/Src/water_level_hw.c ****   /* PA0 只读取电平，所以配置为输入模式。 */
+  19:HardwareDrivers/WaterLevel/Src/water_level_hw.c ****   GPIO_InitStruct.Mode = GPIO_MODE_INPUT;
+  70              		.loc 1 19 3 is_stmt 1 view .LVU11
+  20:HardwareDrivers/WaterLevel/Src/water_level_hw.c **** 
+  21:HardwareDrivers/WaterLevel/Src/water_level_hw.c ****   /* 浮球另一端接 GND，内部上拉可以让断开时读到高电平。 */
+  22:HardwareDrivers/WaterLevel/Src/water_level_hw.c ****   GPIO_InitStruct.Pull = GPIO_PULLUP;
+  71              		.loc 1 22 3 view .LVU12
+  72              		.loc 1 22 24 is_stmt 0 view .LVU13
+  73 0030 0393     		str	r3, [sp, #12]
+  23:HardwareDrivers/WaterLevel/Src/water_level_hw.c **** 
+  24:HardwareDrivers/WaterLevel/Src/water_level_hw.c ****   /* 输入模式不需要配置速度，这里保留低速默认值。 */
+  25:HardwareDrivers/WaterLevel/Src/water_level_hw.c ****   GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_LOW;
+  74              		.loc 1 25 3 is_stmt 1 view .LVU14
+  26:HardwareDrivers/WaterLevel/Src/water_level_hw.c **** 
+  27:HardwareDrivers/WaterLevel/Src/water_level_hw.c ****   /* 将 PA0 配置写入 GPIOA。 */
+  28:HardwareDrivers/WaterLevel/Src/water_level_hw.c ****   HAL_GPIO_Init(WATER_LEVEL_PORT, &GPIO_InitStruct);
+  75              		.loc 1 28 3 view .LVU15
+  76 0032 4FF09040 		mov	r0, #1207959552
+  77 0036 FFF7FEFF 		bl	HAL_GPIO_Init
+  78              	.LVL0:
+  29:HardwareDrivers/WaterLevel/Src/water_level_hw.c **** }
+  79              		.loc 1 29 1 is_stmt 0 view .LVU16
+  80 003a 07B0     		add	sp, sp, #28
+  81              	.LCFI2:
+  82              		.cfi_def_cfa_offset 4
+  83              		@ sp needed
+  84 003c 00BD     		pop	{pc}
+  85              		.cfi_endproc
+  86              	.LFE132:
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\cc906CHq.s 			page 3
+
+
+  88              		.section	.text.WaterLevel_HW_ReadRaw,"ax",%progbits
+  89              		.align	1
+  90              		.global	WaterLevel_HW_ReadRaw
+  91              		.syntax unified
+  92              		.thumb
+  93              		.thumb_func
+  95              	WaterLevel_HW_ReadRaw:
+  96              	.LFB133:
+  30:HardwareDrivers/WaterLevel/Src/water_level_hw.c **** 
+  31:HardwareDrivers/WaterLevel/Src/water_level_hw.c **** /**
+  32:HardwareDrivers/WaterLevel/Src/water_level_hw.c ****  * @brief 读取 PA0 当前原始电平。
+  33:HardwareDrivers/WaterLevel/Src/water_level_hw.c ****  * @retval GPIO_PIN_SET 表示高电平，GPIO_PIN_RESET 表示低电平。
+  34:HardwareDrivers/WaterLevel/Src/water_level_hw.c ****  */
+  35:HardwareDrivers/WaterLevel/Src/water_level_hw.c **** GPIO_PinState WaterLevel_HW_ReadRaw(void)
+  36:HardwareDrivers/WaterLevel/Src/water_level_hw.c **** {
+  97              		.loc 1 36 1 is_stmt 1 view -0
+  98              		.cfi_startproc
+  99              		@ args = 0, pretend = 0, frame = 0
+ 100              		@ frame_needed = 0, uses_anonymous_args = 0
+ 101 0000 08B5     		push	{r3, lr}
+ 102              	.LCFI3:
+ 103              		.cfi_def_cfa_offset 8
+ 104              		.cfi_offset 3, -8
+ 105              		.cfi_offset 14, -4
+  37:HardwareDrivers/WaterLevel/Src/water_level_hw.c ****   /* 本层只返回原始电平，不判断有水或缺水。 */
+  38:HardwareDrivers/WaterLevel/Src/water_level_hw.c ****   return HAL_GPIO_ReadPin(WATER_LEVEL_PORT, WATER_LEVEL_PIN);
+ 106              		.loc 1 38 3 view .LVU18
+ 107              		.loc 1 38 10 is_stmt 0 view .LVU19
+ 108 0002 0121     		movs	r1, #1
+ 109 0004 4FF09040 		mov	r0, #1207959552
+ 110 0008 FFF7FEFF 		bl	HAL_GPIO_ReadPin
+ 111              	.LVL1:
+  39:HardwareDrivers/WaterLevel/Src/water_level_hw.c **** }
+ 112              		.loc 1 39 1 view .LVU20
+ 113 000c 08BD     		pop	{r3, pc}
+ 114              		.cfi_endproc
+ 115              	.LFE133:
+ 117              		.text
+ 118              	.Letext0:
+ 119              		.file 2 "D:\\STM32CubeIDE\\STM32CubeIDE_2.1.1\\STM32CubeIDE\\plugins\\com.st.stm32cube.ide.mcu.ext
+ 120              		.file 3 "D:\\STM32CubeIDE\\STM32CubeIDE_2.1.1\\STM32CubeIDE\\plugins\\com.st.stm32cube.ide.mcu.ext
+ 121              		.file 4 "Drivers/CMSIS/Device/ST/STM32G4xx/Include/stm32g474xx.h"
+ 122              		.file 5 "Drivers/STM32G4xx_HAL_Driver/Inc/stm32g4xx_hal_gpio.h"
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\cc906CHq.s 			page 4
+
+
+DEFINED SYMBOLS
+                            *ABS*:00000000 water_level_hw.c
+C:\Users\w1785\AppData\Local\Temp\cc906CHq.s:21     .text.WaterLevel_HW_Init:00000000 $t
+C:\Users\w1785\AppData\Local\Temp\cc906CHq.s:27     .text.WaterLevel_HW_Init:00000000 WaterLevel_HW_Init
+C:\Users\w1785\AppData\Local\Temp\cc906CHq.s:89     .text.WaterLevel_HW_ReadRaw:00000000 $t
+C:\Users\w1785\AppData\Local\Temp\cc906CHq.s:95     .text.WaterLevel_HW_ReadRaw:00000000 WaterLevel_HW_ReadRaw
+
+UNDEFINED SYMBOLS
+HAL_GPIO_Init
+HAL_GPIO_ReadPin

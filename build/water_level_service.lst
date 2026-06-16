@@ -1,0 +1,425 @@
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccYcBMId.s 			page 1
+
+
+   1              		.cpu cortex-m4
+   2              		.arch armv7e-m
+   3              		.fpu fpv4-sp-d16
+   4              		.eabi_attribute 27, 1
+   5              		.eabi_attribute 28, 1
+   6              		.eabi_attribute 20, 1
+   7              		.eabi_attribute 21, 1
+   8              		.eabi_attribute 23, 3
+   9              		.eabi_attribute 24, 1
+  10              		.eabi_attribute 25, 1
+  11              		.eabi_attribute 26, 1
+  12              		.eabi_attribute 30, 1
+  13              		.eabi_attribute 34, 1
+  14              		.eabi_attribute 18, 4
+  15              		.file	"water_level_service.c"
+  16              		.text
+  17              	.Ltext0:
+  18              		.cfi_sections	.debug_frame
+  19              		.file 1 "Services/Src/water_level_service.c"
+  20              		.section	.text.WaterLevelService_Update,"ax",%progbits
+  21              		.align	1
+  22              		.global	WaterLevelService_Update
+  23              		.syntax unified
+  24              		.thumb
+  25              		.thumb_func
+  27              	WaterLevelService_Update:
+  28              	.LFB133:
+   1:Services/Src/water_level_service.c **** #include "water_level_service.h"
+   2:Services/Src/water_level_service.c **** 
+   3:Services/Src/water_level_service.c **** #include "water_level_hw.h"
+   4:Services/Src/water_level_service.c **** 
+   5:Services/Src/water_level_service.c **** static GPIO_PinState s_water_level_raw = GPIO_PIN_SET;
+   6:Services/Src/water_level_service.c **** static WaterLevel_Status_t s_water_level_status = WATER_LEVEL_UNKNOWN;
+   7:Services/Src/water_level_service.c **** static uint8_t s_water_level_initialized = 0U;
+   8:Services/Src/water_level_service.c **** 
+   9:Services/Src/water_level_service.c **** /**
+  10:Services/Src/water_level_service.c ****  * @brief 初始化水位服务，并读取一次当前水位状态。
+  11:Services/Src/water_level_service.c ****  * @retval 无
+  12:Services/Src/water_level_service.c ****  */
+  13:Services/Src/water_level_service.c **** void WaterLevelService_Init(void)
+  14:Services/Src/water_level_service.c **** {
+  15:Services/Src/water_level_service.c **** #if APP_WATER_LEVEL_ENABLE
+  16:Services/Src/water_level_service.c ****   /* 初始化硬件驱动层 PA0 输入上拉。 */
+  17:Services/Src/water_level_service.c ****   WaterLevel_HW_Init();
+  18:Services/Src/water_level_service.c **** 
+  19:Services/Src/water_level_service.c ****   /* 标记水位服务已经初始化。 */
+  20:Services/Src/water_level_service.c ****   s_water_level_initialized = 1U;
+  21:Services/Src/water_level_service.c **** 
+  22:Services/Src/water_level_service.c ****   /* 初始化后立即读取一次，避免上层拿到 UNKNOWN。 */
+  23:Services/Src/water_level_service.c ****   WaterLevelService_Update();
+  24:Services/Src/water_level_service.c **** #else
+  25:Services/Src/water_level_service.c ****   /* 如果临时关闭水位检测，默认按有水处理，便于单独调试传感器或屏幕�
+  26:Services/Src/water_level_service.c ****   s_water_level_raw = WATER_LEVEL_HAS_WATER_LEVEL;
+  27:Services/Src/water_level_service.c ****   s_water_level_status = WATER_LEVEL_OK;
+  28:Services/Src/water_level_service.c ****   s_water_level_initialized = 1U;
+  29:Services/Src/water_level_service.c **** #endif
+  30:Services/Src/water_level_service.c **** }
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccYcBMId.s 			page 2
+
+
+  31:Services/Src/water_level_service.c **** 
+  32:Services/Src/water_level_service.c **** /**
+  33:Services/Src/water_level_service.c ****  * @brief 更新水位状态缓存。
+  34:Services/Src/water_level_service.c ****  * @retval 无
+  35:Services/Src/water_level_service.c ****  */
+  36:Services/Src/water_level_service.c **** void WaterLevelService_Update(void)
+  37:Services/Src/water_level_service.c **** {
+  29              		.loc 1 37 1 view -0
+  30              		.cfi_startproc
+  31              		@ args = 0, pretend = 0, frame = 0
+  32              		@ frame_needed = 0, uses_anonymous_args = 0
+  33 0000 08B5     		push	{r3, lr}
+  34              	.LCFI0:
+  35              		.cfi_def_cfa_offset 8
+  36              		.cfi_offset 3, -8
+  37              		.cfi_offset 14, -4
+  38:Services/Src/water_level_service.c **** #if APP_WATER_LEVEL_ENABLE
+  39:Services/Src/water_level_service.c ****   /* 未初始化时不直接读 GPIO，状态保持 UNKNOWN。 */
+  40:Services/Src/water_level_service.c ****   if (s_water_level_initialized == 0U)
+  38              		.loc 1 40 3 view .LVU1
+  39              		.loc 1 40 33 is_stmt 0 view .LVU2
+  40 0002 0A4B     		ldr	r3, .L7
+  41 0004 1B78     		ldrb	r3, [r3]	@ zero_extendqisi2
+  42              		.loc 1 40 6 view .LVU3
+  43 0006 1BB9     		cbnz	r3, .L2
+  41:Services/Src/water_level_service.c ****   {
+  42:Services/Src/water_level_service.c ****     s_water_level_status = WATER_LEVEL_UNKNOWN;
+  44              		.loc 1 42 5 is_stmt 1 view .LVU4
+  45              		.loc 1 42 26 is_stmt 0 view .LVU5
+  46 0008 094B     		ldr	r3, .L7+4
+  47 000a 0222     		movs	r2, #2
+  48 000c 1A70     		strb	r2, [r3]
+  43:Services/Src/water_level_service.c ****     return;
+  49              		.loc 1 43 5 is_stmt 1 view .LVU6
+  50              	.L1:
+  44:Services/Src/water_level_service.c ****   }
+  45:Services/Src/water_level_service.c **** 
+  46:Services/Src/water_level_service.c ****   /* 调用硬件驱动层读取 PA0 原始电平。 */
+  47:Services/Src/water_level_service.c ****   s_water_level_raw = WaterLevel_HW_ReadRaw();
+  48:Services/Src/water_level_service.c **** 
+  49:Services/Src/water_level_service.c ****   /* 只通过 WATER_LEVEL_HAS_WATER_LEVEL 宏判断有水电平，方便后续实测后改宏。 *
+  50:Services/Src/water_level_service.c ****   if (s_water_level_raw == WATER_LEVEL_HAS_WATER_LEVEL)
+  51:Services/Src/water_level_service.c ****   {
+  52:Services/Src/water_level_service.c ****     s_water_level_status = WATER_LEVEL_OK;
+  53:Services/Src/water_level_service.c ****   }
+  54:Services/Src/water_level_service.c ****   else
+  55:Services/Src/water_level_service.c ****   {
+  56:Services/Src/water_level_service.c ****     s_water_level_status = WATER_LEVEL_LOW;
+  57:Services/Src/water_level_service.c ****   }
+  58:Services/Src/water_level_service.c **** #else
+  59:Services/Src/water_level_service.c ****   /* 关闭水位检测时，上层始终看到水位正常。 */
+  60:Services/Src/water_level_service.c ****   s_water_level_raw = WATER_LEVEL_HAS_WATER_LEVEL;
+  61:Services/Src/water_level_service.c ****   s_water_level_status = WATER_LEVEL_OK;
+  62:Services/Src/water_level_service.c **** #endif
+  63:Services/Src/water_level_service.c **** }
+  51              		.loc 1 63 1 is_stmt 0 view .LVU7
+  52 000e 08BD     		pop	{r3, pc}
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccYcBMId.s 			page 3
+
+
+  53              	.L2:
+  47:Services/Src/water_level_service.c **** 
+  54              		.loc 1 47 3 is_stmt 1 view .LVU8
+  47:Services/Src/water_level_service.c **** 
+  55              		.loc 1 47 23 is_stmt 0 view .LVU9
+  56 0010 FFF7FEFF 		bl	WaterLevel_HW_ReadRaw
+  57              	.LVL0:
+  47:Services/Src/water_level_service.c **** 
+  58              		.loc 1 47 21 discriminator 1 view .LVU10
+  59 0014 074B     		ldr	r3, .L7+8
+  60 0016 1870     		strb	r0, [r3]
+  50:Services/Src/water_level_service.c ****   {
+  61              		.loc 1 50 3 is_stmt 1 view .LVU11
+  50:Services/Src/water_level_service.c ****   {
+  62              		.loc 1 50 6 is_stmt 0 view .LVU12
+  63 0018 0128     		cmp	r0, #1
+  64 001a 03D0     		beq	.L6
+  56:Services/Src/water_level_service.c ****   }
+  65              		.loc 1 56 5 is_stmt 1 view .LVU13
+  56:Services/Src/water_level_service.c ****   }
+  66              		.loc 1 56 26 is_stmt 0 view .LVU14
+  67 001c 044B     		ldr	r3, .L7+4
+  68 001e 0122     		movs	r2, #1
+  69 0020 1A70     		strb	r2, [r3]
+  70 0022 F4E7     		b	.L1
+  71              	.L6:
+  52:Services/Src/water_level_service.c ****   }
+  72              		.loc 1 52 5 is_stmt 1 view .LVU15
+  52:Services/Src/water_level_service.c ****   }
+  73              		.loc 1 52 26 is_stmt 0 view .LVU16
+  74 0024 024B     		ldr	r3, .L7+4
+  75 0026 0022     		movs	r2, #0
+  76 0028 1A70     		strb	r2, [r3]
+  77 002a F0E7     		b	.L1
+  78              	.L8:
+  79              		.align	2
+  80              	.L7:
+  81 002c 00000000 		.word	s_water_level_initialized
+  82 0030 00000000 		.word	s_water_level_status
+  83 0034 00000000 		.word	s_water_level_raw
+  84              		.cfi_endproc
+  85              	.LFE133:
+  87              		.section	.text.WaterLevelService_Init,"ax",%progbits
+  88              		.align	1
+  89              		.global	WaterLevelService_Init
+  90              		.syntax unified
+  91              		.thumb
+  92              		.thumb_func
+  94              	WaterLevelService_Init:
+  95              	.LFB132:
+  14:Services/Src/water_level_service.c **** #if APP_WATER_LEVEL_ENABLE
+  96              		.loc 1 14 1 is_stmt 1 view -0
+  97              		.cfi_startproc
+  98              		@ args = 0, pretend = 0, frame = 0
+  99              		@ frame_needed = 0, uses_anonymous_args = 0
+ 100 0000 08B5     		push	{r3, lr}
+ 101              	.LCFI1:
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccYcBMId.s 			page 4
+
+
+ 102              		.cfi_def_cfa_offset 8
+ 103              		.cfi_offset 3, -8
+ 104              		.cfi_offset 14, -4
+  17:Services/Src/water_level_service.c **** 
+ 105              		.loc 1 17 3 view .LVU18
+ 106 0002 FFF7FEFF 		bl	WaterLevel_HW_Init
+ 107              	.LVL1:
+  20:Services/Src/water_level_service.c **** 
+ 108              		.loc 1 20 3 view .LVU19
+  20:Services/Src/water_level_service.c **** 
+ 109              		.loc 1 20 29 is_stmt 0 view .LVU20
+ 110 0006 034B     		ldr	r3, .L11
+ 111 0008 0122     		movs	r2, #1
+ 112 000a 1A70     		strb	r2, [r3]
+  23:Services/Src/water_level_service.c **** #else
+ 113              		.loc 1 23 3 is_stmt 1 view .LVU21
+ 114 000c FFF7FEFF 		bl	WaterLevelService_Update
+ 115              	.LVL2:
+  30:Services/Src/water_level_service.c **** 
+ 116              		.loc 1 30 1 is_stmt 0 view .LVU22
+ 117 0010 08BD     		pop	{r3, pc}
+ 118              	.L12:
+ 119 0012 00BF     		.align	2
+ 120              	.L11:
+ 121 0014 00000000 		.word	s_water_level_initialized
+ 122              		.cfi_endproc
+ 123              	.LFE132:
+ 125              		.section	.text.WaterLevelService_GetRawLevel,"ax",%progbits
+ 126              		.align	1
+ 127              		.global	WaterLevelService_GetRawLevel
+ 128              		.syntax unified
+ 129              		.thumb
+ 130              		.thumb_func
+ 132              	WaterLevelService_GetRawLevel:
+ 133              	.LFB134:
+  64:Services/Src/water_level_service.c **** 
+  65:Services/Src/water_level_service.c **** /**
+  66:Services/Src/water_level_service.c ****  * @brief 获取最近一次读取到的 PA0 原始电平。
+  67:Services/Src/water_level_service.c ****  * @retval GPIO_PIN_SET 表示高电平，GPIO_PIN_RESET 表示低电平。
+  68:Services/Src/water_level_service.c ****  */
+  69:Services/Src/water_level_service.c **** GPIO_PinState WaterLevelService_GetRawLevel(void)
+  70:Services/Src/water_level_service.c **** {
+ 134              		.loc 1 70 1 is_stmt 1 view -0
+ 135              		.cfi_startproc
+ 136              		@ args = 0, pretend = 0, frame = 0
+ 137              		@ frame_needed = 0, uses_anonymous_args = 0
+ 138              		@ link register save eliminated.
+  71:Services/Src/water_level_service.c ****   return s_water_level_raw;
+ 139              		.loc 1 71 3 view .LVU24
+  72:Services/Src/water_level_service.c **** }
+ 140              		.loc 1 72 1 is_stmt 0 view .LVU25
+ 141 0000 014B     		ldr	r3, .L14
+ 142 0002 1878     		ldrb	r0, [r3]	@ zero_extendqisi2
+ 143 0004 7047     		bx	lr
+ 144              	.L15:
+ 145 0006 00BF     		.align	2
+ 146              	.L14:
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccYcBMId.s 			page 5
+
+
+ 147 0008 00000000 		.word	s_water_level_raw
+ 148              		.cfi_endproc
+ 149              	.LFE134:
+ 151              		.section	.text.WaterLevelService_GetStatus,"ax",%progbits
+ 152              		.align	1
+ 153              		.global	WaterLevelService_GetStatus
+ 154              		.syntax unified
+ 155              		.thumb
+ 156              		.thumb_func
+ 158              	WaterLevelService_GetStatus:
+ 159              	.LFB135:
+  73:Services/Src/water_level_service.c **** 
+  74:Services/Src/water_level_service.c **** /**
+  75:Services/Src/water_level_service.c ****  * @brief 获取当前水位业务状态。
+  76:Services/Src/water_level_service.c ****  * @retval WATER_LEVEL_OK 表示有水，WATER_LEVEL_LOW 表示缺水，WATER_LEVEL_UNKNOWN 表示�
+  77:Services/Src/water_level_service.c ****  */
+  78:Services/Src/water_level_service.c **** WaterLevel_Status_t WaterLevelService_GetStatus(void)
+  79:Services/Src/water_level_service.c **** {
+ 160              		.loc 1 79 1 is_stmt 1 view -0
+ 161              		.cfi_startproc
+ 162              		@ args = 0, pretend = 0, frame = 0
+ 163              		@ frame_needed = 0, uses_anonymous_args = 0
+ 164              		@ link register save eliminated.
+  80:Services/Src/water_level_service.c ****   return s_water_level_status;
+ 165              		.loc 1 80 3 view .LVU27
+  81:Services/Src/water_level_service.c **** }
+ 166              		.loc 1 81 1 is_stmt 0 view .LVU28
+ 167 0000 014B     		ldr	r3, .L17
+ 168 0002 1878     		ldrb	r0, [r3]	@ zero_extendqisi2
+ 169 0004 7047     		bx	lr
+ 170              	.L18:
+ 171 0006 00BF     		.align	2
+ 172              	.L17:
+ 173 0008 00000000 		.word	s_water_level_status
+ 174              		.cfi_endproc
+ 175              	.LFE135:
+ 177              		.section	.text.WaterLevelService_IsWaterOk,"ax",%progbits
+ 178              		.align	1
+ 179              		.global	WaterLevelService_IsWaterOk
+ 180              		.syntax unified
+ 181              		.thumb
+ 182              		.thumb_func
+ 184              	WaterLevelService_IsWaterOk:
+ 185              	.LFB136:
+  82:Services/Src/water_level_service.c **** 
+  83:Services/Src/water_level_service.c **** /**
+  84:Services/Src/water_level_service.c ****  * @brief 判断当前水位是否允许加湿。
+  85:Services/Src/water_level_service.c ****  * @retval 1 表示水位正常，0 表示缺水或未知。
+  86:Services/Src/water_level_service.c ****  */
+  87:Services/Src/water_level_service.c **** uint8_t WaterLevelService_IsWaterOk(void)
+  88:Services/Src/water_level_service.c **** {
+ 186              		.loc 1 88 1 is_stmt 1 view -0
+ 187              		.cfi_startproc
+ 188              		@ args = 0, pretend = 0, frame = 0
+ 189              		@ frame_needed = 0, uses_anonymous_args = 0
+ 190              		@ link register save eliminated.
+  89:Services/Src/water_level_service.c ****   if (s_water_level_status == WATER_LEVEL_OK)
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccYcBMId.s 			page 6
+
+
+ 191              		.loc 1 89 3 view .LVU30
+ 192              		.loc 1 89 28 is_stmt 0 view .LVU31
+ 193 0000 034B     		ldr	r3, .L22
+ 194 0002 1B78     		ldrb	r3, [r3]	@ zero_extendqisi2
+ 195              		.loc 1 89 6 view .LVU32
+ 196 0004 0BB1     		cbz	r3, .L21
+  90:Services/Src/water_level_service.c ****   {
+  91:Services/Src/water_level_service.c ****     return 1U;
+  92:Services/Src/water_level_service.c ****   }
+  93:Services/Src/water_level_service.c **** 
+  94:Services/Src/water_level_service.c ****   return 0U;
+ 197              		.loc 1 94 10 view .LVU33
+ 198 0006 0020     		movs	r0, #0
+ 199 0008 7047     		bx	lr
+ 200              	.L21:
+  91:Services/Src/water_level_service.c ****   }
+ 201              		.loc 1 91 12 view .LVU34
+ 202 000a 0120     		movs	r0, #1
+  95:Services/Src/water_level_service.c **** }
+ 203              		.loc 1 95 1 view .LVU35
+ 204 000c 7047     		bx	lr
+ 205              	.L23:
+ 206 000e 00BF     		.align	2
+ 207              	.L22:
+ 208 0010 00000000 		.word	s_water_level_status
+ 209              		.cfi_endproc
+ 210              	.LFE136:
+ 212              		.section	.text.WaterLevelService_IsWaterLow,"ax",%progbits
+ 213              		.align	1
+ 214              		.global	WaterLevelService_IsWaterLow
+ 215              		.syntax unified
+ 216              		.thumb
+ 217              		.thumb_func
+ 219              	WaterLevelService_IsWaterLow:
+ 220              	.LFB137:
+  96:Services/Src/water_level_service.c **** 
+  97:Services/Src/water_level_service.c **** /**
+  98:Services/Src/water_level_service.c ****  * @brief 判断当前是否缺水。
+  99:Services/Src/water_level_service.c ****  * @retval 1 表示缺水，0 表示有水或未知。
+ 100:Services/Src/water_level_service.c ****  */
+ 101:Services/Src/water_level_service.c **** uint8_t WaterLevelService_IsWaterLow(void)
+ 102:Services/Src/water_level_service.c **** {
+ 221              		.loc 1 102 1 is_stmt 1 view -0
+ 222              		.cfi_startproc
+ 223              		@ args = 0, pretend = 0, frame = 0
+ 224              		@ frame_needed = 0, uses_anonymous_args = 0
+ 225              		@ link register save eliminated.
+ 103:Services/Src/water_level_service.c ****   if (s_water_level_status == WATER_LEVEL_LOW)
+ 226              		.loc 1 103 3 view .LVU37
+ 227              		.loc 1 103 28 is_stmt 0 view .LVU38
+ 228 0000 024B     		ldr	r3, .L26
+ 229 0002 1878     		ldrb	r0, [r3]	@ zero_extendqisi2
+ 230              		.loc 1 103 6 view .LVU39
+ 231 0004 0128     		cmp	r0, #1
+ 232 0006 00D0     		beq	.L25
+ 104:Services/Src/water_level_service.c ****   {
+ 105:Services/Src/water_level_service.c ****     return 1U;
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccYcBMId.s 			page 7
+
+
+ 106:Services/Src/water_level_service.c ****   }
+ 107:Services/Src/water_level_service.c **** 
+ 108:Services/Src/water_level_service.c ****   return 0U;
+ 233              		.loc 1 108 10 view .LVU40
+ 234 0008 0020     		movs	r0, #0
+ 235              	.L25:
+ 109:Services/Src/water_level_service.c **** }
+ 236              		.loc 1 109 1 view .LVU41
+ 237 000a 7047     		bx	lr
+ 238              	.L27:
+ 239              		.align	2
+ 240              	.L26:
+ 241 000c 00000000 		.word	s_water_level_status
+ 242              		.cfi_endproc
+ 243              	.LFE137:
+ 245              		.section	.bss.s_water_level_initialized,"aw",%nobits
+ 248              	s_water_level_initialized:
+ 249 0000 00       		.space	1
+ 250              		.section	.data.s_water_level_status,"aw"
+ 253              	s_water_level_status:
+ 254 0000 02       		.byte	2
+ 255              		.section	.data.s_water_level_raw,"aw"
+ 258              	s_water_level_raw:
+ 259 0000 01       		.byte	1
+ 260              		.text
+ 261              	.Letext0:
+ 262              		.file 2 "D:\\STM32CubeIDE\\STM32CubeIDE_2.1.1\\STM32CubeIDE\\plugins\\com.st.stm32cube.ide.mcu.ext
+ 263              		.file 3 "D:\\STM32CubeIDE\\STM32CubeIDE_2.1.1\\STM32CubeIDE\\plugins\\com.st.stm32cube.ide.mcu.ext
+ 264              		.file 4 "Drivers/STM32G4xx_HAL_Driver/Inc/stm32g4xx_hal_gpio.h"
+ 265              		.file 5 "Services/Inc/water_level_service.h"
+ 266              		.file 6 "HardwareDrivers/WaterLevel/Inc/water_level_hw.h"
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccYcBMId.s 			page 8
+
+
+DEFINED SYMBOLS
+                            *ABS*:00000000 water_level_service.c
+C:\Users\w1785\AppData\Local\Temp\ccYcBMId.s:21     .text.WaterLevelService_Update:00000000 $t
+C:\Users\w1785\AppData\Local\Temp\ccYcBMId.s:27     .text.WaterLevelService_Update:00000000 WaterLevelService_Update
+C:\Users\w1785\AppData\Local\Temp\ccYcBMId.s:81     .text.WaterLevelService_Update:0000002c $d
+C:\Users\w1785\AppData\Local\Temp\ccYcBMId.s:248    .bss.s_water_level_initialized:00000000 s_water_level_initialized
+C:\Users\w1785\AppData\Local\Temp\ccYcBMId.s:253    .data.s_water_level_status:00000000 s_water_level_status
+C:\Users\w1785\AppData\Local\Temp\ccYcBMId.s:258    .data.s_water_level_raw:00000000 s_water_level_raw
+C:\Users\w1785\AppData\Local\Temp\ccYcBMId.s:88     .text.WaterLevelService_Init:00000000 $t
+C:\Users\w1785\AppData\Local\Temp\ccYcBMId.s:94     .text.WaterLevelService_Init:00000000 WaterLevelService_Init
+C:\Users\w1785\AppData\Local\Temp\ccYcBMId.s:121    .text.WaterLevelService_Init:00000014 $d
+C:\Users\w1785\AppData\Local\Temp\ccYcBMId.s:126    .text.WaterLevelService_GetRawLevel:00000000 $t
+C:\Users\w1785\AppData\Local\Temp\ccYcBMId.s:132    .text.WaterLevelService_GetRawLevel:00000000 WaterLevelService_GetRawLevel
+C:\Users\w1785\AppData\Local\Temp\ccYcBMId.s:147    .text.WaterLevelService_GetRawLevel:00000008 $d
+C:\Users\w1785\AppData\Local\Temp\ccYcBMId.s:152    .text.WaterLevelService_GetStatus:00000000 $t
+C:\Users\w1785\AppData\Local\Temp\ccYcBMId.s:158    .text.WaterLevelService_GetStatus:00000000 WaterLevelService_GetStatus
+C:\Users\w1785\AppData\Local\Temp\ccYcBMId.s:173    .text.WaterLevelService_GetStatus:00000008 $d
+C:\Users\w1785\AppData\Local\Temp\ccYcBMId.s:178    .text.WaterLevelService_IsWaterOk:00000000 $t
+C:\Users\w1785\AppData\Local\Temp\ccYcBMId.s:184    .text.WaterLevelService_IsWaterOk:00000000 WaterLevelService_IsWaterOk
+C:\Users\w1785\AppData\Local\Temp\ccYcBMId.s:208    .text.WaterLevelService_IsWaterOk:00000010 $d
+C:\Users\w1785\AppData\Local\Temp\ccYcBMId.s:213    .text.WaterLevelService_IsWaterLow:00000000 $t
+C:\Users\w1785\AppData\Local\Temp\ccYcBMId.s:219    .text.WaterLevelService_IsWaterLow:00000000 WaterLevelService_IsWaterLow
+C:\Users\w1785\AppData\Local\Temp\ccYcBMId.s:241    .text.WaterLevelService_IsWaterLow:0000000c $d
+C:\Users\w1785\AppData\Local\Temp\ccYcBMId.s:249    .bss.s_water_level_initialized:00000000 $d
+
+UNDEFINED SYMBOLS
+WaterLevel_HW_ReadRaw
+WaterLevel_HW_Init

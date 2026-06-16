@@ -1,0 +1,777 @@
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccXIbnT1.s 			page 1
+
+
+   1              		.cpu cortex-m4
+   2              		.arch armv7e-m
+   3              		.fpu fpv4-sp-d16
+   4              		.eabi_attribute 27, 1
+   5              		.eabi_attribute 28, 1
+   6              		.eabi_attribute 20, 1
+   7              		.eabi_attribute 21, 1
+   8              		.eabi_attribute 23, 3
+   9              		.eabi_attribute 24, 1
+  10              		.eabi_attribute 25, 1
+  11              		.eabi_attribute 26, 1
+  12              		.eabi_attribute 30, 1
+  13              		.eabi_attribute 34, 1
+  14              		.eabi_attribute 18, 4
+  15              		.file	"humidifier_service.c"
+  16              		.text
+  17              	.Ltext0:
+  18              		.cfi_sections	.debug_frame
+  19              		.file 1 "Services/Src/humidifier_service.c"
+  20              		.section	.text.HumidifierService_SetOffState,"ax",%progbits
+  21              		.align	1
+  22              		.syntax unified
+  23              		.thumb
+  24              		.thumb_func
+  26              	HumidifierService_SetOffState:
+  27              	.LVL0:
+  28              	.LFB132:
+   1:Services/Src/humidifier_service.c **** #include "humidifier_service.h"
+   2:Services/Src/humidifier_service.c **** 
+   3:Services/Src/humidifier_service.c **** #include "app_config.h"
+   4:Services/Src/humidifier_service.c **** #include "relay_hw.h"
+   5:Services/Src/humidifier_service.c **** #include "sensor_service.h"
+   6:Services/Src/humidifier_service.c **** #include "water_level_service.h"
+   7:Services/Src/humidifier_service.c **** 
+   8:Services/Src/humidifier_service.c **** static Humidifier_Status_t s_humidifier_status = {
+   9:Services/Src/humidifier_service.c ****   HUMIDIFIER_STATE_OFF,
+  10:Services/Src/humidifier_service.c ****   0U,
+  11:Services/Src/humidifier_service.c ****   0U,
+  12:Services/Src/humidifier_service.c ****   0U,
+  13:Services/Src/humidifier_service.c ****   0U
+  14:Services/Src/humidifier_service.c **** };
+  15:Services/Src/humidifier_service.c **** 
+  16:Services/Src/humidifier_service.c **** static uint8_t s_humidifier_initialized = 0U;
+  17:Services/Src/humidifier_service.c **** static uint32_t s_last_control_tick = 0U;
+  18:Services/Src/humidifier_service.c **** 
+  19:Services/Src/humidifier_service.c **** /**
+  20:Services/Src/humidifier_service.c ****  * @brief 统一关闭执行器，并设置业务状态。
+  21:Services/Src/humidifier_service.c ****  * @param state 关闭后的业务状态。
+  22:Services/Src/humidifier_service.c ****  * @retval 无
+  23:Services/Src/humidifier_service.c ****  */
+  24:Services/Src/humidifier_service.c **** static void HumidifierService_SetOffState(Humidifier_State_t state)
+  25:Services/Src/humidifier_service.c **** {
+  29              		.loc 1 25 1 view -0
+  30              		.cfi_startproc
+  31              		@ args = 0, pretend = 0, frame = 0
+  32              		@ frame_needed = 0, uses_anonymous_args = 0
+  33              		.loc 1 25 1 is_stmt 0 view .LVU1
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccXIbnT1.s 			page 2
+
+
+  34 0000 10B5     		push	{r4, lr}
+  35              	.LCFI0:
+  36              		.cfi_def_cfa_offset 8
+  37              		.cfi_offset 4, -8
+  38              		.cfi_offset 14, -4
+  39 0002 0446     		mov	r4, r0
+  26:Services/Src/humidifier_service.c ****   /* 关闭雾化继电器。 */
+  27:Services/Src/humidifier_service.c ****   MistRelay_Off();
+  40              		.loc 1 27 3 is_stmt 1 view .LVU2
+  41 0004 FFF7FEFF 		bl	MistRelay_Off
+  42              	.LVL1:
+  28:Services/Src/humidifier_service.c **** 
+  29:Services/Src/humidifier_service.c ****   /* 关闭风扇继电器。 */
+  30:Services/Src/humidifier_service.c ****   FanRelay_Off();
+  43              		.loc 1 30 3 view .LVU3
+  44 0008 FFF7FEFF 		bl	FanRelay_Off
+  45              	.LVL2:
+  31:Services/Src/humidifier_service.c **** 
+  32:Services/Src/humidifier_service.c ****   /* 记录当前状态。 */
+  33:Services/Src/humidifier_service.c ****   s_humidifier_status.state = state;
+  46              		.loc 1 33 3 view .LVU4
+  47              		.loc 1 33 29 is_stmt 0 view .LVU5
+  48 000c 024B     		ldr	r3, .L3
+  49 000e 1C70     		strb	r4, [r3]
+  34:Services/Src/humidifier_service.c **** 
+  35:Services/Src/humidifier_service.c ****   /* 记录雾化输出已经关闭。 */
+  36:Services/Src/humidifier_service.c ****   s_humidifier_status.mist_on = 0U;
+  50              		.loc 1 36 3 is_stmt 1 view .LVU6
+  51              		.loc 1 36 31 is_stmt 0 view .LVU7
+  52 0010 0022     		movs	r2, #0
+  53 0012 5A70     		strb	r2, [r3, #1]
+  37:Services/Src/humidifier_service.c **** 
+  38:Services/Src/humidifier_service.c ****   /* 记录风扇输出已经关闭。 */
+  39:Services/Src/humidifier_service.c ****   s_humidifier_status.fan_on = 0U;
+  54              		.loc 1 39 3 is_stmt 1 view .LVU8
+  55              		.loc 1 39 30 is_stmt 0 view .LVU9
+  56 0014 9A70     		strb	r2, [r3, #2]
+  40:Services/Src/humidifier_service.c **** }
+  57              		.loc 1 40 1 view .LVU10
+  58 0016 10BD     		pop	{r4, pc}
+  59              	.LVL3:
+  60              	.L4:
+  61              		.loc 1 40 1 view .LVU11
+  62              		.align	2
+  63              	.L3:
+  64 0018 00000000 		.word	s_humidifier_status
+  65              		.cfi_endproc
+  66              	.LFE132:
+  68              		.section	.text.HumidifierService_SetOnState,"ax",%progbits
+  69              		.align	1
+  70              		.syntax unified
+  71              		.thumb
+  72              		.thumb_func
+  74              	HumidifierService_SetOnState:
+  75              	.LFB133:
+  41:Services/Src/humidifier_service.c **** 
+  42:Services/Src/humidifier_service.c **** /**
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccXIbnT1.s 			page 3
+
+
+  43:Services/Src/humidifier_service.c ****  * @brief 统一开启雾化和风扇执行器。
+  44:Services/Src/humidifier_service.c ****  * @retval 无
+  45:Services/Src/humidifier_service.c ****  */
+  46:Services/Src/humidifier_service.c **** static void HumidifierService_SetOnState(void)
+  47:Services/Src/humidifier_service.c **** {
+  76              		.loc 1 47 1 is_stmt 1 view -0
+  77              		.cfi_startproc
+  78              		@ args = 0, pretend = 0, frame = 0
+  79              		@ frame_needed = 0, uses_anonymous_args = 0
+  80 0000 08B5     		push	{r3, lr}
+  81              	.LCFI1:
+  82              		.cfi_def_cfa_offset 8
+  83              		.cfi_offset 3, -8
+  84              		.cfi_offset 14, -4
+  48:Services/Src/humidifier_service.c ****   /* 开启雾化继电器。 */
+  49:Services/Src/humidifier_service.c ****   MistRelay_On();
+  85              		.loc 1 49 3 view .LVU13
+  86 0002 FFF7FEFF 		bl	MistRelay_On
+  87              	.LVL4:
+  50:Services/Src/humidifier_service.c **** 
+  51:Services/Src/humidifier_service.c ****   /* 开启风扇继电器。 */
+  52:Services/Src/humidifier_service.c ****   FanRelay_On();
+  88              		.loc 1 52 3 view .LVU14
+  89 0006 FFF7FEFF 		bl	FanRelay_On
+  90              	.LVL5:
+  53:Services/Src/humidifier_service.c **** 
+  54:Services/Src/humidifier_service.c ****   /* 记录当前状态为正在加湿。 */
+  55:Services/Src/humidifier_service.c ****   s_humidifier_status.state = HUMIDIFIER_STATE_ON;
+  91              		.loc 1 55 3 view .LVU15
+  92              		.loc 1 55 29 is_stmt 0 view .LVU16
+  93 000a 034B     		ldr	r3, .L7
+  94 000c 0122     		movs	r2, #1
+  95 000e 1A70     		strb	r2, [r3]
+  56:Services/Src/humidifier_service.c **** 
+  57:Services/Src/humidifier_service.c ****   /* 记录雾化输出已经开启。 */
+  58:Services/Src/humidifier_service.c ****   s_humidifier_status.mist_on = 1U;
+  96              		.loc 1 58 3 is_stmt 1 view .LVU17
+  97              		.loc 1 58 31 is_stmt 0 view .LVU18
+  98 0010 5A70     		strb	r2, [r3, #1]
+  59:Services/Src/humidifier_service.c **** 
+  60:Services/Src/humidifier_service.c ****   /* 记录风扇输出已经开启。 */
+  61:Services/Src/humidifier_service.c ****   s_humidifier_status.fan_on = 1U;
+  99              		.loc 1 61 3 is_stmt 1 view .LVU19
+ 100              		.loc 1 61 30 is_stmt 0 view .LVU20
+ 101 0012 9A70     		strb	r2, [r3, #2]
+  62:Services/Src/humidifier_service.c **** }
+ 102              		.loc 1 62 1 view .LVU21
+ 103 0014 08BD     		pop	{r3, pc}
+ 104              	.L8:
+ 105 0016 00BF     		.align	2
+ 106              	.L7:
+ 107 0018 00000000 		.word	s_humidifier_status
+ 108              		.cfi_endproc
+ 109              	.LFE133:
+ 111              		.section	.text.HumidifierService_Init,"ax",%progbits
+ 112              		.align	1
+ 113              		.global	HumidifierService_Init
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccXIbnT1.s 			page 4
+
+
+ 114              		.syntax unified
+ 115              		.thumb
+ 116              		.thumb_func
+ 118              	HumidifierService_Init:
+ 119              	.LFB134:
+  63:Services/Src/humidifier_service.c **** 
+  64:Services/Src/humidifier_service.c **** /**
+  65:Services/Src/humidifier_service.c ****  * @brief 初始化加湿控制服务，并确保上电默认关闭执行器。
+  66:Services/Src/humidifier_service.c ****  * @retval 无
+  67:Services/Src/humidifier_service.c ****  */
+  68:Services/Src/humidifier_service.c **** void HumidifierService_Init(void)
+  69:Services/Src/humidifier_service.c **** {
+ 120              		.loc 1 69 1 is_stmt 1 view -0
+ 121              		.cfi_startproc
+ 122              		@ args = 0, pretend = 0, frame = 0
+ 123              		@ frame_needed = 0, uses_anonymous_args = 0
+ 124 0000 10B5     		push	{r4, lr}
+ 125              	.LCFI2:
+ 126              		.cfi_def_cfa_offset 8
+ 127              		.cfi_offset 4, -8
+ 128              		.cfi_offset 14, -4
+  70:Services/Src/humidifier_service.c ****   /* 初始化已经验证过的继电器硬件驱动层。 */
+  71:Services/Src/humidifier_service.c ****   Relay_HW_Init();
+ 129              		.loc 1 71 3 view .LVU23
+ 130 0002 FFF7FEFF 		bl	Relay_HW_Init
+ 131              	.LVL6:
+  72:Services/Src/humidifier_service.c **** 
+  73:Services/Src/humidifier_service.c ****   /* 先记录默认安全状态。 */
+  74:Services/Src/humidifier_service.c ****   s_humidifier_status.water_ok = 0U;
+ 132              		.loc 1 74 3 view .LVU24
+ 133              		.loc 1 74 32 is_stmt 0 view .LVU25
+ 134 0006 064B     		ldr	r3, .L11
+ 135 0008 0024     		movs	r4, #0
+ 136 000a DC70     		strb	r4, [r3, #3]
+  75:Services/Src/humidifier_service.c ****   s_humidifier_status.sensor_ok = 0U;
+ 137              		.loc 1 75 3 is_stmt 1 view .LVU26
+ 138              		.loc 1 75 33 is_stmt 0 view .LVU27
+ 139 000c 1C71     		strb	r4, [r3, #4]
+  76:Services/Src/humidifier_service.c **** 
+  77:Services/Src/humidifier_service.c ****   /* 初始化后强制关闭雾化和风扇。 */
+  78:Services/Src/humidifier_service.c ****   HumidifierService_SetOffState(HUMIDIFIER_STATE_OFF);
+ 140              		.loc 1 78 3 is_stmt 1 view .LVU28
+ 141 000e 2046     		mov	r0, r4
+ 142 0010 FFF7FEFF 		bl	HumidifierService_SetOffState
+ 143              	.LVL7:
+  79:Services/Src/humidifier_service.c **** 
+  80:Services/Src/humidifier_service.c ****   /* 记录当前服务已经初始化。 */
+  81:Services/Src/humidifier_service.c ****   s_humidifier_initialized = 1U;
+ 144              		.loc 1 81 3 view .LVU29
+ 145              		.loc 1 81 28 is_stmt 0 view .LVU30
+ 146 0014 034B     		ldr	r3, .L11+4
+ 147 0016 0122     		movs	r2, #1
+ 148 0018 1A70     		strb	r2, [r3]
+  82:Services/Src/humidifier_service.c **** 
+  83:Services/Src/humidifier_service.c ****   /* 清空最近一次控制更新时间。 */
+  84:Services/Src/humidifier_service.c ****   s_last_control_tick = 0U;
+ 149              		.loc 1 84 3 is_stmt 1 view .LVU31
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccXIbnT1.s 			page 5
+
+
+ 150              		.loc 1 84 23 is_stmt 0 view .LVU32
+ 151 001a 034B     		ldr	r3, .L11+8
+ 152 001c 1C60     		str	r4, [r3]
+  85:Services/Src/humidifier_service.c **** }
+ 153              		.loc 1 85 1 view .LVU33
+ 154 001e 10BD     		pop	{r4, pc}
+ 155              	.L12:
+ 156              		.align	2
+ 157              	.L11:
+ 158 0020 00000000 		.word	s_humidifier_status
+ 159 0024 00000000 		.word	s_humidifier_initialized
+ 160 0028 00000000 		.word	s_last_control_tick
+ 161              		.cfi_endproc
+ 162              	.LFE134:
+ 164              		.section	.text.HumidifierService_Update,"ax",%progbits
+ 165              		.align	1
+ 166              		.global	HumidifierService_Update
+ 167              		.syntax unified
+ 168              		.thumb
+ 169              		.thumb_func
+ 171              	HumidifierService_Update:
+ 172              	.LFB135:
+  86:Services/Src/humidifier_service.c **** 
+  87:Services/Src/humidifier_service.c **** /**
+  88:Services/Src/humidifier_service.c ****  * @brief 按水位、传感器和湿度阈值更新雾化/风扇状态。
+  89:Services/Src/humidifier_service.c ****  * @retval 无
+  90:Services/Src/humidifier_service.c ****  */
+  91:Services/Src/humidifier_service.c **** void HumidifierService_Update(void)
+  92:Services/Src/humidifier_service.c **** {
+ 173              		.loc 1 92 1 is_stmt 1 view -0
+ 174              		.cfi_startproc
+ 175              		@ args = 0, pretend = 0, frame = 0
+ 176              		@ frame_needed = 0, uses_anonymous_args = 0
+ 177 0000 10B5     		push	{r4, lr}
+ 178              	.LCFI3:
+ 179              		.cfi_def_cfa_offset 8
+ 180              		.cfi_offset 4, -8
+ 181              		.cfi_offset 14, -4
+  93:Services/Src/humidifier_service.c ****   /* 获取当前 HAL 系统毫秒计数。 */
+  94:Services/Src/humidifier_service.c ****   uint32_t current_tick = HAL_GetTick();
+ 182              		.loc 1 94 3 view .LVU35
+ 183              		.loc 1 94 27 is_stmt 0 view .LVU36
+ 184 0002 FFF7FEFF 		bl	HAL_GetTick
+ 185              	.LVL8:
+  95:Services/Src/humidifier_service.c **** 
+  96:Services/Src/humidifier_service.c ****   /* 未初始化时直接返回，避免继电器驱动未准备好就控制输出。 */
+  97:Services/Src/humidifier_service.c ****   if (s_humidifier_initialized == 0U)
+ 186              		.loc 1 97 3 is_stmt 1 view .LVU37
+ 187              		.loc 1 97 32 is_stmt 0 view .LVU38
+ 188 0006 234B     		ldr	r3, .L32
+ 189 0008 1B78     		ldrb	r3, [r3]	@ zero_extendqisi2
+ 190              		.loc 1 97 6 view .LVU39
+ 191 000a 002B     		cmp	r3, #0
+ 192 000c 35D0     		beq	.L13
+  98:Services/Src/humidifier_service.c ****   {
+  99:Services/Src/humidifier_service.c ****     return;
+ 100:Services/Src/humidifier_service.c ****   }
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccXIbnT1.s 			page 6
+
+
+ 101:Services/Src/humidifier_service.c **** 
+ 102:Services/Src/humidifier_service.c ****   /* 控制周期未到时不重复写继电器，降低无意义 GPIO 翻转。 */
+ 103:Services/Src/humidifier_service.c ****   if ((s_last_control_tick != 0U) &&
+ 193              		.loc 1 103 3 is_stmt 1 view .LVU40
+ 194              		.loc 1 103 28 is_stmt 0 view .LVU41
+ 195 000e 224B     		ldr	r3, .L32+4
+ 196 0010 1B68     		ldr	r3, [r3]
+ 197              		.loc 1 103 6 view .LVU42
+ 198 0012 1BB1     		cbz	r3, .L15
+ 104:Services/Src/humidifier_service.c ****       ((current_tick - s_last_control_tick) < APP_CONTROL_UPDATE_INTERVAL_MS))
+ 199              		.loc 1 104 22 view .LVU43
+ 200 0014 C31A     		subs	r3, r0, r3
+ 103:Services/Src/humidifier_service.c ****       ((current_tick - s_last_control_tick) < APP_CONTROL_UPDATE_INTERVAL_MS))
+ 201              		.loc 1 103 35 discriminator 1 view .LVU44
+ 202 0016 B3F5FA7F 		cmp	r3, #500
+ 203 001a 2ED3     		bcc	.L13
+ 204              	.L15:
+ 105:Services/Src/humidifier_service.c ****   {
+ 106:Services/Src/humidifier_service.c ****     return;
+ 107:Services/Src/humidifier_service.c ****   }
+ 108:Services/Src/humidifier_service.c **** 
+ 109:Services/Src/humidifier_service.c ****   /* 记录本次控制判断时间。 */
+ 110:Services/Src/humidifier_service.c ****   s_last_control_tick = current_tick;
+ 205              		.loc 1 110 3 is_stmt 1 view .LVU45
+ 206              		.loc 1 110 23 is_stmt 0 view .LVU46
+ 207 001c 1E4B     		ldr	r3, .L32+4
+ 208 001e 1860     		str	r0, [r3]
+ 111:Services/Src/humidifier_service.c **** 
+ 112:Services/Src/humidifier_service.c ****   /* 从水位服务获取当前是否有水。 */
+ 113:Services/Src/humidifier_service.c ****   s_humidifier_status.water_ok = WaterLevelService_IsWaterOk();
+ 209              		.loc 1 113 3 is_stmt 1 view .LVU47
+ 210              		.loc 1 113 34 is_stmt 0 view .LVU48
+ 211 0020 FFF7FEFF 		bl	WaterLevelService_IsWaterOk
+ 212              	.LVL9:
+ 213              		.loc 1 113 32 discriminator 1 view .LVU49
+ 214 0024 1D4C     		ldr	r4, .L32+8
+ 215 0026 E070     		strb	r0, [r4, #3]
+ 114:Services/Src/humidifier_service.c **** 
+ 115:Services/Src/humidifier_service.c ****   /* 从传感器服务获取当前温湿度数据是否有效。 */
+ 116:Services/Src/humidifier_service.c ****   s_humidifier_status.sensor_ok = SensorService_IsDataValid();
+ 216              		.loc 1 116 3 is_stmt 1 view .LVU50
+ 217              		.loc 1 116 35 is_stmt 0 view .LVU51
+ 218 0028 FFF7FEFF 		bl	SensorService_IsDataValid
+ 219              	.LVL10:
+ 220              		.loc 1 116 33 discriminator 1 view .LVU52
+ 221 002c 2071     		strb	r0, [r4, #4]
+ 117:Services/Src/humidifier_service.c **** 
+ 118:Services/Src/humidifier_service.c **** #if APP_WATER_LEVEL_ENABLE
+ 119:Services/Src/humidifier_service.c ****   /* 缺水保护优先级最高，任何湿度下都必须关闭执行器。 */
+ 120:Services/Src/humidifier_service.c ****   if (s_humidifier_status.water_ok == 0U)
+ 222              		.loc 1 120 3 is_stmt 1 view .LVU53
+ 223              		.loc 1 120 26 is_stmt 0 view .LVU54
+ 224 002e E378     		ldrb	r3, [r4, #3]	@ zero_extendqisi2
+ 225              		.loc 1 120 6 view .LVU55
+ 226 0030 E3B1     		cbz	r3, .L28
+ 121:Services/Src/humidifier_service.c ****   {
+ 122:Services/Src/humidifier_service.c ****     HumidifierService_SetOffState(HUMIDIFIER_STATE_WATER_LOW);
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccXIbnT1.s 			page 7
+
+
+ 123:Services/Src/humidifier_service.c ****     return;
+ 124:Services/Src/humidifier_service.c ****   }
+ 125:Services/Src/humidifier_service.c **** #endif
+ 126:Services/Src/humidifier_service.c **** 
+ 127:Services/Src/humidifier_service.c **** #if (APP_MIST_ENABLE_WHEN_SENSOR_ERROR == 0U)
+ 128:Services/Src/humidifier_service.c ****   /* 传感器无效时不允许雾化和风扇继续运行。 */
+ 129:Services/Src/humidifier_service.c ****   if (s_humidifier_status.sensor_ok == 0U)
+ 227              		.loc 1 129 3 is_stmt 1 view .LVU56
+ 228              		.loc 1 129 6 is_stmt 0 view .LVU57
+ 229 0032 F8B1     		cbz	r0, .L29
+ 130:Services/Src/humidifier_service.c ****   {
+ 131:Services/Src/humidifier_service.c ****     HumidifierService_SetOffState(HUMIDIFIER_STATE_SENSOR_ERROR);
+ 132:Services/Src/humidifier_service.c ****     return;
+ 133:Services/Src/humidifier_service.c ****   }
+ 134:Services/Src/humidifier_service.c **** #endif
+ 135:Services/Src/humidifier_service.c **** 
+ 136:Services/Src/humidifier_service.c ****   /* 湿度低于下限时，开启雾化和风扇。 */
+ 137:Services/Src/humidifier_service.c ****   if (SensorService_GetHumidity() < APP_HUMIDITY_LOW_THRESHOLD)
+ 230              		.loc 1 137 3 is_stmt 1 view .LVU58
+ 231              		.loc 1 137 7 is_stmt 0 view .LVU59
+ 232 0034 FFF7FEFF 		bl	SensorService_GetHumidity
+ 233              	.LVL11:
+ 234              		.loc 1 137 6 discriminator 1 view .LVU60
+ 235 0038 DFED197A 		vldr.32	s15, .L32+12
+ 236 003c F4EEC07A 		vcmpe.f32	s15, s0
+ 237 0040 F1EE10FA 		vmrs	APSR_nzcv, FPSCR
+ 238 0044 1ADC     		bgt	.L30
+ 138:Services/Src/humidifier_service.c ****   {
+ 139:Services/Src/humidifier_service.c ****     HumidifierService_SetOnState();
+ 140:Services/Src/humidifier_service.c ****     return;
+ 141:Services/Src/humidifier_service.c ****   }
+ 142:Services/Src/humidifier_service.c **** 
+ 143:Services/Src/humidifier_service.c ****   /* 湿度高于上限时，关闭雾化和风扇。 */
+ 144:Services/Src/humidifier_service.c ****   if (SensorService_GetHumidity() > APP_HUMIDITY_HIGH_THRESHOLD)
+ 239              		.loc 1 144 3 is_stmt 1 view .LVU61
+ 240              		.loc 1 144 7 is_stmt 0 view .LVU62
+ 241 0046 FFF7FEFF 		bl	SensorService_GetHumidity
+ 242              	.LVL12:
+ 243              		.loc 1 144 6 discriminator 1 view .LVU63
+ 244 004a DFED167A 		vldr.32	s15, .L32+16
+ 245 004e B4EEE70A 		vcmpe.f32	s0, s15
+ 246 0052 F1EE10FA 		vmrs	APSR_nzcv, FPSCR
+ 247 0056 14DC     		bgt	.L31
+ 145:Services/Src/humidifier_service.c ****   {
+ 146:Services/Src/humidifier_service.c ****     HumidifierService_SetOffState(HUMIDIFIER_STATE_OFF);
+ 147:Services/Src/humidifier_service.c ****     return;
+ 148:Services/Src/humidifier_service.c ****   }
+ 149:Services/Src/humidifier_service.c **** 
+ 150:Services/Src/humidifier_service.c ****   /* 中间回差区间保持执行器状态，但把错误状态恢复为正常 ON/OFF 状态。 *
+ 151:Services/Src/humidifier_service.c ****   if ((s_humidifier_status.mist_on != 0U) && (s_humidifier_status.fan_on != 0U))
+ 248              		.loc 1 151 3 is_stmt 1 view .LVU64
+ 249              		.loc 1 151 27 is_stmt 0 view .LVU65
+ 250 0058 104B     		ldr	r3, .L32+8
+ 251 005a 5B78     		ldrb	r3, [r3, #1]	@ zero_extendqisi2
+ 252              		.loc 1 151 6 view .LVU66
+ 253 005c ABB1     		cbz	r3, .L22
+ 254              		.loc 1 151 66 discriminator 1 view .LVU67
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccXIbnT1.s 			page 8
+
+
+ 255 005e 0F4B     		ldr	r3, .L32+8
+ 256 0060 9B78     		ldrb	r3, [r3, #2]	@ zero_extendqisi2
+ 257              		.loc 1 151 43 discriminator 1 view .LVU68
+ 258 0062 93B1     		cbz	r3, .L22
+ 152:Services/Src/humidifier_service.c ****   {
+ 153:Services/Src/humidifier_service.c ****     s_humidifier_status.state = HUMIDIFIER_STATE_ON;
+ 259              		.loc 1 153 5 is_stmt 1 view .LVU69
+ 260              		.loc 1 153 31 is_stmt 0 view .LVU70
+ 261 0064 0D4B     		ldr	r3, .L32+8
+ 262 0066 0122     		movs	r2, #1
+ 263 0068 1A70     		strb	r2, [r3]
+ 264 006a 06E0     		b	.L13
+ 265              	.L28:
+ 122:Services/Src/humidifier_service.c ****     return;
+ 266              		.loc 1 122 5 is_stmt 1 view .LVU71
+ 267 006c 0220     		movs	r0, #2
+ 268 006e FFF7FEFF 		bl	HumidifierService_SetOffState
+ 269              	.LVL13:
+ 123:Services/Src/humidifier_service.c ****   }
+ 270              		.loc 1 123 5 view .LVU72
+ 271 0072 02E0     		b	.L13
+ 272              	.L29:
+ 131:Services/Src/humidifier_service.c ****     return;
+ 273              		.loc 1 131 5 view .LVU73
+ 274 0074 0320     		movs	r0, #3
+ 275 0076 FFF7FEFF 		bl	HumidifierService_SetOffState
+ 276              	.LVL14:
+ 132:Services/Src/humidifier_service.c ****   }
+ 277              		.loc 1 132 5 view .LVU74
+ 278              	.L13:
+ 154:Services/Src/humidifier_service.c ****   }
+ 155:Services/Src/humidifier_service.c ****   else
+ 156:Services/Src/humidifier_service.c ****   {
+ 157:Services/Src/humidifier_service.c ****     s_humidifier_status.state = HUMIDIFIER_STATE_OFF;
+ 158:Services/Src/humidifier_service.c ****   }
+ 159:Services/Src/humidifier_service.c **** }
+ 279              		.loc 1 159 1 is_stmt 0 view .LVU75
+ 280 007a 10BD     		pop	{r4, pc}
+ 281              	.L30:
+ 139:Services/Src/humidifier_service.c ****     return;
+ 282              		.loc 1 139 5 is_stmt 1 view .LVU76
+ 283 007c FFF7FEFF 		bl	HumidifierService_SetOnState
+ 284              	.LVL15:
+ 140:Services/Src/humidifier_service.c ****   }
+ 285              		.loc 1 140 5 view .LVU77
+ 286 0080 FBE7     		b	.L13
+ 287              	.L31:
+ 146:Services/Src/humidifier_service.c ****     return;
+ 288              		.loc 1 146 5 view .LVU78
+ 289 0082 0020     		movs	r0, #0
+ 290 0084 FFF7FEFF 		bl	HumidifierService_SetOffState
+ 291              	.LVL16:
+ 147:Services/Src/humidifier_service.c ****   }
+ 292              		.loc 1 147 5 view .LVU79
+ 293 0088 F7E7     		b	.L13
+ 294              	.L22:
+ 157:Services/Src/humidifier_service.c ****   }
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccXIbnT1.s 			page 9
+
+
+ 295              		.loc 1 157 5 view .LVU80
+ 157:Services/Src/humidifier_service.c ****   }
+ 296              		.loc 1 157 31 is_stmt 0 view .LVU81
+ 297 008a 044B     		ldr	r3, .L32+8
+ 298 008c 0022     		movs	r2, #0
+ 299 008e 1A70     		strb	r2, [r3]
+ 300 0090 F3E7     		b	.L13
+ 301              	.L33:
+ 302 0092 00BF     		.align	2
+ 303              	.L32:
+ 304 0094 00000000 		.word	s_humidifier_initialized
+ 305 0098 00000000 		.word	s_last_control_tick
+ 306 009c 00000000 		.word	s_humidifier_status
+ 307 00a0 00008242 		.word	1115815936
+ 308 00a4 00009642 		.word	1117126656
+ 309              		.cfi_endproc
+ 310              	.LFE135:
+ 312              		.section	.text.HumidifierService_ForceOff,"ax",%progbits
+ 313              		.align	1
+ 314              		.global	HumidifierService_ForceOff
+ 315              		.syntax unified
+ 316              		.thumb
+ 317              		.thumb_func
+ 319              	HumidifierService_ForceOff:
+ 320              	.LFB136:
+ 160:Services/Src/humidifier_service.c **** 
+ 161:Services/Src/humidifier_service.c **** /**
+ 162:Services/Src/humidifier_service.c ****  * @brief 强制关闭雾化和风扇。
+ 163:Services/Src/humidifier_service.c ****  * @retval 无
+ 164:Services/Src/humidifier_service.c ****  */
+ 165:Services/Src/humidifier_service.c **** void HumidifierService_ForceOff(void)
+ 166:Services/Src/humidifier_service.c **** {
+ 321              		.loc 1 166 1 is_stmt 1 view -0
+ 322              		.cfi_startproc
+ 323              		@ args = 0, pretend = 0, frame = 0
+ 324              		@ frame_needed = 0, uses_anonymous_args = 0
+ 325 0000 08B5     		push	{r3, lr}
+ 326              	.LCFI4:
+ 327              		.cfi_def_cfa_offset 8
+ 328              		.cfi_offset 3, -8
+ 329              		.cfi_offset 14, -4
+ 167:Services/Src/humidifier_service.c ****   if (s_humidifier_initialized == 0U)
+ 330              		.loc 1 167 3 view .LVU83
+ 331              		.loc 1 167 32 is_stmt 0 view .LVU84
+ 332 0002 044B     		ldr	r3, .L38
+ 333 0004 1B78     		ldrb	r3, [r3]	@ zero_extendqisi2
+ 334              		.loc 1 167 6 view .LVU85
+ 335 0006 03B9     		cbnz	r3, .L37
+ 336              	.L34:
+ 168:Services/Src/humidifier_service.c ****   {
+ 169:Services/Src/humidifier_service.c ****     return;
+ 170:Services/Src/humidifier_service.c ****   }
+ 171:Services/Src/humidifier_service.c **** 
+ 172:Services/Src/humidifier_service.c ****   HumidifierService_SetOffState(HUMIDIFIER_STATE_OFF);
+ 173:Services/Src/humidifier_service.c **** }
+ 337              		.loc 1 173 1 view .LVU86
+ 338 0008 08BD     		pop	{r3, pc}
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccXIbnT1.s 			page 10
+
+
+ 339              	.L37:
+ 172:Services/Src/humidifier_service.c **** }
+ 340              		.loc 1 172 3 is_stmt 1 view .LVU87
+ 341 000a 0020     		movs	r0, #0
+ 342 000c FFF7FEFF 		bl	HumidifierService_SetOffState
+ 343              	.LVL17:
+ 344 0010 FAE7     		b	.L34
+ 345              	.L39:
+ 346 0012 00BF     		.align	2
+ 347              	.L38:
+ 348 0014 00000000 		.word	s_humidifier_initialized
+ 349              		.cfi_endproc
+ 350              	.LFE136:
+ 352              		.section	.text.HumidifierService_IsMistOn,"ax",%progbits
+ 353              		.align	1
+ 354              		.global	HumidifierService_IsMistOn
+ 355              		.syntax unified
+ 356              		.thumb
+ 357              		.thumb_func
+ 359              	HumidifierService_IsMistOn:
+ 360              	.LFB137:
+ 174:Services/Src/humidifier_service.c **** 
+ 175:Services/Src/humidifier_service.c **** /**
+ 176:Services/Src/humidifier_service.c ****  * @brief 获取雾化输出状态。
+ 177:Services/Src/humidifier_service.c ****  * @retval 1 表示雾化开启，0 表示雾化关闭。
+ 178:Services/Src/humidifier_service.c ****  */
+ 179:Services/Src/humidifier_service.c **** uint8_t HumidifierService_IsMistOn(void)
+ 180:Services/Src/humidifier_service.c **** {
+ 361              		.loc 1 180 1 view -0
+ 362              		.cfi_startproc
+ 363              		@ args = 0, pretend = 0, frame = 0
+ 364              		@ frame_needed = 0, uses_anonymous_args = 0
+ 365              		@ link register save eliminated.
+ 181:Services/Src/humidifier_service.c ****   return s_humidifier_status.mist_on;
+ 366              		.loc 1 181 3 view .LVU89
+ 182:Services/Src/humidifier_service.c **** }
+ 367              		.loc 1 182 1 is_stmt 0 view .LVU90
+ 368 0000 014B     		ldr	r3, .L41
+ 369 0002 5878     		ldrb	r0, [r3, #1]	@ zero_extendqisi2
+ 370 0004 7047     		bx	lr
+ 371              	.L42:
+ 372 0006 00BF     		.align	2
+ 373              	.L41:
+ 374 0008 00000000 		.word	s_humidifier_status
+ 375              		.cfi_endproc
+ 376              	.LFE137:
+ 378              		.section	.text.HumidifierService_IsFanOn,"ax",%progbits
+ 379              		.align	1
+ 380              		.global	HumidifierService_IsFanOn
+ 381              		.syntax unified
+ 382              		.thumb
+ 383              		.thumb_func
+ 385              	HumidifierService_IsFanOn:
+ 386              	.LFB138:
+ 183:Services/Src/humidifier_service.c **** 
+ 184:Services/Src/humidifier_service.c **** /**
+ 185:Services/Src/humidifier_service.c ****  * @brief 获取风扇输出状态。
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccXIbnT1.s 			page 11
+
+
+ 186:Services/Src/humidifier_service.c ****  * @retval 1 表示风扇开启，0 表示风扇关闭。
+ 187:Services/Src/humidifier_service.c ****  */
+ 188:Services/Src/humidifier_service.c **** uint8_t HumidifierService_IsFanOn(void)
+ 189:Services/Src/humidifier_service.c **** {
+ 387              		.loc 1 189 1 is_stmt 1 view -0
+ 388              		.cfi_startproc
+ 389              		@ args = 0, pretend = 0, frame = 0
+ 390              		@ frame_needed = 0, uses_anonymous_args = 0
+ 391              		@ link register save eliminated.
+ 190:Services/Src/humidifier_service.c ****   return s_humidifier_status.fan_on;
+ 392              		.loc 1 190 3 view .LVU92
+ 191:Services/Src/humidifier_service.c **** }
+ 393              		.loc 1 191 1 is_stmt 0 view .LVU93
+ 394 0000 014B     		ldr	r3, .L44
+ 395 0002 9878     		ldrb	r0, [r3, #2]	@ zero_extendqisi2
+ 396 0004 7047     		bx	lr
+ 397              	.L45:
+ 398 0006 00BF     		.align	2
+ 399              	.L44:
+ 400 0008 00000000 		.word	s_humidifier_status
+ 401              		.cfi_endproc
+ 402              	.LFE138:
+ 404              		.section	.text.HumidifierService_GetState,"ax",%progbits
+ 405              		.align	1
+ 406              		.global	HumidifierService_GetState
+ 407              		.syntax unified
+ 408              		.thumb
+ 409              		.thumb_func
+ 411              	HumidifierService_GetState:
+ 412              	.LFB139:
+ 192:Services/Src/humidifier_service.c **** 
+ 193:Services/Src/humidifier_service.c **** /**
+ 194:Services/Src/humidifier_service.c ****  * @brief 获取当前加湿业务状态。
+ 195:Services/Src/humidifier_service.c ****  * @retval 当前加湿业务状态。
+ 196:Services/Src/humidifier_service.c ****  */
+ 197:Services/Src/humidifier_service.c **** Humidifier_State_t HumidifierService_GetState(void)
+ 198:Services/Src/humidifier_service.c **** {
+ 413              		.loc 1 198 1 is_stmt 1 view -0
+ 414              		.cfi_startproc
+ 415              		@ args = 0, pretend = 0, frame = 0
+ 416              		@ frame_needed = 0, uses_anonymous_args = 0
+ 417              		@ link register save eliminated.
+ 199:Services/Src/humidifier_service.c ****   return s_humidifier_status.state;
+ 418              		.loc 1 199 3 view .LVU95
+ 200:Services/Src/humidifier_service.c **** }
+ 419              		.loc 1 200 1 is_stmt 0 view .LVU96
+ 420 0000 014B     		ldr	r3, .L47
+ 421 0002 1878     		ldrb	r0, [r3]	@ zero_extendqisi2
+ 422 0004 7047     		bx	lr
+ 423              	.L48:
+ 424 0006 00BF     		.align	2
+ 425              	.L47:
+ 426 0008 00000000 		.word	s_humidifier_status
+ 427              		.cfi_endproc
+ 428              	.LFE139:
+ 430              		.section	.text.HumidifierService_GetStatus,"ax",%progbits
+ 431              		.align	1
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccXIbnT1.s 			page 12
+
+
+ 432              		.global	HumidifierService_GetStatus
+ 433              		.syntax unified
+ 434              		.thumb
+ 435              		.thumb_func
+ 437              	HumidifierService_GetStatus:
+ 438              	.LVL18:
+ 439              	.LFB140:
+ 201:Services/Src/humidifier_service.c **** 
+ 202:Services/Src/humidifier_service.c **** /**
+ 203:Services/Src/humidifier_service.c ****  * @brief 获取完整加湿器状态快照。
+ 204:Services/Src/humidifier_service.c ****  * @retval 当前状态快照。
+ 205:Services/Src/humidifier_service.c ****  */
+ 206:Services/Src/humidifier_service.c **** Humidifier_Status_t HumidifierService_GetStatus(void)
+ 207:Services/Src/humidifier_service.c **** {
+ 440              		.loc 1 207 1 is_stmt 1 view -0
+ 441              		.cfi_startproc
+ 442              		@ args = 0, pretend = 0, frame = 0
+ 443              		@ frame_needed = 0, uses_anonymous_args = 0
+ 444              		@ link register save eliminated.
+ 445              		.loc 1 207 1 is_stmt 0 view .LVU98
+ 446 0000 0346     		mov	r3, r0
+ 208:Services/Src/humidifier_service.c ****   return s_humidifier_status;
+ 447              		.loc 1 208 3 is_stmt 1 view .LVU99
+ 448              		.loc 1 208 10 is_stmt 0 view .LVU100
+ 449 0002 034A     		ldr	r2, .L50
+ 450 0004 1068     		ldr	r0, [r2]
+ 451              	.LVL19:
+ 452              		.loc 1 208 10 view .LVU101
+ 453 0006 1860     		str	r0, [r3]	@ unaligned
+ 454 0008 1279     		ldrb	r2, [r2, #4]	@ zero_extendqisi2
+ 455 000a 1A71     		strb	r2, [r3, #4]
+ 209:Services/Src/humidifier_service.c **** }
+ 456              		.loc 1 209 1 view .LVU102
+ 457 000c 1846     		mov	r0, r3
+ 458 000e 7047     		bx	lr
+ 459              	.L51:
+ 460              		.align	2
+ 461              	.L50:
+ 462 0010 00000000 		.word	s_humidifier_status
+ 463              		.cfi_endproc
+ 464              	.LFE140:
+ 466              		.section	.bss.s_last_control_tick,"aw",%nobits
+ 467              		.align	2
+ 470              	s_last_control_tick:
+ 471 0000 00000000 		.space	4
+ 472              		.section	.bss.s_humidifier_initialized,"aw",%nobits
+ 475              	s_humidifier_initialized:
+ 476 0000 00       		.space	1
+ 477              		.section	.bss.s_humidifier_status,"aw",%nobits
+ 478              		.align	2
+ 481              	s_humidifier_status:
+ 482 0000 00000000 		.space	5
+ 482      00
+ 483              		.text
+ 484              	.Letext0:
+ 485              		.file 2 "D:\\STM32CubeIDE\\STM32CubeIDE_2.1.1\\STM32CubeIDE\\plugins\\com.st.stm32cube.ide.mcu.ext
+ 486              		.file 3 "D:\\STM32CubeIDE\\STM32CubeIDE_2.1.1\\STM32CubeIDE\\plugins\\com.st.stm32cube.ide.mcu.ext
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccXIbnT1.s 			page 13
+
+
+ 487              		.file 4 "Services/Inc/humidifier_service.h"
+ 488              		.file 5 "HardwareDrivers/Relay/Inc/relay_hw.h"
+ 489              		.file 6 "Services/Inc/sensor_service.h"
+ 490              		.file 7 "Services/Inc/water_level_service.h"
+ 491              		.file 8 "Drivers/STM32G4xx_HAL_Driver/Inc/stm32g4xx_hal.h"
+ARM GAS  C:\Users\w1785\AppData\Local\Temp\ccXIbnT1.s 			page 14
+
+
+DEFINED SYMBOLS
+                            *ABS*:00000000 humidifier_service.c
+C:\Users\w1785\AppData\Local\Temp\ccXIbnT1.s:21     .text.HumidifierService_SetOffState:00000000 $t
+C:\Users\w1785\AppData\Local\Temp\ccXIbnT1.s:26     .text.HumidifierService_SetOffState:00000000 HumidifierService_SetOffState
+C:\Users\w1785\AppData\Local\Temp\ccXIbnT1.s:64     .text.HumidifierService_SetOffState:00000018 $d
+C:\Users\w1785\AppData\Local\Temp\ccXIbnT1.s:481    .bss.s_humidifier_status:00000000 s_humidifier_status
+C:\Users\w1785\AppData\Local\Temp\ccXIbnT1.s:69     .text.HumidifierService_SetOnState:00000000 $t
+C:\Users\w1785\AppData\Local\Temp\ccXIbnT1.s:74     .text.HumidifierService_SetOnState:00000000 HumidifierService_SetOnState
+C:\Users\w1785\AppData\Local\Temp\ccXIbnT1.s:107    .text.HumidifierService_SetOnState:00000018 $d
+C:\Users\w1785\AppData\Local\Temp\ccXIbnT1.s:112    .text.HumidifierService_Init:00000000 $t
+C:\Users\w1785\AppData\Local\Temp\ccXIbnT1.s:118    .text.HumidifierService_Init:00000000 HumidifierService_Init
+C:\Users\w1785\AppData\Local\Temp\ccXIbnT1.s:158    .text.HumidifierService_Init:00000020 $d
+C:\Users\w1785\AppData\Local\Temp\ccXIbnT1.s:475    .bss.s_humidifier_initialized:00000000 s_humidifier_initialized
+C:\Users\w1785\AppData\Local\Temp\ccXIbnT1.s:470    .bss.s_last_control_tick:00000000 s_last_control_tick
+C:\Users\w1785\AppData\Local\Temp\ccXIbnT1.s:165    .text.HumidifierService_Update:00000000 $t
+C:\Users\w1785\AppData\Local\Temp\ccXIbnT1.s:171    .text.HumidifierService_Update:00000000 HumidifierService_Update
+C:\Users\w1785\AppData\Local\Temp\ccXIbnT1.s:304    .text.HumidifierService_Update:00000094 $d
+C:\Users\w1785\AppData\Local\Temp\ccXIbnT1.s:313    .text.HumidifierService_ForceOff:00000000 $t
+C:\Users\w1785\AppData\Local\Temp\ccXIbnT1.s:319    .text.HumidifierService_ForceOff:00000000 HumidifierService_ForceOff
+C:\Users\w1785\AppData\Local\Temp\ccXIbnT1.s:348    .text.HumidifierService_ForceOff:00000014 $d
+C:\Users\w1785\AppData\Local\Temp\ccXIbnT1.s:353    .text.HumidifierService_IsMistOn:00000000 $t
+C:\Users\w1785\AppData\Local\Temp\ccXIbnT1.s:359    .text.HumidifierService_IsMistOn:00000000 HumidifierService_IsMistOn
+C:\Users\w1785\AppData\Local\Temp\ccXIbnT1.s:374    .text.HumidifierService_IsMistOn:00000008 $d
+C:\Users\w1785\AppData\Local\Temp\ccXIbnT1.s:379    .text.HumidifierService_IsFanOn:00000000 $t
+C:\Users\w1785\AppData\Local\Temp\ccXIbnT1.s:385    .text.HumidifierService_IsFanOn:00000000 HumidifierService_IsFanOn
+C:\Users\w1785\AppData\Local\Temp\ccXIbnT1.s:400    .text.HumidifierService_IsFanOn:00000008 $d
+C:\Users\w1785\AppData\Local\Temp\ccXIbnT1.s:405    .text.HumidifierService_GetState:00000000 $t
+C:\Users\w1785\AppData\Local\Temp\ccXIbnT1.s:411    .text.HumidifierService_GetState:00000000 HumidifierService_GetState
+C:\Users\w1785\AppData\Local\Temp\ccXIbnT1.s:426    .text.HumidifierService_GetState:00000008 $d
+C:\Users\w1785\AppData\Local\Temp\ccXIbnT1.s:431    .text.HumidifierService_GetStatus:00000000 $t
+C:\Users\w1785\AppData\Local\Temp\ccXIbnT1.s:437    .text.HumidifierService_GetStatus:00000000 HumidifierService_GetStatus
+C:\Users\w1785\AppData\Local\Temp\ccXIbnT1.s:462    .text.HumidifierService_GetStatus:00000010 $d
+C:\Users\w1785\AppData\Local\Temp\ccXIbnT1.s:467    .bss.s_last_control_tick:00000000 $d
+C:\Users\w1785\AppData\Local\Temp\ccXIbnT1.s:476    .bss.s_humidifier_initialized:00000000 $d
+C:\Users\w1785\AppData\Local\Temp\ccXIbnT1.s:478    .bss.s_humidifier_status:00000000 $d
+
+UNDEFINED SYMBOLS
+MistRelay_Off
+FanRelay_Off
+MistRelay_On
+FanRelay_On
+Relay_HW_Init
+HAL_GetTick
+WaterLevelService_IsWaterOk
+SensorService_IsDataValid
+SensorService_GetHumidity

@@ -1,21 +1,5 @@
 #include "aht20.h"
 
-#define AHT20_I2C_ADDR             0x38U
-
-#define AHT20_CMD_STATUS           0x71U
-#define AHT20_CMD_INIT             0xBEU
-#define AHT20_CMD_TRIGGER          0xACU
-#define AHT20_CMD_SOFT_RESET       0xBAU
-
-#define AHT20_INIT_PARAM_1         0x08U
-#define AHT20_INIT_PARAM_2         0x00U
-
-#define AHT20_TRIGGER_PARAM_1      0x33U
-#define AHT20_TRIGGER_PARAM_2      0x00U
-
-#define AHT20_STATUS_BUSY_MASK     0x80U
-#define AHT20_STATUS_CAL_MASK      0x08U
-
 /**
  * @brief 初始化 AHT20 温湿度传感器。
  * @retval AHT20_OK 表示初始化成功，AHT20_ERROR 表示初始化失败。
